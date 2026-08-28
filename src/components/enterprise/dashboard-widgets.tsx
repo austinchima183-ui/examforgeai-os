@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, createElement } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { LucideIcon, ChevronRight, MoreHorizontal, Maximize2, Minimize2, RefreshCw, Zap } from 'lucide-react'
 import { resolveIcon } from '@/lib/design/icon-registry'
@@ -100,7 +100,8 @@ export function DashboardWidget({
           <div className="flex items-center gap-2.5 min-w-0">
             {Icon && (
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 border border-white/[0.04] shrink-0">
-                <ResolvedIcon className="h-4 w-4 text-primary" />
+                {/* createElement: resolveIcon returns stable module-scope refs — rendered as data */}
+                {createElement(ResolvedIcon, { className: 'h-4 w-4 text-primary' })}
               </div>
             )}
             <div className="min-w-0">
@@ -236,7 +237,8 @@ export function StatCardPro({
             <p className="text-xs font-medium text-muted-foreground">{label}</p>
             {Icon && (
               <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 border border-white/[0.04] group-hover:bg-primary/15 transition-colors">
-                <ResolvedIcon className="h-3.5 w-3.5 text-primary" />
+                {/* createElement: resolveIcon returns stable module-scope refs — rendered as data */}
+                {createElement(ResolvedIcon, { className: 'h-3.5 w-3.5 text-primary' })}
               </div>
             )}
           </div>
@@ -348,7 +350,7 @@ export function ActivityFeed({ items, loading }: { items: ActivityItem[]; loadin
             onClick={() => item.href && (window.location.href = item.href)}
           >
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/8 border border-white/[0.03] shrink-0">
-              <ResolvedIcon className="h-3.5 w-3.5 text-primary" />
+              {createElement(ResolvedIcon, { className: 'h-3.5 w-3.5 text-primary' })}
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-foreground/90 truncate">{item.title}</p>

@@ -1,6 +1,10 @@
 // ============================================================================
 // ExamForge AI — Performance Optimizations for Next.js Config
 // ============================================================================
+// REFERENCE-ONLY config variant — the active production config is next.config.ts.
+// Kept as documentation of performance tuning options.
+/* eslint-disable @typescript-eslint/no-require-imports -- CJS require is the standard pattern for @next/bundle-analyzer in config files. */
+// ============================================================================
 // This file provides performance-focused configuration that can be merged
 // into the main next.config.ts. It includes:
 //   - Bundle analysis configuration

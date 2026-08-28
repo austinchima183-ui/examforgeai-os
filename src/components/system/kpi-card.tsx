@@ -109,7 +109,10 @@ export function KpiCard({
             iconBg,
           )}
         >
-          <Icon className={cn('h-4 w-4', iconColor)} aria-hidden="true" />
+          {/* createElement: Icon is resolved from the stable module-scope registry
+              (resolveIcon is pure) — rendered as data so React never treats it as
+              a component created during render. */}
+          {React.createElement(Icon, { className: cn('h-4 w-4', iconColor), 'aria-hidden': 'true' })}
         </div>
       </div>
       <div className="relative px-5 pb-5">

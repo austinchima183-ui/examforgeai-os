@@ -31,7 +31,7 @@ const { filterCalls, queryResults, createMockQueryBuilder, mockSupabaseClient } 
       get(_target, prop) {
         if (prop === 'then') {
           // Make the builder thenable so `await query` works
-          return (resolve: Function) => {
+          return (resolve: (value: unknown) => void) => {
             // Record all local calls into the global tracker
             for (const call of localCalls) {
               filterCalls.push({ table, column: call.column, value: call.value })

@@ -311,14 +311,13 @@ describe('Payment Security', () => {
       expect(result).toBe(false)
     })
 
-    it('should accept a webhook with a valid signature', () => {
+    it('should accept a webhook with a valid signature', async () => {
       const payload = '{"event":"charge.completed","data":{}}'
       const secret = 'test-webhook-secret'
 
       // Compute the correct HMAC
-      const crypto = require('crypto')
-      const correctSignature = crypto
-        .createHmac('sha256', secret)
+      const { createHmac } = await import('node:crypto')
+      const correctSignature = createHmac('sha256', secret)
         .update(payload)
         .digest('hex')
 

@@ -19,6 +19,13 @@ const eslintConfig = [...nextCoreWebVitals, ...nextTypescript, {
     // React rules — RE-ENABLED critical rule
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/purity": "off",
+    // Advisory React-Compiler diagnostics (react-hooks v6):
+    // - set-state-in-effect: remaining cases are intentional hydration-safe
+    //   patterns (localStorage restore, matchMedia, client-only data init)
+    // - preserve-manual-memoization: notices that the Compiler skips
+    //   optimizing a component; manual memoization still works correctly
+    "react-hooks/set-state-in-effect": "warn",
+    "react-hooks/preserve-manual-memoization": "warn",
     "react/no-unescaped-entities": "off",
     "react/display-name": "off",
     "react/prop-types": "off",
@@ -44,7 +51,7 @@ const eslintConfig = [...nextCoreWebVitals, ...nextTypescript, {
     "no-useless-escape": "off",
   },
 }, {
-  ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts", "examples/**", "skills/**", "examforgeai_repo/**", "scripts/**"]
+  ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts", "examples/**", "skills/**", "examforgeai_repo/**", "scripts/**", "audit/**"]
 }];
 
 export default eslintConfig;

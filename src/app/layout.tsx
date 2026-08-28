@@ -27,7 +27,10 @@ import './globals.css'
 // ──────────────────────────────────────────────────────────────────────────────
 
 if (typeof window === 'undefined') {
-  // Server-only: validate env vars at startup
+  // Server-only: validate env vars at startup.
+  // Intentional sync require(): keeps the validator out of the client bundle
+  // (a top-level static import would ship server-only env checks to browsers).
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { validateEnv } = require('@/lib/config/env-validator')
   try {
     validateEnv()

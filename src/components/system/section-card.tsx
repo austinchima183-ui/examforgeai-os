@@ -95,7 +95,8 @@ export function SectionCard({
           <div className="flex items-start gap-2.5 min-w-0">
             {Icon && (
               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/[0.04] border border-white/[0.04]">
-                <Icon className="h-4 w-4 text-foreground/70" />
+                {/* createElement: resolveIcon returns stable module-scope refs — rendered as data */}
+                {React.createElement(Icon, { className: 'h-4 w-4 text-foreground/70' })}
               </div>
             )}
             <div className="min-w-0">

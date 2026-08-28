@@ -251,11 +251,11 @@ describe('validateURLForSSRF', () => {
 // ──────────────────────────────────────────────────────────────
 
 describe('verifyWebhookSignature', () => {
-  it('validates correct signatures', () => {
-    const crypto = require('crypto')
+  it('validates correct signatures', async () => {
+    const { createHmac } = await import('node:crypto')
     const secret = 'test-webhook-secret'
     const payload = '{"event":"test"}'
-    const signature = crypto.createHmac('sha256', secret).update(payload).digest('hex')
+    const signature = createHmac('sha256', secret).update(payload).digest('hex')
 
     const result = verifyWebhookSignature(payload, signature, secret)
     expect(result).toBe(true)

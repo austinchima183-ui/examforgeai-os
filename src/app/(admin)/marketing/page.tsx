@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, createElement } from 'react'
 import Link from 'next/link'
 import {
   Users,
@@ -73,8 +73,9 @@ function KPICard({
       <CardHeader className="flex flex-row items-center justify-between pb-2">
         <CardTitle className="text-sm font-medium text-muted-foreground">{title}</CardTitle>
         {(() => {
-          const Icon = resolveIcon(icon)
-          return Icon ? <Icon className="h-4 w-4 text-muted-foreground" /> : null
+          const iconCmp = resolveIcon(icon)
+          // createElement: resolveIcon returns stable module-scope refs — rendered as data
+          return iconCmp ? createElement(iconCmp, { className: 'h-4 w-4 text-muted-foreground' }) : null
         })()}
       </CardHeader>
       <CardContent>

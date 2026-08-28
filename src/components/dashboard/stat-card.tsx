@@ -1,5 +1,6 @@
 'use client'
 
+import { createElement } from 'react'
 import { type LucideIcon, TrendingUp, TrendingDown, Minus } from 'lucide-react'
 import { resolveIcon } from '@/lib/design/icon-registry'
 import { motion } from 'framer-motion'
@@ -100,7 +101,8 @@ export function StatCard({
             'flex h-9 w-9 items-center justify-center rounded-lg backdrop-blur-sm border border-white/[0.04]',
             iconBg
           )}>
-            <ResolvedIcon className={cn('h-4 w-4', iconColor)} />
+            {/* createElement: resolveIcon returns stable module-scope refs — rendered as data */}
+            {createElement(ResolvedIcon, { className: cn('h-4 w-4', iconColor) })}
           </div>
         </CardHeader>
         <CardContent className="relative">

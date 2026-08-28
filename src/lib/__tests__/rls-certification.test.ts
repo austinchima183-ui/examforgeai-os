@@ -626,7 +626,7 @@ function createRLSMockClient(context: AuthContext) {
             }
           }
           if (prop === 'then') {
-            return (resolve: Function) => {
+            return (resolve: (value: unknown) => void) => {
               // Evaluate RLS based on the filters
               let decision: RLSDecision = { allowed: false, reason: 'No table config', policyMatched: 'unknown' }
 
