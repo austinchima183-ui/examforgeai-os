@@ -1,0 +1,1842 @@
+[
+  {
+    "file": "src/app/api/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/reports/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/agents/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/demo-booking/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/workflows/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/plugins/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/analytics/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/search/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/events/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/contact/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/seed/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/organizations/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/health/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/feedback/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/reports/share/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/reports/schedule/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/reports/generate/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/newsletter/verify/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/newsletter/subscribe/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/newsletter/unsubscribe/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/marketplace/purchase/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/marketplace/reviews/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/marketplace/related/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/marketplace/download/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/marketplace/checkout/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": false,
+    "has_pagination": true,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/marketplace/webhook/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/marketplace/purchase-status/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/marketplace/verify-payment/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/marketplace/my-purchases/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/marketplace/product/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/marketplace/reviews/report/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/marketplace/reviews/respond/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/marketplace/seller/analytics/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/marketplace/seller/products/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/notifications/history/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/notifications/templates/route.ts",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/notifications/delivery-status/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/notifications/send/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/notifications/preferences/route.ts",
+    "methods": [
+      "GET",
+      "PUT"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/notifications/digest/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/student/revision-hub/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/student/practice/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/student/certificates/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/student/progress/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/student/flashcards/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/student/study-planner/route.ts",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "DELETE"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/admin/backups/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/admin/audit-logs/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/admin/users/route.ts",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "has_auth": false,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/admin/plugins/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/admin/integrations/route.ts",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT"
+    ],
+    "has_auth": false,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/admin/organization-settings/route.ts",
+    "methods": [
+      "GET",
+      "PUT"
+    ],
+    "has_auth": false,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/admin/roles/route.ts",
+    "methods": [
+      "GET",
+      "PUT"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/admin/branding/route.ts",
+    "methods": [
+      "GET",
+      "PUT"
+    ],
+    "has_auth": false,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/agents/[id]/execute/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/billing/enterprise/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/billing/refund/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/billing/revenue/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/billing/checkout/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/billing/webhook/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/billing/refunds/route.ts",
+    "methods": [
+      "POST",
+      "PATCH"
+    ],
+    "has_auth": false,
+    "has_csrf": true,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/billing/audit/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/billing/subscription-lifecycle/route.ts",
+    "methods": [
+      "POST",
+      "PATCH"
+    ],
+    "has_auth": false,
+    "has_csrf": true,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/billing/webhooks/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/billing/invoices/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/billing/subscriptions/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/billing/paystack/checkout/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/billing/paystack/webhook/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/demo-booking/[id]/route.ts",
+    "methods": [
+      "GET",
+      "PATCH",
+      "DELETE"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/school/fees/route.ts",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "DELETE"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/school/calendar/route.ts",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "DELETE"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/school/timetable/route.ts",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "DELETE"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/school/classes/route.ts",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "DELETE"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/school/attendance/route.ts",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/workflows/[id]/route.ts",
+    "methods": [
+      "GET",
+      "PATCH",
+      "DELETE"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/workflows/[id]/executions/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/workflows/[id]/execute/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/plugins/[id]/install/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/marketing/newsletter/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/marketing/leads/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/marketing/analytics/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/marketing/contacts/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/marketing/demos/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/marketing/leads/[id]/route.ts",
+    "methods": [
+      "GET",
+      "PATCH"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/marketing/leads/[id]/activities/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/teacher/worksheets/route.ts",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/teacher/grade/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/teacher/submissions/route.ts",
+    "methods": [
+      "GET",
+      "PUT"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/teacher/lesson-plans/route.ts",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/teacher/rubrics/route.ts",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/settings/api-keys/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/settings/sso/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/settings/security/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/settings/webhooks/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/analytics/enterprise/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/analytics/nlq/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/analytics/events/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/import/validate/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/import/errors/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/import/progress/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/import/execute/route.ts",
+    "methods": [
+      "POST",
+      "PATCH"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/tenants/resolve/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/security/sessions/route.ts",
+    "methods": [
+      "GET",
+      "DELETE"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/security/sso/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/security/passkeys/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/alerting/suppressions/route.ts",
+    "methods": [
+      "GET",
+      "POST",
+      "DELETE"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/alerting/channels/route.ts",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/alerting/incidents/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/alerting/incidents/[id]/route.ts",
+    "methods": [
+      "GET",
+      "PATCH"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/alerting/incidents/[id]/timeline/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/marketplace-v2/listings/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/marketplace-v2/listings/[id]/purchase/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/ai/government/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/ai/student/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/ai/agents/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/ai/stream/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/ai/teacher/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/ai/complete/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/ai/school-admin/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/ai/predictive/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/ai/parent/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/organizations/switch/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/organizations/[id]/route.ts",
+    "methods": [
+      "GET",
+      "PATCH",
+      "DELETE"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/parent/fees/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/parent/attendance/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/parent/child-progress/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/parent/messaging/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/parent/dashboard/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/auth/callback/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/auth/csrf/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": true,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/health/database/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/health/detailed/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/health/ai/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/health/redis/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": false,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/cbt/answer/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/cbt/session/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/cbt/exam/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": true,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/cbt/submit/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/cbt/timing/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": true,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/developer/oauth-apps/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": true,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/developer/openapi/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/developer/keys/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": true
+  },
+  {
+    "file": "src/app/api/feedback/[id]/route.ts",
+    "methods": [
+      "GET",
+      "PATCH",
+      "DELETE"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/feedback/analytics/route.ts",
+    "methods": [
+      "GET"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": false,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/feedback/ai-rating/route.ts",
+    "methods": [
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  },
+  {
+    "file": "src/app/api/feedback/[id]/comments/route.ts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "has_auth": false,
+    "has_csrf": false,
+    "has_validation": true,
+    "has_error_handling": true,
+    "has_pagination": false,
+    "has_rate_limit": false
+  }
+]

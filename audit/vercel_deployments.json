@@ -1,0 +1,1000 @@
+{
+  "project": {
+    "accountId": "[REDACTED]",
+    "creator": {
+      "type": "user",
+      "user": {
+        "id": "gaxcAkW4xFhpR0acBXPNVRA5"
+      },
+      "via": null
+    },
+    "alias": [],
+    "speedInsights": {
+      "id": "nRLoZ4BpucMLIEE2fOqbORh6h6G",
+      "hasData": false
+    },
+    "autoExposeSystemEnvs": true,
+    "autoAssignCustomDomains": true,
+    "autoAssignCustomDomainsUpdatedBy": "system",
+    "buildCommand": null,
+    "commandForIgnoringBuildStep": null,
+    "createdAt": 1785529909332,
+    "crons": {
+      "enabledAt": 1785529917890,
+      "disabledAt": null,
+      "updatedAt": 1787562186425,
+      "deploymentId": "dpl_42xKiumCgtCM9anBUv8VQyerF3Km",
+      "definitions": []
+    },
+    "deploymentExpiration": {
+      "expirationDays": 30,
+      "expirationDaysProduction": 30,
+      "expirationDaysCanceled": 30,
+      "expirationDaysErrored": 30,
+      "deploymentsToKeep": 10
+    },
+    "devCommand": null,
+    "directoryListing": false,
+    "env": [
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "TqQtlGnfMpwpOuOF",
+        "key": "CSRF_SECRET",
+        "createdAt": 1786873819517,
+        "updatedAt": 1786873819517,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "vvf43mUsvlPfLINV",
+        "key": "ENCRYPTION_KEY",
+        "createdAt": 1786873820076,
+        "updatedAt": 1786873820076,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "F9FHQdF1flWfmLuh",
+        "key": "FLUTTERWAVE_PUBLIC_KEY",
+        "createdAt": 1786873820645,
+        "updatedAt": 1786873820645,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "NtsJgBLo2xGmmnv3",
+        "key": "FLUTTERWAVE_SECRET_KEY",
+        "createdAt": 1786873821201,
+        "updatedAt": 1786873821201,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "EQa44ChFhs1Z4E1o",
+        "key": "FLUTTERWAVE_WEBHOOK_SECRET_HASH",
+        "createdAt": 1786873821761,
+        "updatedAt": 1786873821761,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "YBgLQWO3vQmUJV6x",
+        "key": "GEMINI_API_KEY",
+        "createdAt": 1786873822309,
+        "updatedAt": 1786873822309,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "DqP5w9ey1kabO3v8",
+        "key": "NEXTAUTH_SECRET",
+        "createdAt": 1786873822857,
+        "updatedAt": 1786873822857,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "plain",
+        "value": "https://examforge-ai.vercel.app",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "configurationId": null,
+        "id": "fbvO7ShFPKZQDwYX",
+        "key": "NEXT_PUBLIC_APP_URL",
+        "createdAt": 1786873823419,
+        "updatedAt": 1786873823419,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "plain",
+        "value": "[REDACTED]",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "configurationId": null,
+        "id": "TuNfIyOnTo26zSmK",
+        "key": "NEXT_PUBLIC_SUPABASE_ANON_KEY",
+        "createdAt": 1786873823970,
+        "updatedAt": 1786873823970,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "plain",
+        "value": "[REDACTED]",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "configurationId": null,
+        "id": "J521pZUDnaO0SM01",
+        "key": "NEXT_PUBLIC_SUPABASE_URL",
+        "createdAt": 1786873824527,
+        "updatedAt": 1786873824527,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "hBh81Swz9WSyACxf",
+        "key": "OPENAI_API_KEY",
+        "createdAt": 1786873825076,
+        "updatedAt": 1786873825076,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "3ow9SinVJqRpOAsw",
+        "key": "RESEND_API_KEY",
+        "createdAt": 1786873825627,
+        "updatedAt": 1786873825627,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "SsZdYIanx1Aay3Aw",
+        "key": "SENTRY_AUTH_TOKEN",
+        "createdAt": 1786873826183,
+        "updatedAt": 1786873826183,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "NSEjbmr0yVPtcWuz",
+        "key": "SESSION_TOKEN_SECRET",
+        "createdAt": 1786873826737,
+        "updatedAt": 1786873826737,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "QQ8v5ykOpxiMjxMC",
+        "key": "SUPABASE_ANON_KEY",
+        "createdAt": 1786873827292,
+        "updatedAt": 1786873827292,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "aSnVCO5Nsv9qub8v",
+        "key": "SUPABASE_PLATFORM_KEY",
+        "createdAt": 1786873827853,
+        "updatedAt": 1786873827853,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "LXuJvO0zaDEJzksl",
+        "key": "SUPABASE_SERVICE_ROLE_KEY",
+        "createdAt": 1786873828408,
+        "updatedAt": 1786873828408,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "sensitive",
+        "value": "",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "x1XR7D0LYp2DXXx8",
+        "key": "SUPABASE_URL",
+        "createdAt": 1786873828964,
+        "updatedAt": 1786873828964,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      },
+      {
+        "type": "encrypted",
+        "value": "eyJ2IjoidjIiLCJjIjoiT25weVMzN3VPM2MyQ0pJZ3dJanNlR1J4aGd4T3V5eTNYSSt2dzhEc1FVNmxrL0Z0ckdNWVoxSXFobHhqeEhYMTczMGJuQjJMWWtDV1lCby9UYWNHRXVCMjZucng5WUxhekJQeHRnNkQxdmJFbTdhKzBZMzlWcEhGRHd2NHBwVUwrTzd6OE9vcklqekhuMFhvcXJhMC9NUytXZklRMk5tc2F5UEUzTFB1NzQ0bUlsVkdWcmtoeDVWQTdWd1pTT3dqZ2xpYlJiUUREcVZvVUdpckhKRU5mWDUxZThlREpDNExxYWtzSWZoRk9OUEM0OHJNIiwiayI6WzE4NCwxLDIsMywwLDEyMCwxMDcsMTE5LDE1MywyMywyMjMsMTE3LDE4MywxMjAsNTcsMTk2LDExLDI4LDI0OSwxMTksMTA0LDIxMywxNjksMTYxLDE0MSwxNDIsOTksNjUsNDksMjEyLDMwLDE5OSw5NywyMDQsMjE4LDc3LDEwNSwxNzksMSwxOTgsMjcsNzgsNDEsNjUsMjUzLDM4LDIxMCwxNzQsNTksMTg3LDIyNywxMjAsMTM3LDE1MywxNjEsMCwwLDAsMTI2LDQ4LDEyNCw2LDksNDIsMTM0LDcyLDEzNCwyNDcsMTMsMSw3LDYsMTYwLDExMSw0OCwxMDksMiwxLDAsNDgsMTA0LDYsOSw0MiwxMzQsNzIsMTM0LDI0NywxMywxLDcsMSw0OCwzMCw2LDksOTYsMTM0LDcyLDEsMTAxLDMsNCwxLDQ2LDQ4LDE3LDQsMTIsMjI4LDE1NywxMTIsNDQsMjM3LDYzLDUxLDM1LDIxMSwxMywxNDcsMzksMiwxLDE2LDEyOCw1OSwyMzYsMTksNDMsMTY5LDIzOCwyMjIsMjUyLDEwOSw4OCwxOCwyMTAsMjMwLDE3OCwyMjYsMzAsMTY5LDE3MSwyMzAsNjcsMjEwLDI1MywzLDIzNCwyNSwxOCwyMDAsMTQyLDUzLDI0NSwyMzIsMTE2LDE2MywxMzgsMTYzLDc5LDEzMiwxMTAsMzYsMjE4LDE2Niw0NSwyNDksMTkyLDg1LDE3Nyw3OSwxODgsMTAxLDE2NCwyNywyMDIsMjA1LDIxLDE5OCwxNjgsMjE1LDQzLDksMTM3XX0=",
+        "target": [
+          "production",
+          "preview"
+        ],
+        "configurationId": null,
+        "id": "oG26GEg2hCDr51yh",
+        "key": "FLUTTERWAVE_WEBHOOK_SECRET",
+        "createdAt": 1787540625648,
+        "updatedAt": 1787540625648,
+        "createdBy": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "updatedBy": null
+      }
+    ],
+    "framework": "nextjs",
+    "gitForkProtection": true,
+    "gitLFS": false,
+    "id": "[REDACTED]",
+    "installCommand": null,
+    "lastRollbackTarget": null,
+    "lastAliasRequest": null,
+    "name": "examforge-ai",
+    "nodeVersion": "24.x",
+    "outputDirectory": null,
+    "productionDeploymentsFastLane": true,
+    "defaultResourceConfig": {
+      "fluid": true,
+      "functionDefaultRegions": [
+        "iad1"
+      ],
+      "functionDefaultTimeout": 300,
+      "functionDefaultMemoryType": "standard",
+      "functionZeroConfigFailover": false,
+      "elasticConcurrencyEnabled": false
+    },
+    "resourceConfig": {
+      "fluid": true,
+      "functionDefaultRegions": [
+        "iad1"
+      ],
+      "buildMachineType": "basic",
+      "buildMachineSelection": "fixed"
+    },
+    "rootDirectory": null,
+    "serverlessFunctionRegion": "iad1",
+    "sourceFilesOutsideRootDirectory": true,
+    "ssoProtection": {
+      "deploymentType": "all_except_custom_domains"
+    },
+    "updatedAt": 1787562186425,
+    "live": false,
+    "enableExternalRewriteCaching": true,
+    "gitComments": {
+      "onCommit": false,
+      "onPullRequest": true
+    },
+    "gitProviderOptions": {
+      "createDeployments": "enabled"
+    },
+    "webAnalytics": {
+      "id": "w59zffn1vqXzCGLt8BW8Uhvta"
+    },
+    "oidcTokenConfig": {
+      "enabled": true,
+      "issuerMode": "team"
+    },
+    "hasDeployments": true,
+    "latestDeployments": [
+      {
+        "alias": [
+          "web-alpha-bay-87.vercel.app",
+          "examforge-ai-[REDACTED].vercel.app"
+        ],
+        "aliasAssigned": 1787562186343,
+        "aliasError": null,
+        "automaticAliases": [
+          "examforge-ai-[REDACTED].vercel.app"
+        ],
+        "builds": [],
+        "createdAt": 1787562167396,
+        "createdIn": "sfo1",
+        "creator": {
+          "uid": "gaxcAkW4xFhpR0acBXPNVRA5",
+          "email": "austinchima183@gmail.com",
+          "username": "austinchima183-2014"
+        },
+        "deploymentHostname": "examforge-24s03m5ny-[REDACTED]",
+        "forced": false,
+        "id": "dpl_42xKiumCgtCM9anBUv8VQyerF3Km",
+        "meta": {
+          "gitCommitAuthorName": "Z User",
+          "gitCommitAuthorEmail": "z@container",
+          "gitCommitMessage": "Initial commit",
+          "gitCommitRef": "main",
+          "gitCommitSha": "ee7b6b0b5b9b8b9e7c96b76d89af61176efd272e",
+          "gitDirty": "1",
+          "gitRootDirectory": "examforge-ai",
+          "lambdaRuntimeStats": "{\"nodejs\":3}",
+          "bundler": "turbopack"
+        },
+        "name": "examforge-ai",
+        "plan": "hobby",
+        "private": true,
+        "readyState": "READY",
+        "readySubstate": "PROMOTED",
+        "target": "production",
+        "teamId": "[REDACTED]",
+        "type": "LAMBDAS",
+        "url": "examforge-24s03m5ny-[REDACTED].vercel.app",
+        "userId": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "withCache": false,
+        "buildingAt": 1787562168517,
+        "readyAt": 1787562186128,
+        "previewCommentsEnabled": true,
+        "oidcTokenClaims": {
+          "sub": "owner:[REDACTED]:project:examforge-ai:environment:production",
+          "iss": "https://oidc.vercel.com/[REDACTED]",
+          "scope": "owner:[REDACTED]:project:examforge-ai:environment:production",
+          "aud": "https://vercel.com/[REDACTED]",
+          "owner": "[REDACTED]",
+          "owner_id": "[REDACTED]",
+          "project": "examforge-ai",
+          "project_id": "[REDACTED]",
+          "environment": "production",
+          "plan": "hobby"
+        }
+      },
+      {
+        "alias": [
+          "web-alpha-bay-87.vercel.app",
+          "examforge-ai-[REDACTED].vercel.app"
+        ],
+        "aliasAssigned": 1787562082371,
+        "aliasError": null,
+        "automaticAliases": [
+          "examforge-ai-[REDACTED].vercel.app"
+        ],
+        "builds": [],
+        "createdAt": 1787562044847,
+        "createdIn": "sfo1",
+        "creator": {
+          "uid": "gaxcAkW4xFhpR0acBXPNVRA5",
+          "email": "austinchima183@gmail.com",
+          "username": "austinchima183-2014"
+        },
+        "deploymentHostname": "examforge-dpm2uyd95-[REDACTED]",
+        "forced": false,
+        "id": "dpl_824RTKqoYNZwLcoDyuNQxNnhsMwP",
+        "meta": {
+          "gitCommitAuthorName": "Z User",
+          "gitCommitAuthorEmail": "z@container",
+          "gitCommitMessage": "Initial commit",
+          "gitCommitRef": "main",
+          "gitCommitSha": "ee7b6b0b5b9b8b9e7c96b76d89af61176efd272e",
+          "gitDirty": "1",
+          "gitRootDirectory": "examforge-ai",
+          "lambdaRuntimeStats": "{\"nodejs\":3}",
+          "bundler": "turbopack"
+        },
+        "name": "examforge-ai",
+        "plan": "hobby",
+        "private": true,
+        "readyState": "READY",
+        "readySubstate": "PROMOTED",
+        "target": "production",
+        "teamId": "[REDACTED]",
+        "type": "LAMBDAS",
+        "url": "examforge-dpm2uyd95-[REDACTED].vercel.app",
+        "userId": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "withCache": false,
+        "buildingAt": 1787562045827,
+        "readyAt": 1787562082037,
+        "previewCommentsEnabled": true,
+        "oidcTokenClaims": {
+          "sub": "owner:[REDACTED]:project:examforge-ai:environment:production",
+          "iss": "https://oidc.vercel.com/[REDACTED]",
+          "scope": "owner:[REDACTED]:project:examforge-ai:environment:production",
+          "aud": "https://vercel.com/[REDACTED]",
+          "owner": "[REDACTED]",
+          "owner_id": "[REDACTED]",
+          "project": "examforge-ai",
+          "project_id": "[REDACTED]",
+          "environment": "production",
+          "plan": "hobby"
+        }
+      }
+    ],
+    "targets": {
+      "production": {
+        "alias": [
+          "web-alpha-bay-87.vercel.app",
+          "examforge-ai-[REDACTED].vercel.app"
+        ],
+        "aliasAssigned": 1787562186343,
+        "aliasError": null,
+        "automaticAliases": [
+          "examforge-ai-[REDACTED].vercel.app"
+        ],
+        "builds": [],
+        "createdAt": 1787562167396,
+        "createdIn": "sfo1",
+        "creator": {
+          "uid": "gaxcAkW4xFhpR0acBXPNVRA5",
+          "email": "austinchima183@gmail.com",
+          "username": "austinchima183-2014"
+        },
+        "deploymentHostname": "examforge-24s03m5ny-[REDACTED]",
+        "forced": false,
+        "id": "dpl_42xKiumCgtCM9anBUv8VQyerF3Km",
+        "meta": {
+          "gitCommitAuthorName": "Z User",
+          "gitCommitAuthorEmail": "z@container",
+          "gitCommitMessage": "Initial commit",
+          "gitCommitRef": "main",
+          "gitCommitSha": "ee7b6b0b5b9b8b9e7c96b76d89af61176efd272e",
+          "gitDirty": "1",
+          "gitRootDirectory": "examforge-ai",
+          "lambdaRuntimeStats": "{\"nodejs\":3}",
+          "bundler": "turbopack"
+        },
+        "name": "examforge-ai",
+        "plan": "hobby",
+        "private": true,
+        "readyState": "READY",
+        "readySubstate": "PROMOTED",
+        "target": "production",
+        "teamId": "[REDACTED]",
+        "type": "LAMBDAS",
+        "url": "examforge-24s03m5ny-[REDACTED].vercel.app",
+        "userId": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "withCache": false,
+        "buildingAt": 1787562168517,
+        "readyAt": 1787562186128,
+        "previewCommentsEnabled": true,
+        "oidcTokenClaims": {
+          "sub": "owner:[REDACTED]:project:examforge-ai:environment:production",
+          "iss": "https://oidc.vercel.com/[REDACTED]",
+          "scope": "owner:[REDACTED]:project:examforge-ai:environment:production",
+          "aud": "https://vercel.com/[REDACTED]",
+          "owner": "[REDACTED]",
+          "owner_id": "[REDACTED]",
+          "project": "examforge-ai",
+          "project_id": "[REDACTED]",
+          "environment": "production",
+          "plan": "hobby"
+        }
+      },
+      "preview": {
+        "alias": [],
+        "aliasAssigned": 1787562038732,
+        "aliasError": null,
+        "automaticAliases": [],
+        "builds": [],
+        "createdAt": 1787562003578,
+        "createdIn": "sfo1",
+        "creator": {
+          "uid": "gaxcAkW4xFhpR0acBXPNVRA5",
+          "email": "austinchima183@gmail.com",
+          "username": "austinchima183-2014"
+        },
+        "deploymentHostname": "examforge-1069nmmo2-[REDACTED]",
+        "forced": false,
+        "id": "dpl_E7QJYWp97q48djfBztwAaACHhhUQ",
+        "meta": {
+          "gitCommitAuthorName": "Z User",
+          "gitCommitAuthorEmail": "z@container",
+          "gitCommitMessage": "Initial commit",
+          "gitCommitRef": "main",
+          "gitCommitSha": "ee7b6b0b5b9b8b9e7c96b76d89af61176efd272e",
+          "gitDirty": "1",
+          "gitRootDirectory": "examforge-ai",
+          "lambdaRuntimeStats": "{\"nodejs\":3}",
+          "bundler": "turbopack"
+        },
+        "name": "examforge-ai",
+        "plan": "hobby",
+        "private": true,
+        "readyState": "READY",
+        "readySubstate": "STAGED",
+        "target": null,
+        "teamId": "[REDACTED]",
+        "type": "LAMBDAS",
+        "url": "examforge-1069nmmo2-[REDACTED].vercel.app",
+        "userId": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "withCache": false,
+        "buildingAt": 1787562004659,
+        "readyAt": 1787562038586,
+        "previewCommentsEnabled": true,
+        "oidcTokenClaims": {
+          "sub": "owner:[REDACTED]:project:examforge-ai:environment:preview",
+          "iss": "https://oidc.vercel.com/[REDACTED]",
+          "scope": "owner:[REDACTED]:project:examforge-ai:environment:preview",
+          "aud": "https://vercel.com/[REDACTED]",
+          "owner": "[REDACTED]",
+          "owner_id": "[REDACTED]",
+          "project": "examforge-ai",
+          "project_id": "[REDACTED]",
+          "environment": "preview",
+          "plan": "hobby"
+        }
+      }
+    },
+    "features": {
+      "webAnalytics": false
+    },
+    "protectedSourcemaps": true,
+    "avatar": null
+  },
+  "deployments": [
+    {
+      "uid": "dpl_3Zxk1XzEescwfwbDYbqmmGB459zC",
+      "name": "examforge-ai",
+      "projectId": "[REDACTED]",
+      "url": "examforge-blfa4vyno-[REDACTED].vercel.app",
+      "created": 1786877283126,
+      "source": "cli",
+      "state": "READY",
+      "readyState": "READY",
+      "readySubstate": "PROMOTED",
+      "type": "LAMBDAS",
+      "creator": {
+        "uid": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "email": "austinchima183@gmail.com",
+        "username": "austinchima183-2014"
+      },
+      "inspectorUrl": "https://vercel.com/[REDACTED]/examforge-ai/3Zxk1XzEescwfwbDYbqmmGB459zC",
+      "meta": {
+        "githubCommitAuthorName": "Z User",
+        "githubCommitAuthorEmail": "z@container",
+        "githubCommitMessage": "fix: skip env validation throw during Next.js build phase",
+        "githubCommitOrg": "austinchima183-ui",
+        "githubCommitRef": "main",
+        "githubCommitRepo": "examforgeai",
+        "githubCommitSha": "c36e6d9da79d4d1c5c9b864382fb9da9f70023f9",
+        "githubDeployment": "1",
+        "githubOrg": "austinchima183-ui",
+        "githubRepo": "examforgeai",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "lambdaRuntimeStats": "{\"nodejs\":6}",
+        "bundler": "turbopack"
+      },
+      "target": "production",
+      "aliasError": null,
+      "aliasAssigned": 1786877469037,
+      "isRollbackCandidate": false,
+      "createdAt": 1786877283126,
+      "buildingAt": 1786877284380,
+      "ready": 1786877468816,
+      "projectSettings": {
+        "commandForIgnoringBuildStep": null
+      }
+    },
+    {
+      "uid": "dpl_6icezRQTTNrMM4Jy6vMuYmw5c8Dq",
+      "name": "examforge-ai",
+      "projectId": "[REDACTED]",
+      "url": "examforge-ln8hxg8rn-[REDACTED].vercel.app",
+      "created": 1786877433237,
+      "source": "cli",
+      "state": "READY",
+      "readyState": "READY",
+      "readySubstate": "PROMOTED",
+      "type": "LAMBDAS",
+      "creator": {
+        "uid": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "email": "austinchima183@gmail.com",
+        "username": "austinchima183-2014"
+      },
+      "inspectorUrl": "https://vercel.com/[REDACTED]/examforge-ai/6icezRQTTNrMM4Jy6vMuYmw5c8Dq",
+      "attribution": {
+        "commitMeta": {
+          "name": "Z User",
+          "email": "z@container",
+          "isVerified": false
+        }
+      },
+      "meta": {
+        "githubCommitAuthorName": "Z User",
+        "githubCommitAuthorEmail": "z@container",
+        "githubCommitMessage": "fix: skip env validation throw during Next.js build phase",
+        "githubCommitOrg": "austinchima183-ui",
+        "githubCommitRef": "main",
+        "githubCommitRepo": "examforgeai",
+        "githubCommitSha": "c36e6d9da79d4d1c5c9b864382fb9da9f70023f9",
+        "githubDeployment": "1",
+        "githubOrg": "austinchima183-ui",
+        "githubRepo": "examforgeai",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "lambdaRuntimeStats": "{\"nodejs\":6}",
+        "bundler": "turbopack"
+      },
+      "target": "production",
+      "aliasError": null,
+      "aliasAssigned": 1786877637519,
+      "isRollbackCandidate": false,
+      "createdAt": 1786877433237,
+      "buildingAt": 1786877469534,
+      "ready": 1786877637315,
+      "projectSettings": {
+        "commandForIgnoringBuildStep": null
+      }
+    },
+    {
+      "uid": "dpl_GLqNwdpzR6vTYRPdZrL4sUqRN3sR",
+      "name": "examforge-ai",
+      "projectId": "[REDACTED]",
+      "url": "examforge-oszvh55mx-[REDACTED].vercel.app",
+      "created": 1786877688971,
+      "state": "READY",
+      "readyState": "READY",
+      "readySubstate": "PROMOTED",
+      "type": "LAMBDAS",
+      "creator": {
+        "uid": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "email": "austinchima183@gmail.com",
+        "username": "austinchima183-2014"
+      },
+      "inspectorUrl": "https://vercel.com/[REDACTED]/examforge-ai/GLqNwdpzR6vTYRPdZrL4sUqRN3sR",
+      "meta": {
+        "githubCommitAuthorName": "Z User",
+        "githubCommitAuthorEmail": "z@container",
+        "githubCommitMessage": "fix: skip env validation throw during Next.js build phase\n\nDuring 'next build' (NEXT_PHASE=phase-production-build), log critical\nenv issues as warnings but don't throw. This allows the build to succeed\nwhile still surfacing misconfigured vars. At runtime, missing vars will\nstill cause errors where they're actually used.",
+        "githubCommitOrg": "austinchima183-ui",
+        "githubCommitRef": "main",
+        "githubCommitRepo": "examforgeai",
+        "githubCommitSha": "c36e6d9da79d4d1c5c9b864382fb9da9f70023f9",
+        "githubDeployment": "1",
+        "githubOrg": "austinchima183-ui",
+        "githubRepo": "examforgeai",
+        "githubRepoOwnerType": "User",
+        "githubCommitRepoId": "1313440599",
+        "githubRepoId": "1313440599",
+        "githubRepoVisibility": "public",
+        "githubHost": "github.com",
+        "githubCommitVerification": "unverified",
+        "branchAlias": "examforge-ai-git-main-[REDACTED].vercel.app",
+        "lambdaRuntimeStats": "{\"nodejs\":6}",
+        "bundler": "turbopack"
+      },
+      "target": "production",
+      "aliasError": null,
+      "aliasAssigned": 1786877839109,
+      "isRollbackCandidate": false,
+      "createdAt": 1786877688971,
+      "buildingAt": 1786877690464,
+      "ready": 1786877838893,
+      "projectSettings": {
+        "commandForIgnoringBuildStep": null
+      }
+    },
+    {
+      "uid": "dpl_E8cYr219KULAYJsyAWTQzTDVAYeR",
+      "name": "examforge-ai",
+      "projectId": "[REDACTED]",
+      "url": "examforge-gj0ugl3av-[REDACTED].vercel.app",
+      "created": 1786877827567,
+      "state": "READY",
+      "readyState": "READY",
+      "readySubstate": "PROMOTED",
+      "type": "LAMBDAS",
+      "creator": {
+        "uid": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "email": "austinchima183@gmail.com",
+        "username": "austinchima183-2014"
+      },
+      "inspectorUrl": "https://vercel.com/[REDACTED]/examforge-ai/E8cYr219KULAYJsyAWTQzTDVAYeR",
+      "meta": {
+        "githubCommitAuthorName": "Z User",
+        "githubCommitAuthorEmail": "z@container",
+        "githubCommitMessage": "fix: skip env validation throw during Next.js build phase\n\nDuring 'next build' (NEXT_PHASE=phase-production-build), log critical\nenv issues as warnings but don't throw. This allows the build to succeed\nwhile still surfacing misconfigured vars. At runtime, missing vars will\nstill cause errors where they're actually used.",
+        "githubCommitOrg": "austinchima183-ui",
+        "githubCommitRef": "main",
+        "githubCommitRepo": "examforgeai",
+        "githubCommitSha": "c36e6d9da79d4d1c5c9b864382fb9da9f70023f9",
+        "githubDeployment": "1",
+        "githubOrg": "austinchima183-ui",
+        "githubRepo": "examforgeai",
+        "githubRepoOwnerType": "User",
+        "githubCommitRepoId": "1313440599",
+        "githubRepoId": "1313440599",
+        "githubRepoVisibility": "public",
+        "githubHost": "github.com",
+        "githubCommitVerification": "unverified",
+        "branchAlias": "examforge-ai-git-main-[REDACTED].vercel.app",
+        "lambdaRuntimeStats": "{\"nodejs\":6}",
+        "bundler": "turbopack"
+      },
+      "target": "production",
+      "aliasError": null,
+      "aliasAssigned": 1786877989513,
+      "isRollbackCandidate": false,
+      "createdAt": 1786877827567,
+      "buildingAt": 1786877839939,
+      "ready": 1786877989284,
+      "projectSettings": {
+        "commandForIgnoringBuildStep": null
+      }
+    },
+    {
+      "uid": "[REDACTED]",
+      "name": "examforge-ai",
+      "projectId": "[REDACTED]",
+      "url": "examforge-qh4qn8aek-[REDACTED].vercel.app",
+      "created": 1786880694140,
+      "state": "READY",
+      "readyState": "READY",
+      "readySubstate": "PROMOTED",
+      "type": "LAMBDAS",
+      "creator": {
+        "uid": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "email": "austinchima183@gmail.com",
+        "username": "austinchima183-2014"
+      },
+      "inspectorUrl": "https://vercel.com/[REDACTED]/examforge-ai/3F5Nx4GLrt6Yff332vTtpRBXqjJ1",
+      "meta": {
+        "githubCommitAuthorName": "Z User",
+        "githubCommitAuthorEmail": "z@container",
+        "githubCommitMessage": "fix: eliminate 1412 TS errors \u2014 createClient() now returns non-null, add createClientOrNull() for dev adapter; fix Framer Motion Variants types in auth forms",
+        "githubCommitOrg": "austinchima183-ui",
+        "githubCommitRef": "main",
+        "githubCommitRepo": "examforgeai",
+        "githubCommitSha": "cb27b1ef71c37f365196aa0dd5bd2853ca3faf0a",
+        "githubDeployment": "1",
+        "githubOrg": "austinchima183-ui",
+        "githubRepo": "examforgeai",
+        "githubRepoOwnerType": "User",
+        "githubCommitRepoId": "1313440599",
+        "githubRepoId": "1313440599",
+        "githubRepoVisibility": "public",
+        "githubHost": "github.com",
+        "githubCommitVerification": "unverified",
+        "branchAlias": "examforge-ai-git-main-[REDACTED].vercel.app",
+        "lambdaRuntimeStats": "{\"nodejs\":6}",
+        "bundler": "turbopack"
+      },
+      "target": "production",
+      "aliasError": null,
+      "aliasAssigned": 1786880943597,
+      "isRollbackCandidate": false,
+      "createdAt": 1786880694140,
+      "buildingAt": 1786880793405,
+      "ready": 1786880943381,
+      "projectSettings": {
+        "commandForIgnoringBuildStep": null
+      }
+    },
+    {
+      "uid": "dpl_HnzHCkHtSNMggVDafNDDHBktt8zs",
+      "name": "examforge-ai",
+      "projectId": "[REDACTED]",
+      "url": "examforge-bwuawiya8-[REDACTED].vercel.app",
+      "created": 1787542783608,
+      "source": "cli",
+      "state": "READY",
+      "readyState": "READY",
+      "readySubstate": "PROMOTED",
+      "type": "LAMBDAS",
+      "creator": {
+        "uid": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "email": "austinchima183@gmail.com",
+        "username": "austinchima183-2014"
+      },
+      "inspectorUrl": "https://vercel.com/[REDACTED]/examforge-ai/HnzHCkHtSNMggVDafNDDHBktt8zs",
+      "attribution": {
+        "commitMeta": {
+          "name": "Z User",
+          "email": "z@container",
+          "isVerified": false
+        }
+      },
+      "meta": {
+        "gitCommitAuthorName": "Z User",
+        "gitCommitAuthorEmail": "z@container",
+        "gitCommitMessage": "fix: eliminate 1412 TS errors \u2014 createClient() now returns non-null, add createClientOrNull() for dev adapter; fix Framer Motion Variants types in auth forms",
+        "gitCommitRef": "HEAD",
+        "gitCommitSha": "cb27b1ef71c37f365196aa0dd5bd2853ca3faf0a",
+        "gitRootDirectory": "",
+        "lambdaRuntimeStats": "{\"nodejs\":6}",
+        "bundler": "turbopack"
+      },
+      "target": "production",
+      "aliasError": null,
+      "aliasAssigned": 1787542887985,
+      "isRollbackCandidate": false,
+      "createdAt": 1787542783608,
+      "buildingAt": 1787542784451,
+      "ready": 1787542887775,
+      "projectSettings": {
+        "commandForIgnoringBuildStep": null
+      }
+    },
+    {
+      "uid": "dpl_824RTKqoYNZwLcoDyuNQxNnhsMwP",
+      "name": "examforge-ai",
+      "projectId": "[REDACTED]",
+      "url": "examforge-dpm2uyd95-[REDACTED].vercel.app",
+      "created": 1787562044847,
+      "source": "cli",
+      "state": "READY",
+      "readyState": "READY",
+      "readySubstate": "PROMOTED",
+      "type": "LAMBDAS",
+      "creator": {
+        "uid": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "email": "austinchima183@gmail.com",
+        "username": "austinchima183-2014"
+      },
+      "inspectorUrl": "https://vercel.com/[REDACTED]/examforge-ai/824RTKqoYNZwLcoDyuNQxNnhsMwP",
+      "attribution": {
+        "commitMeta": {
+          "name": "Z User",
+          "email": "z@container",
+          "isVerified": false
+        }
+      },
+      "meta": {
+        "gitCommitAuthorName": "Z User",
+        "gitCommitAuthorEmail": "z@container",
+        "gitCommitMessage": "Initial commit",
+        "gitCommitRef": "main",
+        "gitCommitSha": "ee7b6b0b5b9b8b9e7c96b76d89af61176efd272e",
+        "gitDirty": "1",
+        "gitRootDirectory": "examforge-ai",
+        "lambdaRuntimeStats": "{\"nodejs\":3}",
+        "bundler": "turbopack"
+      },
+      "target": "production",
+      "aliasError": null,
+      "aliasAssigned": 1787562082371,
+      "isRollbackCandidate": true,
+      "createdAt": 1787562044847,
+      "buildingAt": 1787562045827,
+      "ready": 1787562082037,
+      "projectSettings": {
+        "commandForIgnoringBuildStep": null
+      }
+    },
+    {
+      "uid": "dpl_42xKiumCgtCM9anBUv8VQyerF3Km",
+      "name": "examforge-ai",
+      "projectId": "[REDACTED]",
+      "url": "examforge-24s03m5ny-[REDACTED].vercel.app",
+      "created": 1787562167396,
+      "source": "cli",
+      "state": "READY",
+      "readyState": "READY",
+      "readySubstate": "PROMOTED",
+      "type": "LAMBDAS",
+      "creator": {
+        "uid": "gaxcAkW4xFhpR0acBXPNVRA5",
+        "email": "austinchima183@gmail.com",
+        "username": "austinchima183-2014"
+      },
+      "inspectorUrl": "https://vercel.com/[REDACTED]/examforge-ai/42xKiumCgtCM9anBUv8VQyerF3Km",
+      "attribution": {
+        "commitMeta": {
+          "name": "Z User",
+          "email": "z@container",
+          "isVerified": false
+        }
+      },
+      "meta": {
+        "gitCommitAuthorName": "Z User",
+        "gitCommitAuthorEmail": "z@container",
+        "gitCommitMessage": "Initial commit",
+        "gitCommitRef": "main",
+        "gitCommitSha": "ee7b6b0b5b9b8b9e7c96b76d89af61176efd272e",
+        "gitDirty": "1",
+        "gitRootDirectory": "examforge-ai",
+        "lambdaRuntimeStats": "{\"nodejs\":3}",
+        "bundler": "turbopack"
+      },
+      "target": "production",
+      "aliasError": null,
+      "aliasAssigned": 1787562186343,
+      "isRollbackCandidate": true,
+      "createdAt": 1787562167396,
+      "buildingAt": 1787562168517,
+      "ready": 1787562186128,
+      "projectSettings": {
+        "commandForIgnoringBuildStep": null
+      }
+    }
+  ]
+}

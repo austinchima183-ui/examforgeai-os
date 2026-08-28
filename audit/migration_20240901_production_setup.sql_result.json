@@ -1,0 +1,188 @@
+{
+ "file": "20240901_production_setup.sql",
+ "applied": 24,
+ "skipped": 15,
+ "failed": 45,
+ "errors": [
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_exams_available ON exams (available_from, available_until) WHERE status = 'published'",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"available_from\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_exam_sessions_status ON exam_sessions (status)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"status\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_exam_sessions_ends_at ON exam_sessions (ends_at) WHERE status = 'in_progress'",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"status\\\" does not exist\\nLINE 1: CREATE INDEX IF NOT EXISTS idx_exam_sessions_ends_at ON exam_sessions (ends_at) WHERE status = 'in_pr"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_exam_sessions_student_active ON exam_sessions (student_id, status) WHERE status IN ('in_p",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"status\\\" does not exist\\nLINE 1: CREATE INDEX IF NOT EXISTS idx_exam_sessions_student_active ON exam_sessions (student_id, status) WHE"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_exam_results_subject_id ON exam_results (subject_id)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"subject_id\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_messages_sender ON messages (sender_id)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"messages\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_messages_recipient ON messages (recipient_id)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"messages\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_messages_recipient_unread ON messages (recipient_id, is_read) WHERE is_read = false",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"messages\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_messages_school_id ON messages (school_id)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"messages\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_exam_audit_events_session ON exam_audit_events (session_id)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"exam_audit_events\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_exam_audit_events_student ON exam_audit_events (student_id)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"exam_audit_events\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_exam_audit_events_type ON exam_audit_events (event_type)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"exam_audit_events\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_tamper_events_session ON tamper_events (session_id)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"tamper_events\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_tamper_events_severity ON tamper_events (severity) WHERE severity IN ('high', 'critical')",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"tamper_events\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_offline_sync_session ON offline_sync_queue (session_id)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"offline_sync_queue\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_offline_sync_status ON offline_sync_queue (status) WHERE status = 'pending'",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"offline_sync_queue\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_organizations_slug ON organizations (slug) WHERE slug IS NOT NULL",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"slug\\\" does not exist\\nLINE 1: CREATE INDEX IF NOT EXISTS idx_organizations_slug ON organizations (slug) WHERE slug IS NOT NULL\\n     "
+  },
+  {
+   "stmt": "ALTER TABLE questions ENABLE ROW LEVEL SECURITY",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"questions\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE audit_logs ENABLE ROW LEVEL SECURITY",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"audit_logs\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE attendance ENABLE ROW LEVEL SECURITY",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"attendance\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE fees ENABLE ROW LEVEL SECURITY",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"fees\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE fee_payments ENABLE ROW LEVEL SECURITY",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"fee_payments\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE messages ENABLE ROW LEVEL SECURITY",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"messages\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE POLICY \"users_tenant_isolation\" ON users\n  FOR ALL\n  USING (\n    school_id = (SELECT school_id FROM users WHERE i",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42710: policy \\\"users_tenant_isolation\\\" for table \\\"users\\\" already exists\\n\"}"
+  },
+  {
+   "stmt": "CREATE POLICY \"exams_tenant_isolation\" ON exams\n  FOR SELECT\n  USING (\n    school_id = (SELECT school_id FROM users WHER",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42710: policy \\\"exams_tenant_isolation\\\" for table \\\"exams\\\" already exists\\n\"}"
+  },
+  {
+   "stmt": "CREATE POLICY \"exam_sessions_student_isolation\" ON exam_sessions\n  FOR SELECT\n  USING (\n    student_id = auth.uid()\n    ",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42710: policy \\\"exam_sessions_student_isolation\\\" for table \\\"exam_sessions\\\" already exists\\n\"}"
+  },
+  {
+   "stmt": "CREATE POLICY \"exam_results_isolation\" ON exam_results\n  FOR SELECT\n  USING (\n    student_id = auth.uid()\n    OR EXISTS ",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42710: policy \\\"exam_results_isolation\\\" for table \\\"exam_results\\\" already exists\\n\"}"
+  },
+  {
+   "stmt": "CREATE POLICY \"messages_user_isolation\" ON messages\n  FOR SELECT\n  USING (\n    sender_id = auth.uid() OR recipient_id = ",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"messages\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE POLICY \"notifications_user_isolation\" ON notifications\n  FOR ALL\n  USING (\n    user_id = auth.uid()\n  )",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42710: policy \\\"notifications_user_isolation\\\" for table \\\"notifications\\\" already exists\\n\"}"
+  },
+  {
+   "stmt": "CREATE TRIGGER audit_users AFTER INSERT OR UPDATE OR DELETE ON users\n  FOR EACH ROW EXECUTE FUNCTION audit_trigger_func(",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42710: trigger \\\"audit_users\\\" for relation \\\"users\\\" already exists\\n\"}"
+  },
+  {
+   "stmt": "CREATE TRIGGER audit_exams AFTER INSERT OR UPDATE OR DELETE ON exams\n  FOR EACH ROW EXECUTE FUNCTION audit_trigger_func(",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42710: trigger \\\"audit_exams\\\" for relation \\\"exams\\\" already exists\\n\"}"
+  },
+  {
+   "stmt": "CREATE TRIGGER audit_exam_sessions AFTER INSERT OR UPDATE OR DELETE ON exam_sessions\n  FOR EACH ROW EXECUTE FUNCTION aud",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42710: trigger \\\"audit_exam_sessions\\\" for relation \\\"exam_sessions\\\" already exists\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE exam_results ADD CONSTRAINT chk_score_range\n  CHECK (score >= 0 AND score <= total_marks)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"score\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE exam_results ADD CONSTRAINT chk_percentage_range\n  CHECK (percentage >= 0 AND percentage <= 100)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"percentage\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE exams ADD CONSTRAINT chk_duration_positive\n  CHECK (duration > 0)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"duration\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE exams ADD CONSTRAINT chk_max_attempts\n  CHECK (max_attempts >= 1)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"max_attempts\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE questions ADD CONSTRAINT chk_marks_positive\n  CHECK (marks > 0)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"questions\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE fees ADD CONSTRAINT chk_fee_amount\n  CHECK (amount >= 0)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"fees\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE fee_payments ADD CONSTRAINT chk_payment_amount\n  CHECK (amount >= 0)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"fee_payments\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE users ADD CONSTRAINT chk_valid_role\n  CHECK (role IN ('student', 'parent', 'teacher', 'school_admin', 'super",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42710: constraint \\\"chk_valid_role\\\" for relation \\\"users\\\" already exists\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE exams ADD CONSTRAINT chk_valid_exam_status\n  CHECK (status IN ('draft', 'published', 'active', 'completed', ",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42710: constraint \\\"chk_valid_exam_status\\\" for relation \\\"exams\\\" already exists\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE exam_sessions ADD CONSTRAINT chk_valid_session_status\n  CHECK (status IN ('in_progress', 'submitted', 'timed",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"status\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE attendance ADD CONSTRAINT chk_valid_attendance_status\n  CHECK (status IN ('present', 'absent', 'late', 'excu",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"attendance\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE fee_payments ADD CONSTRAINT chk_valid_payment_status\n  CHECK (status IN ('pending', 'paid', 'overdue', 'part",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"fee_payments\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE tamper_events ADD CONSTRAINT chk_valid_severity\n  CHECK (severity IN ('low', 'medium', 'high', 'critical'))",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"tamper_events\\\" does not exist\\n\"}"
+  }
+ ]
+}

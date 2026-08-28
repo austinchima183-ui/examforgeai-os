@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RLS Policy Audit — Coverage Report > coverage report is complete — summary 1`] = `
+{
+  "allPassed": true,
+  "scopingBreakdown": {
+    "none": 2,
+    "org_id": 6,
+    "school_id": 5,
+    "user_id": 2,
+  },
+  "tables": 15,
+  "tablesWithFullCoverage": 15,
+  "tablesWithServiceRoleBypass": 15,
+  "totalPolicies": 92,
+}
+`;

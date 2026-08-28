@@ -1,0 +1,2484 @@
+{
+  "base": "http://localhost:3000",
+  "total": 275,
+  "pass": 274,
+  "warn": 1,
+  "fail": 0,
+  "results": [
+    {
+      "route": "/(admin)/marketing/analytics/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fanalytics%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fanalytics%2Fpage"
+    },
+    {
+      "route": "/(admin)/marketing/contacts/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fcontacts%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fcontacts%2Fpage"
+    },
+    {
+      "route": "/(admin)/marketing/demos/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fdemos%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fdemos%2Fpage"
+    },
+    {
+      "route": "/(admin)/marketing/leads/[id]/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fleads%2F%5Bid%5D%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fleads%2F%5Bid%5D%2Fpage"
+    },
+    {
+      "route": "/(admin)/marketing/leads/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fleads%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fleads%2Fpage"
+    },
+    {
+      "route": "/(admin)/marketing/newsletter/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fnewsletter%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fnewsletter%2Fpage"
+    },
+    {
+      "route": "/(admin)/marketing/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fpage"
+    },
+    {
+      "route": "/(app)/admin/agents/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fagents%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fadmin%2Fagents%2Fpage"
+    },
+    {
+      "route": "/(app)/admin/audit-logs/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Faudit-logs%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fadmin%2Faudit-logs%2Fpage"
+    },
+    {
+      "route": "/(app)/admin/backups/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fbackups%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fadmin%2Fbackups%2Fpage"
+    },
+    {
+      "route": "/(app)/admin/branding/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fbranding%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fadmin%2Fbranding%2Fpage"
+    },
+    {
+      "route": "/(app)/admin/developers/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fdevelopers%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fadmin%2Fdevelopers%2Fpage"
+    },
+    {
+      "route": "/(app)/admin/integrations/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fintegrations%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fadmin%2Fintegrations%2Fpage"
+    },
+    {
+      "route": "/(app)/admin/organization-settings/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Forganization-settings%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fadmin%2Forganization-settings%2Fpage"
+    },
+    {
+      "route": "/(app)/admin/organizations/[id]/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Forganizations%2F%5Bid%5D%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fadmin%2Forganizations%2F%5Bid%5D%2Fpage"
+    },
+    {
+      "route": "/(app)/admin/organizations/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Forganizations%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fadmin%2Forganizations%2Fpage"
+    },
+    {
+      "route": "/(app)/admin/plugins/[id]/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fplugins%2F%5Bid%5D%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fadmin%2Fplugins%2F%5Bid%5D%2Fpage"
+    },
+    {
+      "route": "/(app)/admin/plugins/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fplugins%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fadmin%2Fplugins%2Fpage"
+    },
+    {
+      "route": "/(app)/admin/roles/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Froles%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fadmin%2Froles%2Fpage"
+    },
+    {
+      "route": "/(app)/admin/security/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fsecurity%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fadmin%2Fsecurity%2Fpage"
+    },
+    {
+      "route": "/(app)/admin/users/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fusers%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fadmin%2Fusers%2Fpage"
+    },
+    {
+      "route": "/(app)/analytics/enterprise/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fanalytics%2Fenterprise%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fanalytics%2Fenterprise%2Fpage"
+    },
+    {
+      "route": "/(app)/analytics/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fanalytics%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fanalytics%2Fpage"
+    },
+    {
+      "route": "/(app)/billing/enterprise/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fbilling%2Fenterprise%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fbilling%2Fenterprise%2Fpage"
+    },
+    {
+      "route": "/(app)/billing/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fbilling%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fbilling%2Fpage"
+    },
+    {
+      "route": "/(app)/billing/plans/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fbilling%2Fplans%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fbilling%2Fplans%2Fpage"
+    },
+    {
+      "route": "/(app)/cbt/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fcbt%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fcbt%2Fpage"
+    },
+    {
+      "route": "/(app)/dashboard/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fdashboard%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fdashboard%2Fpage"
+    },
+    {
+      "route": "/(app)/dashboard/school-admin/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fdashboard%2Fschool-admin%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fdashboard%2Fschool-admin%2Fpage"
+    },
+    {
+      "route": "/(app)/dashboard/student/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fdashboard%2Fstudent%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fdashboard%2Fstudent%2Fpage"
+    },
+    {
+      "route": "/(app)/dashboard/super-admin/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fdashboard%2Fsuper-admin%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fdashboard%2Fsuper-admin%2Fpage"
+    },
+    {
+      "route": "/(app)/dashboard/teacher/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fdashboard%2Fteacher%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fdashboard%2Fteacher%2Fpage"
+    },
+    {
+      "route": "/(app)/exams/[id]/monitor/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fexams%2F%5Bid%5D%2Fmonitor%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fexams%2F%5Bid%5D%2Fmonitor%2Fpage"
+    },
+    {
+      "route": "/(app)/exams/[id]/take/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fexams%2F%5Bid%5D%2Ftake%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fexams%2F%5Bid%5D%2Ftake%2Fpage"
+    },
+    {
+      "route": "/(app)/exams/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fexams%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fexams%2Fpage"
+    },
+    {
+      "route": "/(app)/forbidden/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fforbidden%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fforbidden%2Fpage"
+    },
+    {
+      "route": "/(app)/government/district-intelligence/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fgovernment%2Fdistrict-intelligence%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fgovernment%2Fdistrict-intelligence%2Fpage"
+    },
+    {
+      "route": "/(app)/government/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fgovernment%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fgovernment%2Fpage"
+    },
+    {
+      "route": "/(app)/marketplace/[id]/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fmarketplace%2F%5Bid%5D%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fmarketplace%2F%5Bid%5D%2Fpage"
+    },
+    {
+      "route": "/(app)/marketplace/cart/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fmarketplace%2Fcart%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fmarketplace%2Fcart%2Fpage"
+    },
+    {
+      "route": "/(app)/marketplace/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fmarketplace%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fmarketplace%2Fpage"
+    },
+    {
+      "route": "/(app)/marketplace/reviews/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fmarketplace%2Freviews%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fmarketplace%2Freviews%2Fpage"
+    },
+    {
+      "route": "/(app)/marketplace/seller/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fmarketplace%2Fseller%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fmarketplace%2Fseller%2Fpage"
+    },
+    {
+      "route": "/(app)/marketplace/v2/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fmarketplace%2Fv2%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fmarketplace%2Fv2%2Fpage"
+    },
+    {
+      "route": "/(app)/notifications/history/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fnotifications%2Fhistory%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fnotifications%2Fhistory%2Fpage"
+    },
+    {
+      "route": "/(app)/notifications/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fnotifications%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fnotifications%2Fpage"
+    },
+    {
+      "route": "/(app)/notifications/preferences/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fnotifications%2Fpreferences%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fnotifications%2Fpreferences%2Fpage"
+    },
+    {
+      "route": "/(app)/notifications/templates/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fnotifications%2Ftemplates%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fnotifications%2Ftemplates%2Fpage"
+    },
+    {
+      "route": "/(app)/parent/ai-advisor/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fparent%2Fai-advisor%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fparent%2Fai-advisor%2Fpage"
+    },
+    {
+      "route": "/(app)/parent/attendance/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fparent%2Fattendance%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fparent%2Fattendance%2Fpage"
+    },
+    {
+      "route": "/(app)/parent/child-progress/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fparent%2Fchild-progress%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fparent%2Fchild-progress%2Fpage"
+    },
+    {
+      "route": "/(app)/parent/dashboard/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fparent%2Fdashboard%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fparent%2Fdashboard%2Fpage"
+    },
+    {
+      "route": "/(app)/parent/fees/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fparent%2Ffees%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fparent%2Ffees%2Fpage"
+    },
+    {
+      "route": "/(app)/parent/messaging/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fparent%2Fmessaging%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fparent%2Fmessaging%2Fpage"
+    },
+    {
+      "route": "/(app)/parents/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fparents%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fparents%2Fpage"
+    },
+    {
+      "route": "/(app)/profile/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fprofile%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fprofile%2Fpage"
+    },
+    {
+      "route": "/(app)/question-bank/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fquestion-bank%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fquestion-bank%2Fpage"
+    },
+    {
+      "route": "/(app)/reports/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Freports%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Freports%2Fpage"
+    },
+    {
+      "route": "/(app)/results/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fresults%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fresults%2Fpage"
+    },
+    {
+      "route": "/(app)/school-admin/ai-insights/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschool-admin%2Fai-insights%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fschool-admin%2Fai-insights%2Fpage"
+    },
+    {
+      "route": "/(app)/school-admin/predictive/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschool-admin%2Fpredictive%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fschool-admin%2Fpredictive%2Fpage"
+    },
+    {
+      "route": "/(app)/school/attendance/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschool%2Fattendance%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fschool%2Fattendance%2Fpage"
+    },
+    {
+      "route": "/(app)/school/calendar/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschool%2Fcalendar%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fschool%2Fcalendar%2Fpage"
+    },
+    {
+      "route": "/(app)/school/classes/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschool%2Fclasses%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fschool%2Fclasses%2Fpage"
+    },
+    {
+      "route": "/(app)/school/fees/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschool%2Ffees%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fschool%2Ffees%2Fpage"
+    },
+    {
+      "route": "/(app)/school/timetable/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschool%2Ftimetable%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fschool%2Ftimetable%2Fpage"
+    },
+    {
+      "route": "/(app)/schools/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschools%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fschools%2Fpage"
+    },
+    {
+      "route": "/(app)/search/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fsearch%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fsearch%2Fpage"
+    },
+    {
+      "route": "/(app)/settings/api-keys/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fsettings%2Fapi-keys%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fsettings%2Fapi-keys%2Fpage"
+    },
+    {
+      "route": "/(app)/settings/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fsettings%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fsettings%2Fpage"
+    },
+    {
+      "route": "/(app)/settings/security/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fsettings%2Fsecurity%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fsettings%2Fsecurity%2Fpage"
+    },
+    {
+      "route": "/(app)/settings/webhooks/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fsettings%2Fwebhooks%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fsettings%2Fwebhooks%2Fpage"
+    },
+    {
+      "route": "/(app)/student/ai-tutor/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fai-tutor%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fstudent%2Fai-tutor%2Fpage"
+    },
+    {
+      "route": "/(app)/student/certificates/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fcertificates%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fstudent%2Fcertificates%2Fpage"
+    },
+    {
+      "route": "/(app)/student/explain/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fexplain%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fstudent%2Fexplain%2Fpage"
+    },
+    {
+      "route": "/(app)/student/flashcards/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fflashcards%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fstudent%2Fflashcards%2Fpage"
+    },
+    {
+      "route": "/(app)/student/practice/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fpractice%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fstudent%2Fpractice%2Fpage"
+    },
+    {
+      "route": "/(app)/student/progress/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fprogress%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fstudent%2Fprogress%2Fpage"
+    },
+    {
+      "route": "/(app)/student/revision-hub/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Frevision-hub%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fstudent%2Frevision-hub%2Fpage"
+    },
+    {
+      "route": "/(app)/student/study-planner/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fstudy-planner%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fstudent%2Fstudy-planner%2Fpage"
+    },
+    {
+      "route": "/(app)/students/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudents%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fstudents%2Fpage"
+    },
+    {
+      "route": "/(app)/teacher/ai-question-generator/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fteacher%2Fai-question-generator%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fteacher%2Fai-question-generator%2Fpage"
+    },
+    {
+      "route": "/(app)/teacher/content-assistant/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fteacher%2Fcontent-assistant%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fteacher%2Fcontent-assistant%2Fpage"
+    },
+    {
+      "route": "/(app)/teacher/grading/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fteacher%2Fgrading%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fteacher%2Fgrading%2Fpage"
+    },
+    {
+      "route": "/(app)/teacher/lesson-planner/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fteacher%2Flesson-planner%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fteacher%2Flesson-planner%2Fpage"
+    },
+    {
+      "route": "/(app)/teacher/rubric-builder/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fteacher%2Frubric-builder%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fteacher%2Frubric-builder%2Fpage"
+    },
+    {
+      "route": "/(app)/teacher/worksheet-builder/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fteacher%2Fworksheet-builder%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fteacher%2Fworksheet-builder%2Fpage"
+    },
+    {
+      "route": "/(app)/teachers/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fteachers%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fteachers%2Fpage"
+    },
+    {
+      "route": "/(app)/workflows/[id]/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fworkflows%2F%5Bid%5D%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fworkflows%2F%5Bid%5D%2Fpage"
+    },
+    {
+      "route": "/(app)/workflows/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fworkflows%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28app%29%2Fworkflows%2Fpage"
+    },
+    {
+      "route": "/(marketing)/about/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fabout%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fabout%2Fpage"
+    },
+    {
+      "route": "/(marketing)/api-docs/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fapi-docs%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fapi-docs%2Fpage"
+    },
+    {
+      "route": "/(marketing)/blog/[slug]/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fblog%2F%5Bslug%5D%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fblog%2F%5Bslug%5D%2Fpage"
+    },
+    {
+      "route": "/(marketing)/blog/author/[slug]/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fblog%2Fauthor%2F%5Bslug%5D%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fblog%2Fauthor%2F%5Bslug%5D%2Fpage"
+    },
+    {
+      "route": "/(marketing)/blog/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fblog%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fblog%2Fpage"
+    },
+    {
+      "route": "/(marketing)/careers/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fcareers%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fcareers%2Fpage"
+    },
+    {
+      "route": "/(marketing)/case-studies/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fcase-studies%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fcase-studies%2Fpage"
+    },
+    {
+      "route": "/(marketing)/changelog/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fchangelog%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fchangelog%2Fpage"
+    },
+    {
+      "route": "/(marketing)/community/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fcommunity%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fcommunity%2Fpage"
+    },
+    {
+      "route": "/(marketing)/contact/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fcontact%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fcontact%2Fpage"
+    },
+    {
+      "route": "/(marketing)/cookies/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fcookies%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fcookies%2Fpage"
+    },
+    {
+      "route": "/(marketing)/customers/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fcustomers%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fcustomers%2Fpage"
+    },
+    {
+      "route": "/(marketing)/demo/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fdemo%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fdemo%2Fpage"
+    },
+    {
+      "route": "/(marketing)/developers/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fdevelopers%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fdevelopers%2Fpage"
+    },
+    {
+      "route": "/(marketing)/docs/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fdocs%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fdocs%2Fpage"
+    },
+    {
+      "route": "/(marketing)/documentation/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fdocumentation%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fdocumentation%2Fpage"
+    },
+    {
+      "route": "/(marketing)/features/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Ffeatures%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Ffeatures%2Fpage"
+    },
+    {
+      "route": "/(marketing)/gdpr/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fgdpr%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fgdpr%2Fpage"
+    },
+    {
+      "route": "/(marketing)/help-center/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fhelp-center%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fhelp-center%2Fpage"
+    },
+    {
+      "route": "/(marketing)/integrations/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fintegrations%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fintegrations%2Fpage"
+    },
+    {
+      "route": "/(marketing)/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fpage"
+    },
+    {
+      "route": "/(marketing)/partners/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fpartners%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fpartners%2Fpage"
+    },
+    {
+      "route": "/(marketing)/press-kit/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fpress-kit%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fpress-kit%2Fpage"
+    },
+    {
+      "route": "/(marketing)/pricing/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fpricing%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fpricing%2Fpage"
+    },
+    {
+      "route": "/(marketing)/privacy/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fprivacy%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fprivacy%2Fpage"
+    },
+    {
+      "route": "/(marketing)/security/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fsecurity%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fsecurity%2Fpage"
+    },
+    {
+      "route": "/(marketing)/solutions/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fsolutions%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fsolutions%2Fpage"
+    },
+    {
+      "route": "/(marketing)/status/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fstatus%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fstatus%2Fpage"
+    },
+    {
+      "route": "/(marketing)/terms/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fterms%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28marketing%29%2Fterms%2Fpage"
+    },
+    {
+      "route": "/(public)/forgot-password/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28public%29%2Fforgot-password%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28public%29%2Fforgot-password%2Fpage"
+    },
+    {
+      "route": "/(public)/login/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28public%29%2Flogin%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28public%29%2Flogin%2Fpage"
+    },
+    {
+      "route": "/(public)/register/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28public%29%2Fregister%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28public%29%2Fregister%2Fpage"
+    },
+    {
+      "route": "/(public)/reset-password/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28public%29%2Freset-password%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28public%29%2Freset-password%2Fpage"
+    },
+    {
+      "route": "/(public)/verify-email/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28public%29%2Fverify-email%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F%28public%29%2Fverify-email%2Fpage"
+    },
+    {
+      "route": "/_global-error/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F_global-error%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F_global-error%2Fpage"
+    },
+    {
+      "route": "/_not-found/page",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F_not-found%2Fpage",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2F_not-found%2Fpage"
+    },
+    {
+      "route": "/opengraph-image/route",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2Fopengraph-image%2Froute",
+      "verdict": "PASS",
+      "expected": "307→/login",
+      "body": "/login?redirect=%2Fopengraph-image%2Froute"
+    },
+    {
+      "route": "/sitemap.xml/route",
+      "isApi": false,
+      "status": 404,
+      "location": "",
+      "verdict": "WARN_NOT_FOUND",
+      "expected": "307→/login",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/admin/audit-logs/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/admin/backups/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/admin/branding/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/admin/integrations/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/admin/organization-settings/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/admin/plugins/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/admin/roles/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/admin/users/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/agents/[id]/execute/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/agents/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/ai/agents/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/ai/complete/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/ai/government/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/ai/parent/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/ai/predictive/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/ai/school-admin/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/ai/stream/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/ai/student/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/ai/teacher/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/alerting/channels/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/alerting/incidents/[id]/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/alerting/incidents/[id]/timeline/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/alerting/incidents/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/alerting/suppressions/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/analytics/enterprise/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/analytics/events/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/analytics/nlq/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/analytics/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/auth/callback/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/auth/csrf/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/billing/audit/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/billing/checkout/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/billing/enterprise/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/billing/invoices/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/billing/paystack/checkout/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/billing/paystack/webhook/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/billing/refund/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/billing/refunds/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/billing/revenue/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/billing/subscription-lifecycle/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/billing/subscriptions/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/billing/webhook/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/billing/webhooks/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/cbt/answer/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/cbt/exam/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/cbt/session/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/cbt/submit/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/cbt/timing/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/contact/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/demo-booking/[id]/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/demo-booking/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "{\"error\":\"Authentication required\"}"
+    },
+    {
+      "route": "/api/developer/keys/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/developer/oauth-apps/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/developer/openapi/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/events/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/feedback/[id]/comments/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/feedback/[id]/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/feedback/ai-rating/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/feedback/analytics/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/feedback/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/health/ai/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/health/database/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/health/detailed/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/health/redis/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/health/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/import/errors/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/import/execute/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/import/progress/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/import/validate/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketing/analytics/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketing/contacts/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketing/demos/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketing/leads/[id]/activities/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketing/leads/[id]/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketing/leads/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketing/newsletter/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace-v2/listings/[id]/purchase/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace-v2/listings/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace/checkout/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace/download/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace/my-purchases/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace/product/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace/purchase-status/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace/purchase/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace/related/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace/reviews/report/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace/reviews/respond/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace/reviews/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace/seller/analytics/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace/seller/products/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace/verify-payment/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/marketplace/webhook/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/newsletter/subscribe/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/newsletter/unsubscribe/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/newsletter/verify/route",
+      "isApi": true,
+      "status": 404,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\""
+    },
+    {
+      "route": "/api/notifications/delivery-status/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/notifications/digest/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/notifications/history/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/notifications/preferences/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/notifications/send/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/notifications/templates/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/og/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "200-ish",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/organizations/[id]/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/organizations/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/organizations/switch/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/parent/attendance/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/parent/child-progress/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/parent/dashboard/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/parent/fees/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/parent/messaging/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/plugins/[id]/install/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/plugins/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/reports/generate/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/reports/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/reports/schedule/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/reports/share/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/school/attendance/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/school/calendar/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/school/classes/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/school/fees/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/school/timetable/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/search/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/security/passkeys/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/security/sessions/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/security/sso/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/seed/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/settings/api-keys/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/settings/security/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/settings/sso/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/settings/webhooks/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/student/certificates/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/student/flashcards/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/student/practice/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/student/progress/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/student/revision-hub/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/student/study-planner/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/teacher/grade/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/teacher/lesson-plans/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/teacher/rubrics/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/teacher/submissions/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/teacher/worksheets/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/tenants/resolve/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/workflows/[id]/execute/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/workflows/[id]/executions/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/workflows/[id]/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    {
+      "route": "/api/workflows/route",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "verdict": "PASS",
+      "expected": "401",
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    }
+  ]
+}

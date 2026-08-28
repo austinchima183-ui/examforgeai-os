@@ -1,0 +1,787 @@
+{
+  "summary": {
+    "totalPagesChecked": 99,
+    "pagesWithIssues": 0,
+    "totalIssueGroups": 0,
+    "pass": true
+  },
+  "results": [
+    {
+      "role": "student",
+      "viewport": "desktop-1440",
+      "route": "/dashboard/student",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "desktop-1440",
+      "route": "/student/practice",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "desktop-1440",
+      "route": "/student/progress",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "desktop-1440",
+      "route": "/exams",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "desktop-1440",
+      "route": "/notifications",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "desktop-1440",
+      "route": "/settings",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "desktop-1440",
+      "route": "/profile",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "desktop-1440",
+      "route": "/billing",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "tablet-768",
+      "route": "/dashboard/student",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "tablet-768",
+      "route": "/student/practice",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "tablet-768",
+      "route": "/student/progress",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "tablet-768",
+      "route": "/exams",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "tablet-768",
+      "route": "/notifications",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "tablet-768",
+      "route": "/settings",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "tablet-768",
+      "route": "/profile",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "tablet-768",
+      "route": "/billing",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "mobile-390",
+      "route": "/dashboard/student",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "mobile-390",
+      "route": "/student/practice",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "mobile-390",
+      "route": "/student/progress",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "mobile-390",
+      "route": "/exams",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "mobile-390",
+      "route": "/notifications",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "mobile-390",
+      "route": "/settings",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "mobile-390",
+      "route": "/profile",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "student",
+      "viewport": "mobile-390",
+      "route": "/billing",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "desktop-1440",
+      "route": "/dashboard/teacher",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "desktop-1440",
+      "route": "/exams",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "desktop-1440",
+      "route": "/question-bank",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "desktop-1440",
+      "route": "/teacher/lesson-plans",
+      "httpStatus": 404,
+      "skipped": true
+    },
+    {
+      "role": "teacher",
+      "viewport": "desktop-1440",
+      "route": "/teacher/grading",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "desktop-1440",
+      "route": "/teacher/worksheets",
+      "httpStatus": 404,
+      "skipped": true
+    },
+    {
+      "role": "teacher",
+      "viewport": "desktop-1440",
+      "route": "/analytics",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "tablet-768",
+      "route": "/dashboard/teacher",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "tablet-768",
+      "route": "/exams",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "tablet-768",
+      "route": "/question-bank",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "tablet-768",
+      "route": "/teacher/lesson-plans",
+      "httpStatus": 404,
+      "skipped": true
+    },
+    {
+      "role": "teacher",
+      "viewport": "tablet-768",
+      "route": "/teacher/grading",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "tablet-768",
+      "route": "/teacher/worksheets",
+      "httpStatus": 404,
+      "skipped": true
+    },
+    {
+      "role": "teacher",
+      "viewport": "tablet-768",
+      "route": "/analytics",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "mobile-390",
+      "route": "/dashboard/teacher",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "mobile-390",
+      "route": "/exams",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "mobile-390",
+      "route": "/question-bank",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "mobile-390",
+      "route": "/teacher/lesson-plans",
+      "httpStatus": 404,
+      "skipped": true
+    },
+    {
+      "role": "teacher",
+      "viewport": "mobile-390",
+      "route": "/teacher/grading",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "teacher",
+      "viewport": "mobile-390",
+      "route": "/teacher/worksheets",
+      "httpStatus": 404,
+      "skipped": true
+    },
+    {
+      "role": "teacher",
+      "viewport": "mobile-390",
+      "route": "/analytics",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "desktop-1440",
+      "route": "/parent/dashboard",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "desktop-1440",
+      "route": "/parent/child-progress",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "desktop-1440",
+      "route": "/parent/attendance",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "desktop-1440",
+      "route": "/parent/fees",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "desktop-1440",
+      "route": "/parent/messaging",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "desktop-1440",
+      "route": "/notifications",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "tablet-768",
+      "route": "/parent/dashboard",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "tablet-768",
+      "route": "/parent/child-progress",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "tablet-768",
+      "route": "/parent/attendance",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "tablet-768",
+      "route": "/parent/fees",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "tablet-768",
+      "route": "/parent/messaging",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "tablet-768",
+      "route": "/notifications",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "mobile-390",
+      "route": "/parent/dashboard",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "mobile-390",
+      "route": "/parent/child-progress",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "mobile-390",
+      "route": "/parent/attendance",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "mobile-390",
+      "route": "/parent/fees",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "mobile-390",
+      "route": "/parent/messaging",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "parent",
+      "viewport": "mobile-390",
+      "route": "/notifications",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "desktop-1440",
+      "route": "/dashboard/school-admin",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "desktop-1440",
+      "route": "/teachers",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "desktop-1440",
+      "route": "/students",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "desktop-1440",
+      "route": "/school/fees",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "desktop-1440",
+      "route": "/school/attendance",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "desktop-1440",
+      "route": "/school/calendar",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "desktop-1440",
+      "route": "/school/classes",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "desktop-1440",
+      "route": "/analytics",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "tablet-768",
+      "route": "/dashboard/school-admin",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "tablet-768",
+      "route": "/teachers",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "tablet-768",
+      "route": "/students",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "tablet-768",
+      "route": "/school/fees",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "tablet-768",
+      "route": "/school/attendance",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "tablet-768",
+      "route": "/school/calendar",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "tablet-768",
+      "route": "/school/classes",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "tablet-768",
+      "route": "/analytics",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "mobile-390",
+      "route": "/dashboard/school-admin",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "mobile-390",
+      "route": "/teachers",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "mobile-390",
+      "route": "/students",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "mobile-390",
+      "route": "/school/fees",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "mobile-390",
+      "route": "/school/attendance",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "mobile-390",
+      "route": "/school/calendar",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "mobile-390",
+      "route": "/school/classes",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "school_admin",
+      "viewport": "mobile-390",
+      "route": "/analytics",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "desktop-1440",
+      "route": "/dashboard/super-admin",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "desktop-1440",
+      "route": "/admin/schools",
+      "httpStatus": 404,
+      "skipped": true
+    },
+    {
+      "role": "super_admin",
+      "viewport": "desktop-1440",
+      "route": "/admin/users",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "desktop-1440",
+      "route": "/admin/billing",
+      "httpStatus": 404,
+      "skipped": true
+    },
+    {
+      "role": "super_admin",
+      "viewport": "desktop-1440",
+      "route": "/admin/audit-logs",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "desktop-1440",
+      "route": "/admin/security",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "desktop-1440",
+      "route": "/marketplace",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "desktop-1440",
+      "route": "/analytics",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "tablet-768",
+      "route": "/dashboard/super-admin",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "tablet-768",
+      "route": "/admin/schools",
+      "httpStatus": 404,
+      "skipped": true
+    },
+    {
+      "role": "super_admin",
+      "viewport": "tablet-768",
+      "route": "/admin/users",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "tablet-768",
+      "route": "/admin/billing",
+      "httpStatus": 404,
+      "skipped": true
+    },
+    {
+      "role": "super_admin",
+      "viewport": "tablet-768",
+      "route": "/admin/audit-logs",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "tablet-768",
+      "route": "/admin/security",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "tablet-768",
+      "route": "/marketplace",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "tablet-768",
+      "route": "/analytics",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "mobile-390",
+      "route": "/dashboard/super-admin",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "mobile-390",
+      "route": "/admin/schools",
+      "httpStatus": 404,
+      "skipped": true
+    },
+    {
+      "role": "super_admin",
+      "viewport": "mobile-390",
+      "route": "/admin/users",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "mobile-390",
+      "route": "/admin/billing",
+      "httpStatus": 404,
+      "skipped": true
+    },
+    {
+      "role": "super_admin",
+      "viewport": "mobile-390",
+      "route": "/admin/audit-logs",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "mobile-390",
+      "route": "/admin/security",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "mobile-390",
+      "route": "/marketplace",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "role": "super_admin",
+      "viewport": "mobile-390",
+      "route": "/analytics",
+      "ok": true,
+      "issues": []
+    }
+  ]
+}

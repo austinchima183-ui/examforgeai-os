@@ -1,0 +1,3383 @@
+{
+  "generated_at": "2026-08-26T01:27:16.340540Z",
+  "summary": {
+    "pages": 124,
+    "apis": 146,
+    "server_actions": 45,
+    "security_findings": 109,
+    "pages_needing_review": 65,
+    "apis_needing_review": 85
+  },
+  "pages": [
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "route": "/app/(marketing)",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/government/page.tsx",
+      "route": "/app/(app)/government",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/reports/page.tsx",
+      "route": "/app/(app)/reports",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/marketplace/page.tsx",
+      "route": "/app/(app)/marketplace",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/notifications/page.tsx",
+      "route": "/app/(app)/notifications",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/exams/page.tsx",
+      "route": "/app/(app)/exams",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/billing/page.tsx",
+      "route": "/app/(app)/billing",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/workflows/page.tsx",
+      "route": "/app/(app)/workflows",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/settings/page.tsx",
+      "route": "/app/(app)/settings",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/analytics/page.tsx",
+      "route": "/app/(app)/analytics",
+      "is_client": true,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/students/page.tsx",
+      "route": "/app/(app)/students",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/search/page.tsx",
+      "route": "/app/(app)/search",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/teachers/page.tsx",
+      "route": "/app/(app)/teachers",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/parents/page.tsx",
+      "route": "/app/(app)/parents",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/forbidden/page.tsx",
+      "route": "/app/(app)/forbidden",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/schools/page.tsx",
+      "route": "/app/(app)/schools",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/results/page.tsx",
+      "route": "/app/(app)/results",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/profile/page.tsx",
+      "route": "/app/(app)/profile",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/question-bank/page.tsx",
+      "route": "/app/(app)/question-bank",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/dashboard/page.tsx",
+      "route": "/app/(app)/dashboard",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/cbt/page.tsx",
+      "route": "/app/(app)/cbt",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/government/district-intelligence/page.tsx",
+      "route": "/app/(app)/government/district-intelligence",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/marketplace/reviews/page.tsx",
+      "route": "/app/(app)/marketplace/reviews",
+      "is_client": true,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/marketplace/seller/page.tsx",
+      "route": "/app/(app)/marketplace/seller",
+      "is_client": true,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/marketplace/[id]/page.tsx",
+      "route": "/app/(app)/marketplace/[id]",
+      "is_client": true,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/marketplace/v2/page.tsx",
+      "route": "/app/(app)/marketplace/v2",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/marketplace/cart/page.tsx",
+      "route": "/app/(app)/marketplace/cart",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/notifications/history/page.tsx",
+      "route": "/app/(app)/notifications/history",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/notifications/templates/page.tsx",
+      "route": "/app/(app)/notifications/templates",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/notifications/preferences/page.tsx",
+      "route": "/app/(app)/notifications/preferences",
+      "is_client": true,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/student/revision-hub/page.tsx",
+      "route": "/app/(app)/student/revision-hub",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/student/practice/page.tsx",
+      "route": "/app/(app)/student/practice",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/student/certificates/page.tsx",
+      "route": "/app/(app)/student/certificates",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/student/progress/page.tsx",
+      "route": "/app/(app)/student/progress",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/student/flashcards/page.tsx",
+      "route": "/app/(app)/student/flashcards",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/student/ai-tutor/page.tsx",
+      "route": "/app/(app)/student/ai-tutor",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/student/study-planner/page.tsx",
+      "route": "/app/(app)/student/study-planner",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/student/explain/page.tsx",
+      "route": "/app/(app)/student/explain",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/admin/backups/page.tsx",
+      "route": "/app/(app)/admin/backups",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/admin/audit-logs/page.tsx",
+      "route": "/app/(app)/admin/audit-logs",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/admin/users/page.tsx",
+      "route": "/app/(app)/admin/users",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/admin/agents/page.tsx",
+      "route": "/app/(app)/admin/agents",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/admin/plugins/page.tsx",
+      "route": "/app/(app)/admin/plugins",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/admin/integrations/page.tsx",
+      "route": "/app/(app)/admin/integrations",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/admin/security/page.tsx",
+      "route": "/app/(app)/admin/security",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/admin/organization-settings/page.tsx",
+      "route": "/app/(app)/admin/organization-settings",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/admin/roles/page.tsx",
+      "route": "/app/(app)/admin/roles",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/admin/organizations/page.tsx",
+      "route": "/app/(app)/admin/organizations",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/admin/branding/page.tsx",
+      "route": "/app/(app)/admin/branding",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/admin/developers/page.tsx",
+      "route": "/app/(app)/admin/developers",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/admin/plugins/[id]/page.tsx",
+      "route": "/app/(app)/admin/plugins/[id]",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/admin/organizations/[id]/page.tsx",
+      "route": "/app/(app)/admin/organizations/[id]",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/exams/[id]/take/page.tsx",
+      "route": "/app/(app)/exams/[id]/take",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/exams/[id]/monitor/page.tsx",
+      "route": "/app/(app)/exams/[id]/monitor",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/billing/enterprise/page.tsx",
+      "route": "/app/(app)/billing/enterprise",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/billing/plans/page.tsx",
+      "route": "/app/(app)/billing/plans",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/school/fees/page.tsx",
+      "route": "/app/(app)/school/fees",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/school/calendar/page.tsx",
+      "route": "/app/(app)/school/calendar",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/school/timetable/page.tsx",
+      "route": "/app/(app)/school/timetable",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/school/classes/page.tsx",
+      "route": "/app/(app)/school/classes",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/school/attendance/page.tsx",
+      "route": "/app/(app)/school/attendance",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/workflows/[id]/page.tsx",
+      "route": "/app/(app)/workflows/[id]",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/teacher/content-assistant/page.tsx",
+      "route": "/app/(app)/teacher/content-assistant",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/teacher/ai-question-generator/page.tsx",
+      "route": "/app/(app)/teacher/ai-question-generator",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/teacher/lesson-planner/page.tsx",
+      "route": "/app/(app)/teacher/lesson-planner",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/teacher/worksheet-builder/page.tsx",
+      "route": "/app/(app)/teacher/worksheet-builder",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/teacher/rubric-builder/page.tsx",
+      "route": "/app/(app)/teacher/rubric-builder",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/teacher/grading/page.tsx",
+      "route": "/app/(app)/teacher/grading",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/settings/api-keys/page.tsx",
+      "route": "/app/(app)/settings/api-keys",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/settings/security/page.tsx",
+      "route": "/app/(app)/settings/security",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/settings/webhooks/page.tsx",
+      "route": "/app/(app)/settings/webhooks",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/analytics/enterprise/page.tsx",
+      "route": "/app/(app)/analytics/enterprise",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/school-admin/ai-insights/page.tsx",
+      "route": "/app/(app)/school-admin/ai-insights",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/school-admin/predictive/page.tsx",
+      "route": "/app/(app)/school-admin/predictive",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/parent/fees/page.tsx",
+      "route": "/app/(app)/parent/fees",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/parent/attendance/page.tsx",
+      "route": "/app/(app)/parent/attendance",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/parent/ai-advisor/page.tsx",
+      "route": "/app/(app)/parent/ai-advisor",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/parent/child-progress/page.tsx",
+      "route": "/app/(app)/parent/child-progress",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/parent/messaging/page.tsx",
+      "route": "/app/(app)/parent/messaging",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/parent/dashboard/page.tsx",
+      "route": "/app/(app)/parent/dashboard",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(app)/dashboard/student/page.tsx",
+      "route": "/app/(app)/dashboard/student",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/dashboard/super-admin/page.tsx",
+      "route": "/app/(app)/dashboard/super-admin",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/dashboard/teacher/page.tsx",
+      "route": "/app/(app)/dashboard/teacher",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(app)/dashboard/school-admin/page.tsx",
+      "route": "/app/(app)/dashboard/school-admin",
+      "is_client": false,
+      "has_auth_guard": true,
+      "is_public": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/about/page.tsx",
+      "route": "/app/(marketing)/about",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/cookies/page.tsx",
+      "route": "/app/(marketing)/cookies",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/pricing/page.tsx",
+      "route": "/app/(marketing)/pricing",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/press-kit/page.tsx",
+      "route": "/app/(marketing)/press-kit",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/changelog/page.tsx",
+      "route": "/app/(marketing)/changelog",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/terms/page.tsx",
+      "route": "/app/(marketing)/terms",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/blog/page.tsx",
+      "route": "/app/(marketing)/blog",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/case-studies/page.tsx",
+      "route": "/app/(marketing)/case-studies",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/integrations/page.tsx",
+      "route": "/app/(marketing)/integrations",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/features/page.tsx",
+      "route": "/app/(marketing)/features",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/careers/page.tsx",
+      "route": "/app/(marketing)/careers",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/gdpr/page.tsx",
+      "route": "/app/(marketing)/gdpr",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/help-center/page.tsx",
+      "route": "/app/(marketing)/help-center",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/security/page.tsx",
+      "route": "/app/(marketing)/security",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/status/page.tsx",
+      "route": "/app/(marketing)/status",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/demo/page.tsx",
+      "route": "/app/(marketing)/demo",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/solutions/page.tsx",
+      "route": "/app/(marketing)/solutions",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/contact/page.tsx",
+      "route": "/app/(marketing)/contact",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/api-docs/page.tsx",
+      "route": "/app/(marketing)/api-docs",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/community/page.tsx",
+      "route": "/app/(marketing)/community",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/documentation/page.tsx",
+      "route": "/app/(marketing)/documentation",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/developers/page.tsx",
+      "route": "/app/(marketing)/developers",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/partners/page.tsx",
+      "route": "/app/(marketing)/partners",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/docs/page.tsx",
+      "route": "/app/(marketing)/docs",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/privacy/page.tsx",
+      "route": "/app/(marketing)/privacy",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/customers/page.tsx",
+      "route": "/app/(marketing)/customers",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/blog/[slug]/page.tsx",
+      "route": "/app/(marketing)/blog/[slug]",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(marketing)/blog/author/[slug]/page.tsx",
+      "route": "/app/(marketing)/blog/author/[slug]",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(admin)/marketing/page.tsx",
+      "route": "/app/(admin)/marketing",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(admin)/marketing/newsletter/page.tsx",
+      "route": "/app/(admin)/marketing/newsletter",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(admin)/marketing/leads/page.tsx",
+      "route": "/app/(admin)/marketing/leads",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(admin)/marketing/analytics/page.tsx",
+      "route": "/app/(admin)/marketing/analytics",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(admin)/marketing/contacts/page.tsx",
+      "route": "/app/(admin)/marketing/contacts",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(admin)/marketing/demos/page.tsx",
+      "route": "/app/(admin)/marketing/demos",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(admin)/marketing/leads/[id]/page.tsx",
+      "route": "/app/(admin)/marketing/leads/[id]",
+      "is_client": true,
+      "has_auth_guard": false,
+      "is_public": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/(public)/register/page.tsx",
+      "route": "/app/(public)/register",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(public)/reset-password/page.tsx",
+      "route": "/app/(public)/reset-password",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(public)/login/page.tsx",
+      "route": "/app/(public)/login",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(public)/verify-email/page.tsx",
+      "route": "/app/(public)/verify-email",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/(public)/forgot-password/page.tsx",
+      "route": "/app/(public)/forgot-password",
+      "is_client": false,
+      "has_auth_guard": false,
+      "is_public": true,
+      "status": "OK"
+    }
+  ],
+  "apis": [
+    {
+      "file": "src/app/api/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/reports/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/agents/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/demo-booking/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/workflows/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/plugins/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/analytics/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/search/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/events/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/contact/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/seed/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/organizations/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/health/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/feedback/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/reports/share/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/reports/schedule/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/reports/generate/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/newsletter/verify/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/newsletter/subscribe/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/newsletter/unsubscribe/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace/purchase/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace/reviews/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace/related/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace/download/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace/checkout/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace/webhook/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace/purchase-status/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace/verify-payment/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace/my-purchases/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace/product/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace/reviews/report/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace/reviews/respond/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace/seller/analytics/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace/seller/products/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/notifications/history/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/notifications/templates/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/notifications/delivery-status/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/notifications/send/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/notifications/preferences/route.ts",
+      "methods": [
+        "GET",
+        "PUT"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/notifications/digest/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/student/revision-hub/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/student/practice/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/student/certificates/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/student/progress/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/student/flashcards/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/student/study-planner/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/admin/backups/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/admin/audit-logs/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/admin/users/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "has_auth": false,
+      "has_csrf": true,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/admin/plugins/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/admin/integrations/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT"
+      ],
+      "has_auth": false,
+      "has_csrf": true,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/admin/organization-settings/route.ts",
+      "methods": [
+        "GET",
+        "PUT"
+      ],
+      "has_auth": false,
+      "has_csrf": true,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/admin/roles/route.ts",
+      "methods": [
+        "GET",
+        "PUT"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/admin/branding/route.ts",
+      "methods": [
+        "GET",
+        "PUT"
+      ],
+      "has_auth": false,
+      "has_csrf": true,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/agents/[id]/execute/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/billing/enterprise/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/billing/refund/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/billing/revenue/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/billing/checkout/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/billing/webhook/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/billing/refunds/route.ts",
+      "methods": [
+        "POST",
+        "PATCH"
+      ],
+      "has_auth": false,
+      "has_csrf": true,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/billing/audit/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/billing/subscription-lifecycle/route.ts",
+      "methods": [
+        "POST",
+        "PATCH"
+      ],
+      "has_auth": false,
+      "has_csrf": true,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/billing/webhooks/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/billing/invoices/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/billing/subscriptions/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/billing/paystack/checkout/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": true,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/billing/paystack/webhook/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/demo-booking/[id]/route.ts",
+      "methods": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/school/fees/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/school/calendar/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/school/timetable/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/school/classes/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/school/attendance/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PATCH"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/workflows/[id]/route.ts",
+      "methods": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/workflows/[id]/executions/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/workflows/[id]/execute/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/plugins/[id]/install/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/marketing/newsletter/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketing/leads/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketing/analytics/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketing/contacts/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketing/demos/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/marketing/leads/[id]/route.ts",
+      "methods": [
+        "GET",
+        "PATCH"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketing/leads/[id]/activities/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/teacher/worksheets/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/teacher/grade/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/teacher/submissions/route.ts",
+      "methods": [
+        "GET",
+        "PUT"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/teacher/lesson-plans/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/teacher/rubrics/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/settings/api-keys/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/settings/sso/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/settings/security/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/settings/webhooks/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/analytics/enterprise/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/analytics/nlq/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/analytics/events/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/import/validate/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/import/errors/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/import/progress/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/import/execute/route.ts",
+      "methods": [
+        "POST",
+        "PATCH"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/tenants/resolve/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/security/sessions/route.ts",
+      "methods": [
+        "GET",
+        "DELETE"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/security/sso/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/security/passkeys/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/alerting/suppressions/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "DELETE"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/alerting/channels/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/alerting/incidents/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/alerting/incidents/[id]/route.ts",
+      "methods": [
+        "GET",
+        "PATCH"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/alerting/incidents/[id]/timeline/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/marketplace-v2/listings/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/marketplace-v2/listings/[id]/purchase/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/ai/government/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/ai/student/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/ai/agents/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": true,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/ai/stream/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/ai/teacher/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/ai/complete/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/ai/school-admin/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/ai/predictive/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": true,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/ai/parent/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/organizations/switch/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/organizations/[id]/route.ts",
+      "methods": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/parent/fees/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/parent/attendance/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/parent/child-progress/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/parent/messaging/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/auth/callback/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/auth/csrf/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": true,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/health/database/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/health/detailed/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/health/ai/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/health/redis/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/cbt/answer/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": true,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/cbt/session/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": true,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/cbt/exam/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/cbt/submit/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": true,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/cbt/timing/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": true,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/developer/oauth-apps/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": true,
+      "has_csrf": false,
+      "status": "OK"
+    },
+    {
+      "file": "src/app/api/developer/openapi/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/developer/keys/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/feedback/[id]/route.ts",
+      "methods": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/feedback/analytics/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/feedback/ai-rating/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    },
+    {
+      "file": "src/app/api/feedback/[id]/comments/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "has_auth": false,
+      "has_csrf": false,
+      "status": "REVIEW"
+    }
+  ],
+  "server_actions": [
+    {
+      "file": "src/lib/supabase/server.ts",
+      "action": "createClient",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/supabase/server.ts",
+      "action": "createClientOrNull",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/supabase/server.ts",
+      "action": "requireSupabase",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/feedback-service.ts",
+      "action": "createFeedback",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/feedback-service.ts",
+      "action": "getFeedback",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/feedback-service.ts",
+      "action": "getFeedbackById",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/feedback-service.ts",
+      "action": "updateFeedback",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/feedback-service.ts",
+      "action": "deleteFeedback",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/feedback-service.ts",
+      "action": "addComment",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/feedback-service.ts",
+      "action": "getComments",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/feedback-service.ts",
+      "action": "assignFeedback",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/feedback-service.ts",
+      "action": "submitAIRating",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/feedback-service.ts",
+      "action": "submitResultDispute",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/feedback-service.ts",
+      "action": "getFeedbackAnalytics",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/feedback-service.ts",
+      "action": "uploadScreenshot",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/analytics-service.ts",
+      "action": "getFeedbackOverview",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/analytics-service.ts",
+      "action": "getFeedbackTrends",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/analytics-service.ts",
+      "action": "getFeedbackByCategory",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/analytics-service.ts",
+      "action": "getResolutionMetrics",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/analytics-service.ts",
+      "action": "getTopReporters",
+      "has_auth": true
+    },
+    {
+      "file": "src/lib/feedback/analytics-service.ts",
+      "action": "getAIRatingSummary",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/notifications/actions.ts",
+      "action": "markNotificationReadAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/notifications/actions.ts",
+      "action": "markAllNotificationsReadAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/notifications/actions.ts",
+      "action": "deleteNotificationAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/users/actions.ts",
+      "action": "createUserAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/users/actions.ts",
+      "action": "updateUserAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/users/actions.ts",
+      "action": "deactivateUserAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/users/actions.ts",
+      "action": "changeUserRoleAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/exams/actions.ts",
+      "action": "createExamAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/exams/actions.ts",
+      "action": "createQuestionAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/exams/actions.ts",
+      "action": "updateExamAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/exams/actions.ts",
+      "action": "deleteExamAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/exams/actions.ts",
+      "action": "duplicateExamAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/exams/actions.ts",
+      "action": "publishExamAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/exams/actions.ts",
+      "action": "updateQuestionAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/exams/actions.ts",
+      "action": "deleteQuestionAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/schools/actions.ts",
+      "action": "createSchoolAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/schools/actions.ts",
+      "action": "updateSchoolAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/schools/actions.ts",
+      "action": "deactivateSchoolAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/marketing/actions/demo-booking.action.ts",
+      "action": "bookDemo",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/marketing/actions/contact.action.ts",
+      "action": "submitContactForm",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/marketing/actions/newsletter.action.ts",
+      "action": "subscribeNewsletter",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/auth/actions/login.action.ts",
+      "action": "loginAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/auth/actions/logout.action.ts",
+      "action": "logoutAction",
+      "has_auth": true
+    },
+    {
+      "file": "src/features/auth/actions/signup.action.ts",
+      "action": "signupAction",
+      "has_auth": true
+    }
+  ],
+  "security_findings": {
+    "eval_or_function": [
+      {
+        "file": "src/lib/redis.ts",
+        "line": 27,
+        "severity": "HIGH",
+        "note": "eval() can execute arbitrary code \u2014 replace with safer alternative"
+      },
+      {
+        "file": "src/lib/rate-limit-distributed.ts",
+        "line": 234,
+        "severity": "HIGH",
+        "note": "eval() can execute arbitrary code \u2014 replace with safer alternative"
+      }
+    ],
+    "service_role_usage": [
+      {
+        "file": "src/lib/supabase/service.ts",
+        "line": 26,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/supabase/service.ts",
+        "line": 52,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/config/env-validator.ts",
+        "line": 42,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/config/env-validator.ts",
+        "line": 77,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/config/env-validation.ts",
+        "line": 75,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/config/env-validation.ts",
+        "line": 291,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/config/secrets-audit.ts",
+        "line": 268,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/billing/invoice-service.ts",
+        "line": 539,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/billing/refund-service.ts",
+        "line": 129,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 30,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 108,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 110,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 176,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 178,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 230,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 232,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 285,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 287,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 339,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 341,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 400,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 402,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 453,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 455,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 506,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 508,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 559,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 561,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 612,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 614,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 658,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 660,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 726,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 728,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 759,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 779,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 781,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 827,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 829,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 875,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 877,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 916,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1043,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1044,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1078,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1082,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1083,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1099,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1189,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1192,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1243,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1245,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1250,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1252,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1259,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1264,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1268,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1277,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1282,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1284,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1336,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-policy-audit.test.ts",
+        "line": 1386,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-certification.test.ts",
+        "line": 139,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-certification.test.ts",
+        "line": 140,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-certification.test.ts",
+        "line": 1585,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-certification.test.ts",
+        "line": 1592,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-certification.test.ts",
+        "line": 1596,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-certification.test.ts",
+        "line": 1600,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-certification.test.ts",
+        "line": 1602,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-certification.test.ts",
+        "line": 1606,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-certification.test.ts",
+        "line": 1615,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/__tests__/rls-certification.test.ts",
+        "line": 1616,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 324,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 339,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 356,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 426,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/cbt/__tests__/cbt-integrity.test.ts",
+        "line": 57,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      },
+      {
+        "file": "src/lib/cbt/__tests__/cbt-integrity.test.ts",
+        "line": 64,
+        "severity": "MEDIUM",
+        "note": "Service role key bypasses RLS \u2014 verify it's only used server-side in trusted admin paths"
+      }
+    ],
+    "hardcoded_secrets": [
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 29,
+        "severity": "CRITICAL",
+        "snippet": "const OPENAI_KEY = 'sk-abc123def456ghi789jkl012mno345pqr6'",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 39,
+        "severity": "CRITICAL",
+        "snippet": "const jwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.do",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 39,
+        "severity": "CRITICAL",
+        "snippet": "const jwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.do",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 43,
+        "severity": "CRITICAL",
+        "snippet": "expect(result).not.toContain('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9')",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 48,
+        "severity": "CRITICAL",
+        "snippet": "const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 48,
+        "severity": "CRITICAL",
+        "snippet": "const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 282,
+        "severity": "CRITICAL",
+        "snippet": "const detected = detectSecretPatterns('Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVC",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 297,
+        "severity": "CRITICAL",
+        "snippet": "const input = `JWT: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0In0.sig",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 355,
+        "severity": "CRITICAL",
+        "snippet": "process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 355,
+        "severity": "CRITICAL",
+        "snippet": "process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 356,
+        "severity": "CRITICAL",
+        "snippet": "process.env.SUPABASE_SERVICE_ROLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 356,
+        "severity": "CRITICAL",
+        "snippet": "process.env.SUPABASE_SERVICE_ROLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/security/__tests__/secret-leak.test.ts",
+        "line": 120,
+        "severity": "CRITICAL",
+        "snippet": "const key = 'AIzaSyBabc123def456ghi789jkl012mno345pqr678stu901'",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/privacy/__tests__/privacy.test.ts",
+        "line": 593,
+        "severity": "CRITICAL",
+        "snippet": "const result = sanitizeLogMessage('API call with key sk-abcdefghijklmnopqrst');",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/privacy/__tests__/privacy.test.ts",
+        "line": 594,
+        "severity": "CRITICAL",
+        "snippet": "expect(result).not.toContain('sk-abcdefghijklmnopqrst');",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/privacy/__tests__/privacy.test.ts",
+        "line": 605,
+        "severity": "CRITICAL",
+        "snippet": "const result = sanitizeLogMessage('Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9')",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      },
+      {
+        "file": "src/lib/privacy/__tests__/privacy.test.ts",
+        "line": 606,
+        "severity": "CRITICAL",
+        "snippet": "expect(result).not.toContain('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9');",
+        "note": "Potential hardcoded secret \u2014 should be in env var only"
+      }
+    ],
+    "dangerouslySetInnerHTML": [
+      {
+        "file": "src/app/(marketing)/layout.tsx",
+        "line": 158,
+        "severity": "MEDIUM",
+        "note": "Verify input is sanitized before rendering as HTML"
+      },
+      {
+        "file": "src/app/(marketing)/layout.tsx",
+        "line": 162,
+        "severity": "MEDIUM",
+        "note": "Verify input is sanitized before rendering as HTML"
+      },
+      {
+        "file": "src/app/(marketing)/blog/page.tsx",
+        "line": 51,
+        "severity": "MEDIUM",
+        "note": "Verify input is sanitized before rendering as HTML"
+      },
+      {
+        "file": "src/components/ui/chart.tsx",
+        "line": 83,
+        "severity": "MEDIUM",
+        "note": "Verify input is sanitized before rendering as HTML"
+      },
+      {
+        "file": "src/components/marketing/faq-jsonld.tsx",
+        "line": 27,
+        "severity": "MEDIUM",
+        "note": "Verify input is sanitized before rendering as HTML"
+      },
+      {
+        "file": "src/components/marketing/breadcrumb-jsonld.tsx",
+        "line": 25,
+        "severity": "MEDIUM",
+        "note": "Verify input is sanitized before rendering as HTML"
+      },
+      {
+        "file": "src/components/seo/howto-jsonld.tsx",
+        "line": 36,
+        "severity": "MEDIUM",
+        "note": "Verify input is sanitized before rendering as HTML"
+      },
+      {
+        "file": "src/components/seo/course-jsonld.tsx",
+        "line": 45,
+        "severity": "MEDIUM",
+        "note": "Verify input is sanitized before rendering as HTML"
+      },
+      {
+        "file": "src/components/seo/article-jsonld.tsx",
+        "line": 66,
+        "severity": "MEDIUM",
+        "note": "Verify input is sanitized before rendering as HTML"
+      },
+      {
+        "file": "src/components/seo/author-jsonld.tsx",
+        "line": 48,
+        "severity": "MEDIUM",
+        "note": "Verify input is sanitized before rendering as HTML"
+      },
+      {
+        "file": "src/components/seo/organization-jsonld.tsx",
+        "line": 64,
+        "severity": "MEDIUM",
+        "note": "Verify input is sanitized before rendering as HTML"
+      },
+      {
+        "file": "src/components/marketing/motion/reduced-motion.tsx",
+        "line": 88,
+        "severity": "MEDIUM",
+        "note": "Verify input is sanitized before rendering as HTML"
+      }
+    ]
+  },
+  "rls_paths": [
+    {
+      "file": "src/lib/cbt-integrity.ts",
+      "line": 658,
+      "rpc": "auto_grade_exam",
+      "severity": "INFO",
+      "note": "RPC call to 'auto_grade_exam' \u2014 verify the function has SECURITY DEFINER + appropriate role checks"
+    },
+    {
+      "file": "src/lib/billing/subscription-service.ts",
+      "line": 637,
+      "rpc": "increment",
+      "severity": "INFO",
+      "note": "RPC call to 'increment' \u2014 verify the function has SECURITY DEFINER + appropriate role checks"
+    },
+    {
+      "file": "src/lib/billing/subscription-service.ts",
+      "line": 638,
+      "rpc": "increment",
+      "severity": "INFO",
+      "note": "RPC call to 'increment' \u2014 verify the function has SECURITY DEFINER + appropriate role checks"
+    },
+    {
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "line": 489,
+      "rpc": "increment_listing_views",
+      "severity": "INFO",
+      "note": "RPC call to 'increment_listing_views' \u2014 verify the function has SECURITY DEFINER + appropriate role checks"
+    },
+    {
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "line": 209,
+      "rpc": "increment_listing_purchases",
+      "severity": "INFO",
+      "note": "RPC call to 'increment_listing_purchases' \u2014 verify the function has SECURITY DEFINER + appropriate role checks"
+    },
+    {
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "line": 229,
+      "rpc": "increment_listing_revenue",
+      "severity": "INFO",
+      "note": "RPC call to 'increment_listing_revenue' \u2014 verify the function has SECURITY DEFINER + appropriate role checks"
+    },
+    {
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "line": 501,
+      "rpc": "increment_listing_downloads",
+      "severity": "INFO",
+      "note": "RPC call to 'increment_listing_downloads' \u2014 verify the function has SECURITY DEFINER + appropriate role checks"
+    },
+    {
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "line": 520,
+      "rpc": "increment_license_seat_usage",
+      "severity": "INFO",
+      "note": "RPC call to 'increment_license_seat_usage' \u2014 verify the function has SECURITY DEFINER + appropriate role checks"
+    }
+  ],
+  "middleware": {
+    "file": "src/middleware.ts",
+    "checks_auth": true,
+    "applies_csp": false,
+    "applies_rbac": true,
+    "redirects_unauth": true,
+    "handles_csrf": false
+  }
+}

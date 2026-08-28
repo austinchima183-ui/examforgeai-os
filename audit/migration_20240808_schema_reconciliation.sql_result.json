@@ -1,0 +1,65 @@
+{
+ "file": "20240808_schema_reconciliation.sql",
+ "total_statements": 128,
+ "applied_ok": 113,
+ "skipped": 2,
+ "failed": 13,
+ "skipped_preview": [
+  "CREATE INDEX IF NOT EXISTS idx_exam_sessions_school_created\n  ON exam_sessions (",
+  "CREATE INDEX IF NOT EXISTS idx_exam_sessions_score\n  ON exam_sessions (exam_id, "
+ ],
+ "failed_statements": [
+  {
+   "stmt": "ALTER TABLE public.questions ADD COLUMN IF NOT EXISTS question_text TEXT",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"public.questions\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "ALTER TABLE public.questions ADD COLUMN IF NOT EXISTS exam_id UUID",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42P01: relation \\\"public.questions\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_exam_sessions_student_status\n  ON exam_sessions (student_id, status, created_at DESC)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"status\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_marketplace_products_status_category\n  ON marketplace_products (status, category, created_at DESC)\n  WHERE status = 'published'",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  22P02: invalid input value for enum marketplace_product_status: \\\"published\\\"\\nLINE 3:   WHERE status = 'published'\\n                         ^\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_topics_parent ON topics (parent_id) WHERE parent_id IS NOT NULL",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"parent_id\\\" does not exist\\nLINE 1: CREATE INDEX IF NOT EXISTS idx_topics_parent ON topics (parent_id) WHERE parent_id IS NOT NULL\\n  "
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_marketplace_purchases_user ON marketplace_purchases (user_id, created_at DESC)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"user_id\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_marketplace_reviews_user ON marketplace_reviews (user_id)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"user_id\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_invoices_org_created ON invoices (organization_id, created_at DESC)",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"organization_id\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE INDEX IF NOT EXISTS idx_study_plans_student ON study_plans (student_id) WHERE is_active = true",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"student_id\\\" does not exist\\n\"}"
+  },
+  {
+   "stmt": "CREATE POLICY marketplace_purchases_select_own ON public.marketplace_purchases\n  FOR SELECT TO authenticated\n  USING (user_id = auth.uid())",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"user_id\\\" does not exist\\nHINT:  Perhaps you meant to reference the column \\\"marketplace_purchases.buyer_id\\\".\\n\"}"
+  },
+  {
+   "stmt": "CREATE POLICY marketplace_purchases_insert_own ON public.marketplace_purchases\n  FOR INSERT TO authenticated\n  WITH CHECK (user_id = auth.uid())",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"user_id\\\" does not exist\\nHINT:  Perhaps you meant to reference the column \\\"marketplace_purchases.buyer_id\\\".\\n\"}"
+  },
+  {
+   "stmt": "CREATE POLICY marketplace_reviews_insert_own ON public.marketplace_reviews\n  FOR INSERT TO authenticated\n  WITH CHECK (user_id = auth.uid())",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"user_id\\\" does not exist\\nHINT:  Perhaps you meant to reference the column \\\"marketplace_reviews.buyer_id\\\".\\n\"}"
+  },
+  {
+   "stmt": "CREATE POLICY study_plans_own ON public.study_plans\n  FOR ALL TO authenticated\n  USING (student_id = auth.uid())",
+   "err": "400: {\"message\":\"Failed to run sql query: ERROR:  42703: column \\\"student_id\\\" does not exist\\n\"}"
+  }
+ ]
+}

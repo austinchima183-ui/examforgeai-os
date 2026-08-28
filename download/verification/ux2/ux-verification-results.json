@@ -1,0 +1,165 @@
+[
+  {
+    "role": "student",
+    "landedOn": "/dashboard/student",
+    "beforeScroll": {
+      "mainExists": true,
+      "mainScrollable": true,
+      "bodyScrolls": false,
+      "headerVisible": true,
+      "sidebarExists": true,
+      "sidebarInternalScroll": false,
+      "mainOverflowY": "auto",
+      "docHeight": 900,
+      "winHeight": 900
+    },
+    "afterScroll": {
+      "mainExists": true,
+      "mainScrollable": true,
+      "bodyScrolls": false,
+      "headerVisible": true,
+      "sidebarExists": true,
+      "sidebarInternalScroll": false,
+      "mainOverflowY": "auto",
+      "docHeight": 900,
+      "winHeight": 900
+    },
+    "headerStaysVisibleAfterScroll": true,
+    "mainIndependentScroll": true,
+    "bodyDoesNotScroll": true,
+    "consoleErrors": [],
+    "consoleErrorCount": 0
+  },
+  {
+    "role": "teacher",
+    "landedOn": "/dashboard/teacher",
+    "beforeScroll": {
+      "mainExists": true,
+      "mainScrollable": true,
+      "bodyScrolls": false,
+      "headerVisible": true,
+      "sidebarExists": true,
+      "sidebarInternalScroll": true,
+      "mainOverflowY": "auto",
+      "docHeight": 900,
+      "winHeight": 900
+    },
+    "afterScroll": {
+      "mainExists": true,
+      "mainScrollable": true,
+      "bodyScrolls": false,
+      "headerVisible": true,
+      "sidebarExists": true,
+      "sidebarInternalScroll": true,
+      "mainOverflowY": "auto",
+      "docHeight": 900,
+      "winHeight": 900
+    },
+    "headerStaysVisibleAfterScroll": true,
+    "mainIndependentScroll": true,
+    "bodyDoesNotScroll": true,
+    "consoleErrors": [],
+    "consoleErrorCount": 0
+  },
+  {
+    "role": "parent",
+    "landedOn": "/parent/dashboard",
+    "beforeScroll": {
+      "mainExists": true,
+      "mainScrollable": true,
+      "bodyScrolls": false,
+      "headerVisible": true,
+      "sidebarExists": true,
+      "sidebarInternalScroll": false,
+      "mainOverflowY": "auto",
+      "docHeight": 900,
+      "winHeight": 900
+    },
+    "afterScroll": {
+      "mainExists": true,
+      "mainScrollable": true,
+      "bodyScrolls": false,
+      "headerVisible": true,
+      "sidebarExists": true,
+      "sidebarInternalScroll": false,
+      "mainOverflowY": "auto",
+      "docHeight": 900,
+      "winHeight": 900
+    },
+    "headerStaysVisibleAfterScroll": true,
+    "mainIndependentScroll": true,
+    "bodyDoesNotScroll": true,
+    "consoleErrors": [],
+    "consoleErrorCount": 0
+  },
+  {
+    "role": "school_admin",
+    "landedOn": "/dashboard/school-admin",
+    "beforeScroll": {
+      "mainExists": true,
+      "mainScrollable": true,
+      "bodyScrolls": false,
+      "headerVisible": true,
+      "sidebarExists": true,
+      "sidebarInternalScroll": true,
+      "mainOverflowY": "auto",
+      "docHeight": 900,
+      "winHeight": 900
+    },
+    "afterScroll": {
+      "mainExists": true,
+      "mainScrollable": true,
+      "bodyScrolls": false,
+      "headerVisible": true,
+      "sidebarExists": true,
+      "sidebarInternalScroll": true,
+      "mainOverflowY": "auto",
+      "docHeight": 900,
+      "winHeight": 900
+    },
+    "headerStaysVisibleAfterScroll": true,
+    "mainIndependentScroll": true,
+    "bodyDoesNotScroll": true,
+    "consoleErrors": [],
+    "consoleErrorCount": 0
+  },
+  {
+    "role": "super_admin",
+    "landedOn": "/dashboard/super-admin",
+    "beforeScroll": {
+      "mainExists": true,
+      "mainScrollable": true,
+      "bodyScrolls": false,
+      "headerVisible": true,
+      "sidebarExists": true,
+      "sidebarInternalScroll": true,
+      "mainOverflowY": "auto",
+      "docHeight": 900,
+      "winHeight": 900
+    },
+    "afterScroll": {
+      "mainExists": true,
+      "mainScrollable": true,
+      "bodyScrolls": false,
+      "headerVisible": true,
+      "sidebarExists": true,
+      "sidebarInternalScroll": true,
+      "mainOverflowY": "auto",
+      "docHeight": 900,
+      "winHeight": 900
+    },
+    "headerStaysVisibleAfterScroll": true,
+    "mainIndependentScroll": true,
+    "bodyDoesNotScroll": true,
+    "consoleErrors": [],
+    "consoleErrorCount": 0
+  },
+  {
+    "role": "student-mobile-390px",
+    "check": {
+      "bodyScrolls": false,
+      "mainScrollable": true,
+      "horizontalOverflow": false
+    }
+  }
+]

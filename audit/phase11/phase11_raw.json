@@ -1,0 +1,1292 @@
+{
+  "token_scopes": "admin:enterprise, admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, admin:ssh_signing_key, audit_log, codespace, copilot, delete:packages, delete_repo, gist, notifications, project, repo, user, workflow, write:discussion, write:network_configurations, write:packages",
+  "repo_metadata": {
+    "name": "examforgeai",
+    "private": false,
+    "default_branch": "main",
+    "created_at": "2026-07-27T05:13:07Z",
+    "pushed_at": "2026-08-16T14:05:27Z",
+    "size_kb": 1991,
+    "allow_squash": true,
+    "allow_merge": true,
+    "allow_rebase": true,
+    "allow_auto_merge": false,
+    "allow_update_branch": false,
+    "delete_branch_on_merge": false,
+    "has_issues": true,
+    "has_wiki": true,
+    "has_pages": false,
+    "has_projects": true,
+    "has_downloads": false,
+    "archived": false,
+    "disabled": false,
+    "visibility": "public",
+    "security_and_analysis": {
+      "secret_scanning": {
+        "status": "enabled"
+      },
+      "secret_scanning_push_protection": {
+        "status": "enabled"
+      },
+      "dependabot_security_updates": {
+        "status": "disabled"
+      },
+      "secret_scanning_non_provider_patterns": {
+        "status": "disabled"
+      },
+      "secret_scanning_validity_checks": {
+        "status": "disabled"
+      }
+    },
+    "web_commit_signoff_required": false
+  },
+  "branches": [
+    {
+      "name": "main",
+      "protected": false,
+      "commit_sha": "f58459880534188b565698225af18a74479c3b87",
+      "commit_msg": "",
+      "protection": null
+    }
+  ],
+  "collaborators": [
+    {
+      "login": "austinchima183-ui",
+      "id": 309613154,
+      "site_admin": false,
+      "permission": "admin",
+      "role_name": "admin",
+      "user_view_type": "public"
+    }
+  ],
+  "deploy_keys": [],
+  "webhooks": [],
+  "actions_secrets": {
+    "total_count": 0,
+    "secrets": []
+  },
+  "actions_variables": {
+    "variables": [],
+    "total_count": 0
+  },
+  "dependabot_alerts_summary": {
+    "_status": 403,
+    "_note": "disabled or no alerts"
+  },
+  "secret_scanning_alerts": [
+    {
+      "number": 4,
+      "created_at": "2026-08-16T07:19:28Z",
+      "updated_at": "2026-08-16T07:19:28Z",
+      "url": "https://api.github.com/repos/[REDACTED]/secret-scanning/alerts/4",
+      "html_url": "https://github.com/[REDACTED]/security/secret-scanning/4",
+      "locations_url": "https://api.github.com/repos/[REDACTED]/secret-scanning/alerts/4/locations",
+      "state": "open",
+      "secret_type": "mongodb_atlas_db_uri_with_credentials",
+      "secret_type_display_name": "MongoDB Atlas Database URI with credentials",
+      "provider": "MongoDB",
+      "provider_slug": "mongodb",
+      "validity": "unknown",
+      "multi_repo": false,
+      "is_base64_encoded": false,
+      "secret": "mongodb://user:myPassword123@cluster.mongodb.net/db",
+      "first_location_detected": {
+        "path": "src/lib/security/__tests__/secret-leak.test.ts",
+        "start_line": 151,
+        "end_line": 151,
+        "start_column": 20,
+        "end_column": 71,
+        "blob_sha": "d3ca10a74b6a9855c0df2a284d6fa5fbd6aa6bf7",
+        "blob_url": "https://api.github.com/repos/[REDACTED]/git/blobs/d3ca10a74b6a9855c0df2a284d6fa5fbd6aa6bf7",
+        "commit_sha": "5724d34d6f431283f66773783537ce7e1ea157c0",
+        "commit_url": "https://api.github.com/repos/[REDACTED]/git/commits/5724d34d6f431283f66773783537ce7e1ea157c0",
+        "html_url": "https://github.com/[REDACTED]/blob/5724d34d6f431283f66773783537ce7e1ea157c0/src/lib/security/__tests__/secret-leak.test.ts#L151-L151"
+      },
+      "has_more_locations": false,
+      "publicly_leaked": true,
+      "resolution": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "resolution_comment": null,
+      "push_protection_bypassed": false,
+      "push_protection_bypassed_by": null,
+      "push_protection_bypassed_at": null,
+      "push_protection_bypass_request_reviewer": null,
+      "push_protection_bypass_request_reviewer_comment": null,
+      "push_protection_bypass_request_comment": null,
+      "push_protection_bypass_request_html_url": null,
+      "closure_request_comment": null,
+      "closure_request_reviewer_comment": null,
+      "closure_request_reviewer": null,
+      "assigned_to": null
+    },
+    {
+      "number": 3,
+      "created_at": "2026-08-02T09:42:31Z",
+      "updated_at": "2026-08-02T09:42:31Z",
+      "url": "https://api.github.com/repos/[REDACTED]/secret-scanning/alerts/3",
+      "html_url": "https://github.com/[REDACTED]/security/secret-scanning/3",
+      "locations_url": "https://api.github.com/repos/[REDACTED]/secret-scanning/alerts/3/locations",
+      "state": "open",
+      "secret_type": "vercel_personal_access_token",
+      "secret_type_display_name": "Vercel Personal Access Token",
+      "provider": "Vercel",
+      "provider_slug": "vercel",
+      "validity": "unknown",
+      "multi_repo": false,
+      "is_base64_encoded": false,
+      "secret": "vcp_REDACTED",
+      "first_location_detected": {
+        "path": "scripts/vercel_deploy.py",
+        "start_line": 11,
+        "end_line": 11,
+        "start_column": 17,
+        "end_column": 77,
+        "blob_sha": "df809de1e2945ba3893e3d65489007be96f1a9f7",
+        "blob_url": "https://api.github.com/repos/[REDACTED]/git/blobs/df809de1e2945ba3893e3d65489007be96f1a9f7",
+        "commit_sha": "74b62403ce8daf4d1c9831e75cd6253810f48dde",
+        "commit_url": "https://api.github.com/repos/[REDACTED]/git/commits/74b62403ce8daf4d1c9831e75cd6253810f48dde",
+        "html_url": "https://github.com/[REDACTED]/blob/74b62403ce8daf4d1c9831e75cd6253810f48dde/scripts/vercel_deploy.py#L11-L11"
+      },
+      "has_more_locations": true,
+      "publicly_leaked": true,
+      "resolution": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "resolution_comment": null,
+      "push_protection_bypassed": false,
+      "push_protection_bypassed_by": null,
+      "push_protection_bypassed_at": null,
+      "push_protection_bypass_request_reviewer": null,
+      "push_protection_bypass_request_reviewer_comment": null,
+      "push_protection_bypass_request_comment": null,
+      "push_protection_bypass_request_html_url": null,
+      "closure_request_comment": null,
+      "closure_request_reviewer_comment": null,
+      "closure_request_reviewer": null,
+      "assigned_to": null
+    },
+    {
+      "number": 2,
+      "created_at": "2026-08-02T09:42:30Z",
+      "updated_at": "2026-08-02T09:42:30Z",
+      "url": "https://api.github.com/repos/[REDACTED]/secret-scanning/alerts/2",
+      "html_url": "https://github.com/[REDACTED]/security/secret-scanning/2",
+      "locations_url": "https://api.github.com/repos/[REDACTED]/secret-scanning/alerts/2/locations",
+      "state": "open",
+      "secret_type": "supabase_personal_access_token",
+      "secret_type_display_name": "Supabase Personal Access Token",
+      "provider": "Supabase",
+      "provider_slug": "supabase",
+      "validity": "unknown",
+      "multi_repo": false,
+      "is_base64_encoded": false,
+      "secret": "sbp_REDACTED",
+      "first_location_detected": {
+        "path": "scripts/supabase_migration_engine.py",
+        "start_line": 18,
+        "end_line": 18,
+        "start_column": 14,
+        "end_column": 58,
+        "blob_sha": "7e4eba684ba23c6b73be4abb51f9a7062c07f62c",
+        "blob_url": "https://api.github.com/repos/[REDACTED]/git/blobs/7e4eba684ba23c6b73be4abb51f9a7062c07f62c",
+        "commit_sha": "d6008cc171657628178763b82482bd0f0baa44b8",
+        "commit_url": "https://api.github.com/repos/[REDACTED]/git/commits/d6008cc171657628178763b82482bd0f0baa44b8",
+        "html_url": "https://github.com/[REDACTED]/blob/d6008cc171657628178763b82482bd0f0baa44b8/scripts/supabase_migration_engine.py#L18-L18"
+      },
+      "has_more_locations": true,
+      "publicly_leaked": true,
+      "resolution": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "resolution_comment": null,
+      "push_protection_bypassed": false,
+      "push_protection_bypassed_by": null,
+      "push_protection_bypassed_at": null,
+      "push_protection_bypass_request_reviewer": null,
+      "push_protection_bypass_request_reviewer_comment": null,
+      "push_protection_bypass_request_comment": null,
+      "push_protection_bypass_request_html_url": null,
+      "closure_request_comment": null,
+      "closure_request_reviewer_comment": null,
+      "closure_request_reviewer": null,
+      "assigned_to": null
+    },
+    {
+      "number": 1,
+      "created_at": "2026-08-02T09:42:30Z",
+      "updated_at": "2026-08-02T09:42:30Z",
+      "url": "https://api.github.com/repos/[REDACTED]/secret-scanning/alerts/1",
+      "html_url": "https://github.com/[REDACTED]/security/secret-scanning/1",
+      "locations_url": "https://api.github.com/repos/[REDACTED]/secret-scanning/alerts/1/locations",
+      "state": "open",
+      "secret_type": "vercel_personal_access_token",
+      "secret_type_display_name": "Vercel Personal Access Token",
+      "provider": "Vercel",
+      "provider_slug": "vercel",
+      "validity": "unknown",
+      "multi_repo": false,
+      "is_base64_encoded": false,
+      "secret": "vcp_REDACTED",
+      "first_location_detected": {
+        "path": "download/PRODUCTION_DEPLOYMENT_REPORT_LIVE.md",
+        "start_line": 33,
+        "end_line": 33,
+        "start_column": 8,
+        "end_column": 68,
+        "blob_sha": "da52f442e2a114c7eb5b7ebe9ea021889f9ce8a2",
+        "blob_url": "https://api.github.com/repos/[REDACTED]/git/blobs/da52f442e2a114c7eb5b7ebe9ea021889f9ce8a2",
+        "commit_sha": "bba9b500d50b05d4f67029173bb82cf3be257ae8",
+        "commit_url": "https://api.github.com/repos/[REDACTED]/git/commits/bba9b500d50b05d4f67029173bb82cf3be257ae8",
+        "html_url": "https://github.com/[REDACTED]/blob/bba9b500d50b05d4f67029173bb82cf3be257ae8/download/PRODUCTION_DEPLOYMENT_REPORT_LIVE.md#L33-L33"
+      },
+      "has_more_locations": true,
+      "publicly_leaked": true,
+      "resolution": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "resolution_comment": null,
+      "push_protection_bypassed": false,
+      "push_protection_bypassed_by": null,
+      "push_protection_bypassed_at": null,
+      "push_protection_bypass_request_reviewer": null,
+      "push_protection_bypass_request_reviewer_comment": null,
+      "push_protection_bypass_request_comment": null,
+      "push_protection_bypass_request_html_url": null,
+      "closure_request_comment": null,
+      "closure_request_reviewer_comment": null,
+      "closure_request_reviewer": null,
+      "assigned_to": null
+    }
+  ],
+  "code_scanning_alerts_summary": {
+    "total": 30
+  },
+  "commits": [
+    {
+      "sha": "f58459880534188b565698225af18a74479c3b87",
+      "short_sha": "f5845988",
+      "message_first_line": "OMEGA FINAL MISSION \u2014 Security hardening + CSRF + a11y + rat",
+      "author": "Z User",
+      "date": "2026-08-16T14:03:18Z",
+      "signature_present": false,
+      "verified": false,
+      "verification_reason": "unsigned"
+    },
+    {
+      "sha": "c39ccd86751aa9fac1f1443b7e7b7714ca88aa15",
+      "short_sha": "c39ccd86",
+      "message_first_line": "fix: use local CanvasKit and update CSP for production deplo",
+      "author": "Z User",
+      "date": "2026-07-31T22:48:17Z",
+      "signature_present": false,
+      "verified": false,
+      "verification_reason": "unsigned"
+    },
+    {
+      "sha": "d269380190c38e9945e2c7f66656d05e642d1077",
+      "short_sha": "d2693801",
+      "message_first_line": "feat: add vercel.json for Flutter Web SPA routing and fix pu",
+      "author": "Z User",
+      "date": "2026-07-31T20:25:29Z",
+      "signature_present": false,
+      "verified": false,
+      "verification_reason": "unsigned"
+    },
+    {
+      "sha": "8479d378046eea3d666c16a25b21e810e3d354d1",
+      "short_sha": "8479d378",
+      "message_first_line": "docs: update release reports and deployment documentation",
+      "author": "Z User",
+      "date": "2026-07-31T20:00:27Z",
+      "signature_present": false,
+      "verified": false,
+      "verification_reason": "unsigned"
+    },
+    {
+      "sha": "ea85b0950866bdcfc69ed0053a686576df3ab542",
+      "short_sha": "ea85b095",
+      "message_first_line": "docs: add release notes for v1.0.0-production",
+      "author": "Z User",
+      "date": "2026-07-31T14:39:51Z",
+      "signature_present": false,
+      "verified": false,
+      "verification_reason": "unsigned"
+    },
+    {
+      "sha": "13aeebd666c8af48776130cb7e22548fd64e1925",
+      "short_sha": "13aeebd6",
+      "message_first_line": "docs: add deployment report \u2014 pending GitHub authentication ",
+      "author": "Z User",
+      "date": "2026-07-31T14:16:24Z",
+      "signature_present": false,
+      "verified": false,
+      "verification_reason": "unsigned"
+    },
+    {
+      "sha": "110ab4c65a4c388e5b53b6fece4485dc7038ac52",
+      "short_sha": "110ab4c6",
+      "message_first_line": "release: add production reports and ARTIFACTS.md for v1.0.0",
+      "author": "Z User",
+      "date": "2026-07-31T14:08:55Z",
+      "signature_present": false,
+      "verified": false,
+      "verification_reason": "unsigned"
+    },
+    {
+      "sha": "0573456407f0e3b3884d9bb369e9b0f6294eb652",
+      "short_sha": "05734564",
+      "message_first_line": "release: final production certification and enterprise harde",
+      "author": "Z User",
+      "date": "2026-07-31T14:03:30Z",
+      "signature_present": false,
+      "verified": false,
+      "verification_reason": "unsigned"
+    },
+    {
+      "sha": "627a364e127d9b5dd00803b95b46c49ac33b0cd6",
+      "short_sha": "627a364e",
+      "message_first_line": "fix(security): enterprise remediation \u2014 RLS hardening, secur",
+      "author": "Z User",
+      "date": "2026-07-30T08:54:36Z",
+      "signature_present": false,
+      "verified": false,
+      "verification_reason": "unsigned"
+    },
+    {
+      "sha": "a25235f1b8f8c53be4477ad9ca8f32c055bea3c1",
+      "short_sha": "a25235f1",
+      "message_first_line": "fix: correct env naming inconsistency \u2014 SUPABASE_SERVICE_KEY",
+      "author": "Z User",
+      "date": "2026-07-28T08:08:47Z",
+      "signature_present": false,
+      "verified": false,
+      "verification_reason": "unsigned"
+    },
+    {
+      "sha": "bf2574075ce94b24f6331bab479c53974f835c9d",
+      "short_sha": "bf257407",
+      "message_first_line": "feat: add placeholder asset directories for Flutter Web buil",
+      "author": "Z User",
+      "date": "2026-07-28T05:30:49Z",
+      "signature_present": false,
+      "verified": false,
+      "verification_reason": "unsigned"
+    },
+    {
+      "sha": "28e7fc5c6151be3812409a11fb908ae7b181f87d",
+      "short_sha": "28e7fc5c",
+      "message_first_line": "fix: correct .env.example \u2014 add missing AI keys, fix SUPABAS",
+      "author": "Z User",
+      "date": "2026-07-28T05:16:04Z",
+      "signature_present": false,
+      "verified": false,
+      "verification_reason": "unsigned"
+    },
+    {
+      "sha": "205a2bdb5ae47886e77e71313d6e58ac93c949af",
+      "short_sha": "205a2bdb",
+      "message_first_line": "feat: add CI/CD pipelines, environment config, and gitignore",
+      "author": "Z User",
+      "date": "2026-07-28T04:58:12Z",
+      "signature_present": false,
+      "verified": false,
+      "verification_reason": "unsigned"
+    },
+    {
+      "sha": "d6151970e32530d82347aa6888ad3059acf81a0c",
+      "short_sha": "d6151970",
+      "message_first_line": "feat: upload complete ExamForge AI lib source",
+      "author": "Z User",
+      "date": "2026-07-27T20:22:38Z",
+      "signature_present": false,
+      "verified": false,
+      "verification_reason": "unsigned"
+    },
+    {
+      "sha": "43c52e0ffc8563d2bb4227ee42804202f58dc3ed",
+      "short_sha": "43c52e0f",
+      "message_first_line": "Add files via upload",
+      "author": "austinchima183-ui",
+      "date": "2026-07-27T05:31:22Z",
+      "signature_present": true,
+      "verified": true,
+      "verification_reason": "valid"
+    },
+    {
+      "sha": "940b46cf51a6edb2a0da70d07a2afa460061c466",
+      "short_sha": "940b46cf",
+      "message_first_line": "Initial commit",
+      "author": "austinchima183-ui",
+      "date": "2026-07-27T05:13:08Z",
+      "signature_present": true,
+      "verified": true,
+      "verification_reason": "valid"
+    }
+  ],
+  "commit_signature_summary": {
+    "total": 16,
+    "signed": 2,
+    "verified": 2,
+    "unsigned": 14
+  },
+  "actions_workflows": [
+    {
+      "name": "CI \u2014 Build, Test & Security",
+      "path": ".github/workflows/ci.yml",
+      "state": "active",
+      "created_at": "2026-07-28T06:37:58.000+01:00",
+      "updated_at": "2026-08-16T15:05:28.000+01:00"
+    },
+    {
+      "name": "Deploy \u2014 Production",
+      "path": ".github/workflows/deploy.yml",
+      "state": "active",
+      "created_at": "2026-07-28T06:37:58.000+01:00",
+      "updated_at": "2026-08-16T15:05:29.000+01:00"
+    },
+    {
+      "name": "Security Scan \u2014 Scheduled",
+      "path": ".github/workflows/security-scan.yml",
+      "state": "active",
+      "created_at": "2026-07-28T06:37:58.000+01:00",
+      "updated_at": "2026-08-16T15:05:29.000+01:00"
+    },
+    {
+      "name": "Security Scanning",
+      "path": ".github/workflows/security.yml",
+      "state": "active",
+      "created_at": "2026-07-28T06:37:58.000+01:00",
+      "updated_at": "2026-08-16T15:05:29.000+01:00"
+    }
+  ],
+  "refs": [
+    {
+      "ref": "refs/heads/main",
+      "sha": "f58459880534188b565698225af18a74479c3b87",
+      "type": "commit"
+    },
+    {
+      "ref": "refs/tags/v1.0.0-production",
+      "sha": "2cb43d783f6e128ae2963174973712775eaf38d8",
+      "type": "tag"
+    }
+  ],
+  "git_ls_remote_refs": [
+    [
+      "f58459880534188b565698225af18a74479c3b87",
+      "HEAD"
+    ],
+    [
+      "f58459880534188b565698225af18a74479c3b87",
+      "refs/heads/main"
+    ],
+    [
+      "2cb43d783f6e128ae2963174973712775eaf38d8",
+      "refs/tags/v1.0.0-production"
+    ],
+    [
+      "ea85b0950866bdcfc69ed0053a686576df3ab542",
+      "refs/tags/v1.0.0-production^{}"
+    ]
+  ],
+  "graphql_refs": {},
+  "graphql_pull_requests": {
+    "totalCount": 0,
+    "nodes": []
+  },
+  "graphql_errors": [
+    {
+      "type": "MISSING_PAGINATION_BOUNDARIES",
+      "path": [
+        "repository",
+        "refs"
+      ],
+      "locations": [
+        {
+          "line": 5,
+          "column": 5
+        }
+      ],
+      "message": "You must provide a `first` or `last` value to properly paginate the `refs` connection."
+    }
+  ],
+  "code_scanning_alerts_detail": [
+    {
+      "number": 146,
+      "state": "open",
+      "rule_id": "CVE-2020-10663",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2020-10663 Improper Input Validation vulnerability in pkg:pub/yet_another_json_isolate@2.1.1",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/146"
+    },
+    {
+      "number": 145,
+      "state": "open",
+      "rule_id": "CVE-2026-27704",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2026-27704 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in pkg:pub/dart_software_development_kit@3.5.0",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/145"
+    },
+    {
+      "number": 144,
+      "state": "open",
+      "rule_id": "CVE-2022-3095",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "critical",
+      "description": "critical severity - CVE-2022-3095 Improper Input Validation vulnerability in pkg:pub/flutter_plugin_android_lifecycle@2.0.26",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/144"
+    },
+    {
+      "number": 143,
+      "state": "open",
+      "rule_id": "CVE-2017-16116",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2017-16116 Uncontrolled Resource Consumption vulnerability in pkg:pub/string_scanner@1.2.0",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/143"
+    },
+    {
+      "number": 142,
+      "state": "open",
+      "rule_id": "CVE-2020-15358",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2020-15358 Out-of-bounds Write vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/142"
+    },
+    {
+      "number": 141,
+      "state": "open",
+      "rule_id": "CVE-2020-13632",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2020-13632 NULL Pointer Dereference vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/141"
+    },
+    {
+      "number": 140,
+      "state": "open",
+      "rule_id": "CVE-2020-13631",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2020-13631 vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/140"
+    },
+    {
+      "number": 139,
+      "state": "open",
+      "rule_id": "CVE-2020-13435",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2020-13435 NULL Pointer Dereference vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/139"
+    },
+    {
+      "number": 138,
+      "state": "open",
+      "rule_id": "CVE-2020-13434",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2020-13434 Integer Overflow or Wraparound vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/138"
+    },
+    {
+      "number": 137,
+      "state": "open",
+      "rule_id": "CVE-2019-19645",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2019-19645 Uncontrolled Recursion vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/137"
+    },
+    {
+      "number": 136,
+      "state": "open",
+      "rule_id": "CVE-2016-6153",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2016-6153 Improper Input Validation vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/136"
+    },
+    {
+      "number": 135,
+      "state": "open",
+      "rule_id": "CVE-2026-27704",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2026-27704 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in pkg:pub/dart_software_development_kit@3.5.0",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/135"
+    },
+    {
+      "number": 134,
+      "state": "open",
+      "rule_id": "CVE-2015-6607",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "unknown",
+      "description": "medium severity - CVE-2015-6607 Permissions, Privileges, and Access Controls vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/134"
+    },
+    {
+      "number": 133,
+      "state": "open",
+      "rule_id": "CVE-2020-13630",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2020-13630 Use After Free vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/133"
+    },
+    {
+      "number": 132,
+      "state": "open",
+      "rule_id": "CVE-2025-6965",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2025-6965 Numeric Truncation Error vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/132"
+    },
+    {
+      "number": 131,
+      "state": "open",
+      "rule_id": "CVE-2023-7104",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2023-7104 Improper Restriction of Operations within the Bounds of a Memory Buffer vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/131"
+    },
+    {
+      "number": 130,
+      "state": "open",
+      "rule_id": "CVE-2025-70873",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2025-70873 Improper Clearing of Heap Memory Before Release ('Heap Inspection') vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/130"
+    },
+    {
+      "number": 129,
+      "state": "open",
+      "rule_id": "CVE-2020-11655",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2020-11655 Improper Initialization vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/129"
+    },
+    {
+      "number": 128,
+      "state": "open",
+      "rule_id": "CVE-2018-8740",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2018-8740 NULL Pointer Dereference vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/128"
+    },
+    {
+      "number": 127,
+      "state": "open",
+      "rule_id": "CVE-2018-20505",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2018-20505 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/127"
+    },
+    {
+      "number": 126,
+      "state": "open",
+      "rule_id": "CVE-2015-3717",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "unknown",
+      "description": "high severity - CVE-2015-3717 Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/126"
+    },
+    {
+      "number": 125,
+      "state": "open",
+      "rule_id": "CVE-2015-3416",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "unknown",
+      "description": "high severity - CVE-2015-3416 Integer Overflow or Wraparound vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/125"
+    },
+    {
+      "number": 124,
+      "state": "open",
+      "rule_id": "CVE-2015-3415",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "unknown",
+      "description": "high severity - CVE-2015-3415 Improper Resource Shutdown or Release vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/124"
+    },
+    {
+      "number": 123,
+      "state": "open",
+      "rule_id": "CVE-2015-3414",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "unknown",
+      "description": "high severity - CVE-2015-3414 Use of Uninitialized Resource vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/123"
+    },
+    {
+      "number": 122,
+      "state": "open",
+      "rule_id": "CVE-2018-20506",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2018-20506 Integer Overflow or Wraparound vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/122"
+    },
+    {
+      "number": 121,
+      "state": "open",
+      "rule_id": "CVE-2018-20346",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2018-20346 Integer Overflow or Wraparound vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/121"
+    },
+    {
+      "number": 120,
+      "state": "open",
+      "rule_id": "CVE-2026-11824",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2026-11824 Heap-based Buffer Overflow vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/120"
+    },
+    {
+      "number": 119,
+      "state": "open",
+      "rule_id": "CVE-2026-11822",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2026-11822 Heap-based Buffer Overflow vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/119"
+    },
+    {
+      "number": 118,
+      "state": "open",
+      "rule_id": "CVE-2015-5895",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "unknown",
+      "description": "high severity - CVE-2015-5895 vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/118"
+    },
+    {
+      "number": 117,
+      "state": "open",
+      "rule_id": "CVE-2022-3095",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "critical",
+      "description": "critical severity - CVE-2022-3095 Improper Input Validation vulnerability in pkg:pub/flutter_plugin_android_lifecycle@2.0.26",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/117"
+    },
+    {
+      "number": 116,
+      "state": "open",
+      "rule_id": "CVE-2020-11656",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "critical",
+      "description": "critical severity - CVE-2020-11656 Use After Free vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/116"
+    },
+    {
+      "number": 115,
+      "state": "open",
+      "rule_id": "CVE-2019-19646",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "critical",
+      "description": "critical severity - CVE-2019-19646 Improper Check for Unusual or Exceptional Conditions vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/115"
+    },
+    {
+      "number": 114,
+      "state": "open",
+      "rule_id": "CVE-2017-10989",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "critical",
+      "description": "critical severity - CVE-2017-10989 Out-of-bounds Read vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/114"
+    },
+    {
+      "number": 113,
+      "state": "open",
+      "rule_id": "CVE-2020-15358",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2020-15358 Out-of-bounds Write vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/113"
+    },
+    {
+      "number": 112,
+      "state": "open",
+      "rule_id": "CVE-2020-13632",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2020-13632 NULL Pointer Dereference vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/112"
+    },
+    {
+      "number": 111,
+      "state": "open",
+      "rule_id": "CVE-2020-13631",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2020-13631 vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/111"
+    },
+    {
+      "number": 110,
+      "state": "open",
+      "rule_id": "CVE-2020-13435",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2020-13435 NULL Pointer Dereference vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/110"
+    },
+    {
+      "number": 109,
+      "state": "open",
+      "rule_id": "CVE-2020-13434",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2020-13434 Integer Overflow or Wraparound vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/109"
+    },
+    {
+      "number": 108,
+      "state": "open",
+      "rule_id": "CVE-2019-19645",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2019-19645 Uncontrolled Recursion vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/108"
+    },
+    {
+      "number": 107,
+      "state": "open",
+      "rule_id": "CVE-2016-6153",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "medium",
+      "description": "medium severity - CVE-2016-6153 Improper Input Validation vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/107"
+    },
+    {
+      "number": 106,
+      "state": "open",
+      "rule_id": "CVE-2015-6607",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "unknown",
+      "description": "medium severity - CVE-2015-6607 Permissions, Privileges, and Access Controls vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/106"
+    },
+    {
+      "number": 105,
+      "state": "open",
+      "rule_id": "CVE-2020-13630",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2020-13630 Use After Free vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/105"
+    },
+    {
+      "number": 104,
+      "state": "open",
+      "rule_id": "CVE-2025-6965",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2025-6965 Numeric Truncation Error vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/104"
+    },
+    {
+      "number": 103,
+      "state": "open",
+      "rule_id": "CVE-2023-7104",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2023-7104 Improper Restriction of Operations within the Bounds of a Memory Buffer vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/103"
+    },
+    {
+      "number": 102,
+      "state": "open",
+      "rule_id": "CVE-2025-70873",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2025-70873 Improper Clearing of Heap Memory Before Release ('Heap Inspection') vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/102"
+    },
+    {
+      "number": 101,
+      "state": "open",
+      "rule_id": "CVE-2022-35737",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2022-35737 Improper Validation of Array Index vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/101"
+    },
+    {
+      "number": 100,
+      "state": "open",
+      "rule_id": "CVE-2020-11655",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2020-11655 Improper Initialization vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/100"
+    },
+    {
+      "number": 99,
+      "state": "open",
+      "rule_id": "CVE-2018-8740",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2018-8740 NULL Pointer Dereference vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/99"
+    },
+    {
+      "number": 98,
+      "state": "open",
+      "rule_id": "CVE-2018-20505",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "high",
+      "description": "high severity - CVE-2018-20505 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/98"
+    },
+    {
+      "number": 97,
+      "state": "open",
+      "rule_id": "CVE-2015-3717",
+      "rule_name": "",
+      "severity": "warning",
+      "security_severity_level": "unknown",
+      "description": "high severity - CVE-2015-3717 Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') vulnerability in pkg:pub/sqlite3@2.4.5",
+      "tool": "dependency-check",
+      "path": "file:///github/workspace/pubspec.lock",
+      "created_at": "2026-07-28T05:39:38Z",
+      "html_url": "https://github.com/[REDACTED]/security/code-scanning/97"
+    }
+  ],
+  "secret_scanning_alerts_detail": [
+    {
+      "number": 4,
+      "state": "open",
+      "secret_type": "mongodb_atlas_db_uri_with_credentials",
+      "secret_type_display_name": "MongoDB Atlas Database URI with credentials",
+      "resolution": null,
+      "created_at": "2026-08-16T07:19:28Z",
+      "updated_at": "2026-08-16T07:19:28Z",
+      "push_protection_status": null,
+      "locations": [
+        {
+          "path": "src/lib/security/__tests__/secret-leak.test.ts",
+          "start_line": 151,
+          "end_line": 151,
+          "start_column": 20,
+          "end_column": 71
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "state": "open",
+      "secret_type": "vercel_personal_access_token",
+      "secret_type_display_name": "Vercel Personal Access Token",
+      "resolution": null,
+      "created_at": "2026-08-02T09:42:31Z",
+      "updated_at": "2026-08-02T09:42:31Z",
+      "push_protection_status": null,
+      "locations": [
+        {
+          "path": "scripts/vercel_deploy.py",
+          "start_line": 11,
+          "end_line": 11,
+          "start_column": 17,
+          "end_column": 77
+        },
+        {
+          "path": "scripts/final_deploy.py",
+          "start_line": 5,
+          "end_line": 5,
+          "start_column": 17,
+          "end_column": 77
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "state": "open",
+      "secret_type": "supabase_personal_access_token",
+      "secret_type_display_name": "Supabase Personal Access Token",
+      "resolution": null,
+      "created_at": "2026-08-02T09:42:30Z",
+      "updated_at": "2026-08-02T09:42:30Z",
+      "push_protection_status": null,
+      "locations": [
+        {
+          "path": "scripts/supabase_migration_engine.py",
+          "start_line": 18,
+          "end_line": 18,
+          "start_column": 14,
+          "end_column": 58
+        },
+        {
+          "path": "scripts/migration_pipeline_v6.py",
+          "start_line": 11,
+          "end_line": 11,
+          "start_column": 8,
+          "end_column": 52
+        },
+        {
+          "path": "scripts/incremental_migration.py",
+          "start_line": 14,
+          "end_line": 14,
+          "start_column": 14,
+          "end_column": 58
+        }
+      ]
+    },
+    {
+      "number": 1,
+      "state": "open",
+      "secret_type": "vercel_personal_access_token",
+      "secret_type_display_name": "Vercel Personal Access Token",
+      "resolution": null,
+      "created_at": "2026-08-02T09:42:30Z",
+      "updated_at": "2026-08-02T09:42:30Z",
+      "push_protection_status": null,
+      "locations": [
+        {
+          "path": "download/PRODUCTION_DEPLOYMENT_REPORT_LIVE.md",
+          "start_line": 33,
+          "end_line": 33,
+          "start_column": 8,
+          "end_column": 68
+        },
+        {
+          "path": "scripts/deployment-report-final.py",
+          "start_line": 19,
+          "end_line": 19,
+          "start_column": 29,
+          "end_column": 89
+        },
+        {
+          "path": "download/PRODUCTION_DEPLOYMENT_REPORT_FINAL.md",
+          "start_line": 16,
+          "end_line": 16,
+          "start_column": 29,
+          "end_column": 89
+        }
+      ]
+    }
+  ],
+  "workflow_files": {
+    ".github/workflows/ci.yml": "# ============================================================================\n# ExamForge AI \u2014 Continuous Integration Pipeline\n# ============================================================================\n# Runs on every push and pull request to main/develop branches.\n# Stages: Lint \u2192 Test \u2192 Security Scan \u2192 Build \u2192 Artifact Verification\n#\n# ROOT CAUSE (why this pipeline exists):\n# The project had ZERO CI/CD automation. All builds, tests, and deployments\n# were manual. This meant:\n#   - No automated test execution on code changes\n#   - No security vulnerability scanning\n#   - No dependency auditing\n#   - No secret leak detection\n#   - No build integrity verification\n#   - Manual deployment was error-prone and irreversible\n#\n# SECURITY MODEL:\n#   - Every push triggers full security scan suite\n#   - Critical security findings block merge\n#   - Secrets are never in code \u2014 loaded from GitHub Secrets\n#   - Build artifacts are checksummed and verified\n#   - Dependency vulnerabilities are flagged automatically\n# ============================================================================\n\nname: CI \u2014 Build, Test & Security\n\non:\n  push:\n    branches: [main, develop, 'release/**']\n  pull_request:\n    branches: [main, develop]\n\nenv:\n  FLUTTER_VERSION: '3.44.8'\n  DART_VERSION: '3.12.2'\n  JAVA_VERSION: '17'\n  NODE_VERSION: '20'\n\nconcurrency:\n  group: ci-${{ github.ref }}\n  cancel-in-progress: true\n\npermissions:\n  contents: read\n  security-events: write\n  actions: read\n\njobs:\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  # STAGE 1: LINT & FORMAT\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  lint:\n    name: Lint & Format Check\n    runs-on: ubuntu-latest\n    timeout-minutes: 10\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Setup Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: ${{ env.FLUTTER_VERSION }}\n          channel: 'stable'\n\n      - name: Install dependencies\n        working-directory: examforge_ai\n        run: flutter pub get\n\n      - name: Dart format check\n        working-directory: examforge_ai\n        run: dart format --set-exit-if-changed .\n\n      - name: Dart analyze\n        working-directory: examforge_ai\n        run: dart analyze --fatal-infos --fatal-warnings\n\n      - name: Check for TODO/FIXME in production code\n        working-directory: examforge_ai\n        run: |\n          count=$(grep -r \"TODO\\|FIXME\\|HACK\\|XXX\" lib/ --include=\"*.dart\" | wc -l)\n          if [ \"$count\" -gt 50 ]; then\n            echo \"::warning::$count TODO/FIXME/HACK/XXX items found in lib/\"\n          fi\n\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  # STAGE 2: UNIT & INTEGRATION TESTS\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  test:\n    name: Test Suite\n    runs-on: ubuntu-latest\n    needs: lint\n    timeout-minutes: 30\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Setup Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: ${{ env.FLUTTER_VERSION }}\n          channel: 'stable'\n\n      - name: Install dependencies\n        working-directory: examforge_ai\n        run: flutter pub get\n\n      - name: Run unit tests\n        working-directory: examforge_ai\n        run: |\n          flutter test --reporter=expanded --coverage --machine > test_results.json 2>&1 || true\n          flutter test --reporter=expanded --coverage\n        continue-on-error: false\n\n      - name: Run security tests\n        working-directory: examforge_ai\n        run: flutter test test/security/ --reporter=expanded\n        continue-on-error: false\n\n      - name: Run billing tests\n        working-directory: examforge_ai\n        run: flutter test test/features/billing/ --reporter=expanded\n        continue-on-error: false\n\n      - name: Upload coverage\n        if: always()\n        uses: actions/upload-artifact@v4\n        with:\n          name: coverage-report\n          path: examforge_ai/coverage/\n          retention-days: 14\n\n      - name: Check coverage threshold\n        working-directory: examforge_ai\n        run: |\n          if [ -f coverage/lcov.info ]; then\n            total_lines=$(grep -c \"^DA:\" coverage/lcov.info || echo \"0\")\n            hit_lines=$(grep \"^DA:\" coverage/lcov.info | grep -c \",1,\" || echo \"0\")\n            if [ \"$total_lines\" -gt 0 ]; then\n              coverage=$((hit_lines * 100 / total_lines))\n              echo \"Line coverage: ${coverage}%\"\n              if [ \"$coverage\" -lt 20 ]; then\n                echo \"::warning::Coverage is ${coverage}%, below 20% minimum threshold\"\n              fi\n            fi\n          fi\n\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  # STAGE 3: DEPENDENCY VULNERABILITY SCANNING (SCA)\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  sca:\n    name: Dependency Security Scan\n    runs-on: ubuntu-latest\n    needs: lint\n    timeout-minutes: 15\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Setup Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: ${{ env.FLUTTER_VERSION }}\n          channel: 'stable'\n\n      - name: Install dependencies\n        working-directory: examforge_ai\n        run: flutter pub get\n\n      - name: Check Dart dependencies for vulnerabilities\n        working-directory: examforge_ai\n        run: |\n          dart pub outdated --mode=security 2>&1 || true\n          # Check for known vulnerable packages\n          lockfile=\"pubspec.lock\"\n          if [ -f \"$lockfile\" ]; then\n            echo \"Scanning pubspec.lock for known vulnerabilities...\"\n            # Flag packages with known issues\n            dart pub deps --json 2>/dev/null | python3 -c \"\n          import sys, json\n          try:\n              deps = json.load(sys.stdin)\n              print('Dependency tree parsed successfully')\n              print(f'Packages: {len(deps.get(\\\"packages\\\", []))}')\n          except:\n              print('Could not parse dependency tree')\n          \" || true\n          fi\n\n      - name: npm audit (Next.js dashboard)\n        run: |\n          npm audit --audit-level=high || true\n          npm audit --production --audit-level=critical\n\n      - name: Run Trivy vulnerability scanner\n        uses: aquasecurity/trivy-action@master\n        with:\n          scan-type: 'fs'\n          scan-ref: '.'\n          severity: 'CRITICAL,HIGH'\n          format: 'sarif'\n          output: 'trivy-results.sarif'\n        continue-on-error: true\n\n      - name: Upload Trivy scan results\n        if: always()\n        uses: github/codeql-action/upload-sarif@v3\n        with:\n          sarif_file: 'trivy-results.sarif'\n        continue-on-error: true\n\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  # STAGE 4: SECRET SCANNING\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  secret-scan:\n    name: Secret Leak Detection\n    runs-on: ubuntu-latest\n    timeout-minutes: 10\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0  # Full history for secret scanning\n\n      - name: Gitleaks secret scan\n        uses: gitleaks/gitleaks-action@v2\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n        continue-on-error: false\n\n      - name: Manual secret pattern check\n        run: |\n          echo \"Checking for hardcoded secrets...\"\n          found=0\n          # Check for common secret patterns in Dart files\n          for pattern in \"SUPABASE_SERVICE_KEY\\s*=\\s*['\\\"][^'\\\"]+['\\\"]\" \\\n                         \"FLUTTERWAVE_SECRET_KEY\\s*=\\s*['\\\"][^'\\\"]+['\\\"]\" \\\n                         \"WEBHOOK_SECRET\\s*=\\s*['\\\"][^'\\\"]+['\\\"]\" \\\n                         \"password\\s*=\\s*['\\\"][^'\\\"]{8,}['\\\"]\" \\\n                         \"api_key\\s*=\\s*['\\\"][^'\\\"]+['\\\"]\" \\\n                         \"Bearer\\s+[A-Za-z0-9\\-._~+/]+=*\"; do\n            matches=$(grep -rE \"$pattern\" examforge_ai/lib/ --include=\"*.dart\" | grep -v \"placeholder\\|example\\|YOUR_\" | wc -l || echo \"0\")\n            if [ \"$matches\" -gt 0 ]; then\n              echo \"::error::Potential secret found matching pattern: $pattern\"\n              grep -rE \"$pattern\" examforge_ai/lib/ --include=\"*.dart\" | grep -v \"placeholder\\|example\\|YOUR_\"\n              found=$((found + matches))\n            fi\n          done\n          if [ \"$found\" -gt 0 ]; then\n            echo \"::error::$found potential hardcoded secrets found!\"\n            exit 1\n          fi\n          echo \"No hardcoded secrets detected.\"\n\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  # STAGE 5: STATIC APPLICATION SECURITY TESTING (SAST)\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  sast:\n    name: SAST Analysis\n    runs-on: ubuntu-latest\n    needs: lint\n    timeout-minutes: 20\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Initialize CodeQL\n        uses: github/codeql-action/init@v3\n        with:\n          languages: 'javascript-typescript'\n          queries: security-extended,security-and-quality\n\n      - name: Perform CodeQL Analysis\n        uses: github/codeql-action/analyze@v3\n        with:\n          category: '/language:javascript-typescript'\n\n      - name: Dart custom security rules\n        working-directory: examforge_ai\n        run: |\n          echo \"Running custom Dart security checks...\"\n          # Check for insecure patterns in Dart code\n          checks_passed=0\n          checks_failed=0\n\n          # Check 1: No print() statements with sensitive data\n          insecure_prints=$(grep -r \"print(.*password\\|print(.*token\\|print(.*secret\\|print(.*key\" lib/ --include=\"*.dart\" | wc -l || echo \"0\")\n          if [ \"$insecure_prints\" -gt 0 ]; then\n            echo \"::warning::$insecure_prints print() statements may expose sensitive data\"\n            checks_failed=$((checks_failed + 1))\n          else\n            checks_passed=$((checks_passed + 1))\n          fi\n\n          # Check 2: No http:// in production code (should be https://)\n          insecure_urls=$(grep -r \"http://\" lib/ --include=\"*.dart\" | grep -v \"localhost\\|127.0.0.1\\|10.0.2.2\\|example.com\" | wc -l || echo \"0\")\n          if [ \"$insecure_urls\" -gt 0 ]; then\n            echo \"::warning::$insecure_urls insecure HTTP URLs found in production code\"\n            checks_failed=$((checks_failed + 1))\n          else\n            checks_passed=$((checks_passed + 1))\n          fi\n\n          # Check 3: No eval()-like dynamic code execution\n          dynamic_exec=$(grep -r \"eval(\\|compute(\\|isolate\" lib/ --include=\"*.dart\" | wc -l || echo \"0\")\n          if [ \"$dynamic_exec\" -gt 0 ]; then\n            echo \"::notice::$dynamic_exec dynamic execution patterns found (review for safety)\"\n          fi\n\n          # Check 4: SQL injection patterns\n          sql_injection=$(grep -rE \"\\$\\{.*\\}.*SELECT\\|SELECT.*\\$\\{|\\.raw\\(.*\\$\\{\" lib/ --include=\"*.dart\" | wc -l || echo \"0\")\n          if [ \"$sql_injection\" -gt 0 ]; then\n            echo \"::error::$sql_injection potential SQL injection patterns found!\"\n            grep -rE \"\\$\\{.*\\}.*SELECT\\|SELECT.*\\$\\{|\\.raw\\(.*\\$\\{\" lib/ --include=\"*.dart\"\n            checks_failed=$((checks_failed + 1))\n          else\n            checks_passed=$((checks_passed + 1))\n          fi\n\n          # Check 5: No wildcard CORS\n          wildcard_cors=$(grep -r \"'\\*'\" supabase/functions/ --include=\"*.ts\" | grep -i \"cors\\|origin\\|allow\" | wc -l || echo \"0\")\n          if [ \"$wildcard_cors\" -gt 0 ]; then\n            echo \"::warning::$wildcard_cors wildcard CORS patterns in edge functions\"\n            checks_failed=$((checks_failed + 1))\n          else\n            checks_passed=$((checks_passed + 1))\n          fi\n\n          echo \"Security checks: $checks_passed passed, $checks_failed failed\"\n          if [ \"$checks_failed\" -gt 0 ]; then\n            echo \"::error::SAST checks failed\"\n            exit 1\n          fi\n\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  # STAGE 6: BUILD\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  build:\n    name: Build & Artifact Verification\n    runs-on: ubuntu-latest\n    needs: [test, sca, secret-scan, sast]\n    timeout-minutes: 30\n    outputs:\n      build_hash: ${{ steps.build-hash.outputs.hash }}\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Setup Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: ${{ env.FLUTTER_VERSION }}\n          channel: 'stable'\n\n      - name: Install dependencies\n        working-directory: examforge_ai\n        run: flutter pub get\n\n      - name: Build Flutter Web (production)\n        working-directory: examforge_ai\n        run: |\n          flutter build web \\\n            --release \\\n            --no-wasm-dry-run \\\n            --dart-define=ENVIRONMENT=production \\\n            --dart-define=SUPABASE_URL=${{ secrets.SUPABASE_URL }} \\\n            --dart-define=SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }} \\\n            --tree-shake-icons\n\n      - name: Generate build hash\n        id: build-hash\n        working-directory: examforge_ai\n        run: |\n          hash=$(sha256sum build/web/index.html | cut -d' ' -f1)\n          echo \"hash=$hash\" >> $GITHUB_OUTPUT\n          echo \"Build hash: $hash\"\n          # Write hash to file for verification\n          echo \"$hash\" > build/web/BUILD_HASH\n\n      - name: Create build artifact\n        working-directory: examforge_ai\n        run: |\n          tar -czf ../examforge-web-build.tar.gz -C build/web .\n          sha256sum ../examforge-web-build.tar.gz > ../examforge-web-build.tar.gz.sha256\n\n      - name: Upload build artifact\n        uses: actions/upload-artifact@v4\n        with:\n          name: web-build-${{ github.sha }}\n          path: |\n            examforge-web-build.tar.gz\n            examforge-web-build.tar.gz.sha256\n          retention-days: 7\n\n      - name: Verify build artifact integrity\n        working-directory: /home/runner/work\n        run: |\n          cd ${{ github.workspace }}\n          sha256sum -c examforge-web-build.tar.gz.sha256\n          echo \"Build artifact integrity verified\"\n",
+    ".github/workflows/deploy.yml": "# ============================================================================\n# ExamForge AI \u2014 Production Deployment Pipeline\n# ============================================================================\n# Runs on manual approval after CI passes.\n# Features: Deployment approval, blue-green deploy, health checks, rollback.\n#\n# SECURITY MODEL:\n#   - Production deployments require manual approval\n#   - All previous CI checks must pass\n#   - Build artifact is verified before deployment\n#   - Health check must pass after deployment\n#   - Automatic rollback on failure\n# ============================================================================\n\nname: Deploy \u2014 Production\n\non:\n  workflow_dispatch:\n    inputs:\n      environment:\n        description: 'Deployment environment'\n        required: true\n        default: 'staging'\n        type: choice\n        options:\n          - staging\n          - production\n      strategy:\n        description: 'Deployment strategy'\n        required: true\n        default: 'blue-green'\n        type: choice\n        options:\n          - blue-green\n          - standard\n      skip_migrations:\n        description: 'Skip database migrations'\n        required: false\n        default: false\n        type: boolean\n\nenv:\n  FLUTTER_VERSION: '3.24.0'\n\npermissions:\n  contents: read\n  deployments: write\n\njobs:\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  # STAGE 1: PRE-DEPLOYMENT VALIDATION\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  validate:\n    name: Pre-deployment Validation\n    runs-on: ubuntu-latest\n    outputs:\n      deploy_id: ${{ steps.deploy-id.outputs.id }}\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Verify CI passed for this commit\n        uses: actions/github-script@v7\n        with:\n          script: |\n            const runs = await github.rest.actions.listWorkflowRuns({\n              owner: context.repo.owner,\n              repo: context.repo.repo,\n              workflow_id: 'ci.yml',\n              head_sha: context.sha,\n              status: 'completed',\n              conclusion: 'success'\n            });\n            if (runs.data.workflow_runs.length === 0) {\n              core.setFailed('No successful CI run found for this commit. Deploy blocked.');\n            }\n            console.log(`Found ${runs.data.workflow_runs.length} successful CI runs`);\n\n      - name: Generate deploy ID\n        id: deploy-id\n        run: |\n          deploy_id=\"deploy-$(date +%Y%m%d%H%M%S)-$(openssl rand -hex 4)\"\n          echo \"id=$deploy_id\" >> $GITHUB_OUTPUT\n          echo \"Deploy ID: $deploy_id\"\n\n      - name: Validate environment secrets\n        run: |\n          if [ \"${{ inputs.environment }}\" = \"production\" ]; then\n            if [ -z \"${{ secrets.PRODUCTION_HOST }}\" ]; then\n              echo \"::error::PRODUCTION_HOST secret not configured\"\n              exit 1\n            fi\n            if [ -z \"${{ secrets.PRODUCTION_DATABASE_URL }}\" ]; then\n              echo \"::error::PRODUCTION_DATABASE_URL secret not configured\"\n              exit 1\n            fi\n          fi\n          echo \"Environment secrets validated for ${{ inputs.environment }}\"\n\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  # STAGE 2: PRODUCTION APPROVAL GATE\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  approval:\n    name: Deployment Approval\n    runs-on: ubuntu-latest\n    needs: validate\n    if: inputs.environment == 'production'\n    environment:\n      name: production\n      url: https://examforge.ai\n    steps:\n      - name: Approve deployment\n        run: |\n          echo \"Production deployment approved by ${{ github.actor }}\"\n          echo \"Deploy ID: ${{ needs.validate.outputs.deploy_id }}\"\n          echo \"Strategy: ${{ inputs.strategy }}\"\n          echo \"Skip migrations: ${{ inputs.skip_migrations }}\"\n\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  # STAGE 3: DEPLOY\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  deploy:\n    name: Deploy to ${{ inputs.environment }}\n    runs-on: ubuntu-latest\n    needs: [validate, approval]\n    if: always() && needs.validate.result == 'success' && (needs.approval.result == 'success' || inputs.environment != 'production')\n    timeout-minutes: 30\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Download build artifact\n        uses: actions/download-artifact@v4\n        with:\n          pattern: web-build-*\n          merge-multiple: true\n\n      - name: Verify build artifact integrity\n        run: |\n          if [ -f examforge-web-build.tar.gz.sha256 ]; then\n            sha256sum -c examforge-web-build.tar.gz.sha256\n            echo \"Build artifact integrity verified\"\n          else\n            echo \"::error::Build artifact checksum not found\"\n            exit 1\n          fi\n\n      - name: Configure deployment environment\n        run: |\n          if [ \"${{ inputs.environment }}\" = \"production\" ]; then\n            echo \"DEPLOY_HOST=${{ secrets.PRODUCTION_HOST }}\" >> $GITHUB_ENV\n            echo \"DEPLOY_USER=${{ secrets.PRODUCTION_USER }}\" >> $GITHUB_ENV\n            echo \"DEPLOY_PATH=/var/www/examforge\" >> $GITHUB_ENV\n            echo \"APP_URL=https://examforge.ai\" >> $GITHUB_ENV\n            echo \"DATABASE_URL=${{ secrets.PRODUCTION_DATABASE_URL }}\" >> $GITHUB_ENV\n          else\n            echo \"DEPLOY_HOST=${{ secrets.STAGING_HOST }}\" >> $GITHUB_ENV\n            echo \"DEPLOY_USER=deploy\" >> $GITHUB_ENV\n            echo \"DEPLOY_PATH=/var/www/examforge-staging\" >> $GITHUB_ENV\n            echo \"APP_URL=https://staging.examforge.ai\" >> $GITHUB_ENV\n            echo \"DATABASE_URL=${{ secrets.STAGING_DATABASE_URL }}\" >> $GITHUB_ENV\n          fi\n\n      - name: Run database migrations\n        if: ${{ !inputs.skip_migrations }}\n        run: |\n          echo \"Running database migrations for ${{ inputs.environment }}...\"\n          # Migrations are handled by Supabase CLI or direct psql\n          chmod +x examforge_ai/scripts/deploy.sh\n          ./examforge_ai/scripts/deploy.sh ${{ inputs.environment }} --migrate-only\n        continue-on-error: false\n\n      - name: Deploy application\n        run: |\n          chmod +x examforge_ai/scripts/deploy.sh\n          if [ \"${{ inputs.strategy }}\" = \"blue-green\" ]; then\n            ./examforge_ai/scripts/deploy.sh ${{ inputs.environment }} --blue-green\n          else\n            ./examforge_ai/scripts/deploy.sh ${{ inputs.environment }}\n          fi\n        env:\n          DEPLOY_ID: ${{ needs.validate.outputs.deploy_id }}\n\n      - name: Post-deployment health check\n        run: |\n          chmod +x examforge_ai/scripts/deploy.sh\n          ./examforge_ai/scripts/deploy.sh ${{ inputs.environment }} --health-check\n        continue-on-error: false\n\n      - name: Record deployment\n        uses: actions/github-script@v7\n        if: always()\n        with:\n          script: |\n            await github.rest.repos.createDeploymentStatus({\n              owner: context.repo.owner,\n              repo: context.repo.repo,\n              deployment_id: context.deployment?.id || 0,\n              state: '${{ job.status }}' === 'success' ? 'success' : 'failure',\n              description: 'Deploy ${{ needs.validate.outputs.deploy_id }} to ${{ inputs.environment }}',\n              environment: '${{ inputs.environment }}'\n            });\n\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  # STAGE 4: POST-DEPLOYMENT VERIFICATION\n  # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  verify:\n    name: Post-deployment Verification\n    runs-on: ubuntu-latest\n    needs: deploy\n    if: needs.deploy.result == 'success'\n    timeout-minutes: 10\n    steps:\n      - name: Smoke test \u2014 health endpoint\n        run: |\n          if [ \"${{ inputs.environment }}\" = \"production\" ]; then\n            url=\"https://examforge.ai/health\"\n          else\n            url=\"https://staging.examforge.ai/health\"\n          fi\n          for i in $(seq 1 5); do\n            status=$(curl -s -o /dev/null -w \"%{http_code}\" \"$url\" || echo \"000\")\n            if [ \"$status\" = \"200\" ]; then\n              echo \"Health check passed (attempt $i)\"\n              exit 0\n            fi\n            echo \"Health check returned $status (attempt $i), retrying...\"\n            sleep 5\n          done\n          echo \"::error::Post-deployment health check failed after 5 attempts\"\n          exit 1\n\n      - name: Smoke test \u2014 API endpoint\n        run: |\n          if [ \"${{ inputs.environment }}\" = \"production\" ]; then\n            api_url=\"https://api.examforge.ai/health\"\n          else\n            api_url=\"https://staging-api.examforge.ai/health\"\n          fi\n          curl -sf \"$api_url\" --max-time 10 || echo \"::warning::API health endpoint not reachable\"\n",
+    ".github/workflows/security-scan.yml": "# ============================================================================\n# ExamForge AI \u2014 Security Scan Pipeline (Scheduled)\n# ============================================================================\n# Runs daily security scans and on-demand.\n# Includes: Dependency audit, secret scan, SAST, SCA\n# ============================================================================\n\nname: Security Scan \u2014 Scheduled\n\non:\n  schedule:\n    - cron: '0 6 * * 1-5'  # Weekdays at 6 AM UTC\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  security-events: write\n  issues: write\n\njobs:\n  dependency-audit:\n    name: Dependency Audit\n    runs-on: ubuntu-latest\n    timeout-minutes: 15\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Setup Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: '3.24.0'\n          channel: 'stable'\n\n      - name: Dart dependency audit\n        working-directory: examforge_ai\n        run: |\n          flutter pub get\n          dart pub outdated --mode=security 2>&1 || true\n\n      - name: Node.js dependency audit\n        run: |\n          npm audit --audit-level=moderate 2>&1 || true\n          npm audit --production --audit-level=high\n\n      - name: Trivy FS scan\n        uses: aquasecurity/trivy-action@master\n        with:\n          scan-type: 'fs'\n          scan-ref: '.'\n          severity: 'CRITICAL,HIGH,MEDIUM'\n          format: 'table'\n        continue-on-error: true\n\n  secret-scan:\n    name: Full Secret Scan\n    runs-on: ubuntu-latest\n    timeout-minutes: 10\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n\n      - name: Gitleaks full history scan\n        uses: gitleaks/gitleaks-action@v2\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n  infrastructure-scan:\n    name: Infrastructure Security Scan\n    runs-on: ubuntu-latest\n    timeout-minutes: 10\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Check for hardcoded IPs/DNS\n        run: |\n          echo \"Scanning for hardcoded infrastructure references...\"\n          # Check for hardcoded database hosts\n          grep -rE \"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\" examforge_ai/lib/ --include=\"*.dart\" | \\\n            grep -v \"127.0.0.1\\|10.0.2.2\\|0.0.0.0\" || true\n          # Check for hardcoded domain references\n          grep -rE \"supabase\\.co|flutterwave\\.com|firebase\\.com\" examforge_ai/lib/ --include=\"*.dart\" | \\\n            grep -v \"placeholder\\|example\\|config\" || true\n\n      - name: Check SSL/TLS configuration\n        run: |\n          echo \"Checking TLS configuration...\"\n          # Verify no TLS 1.0/1.1 references\n          if grep -r \"TLS.*1\\.0\\|TLS.*1\\.1\\|SSLv3\\|SSLv2\" examforge_ai/ --include=\"*.dart\" --include=\"*.ts\" --include=\"*.yml\"; then\n            echo \"::error::Insecure TLS/SSL version found!\"\n            exit 1\n          fi\n          echo \"TLS configuration check passed\"\n\n      - name: Validate .env.example matches code\n        working-directory: examforge_ai\n        run: |\n          echo \"Validating environment variable coverage...\"\n          # Extract env vars referenced in code\n          code_vars=$(grep -rE \"String\\.fromEnvironment\\(['\\\"]([^'\\\"]+)\" lib/ --include=\"*.dart\" -o | \\\n            sed \"s/.*['\\\"]//;s/['\\\"]//\" | sort -u)\n          # Extract vars from .env.example\n          example_vars=$(grep -E \"^[A-Z_]+\" .env.example | cut -d= -f1 | sort -u)\n          \n          echo \"Variables in code:\"\n          echo \"$code_vars\"\n          echo \"Variables in .env.example:\"\n          echo \"$example_vars\"\n          \n          # Check for missing vars\n          for var in $code_vars; do\n            if ! echo \"$example_vars\" | grep -q \"^${var}$\"; then\n              echo \"::warning::Variable $var used in code but missing from .env.example\"\n            fi\n          done\n\n  create-issue-on-failure:\n    name: Create Security Issue\n    runs-on: ubuntu-latest\n    needs: [dependency-audit, secret-scan, infrastructure-scan]\n    if: failure()\n    steps:\n      - uses: actions/github-script@v7\n        with:\n          script: |\n            const title = `Security Scan Failed \u2014 ${new Date().toISOString().split('T')[0]}`;\n            const body = `## Automated Security Scan Failure\\n\\n` +\n              `**Date**: ${new Date().toISOString()}\\n` +\n              `**Run**: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}\\n\\n` +\n              `One or more security scans failed. Please review the run and take corrective action.\\n\\n` +\n              `### Scans that may have failed:\\n` +\n              `- Dependency Audit\\n` +\n              `- Secret Scan\\n` +\n              `- Infrastructure Scan\\n`;\n            \n            // Check if issue already exists\n            const issues = await github.rest.issues.listForRepo({\n              owner: context.repo.owner,\n              repo: context.repo.repo,\n              state: 'open',\n              labels: 'security',\n              per_page: 5\n            });\n            \n            const existing = issues.data.find(i => i.title === title);\n            if (!existing) {\n              await github.rest.issues.create({\n                owner: context.repo.owner,\n                repo: context.repo.repo,\n                title: title,\n                body: body,\n                labels: ['security', 'automated']\n              });\n            }\n",
+    ".github/workflows/security.yml": "name: Security Scanning\n\non:\n  push:\n    branches: [main, develop]\n  pull_request:\n    branches: [main, develop]\n  schedule:\n    - cron: '0 2 * * 1'  # Weekly on Monday at 02:00 UTC\n\nenv:\n  FLUTTER_VERSION: '3.24.0'\n\npermissions:\n  actions: read\n  contents: read\n  security-events: write\n\njobs:\n  # \u2500\u2500\u2500 Dependency Vulnerability Scanning \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\n  dependency-scan:\n    name: Dependency Vulnerability Scan\n    runs-on: ubuntu-latest\n    timeout-minutes: 15\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Setup Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: ${{ env.FLUTTER_VERSION }}\n          channel: 'stable'\n          cache: true\n\n      - name: Install dependencies\n        run: flutter pub get\n\n      - name: Run pub audit (Dart/Flutter dependencies)\n        run: |\n          echo \"=== Dart/Flutter Dependency Audit ===\"\n          flutter pub audit --no-fatal-info 2>&1 | tee audit-results.txt || true\n\n      - name: Run pub outdated\n        run: |\n          echo \"=== Outdated Dependencies ===\"\n          flutter pub outdated --no-dev-dependencies 2>&1 | tee outdated-results.txt || true\n\n      - name: Check for known vulnerabilities in pubspec.lock\n        run: |\n          echo \"=== Checking pubspec.lock for vulnerable packages ===\"\n          if [ -f pubspec.lock ]; then\n            echo \"Locked dependencies found. Verifying integrity...\"\n            dart pub outdated --mode=security 2>&1 | tee security-outdated.txt || true\n          else\n            echo \"No pubspec.lock found\"\n          fi\n\n      - name: OWASP Dependency Check\n        uses: dependency-check/Dependency-Check_Action@main\n        with:\n          project: 'ExamForge AI'\n          path: '.'\n          format: 'SARIF'\n          out: 'dependency-check-reports'\n          args: >\n            --enableExperimental\n            --failOnCVSS 4\n\n      - name: Upload dependency check SARIF\n        if: always()\n        uses: github/codeql-action/upload-sarif@v3\n        with:\n          sarif_file: dependency-check-reports/dependency-check-report.sarif\n          category: dependency-check\n\n      - name: Upload audit results\n        if: always()\n        uses: actions/upload-artifact@v4\n        with:\n          name: dependency-audit-results\n          path: |\n            audit-results.txt\n            outdated-results.txt\n            security-outdated.txt\n            dependency-check-reports/\n          retention-days: 30\n\n  # \u2500\u2500\u2500 CodeQL Analysis \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\n  codeql-analysis:\n    name: CodeQL Analysis\n    runs-on: ubuntu-latest\n    timeout-minutes: 30\n\n    strategy:\n      fail-fast: false\n      matrix:\n        language: ['dart']\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Initialize CodeQL\n        uses: github/codeql-action/init@v3\n        with:\n          languages: ${{ matrix.language }}\n          queries: security-extended,security-and-quality\n          config-file: ./.github/codeql-config.yml\n\n      - name: Setup Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: ${{ env.FLUTTER_VERSION }}\n          channel: 'stable'\n          cache: true\n\n      - name: Install dependencies\n        run: flutter pub get\n\n      - name: Perform CodeQL Analysis\n        uses: github/codeql-action/analyze@v3\n        with:\n          category: '/language:${{ matrix.language }}'\n          output: codeql-results\n\n      - name: Upload CodeQL results\n        if: always()\n        uses: actions/upload-artifact@v4\n        with:\n          name: codeql-results-${{ matrix.language }}\n          path: codeql-results\n          retention-days: 30\n\n  # \u2500\u2500\u2500 Secret Detection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\n  secret-detection:\n    name: Secret Detection\n    runs-on: ubuntu-latest\n    timeout-minutes: 10\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n\n      - name: Gitleaks scan\n        uses: gitleaks/gitleaks-action@v2\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}\n\n      - name: TruffleHog secret scan\n        uses: trufflesecurity/trufflehog@main\n        with:\n          extra_args: --only-verified\n\n      - name: Check for hardcoded secrets pattern\n        run: |\n          echo \"=== Checking for common secret patterns ===\"\n          SECRET_PATTERNS=(\n            \"password\\s*=\\s*['\\\"][^'\\\"]+['\\\"]\"\n            \"api_key\\s*=\\s*['\\\"][^'\\\"]+['\\\"]\"\n            \"secret\\s*=\\s*['\\\"][^'\\\"]+['\\\"]\"\n            \"token\\s*=\\s*['\\\"][^'\\\"]+['\\\"]\"\n            \"private_key\\s*=\\s*['\\\"]-----BEGIN\"\n          )\n\n          FOUND=0\n          for pattern in \"${SECRET_PATTERNS[@]}\"; do\n            MATCHES=$(grep -rn -E \"$pattern\" --include=\"*.dart\" --include=\"*.yaml\" --include=\"*.json\" lib/ || true)\n            if [ -n \"$MATCHES\" ]; then\n              echo \"::warning::Potential hardcoded secret found matching pattern: $pattern\"\n              echo \"$MATCHES\"\n              FOUND=1\n            fi\n          done\n\n          if [ \"$FOUND\" -eq 1 ]; then\n            echo \"::error::Potential hardcoded secrets detected. Please review and move to environment variables.\"\n            exit 1\n          else\n            echo \"No hardcoded secrets patterns detected.\"\n          fi\n\n  # \u2500\u2500\u2500 OWASP Top 10 Checks \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\n  owasp-checks:\n    name: OWASP Top 10 Security Checks\n    runs-on: ubuntu-latest\n    timeout-minutes: 20\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Setup Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: ${{ env.FLUTTER_VERSION }}\n          channel: 'stable'\n          cache: true\n\n      - name: Install dependencies\n        run: flutter pub get\n\n      - name: Check A01 - Broken Access Control\n        run: |\n          echo \"=== A01: Broken Access Control ===\"\n          echo \"Checking for missing authorization checks...\"\n          MISSING_AUTH=$(grep -rn \"Future<.*>\" --include=\"*.dart\" lib/features/ \\\n            | grep -v \"repository\" \\\n            | grep -v \"usecase\" \\\n            | grep -v \"provider\" \\\n            | grep -v \"// authorized\" \\\n            | grep -v \"auth_provider\" \\\n            | grep -v \"auth_repository\" || true)\n          echo \"Endpoints found - manual review recommended for authorization enforcement.\"\n\n      - name: Check A02 - Cryptographic Failures\n        run: |\n          echo \"=== A02: Cryptographic Failures ===\"\n          echo \"Checking for insecure crypto usage...\"\n          INSECURE_CRYPTO=$(grep -rn \"md5\\|sha1\\|ECB\\|DES\\|RC4\\|noEncryption\" --include=\"*.dart\" lib/ || true)\n          if [ -n \"$INSECURE_CRYPTO\" ]; then\n            echo \"::warning::Insecure cryptographic algorithm found:\"\n            echo \"$INSECURE_CRYPTO\"\n          else\n            echo \"No insecure cryptographic algorithms detected.\"\n          fi\n\n      - name: Check A03 - Injection\n        run: |\n          echo \"=== A03: Injection ===\"\n          echo \"Checking for potential injection vulnerabilities...\"\n          SQL_INJECTION=$(grep -rn \"execute\\|rawQuery\\|query(\" --include=\"*.dart\" lib/ \\\n            | grep -v \"parameterized\\|prepared\\|safe\" || true)\n          if [ -n \"$SQL_INJECTION\" ]; then\n            echo \"::warning::Potential SQL injection points found - manual review recommended:\"\n            echo \"$SQL_INJECTION\"\n          else\n            echo \"No obvious injection vulnerabilities detected.\"\n          fi\n\n      - name: Check A04 - Insecure Design\n        run: |\n          echo \"=== A04: Insecure Design ===\"\n          echo \"Checking for secure design patterns...\"\n          NO_INPUT_VALIDATION=$(grep -rn \"String .*\\)\" --include=\"*.dart\" lib/features/ \\\n            | grep -v \"validator\\|validation\\|validate\" \\\n            | wc -l || true)\n          echo \"Found ${NO_INPUT_VALIDATION} potential input points - review for validation.\"\n\n      - name: Check A05 - Security Misconfiguration\n        run: |\n          echo \"=== A05: Security Misconfiguration ===\"\n          echo \"Checking for debug flags and verbose error messages...\"\n          DEBUG_FLAGS=$(grep -rn \"kDebugMode\\|debugPrint\\|print(\" --include=\"*.dart\" lib/ \\\n            | grep -v \"// ignore\\|// debug\" || true)\n          if [ -n \"$DEBUG_FLAGS\" ]; then\n            DEBUG_COUNT=$(echo \"$DEBUG_FLAGS\" | wc -l)\n            echo \"::warning::Found ${DEBUG_COUNT} debug statements - ensure they are not in production code.\"\n          else\n            echo \"No debug flags found in production code.\"\n          fi\n\n      - name: Check A07 - Identification and Authentication Failures\n        run: |\n          echo \"=== A07: Identification and Authentication Failures ===\"\n          echo \"Checking for weak authentication patterns...\"\n          WEAK_AUTH=$(grep -rn \"password.*==\\|compareTo\\|equals.*password\" --include=\"*.dart\" lib/ || true)\n          if [ -n \"$WEAK_AUTH\" ]; then\n            echo \"::warning::Potential weak password comparison found:\"\n            echo \"$WEAK_AUTH\"\n          else\n            echo \"No weak authentication patterns detected.\"\n          fi\n\n      - name: Check A08 - Software and Data Integrity Failures\n        run: |\n          echo \"=== A08: Software and Data Integrity Failures ===\"\n          echo \"Checking for deserialization vulnerabilities...\"\n          JSON_DECODE=$(grep -rn \"jsonDecode\\|fromJson\" --include=\"*.dart\" lib/ \\\n            | grep -v \"try\\|catch\\|on FormatException\" || true)\n          if [ -n \"$JSON_DECODE\" ]; then\n            echo \"::warning::JSON decoding without proper error handling found - review recommended.\"\n          else\n            echo \"All JSON decoding appears to have error handling.\"\n          fi\n\n      - name: Check A09 - Security Logging and Monitoring Failures\n        run: |\n          echo \"=== A09: Security Logging and Monitoring Failures ===\"\n          echo \"Checking for proper security logging...\"\n          SECURITY_EVENTS=$(grep -rn \"SecurityEvent\\|AuditEntry\\|recordSecurityEvent\\|recordAuditEvent\" \\\n            --include=\"*.dart\" lib/ || true)\n          if [ -n \"$SECURITY_EVENTS\" ]; then\n            echo \"Security event logging found - good practice.\"\n          else\n            echo \"::warning::No security event logging detected. Consider adding audit trails.\"\n          fi\n\n      - name: Check A10 - Server-Side Request Forgery\n        run: |\n          echo \"=== A10: Server-Side Request Forgery ===\"\n          echo \"Checking for unvalidated URL inputs...\"\n          URL_INPUTS=$(grep -rn \"Uri\\.parse\\|http\\.get\\|http\\.post\\|dio\\.\" --include=\"*.dart\" lib/ \\\n            | grep -v \"api_constants\\|api_client\\|remote_datasource\" || true)\n          if [ -n \"$URL_INPUTS\" ]; then\n            echo \"::warning::HTTP requests found outside of API layer - review for SSRF.\"\n          else\n            echo \"HTTP requests appear to be centralized in API layer.\"\n          fi\n\n      - name: Generate OWASP compliance report\n        if: always()\n        run: |\n          echo \"## OWASP Top 10 Compliance Report\" > owasp-report.md\n          echo \"\" >> owasp-report.md\n          echo \"**Scan Date:** $(date -u)\" >> owasp-report.md\n          echo \"**Repository:** ${{ github.repository }}\" >> owasp-report.md\n          echo \"**Branch:** ${{ github.ref_name }}\" >> owasp-report.md\n          echo \"\" >> owasp-report.md\n          echo \"| Category | Status |\" >> owasp-report.md\n          echo \"|----------|--------|\" >> owasp-report.md\n          echo \"| A01 - Broken Access Control | \u2705 Reviewed |\" >> owasp-report.md\n          echo \"| A02 - Cryptographic Failures | \u2705 Scanned |\" >> owasp-report.md\n          echo \"| A03 - Injection | \u2705 Scanned |\" >> owasp-report.md\n          echo \"| A04 - Insecure Design | \u2705 Reviewed |\" >> owasp-report.md\n          echo \"| A05 - Security Misconfiguration | \u2705 Scanned |\" >> owasp-report.md\n          echo \"| A07 - Auth Failures | \u2705 Scanned |\" >> owasp-report.md\n          echo \"| A08 - Data Integrity | \u2705 Scanned |\" >> owasp-report.md\n          echo \"| A09 - Logging Failures | \u2705 Scanned |\" >> owasp-report.md\n          echo \"| A10 - SSRF | \u2705 Scanned |\" >> owasp-report.md\n\n      - name: Upload OWASP report\n        if: always()\n        uses: actions/upload-artifact@v4\n        with:\n          name: owasp-compliance-report\n          path: owasp-report.md\n          retention-days: 30\n\n  # \u2500\u2500\u2500 Security Summary \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\n  security-summary:\n    name: Security Scan Summary\n    runs-on: ubuntu-latest\n    needs: [dependency-scan, codeql-analysis, secret-detection, owasp-checks]\n    if: always()\n    timeout-minutes: 5\n\n    steps:\n      - name: Aggregate security results\n        run: |\n          echo \"=== Security Scan Summary ===\"\n          echo \"Dependency Scan: ${{ needs.dependency-scan.result }}\"\n          echo \"CodeQL Analysis: ${{ needs.codeql-analysis.result }}\"\n          echo \"Secret Detection: ${{ needs.secret-detection.result }}\"\n          echo \"OWASP Checks: ${{ needs.owasp-checks.result }}\"\n\n          if [ \"${{ needs.secret-detection.result }}\" == \"failure\" ]; then\n            echo \"::error::Secrets were detected in the repository!\"\n            exit 1\n          fi\n"
+  },
+  "events_summary": {
+    "total_returned": 30,
+    "by_type": {
+      "IssuesEvent": 15,
+      "PushEvent": 15
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+ "Homepage": {
+  "code": 200,
+  "ms": 156,
+  "cat": "Pages"
+ },
+ "Login": {
+  "code": 200,
+  "ms": 97,
+  "cat": "Pages"
+ },
+ "Signup": {
+  "code": 200,
+  "ms": 435,
+  "cat": "Pages"
+ },
+ "Dashboard (redirect)": {
+  "code": 200,
+  "ms": 182,
+  "cat": "Pages"
+ },
+ "Marketplace": {
+  "code": 200,
+  "ms": 169,
+  "cat": "Pages"
+ },
+ "Pricing": {
+  "code": 200,
+  "ms": 148,
+  "cat": "Pages"
+ },
+ "Blog": {
+  "code": 200,
+  "ms": 462,
+  "cat": "Pages"
+ },
+ "Admin (redirect)": {
+  "code": 200,
+  "ms": 178,
+  "cat": "Pages"
+ },
+ "404 page": {
+  "code": 200,
+  "ms": 186,
+  "cat": "Pages"
+ },
+ "/api/health": {
+  "code": 503,
+  "ms": 1162,
+  "cat": "Health"
+ },
+ "/api/health/detailed": {
+  "code": 401,
+  "ms": 151,
+  "cat": "Health"
+ },
+ "/api/health/database": {
+  "code": 503,
+  "ms": 349,
+  "cat": "Health"
+ },
+ "/api/health/ai": {
+  "code": 200,
+  "ms": 125,
+  "cat": "Health"
+ },
+ "/api/health/redis": {
+  "code": 200,
+  "ms": 115,
+  "cat": "Health"
+ },
+ "GET /api/agents (no auth)": {
+  "code": 401,
+  "ms": 92,
+  "cat": "Auth-gated"
+ },
+ "GET /api/workflows (no auth)": {
+  "code": 401,
+  "ms": 92,
+  "cat": "Auth-gated"
+ },
+ "GET /api/notifications (no auth)": {
+  "code": 401,
+  "ms": 84,
+  "cat": "Auth-gated"
+ },
+ "GET /api/reports (no auth)": {
+  "code": 401,
+  "ms": 85,
+  "cat": "Auth-gated"
+ },
+ "POST /api/contact": {
+  "code": 400,
+  "ms": 139,
+  "cat": "Public API"
+ },
+ "POST /api/newsletter/subscribe": {
+  "code": 400,
+  "ms": 105,
+  "cat": "Public API"
+ },
+ "GET /api/marketplace/product": {
+  "code": 401,
+  "ms": 135,
+  "cat": "Public API"
+ },
+ "GET /api/search?q=test": {
+  "code": 401,
+  "ms": 89,
+  "cat": "Public API"
+ },
+ "GET /api/tenants/resolve": {
+  "code": 401,
+  "ms": 76,
+  "cat": "Public API"
+ },
+ "health-check": {
+  "code": 200,
+  "ms": 2088,
+  "cat": "EdgeFn"
+ },
+ "ai-complete (no auth)": {
+  "code": 401,
+  "ms": 491,
+  "cat": "EdgeFn"
+ },
+ "verify-admin-role (no auth)": {
+  "code": 401,
+  "ms": 501,
+  "cat": "EdgeFn"
+ },
+ "flutterwave-transaction-fee": {
+  "code": 401,
+  "ms": 493,
+  "cat": "EdgeFn"
+ },
+ "OPTIONS /api/contact (CORS)": {
+  "code": 204,
+  "ms": 116,
+  "cat": "Security"
+ },
+ "POST /api/billing/checkout (no auth)": {
+  "code": 401,
+  "ms": 100,
+  "cat": "Security"
+ }
+}

@@ -1,0 +1,271 @@
+{
+  "allowed": {
+    "student": [
+      {
+        "path": "/dashboard/student",
+        "url": "/dashboard/student",
+        "ok": true,
+        "textLen": 977
+      },
+      {
+        "path": "/exams",
+        "url": "/dashboard/student",
+        "ok": true,
+        "textLen": 977
+      },
+      {
+        "path": "/cbt",
+        "url": "/cbt",
+        "ok": true,
+        "textLen": 543
+      },
+      {
+        "path": "/student/practice",
+        "url": "/student/practice",
+        "ok": true,
+        "textLen": 399
+      },
+      {
+        "path": "/student/progress",
+        "url": "/student/progress",
+        "ok": true,
+        "textLen": 399
+      },
+      {
+        "path": "/student/flashcards",
+        "url": "/student/flashcards",
+        "ok": true,
+        "textLen": 401
+      },
+      {
+        "path": "/question-bank",
+        "url": "/dashboard/student",
+        "ok": true,
+        "textLen": 977
+      }
+    ],
+    "teacher": [
+      {
+        "path": "/dashboard/teacher",
+        "url": "/dashboard/teacher",
+        "ok": true,
+        "textLen": 905
+      },
+      {
+        "path": "/teacher/lesson-planner",
+        "url": "/teacher/lesson-planner",
+        "ok": true,
+        "textLen": 424
+      },
+      {
+        "path": "/teacher/grading",
+        "url": "/teacher/grading",
+        "ok": true,
+        "textLen": 419
+      },
+      {
+        "path": "/teacher/rubric-builder",
+        "url": "/teacher/rubric-builder",
+        "ok": true,
+        "textLen": 419
+      },
+      {
+        "path": "/teacher/worksheet-builder",
+        "url": "/teacher/worksheet-builder",
+        "ok": true,
+        "textLen": 422
+      },
+      {
+        "path": "/exams",
+        "url": "/dashboard/teacher",
+        "ok": true,
+        "textLen": 905
+      }
+    ],
+    "parent": [
+      {
+        "path": "/parent/dashboard",
+        "url": "/parent/dashboard",
+        "ok": true,
+        "textLen": 491
+      },
+      {
+        "path": "/parent/child-progress",
+        "url": "/parent/child-progress",
+        "ok": true,
+        "textLen": 491
+      },
+      {
+        "path": "/parent/attendance",
+        "url": "/parent/attendance",
+        "ok": true,
+        "textLen": 412
+      }
+    ],
+    "school_admin": [
+      {
+        "path": "/dashboard/school-admin",
+        "url": "/dashboard/school-admin",
+        "ok": true,
+        "textLen": 1124
+      },
+      {
+        "path": "/admin/users",
+        "url": "/admin/users",
+        "ok": true,
+        "textLen": 667
+      },
+      {
+        "path": "/school/classes",
+        "url": "/school/classes",
+        "ok": true,
+        "textLen": 931
+      },
+      {
+        "path": "/school/fees",
+        "url": "/school/fees",
+        "ok": true,
+        "textLen": 871
+      }
+    ],
+    "super_admin": [
+      {
+        "path": "/dashboard/admin",
+        "url": "/dashboard/admin",
+        "ok": true,
+        "textLen": 148
+      },
+      {
+        "path": "/admin/users",
+        "url": "/admin/users",
+        "ok": true,
+        "textLen": 792
+      },
+      {
+        "path": "/admin/roles",
+        "url": "/admin/roles",
+        "ok": true,
+        "textLen": 1545
+      },
+      {
+        "path": "/admin/audit-logs",
+        "url": "/admin/audit-logs",
+        "ok": true,
+        "textLen": 6397
+      }
+    ]
+  },
+  "denied": {
+    "student": [
+      {
+        "path": "/admin/users",
+        "finalUrl": "/dashboard/student",
+        "denied": true
+      },
+      {
+        "path": "/teacher/grading",
+        "finalUrl": "/dashboard/student",
+        "denied": true
+      },
+      {
+        "path": "/parent/dashboard",
+        "finalUrl": "/dashboard/student",
+        "denied": true
+      },
+      {
+        "path": "/dashboard/teacher",
+        "finalUrl": "/dashboard/student",
+        "denied": true
+      },
+      {
+        "path": "/school/classes",
+        "finalUrl": "/dashboard/student",
+        "denied": true
+      }
+    ],
+    "teacher": [
+      {
+        "path": "/admin/users",
+        "finalUrl": "/dashboard/teacher",
+        "denied": true
+      },
+      {
+        "path": "/parent/dashboard",
+        "finalUrl": "/dashboard/teacher",
+        "denied": true
+      },
+      {
+        "path": "/dashboard/student",
+        "finalUrl": "/dashboard/teacher",
+        "denied": true
+      },
+      {
+        "path": "/school/fees",
+        "finalUrl": "/dashboard/teacher",
+        "denied": true
+      }
+    ],
+    "parent": [
+      {
+        "path": "/admin/users",
+        "finalUrl": "/parent/dashboard",
+        "denied": true
+      },
+      {
+        "path": "/teacher/grading",
+        "finalUrl": "/parent/dashboard",
+        "denied": true
+      },
+      {
+        "path": "/dashboard/teacher",
+        "finalUrl": "/parent/dashboard",
+        "denied": true
+      }
+    ],
+    "school_admin": [
+      {
+        "path": "/dashboard/student",
+        "finalUrl": "/dashboard/school-admin",
+        "denied": true
+      },
+      {
+        "path": "/dashboard/teacher",
+        "finalUrl": "/dashboard/teacher",
+        "denied": false
+      }
+    ],
+    "super_admin": []
+  },
+  "api": {
+    "student": [
+      "admin data: 403",
+      "teacher data: 500",
+      "parent data: 403",
+      "student data: 200"
+    ],
+    "teacher": [
+      "admin data: 403",
+      "teacher data: 500",
+      "parent data: 403",
+      "student data: 200"
+    ],
+    "parent": [
+      "admin data: 403",
+      "teacher data: 500",
+      "parent data: 200",
+      "student data: 200"
+    ],
+    "school_admin": [
+      "admin data: 403",
+      "teacher data: 500",
+      "parent data: 200",
+      "student data: 200"
+    ],
+    "super_admin": [
+      "admin data: 200",
+      "teacher data: 500",
+      "parent data: 200",
+      "student data: 200"
+    ]
+  }
+}

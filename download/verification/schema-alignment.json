@@ -1,0 +1,3912 @@
+{
+  "liveTables": 212,
+  "referencedTables": 158,
+  "missingTables": [
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/(app)/settings/page.tsx",
+      "table": "avatars"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/(app)/settings/page.tsx",
+      "table": "avatars"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/admin/backups/route.ts",
+      "table": "backups"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/admin/backups/route.ts",
+      "table": "backup_schedule"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/admin/backups/route.ts",
+      "table": "backups"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/admin/backups/route.ts",
+      "table": "backup_schedule"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/alerting/channels/route.ts",
+      "table": "alert_channels"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/alerting/channels/route.ts",
+      "table": "alert_channels"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/marketplace/webhook/route.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/marketplace/webhook/route.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/notifications/templates/route.ts",
+      "table": "notification_templates"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/notifications/templates/route.ts",
+      "table": "notification_templates"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/notifications/templates/route.ts",
+      "table": "notification_templates"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/settings/api-keys/route.ts",
+      "table": "api_keys"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/settings/api-keys/route.ts",
+      "table": "api_keys"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/settings/api-keys/route.ts",
+      "table": "api_keys"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/settings/api-keys/route.ts",
+      "table": "api_key_usage"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/settings/security/route.ts",
+      "table": "organization_settings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/settings/webhooks/route.ts",
+      "table": "webhook_deliveries"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/settings/webhooks/route.ts",
+      "table": "webhooks"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/settings/webhooks/route.ts",
+      "table": "webhooks"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/settings/webhooks/route.ts",
+      "table": "webhooks"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/settings/webhooks/route.ts",
+      "table": "webhooks"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/settings/webhooks/route.ts",
+      "table": "webhooks"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/app/api/student/revision-hub/route.ts",
+      "table": "exam_answers"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/components/dashboard/intelligent-insights.tsx",
+      "table": "organization_settings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/ai-agents.ts",
+      "table": "fee_assignments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/ai-predictive.ts",
+      "table": "fee_assignments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/ai-predictive.ts",
+      "table": "fee_assignments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/ai-reliability.ts",
+      "table": "ai_circuit_breaker_state"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/ai-reliability.ts",
+      "table": "ai_circuit_breaker_state"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/ai-school-admin.ts",
+      "table": "fee_assignments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/ai-school-admin.ts",
+      "table": "fee_assignments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/ai-student.ts",
+      "table": "exam_answers"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/ai-student.ts",
+      "table": "exam_answers"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-communicator.ts",
+      "table": "agent_messages"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-communicator.ts",
+      "table": "agent_messages"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-communicator.ts",
+      "table": "agent_messages"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-communicator.ts",
+      "table": "agent_messages"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-communicator.ts",
+      "table": "agent_delegations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-communicator.ts",
+      "table": "agent_delegations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-communicator.ts",
+      "table": "agent_delegations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-communicator.ts",
+      "table": "agent_delegations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-communicator.ts",
+      "table": "agent_delegations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-memory.ts",
+      "table": "agent_memories"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-memory.ts",
+      "table": "agent_memories"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-memory.ts",
+      "table": "agent_memories"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-memory.ts",
+      "table": "agent_memories"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-memory.ts",
+      "table": "agent_memories"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-memory.ts",
+      "table": "agent_memories"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-memory.ts",
+      "table": "agent_memories"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-memory.ts",
+      "table": "agent_memories"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-memory.ts",
+      "table": "agent_memories"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-memory.ts",
+      "table": "agent_memories"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-memory.ts",
+      "table": "agent_memories"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-memory.ts",
+      "table": "agent_memories"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-memory.ts",
+      "table": "agent_memories"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-planner.ts",
+      "table": "agent_plans"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-planner.ts",
+      "table": "agent_plans"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-planner.ts",
+      "table": "agent_plans"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-planner.ts",
+      "table": "agent_plans"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-planner.ts",
+      "table": "agent_plans"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-planner.ts",
+      "table": "agent_plans"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-planner.ts",
+      "table": "agent_plans"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-planner.ts",
+      "table": "agent_plans"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-runner.ts",
+      "table": "agent_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-runner.ts",
+      "table": "agent_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agent-runner.ts",
+      "table": "agent_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agents/admissions-agent.ts",
+      "table": "admissions_applications"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agents/finance-agent.ts",
+      "table": "fee_assignments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agents/marketing-agent.ts",
+      "table": "marketing_campaigns"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/ai/orchestration/agents/support-agent.ts",
+      "table": "support_tickets"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/coupon-service.ts",
+      "table": "coupon_usages"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/coupon-service.ts",
+      "table": "coupon_usages"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/enterprise-contract-service.ts",
+      "table": "enterprise_contracts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/enterprise-contract-service.ts",
+      "table": "enterprise_contracts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/enterprise-contract-service.ts",
+      "table": "enterprise_contracts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/enterprise-contract-service.ts",
+      "table": "enterprise_contracts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/enterprise-contract-service.ts",
+      "table": "enterprise_contracts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/enterprise-contract-service.ts",
+      "table": "enterprise_contracts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/enterprise-contract-service.ts",
+      "table": "enterprise_contracts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/enterprise-contract-service.ts",
+      "table": "enterprise_contracts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/enterprise-contract-service.ts",
+      "table": "enterprise_contracts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/enterprise-contract-service.ts",
+      "table": "enterprise_contracts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/failed-payments.ts",
+      "table": "failed_payments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/failed-payments.ts",
+      "table": "failed_payments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/failed-payments.ts",
+      "table": "failed_payments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/failed-payments.ts",
+      "table": "failed_payments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/failed-payments.ts",
+      "table": "failed_payments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/failed-payments.ts",
+      "table": "failed_payments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/failed-payments.ts",
+      "table": "payment_authorizations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/failed-payments.ts",
+      "table": "failed_payments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/failed-payments.ts",
+      "table": "failed_payments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/failed-payments.ts",
+      "table": "failed_payments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/failed-payments.ts",
+      "table": "failed_payments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/invoice-service-extended.ts",
+      "table": "seat_allocations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/invoice-service-extended.ts",
+      "table": "usage_records"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/invoice-service-extended.ts",
+      "table": "plan_limits"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/invoice-service-extended.ts",
+      "table": "tax_rates"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/invoice-service.ts",
+      "table": "seat_allocations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/invoice-service.ts",
+      "table": "tax_rates"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/payment-audit.ts",
+      "table": "payment_audit_trail"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/payment-audit.ts",
+      "table": "payment_audit_trail"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/payment-audit.ts",
+      "table": "payment_audit_trail"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-service.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-service.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-service.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-service.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-service.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-service.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-service.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-service.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-service.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-service.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-service.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-service.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-service.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-workflow.ts",
+      "table": "refund_workflows"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-workflow.ts",
+      "table": "refund_workflows"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-workflow.ts",
+      "table": "refund_workflows"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-workflow.ts",
+      "table": "refund_workflows"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-workflow.ts",
+      "table": "refund_workflows"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-workflow.ts",
+      "table": "refund_workflows"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-workflow.ts",
+      "table": "refund_workflows"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-workflow.ts",
+      "table": "refund_workflows"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-workflow.ts",
+      "table": "refund_workflows"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-workflow.ts",
+      "table": "refund_workflows"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-workflow.ts",
+      "table": "refund_workflows"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/refund-workflow.ts",
+      "table": "refund_workflows"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/revenue-dashboard-service.ts",
+      "table": "subscription_changes"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/revenue-dashboard-service.ts",
+      "table": "subscription_changes"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/revenue-dashboard-service.ts",
+      "table": "usage_records"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/subscription-service.ts",
+      "table": "seat_allocations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/subscription-service.ts",
+      "table": "seat_allocations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/subscription-service.ts",
+      "table": "usage_records"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/subscription-service.ts",
+      "table": "metered_pricing"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/subscription-service.ts",
+      "table": "seat_allocations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/subscription-service.ts",
+      "table": "seat_allocations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/subscription-service.ts",
+      "table": "seat_allocations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/subscription-service.ts",
+      "table": "seat_allocations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/subscription-service.ts",
+      "table": "seat_allocations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/usage-service.ts",
+      "table": "usage_records"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/usage-service.ts",
+      "table": "usage_records"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/usage-service.ts",
+      "table": "usage_records"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/usage-service.ts",
+      "table": "usage_records"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/usage-service.ts",
+      "table": "usage_records"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/usage-service.ts",
+      "table": "usage_records"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/usage-service.ts",
+      "table": "usage_records"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/webhooks/flutterwave-handler.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/webhooks/flutterwave-handler.ts",
+      "table": "refund_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/webhooks/idempotency.ts",
+      "table": "webhook_idempotency"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/webhooks/idempotency.ts",
+      "table": "webhook_idempotency"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/webhooks/idempotency.ts",
+      "table": "webhook_idempotency"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/billing/webhooks/paystack-handler.ts",
+      "table": "payment_authorizations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/api-key-service.ts",
+      "table": "api_keys"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/api-key-service.ts",
+      "table": "api_keys"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/api-key-service.ts",
+      "table": "api_keys"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/api-key-service.ts",
+      "table": "api_keys"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/api-key-service.ts",
+      "table": "api_keys"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/api-key-service.ts",
+      "table": "api_keys"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/api-key-service.ts",
+      "table": "api_keys"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/api-key-service.ts",
+      "table": "api_keys"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/api-key-service.ts",
+      "table": "api_keys"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/oauth-service.ts",
+      "table": "oauth_auth_codes"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/oauth-service.ts",
+      "table": "oauth_auth_codes"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/oauth-service.ts",
+      "table": "oauth_auth_codes"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/oauth-service.ts",
+      "table": "oauth_tokens"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/oauth-service.ts",
+      "table": "oauth_tokens"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/oauth-service.ts",
+      "table": "oauth_tokens"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/oauth-service.ts",
+      "table": "oauth_tokens"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/oauth-service.ts",
+      "table": "oauth_tokens"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/oauth-service.ts",
+      "table": "oauth_tokens"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/oauth-service.ts",
+      "table": "oauth_tokens"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/oauth-service.ts",
+      "table": "oauth_tokens"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/oauth-service.ts",
+      "table": "oauth_tokens"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/developer/oauth-service.ts",
+      "table": "oauth_tokens"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/cross-campus-service.ts",
+      "table": "cross_campus_permissions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/cross-campus-service.ts",
+      "table": "cross_campus_permissions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/cross-campus-service.ts",
+      "table": "cross_campus_permissions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/cross-campus-service.ts",
+      "table": "cross_campus_permissions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/cross-campus-service.ts",
+      "table": "cross_campus_permissions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/cross-campus-service.ts",
+      "table": "cross_campus_permissions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/cross-campus-service.ts",
+      "table": "cross_campus_permissions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/cross-campus-service.ts",
+      "table": "cross_campus_permissions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/cross-campus-service.ts",
+      "table": "cross_campus_permissions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/cross-campus-service.ts",
+      "table": "delegated_admins"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/cross-campus-service.ts",
+      "table": "cross_campus_permissions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "delegated_admins"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "delegated_admins"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "delegated_admins"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "delegated_admins"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "delegated_admins"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "delegated_admins"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "delegated_admins"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "delegated_admins"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "delegated_admins"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "delegated_admins"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "cross_campus_permissions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "delegated_admins"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "cross_campus_permissions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "delegated_admins"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "delegated_admins"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "cross_campus_permissions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/enrollment-analytics-service.ts",
+      "table": "enrollment_history"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/enrollment-analytics-service.ts",
+      "table": "enrollment_history"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/enrollment-analytics-service.ts",
+      "table": "enrollment_history"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/enrollment-analytics-service.ts",
+      "table": "enrollment_history"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/enrollment-analytics-service.ts",
+      "table": "enrollment_history"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/scheduled-reports-service.ts",
+      "table": "scheduled_reports"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/scheduled-reports-service.ts",
+      "table": "scheduled_reports"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/scheduled-reports-service.ts",
+      "table": "scheduled_reports"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/scheduled-reports-service.ts",
+      "table": "scheduled_reports"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/scheduled-reports-service.ts",
+      "table": "scheduled_reports"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/scheduled-reports-service.ts",
+      "table": "report_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/scheduled-reports-service.ts",
+      "table": "report_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/scheduled-reports-service.ts",
+      "table": "scheduled_reports"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/scheduled-reports-service.ts",
+      "table": "report_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/scheduled-reports-service.ts",
+      "table": "scheduled_reports"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/scheduled-reports-service.ts",
+      "table": "report_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/scheduled-reports-service.ts",
+      "table": "scheduled_reports"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-analytics/scheduled-reports-service.ts",
+      "table": "report_deliveries"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/conditional-access.ts",
+      "table": "conditional_access_policies"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/conditional-access.ts",
+      "table": "conditional_access_policies"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/conditional-access.ts",
+      "table": "conditional_access_policies"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/conditional-access.ts",
+      "table": "conditional_access_policies"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/device-trust.ts",
+      "table": "devices"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/device-trust.ts",
+      "table": "devices"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/device-trust.ts",
+      "table": "devices"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/device-trust.ts",
+      "table": "devices"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/device-trust.ts",
+      "table": "devices"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/device-trust.ts",
+      "table": "devices"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/device-trust.ts",
+      "table": "devices"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/risk-engine.ts",
+      "table": "user_login_history"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/risk-engine.ts",
+      "table": "devices"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/risk-engine.ts",
+      "table": "devices"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/risk-engine.ts",
+      "table": "risk_score_history"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/risk-engine.ts",
+      "table": "risk_score_history"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/session-management.ts",
+      "table": "session_activity_log"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/session-management.ts",
+      "table": "session_activity_log"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/sso-service.ts",
+      "table": "sso_providers"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/sso-service.ts",
+      "table": "sso_providers"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/sso-service.ts",
+      "table": "sso_providers"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/sso-service.ts",
+      "table": "sso_auth_states"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/sso-service.ts",
+      "table": "sso_auth_states"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/sso-service.ts",
+      "table": "sso_auth_states"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/sso-service.ts",
+      "table": "sso_providers"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/sso-service.ts",
+      "table": "scim_configurations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/sso-service.ts",
+      "table": "scim_configurations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/sso-service.ts",
+      "table": "sso_user_links"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/sso-service.ts",
+      "table": "sso_user_links"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/sso-service.ts",
+      "table": "scim_configurations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/sso-service.ts",
+      "table": "sso_user_links"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/enterprise-security/sso-service.ts",
+      "table": "sso_user_links"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/event-bus/event-emitter.ts",
+      "table": "webhook_registrations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/event-bus/event-handlers.ts",
+      "table": "event_analytics"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/event-bus/event-handlers.ts",
+      "table": "ai_event_memory"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/event-bus/event-handlers.ts",
+      "table": "webhook_registrations"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/event-bus/event-handlers.ts",
+      "table": "workflow_trigger_rules"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/event-bus/event-handlers.ts",
+      "table": "workflow_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/analytics-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/analytics-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/analytics-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/analytics-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/analytics-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/analytics-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/analytics-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/feedback-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/feedback-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/feedback-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/feedback-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/feedback-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/feedback-service.ts",
+      "table": "feedback_comments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/feedback-service.ts",
+      "table": "feedback_comments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/feedback-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/feedback-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/feedback-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/feedback/feedback-service.ts",
+      "table": "feedback"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/import/importers/student-importer.ts",
+      "table": "enrollments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/import/importers/teacher-importer.ts",
+      "table": "teacher_subjects"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/listing-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/marketplace-categories.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_purchases_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_purchases_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_purchases_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_purchases_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_purchases_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_purchases_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_purchases_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/purchase-service.ts",
+      "table": "marketplace_purchases_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_purchases_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_reviews_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_reviews_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_reviews_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_reviews_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_reviews_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_reviews_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_reviews_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_reviews_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_reviews_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_reviews_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_reviews_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_reviews_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/review-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_seller_profiles"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_seller_profiles"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_seller_profiles"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_seller_profiles"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_seller_profiles"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_purchases_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_payouts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_seller_profiles"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_listings"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_purchases_v2"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_seller_profiles"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_seller_profiles"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_seller_profiles"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_payouts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_seller_profiles"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_payouts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_payouts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/marketplace-v2/seller-service.ts",
+      "table": "marketplace_payouts"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/delivery-engine.ts",
+      "table": "notification_bounces"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/delivery-engine.ts",
+      "table": "notification_bounces"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/delivery-engine.ts",
+      "table": "notification_bounces"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/delivery-engine.ts",
+      "table": "notification_queue"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/event-handlers.ts",
+      "table": "exam_participants"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/event-handlers.ts",
+      "table": "assignment_recipients"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/providers/push-firebase.ts",
+      "table": "push_tokens"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/providers/push-firebase.ts",
+      "table": "push_tokens"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/queue.ts",
+      "table": "notification_queue"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/queue.ts",
+      "table": "notification_queue"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/queue.ts",
+      "table": "notification_queue"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/queue.ts",
+      "table": "notification_queue"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/queue.ts",
+      "table": "notification_queue"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/queue.ts",
+      "table": "notification_queue"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/queue.ts",
+      "table": "notification_queue"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/queue.ts",
+      "table": "notification_queue"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/scheduler.ts",
+      "table": "scheduled_notifications"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/scheduler.ts",
+      "table": "scheduled_notifications"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/scheduler.ts",
+      "table": "scheduled_notifications"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/scheduler.ts",
+      "table": "scheduled_notifications"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/scheduler.ts",
+      "table": "scheduled_notifications"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/scheduler.ts",
+      "table": "scheduled_notifications"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/notifications/scheduler.ts",
+      "table": "scheduled_notifications"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/payment/payment-security.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/payment/payment-security.ts",
+      "table": "marketplace_licenses"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/services/school-admin-service.ts",
+      "table": "fee_structures"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/services/school-admin-service.ts",
+      "table": "fee_assignments"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_definitions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_definitions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/approval-service.ts",
+      "table": "workflow_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "workflow_definitions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "workflow_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "transcript_entries"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "scheduled_interventions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "workflow_scheduled_steps"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "workflow_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "workflow_approval_requests"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "workflow_definitions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "workflow_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "workflow_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "workflow_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "workflow_definitions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "workflow_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-engine.ts",
+      "table": "workflow_dead_letter_queue"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-service.ts",
+      "table": "workflow_definitions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-service.ts",
+      "table": "workflow_definitions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-service.ts",
+      "table": "workflow_definitions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-service.ts",
+      "table": "workflow_definitions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-service.ts",
+      "table": "workflow_definitions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-service.ts",
+      "table": "workflow_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-service.ts",
+      "table": "workflow_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-service.ts",
+      "table": "workflow_executions"
+    },
+    {
+      "type": "MISSING_TABLE",
+      "file": "src/lib/workflow/workflow-service.ts",
+      "table": "workflow_definitions"
+    }
+  ],
+  "missingColumns": [
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/(app)/exams/[id]/monitor/page.tsx",
+      "table": "exam_sessions",
+      "column": "profiles"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/(app)/exams/[id]/monitor/page.tsx",
+      "table": "exam_sessions",
+      "column": "full_name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/(app)/exams/[id]/monitor/page.tsx",
+      "table": "exam_sessions",
+      "column": "email"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/(app)/exams/[id]/monitor/page.tsx",
+      "table": "exam_sessions",
+      "column": "avatar_url\n          )"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/(app)/exams/[id]/monitor/page.tsx",
+      "table": "exam_sessions",
+      "column": "profiles"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/(app)/exams/[id]/monitor/page.tsx",
+      "table": "exam_sessions",
+      "column": "full_name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/(app)/exams/[id]/monitor/page.tsx",
+      "table": "exam_sessions",
+      "column": "email"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/(app)/exams/[id]/monitor/page.tsx",
+      "table": "exam_sessions",
+      "column": "avatar_url\n              )"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/(app)/notifications/preferences/page.tsx",
+      "table": "users",
+      "column": "preferences"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/(app)/settings/page.tsx",
+      "table": "users",
+      "column": "preferences"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/cbt/exam/route.ts",
+      "table": "exams",
+      "column": "name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/cbt/exam/route.ts",
+      "table": "exams",
+      "column": "name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/demo-booking/[id]/route.ts",
+      "table": "demo_bookings",
+      "column": "booked_by"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/demo-booking/[id]/route.ts",
+      "table": "demo_bookings",
+      "column": "booked_by"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/marketplace/product/route.ts",
+      "table": "questions",
+      "column": "text"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/marketplace/product/route.ts",
+      "table": "questions",
+      "column": "type"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/marketplace/seller/analytics/route.ts",
+      "table": "marketplace_purchases",
+      "column": "amount"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/marketplace/seller/products/route.ts",
+      "table": "marketplace_purchases",
+      "column": "amount"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/marketplace/webhook/route.ts",
+      "table": "marketplace_purchases",
+      "column": "status"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/marketplace/webhook/route.ts",
+      "table": "marketplace_purchases",
+      "column": "status"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/attendance/route.ts",
+      "table": "class_students",
+      "column": "name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/child-progress/route.ts",
+      "table": "class_students",
+      "column": "name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/child-progress/route.ts",
+      "table": "exams",
+      "column": "name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/child-progress/route.ts",
+      "table": "exams",
+      "column": "code)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "parent_children",
+      "column": "child"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "parent_children",
+      "column": "full_name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "parent_children",
+      "column": "email"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "parent_children",
+      "column": "school_id)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "fee_payments",
+      "column": "school_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "fee_payments",
+      "column": "name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "fee_payments",
+      "column": "fee_type"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "fee_payments",
+      "column": "academic_session"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "fee_payments",
+      "column": "term"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "fee_payments",
+      "column": "description"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "fee_payments",
+      "column": "is_active"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "fee_payments",
+      "column": "updated_at)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "class_students",
+      "column": "name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "messages",
+      "column": "full_name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/dashboard/route.ts",
+      "table": "messages",
+      "column": "role)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/fees/route.ts",
+      "table": "parent_children",
+      "column": "child"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/fees/route.ts",
+      "table": "parent_children",
+      "column": "full_name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/fees/route.ts",
+      "table": "parent_children",
+      "column": "school_id)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/fees/route.ts",
+      "table": "fee_payments",
+      "column": "school_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/fees/route.ts",
+      "table": "fee_payments",
+      "column": "name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/fees/route.ts",
+      "table": "fee_payments",
+      "column": "fee_type"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/fees/route.ts",
+      "table": "fee_payments",
+      "column": "academic_session"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/fees/route.ts",
+      "table": "fee_payments",
+      "column": "term"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/fees/route.ts",
+      "table": "fee_payments",
+      "column": "description"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/fees/route.ts",
+      "table": "fee_payments",
+      "column": "is_active"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/fees/route.ts",
+      "table": "fee_payments",
+      "column": "updated_at)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "full_name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "role"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "avatar_url)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "recipient"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "full_name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "role"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "avatar_url)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "sender"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "full_name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "role"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "avatar_url)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "sender"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "full_name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "role)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "recipient"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "full_name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/parent/messaging/route.ts",
+      "table": "messages",
+      "column": "role)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/school/attendance/route.ts",
+      "table": "attendance",
+      "column": "full_name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/school/attendance/route.ts",
+      "table": "attendance",
+      "column": "school_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/school/timetable/route.ts",
+      "table": "timetable_slots",
+      "column": "name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/school/timetable/route.ts",
+      "table": "timetable_slots",
+      "column": "full_name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/settings/security/route.ts",
+      "table": "users",
+      "column": "two_factor_enabled"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/certificates/route.ts",
+      "table": "exam_sessions",
+      "column": "title"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/certificates/route.ts",
+      "table": "exam_sessions",
+      "column": "subject_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/certificates/route.ts",
+      "table": "exam_sessions",
+      "column": "total_marks"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/certificates/route.ts",
+      "table": "exam_sessions",
+      "column": "name))"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/flashcards/route.ts",
+      "table": "flashcards",
+      "column": "last_reviewed"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/flashcards/route.ts",
+      "table": "flashcards",
+      "column": "review_count"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/flashcards/route.ts",
+      "table": "flashcards",
+      "column": "correct_count"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/flashcards/route.ts",
+      "table": "flashcards",
+      "column": "review_count"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/flashcards/route.ts",
+      "table": "flashcards",
+      "column": "correct_count"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/progress/route.ts",
+      "table": "exam_sessions",
+      "column": "title"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/progress/route.ts",
+      "table": "exam_sessions",
+      "column": "subject_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/progress/route.ts",
+      "table": "exam_sessions",
+      "column": "total_marks"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/progress/route.ts",
+      "table": "exam_sessions",
+      "column": "pass_mark"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/progress/route.ts",
+      "table": "exam_sessions",
+      "column": "name))"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/revision-hub/route.ts",
+      "table": "exam_sessions",
+      "column": "title"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/revision-hub/route.ts",
+      "table": "exam_sessions",
+      "column": "subject_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/revision-hub/route.ts",
+      "table": "exam_sessions",
+      "column": "name))"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/app/api/student/study-planner/route.ts",
+      "table": "exams",
+      "column": "duration_minutes"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/features/exams/actions.ts",
+      "table": "questions",
+      "column": "created_by"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/features/exams/actions.ts",
+      "table": "questions",
+      "column": "created_by"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-agents.ts",
+      "table": "exam_sessions",
+      "column": "school_id)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-agents.ts",
+      "table": "exams",
+      "column": "starts_at"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-agents.ts",
+      "table": "attendance",
+      "column": "school_id)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-agents.ts",
+      "table": "exam_sessions",
+      "column": "school_id)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-engine.ts",
+      "table": "ai_generation_requests",
+      "column": "tokens_input"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-engine.ts",
+      "table": "ai_generation_requests",
+      "column": "tokens_output"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-engine.ts",
+      "table": "ai_generation_requests",
+      "column": "cost_usd"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-engine.ts",
+      "table": "ai_generation_requests",
+      "column": "duration_ms"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-government.ts",
+      "table": "schools",
+      "column": "metadata"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-government.ts",
+      "table": "attendance",
+      "column": "school_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-government.ts",
+      "table": "schools",
+      "column": "educational_level"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-parent.ts",
+      "table": "exam_sessions",
+      "column": "subject_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-reliability.ts",
+      "table": "ai_quotas",
+      "column": "max_tokens_per_month"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-reliability.ts",
+      "table": "ai_quotas",
+      "column": "max_cost_per_month"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-reliability.ts",
+      "table": "ai_quotas",
+      "column": "tokens_used"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-reliability.ts",
+      "table": "ai_quotas",
+      "column": "cost_used"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-reliability.ts",
+      "table": "ai_quotas",
+      "column": "max_tokens_per_day"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-reliability.ts",
+      "table": "ai_quotas",
+      "column": "max_cost_per_day"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-reliability.ts",
+      "table": "ai_quotas",
+      "column": "tokens_used_today"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-reliability.ts",
+      "table": "ai_quotas",
+      "column": "cost_used_today"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-school-admin.ts",
+      "table": "users",
+      "column": "metadata"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-school-admin.ts",
+      "table": "schools",
+      "column": "metadata"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-student.ts",
+      "table": "exam_sessions",
+      "column": "subject_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-student.ts",
+      "table": "exam_sessions",
+      "column": "title"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-student.ts",
+      "table": "exam_sessions",
+      "column": "subject_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-student.ts",
+      "table": "exam_sessions",
+      "column": "name))"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/ai-teacher.ts",
+      "table": "class_students",
+      "column": "full_name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/orchestration/agents/government-agent.ts",
+      "table": "exam_sessions",
+      "column": "school_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/ai/orchestration/agents/government-agent.ts",
+      "table": "exam_sessions",
+      "column": "school_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/failed-payments.ts",
+      "table": "transactions",
+      "column": "org_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/invoice-service-extended.ts",
+      "table": "organizations",
+      "column": "country"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/invoice-service-extended.ts",
+      "table": "organizations",
+      "column": "region"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/invoice-service.ts",
+      "table": "organizations",
+      "column": "country"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/invoice-service.ts",
+      "table": "organizations",
+      "column": "region"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/invoice-service.ts",
+      "table": "organizations",
+      "column": "billing_email"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/invoice-service.ts",
+      "table": "organizations",
+      "column": "email"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/invoice-service.ts",
+      "table": "organizations",
+      "column": "address"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/invoice-service.ts",
+      "table": "organizations",
+      "column": "email"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/invoice-service.ts",
+      "table": "organizations",
+      "column": "phone"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/invoice-service.ts",
+      "table": "organizations",
+      "column": "tax_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/plan-gate.ts",
+      "table": "subscriptions",
+      "column": "plan_tier"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/refund-service.ts",
+      "table": "transactions",
+      "column": "org_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/refund-workflow.ts",
+      "table": "transactions",
+      "column": "provider"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/refund-workflow.ts",
+      "table": "transactions",
+      "column": "transaction_ref"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/revenue-dashboard-service.ts",
+      "table": "subscriptions",
+      "column": "plan_tier"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/revenue-dashboard-service.ts",
+      "table": "subscriptions",
+      "column": "cancelled_reason"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/revenue-dashboard-service.ts",
+      "table": "invoices",
+      "column": "status"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/revenue-dashboard-service.ts",
+      "table": "subscriptions",
+      "column": "name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/revenue-dashboard-service.ts",
+      "table": "subscriptions",
+      "column": "plan_tier"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/subscription-lifecycle.ts",
+      "table": "plans",
+      "column": "monthly_price"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/subscription-lifecycle.ts",
+      "table": "plans",
+      "column": "quarterly_price"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/subscription-lifecycle.ts",
+      "table": "plans",
+      "column": "annual_price"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/subscription-lifecycle.ts",
+      "table": "plans",
+      "column": "biennial_price"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/subscription-lifecycle.ts",
+      "table": "plans",
+      "column": "lifetime_price"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/subscription-lifecycle.ts",
+      "table": "plans",
+      "column": "monthly_price"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/subscription-lifecycle.ts",
+      "table": "plans",
+      "column": "quarterly_price"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/subscription-lifecycle.ts",
+      "table": "plans",
+      "column": "annual_price"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/subscription-lifecycle.ts",
+      "table": "plans",
+      "column": "biennial_price"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/subscription-lifecycle.ts",
+      "table": "plans",
+      "column": "lifetime_price"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/subscription-service.ts",
+      "table": "coupons",
+      "column": "type"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/subscription-service.ts",
+      "table": "coupons",
+      "column": "value"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/subscription-service.ts",
+      "table": "coupons",
+      "column": "max_uses"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/subscription-service.ts",
+      "table": "coupons",
+      "column": "used_count"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/usage-service.ts",
+      "table": "subscriptions",
+      "column": "plan_tier"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/usage-service.ts",
+      "table": "subscriptions",
+      "column": "plan_tier"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/billing/usage-service.ts",
+      "table": "subscriptions",
+      "column": "plan_tier"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/branding-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/branding-service.ts",
+      "table": "organizations",
+      "column": "parent_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/branding-service.ts",
+      "table": "organizations",
+      "column": "parent_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/branding-service.ts",
+      "table": "organizations",
+      "column": "parent_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/cross-campus-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/cross-campus-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/cross-campus-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/delegated-admin-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "type"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "level"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "level"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "parent_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "type"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "level"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "level"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-settings-service.ts",
+      "table": "organizations",
+      "column": "path"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise/organization-settings-service.ts",
+      "table": "organizations",
+      "column": "level"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/academic-analytics-service.ts",
+      "table": "exam_results",
+      "column": "class_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/academic-analytics-service.ts",
+      "table": "exam_results",
+      "column": "title)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/academic-analytics-service.ts",
+      "table": "exam_results",
+      "column": "name))"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/academic-analytics-service.ts",
+      "table": "exam_results",
+      "column": "name))"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/academic-analytics-service.ts",
+      "table": "exam_results",
+      "column": "full_name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/academic-analytics-service.ts",
+      "table": "exam_results",
+      "column": "class_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "ai_generation_requests",
+      "column": "model"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "ai_generation_requests",
+      "column": "tokens_input"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "ai_generation_requests",
+      "column": "tokens_output"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "ai_generation_requests",
+      "column": "cost_usd"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "ai_generation_requests",
+      "column": "duration_ms"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "ai_generation_requests",
+      "column": "tokens_input"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "ai_generation_requests",
+      "column": "tokens_output"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "ai_generation_requests",
+      "column": "cost_usd"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "ai_generation_requests",
+      "column": "duration_ms"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "ai_generation_requests",
+      "column": "model"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "ai_generation_requests",
+      "column": "cost_usd"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "school_settings",
+      "column": "ai_config"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "ai_generation_requests",
+      "column": "tokens_input"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "ai_generation_requests",
+      "column": "tokens_output"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/ai-analytics-service.ts",
+      "table": "ai_generation_requests",
+      "column": "metadata"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/drilldown-service.ts",
+      "table": "users",
+      "column": "grade"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/drilldown-service.ts",
+      "table": "users",
+      "column": "department"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/enrollment-analytics-service.ts",
+      "table": "users",
+      "column": "grade"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/enrollment-analytics-service.ts",
+      "table": "users",
+      "column": "department"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/enrollment-analytics-service.ts",
+      "table": "users",
+      "column": "gender"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/enrollment-analytics-service.ts",
+      "table": "users",
+      "column": "date_of_birth"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/enrollment-analytics-service.ts",
+      "table": "users",
+      "column": "grade"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/enrollment-analytics-service.ts",
+      "table": "users",
+      "column": "department"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/enrollment-analytics-service.ts",
+      "table": "users",
+      "column": "city"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/enrollment-analytics-service.ts",
+      "table": "users",
+      "column": "grade"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/enrollment-analytics-service.ts",
+      "table": "users",
+      "column": "department"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/financial-analytics-service.ts",
+      "table": "invoices",
+      "column": "status"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/financial-analytics-service.ts",
+      "table": "transactions",
+      "column": "invoice_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/financial-analytics-service.ts",
+      "table": "transactions",
+      "column": "payment_method"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/financial-analytics-service.ts",
+      "table": "invoices",
+      "column": "status"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/financial-analytics-service.ts",
+      "table": "transactions",
+      "column": "name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/financial-analytics-service.ts",
+      "table": "invoices",
+      "column": "amount"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/financial-analytics-service.ts",
+      "table": "invoices",
+      "column": "status"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/government-analytics-service.ts",
+      "table": "schools",
+      "column": "district_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/government-analytics-service.ts",
+      "table": "school_settings",
+      "column": "is_compliant"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/government-analytics-service.ts",
+      "table": "schools",
+      "column": "district_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/government-analytics-service.ts",
+      "table": "school_settings",
+      "column": "is_compliant"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/government-analytics-service.ts",
+      "table": "school_settings",
+      "column": "compliance_details"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/government-analytics-service.ts",
+      "table": "schools",
+      "column": "district_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/risk-analytics-service.ts",
+      "table": "exam_results",
+      "column": "full_name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/risk-analytics-service.ts",
+      "table": "invoices",
+      "column": "amount"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/risk-analytics-service.ts",
+      "table": "invoices",
+      "column": "status"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/risk-analytics-service.ts",
+      "table": "school_settings",
+      "column": "is_compliant"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/risk-analytics-service.ts",
+      "table": "school_settings",
+      "column": "compliance_details"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-analytics/scheduled-reports-service.ts",
+      "table": "exam_results",
+      "column": "score"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-security/audit-log.ts",
+      "table": "audit_logs",
+      "column": "resource"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-security/audit-log.ts",
+      "table": "audit_logs",
+      "column": "result"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-security/audit-log.ts",
+      "table": "audit_logs",
+      "column": "risk_score"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-security/audit-log.ts",
+      "table": "audit_logs",
+      "column": "ip"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-security/audit-log.ts",
+      "table": "audit_logs",
+      "column": "result"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-security/audit-log.ts",
+      "table": "audit_logs",
+      "column": "timestamp"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/enterprise-security/risk-engine.ts",
+      "table": "audit_logs",
+      "column": "ip"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/event-bus/event-replay.ts",
+      "table": "event_history",
+      "column": "duration_ms"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/event-bus/event-replay.ts",
+      "table": "event_history",
+      "column": "success"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/event-bus/event-replay.ts",
+      "table": "event_history",
+      "column": "source_user_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/event-bus/event-replay.ts",
+      "table": "event_history",
+      "column": "timestamp"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/notifications/delivery-engine.ts",
+      "table": "users",
+      "column": "push_token"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/notifications/delivery-engine.ts",
+      "table": "users",
+      "column": "locale"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/payment/payment-security.ts",
+      "table": "marketplace_purchases",
+      "column": "user_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/payment/payment-security.ts",
+      "table": "marketplace_purchases",
+      "column": "amount"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/payment/payment-security.ts",
+      "table": "marketplace_purchases",
+      "column": "transaction_ref"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/payment/payment-security.ts",
+      "table": "marketplace_purchases",
+      "column": "flw_ref"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/payment/payment-security.ts",
+      "table": "marketplace_purchases",
+      "column": "status"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/plugins/plugin-lifecycle.ts",
+      "table": "plugin_installations",
+      "column": "lifecycle_state"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/plugins/plugin-lifecycle.ts",
+      "table": "plugin_installations",
+      "column": "lifecycle_state"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/plugins/plugin-lifecycle.ts",
+      "table": "plugin_installations",
+      "column": "granted_permissions"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/plugins/plugin-lifecycle.ts",
+      "table": "plugin_installations",
+      "column": "lifecycle_state"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/plugins/plugin-registry.ts",
+      "table": "plugin_registry",
+      "column": "license"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/plugins/plugin-registry.ts",
+      "table": "plugin_registry",
+      "column": "homepage"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/plugins/plugin-sandbox.ts",
+      "table": "plugin_installations",
+      "column": "granted_permissions"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/plugins/plugin-sandbox.ts",
+      "table": "plugin_installations",
+      "column": "sandbox_limits"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/plugins/plugin-settings.ts",
+      "table": "plugin_registry",
+      "column": "settings_schema"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/marketplace-service.ts",
+      "table": "questions",
+      "column": "text"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/marketplace-service.ts",
+      "table": "questions",
+      "column": "type"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/marketplace-service.ts",
+      "table": "marketplace_purchases",
+      "column": "amount"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/marketplace-service.ts",
+      "table": "marketplace_purchases",
+      "column": "amount"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/report-generator.ts",
+      "table": "exam_results",
+      "column": "submitted_at"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/report-generator.ts",
+      "table": "exam_results",
+      "column": "subject_id"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/report-generator.ts",
+      "table": "classes",
+      "column": "level"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/report-generator.ts",
+      "table": "classes",
+      "column": "academic_session"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/report-generator.ts",
+      "table": "exam_results",
+      "column": "percentage"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/report-generator.ts",
+      "table": "exam_results",
+      "column": "percentage"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/report-generator.ts",
+      "table": "exam_results",
+      "column": "percentage"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/report-generator.ts",
+      "table": "exams",
+      "column": "duration"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/report-generator.ts",
+      "table": "exam_results",
+      "column": "score"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/report-generator.ts",
+      "table": "exam_results",
+      "column": "percentage"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/report-generator.ts",
+      "table": "questions",
+      "column": "text"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/reports-service.ts",
+      "table": "questions",
+      "column": "created_by"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/results-service.ts",
+      "table": "exam_sessions",
+      "column": "time_taken_seconds"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/school-admin-service.ts",
+      "table": "class_subjects",
+      "column": "name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/school-admin-service.ts",
+      "table": "class_students",
+      "column": "full_name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/school-admin-service.ts",
+      "table": "class_students",
+      "column": "email"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/school-admin-service.ts",
+      "table": "class_students",
+      "column": "avatar_url)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/school-admin-service.ts",
+      "table": "class_subjects",
+      "column": "name"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/school-admin-service.ts",
+      "table": "class_subjects",
+      "column": "code)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/school-admin-service.ts",
+      "table": "timetable_slots",
+      "column": "name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/school-admin-service.ts",
+      "table": "timetable_slots",
+      "column": "full_name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/school-admin-service.ts",
+      "table": "attendance",
+      "column": "full_name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/school-admin-service.ts",
+      "table": "attendance",
+      "column": "full_name)"
+    },
+    {
+      "type": "MISSING_COLUMN",
+      "file": "src/lib/services/school-admin-service.ts",
+      "table": "fee_payments",
+      "column": "full_name)"
+    }
+  ]
+}

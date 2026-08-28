@@ -1,0 +1,115 @@
+{
+  "dynamic_imports_count": 52,
+  "react_lazy_count": 0,
+  "dynamic_imports_sample": [
+    {
+      "file": "src/app/(app)/layout.tsx",
+      "import": "@/components/ai/ai-copilot-provider",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(app)/layout.tsx",
+      "import": "@/components/ai/contextual-ai-assistant",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(app)/layout.tsx",
+      "import": "@/components/command-palette",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(app)/layout.tsx",
+      "import": "(inline)",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(app)/layout.tsx",
+      "import": "(inline)",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(app)/layout.tsx",
+      "import": "(inline)",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "import": "@/components/marketing/hero-section",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "import": "@/components/marketing/trusted-by-section",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "import": "@/components/marketing/platform-overview-section",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "import": "@/components/marketing/core-products-section",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "import": "@/components/marketing/ecosystem-section",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "import": "@/components/marketing/ai-features-section",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "import": "@/components/marketing/cbt-experience-section",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "import": "@/components/marketing/comparison-section",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "import": "@/components/marketing/security-section",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "import": "@/components/marketing/analytics-section",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "import": "@/components/marketing/customer-stories-section",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "import": "@/components/marketing/pricing-section",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "import": "@/components/marketing/testimonials-section",
+      "kind": "next-dynamic"
+    },
+    {
+      "file": "src/app/(marketing)/page.tsx",
+      "import": "@/components/marketing/faq-section",
+      "kind": "next-dynamic"
+    }
+  ],
+  "bundle_info": {
+    "total_pages_in_manifest": 1,
+    "page_sizes_top_10": [
+      {
+        "route": "/_app",
+        "js_bytes": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "pages": {},
+  "bundles": {
+    "total_count": 185,
+    "total_size_kb": 8130.2,
+    "largest": [
+      {
+        "name": "8e065152d9703a66.js",
+        "size_kb": 409.1
+      },
+      {
+        "name": "542dc98a723bfb24.js",
+        "size_kb": 402.2
+      },
+      {
+        "name": "ef8691cda0e9326f.js",
+        "size_kb": 359.7
+      },
+      {
+        "name": "a349e3e0121ca1d5.js",
+        "size_kb": 359.7
+      },
+      {
+        "name": "d7813ae68fa11f5c.js",
+        "size_kb": 359.7
+      },
+      {
+        "name": "f483e74d0012445d.js",
+        "size_kb": 282.3
+      },
+      {
+        "name": "631db60b025e0968.js",
+        "size_kb": 245.9
+      },
+      {
+        "name": "6e820c036b7534b7.js",
+        "size_kb": 224.7
+      },
+      {
+        "name": "6db410546021f1fc.js",
+        "size_kb": 219.3
+      },
+      {
+        "name": "034945ea23f7a8ce.js",
+        "size_kb": 193.4
+      }
+    ]
+  },
+  "summary": {
+    "total_routes": 276,
+    "api_routes": 147,
+    "page_routes": 129,
+    "prerendered_pages": 117,
+    "sourcemaps_shipped": 1
+  },
+  "issues": [
+    "1 source maps shipped to production"
+  ]
+}

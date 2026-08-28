@@ -1,0 +1,80 @@
+{
+  "checks": [
+    {
+      "name": "Auth service health",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "Database schema (OpenAPI)",
+      "ok": true,
+      "detail": "212 tables"
+    },
+    {
+      "name": "Tables exist",
+      "ok": true,
+      "detail": "212 tables: exam_monitoring_logs, notification_history, email_logs, ai_credit_packs, marketplace_seller_analytics, matching_pairs, referrals, sales_proposals..."
+    },
+    {
+      "name": "Core table: users",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "Core table: schools",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "Core table: exams",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "Core table: questions",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "Core table: exam_results",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "RLS: anon cannot read users table",
+      "ok": true,
+      "detail": "HTTP 200, 0 rows visible"
+    },
+    {
+      "name": "RLS: anon cannot read exams table",
+      "ok": true,
+      "detail": "HTTP 200, 0 rows visible"
+    },
+    {
+      "name": "Auth: password grant works",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "Auth: invalid credentials rejected",
+      "ok": true,
+      "detail": "HTTP 400"
+    },
+    {
+      "name": "Storage service",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "Storage buckets configured",
+      "ok": true,
+      "detail": "marketplace-products, avatars, exam-files"
+    },
+    {
+      "name": "Realtime endpoint reachable",
+      "ok": true,
+      "detail": "HTTP 500"
+    }
+  ],
+  "issues": []
+}

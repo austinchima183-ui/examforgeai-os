@@ -1,0 +1,479 @@
+[
+  {
+    "id": "core-cbt",
+    "title": "Computer-Based Testing (CBT)",
+    "route": "/cbt",
+    "category": "core-product",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "core-question-bank",
+    "title": "Question Bank",
+    "route": "/question-bank",
+    "category": "core-product",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "core-analytics",
+    "title": "Analytics & Reporting",
+    "route": "/analytics",
+    "category": "core-product",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "core-marketplace",
+    "title": "Educator Marketplace",
+    "route": "/marketplace",
+    "category": "core-product",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "student-practice",
+    "title": "Student Practice Mode",
+    "route": "/student/practice",
+    "category": "student",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "student-flashcards",
+    "title": "Flashcards",
+    "route": "/student/flashcards",
+    "category": "student",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "student-ai-tutor",
+    "title": "AI Tutor",
+    "route": "/student/ai-tutor",
+    "category": "student",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "student-study-planner",
+    "title": "Study Planner",
+    "route": "/student/study-planner",
+    "category": "student",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "student-progress",
+    "title": "Progress Tracking",
+    "route": "/student/progress",
+    "category": "student",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "student-revision-hub",
+    "title": "Revision Hub",
+    "route": "/student/revision-hub",
+    "category": "student",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "student-certificates",
+    "title": "Certificates",
+    "route": "/student/certificates",
+    "category": "student",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "student-explain",
+    "title": "Explain Anything",
+    "route": "/student/explain",
+    "category": "student",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "teacher-lesson-planner",
+    "title": "Lesson Planner",
+    "route": "/teacher/lesson-planner",
+    "category": "teacher",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "teacher-worksheet-builder",
+    "title": "Worksheet Builder",
+    "route": "/teacher/worksheet-builder",
+    "category": "teacher",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "teacher-rubric-builder",
+    "title": "Rubric Builder",
+    "route": "/teacher/rubric-builder",
+    "category": "teacher",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "teacher-grading",
+    "title": "Grading",
+    "route": "/teacher/grading",
+    "category": "teacher",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "teacher-content-assistant",
+    "title": "Content Assistant",
+    "route": "/teacher/content-assistant",
+    "category": "teacher",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "teacher-ai-question-generator",
+    "title": "AI Question Generator",
+    "route": "/teacher/ai-question-generator",
+    "category": "teacher",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "school-classes",
+    "title": "Classes Management",
+    "route": "/school/classes",
+    "category": "school-admin",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "school-timetable",
+    "title": "Timetable",
+    "route": "/school/timetable",
+    "category": "school-admin",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "school-attendance",
+    "title": "Attendance",
+    "route": "/school/attendance",
+    "category": "school-admin",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "school-fees",
+    "title": "Fees & Billing",
+    "route": "/school/fees",
+    "category": "school-admin",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "school-calendar",
+    "title": "School Calendar",
+    "route": "/school/calendar",
+    "category": "school-admin",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "admin-users",
+    "title": "User Management",
+    "route": "/admin/users",
+    "category": "super-admin",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "admin-organizations",
+    "title": "Organizations",
+    "route": "/admin/organizations",
+    "category": "super-admin",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "admin-security",
+    "title": "Security Center",
+    "route": "/admin/security",
+    "category": "super-admin",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "admin-roles",
+    "title": "Role Management",
+    "route": "/admin/roles",
+    "category": "super-admin",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "admin-backups",
+    "title": "Backups",
+    "route": "/admin/backups",
+    "category": "super-admin",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "admin-integrations",
+    "title": "Integrations",
+    "route": "/admin/integrations",
+    "category": "super-admin",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "admin-audit-logs",
+    "title": "Audit Logs",
+    "route": "/admin/audit-logs",
+    "category": "super-admin",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "admin-branding",
+    "title": "Branding",
+    "route": "/admin/branding",
+    "category": "super-admin",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "admin-agents",
+    "title": "AI Agents",
+    "route": "/admin/agents",
+    "category": "super-admin",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "admin-plugins",
+    "title": "Plugins",
+    "route": "/admin/plugins",
+    "category": "super-admin",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "admin-developers",
+    "title": "Developer/API Keys",
+    "route": "/admin/developers",
+    "category": "super-admin",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "billing",
+    "title": "Billing & Plans",
+    "route": "/billing",
+    "category": "cross-cutting",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "billing-enterprise",
+    "title": "Enterprise Billing",
+    "route": "/billing/enterprise",
+    "category": "cross-cutting",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "analytics-enterprise",
+    "title": "Enterprise Analytics",
+    "route": "/analytics/enterprise",
+    "category": "cross-cutting",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "settings",
+    "title": "Settings",
+    "route": "/settings",
+    "category": "cross-cutting",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "implemented"
+  },
+  {
+    "id": "notifications",
+    "title": "Notifications Center",
+    "route": "/notifications",
+    "category": "cross-cutting",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "reports",
+    "title": "Reports",
+    "route": "/reports",
+    "category": "cross-cutting",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "search",
+    "title": "Global Search (Cmd+K)",
+    "route": "/search",
+    "category": "cross-cutting",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "workflows",
+    "title": "Workflow Builder",
+    "route": "/workflows",
+    "category": "cross-cutting",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "marketplace-v2",
+    "title": "Marketplace V2",
+    "route": "/marketplace",
+    "category": "cross-cutting",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "ai-insights",
+    "title": "AI Insights",
+    "route": "/school-admin/ai-insights",
+    "category": "ai",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "ai-predictive",
+    "title": "AI Predictive Analytics",
+    "route": "/school-admin/predictive",
+    "category": "ai",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "ai-government",
+    "title": "Government District Intelligence",
+    "route": "/government/district-intelligence",
+    "category": "ai",
+    "page_exists": true,
+    "api_exists": false,
+    "status": "not_implemented"
+  },
+  {
+    "id": "ai-parent-advisor",
+    "title": "AI Parent Advisor",
+    "route": "/parent/ai-advisor",
+    "category": "ai",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "ai-copilot",
+    "title": "AI Copilot",
+    "route": null,
+    "category": "ai",
+    "page_exists": false,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "parent-dashboard",
+    "title": "Parent Dashboard",
+    "route": "/parent/dashboard",
+    "category": "parent",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "parent-child-progress",
+    "title": "Child Progress",
+    "route": "/parent/child-progress",
+    "category": "parent",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "parent-messaging",
+    "title": "Parent Messaging",
+    "route": "/parent/messaging",
+    "category": "parent",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "parent-fees",
+    "title": "Parent Fees",
+    "route": "/parent/fees",
+    "category": "parent",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  },
+  {
+    "id": "parent-attendance",
+    "title": "Parent Attendance",
+    "route": "/parent/attendance",
+    "category": "parent",
+    "page_exists": true,
+    "api_exists": true,
+    "status": "implemented"
+  }
+]

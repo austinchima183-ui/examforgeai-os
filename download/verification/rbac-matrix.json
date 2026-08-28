@@ -1,0 +1,742 @@
+{
+  "generatedAt": "2026-08-28T17:01:13.670Z",
+  "source": "src/lib/constants/route-rbac.ts",
+  "publicRoutes": [
+    "/",
+    "/pricing",
+    "/about",
+    "/features",
+    "/solutions",
+    "/contact",
+    "/docs",
+    "/api-docs",
+    "/blog",
+    "/changelog",
+    "/careers",
+    "/status",
+    "/customers",
+    "/case-studies",
+    "/integrations",
+    "/partners",
+    "/security",
+    "/privacy",
+    "/terms",
+    "/cookies",
+    "/gdpr",
+    "/help-center",
+    "/community",
+    "/press-kit",
+    "/developers",
+    "/demo",
+    "/documentation",
+    "/login",
+    "/register",
+    "/forgot-password",
+    "/reset-password",
+    "/verify-email",
+    "/api/auth/callback",
+    "/api/billing/webhook",
+    "/api/billing/webhooks"
+  ],
+  "routeRoleMap": {
+    "/dashboard/super-admin": [
+      "super_admin"
+    ],
+    "/dashboard/school-admin": [
+      "school_admin",
+      "super_admin"
+    ],
+    "/dashboard/teacher": [
+      "teacher",
+      "school_admin",
+      "super_admin"
+    ],
+    "/dashboard/student": [
+      "student",
+      "parent"
+    ],
+    "/dashboard": [
+      "super_admin",
+      "school_admin",
+      "teacher",
+      "student",
+      "parent"
+    ],
+    "/schools": [
+      "super_admin",
+      "school_admin"
+    ],
+    "/billing": [
+      "super_admin",
+      "school_admin"
+    ],
+    "/billing/enterprise": [
+      "school_admin",
+      "super_admin"
+    ],
+    "/analytics": [
+      "super_admin",
+      "school_admin",
+      "teacher"
+    ],
+    "/analytics/enterprise": [
+      "school_admin",
+      "super_admin"
+    ],
+    "/reports": [
+      "super_admin",
+      "school_admin",
+      "teacher"
+    ],
+    "/question-bank": [
+      "teacher",
+      "school_admin",
+      "super_admin"
+    ],
+    "/cbt": [
+      "teacher",
+      "school_admin",
+      "super_admin",
+      "student"
+    ],
+    "/exams": [
+      "teacher",
+      "school_admin",
+      "super_admin",
+      "student",
+      "parent"
+    ],
+    "/forbidden": [
+      "super_admin",
+      "school_admin",
+      "teacher",
+      "student",
+      "parent"
+    ],
+    "/marketplace": [
+      "super_admin",
+      "school_admin",
+      "teacher",
+      "student"
+    ],
+    "/results": [
+      "super_admin",
+      "school_admin",
+      "teacher",
+      "student"
+    ],
+    "/students": [
+      "super_admin",
+      "school_admin",
+      "teacher"
+    ],
+    "/teachers": [
+      "super_admin",
+      "school_admin"
+    ],
+    "/parents": [
+      "super_admin",
+      "school_admin"
+    ],
+    "/search": [
+      "super_admin",
+      "school_admin",
+      "teacher",
+      "student"
+    ],
+    "/settings": [
+      "super_admin",
+      "school_admin",
+      "teacher",
+      "student"
+    ],
+    "/profile": [
+      "super_admin",
+      "school_admin",
+      "teacher",
+      "student",
+      "parent"
+    ],
+    "/notifications": [
+      "super_admin",
+      "school_admin",
+      "teacher",
+      "student",
+      "parent"
+    ],
+    "/marketing": [
+      "school_admin",
+      "super_admin"
+    ],
+    "/school/classes": [
+      "school_admin",
+      "super_admin"
+    ],
+    "/school/timetable": [
+      "school_admin",
+      "super_admin"
+    ],
+    "/school/attendance": [
+      "school_admin",
+      "super_admin"
+    ],
+    "/school/fees": [
+      "school_admin",
+      "super_admin"
+    ],
+    "/school/calendar": [
+      "school_admin",
+      "super_admin"
+    ],
+    "/school-admin/ai-insights": [
+      "school_admin",
+      "super_admin"
+    ],
+    "/school-admin/predictive": [
+      "school_admin",
+      "super_admin"
+    ],
+    "/admin": [
+      "super_admin",
+      "school_admin"
+    ],
+    "/admin/users": [
+      "super_admin",
+      "school_admin"
+    ],
+    "/admin/roles": [
+      "super_admin"
+    ],
+    "/admin/audit-logs": [
+      "super_admin",
+      "school_admin"
+    ],
+    "/admin/backups": [
+      "super_admin"
+    ],
+    "/admin/integrations": [
+      "super_admin"
+    ],
+    "/admin/organization-settings": [
+      "super_admin"
+    ],
+    "/admin/branding": [
+      "super_admin",
+      "school_admin"
+    ],
+    "/admin/organizations": [
+      "super_admin"
+    ],
+    "/admin/agents": [
+      "super_admin"
+    ],
+    "/admin/plugins": [
+      "super_admin"
+    ],
+    "/admin/developers": [
+      "super_admin"
+    ],
+    "/admin/security": [
+      "super_admin"
+    ],
+    "/teacher": [
+      "teacher",
+      "school_admin",
+      "super_admin"
+    ],
+    "/teacher/lesson-planner": [
+      "teacher",
+      "school_admin",
+      "super_admin"
+    ],
+    "/teacher/worksheet-builder": [
+      "teacher",
+      "school_admin",
+      "super_admin"
+    ],
+    "/teacher/rubric-builder": [
+      "teacher",
+      "school_admin",
+      "super_admin"
+    ],
+    "/teacher/grading": [
+      "teacher",
+      "school_admin",
+      "super_admin"
+    ],
+    "/teacher/content-assistant": [
+      "teacher",
+      "school_admin",
+      "super_admin"
+    ],
+    "/teacher/ai-question-generator": [
+      "teacher",
+      "school_admin",
+      "super_admin"
+    ],
+    "/student": [
+      "student",
+      "parent"
+    ],
+    "/student/practice": [
+      "student",
+      "parent"
+    ],
+    "/student/flashcards": [
+      "student",
+      "parent"
+    ],
+    "/student/ai-tutor": [
+      "student",
+      "parent"
+    ],
+    "/student/study-planner": [
+      "student",
+      "parent"
+    ],
+    "/student/progress": [
+      "student",
+      "parent"
+    ],
+    "/student/explain": [
+      "student",
+      "parent"
+    ],
+    "/student/certificates": [
+      "student",
+      "school_admin",
+      "super_admin"
+    ],
+    "/student/revision-hub": [
+      "student",
+      "school_admin",
+      "super_admin"
+    ],
+    "/parent": [
+      "parent",
+      "school_admin",
+      "super_admin"
+    ],
+    "/parent/dashboard": [
+      "parent",
+      "school_admin",
+      "super_admin"
+    ],
+    "/parent/child-progress": [
+      "parent",
+      "school_admin",
+      "super_admin"
+    ],
+    "/parent/messaging": [
+      "parent",
+      "school_admin",
+      "super_admin"
+    ],
+    "/parent/attendance": [
+      "parent",
+      "school_admin",
+      "super_admin"
+    ],
+    "/parent/fees": [
+      "parent",
+      "school_admin",
+      "super_admin"
+    ],
+    "/parent/ai-advisor": [
+      "parent",
+      "school_admin",
+      "super_admin"
+    ],
+    "/government": [
+      "super_admin"
+    ],
+    "/government/district-intelligence": [
+      "super_admin"
+    ],
+    "/workflows": [
+      "school_admin",
+      "super_admin"
+    ],
+    "/workflows/[id]": [
+      "school_admin",
+      "super_admin"
+    ]
+  },
+  "matrix": {
+    "student": {
+      "allowed": [
+        "/dashboard/student",
+        "/dashboard",
+        "/cbt",
+        "/exams",
+        "/marketplace",
+        "/results",
+        "/search",
+        "/profile",
+        "/notifications",
+        "/student",
+        "/student/practice",
+        "/student/flashcards",
+        "/student/ai-tutor",
+        "/student/study-planner",
+        "/student/progress",
+        "/student/explain",
+        "/student/certificates",
+        "/student/revision-hub"
+      ],
+      "denied": [
+        "/dashboard/super-admin",
+        "/dashboard/school-admin",
+        "/dashboard/teacher",
+        "/schools",
+        "/billing",
+        "/billing/enterprise",
+        "/analytics",
+        "/analytics/enterprise",
+        "/reports",
+        "/question-bank",
+        "/students",
+        "/teachers",
+        "/parents",
+        "/marketing",
+        "/school/classes",
+        "/school/timetable",
+        "/school/attendance",
+        "/school/fees",
+        "/school/calendar",
+        "/school-admin/ai-insights",
+        "/school-admin/predictive",
+        "/admin",
+        "/admin/users",
+        "/admin/roles",
+        "/admin/audit-logs",
+        "/admin/backups",
+        "/admin/integrations",
+        "/admin/organization-settings",
+        "/admin/branding",
+        "/admin/organizations",
+        "/admin/agents",
+        "/admin/plugins",
+        "/admin/developers",
+        "/admin/security",
+        "/teacher",
+        "/teacher/lesson-planner",
+        "/teacher/worksheet-builder",
+        "/teacher/rubric-builder",
+        "/teacher/grading",
+        "/teacher/content-assistant",
+        "/teacher/ai-question-generator",
+        "/parent",
+        "/parent/dashboard",
+        "/parent/child-progress",
+        "/parent/messaging",
+        "/parent/attendance",
+        "/parent/fees",
+        "/parent/ai-advisor",
+        "/government",
+        "/government/district-intelligence",
+        "/workflows"
+      ]
+    },
+    "teacher": {
+      "allowed": [
+        "/dashboard/teacher",
+        "/dashboard",
+        "/analytics",
+        "/reports",
+        "/question-bank",
+        "/cbt",
+        "/exams",
+        "/marketplace",
+        "/results",
+        "/students",
+        "/search",
+        "/profile",
+        "/notifications",
+        "/teacher",
+        "/teacher/lesson-planner",
+        "/teacher/worksheet-builder",
+        "/teacher/rubric-builder",
+        "/teacher/grading",
+        "/teacher/content-assistant",
+        "/teacher/ai-question-generator"
+      ],
+      "denied": [
+        "/dashboard/super-admin",
+        "/dashboard/school-admin",
+        "/dashboard/student",
+        "/schools",
+        "/billing",
+        "/billing/enterprise",
+        "/analytics/enterprise",
+        "/teachers",
+        "/parents",
+        "/marketing",
+        "/school/classes",
+        "/school/timetable",
+        "/school/attendance",
+        "/school/fees",
+        "/school/calendar",
+        "/school-admin/ai-insights",
+        "/school-admin/predictive",
+        "/admin",
+        "/admin/users",
+        "/admin/roles",
+        "/admin/audit-logs",
+        "/admin/backups",
+        "/admin/integrations",
+        "/admin/organization-settings",
+        "/admin/branding",
+        "/admin/organizations",
+        "/admin/agents",
+        "/admin/plugins",
+        "/admin/developers",
+        "/admin/security",
+        "/student",
+        "/student/practice",
+        "/student/flashcards",
+        "/student/ai-tutor",
+        "/student/study-planner",
+        "/student/progress",
+        "/student/explain",
+        "/student/certificates",
+        "/student/revision-hub",
+        "/parent",
+        "/parent/dashboard",
+        "/parent/child-progress",
+        "/parent/messaging",
+        "/parent/attendance",
+        "/parent/fees",
+        "/parent/ai-advisor",
+        "/government",
+        "/government/district-intelligence",
+        "/workflows"
+      ]
+    },
+    "parent": {
+      "allowed": [
+        "/dashboard/student",
+        "/dashboard",
+        "/exams",
+        "/profile",
+        "/notifications",
+        "/student",
+        "/student/practice",
+        "/student/flashcards",
+        "/student/ai-tutor",
+        "/student/study-planner",
+        "/student/progress",
+        "/student/explain",
+        "/parent",
+        "/parent/dashboard",
+        "/parent/child-progress",
+        "/parent/messaging",
+        "/parent/attendance",
+        "/parent/fees",
+        "/parent/ai-advisor"
+      ],
+      "denied": [
+        "/dashboard/super-admin",
+        "/dashboard/school-admin",
+        "/dashboard/teacher",
+        "/schools",
+        "/billing",
+        "/billing/enterprise",
+        "/analytics",
+        "/analytics/enterprise",
+        "/reports",
+        "/question-bank",
+        "/cbt",
+        "/marketplace",
+        "/results",
+        "/students",
+        "/teachers",
+        "/parents",
+        "/search",
+        "/marketing",
+        "/school/classes",
+        "/school/timetable",
+        "/school/attendance",
+        "/school/fees",
+        "/school/calendar",
+        "/school-admin/ai-insights",
+        "/school-admin/predictive",
+        "/admin",
+        "/admin/users",
+        "/admin/roles",
+        "/admin/audit-logs",
+        "/admin/backups",
+        "/admin/integrations",
+        "/admin/organization-settings",
+        "/admin/branding",
+        "/admin/organizations",
+        "/admin/agents",
+        "/admin/plugins",
+        "/admin/developers",
+        "/admin/security",
+        "/teacher",
+        "/teacher/lesson-planner",
+        "/teacher/worksheet-builder",
+        "/teacher/rubric-builder",
+        "/teacher/grading",
+        "/teacher/content-assistant",
+        "/teacher/ai-question-generator",
+        "/student/certificates",
+        "/student/revision-hub",
+        "/government",
+        "/government/district-intelligence",
+        "/workflows"
+      ]
+    },
+    "school_admin": {
+      "allowed": [
+        "/dashboard/school-admin",
+        "/dashboard/teacher",
+        "/dashboard",
+        "/schools",
+        "/billing",
+        "/billing/enterprise",
+        "/analytics",
+        "/analytics/enterprise",
+        "/reports",
+        "/question-bank",
+        "/cbt",
+        "/exams",
+        "/marketplace",
+        "/results",
+        "/students",
+        "/teachers",
+        "/parents",
+        "/search",
+        "/profile",
+        "/notifications",
+        "/marketing",
+        "/school/classes",
+        "/school/timetable",
+        "/school/attendance",
+        "/school/fees",
+        "/school/calendar",
+        "/school-admin/ai-insights",
+        "/school-admin/predictive",
+        "/admin",
+        "/admin/users",
+        "/admin/audit-logs",
+        "/admin/branding",
+        "/teacher",
+        "/teacher/lesson-planner",
+        "/teacher/worksheet-builder",
+        "/teacher/rubric-builder",
+        "/teacher/grading",
+        "/teacher/content-assistant",
+        "/teacher/ai-question-generator",
+        "/student/certificates",
+        "/student/revision-hub",
+        "/parent",
+        "/parent/dashboard",
+        "/parent/child-progress",
+        "/parent/messaging",
+        "/parent/attendance",
+        "/parent/fees",
+        "/parent/ai-advisor",
+        "/workflows"
+      ],
+      "denied": [
+        "/dashboard/super-admin",
+        "/dashboard/student",
+        "/admin/roles",
+        "/admin/backups",
+        "/admin/integrations",
+        "/admin/organization-settings",
+        "/admin/organizations",
+        "/admin/agents",
+        "/admin/plugins",
+        "/admin/developers",
+        "/admin/security",
+        "/student",
+        "/student/practice",
+        "/student/flashcards",
+        "/student/ai-tutor",
+        "/student/study-planner",
+        "/student/progress",
+        "/student/explain",
+        "/government",
+        "/government/district-intelligence"
+      ]
+    },
+    "super_admin": {
+      "allowed": [
+        "/dashboard/super-admin",
+        "/dashboard/school-admin",
+        "/dashboard/teacher",
+        "/dashboard",
+        "/schools",
+        "/billing",
+        "/billing/enterprise",
+        "/analytics",
+        "/analytics/enterprise",
+        "/reports",
+        "/question-bank",
+        "/cbt",
+        "/exams",
+        "/marketplace",
+        "/results",
+        "/students",
+        "/teachers",
+        "/parents",
+        "/search",
+        "/profile",
+        "/notifications",
+        "/marketing",
+        "/school/classes",
+        "/school/timetable",
+        "/school/attendance",
+        "/school/fees",
+        "/school/calendar",
+        "/school-admin/ai-insights",
+        "/school-admin/predictive",
+        "/admin",
+        "/admin/users",
+        "/admin/roles",
+        "/admin/audit-logs",
+        "/admin/backups",
+        "/admin/integrations",
+        "/admin/organization-settings",
+        "/admin/branding",
+        "/admin/organizations",
+        "/admin/agents",
+        "/admin/plugins",
+        "/admin/developers",
+        "/admin/security",
+        "/teacher",
+        "/teacher/lesson-planner",
+        "/teacher/worksheet-builder",
+        "/teacher/rubric-builder",
+        "/teacher/grading",
+        "/teacher/content-assistant",
+        "/teacher/ai-question-generator",
+        "/student/certificates",
+        "/student/revision-hub",
+        "/parent",
+        "/parent/dashboard",
+        "/parent/child-progress",
+        "/parent/messaging",
+        "/parent/attendance",
+        "/parent/fees",
+        "/parent/ai-advisor",
+        "/government",
+        "/government/district-intelligence",
+        "/workflows"
+      ],
+      "denied": [
+        "/dashboard/student",
+        "/student",
+        "/student/practice",
+        "/student/flashcards",
+        "/student/ai-tutor",
+        "/student/study-planner",
+        "/student/progress",
+        "/student/explain"
+      ]
+    }
+  }
+}

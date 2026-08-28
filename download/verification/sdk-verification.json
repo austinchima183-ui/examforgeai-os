@@ -1,0 +1,78 @@
+{
+  "results": [
+    {
+      "sdk": "Supabase",
+      "name": "Connectivity + auth service",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "sdk": "Supabase",
+      "name": "REST API (service role)",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "sdk": "OpenAI",
+      "name": "API key valid",
+      "ok": false,
+      "detail": "HTTP 403"
+    },
+    {
+      "sdk": "OpenAI",
+      "name": "Chat completion",
+      "ok": false,
+      "detail": "HTTP 403"
+    },
+    {
+      "sdk": "Gemini",
+      "name": "API key valid + models list",
+      "ok": false,
+      "detail": "HTTP 400"
+    },
+    {
+      "sdk": "Flutterwave",
+      "name": "API key valid (LIVE)",
+      "ok": false,
+      "detail": "HTTP 401"
+    },
+    {
+      "sdk": "Flutterwave",
+      "name": "Public key present",
+      "ok": true,
+      "detail": "FLWPUBK_TEST…"
+    },
+    {
+      "sdk": "Resend",
+      "name": "API key valid + domains",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "sdk": "Sentry",
+      "name": "Config files present (client/server/edge)",
+      "ok": true,
+      "detail": "sentry.client.config.ts, sentry.server.config.ts, sentry.edge.config.ts"
+    },
+    {
+      "sdk": "Sentry",
+      "name": "Auth token present",
+      "ok": true,
+      "detail": "sntryu_b50…"
+    },
+    {
+      "sdk": "Vercel",
+      "name": "API token valid + projects",
+      "ok": false,
+      "detail": "HTTP 403, projects: "
+    },
+    {
+      "sdk": "Vercel",
+      "name": "Deployments accessible",
+      "ok": false,
+      "detail": "no deployments"
+    }
+  ],
+  "passed": 6,
+  "total": 12
+}

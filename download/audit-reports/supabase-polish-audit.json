@@ -1,0 +1,22 @@
+[
+  {
+    "file": "002_supabase_unification.sql",
+    "size_bytes": 35801,
+    "has_rls": true,
+    "has_indexes": true,
+    "has_triggers": true,
+    "has_rpc": false,
+    "has_storage": false,
+    "statements_count": 154
+  },
+  {
+    "file": "003_verification_fixes.sql",
+    "size_bytes": 3148,
+    "has_rls": true,
+    "has_indexes": true,
+    "has_triggers": false,
+    "has_rpc": false,
+    "has_storage": false,
+    "statements_count": 16
+  }
+]

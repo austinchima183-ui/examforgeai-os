@@ -1,0 +1,187 @@
+// ============================================================================
+// ExamForge AI — Event Bus Central Exports
+// ============================================================================
+// Single entry point for the entire Event Bus system.
+// Import anything you need from '@/lib/event-bus':
+//
+//   import { eventBus, EventType, publishExamSubmitted } from '@/lib/event-bus'
+//
+// ============================================================================
+
+// ── Types ──
+export {
+  EventType,
+  EventCategories,
+} from './types'
+
+export type {
+  EventChannel,
+  EventSource,
+  EventMetadata,
+  BaseEvent,
+  TypedEvent,
+  EventHandler,
+  HandlerResult,
+  EventSubscription,
+  EventFilter,
+  EventHistory,
+  EmitResult,
+  EventHistoryFilters,
+  ReplayConfig,
+  WebhookRegistration,
+  WorkflowTriggerRule,
+  EventPayloadMap,
+  EventCategory,
+  // Payload types
+  StudentCreatedPayload,
+  StudentEnrolledPayload,
+  StudentWithdrawnPayload,
+  StudentTransferredPayload,
+  StudentProfileUpdatedPayload,
+  TeacherCreatedPayload,
+  TeacherAssignedPayload,
+  TeacherUnassignedPayload,
+  TeacherProfileUpdatedPayload,
+  ParentCreatedPayload,
+  ParentLinkedToStudentPayload,
+  ParentUnlinkedFromStudentPayload,
+  ExamCreatedPayload,
+  ExamPublishedPayload,
+  ExamStartedPayload,
+  ExamSubmittedPayload,
+  ExamGradedPayload,
+  ExamArchivedPayload,
+  ExamCancelledPayload,
+  QuestionCreatedPayload,
+  QuestionGeneratedPayload,
+  QuestionUpdatedPayload,
+  QuestionDeletedPayload,
+  AICompletedPayload,
+  AIFailedPayload,
+  AICreditsConsumedPayload,
+  AIModelChangedPayload,
+  PaymentCompletedPayload,
+  PaymentFailedPayload,
+  PaymentRefundedPayload,
+  SubscriptionCreatedPayload,
+  SubscriptionUpgradedPayload,
+  SubscriptionDowngradedPayload,
+  SubscriptionCancelledPayload,
+  InvoiceGeneratedPayload,
+  AttendanceMarkedPayload,
+  AttendanceAlertTriggeredPayload,
+  MarketplacePurchasePayload,
+  MarketplaceRefundPayload,
+  MarketplaceReviewCreatedPayload,
+  MarketplaceProductPublishedPayload,
+  SystemHealthAlertPayload,
+  SystemMaintenanceScheduledPayload,
+  BackupCompletedPayload,
+  DataExportRequestedPayload,
+  OrganizationCreatedPayload,
+  OrganizationUpdatedPayload,
+  OrganizationMemberAddedPayload,
+  OrganizationMemberRemovedPayload,
+  WorkflowTriggeredPayload,
+  WorkflowStepCompletedPayload,
+  WorkflowCompletedPayload,
+  WorkflowFailedPayload,
+  CertificateIssuedPayload,
+  NotificationSentPayload,
+} from './types'
+
+// ── Event Emitter (core) ──
+export {
+  eventBus,
+  EventBus,
+  createEvent,
+} from './event-emitter'
+
+// ── Event Handlers (built-in) ──
+export {
+  registerBuiltinHandlers,
+  auditLogHandler,
+  notificationHandler,
+  analyticsHandler,
+  aiMemoryHandler,
+  webhookHandler,
+  workflowTriggerHandler,
+  realtimeHandler,
+  NOTIFICATION_MAPPINGS,
+  AI_RELEVANT_EVENTS,
+} from './event-handlers'
+
+// ── Event Publisher (high-level API) ──
+export {
+  publishStudentCreated,
+  publishStudentEnrolled,
+  publishStudentWithdrawn,
+  publishStudentTransferred,
+  publishStudentProfileUpdated,
+  publishTeacherCreated,
+  publishTeacherAssigned,
+  publishTeacherUnassigned,
+  publishTeacherProfileUpdated,
+  publishParentCreated,
+  publishParentLinkedToStudent,
+  publishParentUnlinkedFromStudent,
+  publishExamCreated,
+  publishExamPublished,
+  publishExamStarted,
+  publishExamSubmitted,
+  publishExamGraded,
+  publishExamArchived,
+  publishExamCancelled,
+  publishQuestionCreated,
+  publishQuestionGenerated,
+  publishQuestionUpdated,
+  publishQuestionDeleted,
+  publishAICompleted,
+  publishAIFailed,
+  publishAICreditsConsumed,
+  publishAIModelChanged,
+  publishPaymentCompleted,
+  publishPaymentFailed,
+  publishPaymentRefunded,
+  publishSubscriptionCreated,
+  publishSubscriptionUpgraded,
+  publishSubscriptionDowngraded,
+  publishSubscriptionCancelled,
+  publishInvoiceGenerated,
+  publishAttendanceMarked,
+  publishAttendanceAlertTriggered,
+  publishMarketplacePurchase,
+  publishMarketplaceRefund,
+  publishMarketplaceReviewCreated,
+  publishMarketplaceProductPublished,
+  publishSystemHealthAlert,
+  publishSystemMaintenanceScheduled,
+  publishBackupCompleted,
+  publishDataExportRequested,
+  publishOrganizationCreated,
+  publishOrganizationUpdated,
+  publishOrganizationMemberAdded,
+  publishOrganizationMemberRemoved,
+  publishWorkflowTriggered,
+  publishWorkflowStepCompleted,
+  publishWorkflowCompleted,
+  publishWorkflowFailed,
+  publishCertificateIssued,
+  publishNotificationSent,
+  publishEvent,
+} from './event-publisher'
+
+// ── Event Replay & History ──
+export {
+  getEventHistory,
+  getEventTimeline,
+  getCorrelationEvents,
+  replayEvents,
+  replaySingleEvent,
+  getEventStatistics,
+} from './event-replay'
+
+export type {
+  ReplayResult,
+  EventStatistics,
+} from './event-replay'

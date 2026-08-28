@@ -1,0 +1,2040 @@
+[
+  {
+    "route": "/.",
+    "method": "GET",
+    "status": 404,
+    "class": "NOT_FOUND",
+    "latency": 127,
+    "location": "",
+    "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\""
+  },
+  {
+    "route": "/admin/audit-logs",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 8,
+    "location": "/login?redirect=%2Fadmin%2Faudit-logs",
+    "body": "/login?redirect=%2Fadmin%2Faudit-logs"
+  },
+  {
+    "route": "/admin/backups",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 36,
+    "location": "/login?redirect=%2Fadmin%2Fbackups",
+    "body": "/login?redirect=%2Fadmin%2Fbackups"
+  },
+  {
+    "route": "/admin/backups",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 55,
+    "location": "/login?redirect=%2Fadmin%2Fbackups",
+    "body": "/login?redirect=%2Fadmin%2Fbackups"
+  },
+  {
+    "route": "/admin/branding",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 57,
+    "location": "/login?redirect=%2Fadmin%2Fbranding",
+    "body": "/login?redirect=%2Fadmin%2Fbranding"
+  },
+  {
+    "route": "/admin/branding",
+    "method": "PUT",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 60,
+    "location": "/login?redirect=%2Fadmin%2Fbranding",
+    "body": "/login?redirect=%2Fadmin%2Fbranding"
+  },
+  {
+    "route": "/admin/integrations",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 65,
+    "location": "/login?redirect=%2Fadmin%2Fintegrations",
+    "body": "/login?redirect=%2Fadmin%2Fintegrations"
+  },
+  {
+    "route": "/admin/integrations",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 66,
+    "location": "/login?redirect=%2Fadmin%2Fintegrations",
+    "body": "/login?redirect=%2Fadmin%2Fintegrations"
+  },
+  {
+    "route": "/admin/integrations",
+    "method": "PUT",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 102,
+    "location": "/login?redirect=%2Fadmin%2Fintegrations",
+    "body": "/login?redirect=%2Fadmin%2Fintegrations"
+  },
+  {
+    "route": "/admin/organization-settings",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 84,
+    "location": "/login?redirect=%2Fadmin%2Forganization-settings",
+    "body": "/login?redirect=%2Fadmin%2Forganization-settings"
+  },
+  {
+    "route": "/admin/organization-settings",
+    "method": "PUT",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 66,
+    "location": "/login?redirect=%2Fadmin%2Forganization-settings",
+    "body": "/login?redirect=%2Fadmin%2Forganization-settings"
+  },
+  {
+    "route": "/admin/plugins",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 69,
+    "location": "/login?redirect=%2Fadmin%2Fplugins",
+    "body": "/login?redirect=%2Fadmin%2Fplugins"
+  },
+  {
+    "route": "/admin/plugins",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 68,
+    "location": "/login?redirect=%2Fadmin%2Fplugins",
+    "body": "/login?redirect=%2Fadmin%2Fplugins"
+  },
+  {
+    "route": "/admin/roles",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 64,
+    "location": "/login?redirect=%2Fadmin%2Froles",
+    "body": "/login?redirect=%2Fadmin%2Froles"
+  },
+  {
+    "route": "/admin/roles",
+    "method": "PUT",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 64,
+    "location": "/login?redirect=%2Fadmin%2Froles",
+    "body": "/login?redirect=%2Fadmin%2Froles"
+  },
+  {
+    "route": "/admin/users",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fadmin%2Fusers",
+    "body": "/login?redirect=%2Fadmin%2Fusers"
+  },
+  {
+    "route": "/admin/users",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 30,
+    "location": "/login?redirect=%2Fadmin%2Fusers",
+    "body": "/login?redirect=%2Fadmin%2Fusers"
+  },
+  {
+    "route": "/admin/users",
+    "method": "PUT",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 35,
+    "location": "/login?redirect=%2Fadmin%2Fusers",
+    "body": "/login?redirect=%2Fadmin%2Fusers"
+  },
+  {
+    "route": "/admin/users",
+    "method": "DELETE",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 37,
+    "location": "/login?redirect=%2Fadmin%2Fusers",
+    "body": "/login?redirect=%2Fadmin%2Fusers"
+  },
+  {
+    "route": "/agents",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 34,
+    "location": "/login?redirect=%2Fagents",
+    "body": "/login?redirect=%2Fagents"
+  },
+  {
+    "route": "/agents",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 35,
+    "location": "/login?redirect=%2Fagents",
+    "body": "/login?redirect=%2Fagents"
+  },
+  {
+    "route": "/agents/[id]/execute",
+    "method": "POST",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/ai/agents",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 37,
+    "location": "/login?redirect=%2Fai%2Fagents",
+    "body": "/login?redirect=%2Fai%2Fagents"
+  },
+  {
+    "route": "/ai/complete",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 37,
+    "location": "/login?redirect=%2Fai%2Fcomplete",
+    "body": "/login?redirect=%2Fai%2Fcomplete"
+  },
+  {
+    "route": "/ai/government",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 39,
+    "location": "/login?redirect=%2Fai%2Fgovernment",
+    "body": "/login?redirect=%2Fai%2Fgovernment"
+  },
+  {
+    "route": "/ai/parent",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 35,
+    "location": "/login?redirect=%2Fai%2Fparent",
+    "body": "/login?redirect=%2Fai%2Fparent"
+  },
+  {
+    "route": "/ai/predictive",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 40,
+    "location": "/login?redirect=%2Fai%2Fpredictive",
+    "body": "/login?redirect=%2Fai%2Fpredictive"
+  },
+  {
+    "route": "/ai/school-admin",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 40,
+    "location": "/login?redirect=%2Fai%2Fschool-admin",
+    "body": "/login?redirect=%2Fai%2Fschool-admin"
+  },
+  {
+    "route": "/ai/stream",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 47,
+    "location": "/login?redirect=%2Fai%2Fstream",
+    "body": "/login?redirect=%2Fai%2Fstream"
+  },
+  {
+    "route": "/ai/student",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 69,
+    "location": "/login?redirect=%2Fai%2Fstudent",
+    "body": "/login?redirect=%2Fai%2Fstudent"
+  },
+  {
+    "route": "/ai/teacher",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 77,
+    "location": "/login?redirect=%2Fai%2Fteacher",
+    "body": "/login?redirect=%2Fai%2Fteacher"
+  },
+  {
+    "route": "/alerting/channels",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 77,
+    "location": "/login?redirect=%2Falerting%2Fchannels",
+    "body": "/login?redirect=%2Falerting%2Fchannels"
+  },
+  {
+    "route": "/alerting/channels",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 83,
+    "location": "/login?redirect=%2Falerting%2Fchannels",
+    "body": "/login?redirect=%2Falerting%2Fchannels"
+  },
+  {
+    "route": "/alerting/channels",
+    "method": "PUT",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 84,
+    "location": "/login?redirect=%2Falerting%2Fchannels",
+    "body": "/login?redirect=%2Falerting%2Fchannels"
+  },
+  {
+    "route": "/alerting/incidents",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 84,
+    "location": "/login?redirect=%2Falerting%2Fincidents",
+    "body": "/login?redirect=%2Falerting%2Fincidents"
+  },
+  {
+    "route": "/alerting/incidents",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 90,
+    "location": "/login?redirect=%2Falerting%2Fincidents",
+    "body": "/login?redirect=%2Falerting%2Fincidents"
+  },
+  {
+    "route": "/alerting/incidents/[id]",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/alerting/incidents/[id]",
+    "method": "PATCH",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/alerting/incidents/[id]/timeline",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/alerting/suppressions",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 127,
+    "location": "/login?redirect=%2Falerting%2Fsuppressions",
+    "body": "/login?redirect=%2Falerting%2Fsuppressions"
+  },
+  {
+    "route": "/alerting/suppressions",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 104,
+    "location": "/login?redirect=%2Falerting%2Fsuppressions",
+    "body": "/login?redirect=%2Falerting%2Fsuppressions"
+  },
+  {
+    "route": "/alerting/suppressions",
+    "method": "DELETE",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 96,
+    "location": "/login?redirect=%2Falerting%2Fsuppressions",
+    "body": "/login?redirect=%2Falerting%2Fsuppressions"
+  },
+  {
+    "route": "/analytics",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 95,
+    "location": "/login?redirect=%2Fanalytics",
+    "body": "/login?redirect=%2Fanalytics"
+  },
+  {
+    "route": "/analytics/enterprise",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 88,
+    "location": "/login?redirect=%2Fanalytics%2Fenterprise",
+    "body": "/login?redirect=%2Fanalytics%2Fenterprise"
+  },
+  {
+    "route": "/analytics/events",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 86,
+    "location": "/login?redirect=%2Fanalytics%2Fevents",
+    "body": "/login?redirect=%2Fanalytics%2Fevents"
+  },
+  {
+    "route": "/analytics/nlq",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 80,
+    "location": "/login?redirect=%2Fanalytics%2Fnlq",
+    "body": "/login?redirect=%2Fanalytics%2Fnlq"
+  },
+  {
+    "route": "/auth/callback",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 73,
+    "location": "/login?redirect=%2Fauth%2Fcallback",
+    "body": "/login?redirect=%2Fauth%2Fcallback"
+  },
+  {
+    "route": "/billing/audit",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 28,
+    "location": "/login?redirect=%2Fbilling%2Faudit",
+    "body": "/login?redirect=%2Fbilling%2Faudit"
+  },
+  {
+    "route": "/billing/checkout",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fbilling%2Fcheckout",
+    "body": "/login?redirect=%2Fbilling%2Fcheckout"
+  },
+  {
+    "route": "/billing/enterprise",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fbilling%2Fenterprise",
+    "body": "/login?redirect=%2Fbilling%2Fenterprise"
+  },
+  {
+    "route": "/billing/enterprise",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 33,
+    "location": "/login?redirect=%2Fbilling%2Fenterprise",
+    "body": "/login?redirect=%2Fbilling%2Fenterprise"
+  },
+  {
+    "route": "/billing/invoices",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 33,
+    "location": "/login?redirect=%2Fbilling%2Finvoices",
+    "body": "/login?redirect=%2Fbilling%2Finvoices"
+  },
+  {
+    "route": "/billing/invoices",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 33,
+    "location": "/login?redirect=%2Fbilling%2Finvoices",
+    "body": "/login?redirect=%2Fbilling%2Finvoices"
+  },
+  {
+    "route": "/billing/paystack/checkout",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 32,
+    "location": "/login?redirect=%2Fbilling%2Fpaystack%2Fcheckout",
+    "body": "/login?redirect=%2Fbilling%2Fpaystack%2Fcheckout"
+  },
+  {
+    "route": "/billing/paystack/webhook",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 33,
+    "location": "/login?redirect=%2Fbilling%2Fpaystack%2Fwebhook",
+    "body": "/login?redirect=%2Fbilling%2Fpaystack%2Fwebhook"
+  },
+  {
+    "route": "/billing/refund",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 35,
+    "location": "/login?redirect=%2Fbilling%2Frefund",
+    "body": "/login?redirect=%2Fbilling%2Frefund"
+  },
+  {
+    "route": "/billing/refunds",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 34,
+    "location": "/login?redirect=%2Fbilling%2Frefunds",
+    "body": "/login?redirect=%2Fbilling%2Frefunds"
+  },
+  {
+    "route": "/billing/refunds",
+    "method": "PATCH",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 35,
+    "location": "/login?redirect=%2Fbilling%2Frefunds",
+    "body": "/login?redirect=%2Fbilling%2Frefunds"
+  },
+  {
+    "route": "/billing/revenue",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 28,
+    "location": "/login?redirect=%2Fbilling%2Frevenue",
+    "body": "/login?redirect=%2Fbilling%2Frevenue"
+  },
+  {
+    "route": "/billing/subscription-lifecycle",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 29,
+    "location": "/login?redirect=%2Fbilling%2Fsubscription-lifecycle",
+    "body": "/login?redirect=%2Fbilling%2Fsubscription-lifecycle"
+  },
+  {
+    "route": "/billing/subscription-lifecycle",
+    "method": "PATCH",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 29,
+    "location": "/login?redirect=%2Fbilling%2Fsubscription-lifecycle",
+    "body": "/login?redirect=%2Fbilling%2Fsubscription-lifecycle"
+  },
+  {
+    "route": "/billing/subscriptions",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 29,
+    "location": "/login?redirect=%2Fbilling%2Fsubscriptions",
+    "body": "/login?redirect=%2Fbilling%2Fsubscriptions"
+  },
+  {
+    "route": "/billing/subscriptions",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 28,
+    "location": "/login?redirect=%2Fbilling%2Fsubscriptions",
+    "body": "/login?redirect=%2Fbilling%2Fsubscriptions"
+  },
+  {
+    "route": "/billing/webhook",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 37,
+    "location": "/login?redirect=%2Fbilling%2Fwebhook",
+    "body": "/login?redirect=%2Fbilling%2Fwebhook"
+  },
+  {
+    "route": "/billing/webhooks",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 39,
+    "location": "/login?redirect=%2Fbilling%2Fwebhooks",
+    "body": "/login?redirect=%2Fbilling%2Fwebhooks"
+  },
+  {
+    "route": "/cbt/answer",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 39,
+    "location": "/login?redirect=%2Fcbt%2Fanswer",
+    "body": "/login?redirect=%2Fcbt%2Fanswer"
+  },
+  {
+    "route": "/cbt/session",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 44,
+    "location": "/login?redirect=%2Fcbt%2Fsession",
+    "body": "/login?redirect=%2Fcbt%2Fsession"
+  },
+  {
+    "route": "/cbt/session",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 43,
+    "location": "/login?redirect=%2Fcbt%2Fsession",
+    "body": "/login?redirect=%2Fcbt%2Fsession"
+  },
+  {
+    "route": "/cbt/submit",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 43,
+    "location": "/login?redirect=%2Fcbt%2Fsubmit",
+    "body": "/login?redirect=%2Fcbt%2Fsubmit"
+  },
+  {
+    "route": "/cbt/timing",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 45,
+    "location": "/login?redirect=%2Fcbt%2Ftiming",
+    "body": "/login?redirect=%2Fcbt%2Ftiming"
+  },
+  {
+    "route": "/contact",
+    "method": "POST",
+    "status": 200,
+    "class": "PUBLIC_200",
+    "latency": 169,
+    "location": "",
+    "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\""
+  },
+  {
+    "route": "/demo-booking",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 33,
+    "location": "/login?redirect=%2Fdemo-booking",
+    "body": "/login?redirect=%2Fdemo-booking"
+  },
+  {
+    "route": "/demo-booking/[id]",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/demo-booking/[id]",
+    "method": "PATCH",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/demo-booking/[id]",
+    "method": "DELETE",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/developer/keys",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 32,
+    "location": "/login?redirect=%2Fdeveloper%2Fkeys",
+    "body": "/login?redirect=%2Fdeveloper%2Fkeys"
+  },
+  {
+    "route": "/developer/keys",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 31,
+    "location": "/login?redirect=%2Fdeveloper%2Fkeys",
+    "body": "/login?redirect=%2Fdeveloper%2Fkeys"
+  },
+  {
+    "route": "/developer/oauth-apps",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 128,
+    "location": "/login?redirect=%2Fdeveloper%2Foauth-apps",
+    "body": "/login?redirect=%2Fdeveloper%2Foauth-apps"
+  },
+  {
+    "route": "/developer/oauth-apps",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 132,
+    "location": "/login?redirect=%2Fdeveloper%2Foauth-apps",
+    "body": "/login?redirect=%2Fdeveloper%2Foauth-apps"
+  },
+  {
+    "route": "/developer/openapi",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 134,
+    "location": "/login?redirect=%2Fdeveloper%2Fopenapi",
+    "body": "/login?redirect=%2Fdeveloper%2Fopenapi"
+  },
+  {
+    "route": "/events",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 135,
+    "location": "/login?redirect=%2Fevents",
+    "body": "/login?redirect=%2Fevents"
+  },
+  {
+    "route": "/events",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 133,
+    "location": "/login?redirect=%2Fevents",
+    "body": "/login?redirect=%2Fevents"
+  },
+  {
+    "route": "/feedback",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 133,
+    "location": "/login?redirect=%2Ffeedback",
+    "body": "/login?redirect=%2Ffeedback"
+  },
+  {
+    "route": "/feedback",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 133,
+    "location": "/login?redirect=%2Ffeedback",
+    "body": "/login?redirect=%2Ffeedback"
+  },
+  {
+    "route": "/feedback/[id]",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/feedback/[id]",
+    "method": "PATCH",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/feedback/[id]",
+    "method": "DELETE",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/feedback/[id]/comments",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/feedback/[id]/comments",
+    "method": "POST",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/feedback/ai-rating",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 32,
+    "location": "/login?redirect=%2Ffeedback%2Fai-rating",
+    "body": "/login?redirect=%2Ffeedback%2Fai-rating"
+  },
+  {
+    "route": "/feedback/analytics",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Ffeedback%2Fanalytics",
+    "body": "/login?redirect=%2Ffeedback%2Fanalytics"
+  },
+  {
+    "route": "/health",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fhealth",
+    "body": "/login?redirect=%2Fhealth"
+  },
+  {
+    "route": "/health/ai",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 28,
+    "location": "/login?redirect=%2Fhealth%2Fai",
+    "body": "/login?redirect=%2Fhealth%2Fai"
+  },
+  {
+    "route": "/health/database",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fhealth%2Fdatabase",
+    "body": "/login?redirect=%2Fhealth%2Fdatabase"
+  },
+  {
+    "route": "/health/detailed",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 23,
+    "location": "/login?redirect=%2Fhealth%2Fdetailed",
+    "body": "/login?redirect=%2Fhealth%2Fdetailed"
+  },
+  {
+    "route": "/health/redis",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 23,
+    "location": "/login?redirect=%2Fhealth%2Fredis",
+    "body": "/login?redirect=%2Fhealth%2Fredis"
+  },
+  {
+    "route": "/import/errors",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 22,
+    "location": "/login?redirect=%2Fimport%2Ferrors",
+    "body": "/login?redirect=%2Fimport%2Ferrors"
+  },
+  {
+    "route": "/import/execute",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 22,
+    "location": "/login?redirect=%2Fimport%2Fexecute",
+    "body": "/login?redirect=%2Fimport%2Fexecute"
+  },
+  {
+    "route": "/import/execute",
+    "method": "PATCH",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 23,
+    "location": "/login?redirect=%2Fimport%2Fexecute",
+    "body": "/login?redirect=%2Fimport%2Fexecute"
+  },
+  {
+    "route": "/import/progress",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 23,
+    "location": "/login?redirect=%2Fimport%2Fprogress",
+    "body": "/login?redirect=%2Fimport%2Fprogress"
+  },
+  {
+    "route": "/import/validate",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 24,
+    "location": "/login?redirect=%2Fimport%2Fvalidate",
+    "body": "/login?redirect=%2Fimport%2Fvalidate"
+  },
+  {
+    "route": "/marketing/analytics",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 24,
+    "location": "/login?redirect=%2Fmarketing%2Fanalytics",
+    "body": "/login?redirect=%2Fmarketing%2Fanalytics"
+  },
+  {
+    "route": "/marketing/contacts",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 24,
+    "location": "/login?redirect=%2Fmarketing%2Fcontacts",
+    "body": "/login?redirect=%2Fmarketing%2Fcontacts"
+  },
+  {
+    "route": "/marketing/demos",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fmarketing%2Fdemos",
+    "body": "/login?redirect=%2Fmarketing%2Fdemos"
+  },
+  {
+    "route": "/marketing/demos",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 26,
+    "location": "/login?redirect=%2Fmarketing%2Fdemos",
+    "body": "/login?redirect=%2Fmarketing%2Fdemos"
+  },
+  {
+    "route": "/marketing/leads",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 26,
+    "location": "/login?redirect=%2Fmarketing%2Fleads",
+    "body": "/login?redirect=%2Fmarketing%2Fleads"
+  },
+  {
+    "route": "/marketing/leads/[id]",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/marketing/leads/[id]",
+    "method": "PATCH",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/marketing/leads/[id]/activities",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/marketing/newsletter",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fmarketing%2Fnewsletter",
+    "body": "/login?redirect=%2Fmarketing%2Fnewsletter"
+  },
+  {
+    "route": "/marketplace-v2/listings",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fmarketplace-v2%2Flistings",
+    "body": "/login?redirect=%2Fmarketplace-v2%2Flistings"
+  },
+  {
+    "route": "/marketplace-v2/listings",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fmarketplace-v2%2Flistings",
+    "body": "/login?redirect=%2Fmarketplace-v2%2Flistings"
+  },
+  {
+    "route": "/marketplace-v2/listings/[id]/purchase",
+    "method": "POST",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/marketplace/checkout",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fmarketplace%2Fcheckout",
+    "body": "/login?redirect=%2Fmarketplace%2Fcheckout"
+  },
+  {
+    "route": "/marketplace/download",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 26,
+    "location": "/login?redirect=%2Fmarketplace%2Fdownload",
+    "body": "/login?redirect=%2Fmarketplace%2Fdownload"
+  },
+  {
+    "route": "/marketplace/my-purchases",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 26,
+    "location": "/login?redirect=%2Fmarketplace%2Fmy-purchases",
+    "body": "/login?redirect=%2Fmarketplace%2Fmy-purchases"
+  },
+  {
+    "route": "/marketplace/product",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fmarketplace%2Fproduct",
+    "body": "/login?redirect=%2Fmarketplace%2Fproduct"
+  },
+  {
+    "route": "/marketplace/purchase",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 26,
+    "location": "/login?redirect=%2Fmarketplace%2Fpurchase",
+    "body": "/login?redirect=%2Fmarketplace%2Fpurchase"
+  },
+  {
+    "route": "/marketplace/purchase-status",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fmarketplace%2Fpurchase-status",
+    "body": "/login?redirect=%2Fmarketplace%2Fpurchase-status"
+  },
+  {
+    "route": "/marketplace/related",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fmarketplace%2Frelated",
+    "body": "/login?redirect=%2Fmarketplace%2Frelated"
+  },
+  {
+    "route": "/marketplace/reviews",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fmarketplace%2Freviews",
+    "body": "/login?redirect=%2Fmarketplace%2Freviews"
+  },
+  {
+    "route": "/marketplace/reviews",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fmarketplace%2Freviews",
+    "body": "/login?redirect=%2Fmarketplace%2Freviews"
+  },
+  {
+    "route": "/marketplace/reviews/report",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fmarketplace%2Freviews%2Freport",
+    "body": "/login?redirect=%2Fmarketplace%2Freviews%2Freport"
+  },
+  {
+    "route": "/marketplace/reviews/respond",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fmarketplace%2Freviews%2Frespond",
+    "body": "/login?redirect=%2Fmarketplace%2Freviews%2Frespond"
+  },
+  {
+    "route": "/marketplace/seller/analytics",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 28,
+    "location": "/login?redirect=%2Fmarketplace%2Fseller%2Fanalytics",
+    "body": "/login?redirect=%2Fmarketplace%2Fseller%2Fanalytics"
+  },
+  {
+    "route": "/marketplace/seller/products",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 28,
+    "location": "/login?redirect=%2Fmarketplace%2Fseller%2Fproducts",
+    "body": "/login?redirect=%2Fmarketplace%2Fseller%2Fproducts"
+  },
+  {
+    "route": "/marketplace/seller/products",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 30,
+    "location": "/login?redirect=%2Fmarketplace%2Fseller%2Fproducts",
+    "body": "/login?redirect=%2Fmarketplace%2Fseller%2Fproducts"
+  },
+  {
+    "route": "/marketplace/verify-payment",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 29,
+    "location": "/login?redirect=%2Fmarketplace%2Fverify-payment",
+    "body": "/login?redirect=%2Fmarketplace%2Fverify-payment"
+  },
+  {
+    "route": "/marketplace/verify-payment",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 28,
+    "location": "/login?redirect=%2Fmarketplace%2Fverify-payment",
+    "body": "/login?redirect=%2Fmarketplace%2Fverify-payment"
+  },
+  {
+    "route": "/marketplace/webhook",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 28,
+    "location": "/login?redirect=%2Fmarketplace%2Fwebhook",
+    "body": "/login?redirect=%2Fmarketplace%2Fwebhook"
+  },
+  {
+    "route": "/newsletter/subscribe",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 28,
+    "location": "/login?redirect=%2Fnewsletter%2Fsubscribe",
+    "body": "/login?redirect=%2Fnewsletter%2Fsubscribe"
+  },
+  {
+    "route": "/newsletter/unsubscribe",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fnewsletter%2Funsubscribe",
+    "body": "/login?redirect=%2Fnewsletter%2Funsubscribe"
+  },
+  {
+    "route": "/newsletter/verify",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fnewsletter%2Fverify",
+    "body": "/login?redirect=%2Fnewsletter%2Fverify"
+  },
+  {
+    "route": "/notifications/delivery-status",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fnotifications%2Fdelivery-status",
+    "body": "/login?redirect=%2Fnotifications%2Fdelivery-status"
+  },
+  {
+    "route": "/notifications/digest",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 33,
+    "location": "/login?redirect=%2Fnotifications%2Fdigest",
+    "body": "/login?redirect=%2Fnotifications%2Fdigest"
+  },
+  {
+    "route": "/notifications/digest",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 35,
+    "location": "/login?redirect=%2Fnotifications%2Fdigest",
+    "body": "/login?redirect=%2Fnotifications%2Fdigest"
+  },
+  {
+    "route": "/notifications/history",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 35,
+    "location": "/login?redirect=%2Fnotifications%2Fhistory",
+    "body": "/login?redirect=%2Fnotifications%2Fhistory"
+  },
+  {
+    "route": "/notifications/history",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 35,
+    "location": "/login?redirect=%2Fnotifications%2Fhistory",
+    "body": "/login?redirect=%2Fnotifications%2Fhistory"
+  },
+  {
+    "route": "/notifications/preferences",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 34,
+    "location": "/login?redirect=%2Fnotifications%2Fpreferences",
+    "body": "/login?redirect=%2Fnotifications%2Fpreferences"
+  },
+  {
+    "route": "/notifications/preferences",
+    "method": "PUT",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 35,
+    "location": "/login?redirect=%2Fnotifications%2Fpreferences",
+    "body": "/login?redirect=%2Fnotifications%2Fpreferences"
+  },
+  {
+    "route": "/notifications/send",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 35,
+    "location": "/login?redirect=%2Fnotifications%2Fsend",
+    "body": "/login?redirect=%2Fnotifications%2Fsend"
+  },
+  {
+    "route": "/notifications/templates",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 35,
+    "location": "/login?redirect=%2Fnotifications%2Ftemplates",
+    "body": "/login?redirect=%2Fnotifications%2Ftemplates"
+  },
+  {
+    "route": "/notifications/templates",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fnotifications%2Ftemplates",
+    "body": "/login?redirect=%2Fnotifications%2Ftemplates"
+  },
+  {
+    "route": "/notifications/templates",
+    "method": "PUT",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fnotifications%2Ftemplates",
+    "body": "/login?redirect=%2Fnotifications%2Ftemplates"
+  },
+  {
+    "route": "/organizations",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Forganizations",
+    "body": "/login?redirect=%2Forganizations"
+  },
+  {
+    "route": "/organizations",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Forganizations",
+    "body": "/login?redirect=%2Forganizations"
+  },
+  {
+    "route": "/organizations/[id]",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/organizations/[id]",
+    "method": "PATCH",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/organizations/[id]",
+    "method": "DELETE",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/organizations/switch",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Forganizations%2Fswitch",
+    "body": "/login?redirect=%2Forganizations%2Fswitch"
+  },
+  {
+    "route": "/parent/attendance",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fparent%2Fattendance",
+    "body": "/login?redirect=%2Fparent%2Fattendance"
+  },
+  {
+    "route": "/parent/child-progress",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fparent%2Fchild-progress",
+    "body": "/login?redirect=%2Fparent%2Fchild-progress"
+  },
+  {
+    "route": "/parent/dashboard",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fparent%2Fdashboard",
+    "body": "/login?redirect=%2Fparent%2Fdashboard"
+  },
+  {
+    "route": "/parent/fees",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fparent%2Ffees",
+    "body": "/login?redirect=%2Fparent%2Ffees"
+  },
+  {
+    "route": "/parent/fees",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fparent%2Ffees",
+    "body": "/login?redirect=%2Fparent%2Ffees"
+  },
+  {
+    "route": "/parent/messaging",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fparent%2Fmessaging",
+    "body": "/login?redirect=%2Fparent%2Fmessaging"
+  },
+  {
+    "route": "/parent/messaging",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fparent%2Fmessaging",
+    "body": "/login?redirect=%2Fparent%2Fmessaging"
+  },
+  {
+    "route": "/plugins",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 24,
+    "location": "/login?redirect=%2Fplugins",
+    "body": "/login?redirect=%2Fplugins"
+  },
+  {
+    "route": "/plugins",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fplugins",
+    "body": "/login?redirect=%2Fplugins"
+  },
+  {
+    "route": "/plugins/[id]/install",
+    "method": "POST",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/reports",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Freports",
+    "body": "/login?redirect=%2Freports"
+  },
+  {
+    "route": "/reports/generate",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Freports%2Fgenerate",
+    "body": "/login?redirect=%2Freports%2Fgenerate"
+  },
+  {
+    "route": "/reports/schedule",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Freports%2Fschedule",
+    "body": "/login?redirect=%2Freports%2Fschedule"
+  },
+  {
+    "route": "/reports/share",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Freports%2Fshare",
+    "body": "/login?redirect=%2Freports%2Fshare"
+  },
+  {
+    "route": "/school/attendance",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fschool%2Fattendance",
+    "body": "/login?redirect=%2Fschool%2Fattendance"
+  },
+  {
+    "route": "/school/attendance",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 25,
+    "location": "/login?redirect=%2Fschool%2Fattendance",
+    "body": "/login?redirect=%2Fschool%2Fattendance"
+  },
+  {
+    "route": "/school/attendance",
+    "method": "PATCH",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 26,
+    "location": "/login?redirect=%2Fschool%2Fattendance",
+    "body": "/login?redirect=%2Fschool%2Fattendance"
+  },
+  {
+    "route": "/school/calendar",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 26,
+    "location": "/login?redirect=%2Fschool%2Fcalendar",
+    "body": "/login?redirect=%2Fschool%2Fcalendar"
+  },
+  {
+    "route": "/school/calendar",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 26,
+    "location": "/login?redirect=%2Fschool%2Fcalendar",
+    "body": "/login?redirect=%2Fschool%2Fcalendar"
+  },
+  {
+    "route": "/school/calendar",
+    "method": "PATCH",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fschool%2Fcalendar",
+    "body": "/login?redirect=%2Fschool%2Fcalendar"
+  },
+  {
+    "route": "/school/calendar",
+    "method": "DELETE",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fschool%2Fcalendar",
+    "body": "/login?redirect=%2Fschool%2Fcalendar"
+  },
+  {
+    "route": "/school/classes",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 26,
+    "location": "/login?redirect=%2Fschool%2Fclasses",
+    "body": "/login?redirect=%2Fschool%2Fclasses"
+  },
+  {
+    "route": "/school/classes",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fschool%2Fclasses",
+    "body": "/login?redirect=%2Fschool%2Fclasses"
+  },
+  {
+    "route": "/school/classes",
+    "method": "PATCH",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fschool%2Fclasses",
+    "body": "/login?redirect=%2Fschool%2Fclasses"
+  },
+  {
+    "route": "/school/classes",
+    "method": "DELETE",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fschool%2Fclasses",
+    "body": "/login?redirect=%2Fschool%2Fclasses"
+  },
+  {
+    "route": "/school/fees",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fschool%2Ffees",
+    "body": "/login?redirect=%2Fschool%2Ffees"
+  },
+  {
+    "route": "/school/fees",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fschool%2Ffees",
+    "body": "/login?redirect=%2Fschool%2Ffees"
+  },
+  {
+    "route": "/school/fees",
+    "method": "PATCH",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fschool%2Ffees",
+    "body": "/login?redirect=%2Fschool%2Ffees"
+  },
+  {
+    "route": "/school/fees",
+    "method": "DELETE",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 27,
+    "location": "/login?redirect=%2Fschool%2Ffees",
+    "body": "/login?redirect=%2Fschool%2Ffees"
+  },
+  {
+    "route": "/school/timetable",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 39,
+    "location": "/login?redirect=%2Fschool%2Ftimetable",
+    "body": "/login?redirect=%2Fschool%2Ftimetable"
+  },
+  {
+    "route": "/school/timetable",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 39,
+    "location": "/login?redirect=%2Fschool%2Ftimetable",
+    "body": "/login?redirect=%2Fschool%2Ftimetable"
+  },
+  {
+    "route": "/school/timetable",
+    "method": "PATCH",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 39,
+    "location": "/login?redirect=%2Fschool%2Ftimetable",
+    "body": "/login?redirect=%2Fschool%2Ftimetable"
+  },
+  {
+    "route": "/school/timetable",
+    "method": "DELETE",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 39,
+    "location": "/login?redirect=%2Fschool%2Ftimetable",
+    "body": "/login?redirect=%2Fschool%2Ftimetable"
+  },
+  {
+    "route": "/search",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 39,
+    "location": "/login?redirect=%2Fsearch",
+    "body": "/login?redirect=%2Fsearch"
+  },
+  {
+    "route": "/security/passkeys",
+    "method": "GET",
+    "status": 404,
+    "class": "NOT_FOUND",
+    "latency": 154,
+    "location": "",
+    "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\""
+  },
+  {
+    "route": "/security/passkeys",
+    "method": "POST",
+    "status": 404,
+    "class": "NOT_FOUND",
+    "latency": 179,
+    "location": "",
+    "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\""
+  },
+  {
+    "route": "/security/sessions",
+    "method": "GET",
+    "status": 404,
+    "class": "NOT_FOUND",
+    "latency": 207,
+    "location": "",
+    "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\""
+  },
+  {
+    "route": "/security/sessions",
+    "method": "DELETE",
+    "status": 404,
+    "class": "NOT_FOUND",
+    "latency": 222,
+    "location": "",
+    "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\""
+  },
+  {
+    "route": "/security/sso",
+    "method": "GET",
+    "status": 404,
+    "class": "NOT_FOUND",
+    "latency": 249,
+    "location": "",
+    "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\""
+  },
+  {
+    "route": "/security/sso",
+    "method": "POST",
+    "status": 404,
+    "class": "NOT_FOUND",
+    "latency": 261,
+    "location": "",
+    "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\""
+  },
+  {
+    "route": "/seed",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 29,
+    "location": "/login?redirect=%2Fseed",
+    "body": "/login?redirect=%2Fseed"
+  },
+  {
+    "route": "/settings/api-keys",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 31,
+    "location": "/login?redirect=%2Fsettings%2Fapi-keys",
+    "body": "/login?redirect=%2Fsettings%2Fapi-keys"
+  },
+  {
+    "route": "/settings/api-keys",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 39,
+    "location": "/login?redirect=%2Fsettings%2Fapi-keys",
+    "body": "/login?redirect=%2Fsettings%2Fapi-keys"
+  },
+  {
+    "route": "/settings/security",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 63,
+    "location": "/login?redirect=%2Fsettings%2Fsecurity",
+    "body": "/login?redirect=%2Fsettings%2Fsecurity"
+  },
+  {
+    "route": "/settings/security",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 97,
+    "location": "/login?redirect=%2Fsettings%2Fsecurity",
+    "body": "/login?redirect=%2Fsettings%2Fsecurity"
+  },
+  {
+    "route": "/settings/sso",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 99,
+    "location": "/login?redirect=%2Fsettings%2Fsso",
+    "body": "/login?redirect=%2Fsettings%2Fsso"
+  },
+  {
+    "route": "/settings/sso",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 104,
+    "location": "/login?redirect=%2Fsettings%2Fsso",
+    "body": "/login?redirect=%2Fsettings%2Fsso"
+  },
+  {
+    "route": "/settings/webhooks",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 96,
+    "location": "/login?redirect=%2Fsettings%2Fwebhooks",
+    "body": "/login?redirect=%2Fsettings%2Fwebhooks"
+  },
+  {
+    "route": "/settings/webhooks",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 96,
+    "location": "/login?redirect=%2Fsettings%2Fwebhooks",
+    "body": "/login?redirect=%2Fsettings%2Fwebhooks"
+  },
+  {
+    "route": "/student/certificates",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 86,
+    "location": "/login?redirect=%2Fstudent%2Fcertificates",
+    "body": "/login?redirect=%2Fstudent%2Fcertificates"
+  },
+  {
+    "route": "/student/flashcards",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 75,
+    "location": "/login?redirect=%2Fstudent%2Fflashcards",
+    "body": "/login?redirect=%2Fstudent%2Fflashcards"
+  },
+  {
+    "route": "/student/flashcards",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 63,
+    "location": "/login?redirect=%2Fstudent%2Fflashcards",
+    "body": "/login?redirect=%2Fstudent%2Fflashcards"
+  },
+  {
+    "route": "/student/practice",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 52,
+    "location": "/login?redirect=%2Fstudent%2Fpractice",
+    "body": "/login?redirect=%2Fstudent%2Fpractice"
+  },
+  {
+    "route": "/student/progress",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 40,
+    "location": "/login?redirect=%2Fstudent%2Fprogress",
+    "body": "/login?redirect=%2Fstudent%2Fprogress"
+  },
+  {
+    "route": "/student/revision-hub",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 40,
+    "location": "/login?redirect=%2Fstudent%2Frevision-hub",
+    "body": "/login?redirect=%2Fstudent%2Frevision-hub"
+  },
+  {
+    "route": "/student/study-planner",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 31,
+    "location": "/login?redirect=%2Fstudent%2Fstudy-planner",
+    "body": "/login?redirect=%2Fstudent%2Fstudy-planner"
+  },
+  {
+    "route": "/student/study-planner",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 31,
+    "location": "/login?redirect=%2Fstudent%2Fstudy-planner",
+    "body": "/login?redirect=%2Fstudent%2Fstudy-planner"
+  },
+  {
+    "route": "/student/study-planner",
+    "method": "PATCH",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 30,
+    "location": "/login?redirect=%2Fstudent%2Fstudy-planner",
+    "body": "/login?redirect=%2Fstudent%2Fstudy-planner"
+  },
+  {
+    "route": "/student/study-planner",
+    "method": "DELETE",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 30,
+    "location": "/login?redirect=%2Fstudent%2Fstudy-planner",
+    "body": "/login?redirect=%2Fstudent%2Fstudy-planner"
+  },
+  {
+    "route": "/teacher/grade",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 30,
+    "location": "/login?redirect=%2Fteacher%2Fgrade",
+    "body": "/login?redirect=%2Fteacher%2Fgrade"
+  },
+  {
+    "route": "/teacher/lesson-plans",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 55,
+    "location": "/login?redirect=%2Fteacher%2Flesson-plans",
+    "body": "/login?redirect=%2Fteacher%2Flesson-plans"
+  },
+  {
+    "route": "/teacher/lesson-plans",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 56,
+    "location": "/login?redirect=%2Fteacher%2Flesson-plans",
+    "body": "/login?redirect=%2Fteacher%2Flesson-plans"
+  },
+  {
+    "route": "/teacher/lesson-plans",
+    "method": "PUT",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 62,
+    "location": "/login?redirect=%2Fteacher%2Flesson-plans",
+    "body": "/login?redirect=%2Fteacher%2Flesson-plans"
+  },
+  {
+    "route": "/teacher/lesson-plans",
+    "method": "DELETE",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 70,
+    "location": "/login?redirect=%2Fteacher%2Flesson-plans",
+    "body": "/login?redirect=%2Fteacher%2Flesson-plans"
+  },
+  {
+    "route": "/teacher/rubrics",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 70,
+    "location": "/login?redirect=%2Fteacher%2Frubrics",
+    "body": "/login?redirect=%2Fteacher%2Frubrics"
+  },
+  {
+    "route": "/teacher/rubrics",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 73,
+    "location": "/login?redirect=%2Fteacher%2Frubrics",
+    "body": "/login?redirect=%2Fteacher%2Frubrics"
+  },
+  {
+    "route": "/teacher/rubrics",
+    "method": "PUT",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 73,
+    "location": "/login?redirect=%2Fteacher%2Frubrics",
+    "body": "/login?redirect=%2Fteacher%2Frubrics"
+  },
+  {
+    "route": "/teacher/rubrics",
+    "method": "DELETE",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 78,
+    "location": "/login?redirect=%2Fteacher%2Frubrics",
+    "body": "/login?redirect=%2Fteacher%2Frubrics"
+  },
+  {
+    "route": "/teacher/submissions",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 62,
+    "location": "/login?redirect=%2Fteacher%2Fsubmissions",
+    "body": "/login?redirect=%2Fteacher%2Fsubmissions"
+  },
+  {
+    "route": "/teacher/submissions",
+    "method": "PUT",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 90,
+    "location": "/login?redirect=%2Fteacher%2Fsubmissions",
+    "body": "/login?redirect=%2Fteacher%2Fsubmissions"
+  },
+  {
+    "route": "/teacher/worksheets",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 91,
+    "location": "/login?redirect=%2Fteacher%2Fworksheets",
+    "body": "/login?redirect=%2Fteacher%2Fworksheets"
+  },
+  {
+    "route": "/teacher/worksheets",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 135,
+    "location": "/login?redirect=%2Fteacher%2Fworksheets",
+    "body": "/login?redirect=%2Fteacher%2Fworksheets"
+  },
+  {
+    "route": "/teacher/worksheets",
+    "method": "PUT",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 136,
+    "location": "/login?redirect=%2Fteacher%2Fworksheets",
+    "body": "/login?redirect=%2Fteacher%2Fworksheets"
+  },
+  {
+    "route": "/teacher/worksheets",
+    "method": "DELETE",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 132,
+    "location": "/login?redirect=%2Fteacher%2Fworksheets",
+    "body": "/login?redirect=%2Fteacher%2Fworksheets"
+  },
+  {
+    "route": "/tenants/resolve",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 131,
+    "location": "/login?redirect=%2Ftenants%2Fresolve",
+    "body": "/login?redirect=%2Ftenants%2Fresolve"
+  },
+  {
+    "route": "/workflows",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 125,
+    "location": "/login?redirect=%2Fworkflows",
+    "body": "/login?redirect=%2Fworkflows"
+  },
+  {
+    "route": "/workflows",
+    "method": "POST",
+    "status": 307,
+    "class": "REDIRECT_LOGIN",
+    "latency": 115,
+    "location": "/login?redirect=%2Fworkflows",
+    "body": "/login?redirect=%2Fworkflows"
+  },
+  {
+    "route": "/workflows/[id]",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/workflows/[id]",
+    "method": "PATCH",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/workflows/[id]",
+    "method": "DELETE",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/workflows/[id]/execute",
+    "method": "POST",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  },
+  {
+    "route": "/workflows/[id]/executions",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0
+  }
+]

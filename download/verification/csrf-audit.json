@@ -1,0 +1,734 @@
+{
+  "total": 102,
+  "protected": 19,
+  "webhooks": 5,
+  "missing": [
+    {
+      "route": "/api/admin/backups",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/admin/plugins",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/admin/roles",
+      "methods": [
+        "PUT"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/agents/[id]/execute",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/agents",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/ai/complete",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/ai/government",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/ai/parent",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/ai/school-admin",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/ai/stream",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/ai/student",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/ai/teacher",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/alerting/channels",
+      "methods": [
+        "POST",
+        "PUT"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/alerting/incidents/[id]",
+      "methods": [
+        "PATCH"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/alerting/incidents",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/alerting/suppressions",
+      "methods": [
+        "POST",
+        "DELETE"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/analytics/events",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/analytics/nlq",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/billing/enterprise",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/billing/invoices",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/billing/refund",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/billing/subscriptions",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/contact",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/demo-booking/[id]",
+      "methods": [
+        "PATCH",
+        "DELETE"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/demo-booking",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/developer/keys",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/developer/oauth-apps",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/events",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/feedback/[id]/comments",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/feedback/[id]",
+      "methods": [
+        "PATCH",
+        "DELETE"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/feedback/ai-rating",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/feedback",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/import/execute",
+      "methods": [
+        "POST",
+        "PATCH"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/import/validate",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/marketing/demos",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/marketing/leads/[id]",
+      "methods": [
+        "PATCH"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/marketplace/reviews/report",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/marketplace/reviews/respond",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/marketplace/reviews",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/marketplace/verify-payment",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/marketplace-v2/listings",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/newsletter/subscribe",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/notifications/digest",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/notifications/history",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/notifications/preferences",
+      "methods": [
+        "PUT"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/notifications/send",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/notifications/templates",
+      "methods": [
+        "POST",
+        "PUT"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/organizations/[id]",
+      "methods": [
+        "PATCH",
+        "DELETE"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/organizations",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/organizations/switch",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/parent/fees",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/parent/messaging",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/plugins/[id]/install",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/plugins",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/reports/generate",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/reports/schedule",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/reports/share",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/school/attendance",
+      "methods": [
+        "POST",
+        "PATCH"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/school/calendar",
+      "methods": [
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/school/classes",
+      "methods": [
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/school/fees",
+      "methods": [
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/school/timetable",
+      "methods": [
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/security/passkeys",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/security/sessions",
+      "methods": [
+        "DELETE"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/security/sso",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/settings/api-keys",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/settings/security",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/settings/sso",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/student/flashcards",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/student/study-planner",
+      "methods": [
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/teacher/grade",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/teacher/lesson-plans",
+      "methods": [
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/teacher/rubrics",
+      "methods": [
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/teacher/submissions",
+      "methods": [
+        "PUT"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/teacher/worksheets",
+      "methods": [
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/workflows/[id]/execute",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/workflows/[id]",
+      "methods": [
+        "PATCH",
+        "DELETE"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    },
+    {
+      "route": "/api/workflows",
+      "methods": [
+        "POST"
+      ],
+      "hasCsrf": false,
+      "hasSignature": false,
+      "isWebhook": false
+    }
+  ]
+}

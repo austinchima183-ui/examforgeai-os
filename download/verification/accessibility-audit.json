@@ -1,0 +1,373 @@
+{
+  "auditedAt": "2026-08-28T17:32:20.189Z",
+  "tool": "axe-core (WCAG 2.1 AA)",
+  "pages": [
+    {
+      "page": "landing",
+      "route": "/",
+      "violations": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": 4,
+          "tags": [
+            "wcag2a",
+            "wcag412"
+          ]
+        },
+        {
+          "id": "aria-valid-attr-value",
+          "impact": "critical",
+          "help": "ARIA attributes must conform to valid values",
+          "nodes": 1,
+          "tags": [
+            "wcag2a",
+            "wcag412"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 50,
+          "tags": [
+            "wcag2aa",
+            "wcag143"
+          ]
+        },
+        {
+          "id": "landmark-banner-is-top-level",
+          "impact": "moderate",
+          "help": "Banner landmark should not be contained in another landmark",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        },
+        {
+          "id": "landmark-contentinfo-is-top-level",
+          "impact": "moderate",
+          "help": "Contentinfo landmark should not be contained in another landmark",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        },
+        {
+          "id": "landmark-no-duplicate-banner",
+          "impact": "moderate",
+          "help": "Document should not have more than one banner landmark",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        },
+        {
+          "id": "landmark-no-duplicate-contentinfo",
+          "impact": "moderate",
+          "help": "Document should not have more than one contentinfo landmark",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        },
+        {
+          "id": "landmark-unique",
+          "impact": "moderate",
+          "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "help": "All page content should be contained by landmarks",
+          "nodes": 2,
+          "tags": [
+            "best-practice"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pricing",
+      "route": "/pricing",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 83,
+          "tags": [
+            "wcag2aa",
+            "wcag143"
+          ]
+        },
+        {
+          "id": "landmark-banner-is-top-level",
+          "impact": "moderate",
+          "help": "Banner landmark should not be contained in another landmark",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        },
+        {
+          "id": "landmark-contentinfo-is-top-level",
+          "impact": "moderate",
+          "help": "Contentinfo landmark should not be contained in another landmark",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        },
+        {
+          "id": "landmark-no-duplicate-banner",
+          "impact": "moderate",
+          "help": "Document should not have more than one banner landmark",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        },
+        {
+          "id": "landmark-no-duplicate-contentinfo",
+          "impact": "moderate",
+          "help": "Document should not have more than one contentinfo landmark",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        },
+        {
+          "id": "landmark-unique",
+          "impact": "moderate",
+          "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "help": "Page should contain a level-one heading",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "help": "All page content should be contained by landmarks",
+          "nodes": 2,
+          "tags": [
+            "best-practice"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "login",
+      "route": "/login",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 4,
+          "tags": [
+            "wcag2aa",
+            "wcag143"
+          ]
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "help": "All page content should be contained by landmarks",
+          "nodes": 11,
+          "tags": [
+            "best-practice"
+          ]
+        },
+        {
+          "id": "skip-link",
+          "impact": "moderate",
+          "help": "The skip-link target should exist and be focusable",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "register",
+      "route": "/register",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 10,
+          "tags": [
+            "wcag2aa",
+            "wcag143"
+          ]
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "help": "All page content should be contained by landmarks",
+          "nodes": 12,
+          "tags": [
+            "best-practice"
+          ]
+        },
+        {
+          "id": "skip-link",
+          "impact": "moderate",
+          "help": "The skip-link target should exist and be focusable",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "student-dashboard",
+      "route": "/dashboard/student",
+      "violations": [
+        {
+          "id": "aria-valid-attr-value",
+          "impact": "critical",
+          "help": "ARIA attributes must conform to valid values",
+          "nodes": 9,
+          "tags": [
+            "wcag2a",
+            "wcag412"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 33,
+          "tags": [
+            "wcag2aa",
+            "wcag143"
+          ]
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "help": "All page content should be contained by landmarks",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "exams",
+      "route": "/exams",
+      "violations": [
+        {
+          "id": "aria-valid-attr-value",
+          "impact": "critical",
+          "help": "ARIA attributes must conform to valid values",
+          "nodes": 9,
+          "tags": [
+            "wcag2a",
+            "wcag412"
+          ]
+        },
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "help": "Buttons must have discernible text",
+          "nodes": 1,
+          "tags": [
+            "wcag2a",
+            "wcag412"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 34,
+          "tags": [
+            "wcag2aa",
+            "wcag143"
+          ]
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "help": "All page content should be contained by landmarks",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "results",
+      "route": "/results",
+      "violations": [
+        {
+          "id": "aria-valid-attr-value",
+          "impact": "critical",
+          "help": "ARIA attributes must conform to valid values",
+          "nodes": 9,
+          "tags": [
+            "wcag2a",
+            "wcag412"
+          ]
+        },
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "help": "Buttons must have discernible text",
+          "nodes": 1,
+          "tags": [
+            "wcag2a",
+            "wcag412"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 33,
+          "tags": [
+            "wcag2aa",
+            "wcag143"
+          ]
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "help": "All page content should be contained by landmarks",
+          "nodes": 1,
+          "tags": [
+            "best-practice"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pagesAudited": 7,
+    "totalViolationTypes": 34,
+    "totalNodes": 324
+  }
+}

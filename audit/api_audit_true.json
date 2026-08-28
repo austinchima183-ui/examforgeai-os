@@ -1,0 +1,1858 @@
+[
+  {
+    "route": "/",
+    "method": "GET",
+    "status": 308,
+    "class": "HTTP_308",
+    "latency": 6,
+    "body": "/api"
+  },
+  {
+    "route": "/admin/audit-logs",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 10,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/backups",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 13,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/backups",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 16,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/branding",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 20,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/branding",
+    "method": "PUT",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 26,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/integrations",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 30,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/integrations",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 36,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/integrations",
+    "method": "PUT",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 39,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/organization-settings",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 39,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/organization-settings",
+    "method": "PUT",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 41,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/plugins",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 43,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/plugins",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 46,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/roles",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 43,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/roles",
+    "method": "PUT",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 44,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/users",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 43,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/users",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 43,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/users",
+    "method": "PUT",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 43,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/admin/users",
+    "method": "DELETE",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 42,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/agents",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 40,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/agents",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 35,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/agents/[id]/execute",
+    "method": "POST",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/ai/agents",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 36,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/ai/complete",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 33,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/ai/government",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 32,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/ai/parent",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 29,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/ai/predictive",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 28,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/ai/school-admin",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 30,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/ai/stream",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 32,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/ai/student",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 35,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/ai/teacher",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 37,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/alerting/channels",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 38,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/alerting/channels",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 40,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/alerting/channels",
+    "method": "PUT",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 43,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/alerting/incidents",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 43,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/alerting/incidents",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 43,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/alerting/incidents/[id]",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/alerting/incidents/[id]",
+    "method": "PATCH",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/alerting/incidents/[id]/timeline",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/alerting/suppressions",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 42,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/alerting/suppressions",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 42,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/alerting/suppressions",
+    "method": "DELETE",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 42,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/analytics",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 44,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/analytics/enterprise",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 43,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/analytics/events",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 6559,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/analytics/nlq",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 39,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/auth/callback",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT",
+    "latency": 6807,
+    "body": ""
+  },
+  {
+    "route": "/billing/audit",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 36,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/checkout",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 33,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/enterprise",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 31,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/enterprise",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 28,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/invoices",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 31,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/invoices",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 28,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/paystack/checkout",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 25,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/paystack/webhook",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 7829,
+    "body": "{\"error\":\"Missing signature header\"}"
+  },
+  {
+    "route": "/billing/refund",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 26,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/refunds",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 26,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/refunds",
+    "method": "PATCH",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 23,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/revenue",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 23,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/subscription-lifecycle",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 22,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/subscription-lifecycle",
+    "method": "PATCH",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 19,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/subscriptions",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 18,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/subscriptions",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 18,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/billing/webhook",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 7715,
+    "body": "{\"error\":\"Missing signature header\"}"
+  },
+  {
+    "route": "/billing/webhooks",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 7613,
+    "body": "{\"error\":\"Missing signature header\"}"
+  },
+  {
+    "route": "/cbt/answer",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 19,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/cbt/session",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 23,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/cbt/session",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 54,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/cbt/submit",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 52,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/cbt/timing",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 55,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/contact",
+    "method": "POST",
+    "status": 400,
+    "class": "VALIDATION_400",
+    "latency": 6302,
+    "body": "{\"success\":false,\"error\":\"Invalid form data\",\"fields\":{\"firstName\":[\"Invalid input: expected string, received "
+  },
+  {
+    "route": "/demo-booking",
+    "method": "POST",
+    "status": 400,
+    "class": "VALIDATION_400",
+    "latency": 6221,
+    "body": "{\"success\":false,\"error\":\"Invalid input: expected string, received undefined\"}"
+  },
+  {
+    "route": "/demo-booking/[id]",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/demo-booking/[id]",
+    "method": "PATCH",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/demo-booking/[id]",
+    "method": "DELETE",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/developer/keys",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 15,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/developer/keys",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 6,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/developer/oauth-apps",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 4,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/developer/oauth-apps",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 7,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/developer/openapi",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 4,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/events",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 5,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/events",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 4,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/feedback",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 4,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/feedback",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 27,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/feedback/[id]",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/feedback/[id]",
+    "method": "PATCH",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/feedback/[id]",
+    "method": "DELETE",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/feedback/[id]/comments",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/feedback/[id]/comments",
+    "method": "POST",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/feedback/ai-rating",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 5,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/feedback/analytics",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 4,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/health",
+    "method": "GET",
+    "status": 200,
+    "class": "PUBLIC_200",
+    "latency": 7933,
+    "body": "{\"status\":\"healthy\",\"timestamp\":\"2026-08-25T02:28:51.859Z\",\"version\":\"1.0.0\",\"uptime\":159.578386349,\"checks\":{"
+  },
+  {
+    "route": "/health/ai",
+    "method": "GET",
+    "status": 200,
+    "class": "PUBLIC_200",
+    "latency": 1572,
+    "body": "{\"status\":\"healthy\",\"message\":\"No AI requests recorded yet\"}"
+  },
+  {
+    "route": "/health/database",
+    "method": "GET",
+    "status": 200,
+    "class": "PUBLIC_200",
+    "latency": 2323,
+    "body": "{\"status\":\"healthy\",\"latencyMs\":726,\"message\":\"Connected\"}"
+  },
+  {
+    "route": "/health/detailed",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 2064,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/health/redis",
+    "method": "GET",
+    "status": 200,
+    "class": "PUBLIC_200",
+    "latency": 1191,
+    "body": "{\"status\":\"healthy\",\"message\":\"In-memory caching active (Supabase-only architecture)\",\"details\":{\"fallbackActi"
+  },
+  {
+    "route": "/import/errors",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 359,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/import/execute",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 268,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/import/execute",
+    "method": "PATCH",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 200,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/import/progress",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 121,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/import/validate",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 83,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketing/analytics",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 25,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketing/contacts",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 22,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketing/demos",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 24,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketing/demos",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 24,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketing/leads",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 23,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketing/leads/[id]",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/marketing/leads/[id]",
+    "method": "PATCH",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/marketing/leads/[id]/activities",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/marketing/newsletter",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 23,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace-v2/listings",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 23,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace-v2/listings",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 21,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace-v2/listings/[id]/purchase",
+    "method": "POST",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/marketplace/checkout",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 48,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/download",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 50,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/my-purchases",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 50,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/product",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 50,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/purchase",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 51,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/purchase-status",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 53,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/related",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 60,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/reviews",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 89,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/reviews",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 102,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/reviews/report",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 101,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/reviews/respond",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 90,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/seller/analytics",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 85,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/seller/products",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 78,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/seller/products",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 49,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/verify-payment",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 38,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/verify-payment",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 37,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/marketplace/webhook",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 1229,
+    "body": "{\"error\":\"Missing webhook signature\"}"
+  },
+  {
+    "route": "/newsletter/subscribe",
+    "method": "POST",
+    "status": 400,
+    "class": "VALIDATION_400",
+    "latency": 1263,
+    "body": "{\"success\":false,\"error\":\"Invalid input: expected string, received undefined\"}"
+  },
+  {
+    "route": "/newsletter/unsubscribe",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT",
+    "latency": 684,
+    "body": ""
+  },
+  {
+    "route": "/newsletter/verify",
+    "method": "GET",
+    "status": 307,
+    "class": "REDIRECT",
+    "latency": 1180,
+    "body": ""
+  },
+  {
+    "route": "/notifications/delivery-status",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 52,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/notifications/digest",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 52,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/notifications/digest",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 9,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/notifications/history",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 10,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/notifications/history",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 10,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/notifications/preferences",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 9,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/notifications/preferences",
+    "method": "PUT",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 9,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/notifications/send",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 9,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/notifications/templates",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 8,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/notifications/templates",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 8,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/notifications/templates",
+    "method": "PUT",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 8,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/organizations",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 8,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/organizations",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 8,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/organizations/[id]",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/organizations/[id]",
+    "method": "PATCH",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/organizations/[id]",
+    "method": "DELETE",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/organizations/switch",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 9,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/parent/attendance",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 9,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/parent/child-progress",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 8,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/parent/dashboard",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 35,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/parent/fees",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 35,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/parent/fees",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 9,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/parent/messaging",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 9,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/parent/messaging",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 9,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/plugins",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 9,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/plugins",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 8,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/plugins/[id]/install",
+    "method": "POST",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/reports",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 10,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/reports/generate",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 10,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/reports/schedule",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 9,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/reports/share",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 9,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/attendance",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 12,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/attendance",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 123,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/attendance",
+    "method": "PATCH",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 149,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/calendar",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 45,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/calendar",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 42,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/calendar",
+    "method": "PATCH",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 14,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/calendar",
+    "method": "DELETE",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 14,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/classes",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 14,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/classes",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 13,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/classes",
+    "method": "PATCH",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 13,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/classes",
+    "method": "DELETE",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 14,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/fees",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 15,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/fees",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 15,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/fees",
+    "method": "PATCH",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 15,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/fees",
+    "method": "DELETE",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 16,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/timetable",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 18,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/timetable",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 45,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/timetable",
+    "method": "PATCH",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 45,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/school/timetable",
+    "method": "DELETE",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 41,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/search",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 13,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/security/passkeys",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 13,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/security/passkeys",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 13,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/security/sessions",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 19,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/security/sessions",
+    "method": "DELETE",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 19,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/security/sso",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 19,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/security/sso",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 19,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/seed",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 19,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/settings/api-keys",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 18,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/settings/api-keys",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 20,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/settings/security",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 18,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/settings/security",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 19,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/settings/sso",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 47,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/settings/sso",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 47,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/settings/webhooks",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 47,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/settings/webhooks",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 47,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/student/certificates",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 19,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/student/flashcards",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 18,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/student/flashcards",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 18,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/student/practice",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 17,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/student/progress",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 17,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/student/revision-hub",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 17,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/student/study-planner",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 16,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/student/study-planner",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 17,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/student/study-planner",
+    "method": "PATCH",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 18,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/student/study-planner",
+    "method": "DELETE",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 19,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/grade",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 19,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/lesson-plans",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 46,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/lesson-plans",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 75,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/lesson-plans",
+    "method": "PUT",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 76,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/lesson-plans",
+    "method": "DELETE",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 76,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/rubrics",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 48,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/rubrics",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 25,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/rubrics",
+    "method": "PUT",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 24,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/rubrics",
+    "method": "DELETE",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 24,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/submissions",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 23,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/submissions",
+    "method": "PUT",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 24,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/worksheets",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 103,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/worksheets",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 106,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/worksheets",
+    "method": "PUT",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 149,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/teacher/worksheets",
+    "method": "DELETE",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 152,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/tenants/resolve",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 158,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/workflows",
+    "method": "GET",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 88,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/workflows",
+    "method": "POST",
+    "status": 401,
+    "class": "AUTH_401",
+    "latency": 85,
+    "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+  },
+  {
+    "route": "/workflows/[id]",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/workflows/[id]",
+    "method": "PATCH",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/workflows/[id]",
+    "method": "DELETE",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/workflows/[id]/execute",
+    "method": "POST",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  },
+  {
+    "route": "/workflows/[id]/executions",
+    "method": "GET",
+    "status": "DYNAMIC",
+    "class": "DYNAMIC",
+    "latency": 0,
+    "body": ""
+  }
+]

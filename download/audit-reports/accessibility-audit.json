@@ -1,0 +1,15 @@
+{
+  "aria_attributes_total": 767,
+  "keyboard_handlers": 29,
+  "focus_visible_styles": 289,
+  "skip_link_files": 3,
+  "sr_only_files": 28,
+  "img_without_alt": [
+    {
+      "file": "src/lib/security/__tests__/red-team.test.ts",
+      "line": 1117,
+      "issue": "img tag without alt attribute"
+    }
+  ],
+  "img_without_alt_count": 1
+}

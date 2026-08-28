@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Supabase (Browser)",
+    "package": "@supabase/ssr",
+    "env_vars_present": true,
+    "env_vars_required": [
+      "NEXT_PUBLIC_SUPABASE_URL",
+      "NEXT_PUBLIC_SUPABASE_ANON_KEY"
+    ],
+    "config_files_present": [
+      "src/lib/supabase/client.ts",
+      "src/lib/hooks/use-supabase.tsx"
+    ],
+    "config_files_missing": [],
+    "imports_used": false,
+    "status": "OK"
+  },
+  {
+    "name": "Supabase (Server)",
+    "package": "@supabase/ssr",
+    "env_vars_present": true,
+    "env_vars_required": [
+      "NEXT_PUBLIC_SUPABASE_URL",
+      "SUPABASE_SERVICE_ROLE_KEY"
+    ],
+    "config_files_present": [
+      "src/lib/supabase/server.ts",
+      "src/lib/supabase/middleware.ts"
+    ],
+    "config_files_missing": [],
+    "imports_used": false,
+    "status": "OK"
+  },
+  {
+    "name": "OpenAI",
+    "package": "openai",
+    "env_vars_present": true,
+    "env_vars_required": [
+      "OPENAI_API_KEY"
+    ],
+    "config_files_present": [],
+    "config_files_missing": [],
+    "imports_used": false,
+    "status": "OK"
+  },
+  {
+    "name": "Google Gemini",
+    "package": "@google/generative-ai",
+    "env_vars_present": true,
+    "env_vars_required": [
+      "GEMINI_API_KEY"
+    ],
+    "config_files_present": [],
+    "config_files_missing": [],
+    "imports_used": false,
+    "status": "OK"
+  },
+  {
+    "name": "Flutterwave",
+    "package": "flutterwave-v3",
+    "env_vars_present": true,
+    "env_vars_required": [
+      "FLUTTERWAVE_PUBLIC_KEY",
+      "FLUTTERWAVE_SECRET_KEY",
+      "FLUTTERWAVE_WEBHOOK_HASH"
+    ],
+    "config_files_present": [
+      "src/lib/payment/payment-security.ts",
+      "src/lib/payment/webhook-security.ts"
+    ],
+    "config_files_missing": [],
+    "imports_used": false,
+    "status": "OK"
+  },
+  {
+    "name": "Resend (Email)",
+    "package": "resend",
+    "env_vars_present": true,
+    "env_vars_required": [
+      "RESEND_API_KEY",
+      "EMAIL_FROM_ADDRESS"
+    ],
+    "config_files_present": [
+      "src/lib/email/service.ts",
+      "src/lib/email/templates.ts"
+    ],
+    "config_files_missing": [],
+    "imports_used": false,
+    "status": "OK"
+  },
+  {
+    "name": "Sentry (Observability)",
+    "package": "@sentry/nextjs",
+    "env_vars_present": true,
+    "env_vars_required": [
+      "SENTRY_AUTH_TOKEN"
+    ],
+    "config_files_present": [
+      "sentry.client.config.ts",
+      "sentry.server.config.ts",
+      "sentry.edge.config.ts"
+    ],
+    "config_files_missing": [],
+    "imports_used": false,
+    "status": "OK"
+  }
+]
