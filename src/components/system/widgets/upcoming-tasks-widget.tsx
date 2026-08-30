@@ -39,6 +39,8 @@ export interface UpcomingTasksWidgetProps {
   /** Max height before internal scrolling (px) */
   maxHeight?: number
   className?: string
+  /** Content-only render (no SectionCard frame) — for embedding in WidgetGrid */
+  bare?: boolean
 }
 
 const toneDot: Record<NonNullable<TaskItem['tone']>, string> = {
@@ -86,23 +88,9 @@ export function UpcomingTasksWidget({
   emptyAction,
   maxHeight = 320,
   className,
+  bare = false,
 }: UpcomingTasksWidgetProps) {
-  return (
-    <SectionCard
-      title={title}
-      description={description}
-      icon="clipboard-list"
-      tier="surface"
-      className={className}
-      action={
-        tasks.length > 0 ? (
-          <span className="rounded-full bg-blue-500/10 px-2 py-0.5 text-[10px] font-medium text-blue-400">
-            {tasks.length} scheduled
-          </span>
-        ) : undefined
-      }
-    >
-      {loading ? (
+  const content = loading ? (
         <div className="space-y-2">
           {Array.from({ length: 3 }).map((_, i) => (
             <Skeleton key={i} className="h-14 w-full rounded-lg" />
@@ -174,7 +162,39 @@ export function UpcomingTasksWidget({
             )
           })}
         </ul>
-      )}
+  )
+
+  if (bare) {
+    return (
+      <div className={className}>
+        {tasks.length > 0 && (
+          <div className="mb-3 flex justify-end">
+            <span className="rounded-full bg-blue-500/10 px-2 py-0.5 text-[10px] font-medium text-blue-400">
+              {tasks.length} scheduled
+            </span>
+          </div>
+        )}
+        {content}
+      </div>
+    )
+  }
+
+  return (
+    <SectionCard
+      title={title}
+      description={description}
+      icon="clipboard-list"
+      tier="surface"
+      className={className}
+      action={
+        tasks.length > 0 ? (
+          <span className="rounded-full bg-blue-500/10 px-2 py-0.5 text-[10px] font-medium text-blue-400">
+            {tasks.length} scheduled
+          </span>
+        ) : undefined
+      }
+    >
+      {content}
     </SectionCard>
   )
 }

@@ -1,0 +1,217 @@
+{
+  "auditedAt": "2026-08-29T04:43:23.589726+00:00",
+  "base": "https://web-alpha-bay-87.vercel.app",
+  "totalRoutes": 34,
+  "pagesOk": 26,
+  "pagesRedirected": 0,
+  "pageClientErrors": 0,
+  "serverErrors": [],
+  "avgTtfbMs": 342,
+  "maxTtfbMs": 1043,
+  "results": {
+    "/": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 94,
+      "location": ""
+    },
+    "/api-docs": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 134,
+      "location": ""
+    },
+    "/case-studies": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 405,
+      "location": ""
+    },
+    "/careers": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 408,
+      "location": ""
+    },
+    "/blog": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 454,
+      "location": ""
+    },
+    "/changelog": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 439,
+      "location": ""
+    },
+    "/community": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 489,
+      "location": ""
+    },
+    "/customers": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 420,
+      "location": ""
+    },
+    "/cookies": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 480,
+      "location": ""
+    },
+    "/contact": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 487,
+      "location": ""
+    },
+    "/features": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 301,
+      "location": ""
+    },
+    "/docs": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 466,
+      "location": ""
+    },
+    "/login": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 91,
+      "location": ""
+    },
+    "/about": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 1043,
+      "location": ""
+    },
+    "/pricing": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 93,
+      "location": ""
+    },
+    "/help-center": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 394,
+      "location": ""
+    },
+    "/gdpr": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 445,
+      "location": ""
+    },
+    "/integrations": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 460,
+      "location": ""
+    },
+    "/partners": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 401,
+      "location": ""
+    },
+    "/security": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 86,
+      "location": ""
+    },
+    "/press-kit": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 439,
+      "location": ""
+    },
+    "/privacy": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 537,
+      "location": ""
+    },
+    "/register": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 392,
+      "location": ""
+    },
+    "/api/auth/csrf": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 86,
+      "location": ""
+    },
+    "/api/auth/session": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 88,
+      "location": ""
+    },
+    "/solutions": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 411,
+      "location": ""
+    },
+    "/status": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 434,
+      "location": ""
+    },
+    "/api/search": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 79,
+      "location": ""
+    },
+    "/api/notifications": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 84,
+      "location": ""
+    },
+    "/api/parent/dashboard": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 87,
+      "location": ""
+    },
+    "/terms": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 488,
+      "location": ""
+    },
+    "/api/ai/status": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 81,
+      "location": ""
+    },
+    "/api/marketplace/items": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 91,
+      "location": ""
+    },
+    "/api/health": {
+      "kind": "api",
+      "status": 200,
+      "ttfb_ms": 753,
+      "location": ""
+    }
+  }
+}

@@ -95,6 +95,7 @@ export const ROUTE_ROLE_MAP: Record<string, UserRole[]> = {
   '/school/attendance': ['school_admin', 'super_admin'],
   '/school/fees': ['school_admin', 'super_admin'],
   '/school/calendar': ['school_admin', 'super_admin'],
+  '/school/settings': ['school_admin', 'super_admin'],
 
   // School admin AI tools
   '/school-admin/ai-insights': ['school_admin', 'super_admin'],

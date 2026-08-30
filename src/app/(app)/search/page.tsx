@@ -135,7 +135,7 @@ export default function SearchPage() {
               <div className="relative">
                 <div className="absolute inset-0 rounded-2xl bg-primary/10 blur-xl" />
                 <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/80 backdrop-blur-sm border-white/[0.04]">
-                  <Search className="h-7 w-7 text-foreground/40" />
+                  <Search className="h-7 w-7 text-foreground/60" />
                 </div>
               </div>
             </div>
@@ -196,7 +196,7 @@ export default function SearchPage() {
               <div className="relative">
                 <div className="absolute inset-0 rounded-2xl bg-primary/10 blur-xl" />
                 <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/80 backdrop-blur-sm border-white/[0.04]">
-                  <Search className="h-7 w-7 text-foreground/40" />
+                  <Search className="h-7 w-7 text-foreground/60" />
                 </div>
               </div>
             </div>

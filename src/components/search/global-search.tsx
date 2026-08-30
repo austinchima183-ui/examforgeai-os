@@ -657,7 +657,7 @@ export function GlobalSearch({ open, onOpenChange }: GlobalSearchProps) {
                   {!hasResults && query.trim().length > 0 && !isSearching && (
                     <CommandEmpty>
                       <div className="flex flex-col items-center gap-2 py-8 text-center">
-                        <Search className="size-8 text-foreground/35" />
+                        <Search className="size-8 text-foreground/60" />
                         <p className="text-sm text-muted-foreground">
                           No results found for &ldquo;{query.trim()}&rdquo;
                         </p>
@@ -731,7 +731,7 @@ export function GlobalSearch({ open, onOpenChange }: GlobalSearchProps) {
                             {item.shortcut ? (
                               <CommandShortcut>{item.shortcut}</CommandShortcut>
                             ) : (
-                              <ArrowRight className="size-3 shrink-0 text-foreground/35" />
+                              <ArrowRight className="size-3 shrink-0 text-foreground/60" />
                             )}
                           </CommandItem>
                         ))}
@@ -744,7 +744,7 @@ export function GlobalSearch({ open, onOpenChange }: GlobalSearchProps) {
                       <div className="relative">
                         <div className="absolute inset-0 rounded-xl bg-primary/10 blur-xl" />
                         <div className="relative flex h-12 w-12 items-center justify-center rounded-xl forge-glass-surface border border-border/30 forge-card-shadow">
-                          <Sparkles className="size-6 text-foreground/40" />
+                          <Sparkles className="size-6 text-foreground/60" />
                         </div>
                       </div>
                       <p className="text-sm text-muted-foreground">

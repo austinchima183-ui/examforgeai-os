@@ -209,7 +209,7 @@ export default function WorkflowsPage() {
       {filtered.length === 0 ? (
         <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow">
           <CardContent className="py-16 text-center">
-            <Workflow className="h-12 w-12 mx-auto text-foreground/30" />
+            <Workflow className="h-12 w-12 mx-auto text-foreground/60" />
             <h3 className="mt-4 text-lg font-semibold">No workflows found</h3>
             <p className="text-muted-foreground text-sm">Create your first workflow to get started</p>
             <Button className="mt-4" onClick={() => setTemplateOpen(true)}>

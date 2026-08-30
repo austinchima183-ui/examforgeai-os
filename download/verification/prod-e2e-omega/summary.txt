@@ -1,0 +1,11 @@
+BASE=https://web-alpha-bay-87.vercel.app START=2026-08-29T04:17:06Z
+00-landing rc=0   2 passed (22.8s)
+01-student-journey rc=1   1 failed
+01-student-journey rc=0   1 passed (1.0m)
+02-teacher-journey rc=0   1 passed (58.8s)
+03-parent-journey rc=0   1 passed (56.0s)
+04-school-admin-journey rc=0   1 passed (1.2m)
+05-super-admin-journey rc=0   1 passed (52.4s)
+06-rbac-matrix rc=0   5 passed (7.2m)
+07-cbt-flow rc=0   1 passed (24.3s)
+08-ai-api rc=0   3 passed (25.2s)

@@ -114,9 +114,9 @@ export function QuickActions({ actions, className }: QuickActionsProps) {
                     <Icon className="h-5 w-5" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-sm font-semibold leading-tight group-hover:text-primary transition-colors">
+                    <div className="text-sm font-semibold leading-tight group-hover:text-primary transition-colors">
                       {action.title}
-                    </h3>
+                    </div>
                     <p className="mt-1 text-xs text-muted-foreground line-clamp-2">
                       {action.description}
                     </p>

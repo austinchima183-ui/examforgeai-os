@@ -396,7 +396,7 @@ export function CalendarPageClient({ initialData, schoolId, userId }: CalendarPa
               {/* Previous month days */}
               {Array.from({ length: firstDayOfMonth }).map((_, i) => (
                 <div key={`prev-${i}`} className="bg-muted/30 p-1 min-h-[80px] sm:min-h-[100px]">
-                  <span className="text-xs text-foreground/35">{daysInPrevMonth - firstDayOfMonth + i + 1}</span>
+                  <span className="text-xs text-foreground/60">{daysInPrevMonth - firstDayOfMonth + i + 1}</span>
                 </div>
               ))}
 
@@ -436,7 +436,7 @@ export function CalendarPageClient({ initialData, schoolId, userId }: CalendarPa
               {/* Next month days */}
               {Array.from({ length: 42 - firstDayOfMonth - daysInMonth }).map((_, i) => (
                 <div key={`next-${i}`} className="bg-muted/30 p-1 min-h-[80px] sm:min-h-[100px]">
-                  <span className="text-xs text-foreground/35">{i + 1}</span>
+                  <span className="text-xs text-foreground/60">{i + 1}</span>
                 </div>
               ))}
             </div>

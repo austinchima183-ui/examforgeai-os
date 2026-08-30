@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { ChevronRight, type LucideIcon } from 'lucide-react'
 import { resolveIcon } from '@/lib/design/icon-registry'
 import { cn } from '@/lib/utils'
@@ -146,13 +145,10 @@ export function PageHeader({
 
   if (!animate) return inner
 
+  // CSS-driven entrance — paints from SSR HTML without waiting for hydration.
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-    >
+    <div className="animate-in fade-in slide-in-from-top-1 duration-350 motion-reduce:animate-none motion-reduce:transform-none">
       {inner}
-    </motion.div>
+    </div>
   )
 }

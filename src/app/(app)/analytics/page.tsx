@@ -149,7 +149,7 @@ export default function AnalyticsPage() {
               <div className="relative mb-6">
                 <div className="absolute inset-0 rounded-2xl bg-primary/10 blur-xl" />
                 <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/80 backdrop-blur-sm border-white/[0.04]">
-                  <BarChart3 className="h-7 w-7 text-foreground/40" />
+                  <BarChart3 className="h-7 w-7 text-foreground/60" />
                 </div>
               </div>
               <p className="text-base font-medium text-foreground">No analytics data available</p>
@@ -290,7 +290,7 @@ export default function AnalyticsPage() {
                     <div className="relative mb-4">
                       <div className="absolute inset-0 rounded-xl bg-primary/10 blur-lg" />
                       <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/80 backdrop-blur-sm border-white/[0.04]">
-                        <Activity className="h-5 w-5 text-foreground/35" />
+                        <Activity className="h-5 w-5 text-foreground/60" />
                       </div>
                     </div>
                     <p className="text-sm">No exam activity data available yet</p>
@@ -319,7 +319,7 @@ export default function AnalyticsPage() {
                     <div className="relative mb-4">
                       <div className="absolute inset-0 rounded-xl bg-emerald-500/10 blur-lg" />
                       <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/80 backdrop-blur-sm border-white/[0.04]">
-                        <BarChart3 className="h-5 w-5 text-foreground/35" />
+                        <BarChart3 className="h-5 w-5 text-foreground/60" />
                       </div>
                     </div>
                     <p className="text-sm">No subject performance data available yet</p>
@@ -353,7 +353,7 @@ export default function AnalyticsPage() {
                     <div className="relative mb-4">
                       <div className="absolute inset-0 rounded-xl bg-ember/10 blur-lg" />
                       <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/80 backdrop-blur-sm border-white/[0.04]">
-                        <Award className="h-5 w-5 text-foreground/35" />
+                        <Award className="h-5 w-5 text-foreground/60" />
                       </div>
                     </div>
                     <p className="text-sm">No performance data available yet</p>
@@ -382,7 +382,7 @@ export default function AnalyticsPage() {
                     <div className="relative mb-4">
                       <div className="absolute inset-0 rounded-xl bg-neural/10 blur-lg" />
                       <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/80 backdrop-blur-sm border-white/[0.04]">
-                        <TrendingUp className="h-5 w-5 text-foreground/35" />
+                        <TrendingUp className="h-5 w-5 text-foreground/60" />
                       </div>
                     </div>
                     <p className="text-sm">No pass rate data available yet</p>
@@ -416,7 +416,7 @@ export default function AnalyticsPage() {
                     <div className="relative mb-4">
                       <div className="absolute inset-0 rounded-xl bg-primary/10 blur-lg" />
                       <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/80 backdrop-blur-sm border-white/[0.04]">
-                        <Activity className="h-5 w-5 text-foreground/35" />
+                        <Activity className="h-5 w-5 text-foreground/60" />
                       </div>
                     </div>
                     <p className="text-sm">No weekly activity data available yet</p>
@@ -445,7 +445,7 @@ export default function AnalyticsPage() {
                     <div className="relative mb-4">
                       <div className="absolute inset-0 rounded-xl bg-emerald-500/10 blur-lg" />
                       <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/80 backdrop-blur-sm border-white/[0.04]">
-                        <Users className="h-5 w-5 text-foreground/35" />
+                        <Users className="h-5 w-5 text-foreground/60" />
                       </div>
                     </div>
                     <p className="text-sm">No participation trend data available yet</p>

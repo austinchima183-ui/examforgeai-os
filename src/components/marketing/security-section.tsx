@@ -107,7 +107,7 @@ export function SecuritySection() {
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4 }}
-            className="text-sm font-medium text-foreground/35 uppercase tracking-wider mb-4"
+            className="text-sm font-medium text-foreground/60 uppercase tracking-wider mb-4"
           >
             Security
           </motion.p>
@@ -174,7 +174,7 @@ export function SecuritySection() {
                   </h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">{feature.description}</p>
                   {/* Expandable detail on hover */}
-                  <p className="text-[11px] text-foreground/35 leading-relaxed mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-[11px] text-foreground/60 leading-relaxed mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {feature.detail}
                   </p>
                 </div>
@@ -204,7 +204,7 @@ export function SecuritySection() {
             </div>
 
             <div className="relative">
-              <p className="text-center text-xs font-semibold text-foreground/35 uppercase tracking-wider mb-4">
+              <p className="text-center text-xs font-semibold text-foreground/60 uppercase tracking-wider mb-4">
                 Certifications & Compliance
               </p>
               <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">

@@ -305,17 +305,17 @@ export default function StudyPlannerPage() {
       <div className="grid gap-4 sm:grid-cols-3">
         <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] hover:shadow-[0_2px_8px_rgba(59,130,246,0.15)] transition-all"><CardContent className="p-4 flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-green-50 dark:bg-green-950/10 border border-white/[0.04] flex items-center justify-center"><CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" /></div>
-            <div><p className="text-xl font-bold">{completedCount}/{totalCount}</p><p className="text-xs text-foreground/35">Sessions completed</p></div>
+            <div><p className="text-xl font-bold">{completedCount}/{totalCount}</p><p className="text-xs text-foreground/60">Sessions completed</p></div>
           </CardContent>
         </Card>
         <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] hover:shadow-[0_2px_8px_rgba(59,130,246,0.15)] transition-all"><CardContent className="p-4 flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-primary/10 border border-white/[0.04] flex items-center justify-center"><Clock className="h-4 w-4 text-primary" /></div>
-            <div><p className="text-xl font-bold">{Math.round(totalMinutes / 60)}h {totalMinutes % 60}m</p><p className="text-xs text-foreground/35">Total planned</p></div>
+            <div><p className="text-xl font-bold">{Math.round(totalMinutes / 60)}h {totalMinutes % 60}m</p><p className="text-xs text-foreground/60">Total planned</p></div>
           </CardContent>
         </Card>
         <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] hover:shadow-[0_2px_8px_rgba(59,130,246,0.15)] transition-all"><CardContent className="p-4 flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-yellow-50 dark:bg-yellow-950/10 border border-white/[0.04] flex items-center justify-center"><Target className="h-4 w-4 text-yellow-600 dark:text-yellow-400" /></div>
-            <div><p className="text-xl font-bold">{totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0}%</p><p className="text-xs text-foreground/35">Progress</p></div>
+            <div><p className="text-xl font-bold">{totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0}%</p><p className="text-xs text-foreground/60">Progress</p></div>
           </CardContent>
         </Card>
       </div>

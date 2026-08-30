@@ -1,0 +1,2104 @@
+{
+  "timestamp": "2026-08-29T21:23:42.024Z",
+  "method": "authenticated-Role REST probe (OpenAPI root is service_role-only; real service key externally blocked)",
+  "referencedTables": 158,
+  "verdictCounts": {
+    "EXISTS": 72,
+    "MISSING": 80,
+    "MIXED": 5,
+    "FORBIDDEN-ALL": 1
+  },
+  "aggregate": {
+    "users": {
+      "refs": 66,
+      "files": [
+        "src/app/(app)/analytics/page.tsx",
+        "src/app/(app)/dashboard/page.tsx",
+        "src/app/(app)/notifications/preferences/page.tsx",
+        "src/app/(app)/settings/page.tsx",
+        "src/app/api/admin/audit-logs/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "exams": {
+      "refs": 26,
+      "files": [
+        "src/app/(app)/exams/[id]/monitor/page.tsx",
+        "src/app/api/cbt/exam/route.ts",
+        "src/app/api/parent/child-progress/route.ts",
+        "src/app/api/parent/dashboard/route.ts",
+        "src/app/api/seed/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "exam_sessions": {
+      "refs": 27,
+      "files": [
+        "src/app/(app)/exams/[id]/monitor/page.tsx",
+        "src/app/api/cbt/answer/route.ts",
+        "src/app/api/cbt/exam/route.ts",
+        "src/app/api/cbt/submit/route.ts",
+        "src/app/api/student/certificates/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "notifications": {
+      "refs": 18,
+      "files": [
+        "src/app/(app)/exams/[id]/monitor/page.tsx",
+        "src/app/(app)/notifications/page.tsx",
+        "src/app/api/notifications/delivery-status/route.ts",
+        "src/app/api/parent/dashboard/route.ts",
+        "src/app/api/parent/messaging/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "avatars": {
+      "refs": 1,
+      "files": [
+        "src/app/(app)/settings/page.tsx"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "audit_logs": {
+      "refs": 11,
+      "files": [
+        "src/app/api/admin/audit-logs/route.ts",
+        "src/app/api/admin/branding/route.ts",
+        "src/app/api/admin/integrations/route.ts",
+        "src/app/api/admin/roles/route.ts",
+        "src/app/api/admin/users/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "backups": {
+      "refs": 1,
+      "files": [
+        "src/app/api/admin/backups/route.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "backup_schedule": {
+      "refs": 1,
+      "files": [
+        "src/app/api/admin/backups/route.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "schools": {
+      "refs": 16,
+      "files": [
+        "src/app/api/admin/branding/route.ts",
+        "src/app/api/ai/government/route.ts",
+        "src/app/api/seed/route.ts",
+        "src/components/dashboard/intelligent-insights.tsx",
+        "src/features/schools/actions.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "school_settings": {
+      "refs": 5,
+      "files": [
+        "src/app/api/admin/branding/route.ts",
+        "src/app/api/seed/route.ts",
+        "src/lib/enterprise-analytics/ai-analytics-service.ts",
+        "src/lib/enterprise-analytics/government-analytics-service.ts",
+        "src/lib/enterprise-analytics/risk-analytics-service.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "integrations": {
+      "refs": 2,
+      "files": [
+        "src/app/api/admin/integrations/route.ts",
+        "src/app/api/seed/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "role_permissions": {
+      "refs": 1,
+      "files": [
+        "src/app/api/admin/roles/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "agent_configs": {
+      "refs": 3,
+      "files": [
+        "src/app/api/agents/route.ts",
+        "src/lib/ai/orchestration/agent-communicator.ts",
+        "src/lib/ai/orchestration/agents/teacher-agent.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "exam_results": {
+      "refs": 11,
+      "files": [
+        "src/app/api/ai/government/route.ts",
+        "src/app/api/parent/child-progress/route.ts",
+        "src/app/api/parent/dashboard/route.ts",
+        "src/app/api/seed/route.ts",
+        "src/lib/cbt/server-authority.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "subjects": {
+      "refs": 17,
+      "files": [
+        "src/app/api/ai/government/route.ts",
+        "src/app/api/seed/route.ts",
+        "src/app/api/student/flashcards/route.ts",
+        "src/app/api/student/practice/route.ts",
+        "src/app/api/student/progress/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "alert_channels": {
+      "refs": 1,
+      "files": [
+        "src/app/api/alerting/channels/route.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "analytics_events": {
+      "refs": 5,
+      "files": [
+        "src/app/api/analytics/events/route.ts",
+        "src/app/api/marketing/analytics/route.ts",
+        "src/lib/event-bus/event-emitter.ts",
+        "src/lib/event-bus/event-handlers.ts",
+        "src/lib/marketing-admin/data.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "questions": {
+      "refs": 13,
+      "files": [
+        "src/app/api/cbt/exam/route.ts",
+        "src/app/api/marketplace/product/route.ts",
+        "src/components/dashboard/intelligent-insights.tsx",
+        "src/features/exams/actions.ts",
+        "src/lib/cbt/offline-sync.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "contact_submissions": {
+      "refs": 4,
+      "files": [
+        "src/app/api/contact/route.ts",
+        "src/app/api/marketing/contacts/route.ts",
+        "src/features/marketing/actions/contact.action.ts",
+        "src/lib/marketing-admin/data.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "leads": {
+      "refs": 11,
+      "files": [
+        "src/app/api/contact/route.ts",
+        "src/app/api/demo-booking/route.ts",
+        "src/app/api/marketing/leads/[id]/route.ts",
+        "src/app/api/marketing/leads/route.ts",
+        "src/app/api/newsletter/subscribe/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "lead_activities": {
+      "refs": 11,
+      "files": [
+        "src/app/api/contact/route.ts",
+        "src/app/api/demo-booking/route.ts",
+        "src/app/api/marketing/leads/[id]/activities/route.ts",
+        "src/app/api/marketing/leads/[id]/route.ts",
+        "src/app/api/newsletter/subscribe/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "demo_bookings": {
+      "refs": 5,
+      "files": [
+        "src/app/api/demo-booking/[id]/route.ts",
+        "src/app/api/demo-booking/route.ts",
+        "src/app/api/marketing/demos/route.ts",
+        "src/features/marketing/actions/demo-booking.action.ts",
+        "src/lib/marketing-admin/data.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "oauth_apps": {
+      "refs": 2,
+      "files": [
+        "src/app/api/developer/oauth-apps/route.ts",
+        "src/lib/developer/oauth-service.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "newsletter_subscribers": {
+      "refs": 6,
+      "files": [
+        "src/app/api/marketing/newsletter/route.ts",
+        "src/app/api/newsletter/subscribe/route.ts",
+        "src/app/api/newsletter/unsubscribe/route.ts",
+        "src/app/api/newsletter/verify/route.ts",
+        "src/features/marketing/actions/newsletter.action.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "marketplace_purchases": {
+      "refs": 12,
+      "files": [
+        "src/app/api/marketplace/checkout/route.ts",
+        "src/app/api/marketplace/my-purchases/route.ts",
+        "src/app/api/marketplace/purchase/route.ts",
+        "src/app/api/marketplace/purchase-status/route.ts",
+        "src/app/api/marketplace/reviews/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "marketplace_products": {
+      "refs": 15,
+      "files": [
+        "src/app/api/marketplace/checkout/route.ts",
+        "src/app/api/marketplace/my-purchases/route.ts",
+        "src/app/api/marketplace/product/route.ts",
+        "src/app/api/marketplace/purchase/route.ts",
+        "src/app/api/marketplace/related/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "marketplace_orders": {
+      "refs": 4,
+      "files": [
+        "src/app/api/marketplace/checkout/route.ts",
+        "src/app/api/marketplace/verify-payment/route.ts",
+        "src/app/api/marketplace/webhook/route.ts",
+        "src/lib/payment/payment-security.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "marketplace_order_items": {
+      "refs": 4,
+      "files": [
+        "src/app/api/marketplace/checkout/route.ts",
+        "src/app/api/marketplace/verify-payment/route.ts",
+        "src/app/api/marketplace/webhook/route.ts",
+        "src/lib/payment/payment-security.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "marketplace_reviews": {
+      "refs": 4,
+      "files": [
+        "src/app/api/marketplace/my-purchases/route.ts",
+        "src/app/api/marketplace/reviews/respond/route.ts",
+        "src/app/api/marketplace/reviews/route.ts",
+        "src/lib/services/marketplace-service.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "marketplace_review_reports": {
+      "refs": 1,
+      "files": [
+        "src/app/api/marketplace/reviews/report/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "marketplace_licenses": {
+      "refs": 2,
+      "files": [
+        "src/app/api/marketplace/webhook/route.ts",
+        "src/lib/marketplace-v2/purchase-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "notification_delivery_log": {
+      "refs": 3,
+      "files": [
+        "src/app/api/notifications/delivery-status/route.ts",
+        "src/lib/notifications/delivery-engine.ts",
+        "src/lib/notifications/queue.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "notification_history": {
+      "refs": 1,
+      "files": [
+        "src/app/api/notifications/history/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "notification_templates": {
+      "refs": 1,
+      "files": [
+        "src/app/api/notifications/templates/route.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "parent_children": {
+      "refs": 5,
+      "files": [
+        "src/app/api/parent/attendance/route.ts",
+        "src/app/api/parent/child-progress/route.ts",
+        "src/app/api/parent/dashboard/route.ts",
+        "src/app/api/parent/fees/route.ts",
+        "src/app/api/seed/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "class_students": {
+      "refs": 9,
+      "files": [
+        "src/app/api/parent/attendance/route.ts",
+        "src/app/api/parent/child-progress/route.ts",
+        "src/app/api/parent/dashboard/route.ts",
+        "src/app/api/seed/route.ts",
+        "src/lib/ai/ai-teacher.ts"
+      ],
+      "statuses": {
+        "student": "HTTP_500",
+        "teacher": "HTTP_500",
+        "super_admin": "HTTP_500"
+      },
+      "verdict": "MIXED"
+    },
+    "attendance": {
+      "refs": 13,
+      "files": [
+        "src/app/api/parent/attendance/route.ts",
+        "src/app/api/parent/dashboard/route.ts",
+        "src/app/api/school/attendance/route.ts",
+        "src/app/api/seed/route.ts",
+        "src/lib/ai/ai-agents.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "fee_payments": {
+      "refs": 5,
+      "files": [
+        "src/app/api/parent/dashboard/route.ts",
+        "src/app/api/parent/fees/route.ts",
+        "src/app/api/seed/route.ts",
+        "src/components/dashboard/intelligent-insights.tsx",
+        "src/lib/services/school-admin-service.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "messages": {
+      "refs": 3,
+      "files": [
+        "src/app/api/parent/dashboard/route.ts",
+        "src/app/api/parent/messaging/route.ts",
+        "src/app/api/seed/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "fees": {
+      "refs": 2,
+      "files": [
+        "src/app/api/parent/fees/route.ts",
+        "src/app/api/seed/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "report_schedules": {
+      "refs": 1,
+      "files": [
+        "src/app/api/reports/schedule/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "school_calendar_events": {
+      "refs": 4,
+      "files": [
+        "src/app/api/school/calendar/route.ts",
+        "src/lib/ai/ai-parent.ts",
+        "src/lib/services/dashboard-widget-service.ts",
+        "src/lib/services/school-admin-service.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "classes": {
+      "refs": 11,
+      "files": [
+        "src/app/api/school/classes/route.ts",
+        "src/app/api/school/timetable/route.ts",
+        "src/app/api/seed/route.ts",
+        "src/features/exams/actions.ts",
+        "src/lib/enterprise-analytics/drilldown-service.ts"
+      ],
+      "statuses": {
+        "student": "HTTP_500",
+        "teacher": "HTTP_500",
+        "super_admin": "HTTP_500"
+      },
+      "verdict": "MIXED"
+    },
+    "class_subjects": {
+      "refs": 2,
+      "files": [
+        "src/app/api/school/classes/route.ts",
+        "src/lib/services/school-admin-service.ts"
+      ],
+      "statuses": {
+        "student": "HTTP_500",
+        "teacher": "HTTP_500",
+        "super_admin": "HTTP_500"
+      },
+      "verdict": "MIXED"
+    },
+    "timetable_slots": {
+      "refs": 2,
+      "files": [
+        "src/app/api/school/timetable/route.ts",
+        "src/lib/services/school-admin-service.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "class_teachers": {
+      "refs": 1,
+      "files": [
+        "src/app/api/seed/route.ts"
+      ],
+      "statuses": {
+        "student": "HTTP_500",
+        "teacher": "HTTP_500",
+        "super_admin": "HTTP_500"
+      },
+      "verdict": "MIXED"
+    },
+    "subject_teachers": {
+      "refs": 1,
+      "files": [
+        "src/app/api/seed/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "api_keys": {
+      "refs": 2,
+      "files": [
+        "src/app/api/settings/api-keys/route.ts",
+        "src/lib/developer/api-key-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "api_key_usage": {
+      "refs": 1,
+      "files": [
+        "src/app/api/settings/api-keys/route.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "sessions": {
+      "refs": 3,
+      "files": [
+        "src/app/api/settings/security/route.ts",
+        "src/lib/enterprise-security/device-trust.ts",
+        "src/lib/enterprise-security/session-management.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "organization_settings": {
+      "refs": 2,
+      "files": [
+        "src/app/api/settings/security/route.ts",
+        "src/components/dashboard/intelligent-insights.tsx"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "webhook_deliveries": {
+      "refs": 1,
+      "files": [
+        "src/app/api/settings/webhooks/route.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "webhooks": {
+      "refs": 1,
+      "files": [
+        "src/app/api/settings/webhooks/route.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "certificates": {
+      "refs": 2,
+      "files": [
+        "src/app/api/student/certificates/route.ts",
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "flashcards": {
+      "refs": 1,
+      "files": [
+        "src/app/api/student/flashcards/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "question_bank": {
+      "refs": 2,
+      "files": [
+        "src/app/api/student/practice/route.ts",
+        "src/lib/services/question-bank-service.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "exam_answers": {
+      "refs": 2,
+      "files": [
+        "src/app/api/student/revision-hub/route.ts",
+        "src/lib/ai/ai-student.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "study_plans": {
+      "refs": 1,
+      "files": [
+        "src/app/api/student/study-planner/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "exam_submissions": {
+      "refs": 3,
+      "files": [
+        "src/app/api/teacher/grade/route.ts",
+        "src/app/api/teacher/submissions/route.ts",
+        "src/lib/services/report-generator.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "lesson_plans": {
+      "refs": 1,
+      "files": [
+        "src/app/api/teacher/lesson-plans/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "rubrics": {
+      "refs": 1,
+      "files": [
+        "src/app/api/teacher/rubrics/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "worksheets": {
+      "refs": 1,
+      "files": [
+        "src/app/api/teacher/worksheets/route.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "fee_assignments": {
+      "refs": 5,
+      "files": [
+        "src/lib/ai/ai-agents.ts",
+        "src/lib/ai/ai-predictive.ts",
+        "src/lib/ai/ai-school-admin.ts",
+        "src/lib/ai/orchestration/agents/finance-agent.ts",
+        "src/lib/services/school-admin-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "ai_generation_requests": {
+      "refs": 6,
+      "files": [
+        "src/lib/ai/ai-engine.ts",
+        "src/lib/ai/ai-reliability.ts",
+        "src/lib/ai/ai-teacher.ts",
+        "src/lib/enterprise-analytics/ai-analytics-service.ts",
+        "src/lib/enterprise-analytics/risk-analytics-service.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "transactions": {
+      "refs": 18,
+      "files": [
+        "src/lib/ai/ai-predictive.ts",
+        "src/lib/ai/ai-school-admin.ts",
+        "src/lib/ai/orchestration/agents/finance-agent.ts",
+        "src/lib/billing/failed-payments.ts",
+        "src/lib/billing/payment-audit.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "ai_circuit_breaker_state": {
+      "refs": 1,
+      "files": [
+        "src/lib/ai/ai-reliability.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "ai_quotas": {
+      "refs": 1,
+      "files": [
+        "src/lib/ai/ai-reliability.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "ai_generated_questions": {
+      "refs": 3,
+      "files": [
+        "src/lib/ai/ai-teacher.ts",
+        "src/lib/services/billing-service.ts",
+        "src/lib/services/question-bank-service.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "agent_messages": {
+      "refs": 1,
+      "files": [
+        "src/lib/ai/orchestration/agent-communicator.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "agent_delegations": {
+      "refs": 1,
+      "files": [
+        "src/lib/ai/orchestration/agent-communicator.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "agent_memories": {
+      "refs": 1,
+      "files": [
+        "src/lib/ai/orchestration/agent-memory.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "agent_plans": {
+      "refs": 1,
+      "files": [
+        "src/lib/ai/orchestration/agent-planner.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "agent_executions": {
+      "refs": 1,
+      "files": [
+        "src/lib/ai/orchestration/agent-runner.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "admissions_applications": {
+      "refs": 1,
+      "files": [
+        "src/lib/ai/orchestration/agents/admissions-agent.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "organizations": {
+      "refs": 12,
+      "files": [
+        "src/lib/ai/orchestration/agents/compliance-agent.ts",
+        "src/lib/billing/invoice-service-extended.ts",
+        "src/lib/billing/invoice-service.ts",
+        "src/lib/enterprise/branding-service.ts",
+        "src/lib/enterprise/cross-campus-service.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "marketing_campaigns": {
+      "refs": 1,
+      "files": [
+        "src/lib/ai/orchestration/agents/marketing-agent.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "parent_students": {
+      "refs": 2,
+      "files": [
+        "src/lib/ai/orchestration/agents/principal-agent.ts",
+        "src/lib/import/importers/parent-importer.ts"
+      ],
+      "statuses": {
+        "student": "HTTP_500",
+        "teacher": "HTTP_500",
+        "super_admin": "HTTP_500"
+      },
+      "verdict": "MIXED"
+    },
+    "support_tickets": {
+      "refs": 1,
+      "files": [
+        "src/lib/ai/orchestration/agents/support-agent.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "coupons": {
+      "refs": 3,
+      "files": [
+        "src/lib/billing/coupon-service.ts",
+        "src/lib/billing/invoice-service.ts",
+        "src/lib/billing/subscription-service.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "coupon_usages": {
+      "refs": 1,
+      "files": [
+        "src/lib/billing/coupon-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "enterprise_contracts": {
+      "refs": 1,
+      "files": [
+        "src/lib/billing/enterprise-contract-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "subscriptions": {
+      "refs": 13,
+      "files": [
+        "src/lib/billing/enterprise-contract-service.ts",
+        "src/lib/billing/failed-payments.ts",
+        "src/lib/billing/invoice-service-extended.ts",
+        "src/lib/billing/invoice-service.ts",
+        "src/lib/billing/plan-gate.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "failed_payments": {
+      "refs": 1,
+      "files": [
+        "src/lib/billing/failed-payments.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "payment_authorizations": {
+      "refs": 2,
+      "files": [
+        "src/lib/billing/failed-payments.ts",
+        "src/lib/billing/webhooks/paystack-handler.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "plans": {
+      "refs": 6,
+      "files": [
+        "src/lib/billing/invoice-service-extended.ts",
+        "src/lib/billing/invoice-service.ts",
+        "src/lib/billing/plan-gate.ts",
+        "src/lib/billing/subscription-lifecycle.ts",
+        "src/lib/billing/subscription-service.ts"
+      ],
+      "statuses": {
+        "student": "FORBIDDEN",
+        "teacher": "FORBIDDEN",
+        "super_admin": "FORBIDDEN"
+      },
+      "verdict": "FORBIDDEN-ALL"
+    },
+    "seat_allocations": {
+      "refs": 3,
+      "files": [
+        "src/lib/billing/invoice-service-extended.ts",
+        "src/lib/billing/invoice-service.ts",
+        "src/lib/billing/subscription-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "usage_records": {
+      "refs": 4,
+      "files": [
+        "src/lib/billing/invoice-service-extended.ts",
+        "src/lib/billing/revenue-dashboard-service.ts",
+        "src/lib/billing/subscription-service.ts",
+        "src/lib/billing/usage-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "plan_limits": {
+      "refs": 1,
+      "files": [
+        "src/lib/billing/invoice-service-extended.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "invoices": {
+      "refs": 9,
+      "files": [
+        "src/lib/billing/invoice-service-extended.ts",
+        "src/lib/billing/invoice-service.ts",
+        "src/lib/billing/refund-service.ts",
+        "src/lib/billing/revenue-dashboard-service.ts",
+        "src/lib/billing/subscription-service.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "tax_rates": {
+      "refs": 2,
+      "files": [
+        "src/lib/billing/invoice-service-extended.ts",
+        "src/lib/billing/invoice-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "payment_audit_trail": {
+      "refs": 1,
+      "files": [
+        "src/lib/billing/payment-audit.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "refund_requests": {
+      "refs": 2,
+      "files": [
+        "src/lib/billing/refund-service.ts",
+        "src/lib/billing/webhooks/flutterwave-handler.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "refund_workflows": {
+      "refs": 1,
+      "files": [
+        "src/lib/billing/refund-workflow.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "subscription_changes": {
+      "refs": 1,
+      "files": [
+        "src/lib/billing/revenue-dashboard-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "metered_pricing": {
+      "refs": 1,
+      "files": [
+        "src/lib/billing/subscription-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "webhook_idempotency": {
+      "refs": 1,
+      "files": [
+        "src/lib/billing/webhooks/idempotency.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "webhook_events": {
+      "refs": 2,
+      "files": [
+        "src/lib/billing/webhooks/replay-protection.ts",
+        "src/lib/payment/webhook-security.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "offline_sync_queue": {
+      "refs": 1,
+      "files": [
+        "src/lib/cbt/offline-sync.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "exam_session_answers": {
+      "refs": 2,
+      "files": [
+        "src/lib/cbt/offline-sync.ts",
+        "src/lib/cbt/server-authority.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "exam_audit_events": {
+      "refs": 2,
+      "files": [
+        "src/lib/cbt/offline-sync.ts",
+        "src/lib/cbt/server-authority.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "tamper_events": {
+      "refs": 1,
+      "files": [
+        "src/lib/cbt/tamper-detection.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "oauth_auth_codes": {
+      "refs": 1,
+      "files": [
+        "src/lib/developer/oauth-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "oauth_tokens": {
+      "refs": 1,
+      "files": [
+        "src/lib/developer/oauth-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "cross_campus_permissions": {
+      "refs": 3,
+      "files": [
+        "src/lib/enterprise/cross-campus-service.ts",
+        "src/lib/enterprise/delegated-admin-service.ts",
+        "src/lib/enterprise/organization-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "delegated_admins": {
+      "refs": 3,
+      "files": [
+        "src/lib/enterprise/cross-campus-service.ts",
+        "src/lib/enterprise/delegated-admin-service.ts",
+        "src/lib/enterprise/organization-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "enrollment_history": {
+      "refs": 1,
+      "files": [
+        "src/lib/enterprise-analytics/enrollment-analytics-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "scheduled_reports": {
+      "refs": 1,
+      "files": [
+        "src/lib/enterprise-analytics/scheduled-reports-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "report_executions": {
+      "refs": 1,
+      "files": [
+        "src/lib/enterprise-analytics/scheduled-reports-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "report_deliveries": {
+      "refs": 1,
+      "files": [
+        "src/lib/enterprise-analytics/scheduled-reports-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "conditional_access_policies": {
+      "refs": 1,
+      "files": [
+        "src/lib/enterprise-security/conditional-access.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "devices": {
+      "refs": 2,
+      "files": [
+        "src/lib/enterprise-security/device-trust.ts",
+        "src/lib/enterprise-security/risk-engine.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "passkey_registrations": {
+      "refs": 1,
+      "files": [
+        "src/lib/enterprise-security/passkey-service.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "user_login_history": {
+      "refs": 1,
+      "files": [
+        "src/lib/enterprise-security/risk-engine.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "risk_score_history": {
+      "refs": 1,
+      "files": [
+        "src/lib/enterprise-security/risk-engine.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "session_activity_log": {
+      "refs": 1,
+      "files": [
+        "src/lib/enterprise-security/session-management.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "sso_providers": {
+      "refs": 1,
+      "files": [
+        "src/lib/enterprise-security/sso-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "sso_auth_states": {
+      "refs": 1,
+      "files": [
+        "src/lib/enterprise-security/sso-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "scim_configurations": {
+      "refs": 1,
+      "files": [
+        "src/lib/enterprise-security/sso-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "sso_user_links": {
+      "refs": 1,
+      "files": [
+        "src/lib/enterprise-security/sso-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "event_history": {
+      "refs": 2,
+      "files": [
+        "src/lib/event-bus/event-emitter.ts",
+        "src/lib/event-bus/event-replay.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "webhook_registrations": {
+      "refs": 2,
+      "files": [
+        "src/lib/event-bus/event-emitter.ts",
+        "src/lib/event-bus/event-handlers.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "event_analytics": {
+      "refs": 1,
+      "files": [
+        "src/lib/event-bus/event-handlers.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "ai_event_memory": {
+      "refs": 1,
+      "files": [
+        "src/lib/event-bus/event-handlers.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "workflow_trigger_rules": {
+      "refs": 1,
+      "files": [
+        "src/lib/event-bus/event-handlers.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "workflow_executions": {
+      "refs": 4,
+      "files": [
+        "src/lib/event-bus/event-handlers.ts",
+        "src/lib/workflow/approval-service.ts",
+        "src/lib/workflow/workflow-engine.ts",
+        "src/lib/workflow/workflow-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "feedback": {
+      "refs": 2,
+      "files": [
+        "src/lib/feedback/analytics-service.ts",
+        "src/lib/feedback/feedback-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "feedback_comments": {
+      "refs": 1,
+      "files": [
+        "src/lib/feedback/feedback-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "enrollments": {
+      "refs": 1,
+      "files": [
+        "src/lib/import/importers/student-importer.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "teacher_subjects": {
+      "refs": 1,
+      "files": [
+        "src/lib/import/importers/teacher-importer.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "marketplace_listings": {
+      "refs": 5,
+      "files": [
+        "src/lib/marketplace-v2/listing-service.ts",
+        "src/lib/marketplace-v2/marketplace-categories.ts",
+        "src/lib/marketplace-v2/purchase-service.ts",
+        "src/lib/marketplace-v2/review-service.ts",
+        "src/lib/marketplace-v2/seller-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "marketplace_categories": {
+      "refs": 1,
+      "files": [
+        "src/lib/marketplace-v2/marketplace-categories.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "marketplace_purchases_v2": {
+      "refs": 3,
+      "files": [
+        "src/lib/marketplace-v2/purchase-service.ts",
+        "src/lib/marketplace-v2/review-service.ts",
+        "src/lib/marketplace-v2/seller-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "marketplace_reviews_v2": {
+      "refs": 1,
+      "files": [
+        "src/lib/marketplace-v2/review-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "marketplace_seller_profiles": {
+      "refs": 1,
+      "files": [
+        "src/lib/marketplace-v2/seller-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "marketplace_payouts": {
+      "refs": 1,
+      "files": [
+        "src/lib/marketplace-v2/seller-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "notification_bounces": {
+      "refs": 1,
+      "files": [
+        "src/lib/notifications/delivery-engine.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "notification_queue": {
+      "refs": 2,
+      "files": [
+        "src/lib/notifications/delivery-engine.ts",
+        "src/lib/notifications/queue.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "exam_participants": {
+      "refs": 1,
+      "files": [
+        "src/lib/notifications/event-handlers.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "assignment_recipients": {
+      "refs": 1,
+      "files": [
+        "src/lib/notifications/event-handlers.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "push_tokens": {
+      "refs": 1,
+      "files": [
+        "src/lib/notifications/providers/push-firebase.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "scheduled_notifications": {
+      "refs": 1,
+      "files": [
+        "src/lib/notifications/scheduler.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "licenses": {
+      "refs": 1,
+      "files": [
+        "src/lib/payment/payment-security.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "plugin_installations": {
+      "refs": 3,
+      "files": [
+        "src/lib/plugins/plugin-lifecycle.ts",
+        "src/lib/plugins/plugin-sandbox.ts",
+        "src/lib/plugins/plugin-settings.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "plugin_storage": {
+      "refs": 3,
+      "files": [
+        "src/lib/plugins/plugin-lifecycle.ts",
+        "src/lib/plugins/plugin-sandbox.ts",
+        "src/lib/plugins/plugin-settings.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "plugin_audit_logs": {
+      "refs": 2,
+      "files": [
+        "src/lib/plugins/plugin-lifecycle.ts",
+        "src/lib/plugins/plugin-sandbox.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "plugin_registry": {
+      "refs": 2,
+      "files": [
+        "src/lib/plugins/plugin-registry.ts",
+        "src/lib/plugins/plugin-settings.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "plugin_versions": {
+      "refs": 1,
+      "files": [
+        "src/lib/plugins/plugin-registry.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "plugin_reviews": {
+      "refs": 1,
+      "files": [
+        "src/lib/plugins/plugin-registry.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "plugin_events": {
+      "refs": 1,
+      "files": [
+        "src/lib/plugins/plugin-sandbox.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "rate_limit_counters": {
+      "refs": 1,
+      "files": [
+        "src/lib/rate-limit-distributed.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "topics": {
+      "refs": 1,
+      "files": [
+        "src/lib/services/question-bank-service.ts"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
+    "fee_structures": {
+      "refs": 1,
+      "files": [
+        "src/lib/services/school-admin-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "workflow_approval_requests": {
+      "refs": 2,
+      "files": [
+        "src/lib/workflow/approval-service.ts",
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "workflow_definitions": {
+      "refs": 3,
+      "files": [
+        "src/lib/workflow/approval-service.ts",
+        "src/lib/workflow/workflow-engine.ts",
+        "src/lib/workflow/workflow-service.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "transcript_entries": {
+      "refs": 1,
+      "files": [
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "scheduled_interventions": {
+      "refs": 1,
+      "files": [
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "workflow_scheduled_steps": {
+      "refs": 1,
+      "files": [
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    },
+    "workflow_dead_letter_queue": {
+      "refs": 1,
+      "files": [
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "statuses": {
+        "student": "MISSING",
+        "teacher": "MISSING",
+        "super_admin": "MISSING"
+      },
+      "verdict": "MISSING"
+    }
+  }
+}

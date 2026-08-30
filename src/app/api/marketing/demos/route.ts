@@ -1,5 +1,6 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { getAuthUser } from '@/lib/auth/require-auth'
+import { enforceCsrf } from '@/lib/api/csrf-guard'
 import { validateInput, parseJsonBody } from '@/lib/api/validate'
 import { createSafeErrorResponse } from '@/lib/api/auth-guard'
 import { z } from 'zod'
@@ -20,6 +21,7 @@ export async function GET() {
       return NextResponse.json({ error: 'Authentication required' }, { status: 401 })
     }
 
+    // ─── CSRF guard (Mission Ω-7 hardening) ───
     const { supabase } = authResult
     const { data, error } = await supabase
       .from('demo_bookings')
@@ -39,12 +41,16 @@ export async function GET() {
   }
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
     const authResult = await getAuthUser()
     if (!authResult) {
       return NextResponse.json({ error: 'Authentication required' }, { status: 401 })
     }
+
+    // ─── CSRF guard (Mission Ω-7 hardening) ───
+    const csrfResult = enforceCsrf(request, authResult)
+    if (csrfResult) return csrfResult
 
     const { user, supabase } = authResult
 

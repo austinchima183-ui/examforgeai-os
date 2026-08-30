@@ -76,7 +76,7 @@ function SidebarNavItem({
         isActive
           ? 'text-foreground/90'
           : // Inactive: nearly invisible until hover
-            'text-foreground/30',
+            'text-foreground/60',
         // Hover: subtle bg slide, brighter text, left border
         !isActive && 'hover:bg-[#1A1A1A] hover:text-foreground/70',
         collapsed && 'justify-center px-0'
@@ -106,7 +106,7 @@ function SidebarNavItem({
           'h-4 w-4 shrink-0 transition-all duration-200',
           isActive
             ? 'text-primary'
-            : 'text-foreground/25 group-hover:text-foreground/50'
+            : 'text-foreground/60 group-hover:text-foreground/60'
         )}
         aria-hidden="true"
       />
@@ -300,7 +300,7 @@ export function Sidebar({ collapsed, onToggleCollapse }: SidebarProps) {
                 {/* Section label — tiny caps, extending line, muted */}
                 {!collapsed && (
                   <div className="flex items-center gap-2 px-2 py-2" id={sectionId}>
-                    <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-foreground/35 whitespace-nowrap">
+                    <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-foreground/60 whitespace-nowrap">
                       {section.label}
                     </span>
                     <span className="flex-1 h-px bg-[rgba(255,255,255,0.04)]" aria-hidden="true" />
@@ -352,7 +352,7 @@ export function Sidebar({ collapsed, onToggleCollapse }: SidebarProps) {
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-neural" />
           </span>
           <span className="text-[11px] font-medium text-neural/70">AI</span>
-          <span className="text-[10px] text-foreground/30">v2.0</span>
+          <span className="text-[10px] text-foreground/60">v2.0</span>
         </div>
       )}
       {collapsed && (
@@ -377,7 +377,7 @@ export function Sidebar({ collapsed, onToggleCollapse }: SidebarProps) {
           variant="ghost"
           size="icon"
           className={cn(
-            'w-full h-7 text-foreground/30 hover:text-foreground/70 hover:bg-[#1A1A1A] transition-all duration-200 rounded-md'
+            'w-full h-7 text-foreground/60 hover:text-foreground/70 hover:bg-[#1A1A1A] transition-all duration-200 rounded-md'
           )}
           onClick={onToggleCollapse}
           aria-label={collapsed ? 'Expand sidebar navigation' : 'Collapse sidebar navigation'}

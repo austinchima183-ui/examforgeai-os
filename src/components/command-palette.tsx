@@ -311,6 +311,20 @@ export function CommandPalette({ open, onOpenChange, userRole = 'student' }: Com
     }
   }, [open])
 
+  // Escape closes the palette (standard cmdk dialog behavior — WCAG 2.1.2)
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault()
+        e.stopPropagation()
+        onOpenChange(false)
+      }
+    }
+    document.addEventListener('keydown', onKey, true)
+    return () => document.removeEventListener('keydown', onKey, true)
+  }, [open, onOpenChange])
+
   // Debounced search
   useEffect(() => {
     if (!query || query.trim().length < 2) {

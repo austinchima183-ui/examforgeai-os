@@ -134,7 +134,7 @@ export default function PluginDetailPage() {
   if (error || !plugin) {
     return (
       <div className="flex flex-col items-center justify-center p-12 text-center">
-        <AlertTriangle className="h-12 w-12 text-foreground/30 mb-4" />
+        <AlertTriangle className="h-12 w-12 text-foreground/60 mb-4" />
         <h2 className="text-lg font-semibold">Plugin not found</h2>
         <p className="text-muted-foreground text-sm">Failed to load plugin details</p>
       </div>
@@ -287,7 +287,7 @@ export default function PluginDetailPage() {
         <TabsContent value="settings" className="space-y-4 mt-6">
           {!plugin.installed ? (
             <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] transition-all"><CardContent className="py-12 text-center">
-              <Settings className="h-12 w-12 mx-auto text-foreground/30" />
+              <Settings className="h-12 w-12 mx-auto text-foreground/60" />
               <h3 className="mt-4 text-lg font-semibold">Plugin not installed</h3>
               <p className="text-muted-foreground">Install this plugin to configure its settings</p>
               <Button className="mt-4"><Download className="h-4 w-4 mr-2" />Install Plugin</Button>
@@ -425,7 +425,7 @@ export default function PluginDetailPage() {
             <CardContent className="space-y-4">
               {plugin.reviews.length === 0 ? (
                 <div className="py-8 text-center">
-                  <Star className="h-12 w-12 mx-auto text-foreground/30" />
+                  <Star className="h-12 w-12 mx-auto text-foreground/60" />
                   <h3 className="mt-4 text-lg font-semibold">No reviews yet</h3>
                   <p className="text-muted-foreground">Be the first to review this plugin</p>
                 </div>

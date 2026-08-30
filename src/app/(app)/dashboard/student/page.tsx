@@ -1,12 +1,5 @@
 import { requireAnyRole } from '@/lib/auth/require-auth'
-import {
-  Brain,
-  Plus,
-  FileText,
-  Trophy,
-  ArrowRight,
-  Target,
-} from 'lucide-react'
+import { Brain, Plus, Target } from 'lucide-react'
 import { ROUTES } from '@/lib/constants/routes'
 import { getStudentStats, getStudentActivities } from '@/lib/services/dashboard-service'
 import {
@@ -15,31 +8,19 @@ import {
   getStudentUpcomingExams,
   getUpcomingSchoolEvents,
 } from '@/lib/services/dashboard-widget-service'
-import { IntelligentInsights } from '@/components/dashboard/intelligent-insights'
 import {
+  Button,
   DashboardPage,
-  DashboardGrid,
-  GridItem,
-  gridSpans,
   HeroSection,
   KpiCard,
   KpiGrid,
-  SectionCard,
-  ActivityFeed,
   QuickActions,
-  ScoreTrendWidget,
-  PerformanceBarWidget,
-  UpcomingTasksWidget,
-  MiniCalendarWidget,
-  AnnouncementsWidget,
-  GoalsWidget,
-  EmptyState,
-  Button,
   getGreeting,
   type ActivityFeedItem,
   type TaskItem,
   type CalendarDayEvent,
 } from '@/components/system'
+import { StudentWidgets } from '@/components/dashboards/student-widgets'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
@@ -306,188 +287,29 @@ export default async function StudentDashboard() {
       {/* ── Quick Actions ─────────────────────────────────────────────── */}
       <QuickActions actions={quickActionItems} cols={3} />
 
-      {/* ── Main widget grid (12/8/4) ────────────────────────────────── */}
-      <DashboardGrid>
-        {/* Score progression — real chart */}
-        <GridItem span={gridSpans.wide}>
-          <ScoreTrendWidget data={scoreTrend} referenceValue={50} />
-        </GridItem>
-
-        {/* Upcoming exams — real tasks */}
-        <GridItem span={gridSpans.third}>
-          <UpcomingTasksWidget
-            tasks={tasks}
-            title="Upcoming Exams"
-            description="Your scheduled assessments"
-            emptyAction={{ label: 'Browse exams', href: ROUTES.STUDENT_PRACTICE }}
-          />
-        </GridItem>
-
-        {/* Subject performance — real chart */}
-        <GridItem span={gridSpans.third}>
-          <PerformanceBarWidget
-            data={subjectChartData}
-            title="Subject Performance"
-            description="Average score per subject"
-            icon="bar-chart3"
-            emptyTitle="No subject data yet"
-            emptyDescription="Subject averages appear after your first graded exams."
-          />
-        </GridItem>
-
-        {/* Goals — computed from real metrics */}
-        <GridItem span={gridSpans.third}>
-          <GoalsWidget goals={goals} />
-        </GridItem>
-
-        {/* Learning tools */}
-        <GridItem span={gridSpans.wide}>
-          <div>
-            <div className="mb-4 flex items-center gap-3">
-              <h2 className="text-lg font-semibold tracking-tight">Learning Tools</h2>
-              <div className="h-px flex-1 bg-gradient-to-r from-border/40 to-transparent" />
-            </div>
-            <QuickActions actions={learningTools} cols={4} />
-          </div>
-        </GridItem>
-
-        {/* Calendar — real events */}
-        <GridItem span={gridSpans.third}>
-          <MiniCalendarWidget events={calendarEvents} />
-        </GridItem>
-
-        {/* AI insights */}
-        <GridItem span={gridSpans.wide}>
-          <IntelligentInsights role={user.role} userId={user.id} schoolId={user.schoolId} />
-        </GridItem>
-
-        {/* Announcements — real school events */}
-        <GridItem span={gridSpans.third}>
-          <AnnouncementsWidget
-            announcements={schoolEvents.map((e) => ({
-              id: e.id,
-              title: e.title,
-              event_type: e.event_type,
-              start_date: e.start_date,
-            }))}
-          />
-        </GridItem>
-
-        {/* Study streak widget */}
-        <GridItem span={gridSpans.third}>
-          <SectionCard
-            title="Study Streak"
-            description="Keep your momentum going"
-            icon="flame"
-            tier="elevated"
-          >
-            <div className="flex items-baseline gap-2">
-              <span className="text-3xl font-bold tracking-tight text-ember">
-                {streakDays}
-              </span>
-              <span className="text-xs text-muted-foreground">days this week</span>
-            </div>
-            <div className="mt-3 flex gap-1.5">
-              {Array.from({ length: 7 }).map((_, i) => {
-                const active = i < streakDays
-                return (
-                  <div
-                    key={i}
-                    className={`h-1.5 flex-1 rounded-full ${
-                      active ? 'bg-ember' : 'bg-white/[0.04]'
-                    }`}
-                  />
-                )
-              })}
-            </div>
-          </SectionCard>
-        </GridItem>
-
-        {/* Achievements widget */}
-        <GridItem span={gridSpans.third}>
-          <SectionCard
-            title="Achievements"
-            description="Milestones unlocked"
-            icon="trophy"
-            tier="surface"
-          >
-            <div className="space-y-2">
-              {[
-                { label: 'First Exam', desc: 'Completed your first exam', unlocked: stats.completed > 0 },
-                { label: 'Practiced', desc: 'Completed a practice session', unlocked: stats.practiceSessions > 0 },
-                { label: 'High Scorer', desc: 'Scored above 70%', unlocked: stats.averageScore >= 70 },
-              ].map((ach) => (
-                <div
-                  key={ach.label}
-                  className={`flex items-center gap-2.5 rounded-lg p-2 ${
-                    ach.unlocked ? 'bg-ember/5 border border-ember/15' : 'bg-white/[0.02] border border-white/[0.04] opacity-50'
-                  }`}
-                >
-                  <div
-                    className={`h-7 w-7 rounded-md flex items-center justify-center ${
-                      ach.unlocked ? 'bg-ember/15 text-ember' : 'bg-white/[0.04] text-muted-foreground'
-                    }`}
-                  >
-                    <Trophy className="h-3.5 w-3.5" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-xs font-medium text-foreground/90 truncate">{ach.label}</p>
-                    <p className="text-[10px] text-muted-foreground truncate">{ach.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </SectionCard>
-        </GridItem>
-
-        {/* AI Tutor shortcut */}
-        <GridItem span={gridSpans.third}>
-          <SectionCard
-            title="AI Tutor"
-            description="Get instant help with any topic"
-            icon="brain"
-            tier="surface"
-            action={
-              <Button asChild size="sm" variant="ghost">
-                <Link href={ROUTES.STUDENT_AI_TUTOR}>
-                  Open
-                  <ArrowRight className="h-3 w-3" />
-                </Link>
-              </Button>
-            }
-          >
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              Your AI tutor is ready 24/7. Ask anything about your subjects,
-              get explanations, and prepare smarter for exams.
-            </p>
-          </SectionCard>
-        </GridItem>
-
-        {/* Recent Activity — real feed */}
-        <GridItem span={gridSpans.full}>
-          <SectionCard
-            title="Recent Activity"
-            description="Your latest exam, practice, and result events"
-            icon="clock"
-            tier="surface"
-            animate
-          >
-            {feedItems.length === 0 ? (
-              <EmptyState
-                icon={<FileText className="h-7 w-7" />}
-                title="No activity yet"
-                description="Take an exam or start a practice session to see your activity here."
-                primaryAction={{
-                  label: 'Start practicing',
-                  href: ROUTES.STUDENT_PRACTICE,
-                }}
-              />
-            ) : (
-              <ActivityFeed items={feedItems} maxItems={10} />
-            )}
-          </SectionCard>
-        </GridItem>
-      </DashboardGrid>
+      {/* ── Interactive widget grid — drag / resize / collapse / refresh ── */}
+      <StudentWidgets
+        role={user.role}
+        userId={user.id}
+        schoolId={user.schoolId ?? ''}
+        scoreTrend={scoreTrend}
+        subjectChartData={subjectChartData}
+        tasks={tasks}
+        goals={goals}
+        calendarEvents={calendarEvents}
+        announcements={schoolEvents.map((e) => ({
+          id: e.id,
+          title: e.title,
+          event_type: e.event_type,
+          start_date: e.start_date,
+        }))}
+        feedItems={feedItems}
+        learningTools={learningTools}
+        streakDays={streakDays}
+        completed={stats.completed}
+        practiceSessions={stats.practiceSessions}
+        averageScore={stats.averageScore}
+      />
     </DashboardPage>
   )
 }

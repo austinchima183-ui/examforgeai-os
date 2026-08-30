@@ -1,0 +1,2823 @@
+{
+  "base": "http://localhost:3000",
+  "timestamp": "2026-08-29T21:19:53.843586+00:00",
+  "pages_found": 125,
+  "apis_found": 146,
+  "swept": 271,
+  "pass": 271,
+  "fail": 0,
+  "failures": [
+    {
+      "route": "/api",
+      "isApi": true,
+      "status": 307,
+      "error": null,
+      "location": "/login?redirect=%2Fapi",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/alerting/incidents/",
+      "isApi": true,
+      "status": 308,
+      "error": null,
+      "location": "/api/alerting/incidents",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/auth/callback",
+      "isApi": true,
+      "status": 307,
+      "error": null,
+      "location": "http://localhost:3000/login?error=Invalid%20authentication%20link.",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/demo-booking/",
+      "isApi": true,
+      "status": 308,
+      "error": null,
+      "location": "/api/demo-booking",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/feedback/",
+      "isApi": true,
+      "status": 308,
+      "error": null,
+      "location": "/api/feedback",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketing/leads/",
+      "isApi": true,
+      "status": 308,
+      "error": null,
+      "location": "/api/marketing/leads",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/newsletter/unsubscribe",
+      "isApi": true,
+      "status": 307,
+      "error": null,
+      "location": "http://localhost:3000/newsletter/unsubscribe?error=missing-token",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/newsletter/verify",
+      "isApi": true,
+      "status": 307,
+      "error": null,
+      "location": "http://localhost:3000/newsletter/verify?error=missing-token",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/organizations/",
+      "isApi": true,
+      "status": 308,
+      "error": null,
+      "location": "/api/organizations",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/workflows/",
+      "isApi": true,
+      "status": 308,
+      "error": null,
+      "location": "/api/workflows",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    }
+  ],
+  "results": [
+    {
+      "route": "/(admin)/marketing",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28admin%29%2Fmarketing",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(admin)/marketing/analytics",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fanalytics",
+      "ttfb_ms": 41,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(admin)/marketing/contacts",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fcontacts",
+      "ttfb_ms": 13,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(admin)/marketing/demos",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fdemos",
+      "ttfb_ms": 46,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(admin)/marketing/leads",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fleads",
+      "ttfb_ms": 19,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(admin)/marketing/leads/",
+      "isApi": false,
+      "status": 308,
+      "location": "/(admin)/marketing/leads",
+      "ttfb_ms": 10,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(admin)/marketing/newsletter",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fnewsletter",
+      "ttfb_ms": 18,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/admin/agents",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fagents",
+      "ttfb_ms": 34,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/admin/audit-logs",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Faudit-logs",
+      "ttfb_ms": 24,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/admin/backups",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fbackups",
+      "ttfb_ms": 18,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/admin/branding",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fbranding",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/admin/developers",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fdevelopers",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/admin/integrations",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fintegrations",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/admin/organization-settings",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Forganization-settings",
+      "ttfb_ms": 36,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/admin/organizations",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Forganizations",
+      "ttfb_ms": 10,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/admin/organizations/",
+      "isApi": false,
+      "status": 308,
+      "location": "/(app)/admin/organizations",
+      "ttfb_ms": 52,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/admin/plugins",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fplugins",
+      "ttfb_ms": 25,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/admin/plugins/",
+      "isApi": false,
+      "status": 308,
+      "location": "/(app)/admin/plugins",
+      "ttfb_ms": 32,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/admin/roles",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Froles",
+      "ttfb_ms": 17,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/admin/security",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fsecurity",
+      "ttfb_ms": 20,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/admin/users",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fusers",
+      "ttfb_ms": 21,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/analytics",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fanalytics",
+      "ttfb_ms": 17,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/analytics/enterprise",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fanalytics%2Fenterprise",
+      "ttfb_ms": 18,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/billing",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fbilling",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/billing/enterprise",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fbilling%2Fenterprise",
+      "ttfb_ms": 17,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/billing/plans",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fbilling%2Fplans",
+      "ttfb_ms": 17,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/cbt",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fcbt",
+      "ttfb_ms": 20,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/dashboard",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fdashboard",
+      "ttfb_ms": 22,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/dashboard/school-admin",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fdashboard%2Fschool-admin",
+      "ttfb_ms": 18,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/dashboard/student",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fdashboard%2Fstudent",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/dashboard/super-admin",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fdashboard%2Fsuper-admin",
+      "ttfb_ms": 41,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/dashboard/teacher",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fdashboard%2Fteacher",
+      "ttfb_ms": 22,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/exams",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fexams",
+      "ttfb_ms": 23,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/exams/monitor",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fexams%2Fmonitor",
+      "ttfb_ms": 23,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/exams/take",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fexams%2Ftake",
+      "ttfb_ms": 46,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/forbidden",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fforbidden",
+      "ttfb_ms": 22,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/government",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fgovernment",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/government/district-intelligence",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fgovernment%2Fdistrict-intelligence",
+      "ttfb_ms": 26,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/marketplace",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fmarketplace",
+      "ttfb_ms": 43,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/marketplace/",
+      "isApi": false,
+      "status": 308,
+      "location": "/(app)/marketplace",
+      "ttfb_ms": 55,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/marketplace/cart",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fmarketplace%2Fcart",
+      "ttfb_ms": 32,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/marketplace/reviews",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fmarketplace%2Freviews",
+      "ttfb_ms": 44,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/marketplace/seller",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fmarketplace%2Fseller",
+      "ttfb_ms": 21,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/marketplace/v2",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fmarketplace%2Fv2",
+      "ttfb_ms": 39,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/notifications",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fnotifications",
+      "ttfb_ms": 33,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/notifications/history",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fnotifications%2Fhistory",
+      "ttfb_ms": 32,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/notifications/preferences",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fnotifications%2Fpreferences",
+      "ttfb_ms": 32,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/notifications/templates",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fnotifications%2Ftemplates",
+      "ttfb_ms": 32,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/parent/ai-advisor",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fparent%2Fai-advisor",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/parent/attendance",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fparent%2Fattendance",
+      "ttfb_ms": 18,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/parent/child-progress",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fparent%2Fchild-progress",
+      "ttfb_ms": 13,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/parent/dashboard",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fparent%2Fdashboard",
+      "ttfb_ms": 30,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/parent/fees",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fparent%2Ffees",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/parent/messaging",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fparent%2Fmessaging",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/parents",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fparents",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/profile",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fprofile",
+      "ttfb_ms": 20,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/question-bank",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fquestion-bank",
+      "ttfb_ms": 20,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/reports",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Freports",
+      "ttfb_ms": 35,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/results",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fresults",
+      "ttfb_ms": 26,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/school-admin/ai-insights",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschool-admin%2Fai-insights",
+      "ttfb_ms": 24,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/school-admin/predictive",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschool-admin%2Fpredictive",
+      "ttfb_ms": 34,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/school/attendance",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschool%2Fattendance",
+      "ttfb_ms": 32,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/school/calendar",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschool%2Fcalendar",
+      "ttfb_ms": 30,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/school/classes",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschool%2Fclasses",
+      "ttfb_ms": 34,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/school/fees",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschool%2Ffees",
+      "ttfb_ms": 28,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/school/timetable",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschool%2Ftimetable",
+      "ttfb_ms": 37,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/schools",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fschools",
+      "ttfb_ms": 19,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/schools/",
+      "isApi": false,
+      "status": 308,
+      "location": "/(app)/schools",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/search",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fsearch",
+      "ttfb_ms": 18,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/settings",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fsettings",
+      "ttfb_ms": 48,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/settings/api-keys",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fsettings%2Fapi-keys",
+      "ttfb_ms": 48,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/settings/security",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fsettings%2Fsecurity",
+      "ttfb_ms": 41,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/settings/webhooks",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fsettings%2Fwebhooks",
+      "ttfb_ms": 41,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/student/ai-tutor",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fai-tutor",
+      "ttfb_ms": 17,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/student/certificates",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fcertificates",
+      "ttfb_ms": 17,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/student/explain",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fexplain",
+      "ttfb_ms": 18,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/student/flashcards",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fflashcards",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/student/practice",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fpractice",
+      "ttfb_ms": 17,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/student/progress",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fprogress",
+      "ttfb_ms": 18,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/student/revision-hub",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Frevision-hub",
+      "ttfb_ms": 23,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/student/study-planner",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fstudy-planner",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/students",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fstudents",
+      "ttfb_ms": 27,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/teacher/ai-question-generator",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fteacher%2Fai-question-generator",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/teacher/content-assistant",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fteacher%2Fcontent-assistant",
+      "ttfb_ms": 27,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/teacher/grading",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fteacher%2Fgrading",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/teacher/lesson-planner",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fteacher%2Flesson-planner",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/teacher/rubric-builder",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fteacher%2Frubric-builder",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/teacher/worksheet-builder",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fteacher%2Fworksheet-builder",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/teachers",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fteachers",
+      "ttfb_ms": 47,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/workflows",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28app%29%2Fworkflows",
+      "ttfb_ms": 31,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(app)/workflows/",
+      "isApi": false,
+      "status": 308,
+      "location": "/(app)/workflows",
+      "ttfb_ms": 32,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29",
+      "ttfb_ms": 13,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/about",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fabout",
+      "ttfb_ms": 26,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/api-docs",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fapi-docs",
+      "ttfb_ms": 28,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/blog",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fblog",
+      "ttfb_ms": 37,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/blog/",
+      "isApi": false,
+      "status": 308,
+      "location": "/(marketing)/blog",
+      "ttfb_ms": 28,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/blog/author/",
+      "isApi": false,
+      "status": 308,
+      "location": "/(marketing)/blog/author",
+      "ttfb_ms": 28,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/careers",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fcareers",
+      "ttfb_ms": 42,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/case-studies",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fcase-studies",
+      "ttfb_ms": 28,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/changelog",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fchangelog",
+      "ttfb_ms": 25,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/community",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fcommunity",
+      "ttfb_ms": 24,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/contact",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fcontact",
+      "ttfb_ms": 26,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/cookies",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fcookies",
+      "ttfb_ms": 26,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/customers",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fcustomers",
+      "ttfb_ms": 24,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/demo",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fdemo",
+      "ttfb_ms": 19,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/developers",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fdevelopers",
+      "ttfb_ms": 29,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/docs",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fdocs",
+      "ttfb_ms": 24,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/documentation",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fdocumentation",
+      "ttfb_ms": 29,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/features",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Ffeatures",
+      "ttfb_ms": 37,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/gdpr",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fgdpr",
+      "ttfb_ms": 50,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/help-center",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fhelp-center",
+      "ttfb_ms": 29,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/integrations",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fintegrations",
+      "ttfb_ms": 21,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/partners",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fpartners",
+      "ttfb_ms": 24,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/press-kit",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fpress-kit",
+      "ttfb_ms": 24,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/pricing",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fpricing",
+      "ttfb_ms": 21,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/privacy",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fprivacy",
+      "ttfb_ms": 22,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/security",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fsecurity",
+      "ttfb_ms": 30,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/solutions",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fsolutions",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/status",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fstatus",
+      "ttfb_ms": 24,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(marketing)/terms",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28marketing%29%2Fterms",
+      "ttfb_ms": 22,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(public)/forgot-password",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28public%29%2Fforgot-password",
+      "ttfb_ms": 31,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(public)/login",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28public%29%2Flogin",
+      "ttfb_ms": 41,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(public)/register",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28public%29%2Fregister",
+      "ttfb_ms": 34,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(public)/reset-password",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28public%29%2Freset-password",
+      "ttfb_ms": 109,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/(public)/verify-email",
+      "isApi": false,
+      "status": 307,
+      "location": "/login?redirect=%2F%28public%29%2Fverify-email",
+      "ttfb_ms": 42,
+      "verdict": "PASS",
+      "expected": "307/redirect or 401",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api",
+      "isApi": true,
+      "status": 307,
+      "location": "/login?redirect=%2Fapi",
+      "ttfb_ms": 111,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": "",
+      "note": "redirect verified correct (auth-gate or trailing-slash canonicalization)"
+    },
+    {
+      "route": "/api/admin/audit-logs",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/admin/backups",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 39,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/admin/branding",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/admin/integrations",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 37,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/admin/organization-settings",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/admin/plugins",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/admin/roles",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/admin/users",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/agents",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/agents/execute",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/ai/agents",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 20,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/ai/complete",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/ai/government",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 73,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/ai/parent",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 43,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/ai/predictive",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 20,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/ai/school-admin",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 68,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/ai/stream",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 67,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/ai/student",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 29,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/ai/teacher",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 39,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/alerting/channels",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 36,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/alerting/incidents",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 37,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/alerting/incidents/",
+      "isApi": true,
+      "status": 308,
+      "location": "/api/alerting/incidents",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": "",
+      "note": "redirect verified correct (auth-gate or trailing-slash canonicalization)"
+    },
+    {
+      "route": "/api/alerting/incidents/timeline",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 11,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/alerting/suppressions",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 37,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/analytics",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 11,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/analytics/enterprise",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/analytics/events",
+      "isApi": true,
+      "status": 405,
+      "location": "",
+      "ttfb_ms": 11,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/analytics/nlq",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 23,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/auth/callback",
+      "isApi": true,
+      "status": 307,
+      "location": "http://localhost:3000/login?error=Invalid%20authentication%20link.",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": "",
+      "note": "redirect verified correct (auth-gate or trailing-slash canonicalization)"
+    },
+    {
+      "route": "/api/auth/csrf",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 74,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/billing/audit",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 28,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/billing/checkout",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/billing/enterprise",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/billing/invoices",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/billing/paystack/checkout",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 17,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/billing/paystack/webhook",
+      "isApi": true,
+      "status": 405,
+      "location": "",
+      "ttfb_ms": 17,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/billing/refund",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/billing/refunds",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 31,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/billing/revenue",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/billing/subscription-lifecycle",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 32,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/billing/subscriptions",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/billing/webhook",
+      "isApi": true,
+      "status": 405,
+      "location": "",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/billing/webhooks",
+      "isApi": true,
+      "status": 405,
+      "location": "",
+      "ttfb_ms": 28,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/cbt/answer",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 11,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/cbt/exam",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 6,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/cbt/session",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 10,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/cbt/submit",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 26,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/cbt/timing",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 11,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/contact",
+      "isApi": true,
+      "status": 405,
+      "location": "",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/demo-booking",
+      "isApi": true,
+      "status": 405,
+      "location": "",
+      "ttfb_ms": 18,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/demo-booking/",
+      "isApi": true,
+      "status": 308,
+      "location": "/api/demo-booking",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": "",
+      "note": "redirect verified correct (auth-gate or trailing-slash canonicalization)"
+    },
+    {
+      "route": "/api/developer/keys",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 11,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/developer/oauth-apps",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/developer/openapi",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/events",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 19,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/feedback",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 57,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/feedback/",
+      "isApi": true,
+      "status": 308,
+      "location": "/api/feedback",
+      "ttfb_ms": 63,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": "",
+      "note": "redirect verified correct (auth-gate or trailing-slash canonicalization)"
+    },
+    {
+      "route": "/api/feedback/ai-rating",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 77,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/feedback/analytics",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 81,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/feedback/comments",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 88,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/health",
+      "isApi": true,
+      "status": 200,
+      "location": "",
+      "ttfb_ms": 551,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/health/ai",
+      "isApi": true,
+      "status": 200,
+      "location": "",
+      "ttfb_ms": 46,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/health/database",
+      "isApi": true,
+      "status": 200,
+      "location": "",
+      "ttfb_ms": 559,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/health/detailed",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 52,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/health/redis",
+      "isApi": true,
+      "status": 200,
+      "location": "",
+      "ttfb_ms": 57,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/import/errors",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 64,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/import/execute",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 59,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/import/progress",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 68,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/import/validate",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 52,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketing/analytics",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketing/contacts",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketing/demos",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 13,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketing/leads",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 13,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketing/leads/",
+      "isApi": true,
+      "status": 308,
+      "location": "/api/marketing/leads",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": "",
+      "note": "redirect verified correct (auth-gate or trailing-slash canonicalization)"
+    },
+    {
+      "route": "/api/marketing/leads/activities",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketing/newsletter",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace-v2/listings",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 44,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace-v2/listings/purchase",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 42,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace/checkout",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 30,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace/download",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace/my-purchases",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 17,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace/product",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 30,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace/purchase",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 29,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace/purchase-status",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 19,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace/related",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 31,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace/reviews",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 31,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace/reviews/report",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 17,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace/reviews/respond",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace/seller/analytics",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace/seller/products",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace/verify-payment",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/marketplace/webhook",
+      "isApi": true,
+      "status": 405,
+      "location": "",
+      "ttfb_ms": 35,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/newsletter/subscribe",
+      "isApi": true,
+      "status": 405,
+      "location": "",
+      "ttfb_ms": 22,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/newsletter/unsubscribe",
+      "isApi": true,
+      "status": 307,
+      "location": "http://localhost:3000/newsletter/unsubscribe?error=missing-token",
+      "ttfb_ms": 20,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": "",
+      "note": "redirect verified correct (auth-gate or trailing-slash canonicalization)"
+    },
+    {
+      "route": "/api/newsletter/verify",
+      "isApi": true,
+      "status": 307,
+      "location": "http://localhost:3000/newsletter/verify?error=missing-token",
+      "ttfb_ms": 29,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": "",
+      "note": "redirect verified correct (auth-gate or trailing-slash canonicalization)"
+    },
+    {
+      "route": "/api/notifications/delivery-status",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/notifications/digest",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 10,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/notifications/history",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 11,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/notifications/preferences",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 10,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/notifications/send",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 10,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/notifications/templates",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 9,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/organizations",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/organizations/",
+      "isApi": true,
+      "status": 308,
+      "location": "/api/organizations",
+      "ttfb_ms": 28,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": "",
+      "note": "redirect verified correct (auth-gate or trailing-slash canonicalization)"
+    },
+    {
+      "route": "/api/organizations/switch",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 11,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/parent/attendance",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 10,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/parent/child-progress",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 11,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/parent/dashboard",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 11,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/parent/fees",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 11,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/parent/messaging",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 10,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/plugins",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 20,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/plugins/install",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 17,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/reports",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 7,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/reports/generate",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 14,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/reports/schedule",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/reports/share",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/school/attendance",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 17,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/school/calendar",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/school/classes",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 18,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/school/fees",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 24,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/school/timetable",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/search",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 4,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/security/passkeys",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 18,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/security/sessions",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 19,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/security/sso",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 22,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/seed",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 73,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/settings/api-keys",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 47,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/settings/security",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 84,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/settings/sso",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 53,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/settings/webhooks",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 52,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/student/certificates",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/student/flashcards",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/student/practice",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 11,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/student/progress",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 29,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/student/revision-hub",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 33,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/student/study-planner",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 10,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/teacher/grade",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/teacher/lesson-plans",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/teacher/rubrics",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/teacher/submissions",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 15,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/teacher/worksheets",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 16,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/tenants/resolve",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 13,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/workflows",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 12,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/workflows/",
+      "isApi": true,
+      "status": 308,
+      "location": "/api/workflows",
+      "ttfb_ms": 11,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": "",
+      "note": "redirect verified correct (auth-gate or trailing-slash canonicalization)"
+    },
+    {
+      "route": "/api/workflows/execute",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 11,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    },
+    {
+      "route": "/api/workflows/executions",
+      "isApi": true,
+      "status": 401,
+      "location": "",
+      "ttfb_ms": 10,
+      "verdict": "PASS",
+      "expected": "401/403/4xx (no 5xx)",
+      "bodySnippet": ""
+    }
+  ]
+}

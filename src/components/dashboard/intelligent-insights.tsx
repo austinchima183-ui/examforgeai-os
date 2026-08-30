@@ -265,7 +265,7 @@ function InsightCard({ insight }: { insight: Insight }) {
         {/* Progress */}
         {insight.progress !== undefined && (
           <div className="mb-3">
-            <Progress value={insight.progress} className="h-1.5" />
+            <Progress value={insight.progress} className="h-1.5" aria-label={`${insight.title}: ${insight.progress}% complete`} />
             <p className="mt-1 text-[10px] text-muted-foreground">{insight.progress}% complete</p>
           </div>
         )}

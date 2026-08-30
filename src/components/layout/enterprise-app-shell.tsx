@@ -7,6 +7,7 @@ import { EnterpriseSidebar } from '@/components/layout/enterprise-sidebar'
 import { Header } from '@/components/layout/header'
 import { MobileNav } from '@/components/layout/mobile-nav'
 import { CommandPalette } from '@/components/command-palette'
+import { QuickActionsFab } from '@/components/layout/quick-actions-fab'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { useSidebarStore } from '@/lib/stores/sidebar-store'
 import { SkipNavLink, SkipToSection } from '@/components/ui/skip-nav'
@@ -175,8 +176,13 @@ export function EnterpriseAppShell({ children }: AppShellProps) {
 
   return (
     <div className="flex h-dvh w-full overflow-hidden bg-[#090909] forge-ambient-bg">
-      <SkipNavLink contentId="main-content" label="Skip to main content" />
-      <SkipToSection targetId="sidebar-nav" label="Skip to navigation" />
+      {/* Skip links — wrapped in a nav landmark so all page content lives
+          inside landmark regions (axe "region" best practice) while keeping
+          the links first in tab order. */}
+      <nav aria-label="Skip navigation shortcuts">
+        <SkipNavLink contentId="main-content" label="Skip to main content" />
+        <SkipToSection targetId="sidebar-nav" label="Skip to navigation" />
+      </nav>
 
       {/* Floating-sidebar backdrop — click away to dock */}
       {showFloatingBackdrop && (
@@ -210,6 +216,12 @@ export function EnterpriseAppShell({ children }: AppShellProps) {
       <CommandPalette
         open={cmdPaletteOpen}
         onOpenChange={setCmdPaletteOpen}
+      />
+
+      {/* Floating quick-actions button — opens the command palette */}
+      <QuickActionsFab
+        onOpen={() => setCmdPaletteOpen(true)}
+        hidden={cmdPaletteOpen}
       />
 
       {/* Main Column — header fixed at top, main scrolls independently */}

@@ -97,10 +97,37 @@ function ContextMenuContent({
   className,
   ...props
 }: React.ComponentProps<typeof ContextMenuPrimitive.Content>) {
+  // ── Stray-release guard ──
+  // Radix opens the context menu between the right-button mousedown and
+  // mouseup. The menu renders AT the pointer, so the completing release can
+  // land on a menu item and accidentally activate it (e.g. slow trackpad
+  // releases). Swallow pointer releases that arrive within a short window of
+  // open AND were not preceded by a pointerdown on the menu itself.
+  const openTimeRef = React.useRef(0)
+  const pointerDownOnMenuRef = React.useRef(false)
+
+  React.useEffect(() => {
+    openTimeRef.current = performance.now()
+    pointerDownOnMenuRef.current = false
+  }, [])
+
+  const guardRelease = (e: React.PointerEvent | React.MouseEvent) => {
+    const elapsed = performance.now() - openTimeRef.current
+    if (elapsed < 250 && !pointerDownOnMenuRef.current) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+  }
+
   return (
     <ContextMenuPrimitive.Portal>
       <ContextMenuPrimitive.Content
         data-slot="context-menu-content"
+        onPointerDownCapture={() => {
+          pointerDownOnMenuRef.current = true
+        }}
+        onPointerUpCapture={guardRelease}
+        onMouseUpCapture={guardRelease}
         className={cn(
           "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 max-h-(--radix-context-menu-content-available-height) min-w-[8rem] origin-(--radix-context-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-md border p-1 shadow-md",
           className

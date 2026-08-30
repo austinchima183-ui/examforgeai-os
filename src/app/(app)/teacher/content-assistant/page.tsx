@@ -704,7 +704,7 @@ Return ONLY the JSON array, no additional text. Example format:
         ) : (
           <Card className="border-dashed">
             <CardContent className="p-12 text-center">
-              <ClipboardList className="h-12 w-12 mx-auto text-foreground/35 mb-4" />
+              <ClipboardList className="h-12 w-12 mx-auto text-foreground/60 mb-4" />
               <p className="text-sm text-muted-foreground">Configure settings and generate questions to see them here.</p>
             </CardContent>
           </Card>
@@ -917,7 +917,7 @@ Ensure total duration adds up to ${duration} minutes. Follow Nigerian curriculum
             </div>
           </div>
         ) : (
-          <Card className="border-dashed"><CardContent className="p-12 text-center"><BookOpen className="h-12 w-12 mx-auto text-foreground/35 mb-4" /><p className="text-sm text-muted-foreground">Configure settings and generate a lesson plan.</p></CardContent></Card>
+          <Card className="border-dashed"><CardContent className="p-12 text-center"><BookOpen className="h-12 w-12 mx-auto text-foreground/60 mb-4" /><p className="text-sm text-muted-foreground">Configure settings and generate a lesson plan.</p></CardContent></Card>
         )}
       </div>
     </div>
@@ -1078,7 +1078,7 @@ Example: ["Student has shown excellent understanding...", "This student consiste
             </ScrollArea>
           </div>
         ) : (
-          <Card className="border-dashed"><CardContent className="p-12 text-center"><MessageSquare className="h-12 w-12 mx-auto text-foreground/35 mb-4" /><p className="text-sm text-muted-foreground">Configure settings and generate report comments.</p></CardContent></Card>
+          <Card className="border-dashed"><CardContent className="p-12 text-center"><MessageSquare className="h-12 w-12 mx-auto text-foreground/60 mb-4" /><p className="text-sm text-muted-foreground">Configure settings and generate report comments.</p></CardContent></Card>
         )}
       </div>
     </div>
@@ -1249,7 +1249,7 @@ Make criteria relevant to the assignment type. Distribute points logically. Retu
             </div>
           </div>
         ) : (
-          <Card className="border-dashed"><CardContent className="p-12 text-center"><Presentation className="h-12 w-12 mx-auto text-foreground/35 mb-4" /><p className="text-sm text-muted-foreground">Configure settings and generate a rubric.</p></CardContent></Card>
+          <Card className="border-dashed"><CardContent className="p-12 text-center"><Presentation className="h-12 w-12 mx-auto text-foreground/60 mb-4" /><p className="text-sm text-muted-foreground">Configure settings and generate a rubric.</p></CardContent></Card>
         )}
       </div>
     </div>
@@ -1471,7 +1471,7 @@ ${worksheet.questions.map((q) => `<div class="question"><p><strong>${q.number}.<
             </Card>
           </div>
         ) : (
-          <Card className="border-dashed"><CardContent className="p-12 text-center"><FileText className="h-12 w-12 mx-auto text-foreground/35 mb-4" /><p className="text-sm text-muted-foreground">Configure settings and generate a worksheet.</p></CardContent></Card>
+          <Card className="border-dashed"><CardContent className="p-12 text-center"><FileText className="h-12 w-12 mx-auto text-foreground/60 mb-4" /><p className="text-sm text-muted-foreground">Configure settings and generate a worksheet.</p></CardContent></Card>
         )}
       </div>
     </div>
@@ -1763,7 +1763,7 @@ Return ONLY valid JSON.`
             </ScrollArea>
           </div>
         ) : (
-          <Card className="border-dashed"><CardContent className="p-12 text-center"><Mic className="h-12 w-12 mx-auto text-foreground/35 mb-4" /><p className="text-sm text-muted-foreground">Configure settings and generate oral questions.</p></CardContent></Card>
+          <Card className="border-dashed"><CardContent className="p-12 text-center"><Mic className="h-12 w-12 mx-auto text-foreground/60 mb-4" /><p className="text-sm text-muted-foreground">Configure settings and generate oral questions.</p></CardContent></Card>
         )}
       </div>
     </div>

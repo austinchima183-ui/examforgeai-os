@@ -71,15 +71,15 @@ export default function ForbiddenPage() {
           <h1 className="text-2xl font-bold tracking-tight text-white">
             Access denied
           </h1>
-          <p className="text-sm text-white/50 leading-relaxed">
+          <p className="text-sm text-white/60 leading-relaxed">
             {description}
           </p>
         </div>
 
         {/* Role hint */}
         {role && (
-          <p className="text-xs text-white/30">
-            Current role: <span className="font-medium text-white/50">{role.replace('_', ' ')}</span>
+          <p className="text-xs text-white/60">
+            Current role: <span className="font-medium text-white/60">{role.replace('_', ' ')}</span>
           </p>
         )}
 
@@ -113,7 +113,7 @@ export default function ForbiddenPage() {
         <Link
           href="/help-center"
           className={cn(
-            'inline-flex items-center gap-1.5 text-xs text-white/30',
+            'inline-flex items-center gap-1.5 text-xs text-white/60',
             'transition-colors duration-150 hover:text-white/60',
           )}
           aria-label="Contact administrator"

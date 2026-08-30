@@ -5,7 +5,7 @@
 // ============================================================================
 
 import { test, expect } from '@playwright/test'
-import { login, logout, shot, collectConsoleErrors } from './helpers'
+import { login, logout, shot, collectConsoleErrors, waitForMainContent } from './helpers'
 
 test.describe('Parent Journey (full E2E, video recorded)', () => {
   test('login → parent dashboard → child progress → attendance → fees → messaging → isolation → logout', async ({ page }) => {
@@ -13,7 +13,7 @@ test.describe('Parent Journey (full E2E, video recorded)', () => {
 
     // ── 1. LOGIN ──
     await login(page, 'parent')
-    await page.waitForTimeout(2500)
+    await waitForMainContent(page)
     await shot(page, '03-parent-dashboard')
 
     // CRITICAL: Parent must land on /parent/dashboard (NOT student dashboard)

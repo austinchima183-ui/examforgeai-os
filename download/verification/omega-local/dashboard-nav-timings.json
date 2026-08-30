@@ -1,0 +1,36 @@
+{
+  "measuredAt": "2026-08-29T12:56:24.838Z",
+  "base": "http://localhost:3000",
+  "warmCache": {
+    "student/dashboard/student": {
+      "ttfb": 272,
+      "fcp": 832,
+      "domContentLoaded": 1588,
+      "load": 1589
+    },
+    "teacher/dashboard/teacher": {
+      "ttfb": 260,
+      "fcp": 808,
+      "domContentLoaded": 1255,
+      "load": 1261
+    },
+    "parent/parent/dashboard": {
+      "ttfb": 336,
+      "fcp": 1180,
+      "domContentLoaded": 498,
+      "load": 499
+    },
+    "school-admin/dashboard/school-admin": {
+      "ttfb": 277,
+      "fcp": 832,
+      "domContentLoaded": 1423,
+      "load": 1425
+    },
+    "super-admin/dashboard/super-admin": {
+      "ttfb": 253,
+      "fcp": 800,
+      "domContentLoaded": 1339,
+      "load": 1342
+    }
+  }
+}

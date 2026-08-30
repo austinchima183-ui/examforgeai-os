@@ -54,7 +54,7 @@ function MobileNavItem({
         'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-400/40',
         isActive
           ? 'bg-white/[0.06] text-foreground/90'
-          : 'text-foreground/35 hover:text-foreground/60 hover:bg-white/[0.03]'
+          : 'text-foreground/60 hover:text-foreground/60 hover:bg-white/[0.03]'
       )}
     >
       <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />

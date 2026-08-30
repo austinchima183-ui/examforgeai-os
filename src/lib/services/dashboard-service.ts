@@ -155,21 +155,21 @@ export async function getSchoolAdminStats(schoolId: string): Promise<SchoolAdmin
     }
   }
 
-  const [teachersResult, studentsResult, examsResult, paymentsResult] = await Promise.all([
-    supabase.from('users').select('id', { count: 'exact', head: true }).eq('school_id', schoolId).eq('role', 'teacher').eq('is_active', true),
-    supabase.from('users').select('id', { count: 'exact', head: true }).eq('school_id', schoolId).eq('role', 'student').eq('is_active', true),
-    supabase.from('exams').select('id', { count: 'exact', head: true }).eq('school_id', schoolId),
-    supabase.from('transactions').select('amount').eq('school_id', schoolId).eq('status', 'successful'),
-  ])
+  const [teachersResult, studentsResult, examsResult, paymentsResult, pendingSubmissionsResult] =
+    await Promise.all([
+      supabase.from('users').select('id', { count: 'exact', head: true }).eq('school_id', schoolId).eq('role', 'teacher').eq('is_active', true),
+      supabase.from('users').select('id', { count: 'exact', head: true }).eq('school_id', schoolId).eq('role', 'student').eq('is_active', true),
+      supabase.from('exams').select('id', { count: 'exact', head: true }).eq('school_id', schoolId),
+      supabase.from('transactions').select('amount').eq('school_id', schoolId).eq('status', 'successful'),
+      // Scoped to this school's exams — runs in parallel (was sequential, adding a full DB round-trip)
+      supabase
+        .from('exam_sessions')
+        .select('id, exams!inner(school_id)')
+        .eq('status', 'submitted')
+        .eq('exams.school_id', schoolId),
+    ])
 
   const revenue = (paymentsResult.data ?? []).reduce((sum, p) => sum + p.amount, 0)
-
-  // Scope pending submissions to this school's exams
-  const pendingSubmissionsResult = await supabase
-    .from('exam_sessions')
-    .select('id, exams!inner(school_id)')
-    .eq('status', 'submitted')
-    .eq('exams.school_id', schoolId)
 
   return {
     teachers: teachersResult.count ?? 0,

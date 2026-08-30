@@ -591,7 +591,7 @@ export default function EnterpriseSecurityPage() {
             <CardContent className="p-0">
               {filteredAudit.length === 0 ? (
                 <div className="py-12 text-center">
-                  <FileText className="h-12 w-12 mx-auto text-foreground/30" />
+                  <FileText className="h-12 w-12 mx-auto text-foreground/60" />
                   <h3 className="mt-4 text-lg font-semibold">No audit entries found</h3>
                   <p className="text-muted-foreground text-sm">Try adjusting your search or filters</p>
                 </div>

@@ -95,7 +95,7 @@ export default function OrganizationDetailPage() {
   if (error || !org) {
     return (
       <div className="flex flex-col items-center justify-center p-12 text-center">
-        <AlertCircle className="h-12 w-12 text-foreground/30 mb-4" />
+        <AlertCircle className="h-12 w-12 text-foreground/60 mb-4" />
         <h2 className="text-lg font-semibold">Organization not found</h2>
         <p className="text-muted-foreground text-sm">Failed to load organization details</p>
       </div>
@@ -271,7 +271,7 @@ export default function OrganizationDetailPage() {
 
           {org.children.length === 0 ? (
             <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] transition-all"><CardContent className="py-12 text-center">
-              <TreePine className="h-12 w-12 mx-auto text-foreground/30" />
+              <TreePine className="h-12 w-12 mx-auto text-foreground/60" />
               <h3 className="mt-4 text-lg font-semibold">No child organizations</h3>
               <p className="text-muted-foreground">Add child organizations to build your hierarchy</p>
             </CardContent></Card>
@@ -336,7 +336,7 @@ export default function OrganizationDetailPage() {
 
           {org.members.length === 0 ? (
             <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] transition-all"><CardContent className="py-12 text-center">
-              <Users className="h-12 w-12 mx-auto text-foreground/30" />
+              <Users className="h-12 w-12 mx-auto text-foreground/60" />
               <h3 className="mt-4 text-lg font-semibold">No members</h3>
               <p className="text-muted-foreground">Add members to manage this organization</p>
             </CardContent></Card>

@@ -67,7 +67,7 @@ export function CustomerStoriesSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4 }}
-            className="text-sm font-medium text-foreground/35 uppercase tracking-wider mb-4"
+            className="text-sm font-medium text-foreground/60 uppercase tracking-wider mb-4"
           >
             Customer Stories
           </motion.p>
@@ -104,9 +104,9 @@ export function CustomerStoriesSection() {
               <div className={`h-1 bg-gradient-to-r ${story.gradient}`} />
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs font-medium text-foreground/35">{story.type}</span>
-                  <span className="text-xs text-foreground/35">·</span>
-                  <span className="text-xs text-foreground/35">{story.location}</span>
+                  <span className="text-xs font-medium text-foreground/60">{story.type}</span>
+                  <span className="text-xs text-foreground/60">·</span>
+                  <span className="text-xs text-foreground/60">{story.location}</span>
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-3">{story.institution}</h3>
 
@@ -122,7 +122,7 @@ export function CustomerStoriesSection() {
                       <div key={metric.label} className="rounded-lg border border-white/[0.04] bg-white/[0.02] p-3 text-center">
                         <Icon className="h-3.5 w-3.5 text-primary mx-auto mb-1" />
                         <p className="text-sm font-bold text-foreground">{metric.value}</p>
-                        <p className="text-[10px] text-foreground/35">{metric.label}</p>
+                        <p className="text-[10px] text-foreground/60">{metric.label}</p>
                       </div>
                     )
                   })}

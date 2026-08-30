@@ -84,7 +84,7 @@ export function Breadcrumbs({ pathname }: BreadcrumbsProps) {
             ) : (
               <Link
                 href={item.href}
-                className="text-foreground/30 hover:text-foreground/55 transition-colors duration-200"
+                className="text-foreground/60 hover:text-foreground/55 transition-colors duration-200"
               >
                 {item.label}
               </Link>

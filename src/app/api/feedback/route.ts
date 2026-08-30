@@ -7,6 +7,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { requireApiAuth, createSafeErrorResponse } from '@/lib/api/auth-guard'
+import { enforceCsrf } from '@/lib/api/csrf-guard'
 import { validateInput, validatePagination, parseJsonBody } from '@/lib/api/validate'
 import { createFeedbackSchema, feedbackFiltersSchema } from '@/lib/feedback/validators'
 import { createFeedback, getFeedback } from '@/lib/feedback/feedback-service'
@@ -22,6 +23,10 @@ const log = createLogger('api:feedback')
 export async function POST(request: NextRequest) {
   const auth = await requireApiAuth(request)
   if (auth instanceof NextResponse) return auth
+
+  // ─── CSRF guard (Mission Ω-7 hardening) ───
+  const csrfResult = enforceCsrf(request, auth)
+  if (csrfResult) return csrfResult
 
   try {
     const bodyJson = await parseJsonBody(request)

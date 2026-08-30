@@ -306,7 +306,7 @@ export default function FeaturesPage() {
                   <TabsTrigger
                     key={category.id}
                     value={category.id}
-                    className="px-4 sm:px-6 py-2.5 text-sm font-medium rounded-lg data-[state=active]:shadow-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-200"
+                    className="px-4 sm:px-6 py-2.5 text-sm font-medium rounded-lg text-foreground/60 data-[state=active]:shadow-md data-[state=active]:bg-[#2563EB] data-[state=active]:text-primary-foreground transition-all duration-200"
                   >
                     <Icon className="h-4 w-4 mr-2 hidden sm:inline-block" aria-hidden="true" />
                     <span className="hidden sm:inline">{category.title}</span>

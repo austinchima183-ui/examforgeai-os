@@ -88,9 +88,9 @@ function StepIndicator({ status, stepNumber, size, isClickable, onClick }: StepI
   const statusStyles: Record<WorkflowStepStatus, string> = {
     completed: 'border-emerald-500 bg-emerald-500 text-white shadow-sm shadow-emerald-500/20',
     active: 'border-primary bg-primary text-white shadow-md shadow-primary/25',
-    pending: 'border-gray-300 bg-background text-gray-400 dark:border-gray-600 dark:text-gray-500',
+    pending: 'border-gray-300 bg-background text-gray-400 dark:border-gray-600 dark:text-foreground/60',
     failed: 'border-rose-500 bg-rose-500 text-white shadow-sm shadow-rose-500/20',
-    skipped: 'border-gray-300 bg-gray-100 text-gray-400 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-500',
+    skipped: 'border-gray-300 bg-gray-100 text-gray-400 dark:border-gray-600 dark:bg-gray-800 dark:text-foreground/60',
   }
 
   const inner = (() => {
@@ -205,8 +205,8 @@ function StepContent({
     completed: 'text-emerald-600 dark:text-emerald-400',
     active: 'text-primary',
     failed: 'text-rose-700 dark:text-rose-400',
-    pending: 'text-gray-500 dark:text-gray-400',
-    skipped: 'text-gray-400 dark:text-gray-500 line-through',
+    pending: 'text-foreground/60 dark:text-gray-400',
+    skipped: 'text-gray-400 dark:text-foreground/60 line-through',
   }
 
   return (
@@ -233,7 +233,7 @@ function StepContent({
             onClick={() => onSkip(step.id)}
             className={cn(
               'inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium',
-              'text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700',
+              'text-foreground/60 transition-colors hover:bg-gray-100 hover:text-gray-700',
               'dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300',
             )}
             whileHover={prefersReducedMotion ? {} : { x: 2 }}
@@ -453,8 +453,8 @@ export function WorkflowBar({ steps, onStepClick, className }: WorkflowBarProps)
               step.status === 'completed' && 'bg-emerald-500 text-white shadow-sm shadow-emerald-500/20',
               step.status === 'active' && 'bg-primary text-white shadow-sm shadow-primary/20',
               step.status === 'failed' && 'bg-rose-500 text-white shadow-sm shadow-rose-500/20',
-              step.status === 'skipped' && 'bg-gray-200 text-gray-500 dark:bg-gray-700 dark:text-gray-400',
-              step.status === 'pending' && 'bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-500',
+              step.status === 'skipped' && 'bg-gray-200 text-foreground/60 dark:bg-gray-700 dark:text-gray-400',
+              step.status === 'pending' && 'bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-foreground/60',
               onStepClick && 'cursor-pointer hover:opacity-80',
             )}
             whileHover={onStepClick ? { scale: 1.05 } : {}}

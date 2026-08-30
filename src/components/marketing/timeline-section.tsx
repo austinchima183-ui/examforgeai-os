@@ -101,7 +101,7 @@ function TimelineMilestone({
             />
             <div className="relative rounded-xl border border-white/[0.04] forge-glass-surface forge-card-shadow p-6 hover:border-white/[0.08] hover:shadow-[0_2px_8px_rgba(59,130,246,0.15)] transition-all duration-500">
               <div className="flex items-center justify-end gap-2 mb-2">
-                <span className="text-xs font-medium text-foreground/35">{milestone.year}</span>
+                <span className="text-xs font-medium text-foreground/60">{milestone.year}</span>
                 <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary">
                   {milestone.stat.value}
                 </span>
@@ -110,7 +110,7 @@ function TimelineMilestone({
                 {milestone.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{milestone.description}</p>
-              <p className="text-[10px] text-foreground/35 mt-2">{milestone.stat.label}</p>
+              <p className="text-[10px] text-foreground/60 mt-2">{milestone.stat.label}</p>
             </div>
           </motion.div>
         )}
@@ -155,7 +155,7 @@ function TimelineMilestone({
             />
             <div className="relative rounded-xl border border-white/[0.04] forge-glass-surface forge-card-shadow p-6 hover:border-white/[0.08] hover:shadow-[0_2px_8px_rgba(59,130,246,0.15)] transition-all duration-500">
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-xs font-medium text-foreground/35">{milestone.year}</span>
+                <span className="text-xs font-medium text-foreground/60">{milestone.year}</span>
                 <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary">
                   {milestone.stat.value}
                 </span>
@@ -164,7 +164,7 @@ function TimelineMilestone({
                 {milestone.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{milestone.description}</p>
-              <p className="text-[10px] text-foreground/35 mt-2">{milestone.stat.label}</p>
+              <p className="text-[10px] text-foreground/60 mt-2">{milestone.stat.label}</p>
             </div>
           </motion.div>
         )}
@@ -183,7 +183,7 @@ function TimelineMilestone({
         />
         <div className="relative rounded-xl border border-white/[0.04] forge-glass-surface forge-card-shadow p-5 hover:border-white/[0.08] hover:shadow-[0_2px_8px_rgba(59,130,246,0.15)] transition-all duration-500">
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-medium text-foreground/35">{milestone.year}</span>
+            <span className="text-xs font-medium text-foreground/60">{milestone.year}</span>
             <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary">
               {milestone.stat.value}
             </span>
@@ -209,7 +209,7 @@ export function TimelineSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4 }}
-            className="text-sm font-medium text-foreground/35 uppercase tracking-wider mb-4"
+            className="text-sm font-medium text-foreground/60 uppercase tracking-wider mb-4"
           >
             Our Journey
           </motion.p>

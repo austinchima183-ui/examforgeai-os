@@ -129,7 +129,7 @@ export default function BrandingPage() {
                       {schoolData.logoUrl ? (
                         <Image className="h-8 w-8 text-muted-foreground" />
                       ) : (
-                        <Upload className="h-8 w-8 text-foreground/35" />
+                        <Upload className="h-8 w-8 text-foreground/60" />
                       )}
                     </div>
                     <div className="space-y-2">

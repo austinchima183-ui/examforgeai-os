@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 import { useRef, useEffect } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { PageHeader, type PageHeaderProps } from './page-header'
 
@@ -67,7 +66,6 @@ export function DashboardPage({
 }: DashboardPageProps) {
   const hasSidebar = Boolean(sidebar)
   const bandRef = useRef<HTMLDivElement>(null)
-  const prefersReducedMotion = useReducedMotion()
 
   // Map span to grid column classes — using lg:grid-cols-3 as base
   const mainColClass = hasSidebar
@@ -143,15 +141,12 @@ export function DashboardPage({
     </div>
   )
 
-  if (!animate || prefersReducedMotion) return content
+  if (!animate) return content
 
+  // CSS-driven entrance — runs at first paint, not gated on React hydration.
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3, ease: 'easeOut' }}
-    >
+    <div className="animate-in fade-in duration-300 motion-reduce:animate-none">
       {content}
-    </motion.div>
+    </div>
   )
 }

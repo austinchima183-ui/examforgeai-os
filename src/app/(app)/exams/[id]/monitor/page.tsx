@@ -1210,7 +1210,7 @@ export default function ExamMonitorPage() {
                               'flex items-center gap-1 text-[10px]',
                               selectedStudent.isOnline
                                 ? 'text-green-600 dark:text-green-400'
-                                : 'text-slate-500'
+                                : 'text-foreground/60'
                             )}
                           >
                             <span

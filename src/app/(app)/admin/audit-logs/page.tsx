@@ -143,7 +143,7 @@ export default function AuditLogsPage() {
           {loading && <div className="p-6 space-y-3">{Array.from({ length: 8 }).map((_, i) => <Skeleton key={i} className="h-12 w-full" />)}</div>}
           {!loading && !data?.logs?.length && (
             <div className="flex flex-col items-center justify-center py-12 text-center">
-              <Activity className="h-12 w-12 text-foreground/35" />
+              <Activity className="h-12 w-12 text-foreground/60" />
               <h3 className="mt-4 text-lg font-semibold">No audit logs found</h3>
               <p className="mt-2 text-sm text-muted-foreground">Audit logs will appear here when users perform administrative actions.</p>
             </div>

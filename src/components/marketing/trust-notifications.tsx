@@ -95,6 +95,7 @@ export function TrustNotifications() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
+          aria-hidden="true"
           initial={{ x: -60, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -60, opacity: 0 }}
@@ -109,10 +110,10 @@ export function TrustNotifications() {
             transition={{ duration: 0.2 }}
             className="relative flex items-center gap-2.5 forge-glass-surface border border-white/[0.06] rounded-lg px-3 py-2.5"
           >
-            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-cyan-400/8 text-cyan-400/50 flex-shrink-0">
+            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-cyan-400/8 text-cyan-300/80 flex-shrink-0">
               <Icon className="h-3 w-3" />
             </div>
-            <p className="text-xs text-foreground/55 pr-3 leading-relaxed">
+            <p className="text-xs text-foreground/70 pr-3 leading-relaxed">
               {notification.text}
             </p>
             <button

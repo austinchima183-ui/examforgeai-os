@@ -566,6 +566,12 @@ export const MAIN_NAV: NavSection[] = [
         requiredRoles: ['school_admin', 'super_admin'],
       },
       {
+        title: 'School Settings',
+        href: '/school/settings',
+        icon: Settings,
+        requiredRoles: ['school_admin', 'super_admin'],
+      },
+      {
         title: 'AI Insights',
         href: ROUTES.AI_INSIGHTS,
         icon: Brain,

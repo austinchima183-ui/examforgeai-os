@@ -29,6 +29,8 @@ export interface MiniCalendarWidgetProps {
   events: CalendarDayEvent[]
   title?: string
   className?: string
+  /** Content-only render (no SectionCard frame) — for embedding in WidgetGrid */
+  bare?: boolean
 }
 
 const toneBg: Record<NonNullable<CalendarDayEvent['tone']>, string> = {
@@ -49,6 +51,7 @@ export function MiniCalendarWidget({
   events,
   title = 'Calendar',
   className,
+  bare = false,
 }: MiniCalendarWidgetProps) {
   const today = new Date()
   const [viewYear, setViewYear] = React.useState(today.getFullYear())
@@ -104,32 +107,27 @@ export function MiniCalendarWidget({
     }
   }
 
-  return (
-    <SectionCard
-      title={title}
-      description={monthLabel}
-      icon="calendar-days"
-      tier="surface"
-      className={className}
-      action={
-        <div className="flex items-center gap-1">
-          <button
-            onClick={prevMonth}
-            className="flex h-6 w-6 items-center justify-center rounded-md text-foreground/40 transition-colors hover:bg-white/[0.04] hover:text-foreground/70"
-            aria-label="Previous month"
-          >
-            <span aria-hidden="true" className="text-xs">‹</span>
-          </button>
-          <button
-            onClick={nextMonth}
-            className="flex h-6 w-6 items-center justify-center rounded-md text-foreground/40 transition-colors hover:bg-white/[0.04] hover:text-foreground/70"
-            aria-label="Next month"
-          >
-            <span aria-hidden="true" className="text-xs">›</span>
-          </button>
-        </div>
-      }
-    >
+  const monthNav = (
+    <div className="flex items-center gap-1">
+      <button
+        onClick={prevMonth}
+        className="flex h-6 w-6 items-center justify-center rounded-md text-foreground/40 transition-colors hover:bg-white/[0.04] hover:text-foreground/70"
+        aria-label="Previous month"
+      >
+        <span aria-hidden="true" className="text-xs">‹</span>
+      </button>
+      <button
+        onClick={nextMonth}
+        className="flex h-6 w-6 items-center justify-center rounded-md text-foreground/40 transition-colors hover:bg-white/[0.04] hover:text-foreground/70"
+        aria-label="Next month"
+      >
+        <span aria-hidden="true" className="text-xs">›</span>
+      </button>
+    </div>
+  )
+
+  const content = (
+    <>
       <div role="grid" aria-label={`${monthLabel} calendar`} className="select-none">
         <div role="row" className="mb-1 grid grid-cols-7 gap-1">
           {WEEKDAYS.map((day, i) => (
@@ -220,6 +218,31 @@ export function MiniCalendarWidget({
           </ul>
         )}
       </div>
+    </>
+  )
+
+  if (bare) {
+    return (
+      <div className={className}>
+        <div className="mb-2 flex items-center justify-end gap-2">
+          <span className="text-[11px] text-muted-foreground">{monthLabel}</span>
+          {monthNav}
+        </div>
+        {content}
+      </div>
+    )
+  }
+
+  return (
+    <SectionCard
+      title={title}
+      description={monthLabel}
+      icon="calendar-days"
+      tier="surface"
+      className={className}
+      action={monthNav}
+    >
+      {content}
     </SectionCard>
   )
 }
@@ -239,19 +262,14 @@ export interface AnnouncementItem {
 export function AnnouncementsWidget({
   announcements,
   className,
+  bare = false,
 }: {
   announcements: AnnouncementItem[]
   className?: string
+  /** Content-only render (no SectionCard frame) — for embedding in WidgetGrid */
+  bare?: boolean
 }) {
-  return (
-    <SectionCard
-      title="Announcements"
-      description="School notices & events"
-      icon="megaphone"
-      tier="surface"
-      className={className}
-    >
-      {announcements.length === 0 ? (
+  const content = announcements.length === 0 ? (
         <EmptyState
           icon={<CalendarDays className="h-7 w-7" />}
           title="No announcements"
@@ -286,7 +304,21 @@ export function AnnouncementsWidget({
             )
           })}
         </ul>
-      )}
+  )
+
+  if (bare) {
+    return <div className={className}>{content}</div>
+  }
+
+  return (
+    <SectionCard
+      title="Announcements"
+      description="School notices & events"
+      icon="megaphone"
+      tier="surface"
+      className={className}
+    >
+      {content}
     </SectionCard>
   )
 }

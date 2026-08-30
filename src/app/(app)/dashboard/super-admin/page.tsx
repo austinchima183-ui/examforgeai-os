@@ -1,11 +1,5 @@
 import { requireAnyRole } from '@/lib/auth/require-auth'
-import {
-  Shield,
-  School,
-  AlertCircle,
-  ArrowRight,
-  Brain,
-} from 'lucide-react'
+import { School, AlertCircle, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { getSuperAdminStats, getSuperAdminActivities } from '@/lib/services/dashboard-service'
 import {
@@ -13,28 +7,19 @@ import {
   getScoreDistribution,
   getUserGrowthTrend,
 } from '@/lib/services/dashboard-widget-service'
-import { IntelligentInsights } from '@/components/dashboard/intelligent-insights'
 import { ROUTES } from '@/lib/constants/routes'
 import {
+  Button,
   DashboardPage,
-  DashboardGrid,
-  GridItem,
-  gridSpans,
   HeroSection,
   KpiCard,
   KpiGrid,
-  SectionCard,
-  ActivityFeed,
   QuickActions,
-  PerformanceBarWidget,
-  TrendWidget,
-  GoalsWidget,
-  EmptyState,
-  Button,
-  Badge,
+  SectionCard,
   getGreeting,
   type ActivityFeedItem,
 } from '@/components/system'
+import { SuperAdminWidgets } from '@/components/dashboards/super-admin-widgets'
 
 export const dynamic = 'force-dynamic'
 
@@ -275,121 +260,19 @@ export default async function SuperAdminDashboard() {
       <QuickActions actions={quickActionItems} cols={3} />
 
       {/* ── Main widget grid (12/8/4) ────────────────────────────────── */}
-      <DashboardGrid>
-        {/* Revenue trend — REAL successful transactions */}
-        <GridItem span={gridSpans.wide}>
-          <TrendWidget
-            data={revenueData}
-            title="Platform Revenue"
-            description="Successful payments across all schools (30 days)"
-            format="currency"
-            color="emerald"
-            headline={formatCurrency(totalTrendRevenue)}
-            headlineLabel="last 30 days"
-            emptyTitle="No payments yet"
-            emptyDescription="Platform revenue will appear here as transactions accumulate."
-          />
-        </GridItem>
-
-        {/* Score distribution — REAL sessions */}
-        <GridItem span={gridSpans.third}>
-          <PerformanceBarWidget
-            data={scoreDistData}
-            valueFormat="number"
-            title="Score Distribution"
-            description="Graded sessions per score band"
-            icon="bar-chart3"
-            emptyTitle="No graded sessions yet"
-            emptyDescription="Distribution appears as students complete exams."
-          />
-        </GridItem>
-
-        {/* User growth — REAL signups */}
-        <GridItem span={gridSpans.wide}>
-          <TrendWidget
-            data={growthData}
-            title="Platform Growth"
-            description="New user signups over the last 14 days"
-            format="number"
-            color="blue"
-            emptyTitle="No recent signups"
-            emptyDescription="New signups will appear here as users register."
-          />
-        </GridItem>
-
-        {/* Goals — computed from real metrics */}
-        <GridItem span={gridSpans.third}>
-          <GoalsWidget
-            goals={goals}
-            title="Platform Goals"
-            description="Milestones computed from live data"
-          />
-        </GridItem>
-
-        {/* Administration tools */}
-        <GridItem span={gridSpans.full}>
-          <div>
-            <div className="mb-4 flex items-center gap-3">
-              <h2 className="text-lg font-semibold tracking-tight">Administration</h2>
-              <div className="h-px flex-1 bg-gradient-to-r from-border/40 to-transparent" />
-            </div>
-            <QuickActions actions={adminTools} cols={6} />
-          </div>
-        </GridItem>
-
-        {/* AI insights */}
-        <GridItem span={gridSpans.wide}>
-          <IntelligentInsights role={user.role} userId={user.id} schoolId={user.schoolId} />
-        </GridItem>
-
-        {/* AI Insights shortcut */}
-        <GridItem span={gridSpans.third}>
-          <SectionCard
-            title="AI Insights"
-            description="Platform-wide intelligence"
-            icon="brain"
-            tier="surface"
-            action={
-              <Button asChild size="sm" variant="ghost">
-                <Link href={ROUTES.ADMIN_ANALYTICS}>
-                  Open
-                  <ArrowRight className="h-3 w-3" />
-                </Link>
-              </Button>
-            }
-          >
-            <p className="text-xs leading-relaxed text-muted-foreground">
-              Anomaly detection, usage forecasting, churn prediction, and
-              platform-wide recommendations powered by AI analytics.
-            </p>
-          </SectionCard>
-        </GridItem>
-
-        {/* Recent Activity — real feed */}
-        <GridItem span={gridSpans.full}>
-          <SectionCard
-            title="Recent Activity"
-            description="Latest platform-wide events"
-            icon="clock"
-            tier="surface"
-            animate
-          >
-            {feedItems.length === 0 ? (
-              <EmptyState
-                icon={<Shield className="h-7 w-7" />}
-                title="No activity yet"
-                description="Platform activity will appear here as schools and users engage with ExamForge."
-                primaryAction={{
-                  label: 'Manage schools',
-                  href: ROUTES.ADMIN_SCHOOLS,
-                }}
-              />
-            ) : (
-              <ActivityFeed items={feedItems} maxItems={10} />
-            )}
-          </SectionCard>
-        </GridItem>
-      </DashboardGrid>
+      {/* ── Interactive widget grid — drag / resize / collapse / refresh ── */}
+      <SuperAdminWidgets
+        role={user.role}
+        userId={user.id}
+        schoolId={user.schoolId ?? ''}
+        revenueData={revenueData}
+        totalTrendRevenue={totalTrendRevenue}
+        scoreDistData={scoreDistData}
+        growthData={growthData}
+        goals={goals}
+        feedItems={feedItems}
+        adminTools={adminTools}
+      />
     </DashboardPage>
   )
 }

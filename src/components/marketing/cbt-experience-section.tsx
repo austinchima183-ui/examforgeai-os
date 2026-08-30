@@ -365,7 +365,7 @@ export function CBTExperienceSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4 }}
-            className="text-sm font-medium text-foreground/35 uppercase tracking-wider mb-4"
+            className="text-sm font-medium text-foreground/60 uppercase tracking-wider mb-4"
           >
             CBT Experience
           </motion.p>
@@ -429,7 +429,7 @@ export function CBTExperienceSection() {
                   >
                     <Icon
                       className={`h-4 w-4 sm:h-5 sm:w-5 transition-colors duration-300 ${
-                        isActive ? 'text-primary' : isCompleted ? 'text-primary/60' : 'text-foreground/35'
+                        isActive ? 'text-primary' : isCompleted ? 'text-primary/60' : 'text-foreground/60'
                       }`}
                     />
                     {isActive && (
@@ -442,7 +442,7 @@ export function CBTExperienceSection() {
                   </div>
                   <span
                     className={`text-[10px] sm:text-xs font-medium transition-colors duration-300 ${
-                      isActive ? 'text-primary' : 'text-foreground/35'
+                      isActive ? 'text-primary' : 'text-foreground/60'
                     }`}
                   >
                     {step.title}

@@ -133,7 +133,7 @@ export function PlatformOverviewSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4 }}
-            className="text-sm font-medium text-foreground/35 uppercase tracking-wider mb-4"
+            className="text-sm font-medium text-foreground/60 uppercase tracking-wider mb-4"
           >
             Platform Overview
           </motion.p>

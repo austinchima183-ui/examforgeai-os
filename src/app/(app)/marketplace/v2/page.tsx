@@ -420,7 +420,7 @@ export default function EnhancedMarketplacePage() {
 
             {filtered.length === 0 ? (
               <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] transition-all"><CardContent className="py-12 text-center">
-                <Package className="h-12 w-12 mx-auto text-foreground/30" />
+                <Package className="h-12 w-12 mx-auto text-foreground/60" />
                 <h3 className="mt-4 text-lg font-semibold">No products found</h3>
                 <p className="text-muted-foreground">Try adjusting your search or filters</p>
                 {hasActiveFilters && <Button variant="outline" className="mt-4" onClick={clearFilters}>Clear Filters</Button>}
@@ -449,7 +449,7 @@ export default function EnhancedMarketplacePage() {
         <div className="space-y-4 animate-fade-in">
           {wishlist.length === 0 ? (
             <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] transition-all"><CardContent className="py-12 text-center">
-              <Heart className="h-12 w-12 mx-auto text-foreground/30" />
+              <Heart className="h-12 w-12 mx-auto text-foreground/60" />
               <h3 className="mt-4 text-lg font-semibold">Your wishlist is empty</h3>
               <p className="text-muted-foreground">Browse the marketplace and add items you&apos;re interested in</p>
               <Button variant="outline" className="mt-4" onClick={() => setActiveTab('browse')}>Browse Products</Button>

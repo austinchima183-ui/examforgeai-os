@@ -1,7 +1,6 @@
 'use client'
 
 import * as React from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { resolveIcon } from '@/lib/design/icon-registry'
 import { Badge } from '@/components/ui/badge'
@@ -15,7 +14,8 @@ import { Badge } from '@/components/ui/badge'
 // - Role/status badge row
 // - Inline hero stats (real live KPIs, not decoration)
 // - Primary actions on the right
-// - Subtle entrance animation (respects reduced motion)
+// - Subtle entrance animation (CSS-driven — runs at first paint, not gated
+//   on React hydration, so the hero is visible for LCP immediately)
 // RSC-safe: all props are serializable (strings / React elements).
 // ============================================================================
 
@@ -65,17 +65,13 @@ export function HeroSection({
   actions,
   className,
 }: HeroSectionProps) {
-  const prefersReducedMotion = useReducedMotion()
-
   return (
-    <motion.section
-      initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
+    <section
       className={cn(
         'relative overflow-hidden rounded-2xl',
         'forge-glass-surface border border-white/[0.06] forge-card-shadow',
         'px-6 py-6 sm:px-8 sm:py-7',
+        'animate-in fade-in slide-in-from-bottom-3 duration-500 motion-reduce:animate-none motion-reduce:transform-none',
         className,
       )}
       aria-label="Dashboard overview"
@@ -127,31 +123,31 @@ export function HeroSection({
           </p>
 
           {stats && stats.length > 0 && (
-            <dl className="mt-5 flex flex-wrap items-center gap-x-7 gap-y-3">
+            <ul className="mt-5 flex flex-wrap items-center gap-x-7 gap-y-3" aria-label="Key statistics">
               {stats.map((stat) => {
                 const Icon = resolveIcon(stat.icon)
                 return (
-                  <div key={stat.label} className="flex items-center gap-2.5">
+                  <li key={stat.label} className="flex list-none items-center gap-2.5">
                     {Icon && (
                       <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-white/[0.05] bg-white/[0.03]">
                         <Icon className="h-3.5 w-3.5 text-foreground/60" aria-hidden="true" />
                       </span>
                     )}
                     <div>
-                      <dd
+                      <div
                         className={cn(
                           'text-lg font-semibold leading-none tabular-nums',
                           toneClass[stat.tone ?? 'default'],
                         )}
                       >
                         {stat.value}
-                      </dd>
-                      <dt className="mt-1 text-[11px] text-muted-foreground">{stat.label}</dt>
+                      </div>
+                      <div className="mt-1 text-[11px] text-muted-foreground">{stat.label}</div>
                     </div>
-                  </div>
+                  </li>
                 )
               })}
-            </dl>
+            </ul>
           )}
         </div>
 
@@ -162,6 +158,6 @@ export function HeroSection({
           </div>
         )}
       </div>
-    </motion.section>
+    </section>
   )
 }

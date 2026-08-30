@@ -58,7 +58,7 @@ export function TrustedBySection() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center text-sm font-medium text-foreground/35 uppercase tracking-wider mb-12"
+          className="text-center text-sm font-medium text-foreground/60 uppercase tracking-wider mb-12"
         >
           Trusted by leading educational institutions across Africa
         </motion.p>
@@ -159,7 +159,7 @@ export function TrustedBySection() {
               </div>
 
               {/* Stars */}
-              <div className="flex items-center gap-1 mb-4" aria-label="5 out of 5 stars">
+              <div className="flex items-center gap-1 mb-4" role="img" aria-label="5 out of 5 stars">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <svg
                     key={star}

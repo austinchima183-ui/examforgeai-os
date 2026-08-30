@@ -7,11 +7,9 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
 import { Skeleton } from '@/components/ui/skeleton'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { Separator } from '@/components/ui/separator'
 import {
   BarChart3, LineChart, Search, Calendar, FileText,
   TrendingUp, TrendingDown, Brain, GraduationCap, DollarSign,
@@ -43,7 +41,7 @@ const TIME_PERIODS: { value: AnalyticsTimePeriod; label: string }[] = [
   { value: 'this_year', label: 'This Year' },
 ]
 
-// ── Metric Data per Dashboard ────────────────────────────────────
+// ── Metric Data (mapped from LIVE /api/analytics/enterprise data) ──
 interface MetricData {
   label: string
   value: string
@@ -52,106 +50,142 @@ interface MetricData {
   icon: typeof DollarSign
 }
 
-const METRIC_SETS: Record<string, MetricData[]> = {
-  financial: [
-    { label: 'Total Revenue', value: '$585,000', change: '+12.3%', trend: 'up', icon: DollarSign },
-    { label: 'MRR', value: '$48,750', change: '+4.8%', trend: 'up', icon: TrendingUp },
-    { label: 'Collection Rate', value: '94.2%', change: '+1.1%', trend: 'up', icon: BarChart3 },
-    { label: 'Outstanding', value: '$12,400', change: '-8.5%', trend: 'down', icon: AlertTriangle },
-  ],
-  academic: [
-    { label: 'Average GPA', value: '3.42', change: '+0.08', trend: 'up', icon: GraduationCap },
-    { label: 'Pass Rate', value: '78.5%', change: '+2.3%', trend: 'up', icon: TrendingUp },
-    { label: 'Exam Completion', value: '92.1%', change: '+1.5%', trend: 'up', icon: BarChart3 },
-    { label: 'Avg Score', value: '68.4', change: '+3.2', trend: 'up', icon: LineChart },
-  ],
-  government: [
-    { label: 'Total Schools', value: '1,247', change: '+23', trend: 'up', icon: Shield },
-    { label: 'Total Students', value: '850K', change: '+5.2%', trend: 'up', icon: Users },
-    { label: 'Compliance Rate', value: '89.3%', change: '+1.8%', trend: 'up', icon: AlertTriangle },
-    { label: 'Avg Performance', value: '72.1', change: '+2.4', trend: 'up', icon: BarChart3 },
-  ],
-  risk: [
-    { label: 'At-Risk Students', value: '342', change: '-12', trend: 'down', icon: AlertTriangle },
-    { label: 'Dropout Risk', value: '4.2%', change: '-0.5%', trend: 'down', icon: TrendingDown },
-    { label: 'Financial Risk', value: 'Low', change: 'Stable', trend: 'flat', icon: DollarSign },
-    { label: 'Compliance Issues', value: '3', change: '-2', trend: 'down', icon: Shield },
-  ],
-  enrollment: [
-    { label: 'Current Enrollment', value: '42,500', change: '+1,200', trend: 'up', icon: Users },
-    { label: 'Retention Rate', value: '91.3%', change: '+0.8%', trend: 'up', icon: TrendingUp },
-    { label: 'New Enrollments', value: '1,200', change: '+15%', trend: 'up', icon: GraduationCap },
-    { label: 'Withdrawals', value: '89', change: '-23%', trend: 'down', icon: TrendingDown },
-  ],
-  ai: [
-    { label: 'AI Generations', value: '124K', change: '+28%', trend: 'up', icon: Brain },
-    { label: 'Tokens Used', value: '45.2M', change: '+15%', trend: 'up', icon: Sparkles },
-    { label: 'AI Cost', value: '$2,340', change: '+12%', trend: 'up', icon: DollarSign },
-    { label: 'Error Rate', value: '0.8%', change: '-0.3%', trend: 'down', icon: AlertTriangle },
-  ],
-}
-
-// ── Chart Data ───────────────────────────────────────────────────
 interface ChartPoint {
   label: string
   value: number
   secondary?: number
 }
 
-const CHART_DATA: Record<string, ChartPoint[]> = {
-  financial: [
-    { label: 'Jan', value: 38000, secondary: 35000 },
-    { label: 'Feb', value: 40200, secondary: 37200 },
-    { label: 'Mar', value: 42100, secondary: 39500 },
-    { label: 'Apr', value: 44300, secondary: 41000 },
-    { label: 'May', value: 46500, secondary: 43000 },
-    { label: 'Jun', value: 48750, secondary: 45000 },
-  ],
-  academic: [
-    { label: 'Jan', value: 65, secondary: 62 },
-    { label: 'Feb', value: 67, secondary: 64 },
-    { label: 'Mar', value: 68, secondary: 66 },
-    { label: 'Apr', value: 70, secondary: 68 },
-    { label: 'May', value: 72, secondary: 69 },
-    { label: 'Jun', value: 74, secondary: 71 },
-  ],
-  government: [
-    { label: 'Q1', value: 72, secondary: 68 },
-    { label: 'Q2', value: 75, secondary: 71 },
-    { label: 'Q3', value: 78, secondary: 74 },
-    { label: 'Q4', value: 80, secondary: 76 },
-  ],
-  risk: [
-    { label: 'Jan', value: 420, secondary: 450 },
-    { label: 'Feb', value: 395, secondary: 430 },
-    { label: 'Mar', value: 380, secondary: 410 },
-    { label: 'Apr', value: 365, secondary: 390 },
-    { label: 'May', value: 350, secondary: 370 },
-    { label: 'Jun', value: 342, secondary: 360 },
-  ],
-  enrollment: [
-    { label: 'Jan', value: 40000, secondary: 38500 },
-    { label: 'Feb', value: 40500, secondary: 39200 },
-    { label: 'Mar', value: 41200, secondary: 40000 },
-    { label: 'Apr', value: 41800, secondary: 40500 },
-    { label: 'May', value: 42200, secondary: 41200 },
-    { label: 'Jun', value: 42500, secondary: 41800 },
-  ],
-  ai: [
-    { label: 'Jan', value: 85000, secondary: 72000 },
-    { label: 'Feb', value: 95000, secondary: 80000 },
-    { label: 'Mar', value: 100000, secondary: 88000 },
-    { label: 'Apr', value: 108000, secondary: 95000 },
-    { label: 'May', value: 116000, secondary: 102000 },
-    { label: 'Jun', value: 124000, secondary: 110000 },
-  ],
+// Response envelope from /api/analytics/enterprise
+interface EnterpriseAnalyticsResponse {
+  type: DashboardType
+  data: Record<string, unknown>
 }
 
-// Chart type per dashboard
-const CHART_TYPE: Record<string, 'area' | 'bar'> = {
-  financial: 'area', academic: 'area', government: 'bar',
-  risk: 'area', enrollment: 'area', ai: 'bar',
+const CHART_TYPE: Partial<Record<DashboardType, 'area' | 'bar'>> = {
+  financial: 'area',
+  academic: 'bar',
+  government: 'bar',
+  risk: 'area',
+  enrollment: 'bar',
+  ai: 'area',
 }
+
+// Map UI time period → API period param (day|week|month|quarter|year)
+const API_PERIOD: Partial<Record<AnalyticsTimePeriod, string>> = {
+  today: 'day',
+  yesterday: 'day',
+  last_7_days: 'week',
+  last_30_days: 'month',
+  last_90_days: 'quarter',
+  this_month: 'month',
+  last_month: 'month',
+  this_quarter: 'quarter',
+  this_year: 'year',
+  custom: 'month',
+}
+
+const fmtCurrency = (n: number) =>
+  new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n)
+const fmtCompact = (n: number) => new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 }).format(n)
+const fmtPct = (n: number) => `${(n * 100).toFixed(1)}%`
+
+// ── Map LIVE analytics payloads → metric cards ──
+function mapMetrics(type: DashboardType, d: Record<string, unknown>): MetricData[] {
+  switch (type) {
+    case 'financial':
+      return [
+        { label: 'Total Revenue', value: fmtCurrency(Number(d.revenue) || 0), change: 'live', trend: 'flat', icon: DollarSign },
+        { label: 'MRR', value: fmtCurrency(Number(d.mrr) || 0), change: 'live', trend: 'flat', icon: TrendingUp },
+        { label: 'Collection Rate', value: fmtPct(Number(d.collectionRate) || 0), change: 'live', trend: 'flat', icon: BarChart3 },
+        { label: 'Outstanding', value: fmtCurrency(Number(d.outstandingRevenue) || 0), change: 'live', trend: 'flat', icon: AlertTriangle },
+      ]
+    case 'academic':
+      return [
+        { label: 'Average GPA', value: (Number(d.avgGPA) || 0).toFixed(2), change: 'live', trend: 'flat', icon: GraduationCap },
+        { label: 'Pass Rate', value: fmtPct(Number(d.passRate) || 0), change: 'live', trend: 'flat', icon: TrendingUp },
+        { label: 'Exam Completion', value: fmtPct(Number(d.examCompletionRate) || 0), change: 'live', trend: 'flat', icon: BarChart3 },
+        { label: 'Avg Score', value: (Number(d.avgScore) || 0).toFixed(1), change: 'live', trend: 'flat', icon: LineChart },
+      ]
+    case 'government':
+      return [
+        { label: 'Total Schools', value: String(Number(d.totalSchools) || 0), change: 'live', trend: 'flat', icon: Shield },
+        { label: 'Total Students', value: fmtCompact(Number(d.totalStudents) || 0), change: 'live', trend: 'flat', icon: Users },
+        { label: 'Compliance Rate', value: fmtPct(Number(d.complianceRate) || 0), change: 'live', trend: 'flat', icon: AlertTriangle },
+        { label: 'Avg Performance', value: (Number(d.avgPerformance) || 0).toFixed(1), change: 'live', trend: 'flat', icon: BarChart3 },
+      ]
+    case 'risk': {
+      const atRisk = Array.isArray(d.atRiskStudents) ? d.atRiskStudents.length : 0
+      const compliance = Array.isArray(d.complianceRisks) ? d.complianceRisks.length : 0
+      const score = Number(d.overallRiskScore) || 0
+      return [
+        { label: 'At-Risk Students', value: String(atRisk), change: 'live', trend: 'flat', icon: AlertTriangle },
+        { label: 'Overall Risk Score', value: score.toFixed(1), change: 'live', trend: 'flat', icon: Shield },
+        { label: 'Dropout Predictions', value: String(Array.isArray(d.dropoutPredictions) ? d.dropoutPredictions.length : 0), change: 'live', trend: 'flat', icon: TrendingDown },
+        { label: 'Compliance Issues', value: String(compliance), change: 'live', trend: 'flat', icon: Shield },
+      ]
+    }
+    case 'enrollment':
+      return [
+        { label: 'Current Enrollment', value: fmtCompact(Number(d.currentEnrollment) || 0), change: 'live', trend: 'flat', icon: Users },
+        { label: 'Retention Rate', value: fmtPct(Number(d.retentionRate) || 0), change: 'live', trend: 'flat', icon: TrendingUp },
+        { label: 'New Enrollments', value: String(Number(d.newEnrollments) || 0), change: 'live', trend: 'flat', icon: GraduationCap },
+        { label: 'Withdrawals', value: String(Number(d.withdrawals) || 0), change: 'live', trend: 'flat', icon: TrendingDown },
+      ]
+    case 'ai':
+      return [
+        { label: 'AI Generations', value: fmtCompact(Number(d.totalGenerations) || 0), change: 'live', trend: 'flat', icon: Brain },
+        { label: 'Tokens Used', value: fmtCompact(Number(d.totalTokens) || 0), change: 'live', trend: 'flat', icon: Sparkles },
+        { label: 'AI Cost', value: fmtCurrency(Number(d.totalCost) || 0), change: 'live', trend: 'flat', icon: DollarSign },
+        { label: 'Error Rate', value: fmtPct(Number(d.errorRate) || 0), change: 'live', trend: 'flat', icon: AlertTriangle },
+      ]
+    default:
+      return []
+  }
+}
+
+// ── Map LIVE analytics payloads → chart series ──
+function mapChart(type: DashboardType, d: Record<string, unknown>): ChartPoint[] {
+  const series = (key: string): ChartPoint[] => {
+    const arr = Array.isArray(d[key]) ? (d[key] as Array<Record<string, unknown>>) : []
+    return arr.map((p) => ({
+      label: String(p.label ?? p.month ?? p.name ?? p.date ?? ''),
+      value: Number(p.value ?? p.count ?? p.revenue ?? 0),
+    }))
+  }
+  switch (type) {
+    case 'financial':
+      return series('revenueByMonth')
+    case 'academic':
+      return (Array.isArray(d.subjectsPerformance) ? (d.subjectsPerformance as Array<Record<string, unknown>>) : []).map((s) => ({
+        label: String(s.subjectName ?? ''),
+        value: Number(s.avgScore ?? 0),
+      }))
+    case 'government':
+      return (Array.isArray(d.districtsPerformance) ? (d.districtsPerformance as Array<Record<string, unknown>>) : []).map((r) => ({
+        label: String(r.districtName ?? r.district ?? ''),
+        value: Number(r.avgPerformance ?? r.performance ?? 0),
+      }))
+    case 'risk':
+      return series('riskTrends')
+    case 'enrollment':
+      return (Array.isArray(d.projectionsByGrade) ? (d.projectionsByGrade as Array<Record<string, unknown>>) : []).map((p) => ({
+        label: String(p.label ?? ''),
+        value: Number(p.current ?? 0),
+        secondary: Number(p.projected ?? 0),
+      }))
+    case 'ai':
+      return (Array.isArray(d.topUseCases) ? (d.topUseCases as Array<Record<string, unknown>>) : []).map((u) => ({
+        label: String(u.label ?? u.name ?? ''),
+        value: Number(u.value ?? 0),
+      }))
+    default:
+      return []
+  }
+}
+// (METRIC_SETS and CHART_DATA removed — all metrics and chart series now
+// come from the LIVE /api/analytics/enterprise endpoint. Mission Ω-8: no
+// placeholder data.)
 
 // ── NLQ Suggestions ──────────────────────────────────────────────
 const NLQ_SUGGESTIONS = [
@@ -171,10 +205,12 @@ interface ScheduledReport {
   enabled: boolean
 }
 
-interface EnterpriseAnalyticsData {
-  metrics: Record<string, MetricData[]>
-  chartData: Record<string, ChartPoint[]>
-  reports: ScheduledReport[]
+// Live response from /api/analytics/enterprise?type=X&period=Y
+interface EnterpriseAnalyticsResponse {
+  type: DashboardType
+  data: Record<string, unknown>
+  // Some deployments may include scheduled reports in the payload
+  reports?: ScheduledReport[]
 }
 
 // ── Tooltip ──────────────────────────────────────────────────────
@@ -201,14 +237,24 @@ export default function EnterpriseAnalyticsPage() {
   const [nlqResult, setNlqResult] = useState<string | null>(null)
   const [drilldownPath, setDrilldownPath] = useState<string[]>(['Enterprise', 'Financial'])
 
-  const { data: analyticsData, loading: dataLoading, error: dataError, refetch } = useApi<EnterpriseAnalyticsData>('/api/analytics/enterprise')
+  // ── LIVE analytics data — refetches when dashboard type or period changes ──
+  const analyticsUrl = `/api/analytics/enterprise?type=${dashboardType}&period=${API_PERIOD[timePeriod] ?? 'month'}`
+  const { data: analyticsData, loading: dataLoading, error: dataError, refetch } =
+    useApi<EnterpriseAnalyticsResponse>(analyticsUrl)
   const reports = analyticsData?.reports ?? []
 
   const loading = dataLoading
+  const hasError = !!dataError
 
-  const metrics = useMemo(() => METRIC_SETS[dashboardType] ?? METRIC_SETS.financial, [dashboardType])
-  const chartData = useMemo(() => CHART_DATA[dashboardType] ?? CHART_DATA.financial, [dashboardType])
-  const chartType = useMemo(() => CHART_TYPE[dashboardType] ?? 'area', [dashboardType])
+  const metrics = useMemo(
+    () => (analyticsData ? mapMetrics(dashboardType, analyticsData.data ?? {}) : []),
+    [analyticsData, dashboardType]
+  )
+  const chartData = useMemo(
+    () => (analyticsData ? mapChart(dashboardType, analyticsData.data ?? {}) : []),
+    [analyticsData, dashboardType]
+  )
+  const chartType = CHART_TYPE[dashboardType] ?? 'area'
   const currentLabel = DASHBOARD_TYPES.find(d => d.value === dashboardType)?.label ?? 'Dashboard'
 
   // Loading state from API
@@ -275,7 +321,7 @@ export default function EnterpriseAnalyticsPage() {
               ))}
             </SelectContent>
           </Select>
-          <Button variant="outline" size="icon" disabled={loading}>
+          <Button variant="outline" size="icon" disabled={loading} onClick={() => refetch()} aria-label="Refresh analytics data">
             <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
           </Button>
         </div>
@@ -287,7 +333,7 @@ export default function EnterpriseAnalyticsPage() {
           <div className="flex items-center gap-2">
             <Search className="h-5 w-5 text-muted-foreground shrink-0" />
             <Input
-              className="border-0 shadow-none text-base placeholder:text-foreground/40 focus-visible:ring-0 forge-input-glow"
+              className="border-0 shadow-none text-base placeholder:text-foreground/60 focus-visible:ring-0 forge-input-glow"
               placeholder="Ask a question about your data..."
               value={nlq}
               onChange={e => setNlq(e.target.value)}
@@ -344,9 +390,29 @@ export default function EnterpriseAnalyticsPage() {
         ))}
       </div>
 
-      {/* Dynamic Metric Cards */}
+      {/* Error state */}
+      {hasError && !loading && (
+        <Card className="border-destructive/30 bg-destructive/5">
+          <CardContent className="p-4 text-sm text-destructive flex items-center justify-between">
+            <span>Could not load analytics data. Check your plan access and try again.</span>
+            <Button variant="outline" size="sm" onClick={() => refetch()}>Retry</Button>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Dynamic Metric Cards (LIVE data) */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        {metrics.map(m => {
+        {loading && metrics.length === 0
+          ? Array.from({ length: 4 }).map((_, i) => (
+              <Card key={i}>
+                <CardHeader className="pb-2"><Skeleton className="h-4 w-24" /></CardHeader>
+                <CardContent>
+                  <Skeleton className="h-8 w-24 mb-1" />
+                  <Skeleton className="h-4 w-16" />
+                </CardContent>
+              </Card>
+            ))
+          : metrics.map(m => {
           const Icon = m.icon
           return (
             <Card key={m.label}>
@@ -356,14 +422,11 @@ export default function EnterpriseAnalyticsPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                {loading ? <Skeleton className="h-8 w-24 mb-1" /> : <p className="text-2xl font-bold">{m.value}</p>}
-                {loading ? <Skeleton className="h-4 w-16" /> : (
-                  <p className={`text-xs flex items-center gap-1 ${m.trend === 'up' ? 'text-green-600 dark:text-green-400' : m.trend === 'down' ? 'text-destructive' : 'text-muted-foreground'}`}>
-                    {m.trend === 'up' && <TrendingUp className="h-3 w-3" />}
-                    {m.trend === 'down' && <TrendingDown className="h-3 w-3" />}
-                    {m.change}
-                  </p>
-                )}
+                <p className="text-2xl font-bold">{m.value}</p>
+                <p className="text-xs flex items-center gap-1 text-muted-foreground">
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
+                  live data
+                </p>
               </CardContent>
             </Card>
           )
@@ -383,6 +446,14 @@ export default function EnterpriseAnalyticsPage() {
           {loading ? (
             <div className="space-y-3">
               {Array.from({ length: 5 }).map((_, i) => <Skeleton key={i} className="h-8 w-full" />)}
+            </div>
+          ) : chartData.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-14 text-center">
+              <BarChart3 className="h-8 w-8 text-muted-foreground/40 mb-3" aria-hidden="true" />
+              <p className="text-sm font-medium text-foreground/70">No data for this period yet</p>
+              <p className="text-xs text-muted-foreground mt-1 max-w-sm">
+                Charts populate automatically as your school generates exams, payments, and activity.
+              </p>
             </div>
           ) : (
             <ResponsiveContainer width="100%" height={320}>
@@ -420,18 +491,21 @@ export default function EnterpriseAnalyticsPage() {
         </CardContent>
       </Card>
 
-      {/* Scheduled Reports */}
+      {/* Scheduled Reports (honest empty state — no fake report rows) */}
       <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] transition-all">
         <CardHeader className="flex flex-row items-center justify-between">
           <div>
             <CardTitle className="flex items-center gap-2"><Clock className="h-5 w-5" />Scheduled Reports</CardTitle>
             <CardDescription>{reports.filter(r => r.enabled).length} of {reports.length} reports active</CardDescription>
           </div>
-          <Button variant="outline" size="sm" className="gap-2">
-            <FileText className="h-4 w-4" />Create Report
-          </Button>
         </CardHeader>
         <CardContent>
+          {reports.length === 0 ? (
+            <p className="py-6 text-center text-sm text-muted-foreground">
+              No scheduled reports configured yet. Reports will appear here once your
+              school starts generating recurring analytics.
+            </p>
+          ) : (
           <ScrollArea className="max-h-64">
             <div className="space-y-3">
               {reports.map(r => (
@@ -457,6 +531,7 @@ export default function EnterpriseAnalyticsPage() {
               ))}
             </div>
           </ScrollArea>
+          )}
         </CardContent>
       </Card>
     </div>

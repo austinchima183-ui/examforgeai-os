@@ -165,7 +165,7 @@ export function PricingSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4 }}
-            className="text-sm font-medium text-foreground/35 uppercase tracking-wider mb-4"
+            className="text-sm font-medium text-foreground/60 uppercase tracking-wider mb-4"
           >
             Pricing
           </motion.p>
@@ -331,12 +331,12 @@ export function PricingSection() {
                       </div>
                     )}
                     {plan.monthlyPrice !== null && isYearly && currency === 'USD' && (
-                      <p className="mt-1 text-xs text-foreground/35">
+                      <p className="mt-1 text-xs text-foreground/60">
                         Billed annually (${plan.yearlyPrice! * 12}/year)
                       </p>
                     )}
                     {plan.monthlyPrice !== null && isYearly && currency === 'NGN' && (
-                      <p className="mt-1 text-xs text-foreground/35">
+                      <p className="mt-1 text-xs text-foreground/60">
                         Billed annually ({formatNGN(plan.yearlyPriceNGN! * 12)}/year)
                       </p>
                     )}
@@ -414,7 +414,7 @@ export function PricingSection() {
             All plans include a 14-day free trial. No credit card required.
           </p>
           {currency === 'USD' && (
-            <p className="text-xs text-foreground/35">
+            <p className="text-xs text-foreground/60">
               Prices shown in USD. Billed in Nigerian Naira (NGN) at current exchange rate.
             </p>
           )}

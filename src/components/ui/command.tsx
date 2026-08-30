@@ -83,7 +83,7 @@ function CommandInput({
         className={cn(
           /* Premium with forge-input-glow */
           "forge-input-glow",
-          "placeholder:text-foreground/55",
+          "placeholder:text-foreground/60",
           "flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden",
           "disabled:cursor-not-allowed disabled:opacity-50",
           className

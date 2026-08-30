@@ -121,7 +121,7 @@ function EmptyState() {
       <div className="relative mb-6">
         <div className="absolute inset-0 rounded-2xl bg-primary/10 blur-xl" />
         <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/80 backdrop-blur-sm border border-white/[0.04]">
-          <Inbox className="h-6 w-6 text-foreground/40" />
+          <Inbox className="h-6 w-6 text-foreground/60" />
         </div>
       </div>
       <p className="text-base font-medium text-foreground">No recent activity</p>

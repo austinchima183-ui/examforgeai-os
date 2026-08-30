@@ -115,7 +115,7 @@ export function Header({ sidebarCollapsed, onToggleSidebar }: HeaderProps) {
       <Button
         variant="ghost"
         size="icon"
-        className="md:hidden shrink-0 h-7 w-7 text-foreground/35 hover:text-foreground/70 hover:bg-[#1A1A1A]"
+        className="md:hidden shrink-0 h-7 w-7 text-foreground/60 hover:text-foreground/70 hover:bg-[#1A1A1A]"
         onClick={onToggleSidebar}
         aria-label="Toggle navigation menu"
       >
@@ -132,12 +132,12 @@ export function Header({ sidebarCollapsed, onToggleSidebar }: HeaderProps) {
         {/* Search — Pill command bar */}
         <button
           onClick={openSearch}
-          className="hidden sm:flex items-center gap-2 h-7 w-[260px] rounded-full border border-[rgba(255,255,255,0.06)] bg-[#111111] px-3 text-[13px] text-foreground/35 forge-input-glow transition-all duration-200 hover:border-[rgba(255,255,255,0.1)] hover:bg-[#151515] hover:text-foreground/60"
+          className="hidden sm:flex items-center gap-2 h-7 w-[260px] rounded-full border border-[rgba(255,255,255,0.06)] bg-[#111111] px-3 text-[13px] text-foreground/60 forge-input-glow transition-all duration-200 hover:border-[rgba(255,255,255,0.1)] hover:bg-[#151515] hover:text-foreground/60"
           aria-label="Search (⌘K)"
         >
           <Search className="h-3 w-3 shrink-0" aria-hidden="true" />
-          <span className="flex-1 text-left text-foreground/30">Search or type a command...</span>
-          <kbd className="pointer-events-none inline-flex h-4 select-none items-center gap-0.5 rounded border border-[rgba(255,255,255,0.06)] bg-[#1A1A1A] px-1 font-mono text-[9px] font-medium text-foreground/30">
+          <span className="flex-1 text-left text-foreground/60">Search or type a command...</span>
+          <kbd className="pointer-events-none inline-flex h-4 select-none items-center gap-0.5 rounded border border-[rgba(255,255,255,0.06)] bg-[#1A1A1A] px-1 font-mono text-[9px] font-medium text-foreground/60">
             <Command className="h-2 w-2" aria-hidden="true" />K
           </kbd>
         </button>
@@ -145,7 +145,7 @@ export function Header({ sidebarCollapsed, onToggleSidebar }: HeaderProps) {
         <Button
           variant="ghost"
           size="icon"
-          className="sm:hidden shrink-0 h-7 w-7 text-foreground/30 hover:text-foreground/70 hover:bg-[#1A1A1A]"
+          className="sm:hidden shrink-0 h-7 w-7 text-foreground/60 hover:text-foreground/70 hover:bg-[#1A1A1A]"
           aria-label="Search (⌘K)"
           onClick={openSearch}
         >
@@ -156,7 +156,7 @@ export function Header({ sidebarCollapsed, onToggleSidebar }: HeaderProps) {
         <Button
           variant="ghost"
           size="icon"
-          className="h-7 w-7 text-foreground/20 hover:text-foreground/50 hover:bg-[#1A1A1A]"
+          className="h-7 w-7 text-foreground/20 hover:text-foreground/60 hover:bg-[#1A1A1A]"
           aria-label="Toggle theme"
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
         >
@@ -171,7 +171,7 @@ export function Header({ sidebarCollapsed, onToggleSidebar }: HeaderProps) {
           size="icon"
           aria-label="Open AI Copilot"
           onClick={toggleCopilot}
-          className="h-7 w-7 text-foreground/30 hover:text-neural group transition-all duration-200 hover:bg-[#1A1A1A] hover:shadow-[0_0_10px_rgba(34,211,238,0.15)]"
+          className="h-7 w-7 text-foreground/60 hover:text-neural group transition-all duration-200 hover:bg-[#1A1A1A] hover:shadow-[0_0_10px_rgba(34,211,238,0.15)]"
         >
           <Sparkles className="h-3.5 w-3.5 transition-transform duration-200 group-hover:scale-110 group-hover:rotate-12" aria-hidden="true" />
         </Button>
@@ -180,7 +180,7 @@ export function Header({ sidebarCollapsed, onToggleSidebar }: HeaderProps) {
         <Button
           variant="ghost"
           size="icon"
-          className="relative h-7 w-7 text-foreground/30 hover:text-foreground/70 hover:bg-[#1A1A1A]"
+          className="relative h-7 w-7 text-foreground/60 hover:text-foreground/70 hover:bg-[#1A1A1A]"
           aria-label={`Notifications${unreadCount > 0 ? ` (${unreadCount} unread)` : ''}`}
           onClick={() => router.push('/notifications')}
         >
@@ -225,19 +225,19 @@ export function Header({ sidebarCollapsed, onToggleSidebar }: HeaderProps) {
             <DropdownMenuSeparator className="bg-[rgba(255,255,255,0.04)]" />
             <DropdownMenuGroup>
               <DropdownMenuItem onClick={() => router.push('/profile')} className="gap-2 cursor-pointer">
-                <User className="h-3.5 w-3.5 text-foreground/40" />
+                <User className="h-3.5 w-3.5 text-foreground/60" />
                 <span>Profile</span>
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => router.push('/billing')} className="gap-2 cursor-pointer">
-                <CreditCard className="h-3.5 w-3.5 text-foreground/40" />
+                <CreditCard className="h-3.5 w-3.5 text-foreground/60" />
                 <span>Billing</span>
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => router.push('/settings')} className="gap-2 cursor-pointer">
-                <Settings className="h-3.5 w-3.5 text-foreground/40" />
+                <Settings className="h-3.5 w-3.5 text-foreground/60" />
                 <span>Settings</span>
               </DropdownMenuItem>
               <DropdownMenuItem className="gap-2 cursor-pointer">
-                <HelpCircle className="h-3.5 w-3.5 text-foreground/40" />
+                <HelpCircle className="h-3.5 w-3.5 text-foreground/60" />
                 <span>Help & Support</span>
               </DropdownMenuItem>
             </DropdownMenuGroup>

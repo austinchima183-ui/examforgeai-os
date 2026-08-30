@@ -6,7 +6,7 @@ import { Search, MessageCircle, ArrowRight, ChevronDown } from 'lucide-react'
 import { SectionWrapper } from '@/components/marketing/section-wrapper'
 import { GradientText } from '@/components/marketing/gradient-text'
 import { Button } from '@/components/ui/button'
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
@@ -182,7 +182,7 @@ function FAQItem({
           >
             <ChevronDown className={cn(
               'h-5 w-5 transition-colors duration-200',
-              isOpen ? 'text-primary' : 'text-foreground/35'
+              isOpen ? 'text-primary' : 'text-foreground/60'
             )} />
           </motion.div>
         </button>
@@ -233,7 +233,7 @@ export function FAQSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4 }}
-            className="text-sm font-medium text-foreground/35 uppercase tracking-wider mb-4"
+            className="text-sm font-medium text-foreground/60 uppercase tracking-wider mb-4"
           >
             FAQ
           </motion.p>
@@ -266,13 +266,13 @@ export function FAQSection() {
         >
           {/* Search bar */}
           <div className="relative">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground/35" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground/60" />
             <input
               type="text"
               placeholder="Search questions..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-xl border border-white/[0.06] forge-glass-surface pl-10 pr-4 py-3 text-sm placeholder:text-foreground/35 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all"
+              className="w-full rounded-xl border border-white/[0.06] forge-glass-surface pl-10 pr-4 py-3 text-sm placeholder:text-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all"
               aria-label="Search frequently asked questions"
             />
             {searchQuery && (
@@ -299,48 +299,51 @@ export function FAQSection() {
                 >
                   {cat}
                   {cat !== 'All' && (
-                    <span className="ml-1 text-[10px] text-foreground/35">
+                    <span className="ml-1 text-[10px] text-foreground/60">
                       ({faqs.filter((f) => f.category === cat).length})
                     </span>
                   )}
                 </TabsTrigger>
               ))}
             </TabsList>
+            {/* Per-category content gives every trigger a valid aria-controls target */}
+            {categories.map((cat) => (
+              <TabsContent key={cat} value={cat} className="mt-0">
+                <div className="max-w-3xl mx-auto space-y-3">
+                  {filteredFaqs.length > 0 ? (
+                    filteredFaqs.map((faq, i) => (
+                      <FAQItem
+                        key={faq.question}
+                        question={faq.question}
+                        answer={faq.answer}
+                        isOpen={openIndex === i}
+                        onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+                        index={i}
+                      />
+                    ))
+                  ) : (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="text-center py-12"
+                    >
+                      <p className="text-muted-foreground">No questions found matching &ldquo;{searchQuery}&rdquo;</p>
+                      <button
+                        onClick={() => {
+                          setSearchQuery('')
+                          setActiveCategory('All')
+                        }}
+                        className="mt-2 text-sm text-primary hover:text-primary/80 transition-colors"
+                      >
+                        Clear filters
+                      </button>
+                    </motion.div>
+                  )}
+                </div>
+              </TabsContent>
+            ))}
           </Tabs>
         </motion.div>
-
-        {/* FAQ List */}
-        <div className="max-w-3xl mx-auto space-y-3">
-          {filteredFaqs.length > 0 ? (
-            filteredFaqs.map((faq, i) => (
-              <FAQItem
-                key={faq.question}
-                question={faq.question}
-                answer={faq.answer}
-                isOpen={openIndex === i}
-                onToggle={() => setOpenIndex(openIndex === i ? null : i)}
-                index={i}
-              />
-            ))
-          ) : (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-12"
-            >
-              <p className="text-muted-foreground">No questions found matching &ldquo;{searchQuery}&rdquo;</p>
-              <button
-                onClick={() => {
-                  setSearchQuery('')
-                  setActiveCategory('All')
-                }}
-                className="mt-2 text-sm text-primary hover:text-primary/80 transition-colors"
-              >
-                Clear filters
-              </button>
-            </motion.div>
-          )}
-        </div>
 
         {/* Still have questions? CTA */}
         <motion.div

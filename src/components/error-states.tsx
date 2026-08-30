@@ -207,10 +207,10 @@ export function ErrorState({ message, details, onRetry, errorId }: ErrorStatePro
 
       {details && (
         <details className="mt-3 w-full max-w-md">
-          <summary className="cursor-pointer text-xs text-foreground/40 hover:text-foreground/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded">
+          <summary className="cursor-pointer text-xs text-foreground/60 hover:text-foreground/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded">
             Technical details
           </summary>
-          <pre className="mt-2 max-h-32 overflow-auto rounded-md bg-muted p-3 text-left text-xs text-foreground/40">
+          <pre className="mt-2 max-h-32 overflow-auto rounded-md bg-muted p-3 text-left text-xs text-foreground/60">
             {details}
           </pre>
         </details>

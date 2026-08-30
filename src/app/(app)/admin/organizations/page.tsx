@@ -66,7 +66,7 @@ type SortField = 'name' | 'type' | 'code' | 'status' | 'members'
 type SortDir = 'asc' | 'desc'
 
 function SortIcon({ field, currentField, currentDir }: { field: SortField; currentField: SortField; currentDir: SortDir }) {
-  if (field !== currentField) return <ArrowUpDown className="h-3.5 w-3.5 text-foreground/35" />
+  if (field !== currentField) return <ArrowUpDown className="h-3.5 w-3.5 text-foreground/60" />
   return currentDir === 'asc' ? <ArrowUp className="h-3.5 w-3.5" /> : <ArrowDown className="h-3.5 w-3.5" />
 }
 
@@ -362,7 +362,7 @@ export default function OrganizationsPage() {
           <CardContent className="p-0">
             {filteredAndSorted.length === 0 ? (
               <div className="py-16 text-center">
-                <Building2 className="h-12 w-12 mx-auto text-foreground/30" />
+                <Building2 className="h-12 w-12 mx-auto text-foreground/60" />
                 <h3 className="mt-4 text-lg font-semibold">No organizations found</h3>
                 <p className="text-muted-foreground text-sm">Try adjusting your search or filters</p>
                 <Button variant="outline" className="mt-4" onClick={() => { setSearch(''); setTypeFilter('all'); setStatusFilter('all') }}>

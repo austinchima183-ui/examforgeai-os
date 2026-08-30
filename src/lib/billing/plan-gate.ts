@@ -96,7 +96,8 @@ export function canAccessFeature(
  */
 export async function requirePlan(
   minimumPlan: PlanTier,
-  request: Request
+  request: Request,
+  options?: { organizationId?: string | null }
 ): Promise<NextResponse | null> {
   // ─── Step 1: Authenticate ───────────────────────────────────
   const authResult = await getAuthUser()
@@ -105,22 +106,29 @@ export async function requirePlan(
   }
 
   // ─── Step 2: Resolve tenant ─────────────────────────────────
-  const tenantResult = await resolveTenantForAPI(request as import('next/server').NextRequest)
-  if (!tenantResult.ok || !tenantResult.value) {
-    return NextResponse.json(
-      { error: 'Organization context not found' },
-      { status: 400 }
-    )
+  // Explicit orgId (derived from the authenticated session by the caller)
+  // takes priority — prevents tenant resolution failures for requests
+  // without tenant headers/cookies (single-tenant schools).
+  let organizationId: string | null = options?.organizationId ?? null
+  if (!organizationId) {
+    const tenantResult = await resolveTenantForAPI(request as import('next/server').NextRequest)
+    if (!tenantResult.ok || !tenantResult.value) {
+      return NextResponse.json(
+        { error: 'Organization context not found' },
+        { status: 400 }
+      )
+    }
+    organizationId = tenantResult.value.organizationId
   }
 
-  const organizationId = tenantResult.value.organizationId
-
   // ─── Step 3: Look up organization's active subscription plan ─
+  // NOTE: subscriptions↔plans has no FK relationship in the live schema, so
+  // the tier is resolved with a second query instead of an embedded join.
   const supabase = await createClient()
 
   const { data: subscription, error: subError } = await supabase
     .from('subscriptions')
-    .select('plan_id, status, plans(tier)')
+    .select('plan_id, status')
     .eq('school_id', organizationId)
     .eq('status', 'active')
     .maybeSingle()
@@ -135,7 +143,15 @@ export async function requirePlan(
   }
 
   // If no active subscription, default to 'free' tier
-  const userPlan: PlanTier = (((subscription as unknown as { plans?: { tier: string } | null } | null)?.plans)?.tier as PlanTier) ?? 'free'
+  let userPlan: PlanTier = 'free'
+  if (subscription?.plan_id) {
+    const { data: plan } = await supabase
+      .from('plans')
+      .select('tier')
+      .eq('id', subscription.plan_id)
+      .maybeSingle()
+    if (plan?.tier) userPlan = plan.tier as PlanTier
+  }
 
   // ─── Step 4: Check plan hierarchy ───────────────────────────
   if (!canAccessFeature(userPlan, minimumPlan)) {
@@ -181,10 +197,11 @@ export async function requirePlan(
  */
 export async function requireFeature(
   feature: PlanFeature | string,
-  request: Request
+  request: Request,
+  options?: { organizationId?: string | null }
 ): Promise<NextResponse | null> {
   const requiredPlan = PLAN_FEATURES[feature] ?? 'enterprise' // Default to highest if unknown feature
-  return requirePlan(requiredPlan, request)
+  return requirePlan(requiredPlan, request, options)
 }
 
 // ──────────────────────────────────────────────────────────────

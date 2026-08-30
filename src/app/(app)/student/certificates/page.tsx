@@ -280,22 +280,22 @@ export default function CertificatesPage() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] hover:shadow-[0_2px_8px_rgba(59,130,246,0.15)] transition-all"><CardContent className="p-4 flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-yellow-50 dark:bg-yellow-950/10 border border-white/[0.04] flex items-center justify-center"><Trophy className="h-4 w-4 text-yellow-600 dark:text-yellow-400" /></div>
-            <div><p className="text-xl font-bold">{excellenceCount}</p><p className="text-xs text-foreground/35">Excellence</p></div>
+            <div><p className="text-xl font-bold">{excellenceCount}</p><p className="text-xs text-foreground/60">Excellence</p></div>
           </CardContent>
         </Card>
         <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] hover:shadow-[0_2px_8px_rgba(59,130,246,0.15)] transition-all"><CardContent className="p-4 flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-green-50 dark:bg-green-950/10 border border-white/[0.04] flex items-center justify-center"><Medal className="h-4 w-4 text-green-600 dark:text-green-400" /></div>
-            <div><p className="text-xl font-bold">{meritCount}</p><p className="text-xs text-foreground/35">Merit</p></div>
+            <div><p className="text-xl font-bold">{meritCount}</p><p className="text-xs text-foreground/60">Merit</p></div>
           </CardContent>
         </Card>
         <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] hover:shadow-[0_2px_8px_rgba(59,130,246,0.15)] transition-all"><CardContent className="p-4 flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-sky-500/10 border border-white/[0.04] flex items-center justify-center"><Award className="h-4 w-4 text-sky-500" /></div>
-            <div><p className="text-xl font-bold">{passCount}</p><p className="text-xs text-foreground/35">Achievement</p></div>
+            <div><p className="text-xl font-bold">{passCount}</p><p className="text-xs text-foreground/60">Achievement</p></div>
           </CardContent>
         </Card>
         <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] hover:shadow-[0_2px_8px_rgba(59,130,246,0.15)] transition-all"><CardContent className="p-4 flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-primary/10 border border-white/[0.04] flex items-center justify-center"><GraduationCap className="h-4 w-4 text-primary" /></div>
-            <div><p className="text-xl font-bold">{totalCount}</p><p className="text-xs text-foreground/35">Total earned</p></div>
+            <div><p className="text-xl font-bold">{totalCount}</p><p className="text-xs text-foreground/60">Total earned</p></div>
           </CardContent>
         </Card>
       </div>

@@ -227,7 +227,7 @@ function MegaMenu({ label, items, isOpen, onToggle, onClose, currentPath }: Mega
                           </span>
                         )}
                       </div>
-                      <p className="text-xs text-foreground/35 mt-0.5 line-clamp-1">{item.desc}</p>
+                      <p className="text-xs text-foreground/60 mt-0.5 line-clamp-1">{item.desc}</p>
                     </div>
                   </Link>
                 )
@@ -384,7 +384,7 @@ export function MarketingNav() {
               <Link
                 href="/docs"
                 className={cn(
-                  'flex items-center gap-2 px-2.5 py-1 text-[12px] text-foreground/40',
+                  'flex items-center gap-2 px-2.5 py-1 text-[12px] text-foreground/60',
                   'rounded-md border border-white/[0.06] bg-white/[0.02]',
                   'forge-input-glow transition-colors duration-150',
                   'hover:text-foreground/60 hover:border-white/[0.1]'
@@ -400,7 +400,7 @@ export function MarketingNav() {
 
               <Link
                 href="/login"
-                className="text-[13px] font-medium text-foreground/50 hover:text-foreground/80 transition-colors duration-150"
+                className="text-[13px] font-medium text-foreground/60 hover:text-foreground/80 transition-colors duration-150"
               >
                 Log in
               </Link>
@@ -409,8 +409,9 @@ export function MarketingNav() {
                 size="sm"
                 className={cn(
                   'h-8 px-3.5 text-[13px] font-medium rounded-md',
-                  'bg-[#3B82F6] text-white',
-                  'hover:bg-[#3B82F6]/90 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]',
+                  // #2563EB: AA-compliant shade of electric blue (white 13px text = 5.2:1)
+                  'bg-[#2563EB] text-white',
+                  'hover:bg-[#2563EB]/90 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]',
                   'transition-all duration-200'
                 )}
                 asChild

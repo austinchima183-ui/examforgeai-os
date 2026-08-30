@@ -31,6 +31,8 @@ export interface GoalsWidgetProps {
   title?: string
   description?: string
   className?: string
+  /** Content-only render (no SectionCard frame) — for embedding in WidgetGrid */
+  bare?: boolean
 }
 
 const tone = {
@@ -45,24 +47,17 @@ export function GoalsWidget({
   title = 'Goals',
   description = 'Progress toward your next milestones',
   className,
+  bare = false,
 }: GoalsWidgetProps) {
-  return (
-    <SectionCard
-      title={title}
-      description={description}
-      icon="target"
-      tier="surface"
-      className={className}
-    >
-      {goals.length === 0 ? (
-        <EmptyState
-          icon={<Target className="h-7 w-7" />}
-          title="No goals yet"
-          description="Goals are computed from your real activity — complete work to unlock them."
-        />
-      ) : (
-        <ul className="space-y-4" role="list" aria-label={title}>
-          {goals.map((goal) => {
+  const content = goals.length === 0 ? (
+    <EmptyState
+      icon={<Target className="h-7 w-7" />}
+      title="No goals yet"
+      description="Goals are computed from your real activity — complete work to unlock them."
+    />
+  ) : (
+    <ul className="space-y-4" role="list" aria-label={title}>
+      {goals.map((goal) => {
             const pct = goal.target > 0 ? Math.min(100, Math.round((goal.current / goal.target) * 100)) : 0
             const t = tone[goal.tone ?? 'blue']
             const complete = pct >= 100
@@ -102,8 +97,22 @@ export function GoalsWidget({
               </li>
             )
           })}
-        </ul>
-      )}
+      </ul>
+    )
+
+  if (bare) {
+    return <div className={className}>{content}</div>
+  }
+
+  return (
+    <SectionCard
+      title={title}
+      description={description}
+      icon="target"
+      tier="surface"
+      className={className}
+    >
+      {content}
     </SectionCard>
   )
 }

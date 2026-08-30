@@ -47,12 +47,12 @@ export async function login(page: Page, role: RoleKey) {
   const user = TEST_USERS[role]
   await page.goto('/login', { waitUntil: 'domcontentloaded' })
 
-  const emailInput = page.locator('input[placeholder="you@school.edu"]')
+  const emailInput = page.locator('input[placeholder="you@school.edu"]').first()
   await emailInput.waitFor({ state: 'visible', timeout: 30_000 })
   await page.waitForTimeout(1000) // hydration
   await emailInput.fill(user.email)
 
-  await page.fill('input[placeholder="Enter your password"]', user.password)
+  await page.locator('input[placeholder="Enter your password"]').first().fill(user.password)
   await page.click('button[type="submit"]:has-text("Sign In")')
 
   // Wait for redirect to role dashboard
@@ -138,4 +138,23 @@ export async function expectRedirectedAway(page: Page, deniedRoute: string, allo
     finalPath: pathname,
     isolated: redirected,
   }
+}
+
+// ── Wait for streamed dashboard content ──
+// Server Components stream into <main> after navigation; fixed sleeps are
+// fragile against cold DB connections (sandbox → US edge → EU database).
+// Polls until main has real text content or times out.
+export async function waitForMainContent(page: Page, minChars = 200, timeoutMs = 30_000) {
+  await page
+    .waitForFunction(
+      (min: number) => {
+        const m = document.querySelector('main')
+        return !!m && (m as HTMLElement).innerText.trim().length >= min
+      },
+      minChars,
+      { timeout: timeoutMs }
+    )
+    .catch(() => {
+      // leave the assertion to the caller with a clear message
+    })
 }

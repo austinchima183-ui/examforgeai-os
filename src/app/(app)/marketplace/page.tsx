@@ -158,7 +158,7 @@ export default async function MarketplacePage() {
               <div className="relative mb-6">
                 <div className="absolute inset-0 rounded-2xl bg-primary/10 blur-2xl" />
                 <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl forge-glass-surface border-white/[0.04] forge-card-shadow">
-                  <ShoppingBag className="h-7 w-7 text-foreground/40" />
+                  <ShoppingBag className="h-7 w-7 text-foreground/60" />
                 </div>
               </div>
               <p className="text-base font-medium text-foreground">No products available</p>
@@ -182,7 +182,7 @@ export default async function MarketplacePage() {
                 <div className="relative mb-6">
                   <div className="absolute inset-0 rounded-2xl bg-primary/10 blur-2xl" />
                   <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl forge-glass-surface border-white/[0.04] forge-card-shadow">
-                    <ShoppingBag className="h-6 w-6 text-foreground/40" />
+                    <ShoppingBag className="h-6 w-6 text-foreground/60" />
                   </div>
                 </div>
                 <p className="text-sm font-medium text-foreground">No {categoryLabelMap[cat]?.toLowerCase() ?? cat} available</p>

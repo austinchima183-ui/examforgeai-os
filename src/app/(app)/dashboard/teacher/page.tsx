@@ -1,11 +1,5 @@
 import { requireAnyRole } from '@/lib/auth/require-auth'
-import {
-  Plus,
-  AlertCircle,
-  ClipboardList,
-  ArrowRight,
-  Brain,
-} from 'lucide-react'
+import { Plus, AlertCircle, ArrowRight, Brain } from 'lucide-react'
 import Link from 'next/link'
 import { ROUTES } from '@/lib/constants/routes'
 import { getTeacherStats, getTeacherActivities } from '@/lib/services/dashboard-service'
@@ -14,30 +8,20 @@ import {
   getTeacherUpcomingExams,
   getUpcomingSchoolEvents,
 } from '@/lib/services/dashboard-widget-service'
-import { IntelligentInsights } from '@/components/dashboard/intelligent-insights'
 import {
+  Button,
   DashboardPage,
-  DashboardGrid,
-  GridItem,
-  gridSpans,
   HeroSection,
   KpiCard,
   KpiGrid,
-  SectionCard,
-  ActivityFeed,
   QuickActions,
-  PerformanceBarWidget,
-  UpcomingTasksWidget,
-  MiniCalendarWidget,
-  AnnouncementsWidget,
-  GoalsWidget,
-  EmptyState,
-  Button,
+  SectionCard,
   getGreeting,
   type ActivityFeedItem,
   type TaskItem,
   type CalendarDayEvent,
 } from '@/components/system'
+import { TeacherWidgets } from '@/components/dashboards/teacher-widgets'
 
 export const dynamic = 'force-dynamic'
 
@@ -326,116 +310,24 @@ export default async function TeacherDashboard() {
       {/* ── Quick Actions ─────────────────────────────────────────────── */}
       <QuickActions actions={quickActionItems} cols={3} />
 
-      {/* ── Main widget grid (12/8/4) ────────────────────────────────── */}
-      <DashboardGrid>
-        {/* Exam performance — REAL per-exam averages */}
-        <GridItem span={gridSpans.wide}>
-          <PerformanceBarWidget
-            data={performanceChartData}
-            title="Exam Performance"
-            description="Average score across your exams"
-            icon="bar-chart3"
-            emptyTitle="No graded exams yet"
-            emptyDescription="Average scores appear once students complete your exams."
-          />
-        </GridItem>
-
-        {/* Upcoming exams — REAL tasks */}
-        <GridItem span={gridSpans.third}>
-          <UpcomingTasksWidget
-            tasks={tasks}
-            title="Exam Schedule"
-            description="Your upcoming exam windows"
-            emptyAction={{ label: 'Create an exam', href: ROUTES.EXAM_CREATE }}
-          />
-        </GridItem>
-
-        {/* Goals — computed from real metrics */}
-        <GridItem span={gridSpans.third}>
-          <GoalsWidget goals={goals} />
-        </GridItem>
-
-        {/* Calendar — real events */}
-        <GridItem span={gridSpans.third}>
-          <MiniCalendarWidget events={calendarEvents} />
-        </GridItem>
-
-        {/* Teacher tools */}
-        <GridItem span={gridSpans.wide}>
-          <div>
-            <div className="mb-4 flex items-center gap-3">
-              <h2 className="text-lg font-semibold tracking-tight">Teacher Tools</h2>
-              <div className="h-px flex-1 bg-gradient-to-r from-border/40 to-transparent" />
-            </div>
-            <QuickActions actions={teacherTools} cols={4} />
-          </div>
-        </GridItem>
-
-        {/* Announcements — real school events */}
-        <GridItem span={gridSpans.third}>
-          <AnnouncementsWidget
-            announcements={schoolEvents.map((e) => ({
-              id: e.id,
-              title: e.title,
-              event_type: e.event_type,
-              start_date: e.start_date,
-            }))}
-          />
-        </GridItem>
-
-        {/* AI insights */}
-        <GridItem span={gridSpans.wide}>
-          <IntelligentInsights role={user.role} userId={user.id} schoolId={user.schoolId} />
-        </GridItem>
-
-        {/* AI Copilot shortcut */}
-        <GridItem span={gridSpans.third}>
-          <SectionCard
-            title="AI Copilot"
-            description="Generate questions, worksheets, lesson plans"
-            icon="brain"
-            tier="surface"
-            action={
-              <Button asChild size="sm" variant="ghost">
-                <Link href={ROUTES.TEACHER_AI_QUESTION_GENERATOR}>
-                  Open
-                  <ArrowRight className="h-3 w-3" />
-                </Link>
-              </Button>
-            }
-          >
-            <p className="text-xs leading-relaxed text-muted-foreground">
-              Your AI copilot helps you create exam questions, build worksheets,
-              draft lesson plans, and analyze student performance — all in seconds.
-            </p>
-          </SectionCard>
-        </GridItem>
-
-        {/* Recent Activity — real feed */}
-        <GridItem span={gridSpans.full}>
-          <SectionCard
-            title="Recent Activity"
-            description="Latest exam, question, and grading events"
-            icon="clock"
-            tier="surface"
-            animate
-          >
-            {feedItems.length === 0 ? (
-              <EmptyState
-                icon={<ClipboardList className="h-7 w-7" />}
-                title="No activity yet"
-                description="Create an exam or generate questions to see your activity here."
-                primaryAction={{
-                  label: 'Create your first exam',
-                  href: ROUTES.EXAM_CREATE,
-                }}
-              />
-            ) : (
-              <ActivityFeed items={feedItems} maxItems={10} />
-            )}
-          </SectionCard>
-        </GridItem>
-      </DashboardGrid>
+      {/* ── Interactive widget grid — drag / resize / collapse / refresh ── */}
+      <TeacherWidgets
+        role={user.role}
+        userId={user.id}
+        schoolId={user.schoolId ?? ''}
+        performanceChartData={performanceChartData}
+        tasks={tasks}
+        goals={goals}
+        calendarEvents={calendarEvents}
+        announcements={schoolEvents.map((e) => ({
+          id: e.id,
+          title: e.title,
+          event_type: e.event_type,
+          start_date: e.start_date,
+        }))}
+        feedItems={feedItems}
+        teacherTools={teacherTools}
+      />
     </DashboardPage>
   )
 }

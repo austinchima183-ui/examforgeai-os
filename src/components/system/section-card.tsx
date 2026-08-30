@@ -1,7 +1,6 @@
 'use client'
 
 import * as React from 'react'
-import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import type { GlassTier } from '@/lib/design/system'
 import { glassTiers } from '@/lib/design/system'
@@ -101,9 +100,9 @@ export function SectionCard({
             )}
             <div className="min-w-0">
               {title && (
-                <h3 className="text-sm font-semibold text-foreground leading-tight">
+                <h2 className="text-sm font-semibold text-foreground leading-tight">
                   {title}
-                </h3>
+                </h2>
               )}
               {description && (
                 <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
@@ -130,17 +129,14 @@ export function SectionCard({
 
   if (!animate) return card
 
+  // CSS-driven entrance — runs at first paint, not gated on React hydration
+  // (framer-motion initial={opacity:0} hid cards until JS finished on mobile).
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.4,
-        delay: index * 0.05,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      }}
+    <div
+      style={{ animationDelay: `${Math.min(index, 8) * 50}ms` }}
+      className="animate-in fade-in slide-in-from-bottom-2 duration-400 fill-mode-both motion-reduce:animate-none motion-reduce:transform-none"
     >
       {card}
-    </motion.div>
+    </div>
   )
 }

@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { TrendingUp, TrendingDown, Minus, type LucideIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { trendConfig, type TrendDirection } from '@/lib/design/system'
@@ -171,20 +170,20 @@ export function KpiCard({
     className,
   )
 
+  // CSS-driven entrance (runs at first paint — not gated on React hydration,
+  // so KPI values are visible for LCP immediately). Staggered via animation-delay.
+  // framer-motion is kept OUT of the critical path here entirely.
   const motionWrapper = (children: React.ReactNode) => (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.4,
-        delay: index * 0.05,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      }}
-      whileHover={interactive ? { y: -2 } : undefined}
-      className="group h-full"
+    <div
+      style={{ animationDelay: `${Math.min(index, 8) * 50}ms` }}
+      className={cn(
+        'group h-full',
+        'animate-in fade-in slide-in-from-bottom-2 duration-400 fill-mode-both motion-reduce:animate-none motion-reduce:transform-none',
+        interactive && 'transition-transform hover:-translate-y-0.5',
+      )}
     >
       {children}
-    </motion.div>
+    </div>
   )
 
   if (href) {

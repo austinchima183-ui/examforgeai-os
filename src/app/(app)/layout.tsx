@@ -8,16 +8,13 @@ import { GlobalSearchProvider } from '@/components/search/global-search-provider
 
 // Lazy-loaded heavy providers/components — reduces initial JS bundle
 const AiCopilotProvider = dynamic(
-  () => import('@/components/ai/ai-copilot-provider').then((m) => m.AiCopilotProvider),
-  { ssr: false }
+  () => import('@/components/ai/ai-copilot-provider').then((m) => m.AiCopilotProvider)
 )
 const ContextualAIAssistant = dynamic(
-  () => import('@/components/ai/contextual-ai-assistant').then((m) => m.ContextualAIAssistant),
-  { ssr: false }
+  () => import('@/components/ai/contextual-ai-assistant').then((m) => m.ContextualAIAssistant)
 )
 const CommandPaletteProvider = dynamic(
-  () => import('@/components/command-palette').then((m) => m.CommandPaletteProvider),
-  { ssr: false }
+  () => import('@/components/command-palette').then((m) => m.CommandPaletteProvider)
 )
 
 // ============================================================================

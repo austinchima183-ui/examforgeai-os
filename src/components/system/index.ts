@@ -104,7 +104,14 @@ export {
   WidgetEmptyState,
   WidgetErrorState,
 } from './widget-grid'
-export type { WidgetGridProps, WidgetDef } from './widget-grid'
+export type { WidgetGridProps, WidgetDef, WidgetCategory } from './widget-grid'
+export { WIDGET_CATEGORY_LABELS } from './widget-grid'
+
+// ─── Widget system 3.0 — marketplace + toolbar ────────────────────────────
+export { WidgetMarketplace } from './widget-marketplace'
+export type { WidgetMarketplaceProps } from './widget-marketplace'
+export { WidgetToolbar } from './widget-toolbar'
+export type { WidgetToolbarProps } from './widget-toolbar'
 
 // ─── UX 2.0 — Dashboard grid system, hero, animated counters ──────────────
 export { DashboardGrid, GridItem, gridSpans } from './dashboard-grid'
@@ -224,3 +231,5 @@ export { Switch } from '@/components/ui/switch'
 export { Progress } from '@/components/ui/progress'
 export { EmptyState } from '@/components/ui/empty-state'
 export type { EmptyStateProps } from '@/components/ui/empty-state'
+export { DockPanel, DockTrigger } from '@/components/system/dock-panel'
+export type { DockPanelProps, DockSide } from '@/components/system/dock-panel'

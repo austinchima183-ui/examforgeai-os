@@ -269,7 +269,7 @@ export function ResetPasswordForm() {
           {/* Bottom: System status — minimal */}
           <div className="flex items-center gap-2.5">
             <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs text-foreground/40 font-mono tracking-wide">All systems operational</span>
+            <span className="text-xs text-foreground/60 font-mono tracking-wide">All systems operational</span>
           </div>
         </div>
       </div>
@@ -372,7 +372,7 @@ export function ResetPasswordForm() {
                 <p className="text-center">
                   <Link
                     href={ROUTES.LOGIN}
-                    className="inline-flex items-center text-sm text-foreground/40 hover:text-foreground/70 transition-colors focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+                    className="inline-flex items-center text-sm text-foreground/60 hover:text-foreground/70 transition-colors focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
                   >
                     Back to Sign In
                   </Link>
@@ -466,7 +466,7 @@ export function ResetPasswordForm() {
                                 <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/40 pointer-events-none" aria-hidden="true" />
                                 <button
                                   type="button"
-                                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-foreground/35 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+                                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-foreground/60 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
                                   onClick={() => setShowPassword((v) => !v)}
                                   aria-label={showPassword ? 'Hide password' : 'Show password'}
                                   tabIndex={0}
@@ -475,7 +475,7 @@ export function ResetPasswordForm() {
                                 </button>
                               </div>
                             </FormControl>
-                            <FormDescription className="text-xs text-foreground/35">
+                            <FormDescription className="text-xs text-foreground/60">
                               At least 8 characters with uppercase, lowercase, and a number
                             </FormDescription>
                             <FormMessage />
@@ -502,7 +502,7 @@ export function ResetPasswordForm() {
                                 <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/40 pointer-events-none" aria-hidden="true" />
                                 <button
                                   type="button"
-                                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-foreground/35 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+                                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-foreground/60 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
                                   onClick={() => setShowConfirmPassword((v) => !v)}
                                   aria-label={showConfirmPassword ? 'Hide confirm password' : 'Show confirm password'}
                                   tabIndex={0}
@@ -564,7 +564,7 @@ export function ResetPasswordForm() {
                 <motion.p className="mt-6 text-center" variants={fadeUp}>
                   <Link
                     href={ROUTES.LOGIN}
-                    className="inline-flex items-center text-sm text-foreground/40 hover:text-foreground/70 transition-colors focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+                    className="inline-flex items-center text-sm text-foreground/60 hover:text-foreground/70 transition-colors focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
                   >
                     Back to Sign In
                   </Link>

@@ -5,7 +5,7 @@
 // ============================================================================
 
 import { test, expect } from '@playwright/test'
-import { login, logout, shot, collectConsoleErrors } from './helpers'
+import { login, logout, shot, collectConsoleErrors, waitForMainContent } from './helpers'
 
 test.describe('School Admin Journey (full E2E, video recorded)', () => {
   test('login → dashboard → users → school management → billing → isolation → logout', async ({ page }) => {
@@ -13,7 +13,7 @@ test.describe('School Admin Journey (full E2E, video recorded)', () => {
 
     // ── 1. LOGIN ──
     await login(page, 'school_admin')
-    await page.waitForTimeout(2500)
+    await waitForMainContent(page)
     await shot(page, '04-school-admin-dashboard')
 
     expect(page.url()).toContain('/dashboard/school-admin')

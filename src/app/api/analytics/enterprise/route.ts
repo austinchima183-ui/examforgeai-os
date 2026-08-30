@@ -36,10 +36,6 @@ function mapPeriod(period: typeof VALID_PERIODS[number]): AnalyticsTimePeriod {
 // GET /api/analytics/enterprise — Get analytics dashboard
 // type: financial | academic | government | risk | enrollment | ai
 export async function GET(req: NextRequest) {
-  // ─── Feature gate: Enterprise analytics requires Enterprise ───
-  const featureDenial = await requireFeature('enterprise_analytics', req)
-  if (featureDenial) return featureDenial
-
   try {
     // Rate limit
     const { allowed, retryAfter } = await apiRateLimit(req, RATE_LIMITS.standard)
@@ -57,6 +53,14 @@ export async function GET(req: NextRequest) {
         { status: 400 }
       )
     }
+
+    // ─── Feature gate: Enterprise analytics requires Enterprise ───
+    // Runs AFTER session-derived tenant resolution so single-tenant schools
+    // without tenant headers/cookies resolve correctly.
+    const featureDenial = await requireFeature('enterprise_analytics', req, {
+      organizationId: tenant.organizationId,
+    })
+    if (featureDenial) return featureDenial
 
     const { searchParams } = new URL(req.url)
     const queryObj = Object.fromEntries(searchParams.entries())

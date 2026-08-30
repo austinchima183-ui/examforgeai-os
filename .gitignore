@@ -40,14 +40,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-local-*
+/local-*
 .claude
 .z-ai-config
 *.log
 dev.log
 dev.out.log
-test
-prompt
+/test
+/prompt
 
 server.log
 # Skills directory
@@ -57,3 +57,6 @@ server.log
 upload/
 tool-results/
 *.env.local
+
+# Runtime auth artifacts (session cookies) — never commit
+scripts/omega/.cookies/

@@ -90,7 +90,7 @@ function SheetContent({
           className={cn(
             "absolute top-4 right-4",
             "rounded-md p-1",
-            "text-foreground/40",
+            "text-foreground/60",
             "transition-all duration-200",
             "hover:text-foreground hover:bg-white/[0.04]",
             "focus:ring-2 focus:ring-ring/30 focus:outline-hidden",

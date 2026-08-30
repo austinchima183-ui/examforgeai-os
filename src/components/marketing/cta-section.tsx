@@ -132,7 +132,7 @@ export function CTASection() {
               </div>
 
               {/* Trust line */}
-              <p className="mt-6 text-sm text-foreground/35 text-center">
+              <p className="mt-6 text-sm text-foreground/60 text-center">
                 Free 14-day trial · No credit card required · Cancel anytime
               </p>
 
@@ -141,7 +141,7 @@ export function CTASection() {
                 <p className="text-sm text-muted-foreground text-center mb-1">
                   Not ready yet? Stay in the loop:
                 </p>
-                <p className="text-xs text-foreground/35 text-center mb-4">
+                <p className="text-xs text-foreground/60 text-center mb-4">
                   Get product updates, EdTech insights, and exclusive early access.
                 </p>
                 <NewsletterForm />

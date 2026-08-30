@@ -175,7 +175,7 @@ function WorkspaceSwitcher({ collapsed }: { collapsed: boolean }) {
           </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent side="right" sideOffset={8} align="start" className="w-56 forge-glass-elevated border-[rgba(255,255,255,0.08)]">
-          <DropdownMenuLabel className="text-[11px] text-foreground/40">Workspaces</DropdownMenuLabel>
+          <DropdownMenuLabel className="text-[11px] text-foreground/60">Workspaces</DropdownMenuLabel>
           {workspaces.map((w) => (
             <DropdownMenuItem key={w.id} onClick={() => { setActiveWorkspace(w.id); router.push(w.href) }} className="gap-2 text-[12px]">
               <w.icon className="h-3.5 w-3.5" aria-hidden="true" />
@@ -216,7 +216,7 @@ function WorkspaceSwitcher({ collapsed }: { collapsed: boolean }) {
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent side="bottom" align="start" sideOffset={6} className="w-60 forge-glass-elevated border-[rgba(255,255,255,0.08)]">
-        <DropdownMenuLabel className="text-[11px] text-foreground/40 flex items-center justify-between">
+        <DropdownMenuLabel className="text-[11px] text-foreground/60 flex items-center justify-between">
           <span>Workspaces</span>
           {role && (
             <Badge variant="secondary" className="text-[9px] h-4 px-1.5">
@@ -235,7 +235,7 @@ function WorkspaceSwitcher({ collapsed }: { collapsed: boolean }) {
             className="gap-2.5 py-1.5"
             aria-label={`Switch to ${w.label}`}
           >
-            <w.icon className={cn('h-4 w-4 shrink-0', activeWorkspace === w.id ? 'text-primary' : 'text-foreground/40')} aria-hidden="true" />
+            <w.icon className={cn('h-4 w-4 shrink-0', activeWorkspace === w.id ? 'text-primary' : 'text-foreground/60')} aria-hidden="true" />
             <div className="flex-1 min-w-0">
               <p className="text-[12px] font-medium text-foreground/80 truncate">{w.label}</p>
               <p className="text-[10px] text-foreground/55 truncate">{w.hint}</p>
@@ -247,7 +247,7 @@ function WorkspaceSwitcher({ collapsed }: { collapsed: boolean }) {
         ))}
         {workspaces.length === 0 && (
           <div className="px-2 py-3 text-center">
-            <p className="text-[11px] text-foreground/40">No workspaces available</p>
+            <p className="text-[11px] text-foreground/60">No workspaces available</p>
           </div>
         )}
         <DropdownMenuSeparator className="bg-[rgba(255,255,255,0.06)]" />
@@ -255,7 +255,7 @@ function WorkspaceSwitcher({ collapsed }: { collapsed: boolean }) {
           onClick={() => router.push(ROUTES.DASHBOARD)}
           className="gap-2.5"
         >
-          <Building2 className="h-4 w-4 text-foreground/40" aria-hidden="true" />
+          <Building2 className="h-4 w-4 text-foreground/60" aria-hidden="true" />
           <div className="flex-1">
             <p className="text-[12px] font-medium text-foreground/80">Main Dashboard</p>
             <p className="text-[10px] text-foreground/55">Overview & analytics</p>
@@ -291,7 +291,7 @@ function SectionHeader({
     >
       <ChevronRight
         className={cn(
-          'h-2.5 w-2.5 text-foreground/25 transition-transform duration-200 group-hover/section:text-foreground/50',
+          'h-2.5 w-2.5 text-foreground/60 transition-transform duration-200 group-hover/section:text-foreground/60',
           !isCollapsed && 'rotate-90'
         )}
         aria-hidden="true"
@@ -385,7 +385,7 @@ function SidebarNavItem({
           'h-4 w-4 shrink-0 transition-all duration-200',
           isActive
             ? 'text-primary'
-            : 'text-foreground/25 group-hover:text-foreground/50'
+            : 'text-foreground/60 group-hover:text-foreground/60'
         )}
         aria-hidden="true"
       />
@@ -451,7 +451,7 @@ function SidebarNavItem({
             )}
           </div>
           {isActive && (
-            <p className="mt-1.5 border-t border-white/[0.05] pt-1.5 text-[10px] text-foreground/40">
+            <p className="mt-1.5 border-t border-white/[0.05] pt-1.5 text-[10px] text-foreground/60">
               Current page
             </p>
           )}
@@ -582,14 +582,17 @@ function NavContextMenu({
           left: state.x,
           zIndex: 100,
         }}
+        role="menu"
+        aria-label={`${item.title} actions`}
         className="w-48 rounded-md forge-glass-elevated border border-[rgba(255,255,255,0.08)] p-1 shadow-2xl"
       >
         <div className="px-2 py-1.5 border-b border-[rgba(255,255,255,0.06)] mb-1">
-          <p className="text-[11px] text-foreground/40 truncate">{item.title}</p>
+          <p className="text-[11px] text-foreground/60 truncate">{item.title}</p>
         </div>
         {actions.map((a) => (
           <button
             key={a.label}
+            role="menuitem"
             onClick={a.onClick}
             className="w-full flex items-center gap-2 px-2 py-1.5 text-[12px] text-foreground/60 hover:text-foreground hover:bg-[#1A1A1A] rounded-sm transition-colors"
           >
@@ -795,13 +798,13 @@ export function EnterpriseSidebar({ collapsed, onToggleCollapse }: SidebarProps)
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Filter navigation..."
-              className="w-full h-7 pl-7 pr-2 text-[12px] bg-[#111111] border border-[rgba(255,255,255,0.06)] rounded-md text-foreground/70 placeholder:text-foreground/30 focus:outline-none focus:ring-1 focus:ring-primary/40 focus:border-primary/30 transition-all"
+              className="w-full h-7 pl-7 pr-2 text-[12px] bg-[#111111] border border-[rgba(255,255,255,0.06)] rounded-md text-foreground/70 placeholder:text-foreground/60 focus:outline-none focus:ring-1 focus:ring-primary/40 focus:border-primary/30 transition-all"
               aria-label="Filter sidebar navigation"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-1.5 top-1/2 -translate-y-1/2 h-4 w-4 rounded hover:bg-[#1A1A1A] flex items-center justify-center text-foreground/40 hover:text-foreground/70"
+                className="absolute right-1.5 top-1/2 -translate-y-1/2 h-4 w-4 rounded hover:bg-[#1A1A1A] flex items-center justify-center text-foreground/60 hover:text-foreground/70"
                 aria-label="Clear search"
               >
                 <X className="h-2.5 w-2.5" aria-hidden="true" />
@@ -902,7 +905,7 @@ export function EnterpriseSidebar({ collapsed, onToggleCollapse }: SidebarProps)
                   className="group relative flex items-center gap-3 rounded-md px-3 py-1.5 text-[13px] font-medium text-foreground/55 hover:bg-[#1A1A1A] hover:text-foreground/80 transition-all duration-200"
                 >
                   <Clock
-                    className="h-3 w-3 shrink-0 text-foreground/20 group-hover:text-foreground/40"
+                    className="h-3 w-3 shrink-0 text-foreground/20 group-hover:text-foreground/60"
                     aria-hidden="true"
                   />
                   <span className="truncate">{page.title}</span>
@@ -946,41 +949,45 @@ export function EnterpriseSidebar({ collapsed, onToggleCollapse }: SidebarProps)
                   <Separator className="my-1.5 mx-1 bg-[rgba(255,255,255,0.04)]" />
                 )}
 
-                <AnimatePresence initial={false}>
-                  {(!sectionCollapsed || searchQuery) && (
-                    <motion.div
-                      key="section-items"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2, ease: 'easeOut' }}
-                      style={{ overflow: 'hidden' }}
-                      id={sectionId ? `${sectionId}-items` : undefined}
-                    >
-                      {section.items.map((item: NavItem, itemIndex: number) => {
-                        let globalIndex = 0
-                        for (let s = 0; s < sectionIndex; s++) {
-                          globalIndex += filteredNav[s].items.length
-                        }
-                        globalIndex += itemIndex
+                {/* Persistent wrapper with the aria-controls target ID —
+                    must ALWAYS exist in the DOM so the SectionHeader's
+                    aria-controls resolves (WCAG 4.1.2 / axe aria-valid-attr-value). */}
+                <div id={sectionId ? `${sectionId}-items` : undefined}>
+                  <AnimatePresence initial={false}>
+                    {(!sectionCollapsed || searchQuery) && (
+                      <motion.div
+                        key="section-items"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2, ease: 'easeOut' }}
+                        style={{ overflow: 'hidden' }}
+                      >
+                        {section.items.map((item: NavItem, itemIndex: number) => {
+                          let globalIndex = 0
+                          for (let s = 0; s < sectionIndex; s++) {
+                            globalIndex += filteredNav[s].items.length
+                          }
+                          globalIndex += itemIndex
 
-                        return (
-                          <SidebarNavItem
-                            key={item.href}
-                            item={item}
-                            isActive={isItemActive(item.href)}
-                            collapsed={effectivelyCollapsed}
-                            itemIndex={globalIndex}
-                            onKeyDown={handleNavKeyDown}
-                            onContextMenu={handleContextMenu}
-                            onToggleFavorite={toggleFavorite}
-                            isFavorite={favorites.includes(item.href)}
-                          />
-                        )
-                      })}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                          return (
+                            <SidebarNavItem
+                              key={item.href}
+                              item={item}
+                              isActive={isItemActive(item.href)}
+                              collapsed={effectivelyCollapsed}
+                              itemIndex={globalIndex}
+                              onKeyDown={handleNavKeyDown}
+                              onContextMenu={handleContextMenu}
+                              onToggleFavorite={toggleFavorite}
+                              isFavorite={favorites.includes(item.href)}
+                            />
+                          )
+                        })}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               </div>
             )
           })}
@@ -989,7 +996,7 @@ export function EnterpriseSidebar({ collapsed, onToggleCollapse }: SidebarProps)
           {searchQuery && filteredNav.length === 0 && (
             <div className="px-3 py-8 text-center">
               <Search className="h-6 w-6 text-foreground/20 mx-auto mb-2" aria-hidden="true" />
-              <p className="text-[12px] text-foreground/40">No pages match</p>
+              <p className="text-[12px] text-foreground/60">No pages match</p>
               <p className="text-[10px] text-foreground/55 mt-0.5">"{searchQuery}"</p>
             </div>
           )}

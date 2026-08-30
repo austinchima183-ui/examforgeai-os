@@ -111,7 +111,7 @@ function DraggableNode({ node, isSelected, onClick }: { node: WorkflowNode; isSe
       {...attributes}
     >
       <div className="flex items-center gap-2 mb-1.5">
-        <GripVertical className="h-3.5 w-3.5 text-foreground/30 shrink-0" />
+        <GripVertical className="h-3.5 w-3.5 text-foreground/60 shrink-0" />
         <Icon className={`h-4 w-4 ${colors.icon} shrink-0`} />
         <span className="text-sm font-medium truncate flex-1">{node.name}</span>
       </div>
@@ -161,7 +161,7 @@ function ConnectionLines({ connections, nodes }: { connections: Connection[]; no
         const path = `M ${x1} ${y1} C ${x1} ${midY}, ${x2} ${midY}, ${x2} ${y2}`
         return (
           <g key={i}>
-            <path d={path} stroke="currentColor" strokeWidth="2" fill="none" className="text-foreground/30" markerEnd="url(#arrowhead)" />
+            <path d={path} stroke="currentColor" strokeWidth="2" fill="none" className="text-foreground/60" markerEnd="url(#arrowhead)" />
             {conn.label && (
               <g>
                 <rect x={(x1 + x2) / 2 - 14} y={midY - 8} width="28" height="16" rx="4" className="fill-background stroke-muted-foreground/30" strokeWidth="1" />
@@ -183,7 +183,7 @@ function NodeConfigPanel({ node }: { node: WorkflowNode | null }) {
   if (!node) {
     return (
       <div className="text-center py-8">
-        <CircleDot className="h-8 w-8 mx-auto text-foreground/30 mb-3" />
+        <CircleDot className="h-8 w-8 mx-auto text-foreground/60 mb-3" />
         <p className="text-sm font-medium text-muted-foreground">Select a node to configure</p>
         <p className="text-xs text-muted-foreground mt-1">Click any node in the editor</p>
       </div>

@@ -141,7 +141,7 @@ function FooterLink({ href, label }: { href: string; label: string }) {
       <Link
         href={href}
         className={cn(
-          'text-[13px] text-foreground/35',
+          'text-[13px] text-foreground/60',
           'transition-colors duration-150',
           'hover:text-foreground/70',
           'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#3B82F6]/40 rounded-sm'
@@ -180,7 +180,7 @@ export function MarketingFooter() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
             <div>
               <h3 className="text-[13px] font-medium text-foreground/70">Stay up to date</h3>
-              <p className="text-[12px] text-foreground/30 mt-1 max-w-sm">
+              <p className="text-[12px] text-foreground/60 mt-1 max-w-sm">
                 Product updates and insights. No spam, unsubscribe anytime.
               </p>
             </div>
@@ -192,7 +192,7 @@ export function MarketingFooter() {
         <div className="py-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {Object.values(footerLinks).map((section) => (
             <div key={section.title}>
-              <h4 className="text-[11px] font-semibold uppercase tracking-[0.08em] text-foreground/40 mb-3">{section.title}</h4>
+              <h4 className="text-[11px] font-semibold uppercase tracking-[0.08em] text-foreground/60 mb-3">{section.title}</h4>
               <ul className="space-y-2" role="list">
                 {section.links.map((link) => (
                   <FooterLink key={link.label} href={link.href} label={link.label} />
@@ -216,7 +216,7 @@ export function MarketingFooter() {
                 </span>
               </div>
 
-              <p className="text-[11px] text-foreground/25">
+              <p className="text-[11px] text-foreground/55">
                 &copy; {new Date().getFullYear()} ExamForge AI. All rights reserved.
               </p>
 
@@ -249,12 +249,12 @@ export function MarketingFooter() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
                 {/* Version */}
-                <span className="text-[10px] font-mono text-foreground/20">v2.4.0</span>
+                <span className="text-[10px] font-mono text-foreground/55">v2.4.0</span>
 
                 {/* Status indicator */}
                 <a
                   href="/status"
-                  className="flex items-center gap-1.5 text-[10px] text-foreground/25 hover:text-foreground/40 transition-colors duration-150"
+                  className="flex items-center gap-1.5 text-[10px] text-foreground/55 hover:text-foreground/70 transition-colors duration-150"
                 >
                   <span className="relative flex h-1.5 w-1.5">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400/40" />
@@ -270,7 +270,7 @@ export function MarketingFooter() {
                   <button
                     onClick={() => setLangOpen(!langOpen)}
                     className={cn(
-                      'flex items-center gap-1 px-2 py-1 rounded-md text-[10px] text-foreground/25',
+                      'flex items-center gap-1 px-2 py-1 rounded-md text-[10px] text-foreground/55',
                       'border border-white/[0.04] bg-white/[0.01]',
                       'hover:text-foreground/40 hover:border-white/[0.08] transition-all duration-150',
                       'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#3B82F6]/40'
@@ -329,7 +329,7 @@ export function MarketingFooter() {
                 <button
                   onClick={scrollToTop}
                   className={cn(
-                    'flex items-center gap-1 px-2 py-1 rounded-md text-[10px] text-foreground/25',
+                    'flex items-center gap-1 px-2 py-1 rounded-md text-[10px] text-foreground/55',
                     'border border-white/[0.04] bg-white/[0.01]',
                     'hover:text-foreground/40 hover:border-white/[0.08] transition-all duration-150',
                     'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#3B82F6]/40'

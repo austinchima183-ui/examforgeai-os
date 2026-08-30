@@ -1,0 +1,151 @@
+# ============================================================================
+# ExamForge AI Ω — Automated Verification Workflow
+# ============================================================================
+# Runs the full verification suite on every push and pull request:
+#   1. TypeScript check (0 errors required)
+#   2. ESLint (0 errors required)
+#   3. Unit tests (vitest)
+#   4. Production build
+#   5. Playwright E2E with VIDEOS + SCREENSHOTS + TRACES + HTML report
+#      (Landing · Student · Teacher · Parent · School Admin · Super Admin ·
+#       RBAC matrix · CBT flow · AI/API · Widget System 3.0)
+#
+# All evidence is archived as build artifacts (retained 30 days).
+# The widget-interaction and sidebar-interaction videos required by the
+# verification mandate are recorded automatically by Playwright (video: 'on').
+# ============================================================================
+
+name: Verification Suite
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+concurrency:
+  group: verification-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_OPTIONS: --max-old-space-size=4096
+
+jobs:
+  verify:
+    name: Type · Lint · Unit · Build · E2E (video evidence)
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      # ── Gate 1: TypeScript ─────────────────────────────────────────
+      - name: TypeScript check
+        run: npx tsc --noEmit
+
+      # ── Gate 2: ESLint ─────────────────────────────────────────────
+      - name: ESLint
+        run: npx eslint src/ --max-warnings=10000
+
+      # ── Gate 3: Unit tests ─────────────────────────────────────────
+      - name: Unit tests
+        run: npx vitest run
+        env:
+          # Placeholder secrets — unit tests mock all network calls
+          NEXT_PUBLIC_SUPABASE_URL: https://test-project.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: test-anon-key
+          SESSION_TOKEN_SECRET: ci-session-secret-0123456789abcdef
+          CSRF_SECRET: ci-csrf-secret-0123456789abcdef
+          ENCRYPTION_KEY: ci-encryption-key-0123456789abcdef
+          FLUTTERWAVE_PUBLIC_KEY: FLWPUBK_CI-placeholder
+          FLUTTERWAVE_SECRET_KEY: FLWSECK_CI-placeholder
+          RESEND_API_KEY: re_ci_placeholder
+          OPENAI_API_KEY: sk-ci-placeholder
+          GEMINI_API_KEY: gemini-ci-placeholder
+
+      # ── Gate 4: Production build ───────────────────────────────────
+      - name: Production build
+        run: npx next build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://test-project.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: test-anon-key
+          NEXT_PUBLIC_APP_URL: http://localhost:3000
+          SESSION_TOKEN_SECRET: ci-session-secret-0123456789abcdef
+          CSRF_SECRET: ci-csrf-secret-0123456789abcdef
+          ENCRYPTION_KEY: ci-encryption-key-0123456789abcdef
+          FLUTTERWAVE_PUBLIC_KEY: FLWPUBK_CI-placeholder
+          FLUTTERWAVE_SECRET_KEY: FLWSECK_CI-placeholder
+          SUPABASE_SERVICE_ROLE_KEY: eyJhbGciOiJIUzI1NiJ9.ci-placeholder.service.key
+
+      # ── Gate 5: E2E with video evidence ────────────────────────────
+      # Starts the production server and runs the full E2E suite against it.
+      - name: Run E2E verification suite (videos + screenshots + traces)
+        run: |
+          npx next start -p 3000 &
+          npx wait-on http://localhost:3000/login --timeout 60000
+          npx playwright test
+        env:
+          # Configure SUPABASE_URL / SUPABASE_ANON_KEY as repository secrets
+          # (public values) pointing at the Supabase project that hosts the
+          # E2E test users, so the role journeys can authenticate for real.
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL || 'https://test-project.supabase.co' }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY || 'test-anon-key' }}
+          NEXT_PUBLIC_APP_URL: http://localhost:3000
+          SESSION_TOKEN_SECRET: ci-session-secret-0123456789abcdef
+          CSRF_SECRET: ci-csrf-secret-0123456789abcdef
+          ENCRYPTION_KEY: ci-encryption-key-0123456789abcdef
+          FLUTTERWAVE_PUBLIC_KEY: FLWPUBK_CI-placeholder
+          FLUTTERWAVE_SECRET_KEY: FLWSECK_CI-placeholder
+          SUPABASE_SERVICE_ROLE_KEY: eyJhbGciOiJIUzI1NiJ9.ci-placeholder.service.key
+          # E2E test users (CI-only fixtures in the Supabase test project)
+          # Override these if the CI Supabase project differs.
+          E2E_STUDENT_EMAIL: ${{ vars.E2E_STUDENT_EMAIL || 'prod-final-1787626351@examforge-test.com' }}
+          E2E_STUDENT_PASSWORD: ${{ secrets.E2E_STUDENT_PASSWORD || 'SecurePass123!' }}
+
+      # ── Archive evidence ───────────────────────────────────────────
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-html-report
+          path: download/verification/playwright-report/
+          retention-days: 30
+
+      - name: Upload videos + traces + screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-evidence
+          path: |
+            download/verification/test-artifacts/**/*.webm
+            download/verification/test-artifacts/**/*.zip
+            download/verification/test-artifacts/**/*.png
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Verification Suite Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Gate | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| TypeScript | ${{ job.status == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ESLint | ${{ job.status == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Unit tests | ${{ job.status == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Production build | ${{ job.status == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| E2E (videos archived) | ${{ job.status == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY

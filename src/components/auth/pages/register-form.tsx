@@ -219,7 +219,7 @@ function AnimatedCheckmark() {
 
 function BrandPanel({ headline, subheadline }: { headline: React.ReactNode; subheadline: string }) {
   return (
-    <div className="hidden lg:flex lg:w-[55%] relative overflow-hidden bg-[#090909]">
+    <aside className="hidden lg:flex lg:w-[55%] relative overflow-hidden bg-[#090909]" aria-label="ExamForge AI platform introduction">
       <FloatingParticles />
       {/* AI OS ambient glow */}
       <div className="absolute inset-0" aria-hidden="true">
@@ -274,10 +274,10 @@ function BrandPanel({ headline, subheadline }: { headline: React.ReactNode; subh
         {/* Bottom: System status — minimal */}
         <div className="flex items-center gap-2.5">
           <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span className="text-xs text-foreground/40 font-mono tracking-wide">All systems operational</span>
+          <span className="text-xs text-foreground/60 font-mono tracking-wide">All systems operational</span>
         </div>
       </div>
-    </div>
+    </aside>
   )
 }
 
@@ -395,7 +395,7 @@ export function RegisterForm() {
         />
 
         {/* Success panel */}
-        <div className="w-full lg:w-[45%] flex flex-col items-center justify-center bg-[#090909] p-6 sm:p-8 lg:p-12">
+        <main id="main-content" tabIndex={-1} className="w-full lg:w-[45%] flex flex-col items-center justify-center bg-[#090909] p-6 sm:p-8 lg:p-12 focus:outline-none">
           <motion.div
             className="w-full max-w-sm space-y-6 text-center"
             variants={stagger}
@@ -444,7 +444,7 @@ export function RegisterForm() {
               </Button>
             </motion.div>
           </motion.div>
-        </div>
+        </main>
       </div>
     )
   }
@@ -459,7 +459,7 @@ export function RegisterForm() {
       />
 
       {/* ── Right: Form Panel ── */}
-      <div className="w-full lg:w-[45%] flex flex-col items-center justify-center bg-[#090909] p-6 sm:p-8 lg:p-12 xl:p-16">
+      <main id="main-content" tabIndex={-1} className="w-full lg:w-[45%] flex flex-col items-center justify-center bg-[#090909] p-6 sm:p-8 lg:p-12 xl:p-16 focus:outline-none">
         {/* Skip nav */}
         <a
           href="#main-content"
@@ -572,7 +572,7 @@ export function RegisterForm() {
                             ].join(' ')}>
                               {roleOpt.label}
                             </span>
-                            <span className="text-[10px] leading-tight text-foreground/40 sm:text-xs">
+                            <span className="text-[10px] leading-tight text-foreground/60 sm:text-xs">
                               {roleOpt.description}
                             </span>
                           </motion.button>
@@ -608,7 +608,7 @@ export function RegisterForm() {
                       <div className="w-full border-t border-border/40" />
                     </div>
                     <div className="relative flex justify-center text-xs">
-                      <span className="bg-[#090909] px-3 text-foreground/35 lowercase tracking-wide">
+                      <span className="bg-[#090909] px-3 text-foreground/60 lowercase tracking-wide">
                         or sign up with
                       </span>
                     </div>
@@ -656,7 +656,7 @@ export function RegisterForm() {
                 </motion.div>
 
                 {/* Login link */}
-                <motion.p className="mt-6 text-center text-sm text-foreground/40" variants={fadeUp}>
+                <motion.p className="mt-6 text-center text-sm text-foreground/60" variants={fadeUp}>
                   Already have an account?{' '}
                   <Link
                     href={ROUTES.LOGIN}
@@ -770,7 +770,7 @@ export function RegisterForm() {
                                 <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/40 pointer-events-none" aria-hidden="true" />
                                 <button
                                   type="button"
-                                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-foreground/35 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+                                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-foreground/60 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
                                   onClick={() => setShowPassword((v) => !v)}
                                   aria-label={showPassword ? 'Hide password' : 'Show password'}
                                   tabIndex={0}
@@ -779,7 +779,7 @@ export function RegisterForm() {
                                 </button>
                               </div>
                             </FormControl>
-                            <FormDescription className="text-xs text-foreground/35">
+                            <FormDescription className="text-xs text-foreground/60">
                               At least 8 characters with uppercase, lowercase, and a number
                             </FormDescription>
                             <FormMessage />
@@ -808,7 +808,7 @@ export function RegisterForm() {
                                 <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/40 pointer-events-none" aria-hidden="true" />
                                 <button
                                   type="button"
-                                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-foreground/35 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+                                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-foreground/60 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
                                   onClick={() => setShowConfirmPassword((v) => !v)}
                                   aria-label={showConfirmPassword ? 'Hide confirm password' : 'Show confirm password'}
                                   tabIndex={0}
@@ -876,7 +876,7 @@ export function RegisterForm() {
                   <Button
                     type="button"
                     variant="ghost"
-                    className="w-full text-sm text-foreground/40 hover:text-foreground/70"
+                    className="w-full text-sm text-foreground/60 hover:text-foreground/70"
                     onClick={() => setStep(1)}
                   >
                     ← Back
@@ -884,7 +884,7 @@ export function RegisterForm() {
                 </motion.div>
 
                 {/* Login link */}
-                <motion.p className="mt-4 text-center text-sm text-foreground/40" variants={fadeUp}>
+                <motion.p className="mt-4 text-center text-sm text-foreground/60" variants={fadeUp}>
                   Already have an account?{' '}
                   <Link
                     href={ROUTES.LOGIN}
@@ -897,7 +897,7 @@ export function RegisterForm() {
             )}
           </AnimatePresence>
         </motion.div>
-      </div>
+      </main>
     </div>
   )
 }

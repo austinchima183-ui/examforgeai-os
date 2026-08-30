@@ -1,17 +1,16 @@
 'use client'
 
 import * as React from 'react'
-import {
-  AreaChart as RechartsAreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-} from 'recharts'
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
+import dynamic from 'next/dynamic'
 import { LineChart } from 'lucide-react'
 import { SectionCard } from '@/components/system/section-card'
 import { Skeleton } from '@/components/ui/skeleton'
+
+// Deferred chart body — keeps recharts off the initial critical path.
+const TrendChart = dynamic(() => import('./charts/trend-chart'), {
+  ssr: false,
+  loading: () => <Skeleton className="h-[220px] w-full rounded-lg" />,
+})
 
 // Compact empty state — keeps empty trend widgets visually tight
 function CompactTrendEmpty({ title, description }: { title: string; description: string }) {
@@ -47,20 +46,8 @@ export interface TrendWidgetProps {
   headline?: string
   headlineLabel?: string
   className?: string
-}
-
-const accents = {
-  blue: { stroke: '#3B82F6', gradientId: 'trendFillBlue' },
-  cyan: { stroke: '#22D3EE', gradientId: 'trendFillCyan' },
-  emerald: { stroke: '#34D399', gradientId: 'trendFillEmerald' },
-  amber: { stroke: '#F59E0B', gradientId: 'trendFillAmber' },
-}
-
-function formatNumber(value: number, format: 'number' | 'currency'): string {
-  if (format === 'currency') {
-    return `₦${value.toLocaleString('en-US', { maximumFractionDigits: 0 })}`
-  }
-  return value.toLocaleString('en-US')
+  /** Content-only render (no SectionCard frame) — for embedding in WidgetGrid */
+  bare?: boolean
 }
 
 export function TrendWidget({
@@ -75,8 +62,34 @@ export function TrendWidget({
   headline,
   headlineLabel,
   className,
+  bare = false,
 }: TrendWidgetProps) {
-  const accent = accents[color]
+
+  const content = loading ? (
+    <Skeleton className="h-[220px] w-full rounded-lg" />
+  ) : data.length === 0 ? (
+    <CompactTrendEmpty title={emptyTitle} description={emptyDescription} />
+  ) : (
+    <TrendChart data={data} title={title} format={format} color={color} />
+  )
+
+  if (bare) {
+    return (
+      <div className={className}>
+        {headline && (
+          <div className="mb-3 flex items-baseline justify-end gap-2">
+            <p className="text-lg font-bold leading-none tabular-nums text-foreground">
+              {headline}
+            </p>
+            {headlineLabel && (
+              <p className="text-[10px] text-muted-foreground">{headlineLabel}</p>
+            )}
+          </div>
+        )}
+        {content}
+      </div>
+    )
+  }
 
   return (
     <SectionCard
@@ -98,75 +111,7 @@ export function TrendWidget({
         ) : undefined
       }
     >
-      {loading ? (
-        <Skeleton className="h-[220px] w-full rounded-lg" />
-      ) : data.length === 0 ? (
-        <CompactTrendEmpty title={emptyTitle} description={emptyDescription} />
-      ) : (
-        <ChartContainer
-          config={{
-            value: { label: title, color: accent.stroke },
-          }}
-          className="h-[220px] w-full"
-        >
-          <RechartsAreaChart data={data} margin={{ top: 8, right: 8, bottom: 0, left: -8 }}>
-            <defs>
-              <linearGradient id={accent.gradientId} x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor={accent.stroke} stopOpacity={0.26} />
-                <stop offset="100%" stopColor={accent.stroke} stopOpacity={0.02} />
-              </linearGradient>
-            </defs>
-            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(255,255,255,0.04)" />
-            <XAxis
-              dataKey="date"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              fontSize={11}
-              tick={{ fill: 'rgba(255,255,255,0.38)' }}
-              interval="preserveStartEnd"
-              minTickGap={28}
-            />
-            <YAxis
-              tickLine={false}
-              axisLine={false}
-              fontSize={11}
-              tick={{ fill: 'rgba(255,255,255,0.38)' }}
-              width={48}
-              tickFormatter={(v: number) =>
-                v >= 1000
-                  ? format === 'currency'
-                    ? `${(v / 1000).toFixed(0)}k`
-                    : v.toLocaleString('en-US')
-                  : `${v}`
-              }
-            />
-            <ChartTooltip
-              content={
-                <ChartTooltipContent
-                  className="forge-glass-elevated rounded-lg border border-border/30 shadow-lg"
-                  formatter={(value) => (
-                    <span className="font-semibold tabular-nums text-foreground">
-                      {formatNumber(Number(value), format)}
-                    </span>
-                  )}
-                />
-              }
-            />
-            <Area
-              type="monotone"
-              dataKey="value"
-              stroke={accent.stroke}
-              strokeWidth={2}
-              fill={`url(#${accent.gradientId})`}
-              isAnimationActive
-              animationDuration={800}
-              dot={false}
-              activeDot={{ r: 4, fill: accent.stroke, strokeWidth: 0 }}
-            />
-          </RechartsAreaChart>
-        </ChartContainer>
-      )}
+      {content}
     </SectionCard>
   )
 }

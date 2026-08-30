@@ -252,22 +252,22 @@ export default function FlashcardsPage() {
       <div className="grid gap-4 sm:grid-cols-4">
         <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] hover:shadow-[0_2px_8px_rgba(59,130,246,0.15)] transition-all"><CardContent className="p-4 flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-primary/10 border border-white/[0.04] flex items-center justify-center"><Layers className="h-4 w-4 text-primary" /></div>
-            <div><p className="text-xl font-bold">{flashcards.length}</p><p className="text-xs text-foreground/35">Total cards</p></div>
+            <div><p className="text-xl font-bold">{flashcards.length}</p><p className="text-xs text-foreground/60">Total cards</p></div>
           </CardContent>
         </Card>
         <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] hover:shadow-[0_2px_8px_rgba(59,130,246,0.15)] transition-all"><CardContent className="p-4 flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-green-50 dark:bg-green-950/10 border border-white/[0.04] flex items-center justify-center"><Check className="h-4 w-4 text-green-600 dark:text-green-400" /></div>
-            <div><p className="text-xl font-bold">{knownCards.size}</p><p className="text-xs text-foreground/35">Known</p></div>
+            <div><p className="text-xl font-bold">{knownCards.size}</p><p className="text-xs text-foreground/60">Known</p></div>
           </CardContent>
         </Card>
         <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] hover:shadow-[0_2px_8px_rgba(59,130,246,0.15)] transition-all"><CardContent className="p-4 flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-yellow-50 dark:bg-yellow-950/10 border border-white/[0.04] flex items-center justify-center"><Star className="h-4 w-4 text-yellow-600 dark:text-yellow-400" /></div>
-            <div><p className="text-xl font-bold">{reviewCards.size}</p><p className="text-xs text-foreground/35">Needs Review</p></div>
+            <div><p className="text-xl font-bold">{reviewCards.size}</p><p className="text-xs text-foreground/60">Needs Review</p></div>
           </CardContent>
         </Card>
         <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] hover:shadow-[0_2px_8px_rgba(59,130,246,0.15)] transition-all"><CardContent className="p-4 flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-rose-500/10 border border-white/[0.04] flex items-center justify-center"><Flame className="h-4 w-4 text-rose-500" /></div>
-            <div><p className="text-xl font-bold">{sessionStats.correct > 0 ? Math.round((sessionStats.correct / sessionStats.total) * 100) : 0}%</p><p className="text-xs text-foreground/35">Accuracy</p></div>
+            <div><p className="text-xl font-bold">{sessionStats.correct > 0 ? Math.round((sessionStats.correct / sessionStats.total) * 100) : 0}%</p><p className="text-xs text-foreground/60">Accuracy</p></div>
           </CardContent>
         </Card>
       </div>

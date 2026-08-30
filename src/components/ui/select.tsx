@@ -45,7 +45,7 @@ function SelectTrigger({
         /* Premium input glow + border — matches Input component */
         "forge-input-glow",
         "border-white/[0.06] bg-[#1D1D1D]/50",
-        "data-[placeholder]:text-foreground/30",
+        "data-[placeholder]:text-foreground/60",
         "[&_svg:not([class*='text-'])]:text-muted-foreground",
         /* Focus states — same as Input */
         "focus-visible:border-primary/40 focus-visible:ring-primary/30 focus-visible:ring-[3px]",

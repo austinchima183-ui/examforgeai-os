@@ -1,11 +1,5 @@
 import { requireAnyRole } from '@/lib/auth/require-auth'
-import {
-  School,
-  UserPlus,
-  ArrowRight,
-  AlertCircle,
-  Brain,
-} from 'lucide-react'
+import { UserPlus, ArrowRight, AlertCircle } from 'lucide-react'
 import Link from 'next/link'
 import { ROUTES } from '@/lib/constants/routes'
 import { getSchoolAdminStats, getSchoolAdminActivities } from '@/lib/services/dashboard-service'
@@ -15,29 +9,19 @@ import {
   getUserGrowthTrend,
   getUpcomingSchoolEvents,
 } from '@/lib/services/dashboard-widget-service'
-import { IntelligentInsights } from '@/components/dashboard/intelligent-insights'
 import {
+  Button,
   DashboardPage,
-  DashboardGrid,
-  GridItem,
-  gridSpans,
   HeroSection,
   KpiCard,
   KpiGrid,
-  SectionCard,
-  ActivityFeed,
   QuickActions,
-  PerformanceBarWidget,
-  TrendWidget,
-  MiniCalendarWidget,
-  AnnouncementsWidget,
-  GoalsWidget,
-  EmptyState,
-  Button,
+  SectionCard,
   getGreeting,
   type ActivityFeedItem,
   type CalendarDayEvent,
 } from '@/components/system'
+import { SchoolAdminWidgets } from '@/components/dashboards/school-admin-widgets'
 
 export const dynamic = 'force-dynamic'
 
@@ -320,134 +304,26 @@ export default async function SchoolAdminDashboard() {
       <QuickActions actions={quickActionItems} cols={3} />
 
       {/* ── Main widget grid (12/8/4) ────────────────────────────────── */}
-      <DashboardGrid>
-        {/* Revenue trend — REAL successful transactions */}
-        <GridItem span={gridSpans.wide}>
-          <TrendWidget
-            data={revenueData}
-            title="Revenue Trend"
-            description="Successful payments over the last 30 days"
-            format="currency"
-            color="emerald"
-            headline={formatCurrency(totalTrendRevenue)}
-            headlineLabel="last 30 days"
-            emptyTitle="No payments yet"
-            emptyDescription="Revenue will appear here as successful transactions accumulate."
-          />
-        </GridItem>
-
-        {/* Score distribution — REAL sessions */}
-        <GridItem span={gridSpans.third}>
-          <PerformanceBarWidget
-            data={scoreDistData}
-            valueFormat="number"
-            title="Score Distribution"
-            description="Students per score band"
-            icon="bar-chart3"
-            emptyTitle="No graded sessions yet"
-            emptyDescription="Distribution appears once students complete exams."
-          />
-        </GridItem>
-
-        {/* User growth — REAL signups */}
-        <GridItem span={gridSpans.third}>
-          <TrendWidget
-            data={growthData}
-            title="New Users"
-            description="Signups over the last 14 days"
-            format="number"
-            color="blue"
-            emptyTitle="No recent signups"
-            emptyDescription="New user signups will appear here."
-          />
-        </GridItem>
-
-        {/* Goals — computed from real metrics */}
-        <GridItem span={gridSpans.third}>
-          <GoalsWidget goals={goals} />
-        </GridItem>
-
-        {/* Calendar — real events */}
-        <GridItem span={gridSpans.third}>
-          <MiniCalendarWidget events={calendarEvents} />
-        </GridItem>
-
-        {/* Admin tools */}
-        <GridItem span={gridSpans.wide}>
-          <div>
-            <div className="mb-4 flex items-center gap-3">
-              <h2 className="text-lg font-semibold tracking-tight">Admin Tools</h2>
-              <div className="h-px flex-1 bg-gradient-to-r from-border/40 to-transparent" />
-            </div>
-            <QuickActions actions={adminTools} cols={4} />
-          </div>
-        </GridItem>
-
-        {/* Announcements — real school events */}
-        <GridItem span={gridSpans.third}>
-          <AnnouncementsWidget
-            announcements={schoolEvents.map((e) => ({
-              id: e.id,
-              title: e.title,
-              event_type: e.event_type,
-              start_date: e.start_date,
-            }))}
-          />
-        </GridItem>
-
-        {/* AI insights */}
-        <GridItem span={gridSpans.wide}>
-          <IntelligentInsights role={user.role} userId={user.id} schoolId={user.schoolId} />
-        </GridItem>
-
-        {/* AI Insights shortcut */}
-        <GridItem span={gridSpans.third}>
-          <SectionCard
-            title="AI Insights"
-            description="Predictive analytics for your school"
-            icon="brain"
-            tier="surface"
-            action={
-              <Button asChild size="sm" variant="ghost">
-                <Link href="/school-admin/ai-insights">
-                  Open
-                  <ArrowRight className="h-3 w-3" />
-                </Link>
-              </Button>
-            }
-          >
-            <p className="text-xs leading-relaxed text-muted-foreground">
-              Identify at-risk students, predict exam outcomes, and surface
-              actionable recommendations powered by school-wide AI analysis.
-            </p>
-          </SectionCard>
-        </GridItem>
-
-        {/* Recent Activity — real feed */}
-        <GridItem span={gridSpans.full}>
-          <SectionCard
-            title="Recent Activity"
-            description="Latest events across your school"
-            icon="clock"
-            tier="surface"
-            animate
-          >
-            {feedItems.length === 0 ? (
-              <EmptyState
-                icon={<School className="h-7 w-7" />}
-                title="No activity yet"
-                description="School activity will appear here as teachers and students engage with the platform."
-                primaryAction={{
-                  label: 'Configure your school',
-                  href: ROUTES.SETTINGS,
-                }}
-              />
-            ) : (
-              <ActivityFeed items={feedItems} maxItems={10} />
-            )}
-          </SectionCard>
-        </GridItem>
-      </DashboardGrid>
+      {/* ── Interactive widget grid — drag / resize / collapse / refresh ── */}
+      <SchoolAdminWidgets
+        role={user.role}
+        userId={user.id}
+        schoolId={user.schoolId ?? ''}
+        revenueData={revenueData}
+        totalTrendRevenue={totalTrendRevenue}
+        scoreDistData={scoreDistData}
+        growthData={growthData}
+        goals={goals}
+        calendarEvents={calendarEvents}
+        announcements={schoolEvents.map((e) => ({
+          id: e.id,
+          title: e.title,
+          event_type: e.event_type,
+          start_date: e.start_date,
+        }))}
+        feedItems={feedItems}
+        adminTools={adminTools}
+      />
     </DashboardPage>
   )
 }

@@ -33,6 +33,7 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-primary-action: var(--primary-action);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -84,12 +85,13 @@
   --card-foreground: #EDEDED;
   --popover: #1D1D1D;
   --popover-foreground: #EDEDED;
-  --primary: #3B82F6;              /* Electric blue — the accent */
+  --primary: #3B82F6;              /* Electric blue — text/icons on dark (5.4:1) */
   --primary-foreground: #FFFFFF;
+  --primary-action: #2563EB;       /* Action blue — solid button bg with white text (5.2:1 WCAG AA) */
   --secondary: #1D1D1D;
   --secondary-foreground: #EDEDED;
   --muted: #1D1D1D;
-  --muted-foreground: #737373;     /* Gray-blue muted */
+  --muted-foreground: #8F8F8F;     /* Gray-blue muted — WCAG AA: 6.2:1 on void #090909, 4.8:1 on elevated glass #242424 */
   --accent: #22D3EE;               /* Neural cyan — AI accent */
   --accent-foreground: #090909;
   --destructive: #DC2626;          /* Deep red */
@@ -144,10 +146,11 @@
   --popover-foreground: #EDEDED;
   --primary: #3B82F6;
   --primary-foreground: #FFFFFF;
+  --primary-action: #2563EB;
   --secondary: #1D1D1D;
   --secondary-foreground: #EDEDED;
   --muted: #1D1D1D;
-  --muted-foreground: #737373;
+  --muted-foreground: #8F8F8F;
   --accent: #22D3EE;
   --accent-foreground: #090909;
   --destructive: #DC2626;

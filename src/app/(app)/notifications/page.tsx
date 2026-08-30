@@ -383,7 +383,7 @@ export default function NotificationsPage() {
           <div className="relative mb-6">
             <div className="absolute inset-0 rounded-2xl bg-primary/10 blur-2xl" />
             <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl forge-glass-surface border-white/[0.04] forge-card-shadow">
-              <Bell className="h-7 w-7 text-foreground/40" />
+              <Bell className="h-7 w-7 text-foreground/60" />
             </div>
           </div>
           <p className="text-base font-medium text-foreground">No notifications</p>

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getAuthUser } from '@/lib/auth/require-auth'
+import { enforceCsrf } from '@/lib/api/csrf-guard'
 import { createClient, createClientOrNull, requireSupabase } from '@/lib/supabase/server'
 import { getEventHistory, getEventStatistics } from '@/lib/event-bus/event-replay'
 import { eventBus } from '@/lib/event-bus/event-emitter'
@@ -75,6 +76,10 @@ export async function POST(req: NextRequest) {
     if (!auth) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
+
+    // ─── CSRF guard (Mission Ω-7 hardening) ───
+    const csrfResult = enforceCsrf(req, auth)
+    if (csrfResult) return csrfResult
 
     const supabase = await requireSupabase()
     // ── Dev Adapter Guard ──

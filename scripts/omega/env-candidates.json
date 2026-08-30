@@ -1,0 +1,24 @@
+{
+  "SUPABASE_SERVICE_ROLE_KEY": [
+    "eyJhbGciOiJIUzI1NiIs...",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey"
+  ],
+  "SUPABASE_ANON_KEY": [
+    "eyJ...local",
+    "eyJ...prod",
+    "eyJ...staging",
+    "eyJhbGciOiJIUzI1NiIs...",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ"
+  ],
+  "SUPABASE_URL": [
+    "https://abc123.supabase.co",
+    "https://placeholder.supabase.co",
+    "https://staging.supabase.co"
+  ],
+  "OPENAI_API_KEY": [],
+  "GEMINI_API_KEY": [],
+  "RESEND_API_KEY": [],
+  "FLUTTERWAVE_SECRET_KEY": [],
+  "FLUTTERWAVE_PUBLIC_KEY": [],
+  "SENTRY_AUTH_TOKEN": []
+}

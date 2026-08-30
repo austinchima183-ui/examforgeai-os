@@ -1,0 +1,152 @@
+{
+  "auditedAt": "2026-08-30T01:49:39.252Z",
+  "tool": "axe-core WCAG 2.1 AA",
+  "pages": [
+    {
+      "page": "/",
+      "role": "anonymous",
+      "violations": []
+    },
+    {
+      "page": "/login",
+      "role": "anonymous",
+      "violations": []
+    },
+    {
+      "page": "/register",
+      "role": "anonymous",
+      "violations": []
+    },
+    {
+      "page": "/pricing",
+      "role": "anonymous",
+      "violations": []
+    },
+    {
+      "page": "/features",
+      "role": "anonymous",
+      "violations": []
+    },
+    {
+      "page": "/security",
+      "role": "anonymous",
+      "violations": []
+    },
+    {
+      "page": "/docs",
+      "role": "anonymous",
+      "violations": []
+    },
+    {
+      "page": "/dashboard/student",
+      "role": "student",
+      "violations": []
+    },
+    {
+      "page": "/exams",
+      "role": "student",
+      "violations": []
+    },
+    {
+      "page": "/results",
+      "role": "student",
+      "violations": []
+    },
+    {
+      "page": "/notifications",
+      "role": "student",
+      "violations": []
+    },
+    {
+      "page": "/settings",
+      "role": "student",
+      "violations": []
+    },
+    {
+      "page": "/marketplace",
+      "role": "student",
+      "violations": []
+    },
+    {
+      "page": "/dashboard/teacher",
+      "role": "teacher",
+      "violations": []
+    },
+    {
+      "page": "/question-bank",
+      "role": "teacher",
+      "violations": []
+    },
+    {
+      "page": "/teacher/lesson-planner",
+      "role": "teacher",
+      "violations": []
+    },
+    {
+      "page": "/dashboard/school-admin",
+      "role": "school_admin",
+      "violations": []
+    },
+    {
+      "page": "/school/settings",
+      "role": "school_admin",
+      "violations": []
+    },
+    {
+      "page": "/school/attendance",
+      "role": "school_admin",
+      "violations": []
+    },
+    {
+      "page": "/school/fees",
+      "role": "school_admin",
+      "violations": []
+    },
+    {
+      "page": "/students",
+      "role": "super_admin",
+      "violations": []
+    },
+    {
+      "page": "/teachers",
+      "role": "super_admin",
+      "violations": []
+    },
+    {
+      "page": "/schools",
+      "role": "super_admin",
+      "violations": []
+    },
+    {
+      "page": "/dashboard/super-admin",
+      "role": "super_admin",
+      "violations": []
+    },
+    {
+      "page": "/admin/audit-logs",
+      "role": "super_admin",
+      "violations": []
+    },
+    {
+      "page": "/admin/organizations",
+      "role": "super_admin",
+      "violations": []
+    },
+    {
+      "page": "/workflows",
+      "role": "super_admin",
+      "violations": []
+    },
+    {
+      "page": "/billing",
+      "role": "super_admin",
+      "violations": []
+    }
+  ],
+  "summary": {
+    "pagesAudited": 28,
+    "totalViolationTypes": 0,
+    "totalNodes": 0,
+    "byType": {}
+  }
+}

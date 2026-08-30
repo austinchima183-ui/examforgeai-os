@@ -1,11 +1,12 @@
 'use client'
 
 import * as React from 'react'
-import { Check, X, Pencil, Loader2 } from 'lucide-react'
+import { Check, X, Pencil, Loader2, CloudUpload, CloudOff, CheckCircle2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
+import { useAutosave } from '@/hooks/use-autosave'
 
 // ============================================================================
 // ExamForge AI OS — InlineEditField
@@ -36,6 +37,15 @@ export interface InlineEditFieldProps {
   className?: string
   /** Accessible label for the edit button */
   editLabel?: string
+  /**
+   * Autosave mode: commits the draft automatically after the debounce window
+   * while the editor stays open, with a live status indicator. When set, the
+   * explicit save button becomes optional (still shown for immediate commit).
+   */
+  autoSave?: {
+    /** Debounce in ms (default 1500) */
+    debounceMs?: number
+  }
 }
 
 export function InlineEditField({
@@ -48,6 +58,7 @@ export function InlineEditField({
   inputWidth = 'w-48',
   className,
   editLabel = 'Edit',
+  autoSave,
 }: InlineEditFieldProps) {
   const [isEditing, setIsEditing] = React.useState(false)
   const [draft, setDraft] = React.useState(value)
@@ -87,6 +98,19 @@ export function InlineEditField({
       setIsSaving(false)
     }
   }
+
+  // ── Autosave: debounce commits while the editor is open ──
+  const autosave = useAutosave(isEditing ? draft : value, {
+    enabled: !!autoSave && isEditing,
+    interval: autoSave?.debounceMs ?? 1500,
+    maxRetries: 2,
+    detectChanges: true,
+    onSave: async (next) => {
+      const text = String(next)
+      if (text === value) return
+      await onCommit(text)
+    },
+  })
 
   if (isEditing) {
     const InputComp = multiline ? Textarea : Input
@@ -145,6 +169,33 @@ export function InlineEditField({
           </Button>
         </div>
         {error && <p className="text-xs text-destructive">{error}</p>}
+        {autoSave && !error && (
+          <p
+            className="flex items-center gap-1 text-[11px] text-foreground/50"
+            role="status"
+            aria-live="polite"
+          >
+            {autosave.status === 'saving' && (
+              <>
+                <CloudUpload className="h-3 w-3 animate-pulse" aria-hidden="true" />
+                Autosaving…
+              </>
+            )}
+            {autosave.status === 'saved' && (
+              <>
+                <CheckCircle2 className="h-3 w-3 text-emerald-500" aria-hidden="true" />
+                Autosaved
+              </>
+            )}
+            {autosave.status === 'error' && (
+              <>
+                <CloudOff className="h-3 w-3 text-destructive" aria-hidden="true" />
+                {autosave.lastError ?? 'Autosave failed — use Save'}
+              </>
+            )}
+            {autosave.status === 'idle' && <span>Autosave on · Esc cancels</span>}
+          </p>
+        )}
       </div>
     )
   }

@@ -229,7 +229,7 @@ export default function PluginMarketplacePage() {
           {filtered.length === 0 ? (
             <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow">
               <CardContent className="py-16 text-center">
-                <Puzzle className="h-12 w-12 mx-auto text-foreground/30" />
+                <Puzzle className="h-12 w-12 mx-auto text-foreground/60" />
                 <h3 className="mt-4 text-lg font-semibold">No plugins found</h3>
                 <p className="text-muted-foreground text-sm">Try adjusting your search or filters</p>
                 <Button variant="outline" className="mt-4" onClick={() => { setSearch(''); setTypeFilter('all'); setCategoryFilter('all') }}>

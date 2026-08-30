@@ -422,7 +422,7 @@ export function TimetablePageClient({ initialData, schoolId }: TimetablePageClie
                                   setCreateOpen(true)
                                 }}
                               >
-                                <Plus className="h-3.5 w-3.5 mx-auto text-foreground/30" />
+                                <Plus className="h-3.5 w-3.5 mx-auto text-foreground/60" />
                               </div>
                             )}
                           </td>

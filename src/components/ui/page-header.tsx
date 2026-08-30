@@ -135,7 +135,7 @@ export function PageHeader({
             {breadcrumbs.map((crumb, index) => (
               <li key={index} className="inline-flex items-center gap-1.5">
                 {index > 0 && (
-                  <ChevronRight className="h-3.5 w-3.5 text-foreground/35" aria-hidden="true" />
+                  <ChevronRight className="h-3.5 w-3.5 text-foreground/60" aria-hidden="true" />
                 )}
                 {crumb.href ? (
                   <Link

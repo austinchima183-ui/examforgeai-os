@@ -19,7 +19,7 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
         "bg-[#1D1D1D]/50 border-white/[0.06]",
         /* Text colors */
         "text-foreground file:text-foreground",
-        "placeholder:text-foreground/30",
+        "placeholder:text-foreground/60",
         "selection:bg-primary selection:text-primary-foreground",
         /* File input */
         "file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium",

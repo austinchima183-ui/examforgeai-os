@@ -234,7 +234,7 @@ export default function UserManagementPage() {
           )}
           {!loading && !data?.users?.length && (
             <div className="flex flex-col items-center justify-center py-12 text-center">
-              <Users className="h-12 w-12 text-foreground/35" />
+              <Users className="h-12 w-12 text-foreground/60" />
               <h3 className="mt-4 text-lg font-semibold">No users found</h3>
               <p className="mt-2 text-sm text-muted-foreground">Users will appear here once they register or are invited to the platform.</p>
             </div>

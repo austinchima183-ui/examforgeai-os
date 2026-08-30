@@ -430,6 +430,8 @@ export function ContextualAIAssistant({
         <motion.div
           initial={{ opacity: 0, x: 8 }}
           animate={{ opacity: 1, x: 0 }}
+          role="tooltip"
+          aria-hidden="true"
           className="pointer-events-none absolute bottom-3 right-16 whitespace-nowrap rounded-lg forge-glass-elevated px-3 py-1.5 text-xs font-medium text-cyan-400 shadow-lg"
         >
           How can AI help?

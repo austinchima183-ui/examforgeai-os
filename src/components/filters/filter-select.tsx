@@ -39,7 +39,7 @@ export function FilterSelect({ name, placeholder, options, className }: FilterSe
 
   return (
     <Select value={currentValue} onValueChange={handleChange}>
-      <SelectTrigger className={className ?? 'h-9 w-[140px]'}>
+      <SelectTrigger className={className ?? 'h-9 w-[140px]'} aria-label={placeholder}>
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent>

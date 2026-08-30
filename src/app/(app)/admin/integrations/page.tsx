@@ -31,7 +31,7 @@ const INTEGRATION_META: Record<string, { icon: React.ReactNode; color: string; b
 
 const STATUS_CONFIG = {
   connected: { label: 'Connected', icon: <Wifi className="h-4 w-4" />, color: 'text-green-600 dark:text-green-400', bg: 'bg-green-50 dark:bg-green-950 dark:bg-emerald-900/30' },
-  disconnected: { label: 'Disconnected', icon: <WifiOff className="h-4 w-4" />, color: 'text-gray-500', bg: 'bg-gray-100 dark:bg-gray-900/30' },
+  disconnected: { label: 'Disconnected', icon: <WifiOff className="h-4 w-4" />, color: 'text-foreground/60', bg: 'bg-gray-100 dark:bg-gray-900/30' },
   error: { label: 'Error', icon: <AlertTriangle className="h-4 w-4" />, color: 'text-destructive', bg: 'bg-destructive/10' },
 }
 

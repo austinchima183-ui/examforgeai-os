@@ -5,7 +5,7 @@
 // ============================================================================
 
 import { test, expect } from '@playwright/test'
-import { login, logout, shot, collectConsoleErrors } from './helpers'
+import { login, logout, shot, collectConsoleErrors, waitForMainContent } from './helpers'
 
 test.describe('Student Journey (full E2E, video recorded)', () => {
   test('login → dashboard → sidebar → tools → notifications → logout', async ({ page }) => {
@@ -13,7 +13,7 @@ test.describe('Student Journey (full E2E, video recorded)', () => {
 
     // ── 1. LOGIN ──
     await login(page, 'student')
-    await page.waitForTimeout(2500) // let dashboard widgets hydrate
+    await waitForMainContent(page) // poll streamed dashboard content
     await shot(page, '01-student-dashboard')
 
     // Should land on student dashboard

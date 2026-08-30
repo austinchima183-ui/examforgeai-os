@@ -5,7 +5,7 @@
 // ============================================================================
 
 import { test, expect } from '@playwright/test'
-import { login, logout, shot, collectConsoleErrors } from './helpers'
+import { login, logout, shot, collectConsoleErrors, waitForMainContent } from './helpers'
 
 test.describe('Super Admin Journey (full E2E, video recorded)', () => {
   test('login → dashboard → schools → admin console → government → isolation → logout', async ({ page }) => {
@@ -13,7 +13,7 @@ test.describe('Super Admin Journey (full E2E, video recorded)', () => {
 
     // ── 1. LOGIN ──
     await login(page, 'super_admin')
-    await page.waitForTimeout(2500)
+    await waitForMainContent(page)
     await shot(page, '05-super-admin-dashboard')
 
     expect(page.url()).toContain('/dashboard/super-admin')

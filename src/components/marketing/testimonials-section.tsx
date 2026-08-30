@@ -75,7 +75,7 @@ const testimonials = [
 
 function AnimatedStarRating({ rating, isInView }: { rating: number; isInView: boolean }) {
   return (
-    <div className="flex gap-0.5" aria-label={`${rating} out of 5 stars`}>
+    <div className="flex gap-0.5" role="img" aria-label={`${rating} out of 5 stars`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <motion.div
           key={i}
@@ -141,7 +141,7 @@ export function TestimonialsSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4 }}
-            className="text-sm font-medium text-foreground/35 uppercase tracking-wider mb-4"
+            className="text-sm font-medium text-foreground/60 uppercase tracking-wider mb-4"
           >
             Testimonials
           </motion.p>
@@ -209,7 +209,7 @@ export function TestimonialsSection() {
                       />
                       <div>
                         <p className="text-sm font-semibold text-foreground">{testimonial.name}</p>
-                        <p className="text-xs text-foreground/35">
+                        <p className="text-xs text-foreground/60">
                           {testimonial.role}, {testimonial.school}
                         </p>
                       </div>

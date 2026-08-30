@@ -621,9 +621,11 @@ export function HeroSection() {
             {/* ----------------------------------------------------------------- */}
             {/* Floating cards — enhanced glassmorphism & glow                   */}
             {/* ----------------------------------------------------------------- */}
+            {/* Decorative ambient motion — hidden from assistive tech (WCAG 2.2.2) */}
             {floatingCards.map((card, i) => (
               <motion.div
                 key={card.label}
+                aria-hidden="true"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 1.2 + card.delay }}
@@ -639,7 +641,7 @@ export function HeroSection() {
                     <span className="text-xs font-medium">{card.label}</span>
                   </div>
                   <p className="text-sm font-bold mt-0.5">{card.value}</p>
-                  <p className="text-[10px] text-muted-foreground mt-0.5">{card.description}</p>
+                  <p className="text-[10px] text-foreground/70 mt-0.5">{card.description}</p>
                 </motion.div>
               </motion.div>
             ))}

@@ -36,7 +36,6 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import {
-  LogIn,
   Mail,
   Lock,
   Loader2,
@@ -53,20 +52,10 @@ import Link from 'next/link'
 
 // ── Animation Variants ──────────────────────────────────────────────
 
-const formVariants: Variants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] } },
-  exit: { opacity: 0, y: -8, transition: { duration: 0.2 } },
-}
-
 const errorVariants: Variants = {
   hidden: { opacity: 0, height: 0, marginBottom: 0 },
   visible: { opacity: 1, height: 'auto', marginBottom: 16, transition: { duration: 0.3 } },
   exit: { opacity: 0, height: 0, marginBottom: 0, transition: { duration: 0.2 } },
-}
-
-const stagger: Variants = {
-  visible: { transition: { staggerChildren: 0.06 } },
 }
 
 const fadeUp: Variants = {
@@ -186,12 +175,18 @@ export function LoginForm() {
     }
   }, [supabase])
 
-  const animProps = reducedMotion ? {} : { variants: formVariants, initial: 'hidden', animate: 'visible', exit: 'exit' }
+  // CSS-driven entrance (tailwindcss-animate) — content paints immediately
+  // from SSR HTML instead of waiting for framer-motion hydration. This moves
+  // LCP from "after JS evaluation" to "first contentful paint".
+  // framer-motion is still used for exit/error micro-interactions below.
+  const formEntranceClass = reducedMotion
+    ? ''
+    : 'animate-in fade-in slide-in-from-bottom-4 [animation-duration:450ms] [animation-fill-mode:backwards]'
 
   return (
     <div className="min-h-screen flex">
       {/* ── Left: Brand Panel (desktop only) ── */}
-      <div className="hidden lg:flex lg:w-[55%] relative overflow-hidden bg-[#090909]">
+      <aside className="hidden lg:flex lg:w-[55%] relative overflow-hidden bg-[#090909]" aria-label="ExamForge AI platform introduction">
         <FloatingParticles />
 
         {/* AI OS ambient glow — more subtle, immersive */}
@@ -251,10 +246,10 @@ export function LoginForm() {
             <span className="text-xs text-muted-foreground/60 font-mono tracking-wide">All systems operational</span>
           </div>
         </div>
-      </div>
+      </aside>
 
       {/* ── Right: Form Panel ── */}
-      <div className="w-full lg:w-[45%] flex flex-col items-center justify-center bg-[#090909] p-6 sm:p-8 lg:p-12 xl:p-16">
+      <main id="main-content" tabIndex={-1} className="w-full lg:w-[45%] flex flex-col items-center justify-center bg-[#090909] p-6 sm:p-8 lg:p-12 xl:p-16 focus:outline-none">
         {/* Skip nav */}
         <a
           href="#main-content"
@@ -263,27 +258,24 @@ export function LoginForm() {
           Skip to main content
         </a>
 
-        <motion.div
-          className="w-full max-w-sm"
-          variants={stagger}
-          initial="hidden"
-          animate="visible"
-        >
+        {/* CSS-driven entrance — paints from SSR HTML without waiting for
+            framer-motion hydration (keeps LCP at first paint on mobile). */}
+        <div className="w-full max-w-sm animate-in fade-in [animation-duration:400ms]">
           {/* Mobile logo */}
-          <motion.div className="flex items-center gap-2.5 mb-8 lg:hidden" variants={fadeUp}>
+          <div className="flex items-center gap-2.5 mb-8 lg:hidden">
             <div className="h-10 w-10 rounded-lg bg-primary/20 backdrop-blur-sm flex items-center justify-center border border-primary/30">
               <BookOpen className="h-6 w-6 text-primary" />
             </div>
             <span className="text-xl font-bold tracking-tight">ExamForge<span className="text-primary"> AI</span></span>
-          </motion.div>
+          </div>
 
           {/* Heading — large, confident */}
-          <motion.div className="space-y-2 mb-8" variants={fadeUp}>
+          <div className="space-y-2 mb-8">
             <h1 className="text-3xl font-bold tracking-tight">Welcome back</h1>
             <p className="text-sm text-foreground/55">
               Sign in to your account to continue
             </p>
-          </motion.div>
+          </div>
 
           {/* Dev mode banner */}
           {!supabaseAvailable && (
@@ -296,7 +288,7 @@ export function LoginForm() {
           )}
 
           {/* Social auth — premium buttons */}
-          <motion.div className="space-y-4 mb-6" variants={fadeUp}>
+          <div className="space-y-4 mb-6">
             <div className="grid grid-cols-2 gap-3">
               <Button
                 type="button"
@@ -344,15 +336,15 @@ export function LoginForm() {
                 <div className="w-full border-t border-border/40" />
               </div>
               <div className="relative flex justify-center text-xs">
-                <span className="bg-[#090909] px-3 text-muted-foreground/50 lowercase tracking-wide">
+                <span className="bg-[#090909] px-3 text-muted-foreground lowercase tracking-wide">
                   or continue with email
                 </span>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Form */}
-          <motion.div {...animProps}>
+          <div className={formEntranceClass}>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5" aria-label="Sign in with email form">
                 <FormField
@@ -393,7 +385,7 @@ export function LoginForm() {
                         <FormLabel className="text-sm font-medium text-foreground/80">Password</FormLabel>
                         <Link
                           href={ROUTES.FORGOT_PASSWORD}
-                          className="text-xs text-foreground/40 hover:text-foreground/70 transition-colors focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+                          className="text-xs text-foreground/60 hover:text-foreground/70 transition-colors focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
                         >
                           Forgot password?
                         </Link>
@@ -412,7 +404,7 @@ export function LoginForm() {
                           <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/40 pointer-events-none" aria-hidden="true" />
                           <button
                             type="button"
-                            className="absolute right-3.5 top-1/2 -translate-y-1/2 text-muted-foreground/50 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+                            className="absolute right-3.5 top-1/2 -translate-y-1/2 text-muted-foreground/60 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
                             onClick={() => setShowPassword((v) => !v)}
                             aria-label={showPassword ? 'Hide password' : 'Show password'}
                             tabIndex={0}
@@ -473,10 +465,10 @@ export function LoginForm() {
                 </Button>
               </form>
             </Form>
-          </motion.div>
+          </div>
 
           {/* Register link */}
-          <motion.p className="mt-8 text-center text-sm text-foreground/40" variants={fadeUp}>
+          <motion.p className="mt-8 text-center text-sm text-foreground/60" variants={fadeUp}>
             Don&apos;t have an account?{' '}
             <Link
               href={ROUTES.REGISTER}
@@ -485,8 +477,8 @@ export function LoginForm() {
               Create an account
             </Link>
           </motion.p>
-        </motion.div>
-      </div>
+        </div>
+      </main>
     </div>
   )
 }

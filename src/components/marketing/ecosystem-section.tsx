@@ -97,7 +97,7 @@ export function EcosystemSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4 }}
-            className="text-sm font-medium text-foreground/35 uppercase tracking-wider mb-4"
+            className="text-sm font-medium text-foreground/60 uppercase tracking-wider mb-4"
           >
             Product Ecosystem
           </motion.p>
@@ -276,7 +276,7 @@ export function EcosystemSection() {
               <span className="text-xs text-muted-foreground">AI Core module</span>
             </div>
             <div className="flex items-center gap-2">
-              <Info className="h-3.5 w-3.5 text-foreground/35" />
+              <Info className="h-3.5 w-3.5 text-foreground/60" />
               <span className="text-xs text-muted-foreground">Hover any module to explore</span>
             </div>
           </motion.div>

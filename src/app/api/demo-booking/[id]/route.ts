@@ -10,6 +10,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getAuthUser } from '@/lib/auth/require-auth'
 import type { UserRole } from '@/lib/types'
 import { validateInput, parseJsonBody } from '@/lib/api/validate'
+import { enforceCsrf } from '@/lib/api/csrf-guard'
 import { z } from 'zod'
 
 const ADMIN_ROLES: UserRole[] = ['super_admin', 'school_admin']
@@ -69,6 +70,11 @@ export async function PATCH(
     }
 
     const { user, supabase } = authResult
+
+    // ─── CSRF guard (Mission Ω-7 hardening) ───
+    const csrfResult = enforceCsrf(request, authResult)
+    if (csrfResult) return csrfResult
+
     const { id } = await params
 
     // Fetch existing booking first to verify ownership/role
@@ -134,6 +140,11 @@ export async function DELETE(
     }
 
     const { user, supabase } = authResult
+
+    // ─── CSRF guard (Mission Ω-7 hardening) ───
+    const csrfResult = enforceCsrf(request, authResult)
+    if (csrfResult) return csrfResult
+
     const { id } = await params
 
     // Fetch existing booking first to verify ownership/role

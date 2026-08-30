@@ -72,7 +72,7 @@ export function AnnouncementBar({
               {ctaText && ctaHref && (
                 <Link
                   href={ctaHref}
-                  className="text-cyan-400/50 hover:text-cyan-400/80 transition-colors duration-200"
+                  className="text-cyan-300/80 hover:text-cyan-300 transition-colors duration-200"
                 >
                   {ctaText} →
                 </Link>
