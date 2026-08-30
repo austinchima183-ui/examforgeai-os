@@ -1,4 +1,4 @@
-{ "base": "http://localhost:3000", "timestamp": "2026-08-30T02:28:26Z",
+{ "base": "https://web-alpha-bay-87.vercel.app", "timestamp": "2026-08-30T03:01:13Z",
   "00-landing": "PASS",
   "01-student-journey": "PASS",
   "02-teacher-journey": "PASS",

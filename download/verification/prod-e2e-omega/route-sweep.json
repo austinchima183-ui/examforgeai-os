@@ -1,216 +1,216 @@
 {
-  "auditedAt": "2026-08-29T04:43:23.589726+00:00",
+  "auditedAt": "2026-08-30T03:11:49.728371+00:00",
   "base": "https://web-alpha-bay-87.vercel.app",
   "totalRoutes": 34,
   "pagesOk": 26,
   "pagesRedirected": 0,
   "pageClientErrors": 0,
   "serverErrors": [],
-  "avgTtfbMs": 342,
-  "maxTtfbMs": 1043,
+  "avgTtfbMs": 348,
+  "maxTtfbMs": 827,
   "results": {
     "/": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 94,
+      "ttfb_ms": 215,
       "location": ""
     },
     "/api-docs": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 134,
-      "location": ""
-    },
-    "/case-studies": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 405,
+      "ttfb_ms": 509,
       "location": ""
     },
     "/careers": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 408,
+      "ttfb_ms": 525,
       "location": ""
     },
     "/blog": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 454,
+      "ttfb_ms": 554,
       "location": ""
     },
-    "/changelog": {
+    "/case-studies": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 439,
-      "location": ""
-    },
-    "/community": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 489,
-      "location": ""
-    },
-    "/customers": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 420,
-      "location": ""
-    },
-    "/cookies": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 480,
-      "location": ""
-    },
-    "/contact": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 487,
-      "location": ""
-    },
-    "/features": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 301,
-      "location": ""
-    },
-    "/docs": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 466,
-      "location": ""
-    },
-    "/login": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 91,
+      "ttfb_ms": 583,
       "location": ""
     },
     "/about": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 1043,
+      "ttfb_ms": 625,
       "location": ""
     },
-    "/pricing": {
+    "/changelog": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 93,
+      "ttfb_ms": 448,
       "location": ""
     },
-    "/help-center": {
+    "/features": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 394,
+      "ttfb_ms": 89,
       "location": ""
     },
-    "/gdpr": {
+    "/contact": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 445,
+      "ttfb_ms": 404,
       "location": ""
     },
-    "/integrations": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 460,
-      "location": ""
-    },
-    "/partners": {
+    "/cookies": {
       "kind": "page",
       "status": 200,
       "ttfb_ms": 401,
       "location": ""
     },
-    "/security": {
+    "/customers": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 455,
+      "location": ""
+    },
+    "/login": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 85,
+      "location": ""
+    },
+    "/community": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 643,
+      "location": ""
+    },
+    "/gdpr": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 507,
+      "location": ""
+    },
+    "/pricing": {
       "kind": "page",
       "status": 200,
       "ttfb_ms": 86,
+      "location": ""
+    },
+    "/integrations": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 419,
+      "location": ""
+    },
+    "/help-center": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 460,
+      "location": ""
+    },
+    "/docs": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 827,
+      "location": ""
+    },
+    "/security": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 82,
       "location": ""
     },
     "/press-kit": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 439,
+      "ttfb_ms": 411,
       "location": ""
     },
-    "/privacy": {
+    "/partners": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 537,
+      "ttfb_ms": 439,
       "location": ""
     },
     "/register": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 392,
+      "ttfb_ms": 357,
+      "location": ""
+    },
+    "/privacy": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 425,
       "location": ""
     },
     "/api/auth/csrf": {
       "kind": "api",
       "status": 401,
-      "ttfb_ms": 86,
+      "ttfb_ms": 82,
       "location": ""
     },
     "/api/auth/session": {
       "kind": "api",
       "status": 401,
-      "ttfb_ms": 88,
-      "location": ""
-    },
-    "/solutions": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 411,
-      "location": ""
-    },
-    "/status": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 434,
-      "location": ""
-    },
-    "/api/search": {
-      "kind": "api",
-      "status": 401,
-      "ttfb_ms": 79,
+      "ttfb_ms": 85,
       "location": ""
     },
     "/api/notifications": {
       "kind": "api",
       "status": 401,
-      "ttfb_ms": 84,
+      "ttfb_ms": 88,
       "location": ""
     },
-    "/api/parent/dashboard": {
-      "kind": "api",
-      "status": 401,
-      "ttfb_ms": 87,
-      "location": ""
-    },
-    "/terms": {
+    "/status": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 488,
-      "location": ""
-    },
-    "/api/ai/status": {
-      "kind": "api",
-      "status": 401,
-      "ttfb_ms": 81,
-      "location": ""
-    },
-    "/api/marketplace/items": {
-      "kind": "api",
-      "status": 401,
-      "ttfb_ms": 91,
+      "ttfb_ms": 431,
       "location": ""
     },
     "/api/health": {
       "kind": "api",
       "status": 200,
-      "ttfb_ms": 753,
+      "ttfb_ms": 369,
+      "location": ""
+    },
+    "/api/search": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 85,
+      "location": ""
+    },
+    "/terms": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 387,
+      "location": ""
+    },
+    "/solutions": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 501,
+      "location": ""
+    },
+    "/api/parent/dashboard": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 82,
+      "location": ""
+    },
+    "/api/ai/status": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 86,
+      "location": ""
+    },
+    "/api/marketplace/items": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 88,
       "location": ""
     }
   }

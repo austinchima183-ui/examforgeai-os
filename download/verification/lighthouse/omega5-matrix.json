@@ -1,23 +1,23 @@
 {
- "generatedAt": "2026-08-30T01:41:15.369194Z",
+ "generatedAt": "2026-08-30T03:10:51.990700Z",
  "runs": [
   {
    "name": "landing",
    "preset": "mobile",
    "path": "/",
    "scores": {
-    "PERF": 40,
+    "PERF": 43,
     "ACCE": 97,
     "BEST": 92,
     "SEO": 100,
     "AGEN": 100
    },
    "metrics": {
-    "first-contentful-paint": 2159,
-    "largest-contentful-paint": 8624,
-    "total-blocking-time": 2512,
-    "speed-index": 5551,
-    "interactive": 9894
+    "first-contentful-paint": 1851,
+    "largest-contentful-paint": 6557,
+    "total-blocking-time": 4174,
+    "speed-index": 4428,
+    "interactive": 9029
    }
   },
   {
@@ -25,18 +25,18 @@
    "preset": "mobile",
    "path": "/login",
    "scores": {
-    "PERF": 68,
+    "PERF": 79,
     "ACCE": 96,
     "BEST": 92,
     "SEO": 63,
     "AGEN": 100
    },
    "metrics": {
-    "first-contentful-paint": 1217,
-    "largest-contentful-paint": 4431,
-    "total-blocking-time": 687,
-    "speed-index": 1217,
-    "interactive": 5070
+    "first-contentful-paint": 1075,
+    "largest-contentful-paint": 3775,
+    "total-blocking-time": 412,
+    "speed-index": 1075,
+    "interactive": 4138
    }
   },
   {
@@ -44,18 +44,18 @@
    "preset": "mobile",
    "path": "/dashboard/student",
    "scores": {
-    "PERF": 43,
+    "PERF": 49,
     "ACCE": 99,
     "BEST": 92,
     "SEO": 100,
     "AGEN": 100
    },
    "metrics": {
-    "first-contentful-paint": 1398,
-    "largest-contentful-paint": 7186,
-    "total-blocking-time": 3018,
-    "speed-index": 4943,
-    "interactive": 8244
+    "first-contentful-paint": 1292,
+    "largest-contentful-paint": 6372,
+    "total-blocking-time": 1514,
+    "speed-index": 4377,
+    "interactive": 6757
    }
   },
   {
@@ -63,18 +63,18 @@
    "preset": "mobile",
    "path": "/dashboard/teacher",
    "scores": {
-    "PERF": 47,
+    "PERF": 53,
     "ACCE": 99,
     "BEST": 92,
     "SEO": 100,
     "AGEN": 100
    },
    "metrics": {
-    "first-contentful-paint": 1607,
-    "largest-contentful-paint": 6862,
-    "total-blocking-time": 1917,
-    "speed-index": 3742,
-    "interactive": 7070
+    "first-contentful-paint": 1298,
+    "largest-contentful-paint": 5560,
+    "total-blocking-time": 1407,
+    "speed-index": 3109,
+    "interactive": 5706
    }
   },
   {
@@ -82,18 +82,18 @@
    "preset": "mobile",
    "path": "/parent/dashboard",
    "scores": {
-    "PERF": 51,
+    "PERF": 56,
     "ACCE": 99,
     "BEST": 92,
     "SEO": 100,
     "AGEN": 100
    },
    "metrics": {
-    "first-contentful-paint": 1364,
-    "largest-contentful-paint": 6105,
-    "total-blocking-time": 1338,
-    "speed-index": 3634,
-    "interactive": 7082
+    "first-contentful-paint": 1300,
+    "largest-contentful-paint": 4771,
+    "total-blocking-time": 1400,
+    "speed-index": 3293,
+    "interactive": 5544
    }
   },
   {
@@ -101,18 +101,18 @@
    "preset": "mobile",
    "path": "/dashboard/school-admin",
    "scores": {
-    "PERF": 43,
+    "PERF": 45,
     "ACCE": 99,
     "BEST": 92,
     "SEO": 100,
     "AGEN": 100
    },
    "metrics": {
-    "first-contentful-paint": 1416,
-    "largest-contentful-paint": 9867,
-    "total-blocking-time": 2676,
-    "speed-index": 4829,
-    "interactive": 10557
+    "first-contentful-paint": 1266,
+    "largest-contentful-paint": 7941,
+    "total-blocking-time": 2228,
+    "speed-index": 4094,
+    "interactive": 8765
    }
   },
   {
@@ -120,18 +120,18 @@
    "preset": "mobile",
    "path": "/dashboard/super-admin",
    "scores": {
-    "PERF": 43,
+    "PERF": 45,
     "ACCE": 99,
     "BEST": 92,
     "SEO": 100,
     "AGEN": 100
    },
    "metrics": {
-    "first-contentful-paint": 1364,
-    "largest-contentful-paint": 9029,
-    "total-blocking-time": 2456,
-    "speed-index": 4853,
-    "interactive": 10182
+    "first-contentful-paint": 1273,
+    "largest-contentful-paint": 8071,
+    "total-blocking-time": 2033,
+    "speed-index": 4398,
+    "interactive": 8245
    }
   },
   {
@@ -139,18 +139,18 @@
    "preset": "desktop",
    "path": "/",
    "scores": {
-    "PERF": 63,
+    "PERF": 54,
     "ACCE": 97,
     "BEST": 92,
     "SEO": 100,
-    "AGEN": 91
+    "AGEN": 80
    },
    "metrics": {
-    "first-contentful-paint": 460,
-    "largest-contentful-paint": 2079,
-    "total-blocking-time": 462,
-    "speed-index": 1594,
-    "interactive": 2893
+    "first-contentful-paint": 498,
+    "largest-contentful-paint": 1684,
+    "total-blocking-time": 758,
+    "speed-index": 1875,
+    "interactive": 2212
    }
   },
   {
@@ -165,55 +165,17 @@
     "AGEN": 100
    },
    "metrics": {
-    "first-contentful-paint": 407,
-    "largest-contentful-paint": 925,
-    "total-blocking-time": 75,
-    "speed-index": 591,
-    "interactive": 1103
+    "first-contentful-paint": 353,
+    "largest-contentful-paint": 753,
+    "total-blocking-time": 85,
+    "speed-index": 638,
+    "interactive": 930
    }
   },
   {
    "name": "student-dash",
    "preset": "desktop",
    "path": "/dashboard/student",
-   "scores": {
-    "PERF": 83,
-    "ACCE": 100,
-    "BEST": 92,
-    "SEO": 100,
-    "AGEN": 100
-   },
-   "metrics": {
-    "first-contentful-paint": 410,
-    "largest-contentful-paint": 1754,
-    "total-blocking-time": 223,
-    "speed-index": 1588,
-    "interactive": 1766
-   }
-  },
-  {
-   "name": "teacher-dash",
-   "preset": "desktop",
-   "path": "/dashboard/teacher",
-   "scores": {
-    "PERF": 82,
-    "ACCE": 100,
-    "BEST": 92,
-    "SEO": 100,
-    "AGEN": 100
-   },
-   "metrics": {
-    "first-contentful-paint": 418,
-    "largest-contentful-paint": 1674,
-    "total-blocking-time": 254,
-    "speed-index": 1626,
-    "interactive": 1675
-   }
-  },
-  {
-   "name": "parent-dash",
-   "preset": "desktop",
-   "path": "/parent/dashboard",
    "scores": {
     "PERF": 93,
     "ACCE": 100,
@@ -222,11 +184,49 @@
     "AGEN": 100
    },
    "metrics": {
-    "first-contentful-paint": 420,
-    "largest-contentful-paint": 1360,
-    "total-blocking-time": 105,
-    "speed-index": 1535,
-    "interactive": 1398
+    "first-contentful-paint": 418,
+    "largest-contentful-paint": 1514,
+    "total-blocking-time": 35,
+    "speed-index": 1682,
+    "interactive": 1603
+   }
+  },
+  {
+   "name": "teacher-dash",
+   "preset": "desktop",
+   "path": "/dashboard/teacher",
+   "scores": {
+    "PERF": 91,
+    "ACCE": 100,
+    "BEST": 92,
+    "SEO": 100,
+    "AGEN": 100
+   },
+   "metrics": {
+    "first-contentful-paint": 431,
+    "largest-contentful-paint": 1396,
+    "total-blocking-time": 138,
+    "speed-index": 1709,
+    "interactive": 1401
+   }
+  },
+  {
+   "name": "parent-dash",
+   "preset": "desktop",
+   "path": "/parent/dashboard",
+   "scores": {
+    "PERF": 92,
+    "ACCE": 100,
+    "BEST": 92,
+    "SEO": 100,
+    "AGEN": 100
+   },
+   "metrics": {
+    "first-contentful-paint": 568,
+    "largest-contentful-paint": 1240,
+    "total-blocking-time": 124,
+    "speed-index": 1923,
+    "interactive": 1711
    }
   },
   {
@@ -234,18 +234,18 @@
    "preset": "desktop",
    "path": "/dashboard/school-admin",
    "scores": {
-    "PERF": 67,
+    "PERF": 83,
     "ACCE": 100,
     "BEST": 92,
     "SEO": 100,
     "AGEN": 100
    },
    "metrics": {
-    "first-contentful-paint": 642,
-    "largest-contentful-paint": 3301,
-    "total-blocking-time": 270,
-    "speed-index": 2111,
-    "interactive": 3301
+    "first-contentful-paint": 438,
+    "largest-contentful-paint": 2109,
+    "total-blocking-time": 159,
+    "speed-index": 1854,
+    "interactive": 2111
    }
   },
   {
@@ -253,18 +253,18 @@
    "preset": "desktop",
    "path": "/dashboard/super-admin",
    "scores": {
-    "PERF": 79,
+    "PERF": 75,
     "ACCE": 100,
     "BEST": 92,
     "SEO": 100,
     "AGEN": 100
    },
    "metrics": {
-    "first-contentful-paint": 399,
-    "largest-contentful-paint": 2232,
-    "total-blocking-time": 203,
-    "speed-index": 1914,
-    "interactive": 2438
+    "first-contentful-paint": 449,
+    "largest-contentful-paint": 1885,
+    "total-blocking-time": 327,
+    "speed-index": 1781,
+    "interactive": 1892
    }
   }
  ]
