@@ -7,18 +7,23 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createLogger } from '@/lib/observability/logger'
 import { getIncidentTimeline, getIncident } from '@/lib/alerting/incident-manager'
+import { requireApiRole } from '@/lib/api/auth-guard'
 
 const log = createLogger('api:alerting:incidents:id:timeline')
 
 // ──────────────────────────────────────────────────────────────
-// GET — Get Incident Timeline
+// GET — Get Incident Timeline (admin-gated: operational security data)
 // ──────────────────────────────────────────────────────────────
 
 export async function GET(
-  _request: NextRequest,
+  request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ): Promise<NextResponse> {
   try {
+    // ── Role guard (Ω-17: consistent with all sibling alerting routes) ──
+    const auth = await requireApiRole(request, ['school_admin', 'super_admin'])
+    if (auth instanceof NextResponse) return auth
+
     const { id } = await params
 
     // Verify incident exists

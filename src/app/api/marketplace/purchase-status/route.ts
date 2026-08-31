@@ -3,13 +3,21 @@ import { createClient, createClientOrNull, requireSupabase } from '@/lib/supabas
 import { validateInput } from '@/lib/api/validate'
 import { z } from 'zod'
 import { isDevAdapterMode } from '@/lib/supabase/dev-adapter'
+import { getAuthUser } from '@/lib/auth/require-auth'
 
 export const dynamic = 'force-dynamic'
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
-  const userId = searchParams.get('userId')
   const productId = searchParams.get('productId')
+
+  // ── Identity from session (Ω-18: userId param was client-controlled —
+  // an IDOR letting anyone probe other users' purchase records) ──
+  const auth = await getAuthUser()
+  if (!auth) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+  const userId = auth.user.id
 
   const purchaseStatusSchema = z.object({
     userId: z.string().uuid('Valid userId required'),

@@ -73,6 +73,16 @@ export function requireCsrf(
   request: NextRequest,
   sessionId: string
 ): NextResponse | null {
+  // ── Safe-method exemption ─────────────────────────────────
+  // CSRF protects against unwanted STATE CHANGES. GET/HEAD/OPTIONS
+  // are safe (no state mutation), so they must never be CSRF-gated.
+  // Gating them breaks caching, prefetching, and plain links — this
+  // single check repairs every remaining GET-CSRF mistake app-wide.
+  const method = request.method.toUpperCase()
+  if (method === 'GET' || method === 'HEAD' || method === 'OPTIONS') {
+    return null
+  }
+
   // Extract CSRF token from header first, then body fallback
   const token = request.headers.get(CSRF_HEADER)
 
@@ -118,6 +128,12 @@ export function requireCsrfWithBody(
   sessionId: string,
   body?: Record<string, unknown>
 ): NextResponse | null {
+  // Safe methods never mutate state — exempt from CSRF (see requireCsrf)
+  const method = request.method.toUpperCase()
+  if (method === 'GET' || method === 'HEAD' || method === 'OPTIONS') {
+    return null
+  }
+
   // Try header first
   let token = request.headers.get(CSRF_HEADER)
 

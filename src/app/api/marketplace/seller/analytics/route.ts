@@ -3,16 +3,22 @@ import { createClient, createClientOrNull, requireSupabase } from '@/lib/supabas
 import { validateInput } from '@/lib/api/validate'
 import { z } from 'zod'
 import { isDevAdapterMode } from '@/lib/supabase/dev-adapter'
+import { getAuthUser } from '@/lib/auth/require-auth'
 
 export const dynamic = 'force-dynamic'
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
-  const userId = searchParams.get('userId')
 
-  if (!userId) {
-    return NextResponse.json({ error: 'userId required' }, { status: 400 })
+  // ── Identity from session (Ω-18: never trust client-supplied userId —
+  // the query param is accepted ONLY for super_admin cross-seller views) ──
+  const auth = await getAuthUser()
+  if (!auth) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
+  const paramUserId = searchParams.get('userId')
+  const userId =
+    paramUserId && auth.user.role === 'super_admin' ? paramUserId : auth.user.id
 
   const supabase = await requireSupabase()
   // ── Dev Adapter Guard ──

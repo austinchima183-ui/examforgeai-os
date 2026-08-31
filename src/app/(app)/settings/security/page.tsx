@@ -96,6 +96,7 @@ export default function SecuritySettingsPage() {
   const [otpauthUrl, setOtpauthUrl] = useState('')
   const [verificationCode, setVerificationCode] = useState('')
   const [verifying, setVerifying] = useState(false)
+  const [disableCode, setDisableCode] = useState('')
   const [copiedSecret, setCopiedSecret] = useState(false)
   const [copiedBackup, setCopiedBackup] = useState(false)
 
@@ -170,12 +171,17 @@ export default function SecuritySettingsPage() {
       const res = await apiFetch('/api/settings/security', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'disable_2fa' }),
+        body: JSON.stringify({ action: 'disable_2fa', code: disableCode.trim() }),
       })
-      if (!res.ok) throw new Error('Failed to disable 2FA')
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        toast.error(data?.error ?? 'Failed to disable 2FA')
+        return
+      }
       setTwoFactorEnabled(false)
       setTotpSecret('')
       setBackupCodes([])
+      setDisableCode('')
       toast.success('Two-factor authentication disabled')
     } catch {
       toast.error('Failed to disable 2FA')
@@ -320,13 +326,27 @@ export default function SecuritySettingsPage() {
                       <AlertDialogHeader>
                         <AlertDialogTitle>Disable Two-Factor Authentication?</AlertDialogTitle>
                         <AlertDialogDescription>
-                          This will remove the extra security layer from your account. 
-                          Are you sure you want to continue?
+                          For your security, enter a current verification code (or a backup code) to confirm this change.
                         </AlertDialogDescription>
                       </AlertDialogHeader>
+                      <div className="py-2">
+                        <Label htmlFor="disable-2fa-code" className="text-sm font-medium">Verification code</Label>
+                        <Input
+                          id="disable-2fa-code"
+                          placeholder="6-digit code or backup code"
+                          value={disableCode}
+                          onChange={(e) => setDisableCode(e.target.value)}
+                          autoComplete="off"
+                          inputMode="numeric"
+                          className="mt-1.5"
+                        />
+                      </div>
                       <AlertDialogFooter>
-                        <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction onClick={handleDisable2FA}>
+                        <AlertDialogCancel onClick={() => setDisableCode('')}>Cancel</AlertDialogCancel>
+                        <AlertDialogAction
+                          onClick={handleDisable2FA}
+                          disabled={disableCode.trim().length < 6}
+                        >
                           Disable 2FA
                         </AlertDialogAction>
                       </AlertDialogFooter>
