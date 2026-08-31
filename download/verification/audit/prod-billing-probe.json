@@ -1,0 +1,15 @@
+{
+  "target": "https://web-alpha-bay-87.vercel.app",
+  "plansResult": {
+    "status": 404,
+    "body": "<!DOCTYPE html><!--zBKuRQoI7kr481nm_BZ_8--><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/86f9a5cc20b78f3a.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/b38ab0bb710e70fd.css\" data-precedence=\"next\"/><li"
+  },
+  "seedResult": {
+    "status": 404,
+    "body": "<!DOCTYPE html><!--zBKuRQoI7kr481nm_BZ_8--><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/86f9a5cc20b78f3a.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/b38ab0bb710e70fd.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/4a6a5c123c38d765.js\"/><s"
+  },
+  "plansAfter": {
+    "status": 404,
+    "body": "<!DOCTYPE html><!--zBKuRQoI7kr481nm_BZ_8--><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/86f9a5cc20b78f3a.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/b38ab0bb710e70fd.css\" data-precedence=\"next\"/><li"
+  }
+}

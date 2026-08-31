@@ -1,0 +1,107 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/settings/api-keys",
+    "status": 400,
+    "verdict": "HTTP-400",
+    "body": "{\"error\":\"Organization context not found\"}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/alerting/channels",
+    "status": 403,
+    "verdict": "FORBIDDEN(gate)",
+    "body": "{\"error\":\"CSRF token required\",\"code\":\"CSRF_TOKEN_MISSING\"}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/backups",
+    "status": 200,
+    "verdict": "OK",
+    "body": "{\"backups\":[],\"schedule\":{\"enabled\":false,\"frequency\":\"daily\",\"retentionDays\":30,\"lastRun\":\"\",\"nextRun\":\"\"}}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/notifications/templates",
+    "status": 200,
+    "verdict": "OK",
+    "body": "{\"templates\":[{\"id\":\"tpl-1\",\"key\":\"exam_assigned\",\"name\":\"Exam Assigned\",\"subject\":\"New Exam: {{exam_title}}\",\"body\":\"Hello {{student_name}},\\n\\nYou have been a"
+  },
+  {
+    "method": "GET",
+    "path": "/api/settings/webhooks",
+    "status": 200,
+    "verdict": "OK",
+    "body": "{\"webhooks\":[],\"availableEvents\":[\"exam.created\",\"exam.updated\",\"exam.deleted\",\"result.published\",\"user.created\",\"user.updated\",\"payment.completed\",\"payment.fai"
+  },
+  {
+    "method": "GET",
+    "path": "/api/developer/applications",
+    "status": 404,
+    "verdict": "ROUTE-MISSING",
+    "body": "(html page)"
+  },
+  {
+    "method": "GET",
+    "path": "/api/security/sessions",
+    "status": 200,
+    "verdict": "OK",
+    "body": "{\"sessions\":[]}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/workflows",
+    "status": 200,
+    "verdict": "OK",
+    "body": "{\"data\":[],\"total\":0,\"hasMore\":false}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/billing/invoices",
+    "status": 400,
+    "verdict": "HTTP-400",
+    "body": "{\"error\":\"Organization context not found\"}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/feedback",
+    "status": 400,
+    "verdict": "HTTP-400",
+    "body": "{\"error\":\"Failed to query feedback items\"}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/reports/schedules",
+    "status": 404,
+    "verdict": "ROUTE-MISSING",
+    "body": "(html page)"
+  },
+  {
+    "method": "GET",
+    "path": "/api/events",
+    "status": 200,
+    "verdict": "OK",
+    "body": "{\"events\":[],\"stats\":{\"totalEvents\":0,\"eventsByType\":{},\"eventsByHour\":{},\"avgDurationMs\":0,\"errorRate\":0,\"topUsers\":[]},\"page\":1,\"limit\":20}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/organizations",
+    "status": 200,
+    "verdict": "OK",
+    "body": "{\"organizations\":[],\"total\":0,\"page\":1,\"limit\":20}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/student/revision-hub",
+    "status": 200,
+    "verdict": "OK",
+    "body": "{\"sessions\":[],\"flaggedAnswers\":[],\"subjects\":[{\"id\":\"6432d955-c196-4f0e-9ccd-3df9ab649582\",\"name\":\"Mathematics\",\"code\":\"MATHE2E\"}]}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/notifications",
+    "status": 404,
+    "verdict": "ROUTE-MISSING",
+    "body": "(html page)"
+  }
+]

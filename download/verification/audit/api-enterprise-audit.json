@@ -1,0 +1,2307 @@
+{
+  "total": 147,
+  "routes": [
+    {
+      "route": "admin/audit-logs",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "admin/backups",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "admin/branding",
+      "handlers": [
+        "GET",
+        "PUT"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "admin/integrations",
+      "handlers": [
+        "GET",
+        "PUT",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "admin/organization-settings",
+      "handlers": [
+        "GET",
+        "PUT"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "admin/plugins",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "admin/roles",
+      "handlers": [
+        "GET",
+        "PUT"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "admin/seed-plans",
+      "handlers": [
+        "POST",
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "admin/users",
+      "handlers": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "agents/[id]/execute",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "agents",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "ai/agents",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "ai/complete",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "ai/government",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "ai/parent",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "ai/predictive",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "ai/school-admin",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "ai/stream",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "ai/student",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "ai/teacher",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "alerting/channels",
+      "handlers": [
+        "GET",
+        "POST",
+        "PUT"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "alerting/incidents/[id]",
+      "handlers": [
+        "GET",
+        "PATCH"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "alerting/incidents/[id]/timeline",
+      "handlers": [
+        "GET"
+      ],
+      "auth": false,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "alerting/incidents",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "alerting/suppressions",
+      "handlers": [
+        "GET",
+        "POST",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "analytics/enterprise",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "analytics/events",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": false,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "analytics/nlq",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "analytics",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "auth/callback",
+      "handlers": [
+        "GET"
+      ],
+      "auth": false,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "auth/csrf",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "billing/audit",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "billing/checkout",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "billing/enterprise",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "billing/invoices",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "billing/paystack/checkout",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "billing/paystack/webhook",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": true
+    },
+    {
+      "route": "billing/refund",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "billing/refunds",
+      "handlers": [
+        "POST",
+        "PATCH"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "billing/revenue",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "billing/subscription-lifecycle",
+      "handlers": [
+        "POST",
+        "PATCH"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "billing/subscriptions",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "billing/webhook",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": true
+    },
+    {
+      "route": "billing/webhooks",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": true
+    },
+    {
+      "route": "cbt/answer",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "cbt/exam",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "cbt/session",
+      "handlers": [
+        "POST",
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "cbt/submit",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "cbt/timing",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "contact",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": false,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": true
+    },
+    {
+      "route": "demo-booking/[id]",
+      "handlers": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "demo-booking",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": false,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": true
+    },
+    {
+      "route": "developer/keys",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "developer/oauth-apps",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "developer/openapi",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "events",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "feedback/[id]/comments",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "feedback/[id]",
+      "handlers": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "feedback/ai-rating",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "feedback/analytics",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "feedback",
+      "handlers": [
+        "POST",
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "health/ai",
+      "handlers": [
+        "GET"
+      ],
+      "auth": false,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": false,
+      "trycatch": false,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "health/database",
+      "handlers": [
+        "GET"
+      ],
+      "auth": false,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": false,
+      "trycatch": false,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "health/detailed",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "health/redis",
+      "handlers": [
+        "GET"
+      ],
+      "auth": false,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": false,
+      "trycatch": false,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "health",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": true
+    },
+    {
+      "route": "import/errors",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "import/execute",
+      "handlers": [
+        "POST",
+        "PATCH"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "import/progress",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "import/validate",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "marketing/analytics",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketing/contacts",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketing/demos",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketing/leads/[id]/activities",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketing/leads/[id]",
+      "handlers": [
+        "GET",
+        "PATCH"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketing/leads",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketing/newsletter",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace/checkout",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": false,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace/download",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace/my-purchases",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace/product",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": false,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace/purchase",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": false,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace/purchase-status",
+      "handlers": [
+        "GET"
+      ],
+      "auth": false,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": false,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace/related",
+      "handlers": [
+        "GET"
+      ],
+      "auth": false,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": false,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace/reviews/report",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": false,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace/reviews/respond",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": false,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace/reviews",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace/seller/analytics",
+      "handlers": [
+        "GET"
+      ],
+      "auth": false,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": false,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace/seller/products",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": false,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace/verify-payment",
+      "handlers": [
+        "POST",
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": false,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace/webhook",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": true
+    },
+    {
+      "route": "marketplace-v2/listings/[id]/purchase",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "marketplace-v2/listings",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "newsletter/subscribe",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": false,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": true
+    },
+    {
+      "route": "newsletter/unsubscribe",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": true
+    },
+    {
+      "route": "newsletter/verify",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": true
+    },
+    {
+      "route": "notifications/delivery-status",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "notifications/digest",
+      "handlers": [
+        "POST",
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "notifications/history",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "notifications/preferences",
+      "handlers": [
+        "GET",
+        "PUT"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "notifications/send",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "notifications/templates",
+      "handlers": [
+        "GET",
+        "PUT",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "organizations/[id]",
+      "handlers": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "organizations",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "organizations/switch",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "parent/attendance",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "parent/child-progress",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "parent/dashboard",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "parent/fees",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "parent/messaging",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "plugins/[id]/install",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "plugins",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "reports/generate",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "reports",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "reports/schedule",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "reports/share",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": ".",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "school/attendance",
+      "handlers": [
+        "GET",
+        "POST",
+        "PATCH"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "school/calendar",
+      "handlers": [
+        "GET",
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": false,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "school/classes",
+      "handlers": [
+        "GET",
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": false,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "school/fees",
+      "handlers": [
+        "GET",
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "school/timetable",
+      "handlers": [
+        "GET",
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": false,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "search",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "security/passkeys",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "security/sessions",
+      "handlers": [
+        "GET",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "security/sso",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "seed",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "settings/api-keys",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "settings/security",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": false,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "settings/sso",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": false,
+      "role_check": true,
+      "trycatch": false,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "settings/webhooks",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "student/certificates",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "student/flashcards",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "student/practice",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "student/progress",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "student/revision-hub",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "student/study-planner",
+      "handlers": [
+        "GET",
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "teacher/grade",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "teacher/lesson-plans",
+      "handlers": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "teacher/rubrics",
+      "handlers": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "teacher/submissions",
+      "handlers": [
+        "GET",
+        "PUT"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": true,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "teacher/worksheets",
+      "handlers": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": true,
+      "public_by_design": false
+    },
+    {
+      "route": "tenants/resolve",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "workflows/[id]/execute",
+      "handlers": [
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "workflows/[id]/executions",
+      "handlers": [
+        "GET"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "workflows/[id]",
+      "handlers": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": false,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    },
+    {
+      "route": "workflows",
+      "handlers": [
+        "GET",
+        "POST"
+      ],
+      "auth": true,
+      "csrf": true,
+      "rate_limit": false,
+      "validation": true,
+      "role_check": true,
+      "trycatch": true,
+      "logging": false,
+      "public_by_design": false
+    }
+  ],
+  "summary": {
+    "total_routes": 147,
+    "routes_with_mutations": 103,
+    "auth_ok": 138,
+    "csrf_ok_on_mutations": 143,
+    "rate_limited": 65,
+    "validation_present": 112,
+    "issues": {
+      "no_auth": 9,
+      "mutation_no_csrf": 4,
+      "no_ratelimit": 81,
+      "mutation_no_validation": 16,
+      "no_trycatch": 17
+    },
+    "issue_detail": {
+      "no_auth": [
+        "alerting/incidents/[id]/timeline",
+        "auth/callback",
+        "health/ai",
+        "health/database",
+        "health/redis",
+        "marketplace/purchase-status",
+        "marketplace/related",
+        "marketplace/seller/analytics",
+        "settings/security"
+      ],
+      "mutation_no_csrf": [
+        "analytics/events",
+        "contact",
+        "demo-booking",
+        "newsletter/subscribe"
+      ],
+      "no_ratelimit": [
+        "admin/audit-logs",
+        "agents/[id]/execute",
+        "agents",
+        "alerting/channels",
+        "alerting/incidents/[id]",
+        "alerting/incidents/[id]/timeline",
+        "alerting/incidents",
+        "alerting/suppressions",
+        "analytics",
+        "auth/callback",
+        "billing/invoices",
+        "billing/paystack/webhook",
+        "billing/refund",
+        "billing/webhook",
+        "billing/webhooks",
+        "demo-booking/[id]",
+        "developer/oauth-apps",
+        "developer/openapi",
+        "events",
+        "feedback/[id]/comments",
+        "feedback/[id]",
+        "feedback/ai-rating",
+        "feedback/analytics",
+        "feedback",
+        "health/ai",
+        "health/database",
+        "health/detailed",
+        "health/redis",
+        "import/errors",
+        "import/execute",
+        "import/progress",
+        "import/validate",
+        "marketing/analytics",
+        "marketing/demos",
+        "marketing/leads",
+        "marketplace/product",
+        "marketplace/purchase-status",
+        "marketplace/related",
+        "marketplace/reviews/report",
+        "marketplace/reviews/respond",
+        "marketplace/seller/analytics",
+        "marketplace/verify-payment",
+        "marketplace/webhook",
+        "marketplace-v2/listings",
+        "newsletter/unsubscribe",
+        "newsletter/verify",
+        "notifications/delivery-status",
+        "notifications/digest",
+        "notifications/history",
+        "notifications/preferences",
+        "notifications/send",
+        "notifications/templates",
+        "organizations",
+        "organizations/switch",
+        "parent/messaging",
+        "plugins",
+        "reports/generate",
+        "reports",
+        "reports/schedule",
+        "reports/share",
+        ".",
+        "school/calendar",
+        "school/classes",
+        "school/timetable",
+        "security/sso",
+        "seed",
+        "settings/api-keys",
+        "settings/security",
+        "settings/sso",
+        "settings/webhooks",
+        "student/flashcards",
+        "student/revision-hub",
+        "student/study-planner",
+        "teacher/lesson-plans",
+        "teacher/rubrics",
+        "teacher/worksheets",
+        "tenants/resolve",
+        "workflows/[id]/execute",
+        "workflows/[id]/executions",
+        "workflows/[id]",
+        "workflows"
+      ],
+      "mutation_no_validation": [
+        "admin/plugins",
+        "admin/seed-plans",
+        "alerting/channels",
+        "alerting/incidents/[id]",
+        "alerting/incidents",
+        "alerting/suppressions",
+        "billing/enterprise",
+        "billing/invoices",
+        "billing/paystack/checkout",
+        "billing/paystack/webhook",
+        "billing/refunds",
+        "billing/subscription-lifecycle",
+        "billing/webhook",
+        "billing/webhooks",
+        "marketplace/webhook",
+        "settings/sso"
+      ],
+      "no_trycatch": [
+        "health/ai",
+        "health/database",
+        "health/redis",
+        "marketplace/checkout",
+        "marketplace/product",
+        "marketplace/purchase",
+        "marketplace/purchase-status",
+        "marketplace/related",
+        "marketplace/reviews/report",
+        "marketplace/reviews/respond",
+        "marketplace/seller/analytics",
+        "marketplace/seller/products",
+        "marketplace/verify-payment",
+        "school/calendar",
+        "school/classes",
+        "school/timetable",
+        "settings/sso"
+      ]
+    }
+  }
+}

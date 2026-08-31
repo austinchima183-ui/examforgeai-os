@@ -1,0 +1,190 @@
+{
+  "agent_delegations": [
+    "completed_at",
+    "deadline",
+    "organization_id",
+    "result"
+  ],
+  "agent_executions": [
+    "completed_at",
+    "config_id",
+    "goal",
+    "result"
+  ],
+  "agent_memories": [
+    "accessed_at",
+    "embedding",
+    "organization_id",
+    "type"
+  ],
+  "agent_messages": [
+    "content",
+    "organization_id",
+    "priority",
+    "type"
+  ],
+  "agent_plans": [
+    "agent_id",
+    "organization_id"
+  ],
+  "ai_circuit_breaker_state": [
+    "avg_latency_ms",
+    "circuit_open",
+    "circuit_open_until",
+    "consecutive_failures",
+    "healthy",
+    "last_error",
+    "total_failures",
+    "total_requests"
+  ],
+  "api_keys": [
+    "active",
+    "key_prefix",
+    "permissions",
+    "usage_count"
+  ],
+  "backups": [
+    "name",
+    "records",
+    "size",
+    "tables",
+    "type"
+  ],
+  "enrollments": [
+    "is_active",
+    "roll_number"
+  ],
+  "enterprise_contracts": [
+    "notes",
+    "terms",
+    "value"
+  ],
+  "marketplace_licenses": [
+    "activated_at",
+    "buyer_org_id",
+    "deactivated_at",
+    "product_title"
+  ],
+  "notification_bounces": [
+    "bounce_code",
+    "bounced_at",
+    "diagnostic"
+  ],
+  "notification_queue": [
+    "attempt",
+    "backoff_ms",
+    "completed_at",
+    "event_data",
+    "event_id",
+    "max_attempts",
+    "started_at"
+  ],
+  "payment_audit_trail": [
+    "action",
+    "performed_by",
+    "provider"
+  ],
+  "payment_authorizations": [
+    "channel"
+  ],
+  "push_tokens": [
+    "active"
+  ],
+  "refund_requests": [
+    "approved_by",
+    "flutterwave_refund_id",
+    "rejected_reason"
+  ],
+  "refund_workflows": [
+    "approved_by",
+    "currency",
+    "processed_at",
+    "provider_refund_id",
+    "reason",
+    "requested_by"
+  ],
+  "scheduled_interventions": [
+    "created_by",
+    "scheduled_date",
+    "type",
+    "workflow_execution_id"
+  ],
+  "scim_configurations": [
+    "bearer_token_encrypted",
+    "enabled",
+    "endpoint",
+    "group_mapping",
+    "last_sync_at",
+    "sync_interval_seconds",
+    "user_id_mapping"
+  ],
+  "seat_allocations": [
+    "currency"
+  ],
+  "session_activity_log": [
+    "activity",
+    "details",
+    "ip"
+  ],
+  "sso_auth_states": [
+    "code_verifier",
+    "redirect_url"
+  ],
+  "sso_providers": [
+    "attribute_mapping",
+    "authorization_url",
+    "client_secret_encrypted",
+    "enabled",
+    "name",
+    "scopes",
+    "token_url",
+    "type",
+    "user_info_url"
+  ],
+  "sso_user_links": [
+    "external_email",
+    "external_groups",
+    "scim_managed"
+  ],
+  "transcript_entries": [
+    "exam_id"
+  ],
+  "webhook_idempotency": [
+    "status"
+  ],
+  "webhooks": [
+    "active"
+  ],
+  "workflow_approval_requests": [
+    "approved_at",
+    "approved_by",
+    "context",
+    "workflow_execution_id"
+  ],
+  "workflow_dead_letter_queue": [
+    "input_data",
+    "organization_id",
+    "retry_count",
+    "school_id",
+    "workflow_id"
+  ],
+  "workflow_definitions": [
+    "actions",
+    "connections",
+    "error_handling",
+    "tags",
+    "trigger",
+    "variables"
+  ],
+  "workflow_executions": [
+    "completed_at",
+    "correlation_id",
+    "trigger_event",
+    "trigger_event_id",
+    "trigger_rule_id"
+  ],
+  "workflow_scheduled_steps": [
+    "resume_at",
+    "workflow_id"
+  ]
+}

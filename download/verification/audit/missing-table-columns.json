@@ -1,0 +1,415 @@
+{
+  "agent_delegations": [
+    "created_at",
+    "id",
+    "is_active",
+    "role",
+    "school_id",
+    "status",
+    "to_agent_id"
+  ],
+  "agent_executions": [
+    "agent_id",
+    "cost_usd",
+    "duration_ms",
+    "started_at",
+    "status",
+    "tokens_input",
+    "tokens_output"
+  ],
+  "agent_memories": [
+    "agent_id",
+    "created_at",
+    "id",
+    "importance",
+    "type"
+  ],
+  "agent_messages": [
+    "created_at",
+    "enabled",
+    "id",
+    "read_at",
+    "to_agent_id",
+    "type"
+  ],
+  "agent_plans": [
+    "id"
+  ],
+  "ai_circuit_breaker_state": [
+    "provider"
+  ],
+  "alert_channels": [
+    "updated_at"
+  ],
+  "api_key_usage": [
+    "count",
+    "endpoint",
+    "key_id"
+  ],
+  "api_keys": [
+    "count",
+    "created_at",
+    "created_by",
+    "endpoint",
+    "expires_at",
+    "id",
+    "key",
+    "key_id",
+    "last_used_at",
+    "name",
+    "org_id",
+    "prefix",
+    "rate_limit",
+    "revoked_at",
+    "scopes",
+    "updated_at"
+  ],
+  "assignment_recipients": [
+    "assignment_id",
+    "id",
+    "school_id",
+    "user_id"
+  ],
+  "avatars": [
+    "id"
+  ],
+  "backup_schedule": [],
+  "backups": [
+    "created_at"
+  ],
+  "cross_campus_permissions": [
+    "expires_at",
+    "granted_at",
+    "id",
+    "is_active",
+    "path",
+    "permission_type",
+    "source_org_id",
+    "target_org_id",
+    "user_id"
+  ],
+  "delegated_admins": [
+    "expires_at",
+    "granted_at",
+    "id",
+    "is_active",
+    "organization_id",
+    "path",
+    "roles",
+    "scope",
+    "user_id"
+  ],
+  "enrollment_history": [
+    "action",
+    "created_at",
+    "id",
+    "reason",
+    "role",
+    "school_id",
+    "student_id"
+  ],
+  "enrollments": [],
+  "enterprise_contracts": [
+    "end_date",
+    "id",
+    "org_id",
+    "start_date",
+    "status"
+  ],
+  "exam_answers": [
+    "code",
+    "content",
+    "created_at",
+    "difficulty",
+    "exams.subjects.name",
+    "flagged",
+    "id",
+    "is_active",
+    "is_correct",
+    "marks_awarded",
+    "name",
+    "question_id",
+    "status",
+    "student_id",
+    "subject_id",
+    "submitted_at",
+    "topic_id"
+  ],
+  "exam_participants": [
+    "assignment_id",
+    "exam_id",
+    "user_id"
+  ],
+  "fee_assignments": [
+    "amount",
+    "amount_due",
+    "amount_paid",
+    "created_at",
+    "date",
+    "due_date",
+    "full_name",
+    "id",
+    "is_active",
+    "name",
+    "paid_at",
+    "percentage",
+    "role",
+    "school_id",
+    "status",
+    "student_id"
+  ],
+  "fee_structures": [
+    "created_at",
+    "id",
+    "is_active",
+    "name",
+    "paid_at",
+    "school_id"
+  ],
+  "feedback": [
+    "ai_rating",
+    "assignee_id",
+    "created_at",
+    "id",
+    "is_deleted",
+    "priority",
+    "resolved_at",
+    "school_id",
+    "screenshot_urls",
+    "severity",
+    "status",
+    "type",
+    "user_id"
+  ],
+  "feedback_comments": [
+    "created_at",
+    "feedback_id",
+    "is_internal"
+  ],
+  "marketplace_licenses": [
+    "id",
+    "is_active",
+    "key",
+    "license_key",
+    "product_id",
+    "purchase_count",
+    "purchaser_org_id",
+    "revenue",
+    "seats",
+    "seats_used",
+    "type"
+  ],
+  "metered_pricing": [
+    "included_quantity",
+    "metric",
+    "plan_tier",
+    "unit_price"
+  ],
+  "notification_bounces": [
+    "address",
+    "channel",
+    "suppressed"
+  ],
+  "notification_queue": [
+    "created_at",
+    "id",
+    "process_at",
+    "status"
+  ],
+  "notification_templates": [
+    "id",
+    "updated_at"
+  ],
+  "oauth_auth_codes": [
+    "code"
+  ],
+  "oauth_tokens": [
+    "access_token_hash",
+    "id",
+    "refresh_token_hash"
+  ],
+  "organization_settings": [
+    "district_average",
+    "password_policy"
+  ],
+  "payment_audit_trail": [
+    "created_at",
+    "payment_id"
+  ],
+  "payment_authorizations": [
+    "authorization_code",
+    "created_at",
+    "email",
+    "is_reusable",
+    "org_id",
+    "provider"
+  ],
+  "plan_limits": [
+    "included_quantity",
+    "metric",
+    "overage_price",
+    "plan_tier"
+  ],
+  "push_tokens": [
+    "token"
+  ],
+  "refund_requests": [
+    "amount",
+    "created_at",
+    "flutterwave_transaction_id",
+    "id",
+    "org_id",
+    "payment_id",
+    "status",
+    "transaction_ref"
+  ],
+  "refund_workflows": [
+    "amount",
+    "id",
+    "payment_id",
+    "provider",
+    "status",
+    "transaction_ref"
+  ],
+  "scheduled_interventions": [
+    "id"
+  ],
+  "scim_configurations": [
+    "organization_id"
+  ],
+  "seat_allocations": [
+    "available_seats",
+    "id",
+    "is_active",
+    "metric",
+    "org_id",
+    "plan_id",
+    "quantity",
+    "school_id",
+    "seat_price",
+    "status",
+    "timestamp",
+    "total_seats",
+    "used_seats"
+  ],
+  "session_activity_log": [
+    "id",
+    "timestamp",
+    "user_id"
+  ],
+  "sso_auth_states": [
+    "expires_at",
+    "provider_id",
+    "state"
+  ],
+  "sso_providers": [
+    "created_at",
+    "id",
+    "organization_id"
+  ],
+  "sso_user_links": [
+    "email",
+    "id",
+    "organization_id"
+  ],
+  "subscription_changes": [
+    "change_type",
+    "created_at",
+    "issued_at",
+    "new_amount",
+    "old_amount",
+    "org_id",
+    "school_id",
+    "status",
+    "total_amount"
+  ],
+  "tax_rates": [
+    "created_at",
+    "id",
+    "is_active",
+    "org_id",
+    "rate",
+    "region"
+  ],
+  "teacher_subjects": [
+    "id",
+    "name",
+    "school_id"
+  ],
+  "transcript_entries": [],
+  "usage_records": [
+    "included_quantity",
+    "metric",
+    "org_id",
+    "overage_price",
+    "period",
+    "plan_tier",
+    "quantity",
+    "school_id",
+    "status",
+    "timestamp",
+    "unit_price"
+  ],
+  "webhook_deliveries": [
+    "created_at",
+    "timestamp",
+    "webhook_id"
+  ],
+  "webhook_idempotency": [
+    "event_id",
+    "expires_at",
+    "provider"
+  ],
+  "webhook_registrations": [
+    "event_types",
+    "is_active",
+    "secret",
+    "subscriber_id",
+    "url"
+  ],
+  "webhooks": [
+    "created_at",
+    "id"
+  ],
+  "workflow_approval_requests": [
+    "expires_at",
+    "id",
+    "name",
+    "organization_id",
+    "requested_at",
+    "requested_from",
+    "role",
+    "school_id",
+    "status",
+    "step_id",
+    "workflow_execution_id",
+    "workflow_id"
+  ],
+  "workflow_dead_letter_queue": [],
+  "workflow_definitions": [
+    "created_by",
+    "deleted_at",
+    "id",
+    "name",
+    "organization_id",
+    "school_id",
+    "status",
+    "updated_at",
+    "version",
+    "workflow_id"
+  ],
+  "workflow_executions": [
+    "created_by",
+    "duration_ms",
+    "id",
+    "name",
+    "requested_at",
+    "started_at",
+    "status",
+    "step_id",
+    "steps",
+    "workflow_execution_id",
+    "workflow_id"
+  ],
+  "workflow_scheduled_steps": []
+}

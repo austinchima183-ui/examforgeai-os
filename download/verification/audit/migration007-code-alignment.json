@@ -1,0 +1,1660 @@
+{
+  "agent_delegations": {
+    "ddl_columns": [
+      "completed_at",
+      "created_at",
+      "deadline",
+      "from_agent_id",
+      "id",
+      "is_active",
+      "organization_id",
+      "result",
+      "role",
+      "school_id",
+      "status",
+      "task",
+      "to_agent_id",
+      "updated_at",
+      "user_id"
+    ],
+    "code_payload_keys": [
+      "action_url",
+      "body",
+      "channel",
+      "completed_at",
+      "created_at",
+      "data",
+      "deadline",
+      "from_agent_id",
+      "organization_id",
+      "priority",
+      "result",
+      "school_id",
+      "status",
+      "title",
+      "to_agent_id",
+      "type",
+      "user_id"
+    ],
+    "missing_in_ddl": [
+      "action_url",
+      "body",
+      "channel",
+      "data",
+      "priority",
+      "title",
+      "type"
+    ]
+  },
+  "agent_executions": {
+    "ddl_columns": [
+      "agent_id",
+      "completed_at",
+      "config_id",
+      "cost_usd",
+      "created_at",
+      "duration_ms",
+      "error_message",
+      "goal",
+      "id",
+      "input",
+      "output",
+      "plan_id",
+      "result",
+      "school_id",
+      "started_at",
+      "status",
+      "tokens_input",
+      "tokens_output",
+      "updated_at",
+      "user_id"
+    ],
+    "code_payload_keys": [
+      "agent_id",
+      "completed_at",
+      "config_id",
+      "cost_usd",
+      "goal",
+      "id",
+      "plan_id",
+      "result",
+      "started_at",
+      "status",
+      "tokens_input",
+      "tokens_output"
+    ],
+    "missing_in_ddl": []
+  },
+  "agent_memories": {
+    "ddl_columns": [
+      "accessed_at",
+      "agent_id",
+      "content",
+      "created_at",
+      "embedding",
+      "id",
+      "importance",
+      "memory_type",
+      "metadata",
+      "organization_id",
+      "school_id",
+      "type",
+      "updated_at"
+    ],
+    "code_payload_keys": [
+      "accessed_at",
+      "agent_id",
+      "content",
+      "created_at",
+      "embedding",
+      "importance",
+      "organization_id",
+      "school_id"
+    ],
+    "missing_in_ddl": []
+  },
+  "agent_messages": {
+    "ddl_columns": [
+      "content",
+      "created_at",
+      "enabled",
+      "from_agent_id",
+      "id",
+      "message_type",
+      "organization_id",
+      "payload",
+      "priority",
+      "read_at",
+      "school_id",
+      "to_agent_id",
+      "type",
+      "updated_at"
+    ],
+    "code_payload_keys": [
+      "created_at",
+      "from_agent_id",
+      "organization_id",
+      "priority",
+      "read_at",
+      "school_id",
+      "to_agent_id",
+      "type"
+    ],
+    "missing_in_ddl": []
+  },
+  "agent_plans": {
+    "ddl_columns": [
+      "agent_id",
+      "context",
+      "created_at",
+      "created_by",
+      "goal",
+      "id",
+      "organization_id",
+      "school_id",
+      "status",
+      "steps",
+      "updated_at"
+    ],
+    "code_payload_keys": [
+      "agent_id",
+      "created_at",
+      "id",
+      "organization_id",
+      "school_id",
+      "status",
+      "steps"
+    ],
+    "missing_in_ddl": []
+  },
+  "ai_circuit_breaker_state": {
+    "ddl_columns": [
+      "avg_latency_ms",
+      "circuit_open",
+      "circuit_open_until",
+      "consecutive_failures",
+      "cooldown_until",
+      "created_at",
+      "failure_count",
+      "healthy",
+      "last_error",
+      "last_failure_at",
+      "last_success_at",
+      "metadata",
+      "opened_at",
+      "provider",
+      "state",
+      "success_count",
+      "total_failures",
+      "total_requests",
+      "updated_at"
+    ],
+    "code_payload_keys": [
+      "avg_latency_ms",
+      "circuit_open",
+      "circuit_open_until",
+      "consecutive_failures",
+      "healthy",
+      "last_error",
+      "last_failure_at",
+      "last_success_at",
+      "total_failures",
+      "total_requests",
+      "updated_at"
+    ],
+    "missing_in_ddl": []
+  },
+  "alert_channels": {
+    "ddl_columns": [
+      "channel",
+      "config",
+      "created_at",
+      "enabled",
+      "id",
+      "is_default",
+      "last_triggered_at",
+      "name",
+      "school_id",
+      "updated_at"
+    ],
+    "code_payload_keys": [
+      "channel",
+      "config",
+      "enabled",
+      "id",
+      "updated_at"
+    ],
+    "missing_in_ddl": []
+  },
+  "api_key_usage": {
+    "ddl_columns": [
+      "count",
+      "created_at",
+      "endpoint",
+      "id",
+      "key_id",
+      "method",
+      "status_code",
+      "window_start"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "api_keys": {
+    "ddl_columns": [
+      "active",
+      "created_at",
+      "created_by",
+      "endpoint",
+      "expires_at",
+      "id",
+      "key",
+      "key_hash",
+      "key_prefix",
+      "last_used_at",
+      "name",
+      "org_id",
+      "permissions",
+      "prefix",
+      "rate_limit",
+      "revoked_at",
+      "school_id",
+      "scopes",
+      "updated_at",
+      "usage_count"
+    ],
+    "code_payload_keys": [
+      "active",
+      "created_at",
+      "created_by",
+      "expires_at",
+      "key",
+      "key_hash",
+      "key_prefix",
+      "last_used_at",
+      "name",
+      "org_id",
+      "permissions",
+      "rate_limit",
+      "revoked_at",
+      "scopes",
+      "updated_at",
+      "usage_count"
+    ],
+    "missing_in_ddl": []
+  },
+  "assignment_recipients": {
+    "ddl_columns": [
+      "assigned_at",
+      "assignment_id",
+      "completed_at",
+      "created_at",
+      "due_at",
+      "id",
+      "school_id",
+      "status",
+      "updated_at",
+      "user_id"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "avatars": {
+    "ddl_columns": [
+      "created_at",
+      "file_name",
+      "id",
+      "is_active",
+      "mime_type",
+      "size_bytes",
+      "storage_path",
+      "updated_at",
+      "user_id"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "backup_schedule": {
+    "ddl_columns": [
+      "created_at",
+      "enabled",
+      "frequency",
+      "id",
+      "last_run_at",
+      "next_run_at",
+      "retention_days",
+      "school_id",
+      "updated_at"
+    ],
+    "code_payload_keys": [
+      "enabled",
+      "frequency",
+      "retention_days"
+    ],
+    "missing_in_ddl": []
+  },
+  "backups": {
+    "ddl_columns": [
+      "backup_type",
+      "checksum",
+      "completed_at",
+      "created_at",
+      "created_by",
+      "error",
+      "expires_at",
+      "id",
+      "name",
+      "records",
+      "school_id",
+      "size",
+      "size_bytes",
+      "started_at",
+      "status",
+      "storage_url",
+      "tables",
+      "type",
+      "updated_at"
+    ],
+    "code_payload_keys": [
+      "name",
+      "records",
+      "size",
+      "size_bytes",
+      "status",
+      "tables",
+      "type"
+    ],
+    "missing_in_ddl": []
+  },
+  "cross_campus_permissions": {
+    "ddl_columns": [
+      "created_at",
+      "expires_at",
+      "granted_at",
+      "granted_by",
+      "id",
+      "is_active",
+      "path",
+      "permission_type",
+      "source_org_id",
+      "target_org_id",
+      "updated_at",
+      "user_id"
+    ],
+    "code_payload_keys": [
+      "expires_at",
+      "granted_at",
+      "granted_by",
+      "is_active",
+      "permission_type",
+      "source_org_id",
+      "target_org_id",
+      "user_id"
+    ],
+    "missing_in_ddl": []
+  },
+  "delegated_admins": {
+    "ddl_columns": [
+      "created_at",
+      "expires_at",
+      "granted_at",
+      "granted_by",
+      "id",
+      "is_active",
+      "organization_id",
+      "path",
+      "roles",
+      "scope",
+      "updated_at",
+      "user_id"
+    ],
+    "code_payload_keys": [
+      "expires_at",
+      "granted_at",
+      "granted_by",
+      "is_active",
+      "organization_id",
+      "roles",
+      "scope",
+      "user_id"
+    ],
+    "missing_in_ddl": []
+  },
+  "enrollment_history": {
+    "ddl_columns": [
+      "action",
+      "actor_id",
+      "created_at",
+      "enrollment_id",
+      "id",
+      "reason",
+      "role",
+      "school_id",
+      "student_id"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "enrollments": {
+    "ddl_columns": [
+      "academic_year",
+      "class_id",
+      "created_at",
+      "ended_at",
+      "enrolled_at",
+      "id",
+      "is_active",
+      "roll_number",
+      "school_id",
+      "status",
+      "student_id",
+      "updated_at"
+    ],
+    "code_payload_keys": [
+      "class_id",
+      "created_at",
+      "is_active",
+      "roll_number",
+      "school_id",
+      "student_id"
+    ],
+    "missing_in_ddl": []
+  },
+  "enterprise_contracts": {
+    "ddl_columns": [
+      "auto_renew",
+      "contract_number",
+      "created_at",
+      "currency",
+      "custom_pricing",
+      "end_date",
+      "id",
+      "negotiated_amount",
+      "notes",
+      "org_id",
+      "plan_tier",
+      "seats",
+      "signed_at",
+      "signed_by",
+      "start_date",
+      "status",
+      "terms",
+      "updated_at",
+      "value"
+    ],
+    "code_payload_keys": [
+      "currency",
+      "end_date",
+      "notes",
+      "org_id",
+      "renewedAt",
+      "renewedInto",
+      "signedAt",
+      "signed_at",
+      "signed_by",
+      "start_date",
+      "status",
+      "terminatedAt",
+      "terminationReason",
+      "terms",
+      "value"
+    ],
+    "missing_in_ddl": [
+      "renewedAt",
+      "renewedInto",
+      "signedAt",
+      "terminatedAt",
+      "terminationReason"
+    ]
+  },
+  "exam_answers": {
+    "ddl_columns": [
+      "answer",
+      "answer_text",
+      "created_at",
+      "exam_id",
+      "flagged",
+      "graded_at",
+      "graded_by",
+      "id",
+      "is_correct",
+      "marks_awarded",
+      "question_id",
+      "school_id",
+      "session_id",
+      "status",
+      "student_id",
+      "subject_id",
+      "submitted_at",
+      "topic_id",
+      "updated_at"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "exam_participants": {
+    "ddl_columns": [
+      "assigned_at",
+      "assignment_id",
+      "completed_at",
+      "created_at",
+      "exam_id",
+      "id",
+      "school_id",
+      "started_at",
+      "status",
+      "updated_at",
+      "user_id"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "fee_assignments": {
+    "ddl_columns": [
+      "amount",
+      "amount_due",
+      "amount_paid",
+      "created_at",
+      "due_date",
+      "fee_structure_id",
+      "id",
+      "paid_at",
+      "percentage",
+      "school_id",
+      "status",
+      "student_id",
+      "updated_at"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "fee_structures": {
+    "ddl_columns": [
+      "academic_year",
+      "amount",
+      "class_id",
+      "created_at",
+      "currency",
+      "id",
+      "is_active",
+      "name",
+      "school_id",
+      "updated_at"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "feedback": {
+    "ddl_columns": [
+      "ai_rating",
+      "assignee_id",
+      "created_at",
+      "description",
+      "id",
+      "is_deleted",
+      "priority",
+      "resolution",
+      "resolved_at",
+      "school_id",
+      "screenshot_urls",
+      "severity",
+      "status",
+      "title",
+      "type",
+      "updated_at",
+      "user_id"
+    ],
+    "code_payload_keys": [
+      "assignee_id",
+      "screenshot_urls",
+      "status",
+      "updated_at"
+    ],
+    "missing_in_ddl": []
+  },
+  "feedback_comments": {
+    "ddl_columns": [
+      "attachments",
+      "author_id",
+      "content",
+      "created_at",
+      "feedback_id",
+      "id",
+      "is_internal",
+      "updated_at"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "marketplace_licenses": {
+    "ddl_columns": [
+      "activated_at",
+      "buyer_org_id",
+      "created_at",
+      "deactivated_at",
+      "download_count",
+      "expires_at",
+      "id",
+      "is_active",
+      "issued_at",
+      "key",
+      "license_key",
+      "product_id",
+      "product_title",
+      "purchase_count",
+      "purchase_id",
+      "purchaser_org_id",
+      "revenue",
+      "seats",
+      "seats_used",
+      "type",
+      "updated_at",
+      "user_id"
+    ],
+    "code_payload_keys": [
+      "activated_at",
+      "deactivated_at",
+      "expires_at",
+      "is_active",
+      "key",
+      "product_id",
+      "product_title",
+      "purchaser_org_id",
+      "seats_used",
+      "type"
+    ],
+    "missing_in_ddl": []
+  },
+  "metered_pricing": {
+    "ddl_columns": [
+      "created_at",
+      "currency",
+      "id",
+      "included_quantity",
+      "is_active",
+      "metric",
+      "plan_tier",
+      "unit_price",
+      "updated_at"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "notification_bounces": {
+    "ddl_columns": [
+      "address",
+      "bounce_code",
+      "bounce_count",
+      "bounce_type",
+      "bounced_at",
+      "channel",
+      "created_at",
+      "diagnostic",
+      "id",
+      "last_bounce_at",
+      "metadata",
+      "suppressed",
+      "updated_at"
+    ],
+    "code_payload_keys": [
+      "address",
+      "bounce_code",
+      "bounce_type",
+      "bounced_at",
+      "created_at",
+      "diagnostic",
+      "suppressed"
+    ],
+    "missing_in_ddl": []
+  },
+  "notification_queue": {
+    "ddl_columns": [
+      "attempt",
+      "attempts",
+      "backoff_ms",
+      "channel",
+      "completed_at",
+      "created_at",
+      "delivered_at",
+      "event_data",
+      "event_id",
+      "id",
+      "last_error",
+      "max_attempts",
+      "next_attempt_at",
+      "notification_id",
+      "payload",
+      "process_at",
+      "recipient",
+      "school_id",
+      "sent_at",
+      "started_at",
+      "status",
+      "template_key",
+      "updated_at",
+      "user_id"
+    ],
+    "code_payload_keys": [
+      "attempt",
+      "backoff_ms",
+      "channel",
+      "completed_at",
+      "created_at",
+      "event_data",
+      "event_id",
+      "last_error",
+      "max_attempts",
+      "notification_id",
+      "process_at",
+      "started_at",
+      "status"
+    ],
+    "missing_in_ddl": []
+  },
+  "notification_templates": {
+    "ddl_columns": [
+      "body",
+      "channel",
+      "created_at",
+      "created_by",
+      "id",
+      "is_active",
+      "key",
+      "name",
+      "subject",
+      "updated_at",
+      "variables",
+      "version"
+    ],
+    "code_payload_keys": [
+      "body",
+      "channel",
+      "key",
+      "name",
+      "subject",
+      "variables"
+    ],
+    "missing_in_ddl": []
+  },
+  "oauth_auth_codes": {
+    "ddl_columns": [
+      "app_id",
+      "code",
+      "code_challenge",
+      "created_at",
+      "expires_at",
+      "redirect_uri",
+      "scopes",
+      "used_at",
+      "user_id"
+    ],
+    "code_payload_keys": [
+      "access_expires_at",
+      "access_token_hash",
+      "app_id",
+      "created_at",
+      "expires_at",
+      "id",
+      "redirect_uri",
+      "refresh_expires_at",
+      "refresh_token_hash",
+      "scopes",
+      "user_id"
+    ],
+    "missing_in_ddl": [
+      "access_expires_at",
+      "access_token_hash",
+      "id",
+      "refresh_expires_at",
+      "refresh_token_hash"
+    ]
+  },
+  "oauth_tokens": {
+    "ddl_columns": [
+      "access_expires_at",
+      "access_token_hash",
+      "app_id",
+      "created_at",
+      "id",
+      "refresh_expires_at",
+      "refresh_token_hash",
+      "revoked_at",
+      "scopes",
+      "updated_at",
+      "user_id"
+    ],
+    "code_payload_keys": [
+      "access_expires_at",
+      "access_token_hash",
+      "app_id",
+      "created_at",
+      "id",
+      "refresh_expires_at",
+      "refresh_token_hash",
+      "scopes",
+      "user_id"
+    ],
+    "missing_in_ddl": []
+  },
+  "organization_settings": {
+    "ddl_columns": [
+      "branding",
+      "compliance",
+      "created_at",
+      "district_average",
+      "id",
+      "notifications",
+      "organization_id",
+      "password_policy",
+      "session_policy",
+      "settings",
+      "updated_at"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "payment_audit_trail": {
+    "ddl_columns": [
+      "action",
+      "actor_id",
+      "actor_type",
+      "created_at",
+      "event_type",
+      "id",
+      "ip_address",
+      "metadata",
+      "new_state",
+      "old_state",
+      "org_id",
+      "payment_id",
+      "performed_by",
+      "provider"
+    ],
+    "code_payload_keys": [
+      "created_at",
+      "id",
+      "payment_id",
+      "performed_by"
+    ],
+    "missing_in_ddl": []
+  },
+  "payment_authorizations": {
+    "ddl_columns": [
+      "amount",
+      "authorization_code",
+      "channel",
+      "created_at",
+      "currency",
+      "email",
+      "expires_at",
+      "id",
+      "is_reusable",
+      "metadata",
+      "org_id",
+      "payment_id",
+      "provider",
+      "status",
+      "transaction_ref",
+      "updated_at"
+    ],
+    "code_payload_keys": [
+      "authorization_code",
+      "channel",
+      "email",
+      "is_reusable",
+      "provider"
+    ],
+    "missing_in_ddl": []
+  },
+  "plan_limits": {
+    "ddl_columns": [
+      "created_at",
+      "id",
+      "included_quantity",
+      "limit_type",
+      "metric",
+      "overage_price",
+      "plan_tier",
+      "updated_at"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "push_tokens": {
+    "ddl_columns": [
+      "active",
+      "created_at",
+      "device_name",
+      "id",
+      "is_active",
+      "last_used_at",
+      "platform",
+      "token",
+      "updated_at",
+      "user_id"
+    ],
+    "code_payload_keys": [
+      "active",
+      "last_used_at",
+      "updated_at",
+      "user_id"
+    ],
+    "missing_in_ddl": []
+  },
+  "refund_requests": {
+    "ddl_columns": [
+      "amount",
+      "approved_by",
+      "created_at",
+      "currency",
+      "flutterwave_refund_id",
+      "flutterwave_transaction_id",
+      "id",
+      "org_id",
+      "payment_id",
+      "processed_at",
+      "provider",
+      "provider_refund_id",
+      "reason",
+      "rejected_reason",
+      "requested_by",
+      "status",
+      "transaction_ref",
+      "updated_at"
+    ],
+    "code_payload_keys": [
+      "amount",
+      "approved_by",
+      "currency",
+      "flutterwave_refund_id",
+      "org_id",
+      "payment_id",
+      "processed_at",
+      "reason",
+      "rejected_reason",
+      "requested_by",
+      "status"
+    ],
+    "missing_in_ddl": []
+  },
+  "refund_workflows": {
+    "ddl_columns": [
+      "amount",
+      "approved_by",
+      "created_at",
+      "currency",
+      "current_step",
+      "id",
+      "payment_id",
+      "processed_at",
+      "provider",
+      "provider_refund_id",
+      "reason",
+      "refund_request_id",
+      "requested_by",
+      "status",
+      "steps",
+      "transaction_ref",
+      "updated_at"
+    ],
+    "code_payload_keys": [
+      "amount",
+      "approved_by",
+      "currency",
+      "payment_id",
+      "processed_at",
+      "provider_refund_id",
+      "requested_by",
+      "status"
+    ],
+    "missing_in_ddl": []
+  },
+  "scheduled_interventions": {
+    "ddl_columns": [
+      "assigned_by",
+      "completed_at",
+      "created_at",
+      "created_by",
+      "id",
+      "intervention_type",
+      "metadata",
+      "outcome",
+      "reason",
+      "scheduled_at",
+      "scheduled_date",
+      "school_id",
+      "status",
+      "student_id",
+      "type",
+      "updated_at",
+      "workflow_execution_id"
+    ],
+    "code_payload_keys": [
+      "created_by",
+      "id",
+      "scheduled_date",
+      "school_id",
+      "status",
+      "student_id",
+      "type",
+      "workflow_execution_id"
+    ],
+    "missing_in_ddl": []
+  },
+  "scim_configurations": {
+    "ddl_columns": [
+      "bearer_token_encrypted",
+      "bearer_token_hash",
+      "created_at",
+      "enabled",
+      "endpoint",
+      "group_mapping",
+      "id",
+      "is_active",
+      "last_sync_at",
+      "last_synced_at",
+      "organization_id",
+      "sync_interval_seconds",
+      "sync_settings",
+      "updated_at",
+      "user_id_mapping",
+      "webhook_endpoint"
+    ],
+    "code_payload_keys": [
+      "bearer_token_encrypted",
+      "enabled",
+      "endpoint",
+      "group_mapping",
+      "last_sync_at",
+      "organization_id",
+      "sync_interval_seconds",
+      "updated_at",
+      "user_id_mapping"
+    ],
+    "missing_in_ddl": []
+  },
+  "seat_allocations": {
+    "ddl_columns": [
+      "available_seats",
+      "created_at",
+      "currency",
+      "id",
+      "is_active",
+      "metric",
+      "org_id",
+      "plan_id",
+      "quantity",
+      "school_id",
+      "seat_price",
+      "status",
+      "timestamp",
+      "total_seats",
+      "updated_at",
+      "used_seats"
+    ],
+    "code_payload_keys": [
+      "available_seats",
+      "currency",
+      "org_id",
+      "plan_id",
+      "seat_price",
+      "total_seats",
+      "used_seats"
+    ],
+    "missing_in_ddl": []
+  },
+  "session_activity_log": {
+    "ddl_columns": [
+      "activity",
+      "created_at",
+      "details",
+      "device",
+      "event_type",
+      "id",
+      "ip",
+      "ip_address",
+      "location",
+      "metadata",
+      "school_id",
+      "session_id",
+      "timestamp",
+      "user_agent",
+      "user_id"
+    ],
+    "code_payload_keys": [
+      "id",
+      "session_id",
+      "timestamp",
+      "user_agent"
+    ],
+    "missing_in_ddl": []
+  },
+  "sso_auth_states": {
+    "ddl_columns": [
+      "code_verifier",
+      "consumed_at",
+      "created_at",
+      "expires_at",
+      "provider_id",
+      "redirect_uri",
+      "redirect_url",
+      "state",
+      "user_id"
+    ],
+    "code_payload_keys": [
+      "code_verifier",
+      "expires_at",
+      "provider_id",
+      "redirect_url"
+    ],
+    "missing_in_ddl": []
+  },
+  "sso_providers": {
+    "ddl_columns": [
+      "attribute_mapping",
+      "authorization_url",
+      "client_id",
+      "client_secret",
+      "client_secret_encrypted",
+      "created_at",
+      "enabled",
+      "entity_id",
+      "id",
+      "is_active",
+      "issuer",
+      "metadata_url",
+      "name",
+      "organization_id",
+      "provider_id",
+      "provider_type",
+      "scopes",
+      "sso_url",
+      "token_url",
+      "type",
+      "updated_at",
+      "user_info_url"
+    ],
+    "code_payload_keys": [
+      "attribute_mapping",
+      "authorization_url",
+      "client_id",
+      "client_secret_encrypted",
+      "enabled",
+      "id",
+      "issuer",
+      "name",
+      "organization_id",
+      "scopes",
+      "token_url",
+      "type",
+      "updated_at",
+      "user_info_url"
+    ],
+    "missing_in_ddl": []
+  },
+  "sso_user_links": {
+    "ddl_columns": [
+      "attributes",
+      "created_at",
+      "email",
+      "external_email",
+      "external_groups",
+      "external_id",
+      "id",
+      "last_login_at",
+      "organization_id",
+      "provider_id",
+      "scim_managed",
+      "updated_at",
+      "user_id"
+    ],
+    "code_payload_keys": [
+      "external_email",
+      "external_groups",
+      "external_id",
+      "organization_id",
+      "provider_id",
+      "scim_managed",
+      "updated_at",
+      "user_id"
+    ],
+    "missing_in_ddl": []
+  },
+  "subscription_changes": {
+    "ddl_columns": [
+      "change_type",
+      "created_at",
+      "from_plan_id",
+      "id",
+      "issued_at",
+      "new_amount",
+      "old_amount",
+      "org_id",
+      "reason",
+      "school_id",
+      "seats_delta",
+      "status",
+      "subscription_id",
+      "to_plan_id",
+      "total_amount",
+      "updated_at"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "tax_rates": {
+    "ddl_columns": [
+      "created_at",
+      "id",
+      "is_active",
+      "name",
+      "org_id",
+      "rate",
+      "region",
+      "updated_at"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "teacher_subjects": {
+    "ddl_columns": [
+      "assigned_at",
+      "created_at",
+      "id",
+      "is_active",
+      "name",
+      "school_id",
+      "subject_id",
+      "teacher_id",
+      "updated_at"
+    ],
+    "code_payload_keys": [
+      "school_id",
+      "subject_id",
+      "teacher_id"
+    ],
+    "missing_in_ddl": []
+  },
+  "transcript_entries": {
+    "ddl_columns": [
+      "academic_year",
+      "created_at",
+      "credits",
+      "exam_id",
+      "grade",
+      "id",
+      "school_id",
+      "score",
+      "source",
+      "source_id",
+      "student_id",
+      "subject_id",
+      "term",
+      "updated_at",
+      "verified"
+    ],
+    "code_payload_keys": [
+      "exam_id",
+      "grade",
+      "school_id",
+      "score",
+      "student_id",
+      "subject_id",
+      "updated_at"
+    ],
+    "missing_in_ddl": []
+  },
+  "usage_records": {
+    "ddl_columns": [
+      "created_at",
+      "id",
+      "included_quantity",
+      "metadata",
+      "metric",
+      "org_id",
+      "overage_price",
+      "period",
+      "plan_tier",
+      "quantity",
+      "school_id",
+      "status",
+      "timestamp",
+      "unit_price",
+      "updated_at"
+    ],
+    "code_payload_keys": [
+      "metadata",
+      "org_id",
+      "timestamp"
+    ],
+    "missing_in_ddl": []
+  },
+  "webhook_deliveries": {
+    "ddl_columns": [
+      "attempt",
+      "created_at",
+      "error",
+      "event_type",
+      "id",
+      "next_retry_at",
+      "payload",
+      "response_body",
+      "response_status",
+      "success",
+      "timestamp",
+      "updated_at",
+      "webhook_id"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "webhook_idempotency": {
+    "ddl_columns": [
+      "event_id",
+      "expires_at",
+      "payload_hash",
+      "processed_at",
+      "provider",
+      "status"
+    ],
+    "code_payload_keys": [
+      "event_id",
+      "expires_at",
+      "status"
+    ],
+    "missing_in_ddl": []
+  },
+  "webhook_registrations": {
+    "ddl_columns": [
+      "created_at",
+      "description",
+      "event_types",
+      "id",
+      "is_active",
+      "school_id",
+      "secret",
+      "subscriber_id",
+      "updated_at",
+      "url"
+    ],
+    "code_payload_keys": [],
+    "missing_in_ddl": []
+  },
+  "webhooks": {
+    "ddl_columns": [
+      "active",
+      "created_at",
+      "description",
+      "events",
+      "id",
+      "is_active",
+      "school_id",
+      "secret",
+      "updated_at",
+      "url"
+    ],
+    "code_payload_keys": [
+      "active",
+      "events",
+      "url"
+    ],
+    "missing_in_ddl": []
+  },
+  "workflow_approval_requests": {
+    "ddl_columns": [
+      "approved_at",
+      "approved_by",
+      "comments",
+      "context",
+      "created_at",
+      "decided_at",
+      "execution_id",
+      "expires_at",
+      "id",
+      "organization_id",
+      "requested_at",
+      "requested_from",
+      "role",
+      "school_id",
+      "status",
+      "step_id",
+      "updated_at",
+      "workflow_execution_id",
+      "workflow_id"
+    ],
+    "code_payload_keys": [
+      "approvalMessage",
+      "approved_at",
+      "approved_by",
+      "comments",
+      "completed_at",
+      "context",
+      "error",
+      "expires_at",
+      "id",
+      "organization_id",
+      "requested_at",
+      "requested_from",
+      "school_id",
+      "status",
+      "stepName",
+      "stepOutputs",
+      "step_id",
+      "triggerEvent",
+      "workflowName",
+      "workflow_execution_id"
+    ],
+    "missing_in_ddl": [
+      "approvalMessage",
+      "completed_at",
+      "error",
+      "stepName",
+      "stepOutputs",
+      "triggerEvent",
+      "workflowName"
+    ]
+  },
+  "workflow_dead_letter_queue": {
+    "ddl_columns": [
+      "attempts",
+      "created_at",
+      "error",
+      "execution_id",
+      "id",
+      "input_data",
+      "last_attempt_at",
+      "organization_id",
+      "payload",
+      "resolved_at",
+      "retry_count",
+      "school_id",
+      "step_id",
+      "updated_at",
+      "workflow_id"
+    ],
+    "code_payload_keys": [
+      "error",
+      "execution_id",
+      "id",
+      "input_data",
+      "organization_id",
+      "retry_count",
+      "school_id",
+      "step_id",
+      "workflow_id"
+    ],
+    "missing_in_ddl": []
+  },
+  "workflow_definitions": {
+    "ddl_columns": [
+      "actions",
+      "category",
+      "connections",
+      "created_at",
+      "created_by",
+      "deleted_at",
+      "description",
+      "error_handling",
+      "id",
+      "name",
+      "organization_id",
+      "school_id",
+      "status",
+      "steps",
+      "tags",
+      "trigger",
+      "trigger_event",
+      "trigger_type",
+      "type",
+      "updated_at",
+      "user_id",
+      "variables",
+      "version",
+      "workflow_id"
+    ],
+    "code_payload_keys": [
+      "action_url",
+      "actions",
+      "approvalId",
+      "body",
+      "category",
+      "channel",
+      "connections",
+      "created_at",
+      "created_by",
+      "data",
+      "description",
+      "error_handling",
+      "executionId",
+      "id",
+      "name",
+      "organization_id",
+      "priority",
+      "school_id",
+      "started_at",
+      "status",
+      "stepId",
+      "steps",
+      "tags",
+      "title",
+      "trigger",
+      "trigger_event",
+      "type",
+      "updated_at",
+      "user_id",
+      "variables",
+      "version",
+      "workflowName",
+      "workflow_id"
+    ],
+    "missing_in_ddl": [
+      "action_url",
+      "approvalId",
+      "body",
+      "channel",
+      "data",
+      "executionId",
+      "priority",
+      "started_at",
+      "stepId",
+      "title",
+      "workflowName"
+    ]
+  },
+  "workflow_executions": {
+    "ddl_columns": [
+      "completed_at",
+      "context",
+      "correlation_id",
+      "created_at",
+      "created_by",
+      "current_step_id",
+      "duration_ms",
+      "error",
+      "finished_at",
+      "id",
+      "organization_id",
+      "result",
+      "school_id",
+      "started_at",
+      "status",
+      "steps",
+      "trigger_event",
+      "trigger_event_id",
+      "trigger_rule_id",
+      "type",
+      "updated_at",
+      "user_id",
+      "workflow_id"
+    ],
+    "code_payload_keys": [
+      "action_url",
+      "approvalId",
+      "body",
+      "channel",
+      "completed_at",
+      "correlation_id",
+      "created_at",
+      "data",
+      "duration_ms",
+      "error",
+      "executionId",
+      "id",
+      "organization_id",
+      "priority",
+      "school_id",
+      "started_at",
+      "status",
+      "stepId",
+      "steps",
+      "title",
+      "trigger_event",
+      "trigger_event_id",
+      "trigger_rule_id",
+      "type",
+      "user_id",
+      "workflowName",
+      "workflow_id"
+    ],
+    "missing_in_ddl": [
+      "action_url",
+      "approvalId",
+      "body",
+      "channel",
+      "data",
+      "executionId",
+      "priority",
+      "stepId",
+      "title",
+      "workflowName"
+    ]
+  },
+  "workflow_scheduled_steps": {
+    "ddl_columns": [
+      "created_at",
+      "execution_id",
+      "id",
+      "payload",
+      "processed_at",
+      "resume_at",
+      "scheduled_at",
+      "status",
+      "step_id",
+      "updated_at",
+      "variables",
+      "workflow_id"
+    ],
+    "code_payload_keys": [
+      "context_snapshot",
+      "execution_id",
+      "id",
+      "resume_at",
+      "status",
+      "step_id",
+      "workflow_id"
+    ],
+    "missing_in_ddl": [
+      "context_snapshot"
+    ]
+  }
+}

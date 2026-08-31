@@ -1,0 +1,727 @@
+{
+  "generated": "2026-08-31",
+  "active_graph_size": 687,
+  "summary": {
+    "A": 56,
+    "B": 0,
+    "C": 3,
+    "D": 19
+  },
+  "class_A_active_features": {
+    "agent_delegations": {
+      "referencing_files": [
+        "src/lib/ai/orchestration/agent-communicator.ts"
+      ],
+      "active_refs": [
+        "src/lib/ai/orchestration/agent-communicator.ts"
+      ],
+      "class": "A"
+    },
+    "agent_executions": {
+      "referencing_files": [
+        "src/lib/ai/orchestration/agent-runner.ts"
+      ],
+      "active_refs": [
+        "src/lib/ai/orchestration/agent-runner.ts"
+      ],
+      "class": "A"
+    },
+    "agent_memories": {
+      "referencing_files": [
+        "src/lib/ai/orchestration/agent-memory.ts"
+      ],
+      "active_refs": [
+        "src/lib/ai/orchestration/agent-memory.ts"
+      ],
+      "class": "A"
+    },
+    "agent_messages": {
+      "referencing_files": [
+        "src/lib/ai/orchestration/agent-communicator.ts"
+      ],
+      "active_refs": [
+        "src/lib/ai/orchestration/agent-communicator.ts"
+      ],
+      "class": "A"
+    },
+    "agent_plans": {
+      "referencing_files": [
+        "src/lib/ai/orchestration/agent-planner.ts"
+      ],
+      "active_refs": [
+        "src/lib/ai/orchestration/agent-planner.ts"
+      ],
+      "class": "A"
+    },
+    "ai_circuit_breaker_state": {
+      "referencing_files": [
+        "src/lib/ai/ai-reliability.ts"
+      ],
+      "active_refs": [
+        "src/lib/ai/ai-reliability.ts"
+      ],
+      "class": "A"
+    },
+    "alert_channels": {
+      "referencing_files": [
+        "src/app/api/alerting/channels/route.ts"
+      ],
+      "active_refs": [
+        "src/app/api/alerting/channels/route.ts"
+      ],
+      "class": "A"
+    },
+    "api_key_usage": {
+      "referencing_files": [
+        "src/app/api/settings/api-keys/route.ts"
+      ],
+      "active_refs": [
+        "src/app/api/settings/api-keys/route.ts"
+      ],
+      "class": "A"
+    },
+    "api_keys": {
+      "referencing_files": [
+        "src/app/api/settings/api-keys/route.ts",
+        "src/lib/developer/api-key-service.ts"
+      ],
+      "active_refs": [
+        "src/app/api/settings/api-keys/route.ts",
+        "src/lib/developer/api-key-service.ts"
+      ],
+      "class": "A"
+    },
+    "assignment_recipients": {
+      "referencing_files": [
+        "src/lib/notifications/event-handlers.ts"
+      ],
+      "active_refs": [
+        "src/lib/notifications/event-handlers.ts"
+      ],
+      "class": "A"
+    },
+    "avatars": {
+      "referencing_files": [
+        "src/app/(app)/settings/page.tsx"
+      ],
+      "active_refs": [
+        "src/app/(app)/settings/page.tsx"
+      ],
+      "class": "A"
+    },
+    "backup_schedule": {
+      "referencing_files": [
+        "src/app/api/admin/backups/route.ts"
+      ],
+      "active_refs": [
+        "src/app/api/admin/backups/route.ts"
+      ],
+      "class": "A"
+    },
+    "backups": {
+      "referencing_files": [
+        "src/app/api/admin/backups/route.ts"
+      ],
+      "active_refs": [
+        "src/app/api/admin/backups/route.ts"
+      ],
+      "class": "A"
+    },
+    "cross_campus_permissions": {
+      "referencing_files": [
+        "src/lib/enterprise/cross-campus-service.ts",
+        "src/lib/enterprise/delegated-admin-service.ts",
+        "src/lib/enterprise/organization-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/enterprise/organization-service.ts"
+      ],
+      "class": "A"
+    },
+    "delegated_admins": {
+      "referencing_files": [
+        "src/lib/enterprise/cross-campus-service.ts",
+        "src/lib/enterprise/delegated-admin-service.ts",
+        "src/lib/enterprise/organization-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/enterprise/organization-service.ts"
+      ],
+      "class": "A"
+    },
+    "enrollment_history": {
+      "referencing_files": [
+        "src/lib/enterprise-analytics/enrollment-analytics-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/enterprise-analytics/enrollment-analytics-service.ts"
+      ],
+      "class": "A"
+    },
+    "enrollments": {
+      "referencing_files": [
+        "src/lib/import/importers/student-importer.ts"
+      ],
+      "active_refs": [
+        "src/lib/import/importers/student-importer.ts"
+      ],
+      "class": "A"
+    },
+    "enterprise_contracts": {
+      "referencing_files": [
+        "src/lib/billing/enterprise-contract-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/billing/enterprise-contract-service.ts"
+      ],
+      "class": "A"
+    },
+    "exam_answers": {
+      "referencing_files": [
+        "src/app/api/student/revision-hub/route.ts",
+        "src/lib/ai/ai-student.ts"
+      ],
+      "active_refs": [
+        "src/app/api/student/revision-hub/route.ts",
+        "src/lib/ai/ai-student.ts"
+      ],
+      "class": "A"
+    },
+    "exam_participants": {
+      "referencing_files": [
+        "src/lib/notifications/event-handlers.ts"
+      ],
+      "active_refs": [
+        "src/lib/notifications/event-handlers.ts"
+      ],
+      "class": "A"
+    },
+    "fee_assignments": {
+      "referencing_files": [
+        "src/lib/ai/ai-agents.ts",
+        "src/lib/ai/ai-predictive.ts",
+        "src/lib/ai/ai-school-admin.ts",
+        "src/lib/ai/orchestration/agents/finance-agent.ts",
+        "src/lib/services/school-admin-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/ai/ai-agents.ts",
+        "src/lib/ai/ai-predictive.ts",
+        "src/lib/ai/ai-school-admin.ts",
+        "src/lib/services/school-admin-service.ts"
+      ],
+      "class": "A"
+    },
+    "fee_structures": {
+      "referencing_files": [
+        "src/lib/services/school-admin-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/services/school-admin-service.ts"
+      ],
+      "class": "A"
+    },
+    "feedback": {
+      "referencing_files": [
+        "src/lib/feedback/analytics-service.ts",
+        "src/lib/feedback/feedback-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/feedback/analytics-service.ts",
+        "src/lib/feedback/feedback-service.ts"
+      ],
+      "class": "A"
+    },
+    "feedback_comments": {
+      "referencing_files": [
+        "src/lib/feedback/feedback-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/feedback/feedback-service.ts"
+      ],
+      "class": "A"
+    },
+    "marketplace_licenses": {
+      "referencing_files": [
+        "src/app/api/marketplace/webhook/route.ts",
+        "src/lib/marketplace-v2/purchase-service.ts"
+      ],
+      "active_refs": [
+        "src/app/api/marketplace/webhook/route.ts"
+      ],
+      "class": "A"
+    },
+    "metered_pricing": {
+      "referencing_files": [
+        "src/lib/billing/subscription-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/billing/subscription-service.ts"
+      ],
+      "class": "A"
+    },
+    "notification_bounces": {
+      "referencing_files": [
+        "src/lib/notifications/delivery-engine.ts"
+      ],
+      "active_refs": [
+        "src/lib/notifications/delivery-engine.ts"
+      ],
+      "class": "A"
+    },
+    "notification_queue": {
+      "referencing_files": [
+        "src/lib/notifications/delivery-engine.ts",
+        "src/lib/notifications/queue.ts"
+      ],
+      "active_refs": [
+        "src/lib/notifications/delivery-engine.ts",
+        "src/lib/notifications/queue.ts"
+      ],
+      "class": "A"
+    },
+    "notification_templates": {
+      "referencing_files": [
+        "src/app/api/notifications/templates/route.ts"
+      ],
+      "active_refs": [
+        "src/app/api/notifications/templates/route.ts"
+      ],
+      "class": "A"
+    },
+    "oauth_auth_codes": {
+      "referencing_files": [
+        "src/lib/developer/oauth-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/developer/oauth-service.ts"
+      ],
+      "class": "A"
+    },
+    "oauth_tokens": {
+      "referencing_files": [
+        "src/lib/developer/oauth-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/developer/oauth-service.ts"
+      ],
+      "class": "A"
+    },
+    "organization_settings": {
+      "referencing_files": [
+        "src/app/api/settings/security/route.ts",
+        "src/components/dashboard/intelligent-insights.tsx"
+      ],
+      "active_refs": [
+        "src/app/api/settings/security/route.ts",
+        "src/components/dashboard/intelligent-insights.tsx"
+      ],
+      "class": "A"
+    },
+    "payment_audit_trail": {
+      "referencing_files": [
+        "src/lib/billing/payment-audit.ts"
+      ],
+      "active_refs": [
+        "src/lib/billing/payment-audit.ts"
+      ],
+      "class": "A"
+    },
+    "plan_limits": {
+      "referencing_files": [
+        "src/lib/billing/invoice-service-extended.ts"
+      ],
+      "active_refs": [
+        "src/lib/billing/invoice-service-extended.ts"
+      ],
+      "class": "A"
+    },
+    "push_tokens": {
+      "referencing_files": [
+        "src/lib/notifications/providers/push-firebase.ts"
+      ],
+      "active_refs": [
+        "src/lib/notifications/providers/push-firebase.ts"
+      ],
+      "class": "A"
+    },
+    "refund_workflows": {
+      "referencing_files": [
+        "src/lib/billing/refund-workflow.ts"
+      ],
+      "active_refs": [
+        "src/lib/billing/refund-workflow.ts"
+      ],
+      "class": "A"
+    },
+    "scheduled_interventions": {
+      "referencing_files": [
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "active_refs": [
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "class": "A"
+    },
+    "scim_configurations": {
+      "referencing_files": [
+        "src/lib/enterprise-security/sso-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/enterprise-security/sso-service.ts"
+      ],
+      "class": "A"
+    },
+    "seat_allocations": {
+      "referencing_files": [
+        "src/lib/billing/invoice-service-extended.ts",
+        "src/lib/billing/invoice-service.ts",
+        "src/lib/billing/subscription-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/billing/invoice-service-extended.ts",
+        "src/lib/billing/subscription-service.ts"
+      ],
+      "class": "A"
+    },
+    "session_activity_log": {
+      "referencing_files": [
+        "src/lib/enterprise-security/session-management.ts"
+      ],
+      "active_refs": [
+        "src/lib/enterprise-security/session-management.ts"
+      ],
+      "class": "A"
+    },
+    "sso_auth_states": {
+      "referencing_files": [
+        "src/lib/enterprise-security/sso-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/enterprise-security/sso-service.ts"
+      ],
+      "class": "A"
+    },
+    "sso_providers": {
+      "referencing_files": [
+        "src/lib/enterprise-security/sso-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/enterprise-security/sso-service.ts"
+      ],
+      "class": "A"
+    },
+    "sso_user_links": {
+      "referencing_files": [
+        "src/lib/enterprise-security/sso-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/enterprise-security/sso-service.ts"
+      ],
+      "class": "A"
+    },
+    "subscription_changes": {
+      "referencing_files": [
+        "src/lib/billing/revenue-dashboard-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/billing/revenue-dashboard-service.ts"
+      ],
+      "class": "A"
+    },
+    "tax_rates": {
+      "referencing_files": [
+        "src/lib/billing/invoice-service-extended.ts",
+        "src/lib/billing/invoice-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/billing/invoice-service-extended.ts"
+      ],
+      "class": "A"
+    },
+    "teacher_subjects": {
+      "referencing_files": [
+        "src/lib/import/importers/teacher-importer.ts"
+      ],
+      "active_refs": [
+        "src/lib/import/importers/teacher-importer.ts"
+      ],
+      "class": "A"
+    },
+    "transcript_entries": {
+      "referencing_files": [
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "active_refs": [
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "class": "A"
+    },
+    "usage_records": {
+      "referencing_files": [
+        "src/lib/billing/invoice-service-extended.ts",
+        "src/lib/billing/revenue-dashboard-service.ts",
+        "src/lib/billing/subscription-service.ts",
+        "src/lib/billing/usage-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/billing/invoice-service-extended.ts",
+        "src/lib/billing/revenue-dashboard-service.ts",
+        "src/lib/billing/subscription-service.ts"
+      ],
+      "class": "A"
+    },
+    "webhook_deliveries": {
+      "referencing_files": [
+        "src/app/api/settings/webhooks/route.ts"
+      ],
+      "active_refs": [
+        "src/app/api/settings/webhooks/route.ts"
+      ],
+      "class": "A"
+    },
+    "webhook_registrations": {
+      "referencing_files": [
+        "src/lib/event-bus/event-emitter.ts",
+        "src/lib/event-bus/event-handlers.ts"
+      ],
+      "active_refs": [
+        "src/lib/event-bus/event-emitter.ts"
+      ],
+      "class": "A"
+    },
+    "webhooks": {
+      "referencing_files": [
+        "src/app/api/settings/webhooks/route.ts"
+      ],
+      "active_refs": [
+        "src/app/api/settings/webhooks/route.ts"
+      ],
+      "class": "A"
+    },
+    "workflow_approval_requests": {
+      "referencing_files": [
+        "src/lib/workflow/approval-service.ts",
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "active_refs": [
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "class": "A"
+    },
+    "workflow_dead_letter_queue": {
+      "referencing_files": [
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "active_refs": [
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "class": "A"
+    },
+    "workflow_definitions": {
+      "referencing_files": [
+        "src/lib/workflow/approval-service.ts",
+        "src/lib/workflow/workflow-engine.ts",
+        "src/lib/workflow/workflow-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/workflow/workflow-engine.ts",
+        "src/lib/workflow/workflow-service.ts"
+      ],
+      "class": "A"
+    },
+    "workflow_executions": {
+      "referencing_files": [
+        "src/lib/event-bus/event-handlers.ts",
+        "src/lib/workflow/approval-service.ts",
+        "src/lib/workflow/workflow-engine.ts",
+        "src/lib/workflow/workflow-service.ts"
+      ],
+      "active_refs": [
+        "src/lib/workflow/workflow-engine.ts",
+        "src/lib/workflow/workflow-service.ts"
+      ],
+      "class": "A"
+    },
+    "workflow_scheduled_steps": {
+      "referencing_files": [
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "active_refs": [
+        "src/lib/workflow/workflow-engine.ts"
+      ],
+      "class": "A"
+    }
+  },
+  "class_C_sdk_contracts": {
+    "payment_authorizations": {
+      "referencing_files": [
+        "src/lib/billing/failed-payments.ts",
+        "src/lib/billing/webhooks/paystack-handler.ts"
+      ],
+      "active_refs": [
+        "src/lib/billing/webhooks/paystack-handler.ts"
+      ],
+      "class": "C"
+    },
+    "refund_requests": {
+      "referencing_files": [
+        "src/lib/billing/refund-service.ts",
+        "src/lib/billing/webhooks/flutterwave-handler.ts"
+      ],
+      "active_refs": [
+        "src/lib/billing/webhooks/flutterwave-handler.ts"
+      ],
+      "class": "C"
+    },
+    "webhook_idempotency": {
+      "referencing_files": [
+        "src/lib/billing/webhooks/idempotency.ts"
+      ],
+      "active_refs": [
+        "src/lib/billing/webhooks/idempotency.ts"
+      ],
+      "class": "C"
+    }
+  },
+  "class_D_dead_code": {
+    "admissions_applications": {
+      "referencing_files": [
+        "src/lib/ai/orchestration/agents/admissions-agent.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "ai_event_memory": {
+      "referencing_files": [
+        "src/lib/event-bus/event-handlers.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "conditional_access_policies": {
+      "referencing_files": [
+        "src/lib/enterprise-security/conditional-access.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "coupon_usages": {
+      "referencing_files": [
+        "src/lib/billing/coupon-service.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "devices": {
+      "referencing_files": [
+        "src/lib/enterprise-security/device-trust.ts",
+        "src/lib/enterprise-security/risk-engine.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "event_analytics": {
+      "referencing_files": [
+        "src/lib/event-bus/event-handlers.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "failed_payments": {
+      "referencing_files": [
+        "src/lib/billing/failed-payments.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "marketing_campaigns": {
+      "referencing_files": [
+        "src/lib/ai/orchestration/agents/marketing-agent.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "marketplace_listings": {
+      "referencing_files": [
+        "src/lib/marketplace-v2/listing-service.ts",
+        "src/lib/marketplace-v2/marketplace-categories.ts",
+        "src/lib/marketplace-v2/purchase-service.ts",
+        "src/lib/marketplace-v2/review-service.ts",
+        "src/lib/marketplace-v2/seller-service.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "marketplace_payouts": {
+      "referencing_files": [
+        "src/lib/marketplace-v2/seller-service.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "marketplace_seller_profiles": {
+      "referencing_files": [
+        "src/lib/marketplace-v2/seller-service.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "report_deliveries": {
+      "referencing_files": [
+        "src/lib/enterprise-analytics/scheduled-reports-service.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "report_executions": {
+      "referencing_files": [
+        "src/lib/enterprise-analytics/scheduled-reports-service.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "risk_score_history": {
+      "referencing_files": [
+        "src/lib/enterprise-security/risk-engine.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "scheduled_notifications": {
+      "referencing_files": [
+        "src/lib/notifications/scheduler.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "scheduled_reports": {
+      "referencing_files": [
+        "src/lib/enterprise-analytics/scheduled-reports-service.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "support_tickets": {
+      "referencing_files": [
+        "src/lib/ai/orchestration/agents/support-agent.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "user_login_history": {
+      "referencing_files": [
+        "src/lib/enterprise-security/risk-engine.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    },
+    "workflow_trigger_rules": {
+      "referencing_files": [
+        "src/lib/event-bus/event-handlers.ts"
+      ],
+      "active_refs": [],
+      "class": "D"
+    }
+  }
+}
