@@ -98,7 +98,18 @@ export async function executeAI(request: AIRequest): Promise<AIResponse> {
     metadata: request.metadata ?? null,
   }
 
-  await supabase.from('ai_generation_requests').insert(generationRecord)
+  // ── Create generation record in DB ──
+  // (Ω-15: tracking failures are logged, never silent — the missing-column
+  //  defect in pre-008 schemas used to swallow these errors completely.)
+  const insertResult = await supabase
+    .from('ai_generation_requests')
+    .insert(generationRecord)
+  if (insertResult.error) {
+    console.warn(
+      '[AI Engine] generation tracking insert failed (migration 008 pending?):',
+      insertResult.error.message
+    )
+  }
 
   try {
     // ── Execute via z-ai-web-dev-sdk with timeout ──

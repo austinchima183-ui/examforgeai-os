@@ -1,0 +1,15 @@
+{
+  "sdk": "z-ai-web-dev-sdk (GLM)",
+  "model": "default (chat.completions)",
+  "latency_ms": 3660,
+  "content_length": 661,
+  "content_preview": "```json\n{\n  \"question\": \"What is the primary pigment involved in capturing light energy during photosynthesis?\",\n  \"options\": [\n    \"Chlorophyll b\",\n    \"Carotene\",\n    \"Chlorophyll a\",\n    \"Xanthophy",
+  "usage": {
+    "prompt_tokens": 64,
+    "completion_tokens": 165,
+    "total_tokens": 229
+  },
+  "structured_parse_ok": true,
+  "verdict": "REAL AI RESPONSE (content + token usage present)",
+  "estimated_cost_usd": 0.0000543
+}

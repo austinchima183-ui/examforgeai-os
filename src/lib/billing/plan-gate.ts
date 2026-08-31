@@ -19,10 +19,59 @@ import { createClient } from '@/lib/supabase/server'
 import { getAuthUser } from '@/lib/auth/require-auth'
 import { resolveTenantForAPI } from '@/lib/enterprise/tenant-middleware'
 import { createLogger } from '@/lib/observability/logger'
+import { createServiceClient } from '@/lib/supabase/service'
 import type { PlanTier } from '@/lib/supabase/types'
 import { PLAN_FEATURES, type PlanFeature } from './plan-features'
 
 const log = createLogger('billing:plan-gate')
+
+// ──────────────────────────────────────────────────────────────
+// Plans catalog read (RLS-resilient)
+// ──────────────────────────────────────────────────────────────
+
+/**
+ * Resolve a plan's tier by id, resilient to the plans_all_admin RLS policy
+ * defect (42P01-style 403 "permission denied for table users" poisons every
+ * authenticated plans SELECT — see migration 006 for the permanent fix).
+ *
+ * Fallback order:
+ *   1. RLS-scoped user client (correct path once migration 006 is applied)
+ *   2. Service-role client (bypasses the broken policy; available in
+ *      production where SUPABASE_SERVICE_ROLE_KEY is configured). The plans
+ *      catalog is non-sensitive marketing data (is_active = true is readable
+ *      by design per the plans_select_authenticated policy), so resolving a
+ *      tier with the service client is NOT a security downgrade.
+ *   3. null → callers keep the 'free' default (fail-closed, never fail-open).
+ */
+async function readPlanTierById(planId: string): Promise<PlanTier | null> {
+  const userClient = await createClient()
+  const { data: plan, error } = await userClient
+    .from('plans')
+    .select('tier')
+    .eq('id', planId)
+    .maybeSingle()
+
+  if (!error && plan?.tier) return plan.tier as PlanTier
+
+  // RLS-defect fallback (service role, production-only)
+  if (error) {
+    const service = createServiceClient()
+    if (service) {
+      const { data: svcPlan } = await service
+        .from('plans')
+        .select('tier')
+        .eq('id', planId)
+        .maybeSingle()
+      if (svcPlan?.tier) {
+        log.warn('plans tier resolved via service-role fallback (RLS policy 006 pending)', {
+          planId,
+        })
+        return svcPlan.tier as PlanTier
+      }
+    }
+  }
+  return null
+}
 
 // ──────────────────────────────────────────────────────────────
 // Plan Hierarchy
@@ -145,12 +194,8 @@ export async function requirePlan(
   // If no active subscription, default to 'free' tier
   let userPlan: PlanTier = 'free'
   if (subscription?.plan_id) {
-    const { data: plan } = await supabase
-      .from('plans')
-      .select('tier')
-      .eq('id', subscription.plan_id)
-      .maybeSingle()
-    if (plan?.tier) userPlan = plan.tier as PlanTier
+    const planTier = await readPlanTierById(subscription.plan_id)
+    if (planTier) userPlan = planTier
   }
 
   // ─── Step 4: Check plan hierarchy ───────────────────────────
