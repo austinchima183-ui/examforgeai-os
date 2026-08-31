@@ -38,7 +38,7 @@ export interface TenantResolution {
   /** The resolved organization ID */
   organizationId: string
   /** How the tenant was resolved */
-  source: 'custom_domain' | 'subdomain' | 'header' | 'cookie' | 'default'
+  source: 'custom_domain' | 'subdomain' | 'header' | 'cookie' | 'default' | 'user-profile'
   /** The value that was matched (domain, subdomain, header value, etc.) */
   matchedValue: string
 }
@@ -454,6 +454,27 @@ export async function resolveTenantForAPI(
         source: 'default',
         matchedValue: defaultOrgId,
       })
+    }
+
+    // ─── Priority 4: Authenticated user's school ────────────
+    // Fallback for requests without tenant header/cookie (single-tenant
+    // schools): resolve the caller's own school from their profile.
+    // SECURITY: uses the authenticated session — never client-supplied input.
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+    if (user) {
+      const { data: profile } = await supabase
+        .from('users')
+        .select('school_id')
+        .eq('id', user.id)
+        .maybeSingle()
+      if (profile?.school_id) {
+        return success({
+          organizationId: profile.school_id,
+          source: 'user-profile',
+          matchedValue: profile.school_id,
+        })
+      }
     }
 
     return success(null)

@@ -1,0 +1,4 @@
+{
+  "insertStatus": 403,
+  "insertBody": "{\"code\":\"42501\",\"details\":null,\"hint\":\"Grant the required privileges to the current role with: GRANT SELECT ON auth.users TO authenticated;\",\"message\":\"permission denied for table users\"}"
+}

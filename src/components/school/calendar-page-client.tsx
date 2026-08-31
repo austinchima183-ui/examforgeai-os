@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect, useCallback } from 'react'
 import {
@@ -115,7 +116,7 @@ export function CalendarPageClient({ initialData, schoolId, userId }: CalendarPa
     }
     setSaving(true)
     try {
-      const res = await fetch('/api/school/calendar', {
+      const res = await apiFetch('/api/school/calendar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -147,7 +148,7 @@ export function CalendarPageClient({ initialData, schoolId, userId }: CalendarPa
     if (!selectedEvent) return
     setSaving(true)
     try {
-      const res = await fetch('/api/school/calendar', {
+      const res = await apiFetch('/api/school/calendar', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -177,7 +178,7 @@ export function CalendarPageClient({ initialData, schoolId, userId }: CalendarPa
 
   const handleDelete = async (eventId: string) => {
     try {
-      const res = await fetch(`/api/school/calendar?id=${eventId}`, { method: 'DELETE' })
+      const res = await apiFetch(`/api/school/calendar?id=${eventId}`, { method: 'DELETE' })
       if (res.ok) {
         toast({ title: 'Success', description: 'Event deleted' })
         fetchEvents(currentMonth, currentYear)

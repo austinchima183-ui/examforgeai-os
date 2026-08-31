@@ -31,8 +31,6 @@ export async function GET(
   // ─── Auth + CSRF guard (MISSION 4+11: feature isolation) ───
   const auth = await requireApiRole(request, ['school_admin', 'super_admin'])
   if (auth instanceof NextResponse) return auth
-  const csrfGuard = enforceCsrf(request, auth)
-  if (csrfGuard) return csrfGuard
   try {
     // Rate limit
     const { allowed, retryAfter } = await apiRateLimit(request, RATE_LIMITS.standard)
@@ -40,8 +38,6 @@ export async function GET(
   // ─── Auth + CSRF guard (MISSION 4+11: feature isolation) ───
   const auth = await requireApiRole(request, ['school_admin', 'super_admin'])
   if (auth instanceof NextResponse) return auth
-  const csrfGuard = enforceCsrf(request, auth)
-  if (csrfGuard) return csrfGuard
       return NextResponse.json(
         { error: 'Rate limit exceeded', code: 'RATE_LIMITED' },
         { status: 429, headers: { 'Retry-After': String(retryAfter) } }

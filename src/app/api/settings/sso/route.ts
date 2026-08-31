@@ -16,8 +16,6 @@ export async function GET(request: NextRequest) {
   // ─── Auth + CSRF guard (MISSION 4+11: feature isolation) ───
   const auth = await requireApiRole(request, ['super_admin', 'school_admin'])
   if (auth instanceof NextResponse) return auth
-  const csrfGuard = enforceCsrf(request, auth)
-  if (csrfGuard) return csrfGuard
   // ─── Feature gate: SSO/SAML requires Enterprise ───
   const featureDenial = await requireFeature('sso_saml', request)
   if (featureDenial) return featureDenial

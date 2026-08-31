@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect, useCallback } from 'react'
 import {
@@ -121,7 +122,7 @@ export function TimetablePageClient({ initialData, schoolId }: TimetablePageClie
     try {
       const period = PERIODS.find((p) => p.num === formPeriod)
       const [start, end] = (period?.time ?? '08:00-08:45').split('-')
-      const res = await fetch('/api/school/timetable', {
+      const res = await apiFetch('/api/school/timetable', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -154,7 +155,7 @@ export function TimetablePageClient({ initialData, schoolId }: TimetablePageClie
     if (!selectedSlot) return
     setSaving(true)
     try {
-      const res = await fetch('/api/school/timetable', {
+      const res = await apiFetch('/api/school/timetable', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -180,7 +181,7 @@ export function TimetablePageClient({ initialData, schoolId }: TimetablePageClie
 
   const handleDeleteSlot = async (slotId: string) => {
     try {
-      const res = await fetch(`/api/school/timetable?id=${slotId}`, { method: 'DELETE' })
+      const res = await apiFetch(`/api/school/timetable?id=${slotId}`, { method: 'DELETE' })
       if (res.ok) {
         toast({ title: 'Success', description: 'Slot removed' })
         if (selectedClass) fetchTimetable(selectedClass)

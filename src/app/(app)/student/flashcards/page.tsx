@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 // ============================================================================
 // ExamForge AI — Student Flashcards Page
@@ -105,7 +106,7 @@ export default function FlashcardsPage() {
         ? subjects.find((s) => s.id === selectedSubject)?.name ?? 'General'
         : 'General Studies'
 
-      const res = await fetch('/api/ai/complete', {
+      const res = await apiFetch('/api/ai/complete', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -164,7 +165,7 @@ export default function FlashcardsPage() {
     setSessionStats((s) => ({ ...s, correct: s.correct + 1, total: s.total + 1 }))
 
     // Update spaced repetition via API
-    fetch('/api/student/flashcards', {
+    apiFetch('/api/student/flashcards', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ flashcardId: card.id, isCorrect: true }),
@@ -180,7 +181,7 @@ export default function FlashcardsPage() {
     setKnownCards((prev) => { const s = new Set(prev); s.delete(card.id); return s })
     setSessionStats((s) => ({ ...s, incorrect: s.incorrect + 1, total: s.total + 1 }))
 
-    fetch('/api/student/flashcards', {
+    apiFetch('/api/student/flashcards', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ flashcardId: card.id, isCorrect: false }),

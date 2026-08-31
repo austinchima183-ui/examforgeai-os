@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 // ============================================================================
 // ExamForge AI — Student Practice Mode Page
@@ -145,7 +146,7 @@ export default function PracticePage() {
       // If no questions found, generate with AI
       if (fetchedQuestions.length === 0) {
         const subjectName = subjects.find((s) => s.id === selectedSubject)?.name ?? 'General'
-        const aiRes = await fetch('/api/ai/complete', {
+        const aiRes = await apiFetch('/api/ai/complete', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({

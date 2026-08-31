@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect, useCallback } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -228,7 +229,7 @@ export default function RubricBuilderPage() {
     if (!assessmentType) { toast({ title: 'Select type', variant: 'destructive' }); return }
     setAiLoading(true)
     try {
-      const res = await fetch('/api/ai/complete', {
+      const res = await apiFetch('/api/ai/complete', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -286,10 +287,10 @@ Use 4-5 criteria and 3-4 performance levels. Fill all cells with descriptions an
         assessmentType, criteria, performanceLevels: levels, cells, totalPoints: total,
       }
       if (editRubric) {
-        await fetch('/api/teacher/rubrics', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: editRubric.id, ...payload }) })
+        await apiFetch('/api/teacher/rubrics', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: editRubric.id, ...payload }) })
         toast({ title: 'Updated!' })
       } else {
-        await fetch('/api/teacher/rubrics', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+        await apiFetch('/api/teacher/rubrics', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
         toast({ title: 'Created!' })
       }
       setDialogOpen(false); resetForm(); fetchRubrics()
@@ -302,12 +303,12 @@ Use 4-5 criteria and 3-4 performance levels. Fill all cells with descriptions an
 
   const handleDelete = async (id: string) => {
     if (!confirm('Delete this rubric?')) return
-    try { await fetch(`/api/teacher/rubrics?id=${id}`, { method: 'DELETE' }); toast({ title: 'Deleted' }); fetchRubrics() } catch { toast({ title: 'Error', variant: 'destructive' }) }
+    try { await apiFetch(`/api/teacher/rubrics?id=${id}`, { method: 'DELETE' }); toast({ title: 'Deleted' }); fetchRubrics() } catch { toast({ title: 'Error', variant: 'destructive' }) }
   }
 
   const handleDuplicate = async (r: Rubric) => {
     try {
-      await fetch('/api/teacher/rubrics', {
+      await apiFetch('/api/teacher/rubrics', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ teacherId: user!.id, schoolId: user!.schoolId ?? undefined, title: `${r.title} (Copy)`, subject: r.subject, topic: r.topic, assessmentType: r.assessmentType, criteria: r.criteria, performanceLevels: r.performanceLevels, cells: r.cells, totalPoints: r.totalPoints }),

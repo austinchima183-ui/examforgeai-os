@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 // ============================================================================
 // ExamForge AI — Student AI Tutor Page
@@ -177,7 +178,7 @@ async function streamAIResponse(
   abortSignal?: AbortSignal,
 ): Promise<void> {
   try {
-    const res = await fetch('/api/ai/stream', {
+    const res = await apiFetch('/api/ai/stream', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ messages, stream: true }),
@@ -238,7 +239,7 @@ async function streamAIResponse(
 // ============================================================================
 
 async function completeAI(prompt: string): Promise<string> {
-  const res = await fetch('/api/ai/complete', {
+  const res = await apiFetch('/api/ai/complete', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ prompt }),

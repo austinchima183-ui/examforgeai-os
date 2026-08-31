@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect, useCallback } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -124,7 +125,7 @@ export default function WorksheetBuilderPage() {
     if (!subject) { toast({ title: 'Select subject', variant: 'destructive' }); return }
     setAiLoading(true)
     try {
-      const res = await fetch('/api/ai/complete', {
+      const res = await apiFetch('/api/ai/complete', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -163,10 +164,10 @@ Include a mix of question types. Return JSON only:
         templateName: saveAsTemplate ? templateName : undefined,
       }
       if (editWs) {
-        await fetch('/api/teacher/worksheets', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: editWs.id, ...payload }) })
+        await apiFetch('/api/teacher/worksheets', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: editWs.id, ...payload }) })
         toast({ title: 'Updated!' })
       } else {
-        await fetch('/api/teacher/worksheets', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+        await apiFetch('/api/teacher/worksheets', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
         toast({ title: 'Created!' })
       }
       setDialogOpen(false); resetForm(); fetchWorksheets()
@@ -179,7 +180,7 @@ Include a mix of question types. Return JSON only:
 
   const handleDelete = async (id: string) => {
     if (!confirm('Delete this worksheet?')) return
-    try { await fetch(`/api/teacher/worksheets?id=${id}`, { method: 'DELETE' }); toast({ title: 'Deleted' }); fetchWorksheets() } catch { toast({ title: 'Error', variant: 'destructive' }) }
+    try { await apiFetch(`/api/teacher/worksheets?id=${id}`, { method: 'DELETE' }); toast({ title: 'Deleted' }); fetchWorksheets() } catch { toast({ title: 'Error', variant: 'destructive' }) }
   }
 
   const addQuestion = () => {

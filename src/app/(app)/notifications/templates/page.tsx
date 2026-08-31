@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect, useCallback } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -136,7 +137,7 @@ export default function NotificationTemplatesPage() {
     setSaving(true)
 
     try {
-      const res = await fetch('/api/notifications/templates', {
+      const res = await apiFetch('/api/notifications/templates', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: editingTemplate.id, subject: editSubject, body: editBody }),

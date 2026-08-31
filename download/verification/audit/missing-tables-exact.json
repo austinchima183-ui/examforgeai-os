@@ -1,0 +1,270 @@
+{
+  "admissions_applications": [
+    "src/lib/ai/orchestration/agents/admissions-agent.ts"
+  ],
+  "agent_delegations": [
+    "src/lib/ai/orchestration/agent-communicator.ts"
+  ],
+  "agent_executions": [
+    "src/lib/ai/orchestration/agent-runner.ts"
+  ],
+  "agent_memories": [
+    "src/lib/ai/orchestration/agent-memory.ts"
+  ],
+  "agent_messages": [
+    "src/lib/ai/orchestration/agent-communicator.ts"
+  ],
+  "agent_plans": [
+    "src/lib/ai/orchestration/agent-planner.ts"
+  ],
+  "ai_circuit_breaker_state": [
+    "src/lib/ai/ai-reliability.ts"
+  ],
+  "ai_event_memory": [
+    "src/lib/event-bus/event-handlers.ts"
+  ],
+  "alert_channels": [
+    "src/app/api/alerting/channels/route.ts"
+  ],
+  "api_key_usage": [
+    "src/app/api/settings/api-keys/route.ts"
+  ],
+  "api_keys": [
+    "src/app/api/settings/api-keys/route.ts",
+    "src/lib/developer/api-key-service.ts"
+  ],
+  "assignment_recipients": [
+    "src/lib/notifications/event-handlers.ts"
+  ],
+  "avatars": [
+    "src/app/(app)/settings/page.tsx"
+  ],
+  "backup_schedule": [
+    "src/app/api/admin/backups/route.ts"
+  ],
+  "backups": [
+    "src/app/api/admin/backups/route.ts"
+  ],
+  "conditional_access_policies": [
+    "src/lib/enterprise-security/conditional-access.ts"
+  ],
+  "coupon_usages": [
+    "src/lib/billing/coupon-service.ts"
+  ],
+  "cross_campus_permissions": [
+    "src/lib/enterprise/cross-campus-service.ts",
+    "src/lib/enterprise/delegated-admin-service.ts",
+    "src/lib/enterprise/organization-service.ts"
+  ],
+  "delegated_admins": [
+    "src/lib/enterprise/cross-campus-service.ts",
+    "src/lib/enterprise/delegated-admin-service.ts",
+    "src/lib/enterprise/organization-service.ts"
+  ],
+  "devices": [
+    "src/lib/enterprise-security/device-trust.ts",
+    "src/lib/enterprise-security/risk-engine.ts"
+  ],
+  "enrollment_history": [
+    "src/lib/enterprise-analytics/enrollment-analytics-service.ts"
+  ],
+  "enrollments": [
+    "src/lib/import/importers/student-importer.ts"
+  ],
+  "enterprise_contracts": [
+    "src/lib/billing/enterprise-contract-service.ts"
+  ],
+  "event_analytics": [
+    "src/lib/event-bus/event-handlers.ts"
+  ],
+  "exam_answers": [
+    "src/app/api/student/revision-hub/route.ts",
+    "src/lib/ai/ai-student.ts"
+  ],
+  "exam_participants": [
+    "src/lib/notifications/event-handlers.ts"
+  ],
+  "failed_payments": [
+    "src/lib/billing/failed-payments.ts"
+  ],
+  "fee_assignments": [
+    "src/lib/ai/ai-agents.ts",
+    "src/lib/ai/ai-predictive.ts",
+    "src/lib/ai/ai-school-admin.ts",
+    "src/lib/ai/orchestration/agents/finance-agent.ts",
+    "src/lib/services/school-admin-service.ts"
+  ],
+  "fee_structures": [
+    "src/lib/services/school-admin-service.ts"
+  ],
+  "feedback": [
+    "src/lib/feedback/analytics-service.ts",
+    "src/lib/feedback/feedback-service.ts"
+  ],
+  "feedback_comments": [
+    "src/lib/feedback/feedback-service.ts"
+  ],
+  "marketing_campaigns": [
+    "src/lib/ai/orchestration/agents/marketing-agent.ts"
+  ],
+  "marketplace_licenses": [
+    "src/app/api/marketplace/webhook/route.ts",
+    "src/lib/marketplace-v2/purchase-service.ts"
+  ],
+  "marketplace_listings": [
+    "src/lib/marketplace-v2/listing-service.ts",
+    "src/lib/marketplace-v2/marketplace-categories.ts",
+    "src/lib/marketplace-v2/purchase-service.ts",
+    "src/lib/marketplace-v2/review-service.ts",
+    "src/lib/marketplace-v2/seller-service.ts"
+  ],
+  "marketplace_payouts": [
+    "src/lib/marketplace-v2/seller-service.ts"
+  ],
+  "marketplace_seller_profiles": [
+    "src/lib/marketplace-v2/seller-service.ts"
+  ],
+  "metered_pricing": [
+    "src/lib/billing/subscription-service.ts"
+  ],
+  "notification_bounces": [
+    "src/lib/notifications/delivery-engine.ts"
+  ],
+  "notification_queue": [
+    "src/lib/notifications/delivery-engine.ts",
+    "src/lib/notifications/queue.ts"
+  ],
+  "notification_templates": [
+    "src/app/api/notifications/templates/route.ts"
+  ],
+  "oauth_auth_codes": [
+    "src/lib/developer/oauth-service.ts"
+  ],
+  "oauth_tokens": [
+    "src/lib/developer/oauth-service.ts"
+  ],
+  "organization_settings": [
+    "src/app/api/settings/security/route.ts",
+    "src/components/dashboard/intelligent-insights.tsx"
+  ],
+  "payment_audit_trail": [
+    "src/lib/billing/payment-audit.ts"
+  ],
+  "payment_authorizations": [
+    "src/lib/billing/failed-payments.ts",
+    "src/lib/billing/webhooks/paystack-handler.ts"
+  ],
+  "plan_limits": [
+    "src/lib/billing/invoice-service-extended.ts"
+  ],
+  "push_tokens": [
+    "src/lib/notifications/providers/push-firebase.ts"
+  ],
+  "refund_requests": [
+    "src/lib/billing/refund-service.ts",
+    "src/lib/billing/webhooks/flutterwave-handler.ts"
+  ],
+  "refund_workflows": [
+    "src/lib/billing/refund-workflow.ts"
+  ],
+  "report_deliveries": [
+    "src/lib/enterprise-analytics/scheduled-reports-service.ts"
+  ],
+  "report_executions": [
+    "src/lib/enterprise-analytics/scheduled-reports-service.ts"
+  ],
+  "risk_score_history": [
+    "src/lib/enterprise-security/risk-engine.ts"
+  ],
+  "scheduled_interventions": [
+    "src/lib/workflow/workflow-engine.ts"
+  ],
+  "scheduled_notifications": [
+    "src/lib/notifications/scheduler.ts"
+  ],
+  "scheduled_reports": [
+    "src/lib/enterprise-analytics/scheduled-reports-service.ts"
+  ],
+  "scim_configurations": [
+    "src/lib/enterprise-security/sso-service.ts"
+  ],
+  "seat_allocations": [
+    "src/lib/billing/invoice-service-extended.ts",
+    "src/lib/billing/invoice-service.ts",
+    "src/lib/billing/subscription-service.ts"
+  ],
+  "session_activity_log": [
+    "src/lib/enterprise-security/session-management.ts"
+  ],
+  "sso_auth_states": [
+    "src/lib/enterprise-security/sso-service.ts"
+  ],
+  "sso_providers": [
+    "src/lib/enterprise-security/sso-service.ts"
+  ],
+  "sso_user_links": [
+    "src/lib/enterprise-security/sso-service.ts"
+  ],
+  "subscription_changes": [
+    "src/lib/billing/revenue-dashboard-service.ts"
+  ],
+  "support_tickets": [
+    "src/lib/ai/orchestration/agents/support-agent.ts"
+  ],
+  "tax_rates": [
+    "src/lib/billing/invoice-service-extended.ts",
+    "src/lib/billing/invoice-service.ts"
+  ],
+  "teacher_subjects": [
+    "src/lib/import/importers/teacher-importer.ts"
+  ],
+  "transcript_entries": [
+    "src/lib/workflow/workflow-engine.ts"
+  ],
+  "usage_records": [
+    "src/lib/billing/invoice-service-extended.ts",
+    "src/lib/billing/revenue-dashboard-service.ts",
+    "src/lib/billing/subscription-service.ts",
+    "src/lib/billing/usage-service.ts"
+  ],
+  "user_login_history": [
+    "src/lib/enterprise-security/risk-engine.ts"
+  ],
+  "webhook_deliveries": [
+    "src/app/api/settings/webhooks/route.ts"
+  ],
+  "webhook_idempotency": [
+    "src/lib/billing/webhooks/idempotency.ts"
+  ],
+  "webhook_registrations": [
+    "src/lib/event-bus/event-emitter.ts",
+    "src/lib/event-bus/event-handlers.ts"
+  ],
+  "webhooks": [
+    "src/app/api/settings/webhooks/route.ts"
+  ],
+  "workflow_approval_requests": [
+    "src/lib/workflow/approval-service.ts",
+    "src/lib/workflow/workflow-engine.ts"
+  ],
+  "workflow_dead_letter_queue": [
+    "src/lib/workflow/workflow-engine.ts"
+  ],
+  "workflow_definitions": [
+    "src/lib/workflow/approval-service.ts",
+    "src/lib/workflow/workflow-engine.ts",
+    "src/lib/workflow/workflow-service.ts"
+  ],
+  "workflow_executions": [
+    "src/lib/event-bus/event-handlers.ts",
+    "src/lib/workflow/approval-service.ts",
+    "src/lib/workflow/workflow-engine.ts",
+    "src/lib/workflow/workflow-service.ts"
+  ],
+  "workflow_scheduled_steps": [
+    "src/lib/workflow/workflow-engine.ts"
+  ],
+  "workflow_trigger_rules": [
+    "src/lib/event-bus/event-handlers.ts"
+  ]
+}

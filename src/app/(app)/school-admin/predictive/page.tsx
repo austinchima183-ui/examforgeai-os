@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 // ============================================================================
 // ExamForge AI — Predictive Analytics Dashboard
@@ -92,7 +93,7 @@ export default function PredictiveAnalyticsPage() {
 
   // ── API Call Helper ──
   const callAPI = async (action: string, data: Record<string, unknown> = {}) => {
-    const response = await fetch('/api/ai/predictive', {
+    const response = await apiFetch('/api/ai/predictive', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ action, data }),

@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
@@ -102,7 +103,7 @@ export default function CartPage() {
 
     setCheckingOut(true)
     try {
-      const res = await fetch('/api/marketplace/checkout', {
+      const res = await apiFetch('/api/marketplace/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ items: items.map(i => ({ productId: i.productId, quantity: i.quantity })) }),

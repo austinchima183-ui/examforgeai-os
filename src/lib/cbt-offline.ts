@@ -10,6 +10,7 @@
 // FIXES: Never lose a student's answer because of temporary connectivity loss.
 // ============================================================================
 
+import { apiFetch } from '@/lib/api/client-fetch'
 import Dexie, { type EntityTable } from 'dexie'
 import { logger } from '@/lib/utils/logger'
 
@@ -419,7 +420,7 @@ async function syncEntryToServer(entry: SyncQueueEntry): Promise<boolean> {
     }
 
     if (entry.type === 'answer_save' && questionId) {
-      const response = await fetch('/api/cbt/answer', {
+      const response = await apiFetch('/api/cbt/answer', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ examSessionId, questionId, answer }),
@@ -433,7 +434,7 @@ async function syncEntryToServer(entry: SyncQueueEntry): Promise<boolean> {
     }
 
     if (entry.type === 'session_submit') {
-      const response = await fetch('/api/cbt/submit', {
+      const response = await apiFetch('/api/cbt/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(entry.payload),
@@ -442,7 +443,7 @@ async function syncEntryToServer(entry: SyncQueueEntry): Promise<boolean> {
     }
 
     if (entry.type === 'session_update') {
-      const response = await fetch('/api/cbt/timing', {
+      const response = await apiFetch('/api/cbt/timing', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(entry.payload),

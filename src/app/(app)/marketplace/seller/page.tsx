@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
@@ -123,7 +124,7 @@ export default function SellerDashboardPage() {
 
     setCreating(true)
     try {
-      const res = await fetch('/api/marketplace/seller/products', {
+      const res = await apiFetch('/api/marketplace/seller/products', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

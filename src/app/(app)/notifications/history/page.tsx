@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect, useCallback } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -126,7 +127,7 @@ export default function NotificationHistoryPage() {
   const handleResend = async (entry: HistoryEntry) => {
     setResending(entry.id)
     try {
-      const res = await fetch('/api/notifications/history', {
+      const res = await apiFetch('/api/notifications/history', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'resend', id: entry.id }),

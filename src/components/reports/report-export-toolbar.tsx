@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
@@ -231,7 +232,7 @@ export function ReportExportToolbar({
     }
 
     try {
-      const res = await fetch('/api/reports/share', {
+      const res = await apiFetch('/api/reports/share', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -263,7 +264,7 @@ export function ReportExportToolbar({
     }
 
     try {
-      const res = await fetch('/api/reports/schedule', {
+      const res = await apiFetch('/api/reports/schedule', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

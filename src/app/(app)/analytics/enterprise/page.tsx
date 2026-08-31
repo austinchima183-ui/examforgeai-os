@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useCallback, useMemo, useEffect } from 'react'
 import { useApi } from '@/lib/hooks/use-api'
@@ -267,7 +268,7 @@ export default function EnterpriseAnalyticsPage() {
     setNlqLoading(true)
     setNlqResult(null)
     try {
-      const res = await fetch('/api/analytics/nlq', {
+      const res = await apiFetch('/api/analytics/nlq', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: nlq, dashboardType, timePeriod }),

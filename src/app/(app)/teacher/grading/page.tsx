@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect, useCallback } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -147,7 +148,7 @@ export default function GradingDashboardPage() {
   const handleAIGrade = async (submissionId: string) => {
     setAiLoading(submissionId)
     try {
-      const res = await fetch('/api/teacher/grade', {
+      const res = await apiFetch('/api/teacher/grade', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'ai-grade', submissionId }),
@@ -167,7 +168,7 @@ export default function GradingDashboardPage() {
     if (!selectedSub) return
     setSaving(true)
     try {
-      const res = await fetch('/api/teacher/submissions', {
+      const res = await apiFetch('/api/teacher/submissions', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: selectedSub.id, score: manualScore, gradedBy: user!.id }),
@@ -191,7 +192,7 @@ export default function GradingDashboardPage() {
         const sub = submissions.find(s => s.id === id)
         return { id, score: sub?.aiScore ?? sub?.maxScore ? sub.maxScore * 0.5 : 0 }
       }).filter(g => g.score !== undefined)
-      await fetch('/api/teacher/grade', {
+      await apiFetch('/api/teacher/grade', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'batch-grade', grades, gradedBy: user!.id }),

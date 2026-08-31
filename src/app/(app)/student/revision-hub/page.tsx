@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 // ============================================================================
 // ExamForge AI — Student Revision Hub Page
@@ -181,7 +182,7 @@ export default function RevisionHubPage() {
   const startAIRevision = async (topic: RevisionTopic) => {
     setAiLoading(topic.subjectId)
     try {
-      const res = await fetch('/api/ai/complete', {
+      const res = await apiFetch('/api/ai/complete', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

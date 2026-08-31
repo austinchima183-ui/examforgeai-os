@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
@@ -20,7 +21,7 @@ export function QuestionBankActions({ schoolId }: { schoolId: string | null }) {
       formData.append('file', file)
       if (schoolId) formData.append('schoolId', schoolId)
 
-      const validateRes = await fetch('/api/import/validate', {
+      const validateRes = await apiFetch('/api/import/validate', {
         method: 'POST',
         body: formData,
       })
@@ -33,7 +34,7 @@ export function QuestionBankActions({ schoolId }: { schoolId: string | null }) {
       const validation = await validateRes.json()
 
       // Step 2: Execute the import
-      const executeRes = await fetch('/api/import/execute', {
+      const executeRes = await apiFetch('/api/import/execute', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

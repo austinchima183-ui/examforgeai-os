@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect, useCallback } from 'react'
 import {
@@ -135,7 +136,7 @@ export function FeesPageClient({ initialData, schoolId, userId }: FeesPageClient
     }
     setSaving(true)
     try {
-      const res = await fetch('/api/school/fees', {
+      const res = await apiFetch('/api/school/fees', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -171,7 +172,7 @@ export function FeesPageClient({ initialData, schoolId, userId }: FeesPageClient
     }
     setSaving(true)
     try {
-      const res = await fetch('/api/school/fees', {
+      const res = await apiFetch('/api/school/fees', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

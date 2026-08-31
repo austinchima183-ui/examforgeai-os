@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect, useCallback } from 'react'
 import { type ColumnDef } from '@tanstack/react-table'
@@ -91,7 +92,7 @@ export function ClassesPageClient({ initialData, schoolId, userId }: ClassesPage
     }
     setFormSaving(true)
     try {
-      const res = await fetch('/api/school/classes', {
+      const res = await apiFetch('/api/school/classes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -122,7 +123,7 @@ export function ClassesPageClient({ initialData, schoolId, userId }: ClassesPage
     if (!selectedClass) return
     setFormSaving(true)
     try {
-      const res = await fetch('/api/school/classes', {
+      const res = await apiFetch('/api/school/classes', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -151,7 +152,7 @@ export function ClassesPageClient({ initialData, schoolId, userId }: ClassesPage
 
   const handleDelete = async (classId: string) => {
     try {
-      const res = await fetch(`/api/school/classes?id=${classId}`, { method: 'DELETE' })
+      const res = await apiFetch(`/api/school/classes?id=${classId}`, { method: 'DELETE' })
       if (res.ok) {
         toast({ title: 'Success', description: 'Class deactivated' })
         refreshData()

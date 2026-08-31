@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
@@ -158,7 +159,7 @@ export default function ReviewsPage() {
 
     setSubmitting(true)
     try {
-      const res = await fetch('/api/marketplace/reviews', {
+      const res = await apiFetch('/api/marketplace/reviews', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -194,7 +195,7 @@ export default function ReviewsPage() {
 
     setResponding(true)
     try {
-      const res = await fetch('/api/marketplace/reviews/respond', {
+      const res = await apiFetch('/api/marketplace/reviews/respond', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -222,7 +223,7 @@ export default function ReviewsPage() {
   async function handleReportReview() {
     setReporting(true)
     try {
-      const res = await fetch('/api/marketplace/reviews/report', {
+      const res = await apiFetch('/api/marketplace/reviews/report', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ reviewId: reportReviewId }),

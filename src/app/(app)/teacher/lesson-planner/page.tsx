@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect, useCallback } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -126,7 +127,7 @@ export default function LessonPlannerPage() {
     if (!topic) { toast({ title: 'Enter a topic', description: 'Topic is required for AI generation', variant: 'destructive' }); return }
     setAiLoading(true)
     try {
-      const res = await fetch('/api/ai/complete', {
+      const res = await apiFetch('/api/ai/complete', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -159,10 +160,10 @@ Return JSON only: { "objectives": ["..."], "materials": ["..."], "activities": [
     try {
       const payload = { teacherId: user!.id, schoolId: user!.schoolId ?? undefined, subject, topic, className, duration, objectives, materials, activities, assessment, scheduledAt: scheduledAt || undefined, status: scheduledAt ? 'scheduled' : 'draft', notes }
       if (editPlan) {
-        await fetch('/api/teacher/lesson-plans', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: editPlan.id, ...payload }) })
+        await apiFetch('/api/teacher/lesson-plans', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: editPlan.id, ...payload }) })
         toast({ title: 'Updated!', description: 'Lesson plan updated successfully' })
       } else {
-        await fetch('/api/teacher/lesson-plans', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+        await apiFetch('/api/teacher/lesson-plans', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
         toast({ title: 'Created!', description: 'Lesson plan created successfully' })
       }
       setDialogOpen(false); resetForm(); fetchPlans()
@@ -176,7 +177,7 @@ Return JSON only: { "objectives": ["..."], "materials": ["..."], "activities": [
   const handleDelete = async (id: string) => {
     if (!confirm('Delete this lesson plan?')) return
     try {
-      await fetch(`/api/teacher/lesson-plans?id=${id}`, { method: 'DELETE' })
+      await apiFetch(`/api/teacher/lesson-plans?id=${id}`, { method: 'DELETE' })
       toast({ title: 'Deleted', description: 'Lesson plan deleted' }); fetchPlans()
     } catch {
       toast({ title: 'Error', description: 'Failed to delete', variant: 'destructive' })
@@ -185,7 +186,7 @@ Return JSON only: { "objectives": ["..."], "materials": ["..."], "activities": [
 
   const handleShare = async (plan: LessonPlan) => {
     try {
-      await fetch('/api/teacher/lesson-plans', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: plan.id, isShared: !plan.isShared }) })
+      await apiFetch('/api/teacher/lesson-plans', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: plan.id, isShared: !plan.isShared }) })
       toast({ title: plan.isShared ? 'Unshared' : 'Shared!', description: plan.isShared ? 'Lesson plan unshared' : 'Lesson plan shared with other teachers' })
       fetchPlans()
     } catch {

@@ -5,6 +5,7 @@
 // scopes API access by granted permissions, and audits all API calls.
 // ============================================================================
 
+import { apiFetch } from '@/lib/api/client-fetch'
 import { createClient } from '@/lib/supabase/server'
 import {
   type PluginManifest,
@@ -520,7 +521,7 @@ export async function createSandboxedAPI(
         requirePermission('use_ai')
 
         // For streaming, we invoke the AI stream edge function
-        const response = await fetch('/api/ai/stream', {
+        const response = await apiFetch('/api/ai/stream', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ prompt, ...options, pluginId }),

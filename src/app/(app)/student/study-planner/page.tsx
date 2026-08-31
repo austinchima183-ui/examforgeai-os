@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 // ============================================================================
 // ExamForge AI — Student Study Planner Page
@@ -121,7 +122,7 @@ export default function StudyPlannerPage() {
   const createPlan = async () => {
     if (!newTitle.trim()) return
     try {
-      const res = await fetch('/api/student/study-planner', {
+      const res = await apiFetch('/api/student/study-planner', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -145,7 +146,7 @@ export default function StudyPlannerPage() {
   // ── Toggle completion ──
   const toggleComplete = async (plan: StudyPlan) => {
     try {
-      const res = await fetch('/api/student/study-planner', {
+      const res = await apiFetch('/api/student/study-planner', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: plan.id, is_completed: !plan.is_completed }),
@@ -160,7 +161,7 @@ export default function StudyPlannerPage() {
   // ── Delete plan ──
   const deletePlan = async (id: string) => {
     try {
-      const res = await fetch(`/api/student/study-planner?id=${id}`, { method: 'DELETE' })
+      const res = await apiFetch(`/api/student/study-planner?id=${id}`, { method: 'DELETE' })
       if (!res.ok) throw new Error('Failed to delete')
       setStudyPlans((prev) => prev.filter((p) => p.id !== id))
     } catch (err) {
@@ -183,7 +184,7 @@ export default function StudyPlannerPage() {
         daysUntil: e.starts_at ? differenceInDays(parseISO(e.starts_at), new Date()) : null,
       }))
 
-      const res = await fetch('/api/ai/complete', {
+      const res = await apiFetch('/api/ai/complete', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -197,7 +198,7 @@ export default function StudyPlannerPage() {
 
       if (Array.isArray(parsed) && parsed.length > 0) {
         for (const session of parsed) {
-          await fetch('/api/student/study-planner', {
+          await apiFetch('/api/student/study-planner', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

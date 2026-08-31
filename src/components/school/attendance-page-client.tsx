@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect, useCallback } from 'react'
 import {
@@ -159,7 +160,7 @@ export function AttendancePageClient({ initialData, schoolId, userId }: Attendan
         status,
       }))
 
-      const res = await fetch('/api/school/attendance', {
+      const res = await apiFetch('/api/school/attendance', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ records }),

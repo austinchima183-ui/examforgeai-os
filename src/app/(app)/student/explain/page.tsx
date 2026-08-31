@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 // ============================================================================
 // ExamForge AI — "Explain Anything" Page
@@ -169,7 +170,7 @@ export default function ExplainAnythingPage() {
         .map((s) => s.trim())
         .filter((s) => s.length > 0)
 
-      const response = await fetch('/api/ai/student', {
+      const response = await apiFetch('/api/ai/student', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

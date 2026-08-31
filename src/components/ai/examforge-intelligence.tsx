@@ -1,4 +1,5 @@
 'use client';
+import { apiFetch } from '@/lib/api/client-fetch'
 
 // ============================================================================
 // ExamForge Intelligence — Contextual AI Assistant
@@ -650,7 +651,7 @@ export function ExamForgeIntelligence() {
           content: m.content,
         }));
 
-        const response = await fetch('/api/ai/stream', {
+        const response = await apiFetch('/api/ai/stream', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({

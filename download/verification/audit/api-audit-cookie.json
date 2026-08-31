@@ -1,0 +1,117 @@
+{
+  "target": "http://localhost:3000",
+  "results": {
+    "student": {
+      "__login": {
+        "ok": true,
+        "url": "http://localhost:3000/dashboard/student"
+      },
+      "/api/health": {
+        "status": 200,
+        "ok": true
+      },
+      "/api/student/dashboard": {
+        "status": 404,
+        "ok": false,
+        "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" "
+      },
+      "/api/student/exams": {
+        "status": 404,
+        "ok": false,
+        "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" "
+      },
+      "/api/student/results": {
+        "status": 404,
+        "ok": false,
+        "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" "
+      },
+      "/api/ai/student": {
+        "status": 405,
+        "ok": false,
+        "body": ""
+      },
+      "/api/notifications": {
+        "status": 404,
+        "ok": false,
+        "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" "
+      },
+      "/api/student/study-plan": {
+        "status": 404,
+        "ok": false,
+        "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" "
+      },
+      "/api/student/flashcards": {
+        "status": 200,
+        "ok": true
+      }
+    },
+    "teacher": {
+      "__login": {
+        "ok": true,
+        "url": "http://localhost:3000/dashboard/teacher"
+      },
+      "/api/teacher/dashboard": {
+        "status": 404,
+        "ok": false,
+        "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" "
+      },
+      "/api/teacher/classes": {
+        "status": 404,
+        "ok": false,
+        "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" "
+      },
+      "/api/teacher/exams": {
+        "status": 404,
+        "ok": false,
+        "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" "
+      },
+      "/api/teacher/questions": {
+        "status": 404,
+        "ok": false,
+        "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" "
+      },
+      "/api/teacher/students": {
+        "status": 404,
+        "ok": false,
+        "body": "<!DOCTYPE html><html lang=\"en\" class=\"inter_c15e96cb-module__0bjUvq__variable\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" "
+      },
+      "/api/ai/teacher": {
+        "status": 405,
+        "ok": false,
+        "body": ""
+      },
+      "/api/teacher/lesson-plans": {
+        "status": 403,
+        "ok": false,
+        "body": "{\"error\":\"CSRF token required\",\"code\":\"CSRF_TOKEN_MISSING\"}"
+      },
+      "/api/teacher/analytics": {
+        "status": 0,
+        "ok": false,
+        "body": "Error: apiRequestContext.get: aborted\nCall log:\n  - → GET http://localhost:3000/api/teacher/analytics\n    - user-agent: Mozilla/5.0 (X11; Linux x86_64"
+      }
+    },
+    "parent": {
+      "__login": {
+        "ok": false,
+        "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/login\nCall log:\n  - navigating to \"http://localhost:3000/login\", waiting until \"domcontentloaded\"\n"
+      }
+    },
+    "school_admin": {
+      "__login": {
+        "ok": false,
+        "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/login\nCall log:\n  - navigating to \"http://localhost:3000/login\", waiting until \"domcontentloaded\"\n"
+      }
+    },
+    "super_admin": {
+      "__login": {
+        "ok": false,
+        "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/login\nCall log:\n  - navigating to \"http://localhost:3000/login\", waiting until \"domcontentloaded\"\n"
+      }
+    }
+  },
+  "summary": {
+    "passed": 2,
+    "total": 16
+  }
+}

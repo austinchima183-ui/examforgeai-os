@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 // ============================================================================
 // ExamForge AI — School Admin AI Insights Page
@@ -1023,7 +1024,7 @@ export default function AIInsightsPage() {
     }))
 
     try {
-      const response = await fetch('/api/ai/school-admin', {
+      const response = await apiFetch('/api/ai/school-admin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

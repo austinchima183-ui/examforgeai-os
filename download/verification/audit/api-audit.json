@@ -1,0 +1,167 @@
+{
+  "target": "http://localhost:3000",
+  "results": {
+    "student": {
+      "/api/health": {
+        "status": 200,
+        "ok": true
+      },
+      "/api/student/dashboard": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/student/exams": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/student/results": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/ai/student": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/notifications": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/student/study-plan": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/student/flashcards": {
+        "status": 401,
+        "ok": false
+      }
+    },
+    "teacher": {
+      "/api/teacher/dashboard": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/teacher/classes": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/teacher/exams": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/teacher/questions": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/teacher/students": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/ai/teacher": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/teacher/lesson-plans": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/teacher/analytics": {
+        "status": 401,
+        "ok": false
+      }
+    },
+    "parent": {
+      "/api/parent/dashboard": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/parent/children": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/parent/results": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/ai/parent": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/notifications": {
+        "status": 401,
+        "ok": false
+      }
+    },
+    "school_admin": {
+      "/api/school/dashboard": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/school/students": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/school/teachers": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/school/classes": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/school/subjects": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/ai/school-admin": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/school/attendance": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/school/analytics": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/billing/invoices": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/marketplace/products": {
+        "status": 401,
+        "ok": false
+      }
+    },
+    "super_admin": {
+      "/api/admin/dashboard": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/admin/organizations": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/admin/users": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/admin/audit-logs": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/admin/subscriptions": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/ai/predictive": {
+        "status": 401,
+        "ok": false
+      },
+      "/api/admin/system-health": {
+        "status": 401,
+        "ok": false
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect, useCallback } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -122,7 +123,7 @@ export default function SecuritySettingsPage() {
 
   const handleSetup2FA = async () => {
     try {
-      const res = await fetch('/api/settings/security', {
+      const res = await apiFetch('/api/settings/security', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'setup_2fa' }),
@@ -142,7 +143,7 @@ export default function SecuritySettingsPage() {
   const handleVerify2FA = async () => {
     setVerifying(true)
     try {
-      const res = await fetch('/api/settings/security', {
+      const res = await apiFetch('/api/settings/security', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'verify_2fa', code: verificationCode }),
@@ -166,7 +167,7 @@ export default function SecuritySettingsPage() {
 
   const handleDisable2FA = async () => {
     try {
-      const res = await fetch('/api/settings/security', {
+      const res = await apiFetch('/api/settings/security', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'disable_2fa' }),
@@ -195,7 +196,7 @@ export default function SecuritySettingsPage() {
 
   const handleRevokeSession = async (sessionId: string) => {
     try {
-      const res = await fetch('/api/settings/security', {
+      const res = await apiFetch('/api/settings/security', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'revoke_session', sessionId }),
@@ -210,7 +211,7 @@ export default function SecuritySettingsPage() {
 
   const handleRevokeAllSessions = async () => {
     try {
-      const res = await fetch('/api/settings/security', {
+      const res = await apiFetch('/api/settings/security', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'revoke_all_sessions' }),

@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect, useCallback } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -86,7 +87,7 @@ export default function BackupManagementPage() {
   const handleCreateBackup = async () => {
     setCreating(true)
     try {
-      const res = await fetch('/api/admin/backups', {
+      const res = await apiFetch('/api/admin/backups', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'create' }),
@@ -124,7 +125,7 @@ export default function BackupManagementPage() {
   const handleRestore = async (backupId: string) => {
     setRestoring(backupId)
     try {
-      const res = await fetch('/api/admin/backups', {
+      const res = await apiFetch('/api/admin/backups', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'restore', backupId }),
@@ -140,7 +141,7 @@ export default function BackupManagementPage() {
 
   const handleDownload = async (backup: Backup) => {
     try {
-      const res = await fetch('/api/admin/backups', {
+      const res = await apiFetch('/api/admin/backups', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'download', backupId: backup.id }),
@@ -157,7 +158,7 @@ export default function BackupManagementPage() {
     const newSchedule = { ...schedule, ...updates }
     setSchedule(newSchedule)
     try {
-      await fetch('/api/admin/backups', {
+      await apiFetch('/api/admin/backups', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'update_schedule', ...updates }),
@@ -169,7 +170,7 @@ export default function BackupManagementPage() {
 
   const handleSaveSchedule = async () => {
     try {
-      await fetch('/api/admin/backups', {
+      await apiFetch('/api/admin/backups', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

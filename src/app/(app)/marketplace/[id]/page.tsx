@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
@@ -202,7 +203,7 @@ export default function ProductDetailPage() {
   async function handlePurchase() {
     setPurchasing(true)
     try {
-      const res = await fetch('/api/marketplace/purchase', {
+      const res = await apiFetch('/api/marketplace/purchase', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId }),
@@ -252,7 +253,7 @@ export default function ProductDetailPage() {
 
     setSubmittingReview(true)
     try {
-      const res = await fetch('/api/marketplace/reviews', {
+      const res = await apiFetch('/api/marketplace/reviews', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

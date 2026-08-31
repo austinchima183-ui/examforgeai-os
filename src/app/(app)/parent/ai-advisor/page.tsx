@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 // ============================================================================
 // ExamForge AI — Parent AI Advisor Page
@@ -96,7 +97,7 @@ export default function AIAdvisorPage() {
   const [homeLearningData, setHomeLearningData] = useState<HomeLearningData | null>(null)
 
   const callAPI = async (action: string, data: Record<string, unknown>) => {
-    const response = await fetch('/api/ai/parent', {
+    const response = await apiFetch('/api/ai/parent', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ action, data }),

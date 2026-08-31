@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useEffect, useCallback } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -94,7 +95,7 @@ export default function ApiKeysPage() {
     }
     setCreating(true)
     try {
-      const res = await fetch('/api/settings/api-keys', {
+      const res = await apiFetch('/api/settings/api-keys', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -124,7 +125,7 @@ export default function ApiKeysPage() {
 
   const handleRevoke = async (keyId: string) => {
     try {
-      const res = await fetch('/api/settings/api-keys', {
+      const res = await apiFetch('/api/settings/api-keys', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'revoke', keyId }),
@@ -152,7 +153,7 @@ export default function ApiKeysPage() {
   const handleShowUsage = async (key: ApiKey) => {
     setSelectedKey(key)
     try {
-      const res = await fetch('/api/settings/api-keys', {
+      const res = await apiFetch('/api/settings/api-keys', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'usage', keyId: key.id }),

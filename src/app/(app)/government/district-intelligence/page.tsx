@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -339,7 +340,7 @@ function DistrictSection() {
     setError(null)
     setResult(null)
     try {
-      const res = await fetch('/api/ai/government', {
+      const res = await apiFetch('/api/ai/government', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -539,7 +540,7 @@ function ComparisonSection() {
     setError(null)
     setResult(null)
     try {
-      const res = await fetch('/api/ai/government', {
+      const res = await apiFetch('/api/ai/government', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'compare', data: { schoolIds: ids } }),
@@ -736,7 +737,7 @@ function ComplianceSection() {
     setError(null)
     setResult(null)
     try {
-      const res = await fetch('/api/ai/government', {
+      const res = await apiFetch('/api/ai/government', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'compliance', data: { curriculumStandard: standard } }),
@@ -934,7 +935,7 @@ function TrendsSection() {
     setError(null)
     setResult(null)
     try {
-      const res = await fetch('/api/ai/government', {
+      const res = await apiFetch('/api/ai/government', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

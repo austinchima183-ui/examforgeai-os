@@ -1,4 +1,5 @@
 'use client';
+import { apiFetch } from '@/lib/api/client-fetch'
 
 // ============================================================================
 // ExamForge AI — AI Copilot Component
@@ -430,7 +431,7 @@ export function AiCopilot({ isOpen: externalIsOpen, onOpenChange }: AiCopilotPro
           content: m.content,
         }));
 
-        const response = await fetch('/api/ai/stream', {
+        const response = await apiFetch('/api/ai/stream', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({

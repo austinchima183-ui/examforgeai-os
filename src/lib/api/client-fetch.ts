@@ -84,10 +84,19 @@ export async function apiFetch(url: string, options: ApiFetchOptions = {}): Prom
     }
   }
 
+  // Preserve string bodies as-is (already serialized by the caller);
+  // JSON-serialize everything else.
+  const finalBody =
+    body === undefined
+      ? undefined
+      : typeof body === 'string'
+        ? body
+        : JSON.stringify(body)
+
   return fetch(url, {
     ...rest,
     method,
     headers: finalHeaders,
-    body: body !== undefined ? JSON.stringify(body) : undefined,
+    body: finalBody,
   })
 }

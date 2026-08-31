@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useCallback, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -231,7 +232,7 @@ interface GeneratedOralQuestions {
 // ─── AI Helper ─────────────────────────────────────────────────────────────────
 
 async function callAI(prompt: string): Promise<string> {
-  const response = await fetch('/api/ai/complete', {
+  const response = await apiFetch('/api/ai/complete', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

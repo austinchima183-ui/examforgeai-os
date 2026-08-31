@@ -25,8 +25,6 @@ export async function GET(request: NextRequest) {
   // ─── Auth + CSRF guard (MISSION 4+11: feature isolation) ───
   const auth = await requireApiRole(request, ['parent', 'school_admin', 'super_admin'])
   if (auth instanceof NextResponse) return auth
-  const csrfGuard = enforceCsrf(request, auth)
-  if (csrfGuard) return csrfGuard
   try {
     const { searchParams } = new URL(request.url)
     const queryObj = Object.fromEntries(searchParams.entries())

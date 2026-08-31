@@ -1,4 +1,5 @@
 'use client'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 // ============================================================================
 // ExamForge AI — Question Generator Page
@@ -134,7 +135,7 @@ export default function AIQuestionGeneratorPage() {
     setSelectedQuestions(new Set())
 
     try {
-      const response = await fetch('/api/ai/teacher', {
+      const response = await apiFetch('/api/ai/teacher', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -179,7 +180,7 @@ export default function AIQuestionGeneratorPage() {
     try {
       const questionsToSave = Array.from(selectedQuestions).map((i) => questions[i])
 
-      const response = await fetch('/api/ai/teacher', {
+      const response = await apiFetch('/api/ai/teacher', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
