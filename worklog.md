@@ -339,3 +339,4 @@ Stage Summary:
 - All product systems now exist in code and are verified: offline CBT contract real end-to-end, certificates code-complete (DDL-blocked persistence columns), AI usage analytics shipped, billing verified live.
 - 0 known vulnerabilities, 0 security defects open in application code, all enterprise gates green twice.
 - Owner actions documented with ready-to-run idempotent artifacts (supabase/migrations/005-009 + vercel deploy).
+- PUSH OUTCOME: git push rejected — the remote-embedded token is revoked for writes (verified: reads succeed because the repo is public; REST API returns 401 Bad credentials). Documented in docs/OWNER_ACTIONS.md with exact commands; 6 commits (incl. 75e92d9) ready on local main. Per mandate fallback: everything else completed and verified.
