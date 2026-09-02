@@ -4,7 +4,7 @@
       "/usr/bin/node",
       "/home/z/my-project/node_modules/.bin/playwright",
       "test",
-      "e2e/06-rbac-matrix.spec.ts"
+      "e2e/09-widget-system.spec.ts"
     ],
     "configFile": "/home/z/my-project/playwright.config.ts",
     "rootDir": "/home/z/my-project/e2e",
@@ -73,25 +73,25 @@
   },
   "suites": [
     {
-      "title": "06-rbac-matrix.spec.ts",
-      "file": "06-rbac-matrix.spec.ts",
+      "title": "09-widget-system.spec.ts",
+      "file": "09-widget-system.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "RBAC Feature Isolation Matrix",
-          "file": "06-rbac-matrix.spec.ts",
-          "line": 26,
+          "title": "Widget System 3.0",
+          "file": "09-widget-system.spec.ts",
+          "line": 42,
           "column": 6,
           "specs": [
             {
-              "title": "matrix sweep as student",
+              "title": "toolbar renders with all controls",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 420000,
+                  "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "desktop-chromium",
@@ -101,31 +101,37 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 137595,
+                      "duration": 8390,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-29T13:39:55.803Z",
+                      "startTime": "2026-09-02T22:49:14.688Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/09-widget-system-Widget-Sy-9647b-r-renders-with-all-controls-desktop-chromium/video.webm"
+                        }
+                      ]
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "fe322748c5764633617c-7e09e2e93bcbe2fccea3",
-              "file": "06-rbac-matrix.spec.ts",
-              "line": 29,
-              "column": 9
+              "id": "c68e777acab7e851b369-6afc8874f981187eac9f",
+              "file": "09-widget-system.spec.ts",
+              "line": 56,
+              "column": 7
             },
             {
-              "title": "matrix sweep as teacher",
+              "title": "marketplace opens, searches, and hides a widget",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 420000,
+                  "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "desktop-chromium",
@@ -135,31 +141,37 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 123774,
+                      "duration": 9100,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-29T13:42:13.523Z",
+                      "startTime": "2026-09-02T22:49:23.192Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/09-widget-system-Widget-Sy-eb4df-searches-and-hides-a-widget-desktop-chromium/video.webm"
+                        }
+                      ]
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "fe322748c5764633617c-3e151d1107a11b2c2d81",
-              "file": "06-rbac-matrix.spec.ts",
-              "line": 29,
-              "column": 9
+              "id": "c68e777acab7e851b369-80aae9db0ffe1cc068a1",
+              "file": "09-widget-system.spec.ts",
+              "line": 75,
+              "column": 7
             },
             {
-              "title": "matrix sweep as parent",
+              "title": "undo restores hidden widget",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 420000,
+                  "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "desktop-chromium",
@@ -169,31 +181,37 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 67403,
+                      "duration": 9495,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-29T13:44:17.316Z",
+                      "startTime": "2026-09-02T22:49:32.306Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/09-widget-system-Widget-Sy-c1878-undo-restores-hidden-widget-desktop-chromium/video.webm"
+                        }
+                      ]
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "fe322748c5764633617c-3db9f49e1ac9a4984da7",
-              "file": "06-rbac-matrix.spec.ts",
-              "line": 29,
-              "column": 9
+              "id": "c68e777acab7e851b369-6352649362d39a7ef798",
+              "file": "09-widget-system.spec.ts",
+              "line": 95,
+              "column": 7
             },
             {
-              "title": "matrix sweep as school_admin",
+              "title": "context menu opens on right-click with actions",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 420000,
+                  "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "desktop-chromium",
@@ -203,31 +221,37 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 65517,
+                      "duration": 8609,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-29T13:45:24.729Z",
+                      "startTime": "2026-09-02T22:49:41.826Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/09-widget-system-Widget-Sy-ed3d4-on-right-click-with-actions-desktop-chromium/video.webm"
+                        }
+                      ]
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "fe322748c5764633617c-80245c78c0edc7d38277",
-              "file": "06-rbac-matrix.spec.ts",
-              "line": 29,
-              "column": 9
+              "id": "c68e777acab7e851b369-f58262d77883e9b758a5",
+              "file": "09-widget-system.spec.ts",
+              "line": 119,
+              "column": 7
             },
             {
-              "title": "matrix sweep as super_admin",
+              "title": "fullscreen overlay opens and exits with Escape",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 420000,
+                  "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "desktop-chromium",
@@ -237,23 +261,229 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 38648,
+                      "duration": 9587,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-29T13:46:30.257Z",
+                      "startTime": "2026-09-02T22:49:50.484Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/09-widget-system-Widget-Sy-ebf98-opens-and-exits-with-Escape-desktop-chromium/video.webm"
+                        }
+                      ]
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "fe322748c5764633617c-31fe385b58148ff3deac",
-              "file": "06-rbac-matrix.spec.ts",
-              "line": 29,
-              "column": 9
+              "id": "c68e777acab7e851b369-9c11708f277a6eb6fe01",
+              "file": "09-widget-system.spec.ts",
+              "line": 132,
+              "column": 7
+            },
+            {
+              "title": "focus mode shows only favorites and pinned, then exits",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9703,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-02T22:50:00.092Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/09-widget-system-Widget-Sy-e7f87-rites-and-pinned-then-exits-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c68e777acab7e851b369-42d9544e7808da9d1da6",
+              "file": "09-widget-system.spec.ts",
+              "line": 146,
+              "column": 7
+            },
+            {
+              "title": "widget search filters the grid live",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8496,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-02T22:50:09.805Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/09-widget-system-Widget-Sy-433d1-earch-filters-the-grid-live-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c68e777acab7e851b369-98ee58395894644f97dd",
+              "file": "09-widget-system.spec.ts",
+              "line": 169,
+              "column": 7
+            },
+            {
+              "title": "layout persists across reload",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12810,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-02T22:50:18.314Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/09-widget-system-Widget-Sy-74545-yout-persists-across-reload-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c68e777acab7e851b369-aa2c836af0ade8860a3d",
+              "file": "09-widget-system.spec.ts",
+              "line": 185,
+              "column": 7
+            },
+            {
+              "title": "FAB opens the command palette",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8659,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-02T22:50:31.136Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/09-widget-system-Widget-Sy-652fe-B-opens-the-command-palette-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c68e777acab7e851b369-bac83d5e64965be7e369",
+              "file": "09-widget-system.spec.ts",
+              "line": 206,
+              "column": 7
+            },
+            {
+              "title": "onboarding coach card is dismissible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10833,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-02T22:50:39.812Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/09-widget-system-Widget-Sy-01dbd-g-coach-card-is-dismissible-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c68e777acab7e851b369-696294586d6620d83cf8",
+              "file": "09-widget-system.spec.ts",
+              "line": 219,
+              "column": 7
             }
           ]
         }
@@ -262,9 +492,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-08-29T13:39:55.272Z",
-    "duration": 433777.27499999997,
-    "expected": 5,
+    "startTime": "2026-09-02T22:49:14.173Z",
+    "duration": 96619.514,
+    "expected": 10,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

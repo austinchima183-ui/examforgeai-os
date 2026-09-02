@@ -70,6 +70,8 @@ import {
   saveOfflineExamSession,
   saveOfflineAnswer,
   markAnswerSynced,
+  queueSessionSubmission,
+  processSyncQueue,
 } from '@/lib/cbt-offline';
 import { useExamSessionStore } from '@/lib/stores/exam-session-store';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -576,6 +578,12 @@ export default function ExamTakePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitResult, setSubmitResult] = useState<SubmitResult | null>(null);
   const [sheetOpen, setSheetOpen] = useState(false);
+  // Ω-21: true when this exam was restored from the IndexedDB offline cache
+  // (network fetch failed) — drives the "loaded from offline cache" chip.
+  const [offlineCachedExam, setOfflineCachedExam] = useState(false);
+  // Ω-21: a submission that could not reach the server and is queued in
+  // IndexedDB for automatic retry on reconnect.
+  const [queuedOfflineSubmission, setQueuedOfflineSubmission] = useState(false);
 
   // Refs
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -584,6 +592,9 @@ export default function ExamTakePage() {
   const tabSwitchCountRef = useRef(0);
   const hasRestoredRef = useRef(false);
   const handleSubmitRef = useRef<((fromTimer?: boolean) => Promise<void>) | null>(null);
+  // Ω-21: server session id mirrored in a ref so the offline IndexedDB
+  // writer always sees the latest value (state lags inside callbacks).
+  const serverSessionIdRef = useRef<string | null>(null);
 
   // ── Derived State ──
   const currentIndex = sessionStore.currentQuestionIndex;
@@ -827,27 +838,64 @@ export default function ExamTakePage() {
       const syncAll = async () => {
         sessionStore.setSyncStatus('syncing');
         try {
+          // Ω-21: deliver the durable IndexedDB sync queue first (answers
+          // saved while offline + any queued submission), then flush the
+          // in-memory store answers as a second pass.
+          await processSyncQueue().catch(() => undefined);
+
+          // Late session creation: an exam started fully offline has no
+          // server session yet — create it now so answers can land.
+          let sessionId = serverSessionId;
+          if (!sessionId && user?.id) {
+            try {
+              const res = await apiFetch('/api/cbt/session', {
+                method: 'POST',
+                body: {
+                  userId: user.id,
+                  examId,
+                  clientTimestamp: new Date().toISOString(),
+                },
+              });
+              if (res.ok) {
+                const data = await res.json();
+                if (data.sessionId) {
+                  sessionId = data.sessionId as string;
+                  setServerSessionId(sessionId);
+                  serverSessionIdRef.current = sessionId;
+                }
+              }
+            } catch {
+              // Still failing — keep offline flag
+            }
+          }
+
           // Reconnect: flush any locally-held answers, then heartbeat
           const localAnswers = useExamSessionStore.getState().getAnswers();
-          if (serverSessionId) {
+          if (sessionId) {
             await Promise.allSettled(
               Object.entries(localAnswers).map(([questionId, answer]) =>
                 apiFetch('/api/cbt/answer', {
                   method: 'POST',
-                  body: { sessionId: serverSessionId, questionId, answer },
+                  body: { sessionId, questionId, answer },
                 }).catch(() => undefined)
               )
             );
           }
-          const res = serverSessionId
+          const res = sessionId
             ? await apiFetch('/api/cbt/timing', {
                 method: 'POST',
-                body: { sessionId: serverSessionId, action: 'resume' },
+                body: { sessionId, action: 'resume' },
               })
             : null;
           if (res && res.ok) {
             sessionStore.setLastSaved(new Date().toISOString());
             sessionStore.setOffline(false);
+          }
+
+          // Ω-21: if a submission was queued while offline, retry it now —
+          // the 409-duplicate path in handleSubmit makes this idempotent.
+          if (queuedOfflineSubmission) {
+            await handleSubmitRef.current?.(false);
           }
         } catch {
           // Still failing, keep offline flag
@@ -855,7 +903,7 @@ export default function ExamTakePage() {
       };
       syncAll();
     }
-  }, [browserOffline, phase, examId, sessionStore, serverSessionId]);
+  }, [browserOffline, phase, examId, sessionStore, serverSessionId, user, queuedOfflineSubmission]);
 
   // ── Anti-Cheat: Tab Visibility ──
   useEffect(() => {
@@ -984,9 +1032,25 @@ export default function ExamTakePage() {
           const data = await res.json();
           if (data.sessionId) {
             setServerSessionId(data.sessionId as string);
+            serverSessionIdRef.current = data.sessionId as string;
             if (typeof data.remainingSeconds === 'number' && data.remainingSeconds > 0) {
               sessionStore.setTimerRemaining(data.remainingSeconds);
             }
+            // Ω-21: persist the session record to IndexedDB so the exam can
+            // be recovered (timer + sync queue) after a crash or offline reload.
+            void saveOfflineExamSession({
+              id: data.sessionId as string,
+              examId,
+              studentId: userId,
+              schoolId: '',
+              startedAt: Date.now(),
+              lastSyncedAt: Date.now(),
+              serverState: 'in_progress',
+              elapsedSeconds: 0,
+              recovered: false,
+            }).catch(() => {
+              // offline-store failures never block the online path
+            });
           }
         }
       }
@@ -1017,6 +1081,16 @@ export default function ExamTakePage() {
       // Optimistic local save (instant UI feedback, offline resilience)
       sessionStore.setAnswer(questionId, value);
 
+      // Ω-21 critical path: durable IndexedDB write + sync-queue entry.
+      // This MUST succeed even with no network — it is the recovery source
+      // for the reconnect flush and the automatic sync processor.
+      const offlineSessionId = serverSessionIdRef.current;
+      if (offlineSessionId) {
+        void saveOfflineAnswer(offlineSessionId, questionId, value).catch(() => {
+          // IndexedDB unavailable (private mode) — store + server still cover it
+        });
+      }
+
       // Server-authoritative persist (versioning, audit trail).
       // NOTE: the route schema is strict — only these three fields are accepted.
       if (!serverSessionId) return
@@ -1038,9 +1112,14 @@ export default function ExamTakePage() {
             await new Promise(r => setTimeout(r, 300 * (attempt + 1)))
             return persist(attempt + 1)
           }
+          // Ω-21: server acknowledged the save — flip the IndexedDB record
+          // to synced so the reconnect processor can skip it.
+          if (res.ok && offlineSessionId) {
+            void markAnswerSynced(offlineSessionId, questionId).catch(() => {})
+          }
         } catch {
-          // Offline — local answer retained; sync happens via the timing
-          // heartbeat and final submission
+          // Offline — local answer retained (store + IndexedDB); sync happens
+          // via the reconnect processor and final submission
         } finally {
           inFlightSavesRef.current.delete(questionId)
         }
@@ -1102,6 +1181,25 @@ export default function ExamTakePage() {
             },
           });
 
+          // Ω-21: a 409 means the exam is ALREADY submitted server-side —
+          // (e.g. the offline sync queue delivered it during reconnect, or a
+          // duplicate click). That is a successful terminal state, not an error.
+          if (res.status === 409) {
+            setSubmitResult({
+              score: 0,
+              totalMarks: exam?.totalMarks ?? 0,
+              percentage: 0,
+              passed: false,
+              submittedAt: new Date().toISOString(),
+              answeredQuestions: Object.keys(sessionStore.getAnswers()).length,
+              totalQuestions: exam?.totalQuestions ?? 0,
+            });
+            setPhase('submitted');
+            sessionStore.clearExam();
+            setQueuedOfflineSubmission(false);
+            return;
+          }
+
           if (!res.ok) {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.error ?? 'Submission failed');
@@ -1118,43 +1216,114 @@ export default function ExamTakePage() {
             totalQuestions: data.totalQuestions ?? exam?.totalQuestions ?? 0,
           });
         } else {
-          // ── Local-only fallback (no server session — e.g. offline start) ──
-          const res = await apiFetch('/api/cbt/submit', {
-            method: 'POST',
-            body: {
-              examId,
-              answers: sessionStore.getAnswers(),
-              timerRemaining: sessionStore.timerRemaining,
-              tabSwitchCount: tabSwitchCountRef.current,
-              timedOut: fromTimer,
-            },
-          }).catch(() => null);
+          // ── No server session yet (offline start or failed creation) ──
+          // The submit route REQUIRES { sessionId, userId } — the legacy
+          // body ({ examId, answers, ... }) is schema-rejected. So: create
+          // the server session first, then submit through it. If we cannot
+          // reach the server, surface the honest offline state.
+          let createdSessionId: string | null = null;
+          try {
+            const res = await apiFetch('/api/cbt/session', {
+              method: 'POST',
+              body: {
+                userId: user?.id,
+                examId,
+                clientTimestamp: new Date().toISOString(),
+              },
+            });
+            if (res.ok) {
+              const data = await res.json();
+              createdSessionId = (data.sessionId as string) ?? null;
+            }
+          } catch {
+            // Offline — cannot create a session right now
+          }
 
-          const data = res && res.ok ? await res.json().catch(() => ({})) : {};
-          setSubmitResult({
-            score: data.score ?? 0,
-            totalMarks: data.totalMarks ?? exam?.totalMarks ?? 0,
-            percentage: data.percentage ?? 0,
-            passed: data.passed ?? (data.percentage ?? 0) >= 50,
-            submittedAt: new Date().toISOString(),
-            answeredQuestions: Object.keys(sessionStore.getAnswers()).length,
-            totalQuestions: exam?.totalQuestions ?? 0,
-          });
+          if (createdSessionId) {
+            setServerSessionId(createdSessionId);
+            serverSessionIdRef.current = createdSessionId;
+            // Flush local answers into the fresh session, then submit.
+            const localAnswers = sessionStore.getAnswers();
+            await Promise.allSettled(
+              Object.entries(localAnswers).map(([questionId, answer]) =>
+                apiFetch('/api/cbt/answer', {
+                  method: 'POST',
+                  body: { sessionId: createdSessionId, questionId, answer },
+                }).catch(() => undefined)
+              )
+            );
+            const res = await apiFetch('/api/cbt/submit', {
+              method: 'POST',
+              body: {
+                sessionId: createdSessionId,
+                userId: user?.id,
+                clientTimestamp: new Date().toISOString(),
+              },
+            });
+            const data = res.ok
+              ? await res.json().catch(() => ({}))
+              : await res.json().catch(() => ({}));
+            setSubmitResult({
+              score: data.score ?? 0,
+              totalMarks: data.totalMarks ?? exam?.totalMarks ?? 0,
+              percentage: data.percentage ?? 0,
+              passed: data.passed ?? (data.percentage ?? 0) >= 50,
+              submittedAt: data.submittedAt ?? new Date().toISOString(),
+              answeredQuestions: Object.keys(localAnswers).length,
+              totalQuestions: exam?.totalQuestions ?? 0,
+            });
+          } else {
+            // Truly offline with no session: answers remain durable in the
+            // store + IndexedDB; the student must reconnect to finalize.
+            setSubmissionError(
+              'No connection to the exam server. Your answers are saved on this device. Reconnect and submit again — nothing will be lost.'
+            );
+            return;
+          }
         }
 
-        setPhase('post-exam');
+        setPhase('submitted');
         sessionStore.clearExam();
+        setQueuedOfflineSubmission(false);
       } catch (err) {
         console.error('Submission failed:', err);
-        setSubmissionError(
-          err instanceof Error ? err.message : 'An error occurred during submission. Your answers are saved.'
-        );
+        // Ω-21: network failure while a server session exists → queue the
+        // submission in IndexedDB. The reconnect processor (and the window
+        // 'online' listener in cbt-offline) will deliver it automatically.
+        if (serverSessionId && user) {
+          try {
+            await queueSessionSubmission(serverSessionId, {
+              userId: user.id,
+              clientTimestamp: new Date().toISOString(),
+              timedOut: fromTimer,
+            });
+            setQueuedOfflineSubmission(true);
+            setSubmissionError(
+              'You are offline. Your submission is queued on this device and will be delivered automatically when your connection returns.'
+            );
+          } catch {
+            setSubmissionError(
+              err instanceof Error ? err.message : 'An error occurred during submission. Your answers are saved.'
+            );
+          }
+        } else {
+          setSubmissionError(
+            err instanceof Error ? err.message : 'An error occurred during submission. Your answers are saved.'
+          );
+        }
       } finally {
         setIsSubmitting(false);
       }
     },
     [serverSessionId, user, examId, exam, sessionStore]
   );
+
+  // Keep the latest submit handler reachable from the timer auto-submit and
+  // the offline reconnect retry (both hold refs that outlive re-renders).
+  // This assignment was MISSING — timer auto-submit was a silent no-op.
+  useEffect(() => {
+    handleSubmitRef.current = handleSubmit;
+  }, [handleSubmit]);
 
   // ── Touch/Swipe navigation ──
   const touchStartRef = useRef<number | null>(null);
@@ -1521,12 +1690,26 @@ export default function ExamTakePage() {
               Q {currentIndex + 1} of {questions.length}
             </Badge>
 
+            {/* Ω-21: exam restored from the IndexedDB offline cache */}
+            {offlineCachedExam && (
+              <Badge
+                variant="outline"
+                className="text-xs whitespace-nowrap text-yellow-700 dark:text-yellow-400 border-yellow-300 dark:border-yellow-700"
+                title="Network was unavailable — this exam was restored from your device's offline cache"
+              >
+                <WifiOff className="h-3 w-3 mr-1" />
+                Offline copy
+              </Badge>
+            )}
+
             {/* Auto-save indicator */}
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
               {sessionStore.isOffline ? (
                 <>
                   <WifiOff className="h-3 w-3 text-yellow-600 dark:text-yellow-400" />
-                  <span className="hidden sm:inline text-yellow-600 dark:text-yellow-400">Offline</span>
+                  <span className="hidden sm:inline text-yellow-600 dark:text-yellow-400">
+                    {queuedOfflineSubmission ? 'Offline — submit queued' : 'Offline — answers saved locally'}
+                  </span>
                 </>
               ) : sessionStore.syncStatus === 'syncing' ? (
                 <>
@@ -1573,6 +1756,35 @@ export default function ExamTakePage() {
         {/* Question Panel */}
         <main className="flex-1 overflow-y-auto">
           <div className="mx-auto max-w-3xl p-4 sm:p-6 lg:p-8">
+            {/* Ω-21: submission failures were previously invisible — the
+                student clicked Submit and nothing happened. Render the error
+                (including the offline-queued state) prominently. */}
+            {submissionError && (
+              <div
+                role="alert"
+                className={cn(
+                  'mb-6 rounded-lg border p-4 text-sm space-y-2',
+                  queuedOfflineSubmission
+                    ? 'border-yellow-300 bg-yellow-50 text-yellow-900 dark:border-yellow-800 dark:bg-yellow-950/50 dark:text-yellow-200'
+                    : 'border-destructive/40 bg-destructive/10 text-destructive'
+                )}
+              >
+                <div className="flex items-start gap-2">
+                  {queuedOfflineSubmission ? (
+                    <WifiOff className="h-4 w-4 mt-0.5 shrink-0" />
+                  ) : (
+                    <AlertCircle className="h-4 w-4 mt-0.5 shrink-0" />
+                  )}
+                  <p>{submissionError}</p>
+                </div>
+                {queuedOfflineSubmission && (
+                  <p className="text-xs opacity-80">
+                    It will be sent automatically when your connection returns — you can safely
+                    stay on this page. You can also press Submit again once reconnected.
+                  </p>
+                )}
+              </div>
+            )}
             <AnimatePresence mode="wait">
               {currentQuestion && (
                 <motion.div

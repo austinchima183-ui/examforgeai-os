@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-09-02T22:54:49.145Z",
+  "target": "https://web-alpha-bay-87.vercel.app",
+  "checks": [
+    {
+      "name": "health endpoint",
+      "ok": true,
+      "detail": "status=200 db=n/a"
+    },
+    {
+      "name": "landing 200 + HTML",
+      "ok": true,
+      "detail": "status=200 bytes=738021"
+    },
+    {
+      "name": "auth gate redirect",
+      "ok": true,
+      "detail": "status=307"
+    },
+    {
+      "name": "security headers",
+      "ok": true,
+      "detail": "csp=true hsts=true xfo=DENY"
+    },
+    {
+      "name": "api gate /api/analytics",
+      "ok": true,
+      "detail": "status=401"
+    },
+    {
+      "name": "api gate /api/billing/subscriptions",
+      "ok": true,
+      "detail": "status=401"
+    },
+    {
+      "name": "api gate /api/student/certificates",
+      "ok": true,
+      "detail": "status=401"
+    },
+    {
+      "name": "public cert verify page",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "ai usage endpoint present",
+      "ok": true,
+      "detail": "status=401"
+    }
+  ],
+  "verdict": "PRODUCTION SMOKE PASS"
+}

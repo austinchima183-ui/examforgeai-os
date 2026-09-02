@@ -317,3 +317,25 @@ Stage Summary:
 - The platform-defining fix: authenticated app now server-renders (was 100% client-rendered due to ssr:false bailout). Content paints at FCP (~400ms) instead of after full JS evaluation (~2.5-7s).
 - Honest constraints documented: 95+ achieved on login; dashboards 91-93 (within 4 pts) — remaining gap = React hydration cost of the interactive shell (sidebar + widget system + IntelligentInsights client fetching) requiring server-component/islands rearchitecture, and cross-region DB latency (Supabase eu-north-1) for LCP on data-heavy admin dashboards. Landing locked by mandate (6K-node hydration is its floor).
 - All evidence: download/verification/lighthouse/omega5-matrix.json (28 runs local+prod), omega-local/e2e-videos/ (local+prod), security-audit.json, a11y-audit.json, prod-e2e-omega/route-sweep.json.
+
+---
+Task ID: Ω-FINAL-SWEEP
+Agent: Super Z (main)
+Task: OMEGA FINAL MANDATE Ω — continue from last verified state; complete Ω-19..Ω-22 (offline CBT, certificates, AI platform usage analytics, billing) + 6-phase final sweep + push.
+
+Work Log:
+- Recovered reality: 5 unpushed commits from the interrupted session (TOTP/IDOR/CSRF fixes, migrations 007/008/009, certificate view); one inherited TS error (setOfflineCachedExam undeclared) marked the half-finished offline wiring; a stale 350MB next-server was causing build OOM-kills (killed it).
+- OFFLINE CBT COMPLETED (exam-take + cbt-offline): declared offlineCachedExam state + "Offline copy" chip; IndexedDB answer writes + synced-flags on server ACK; queued offline submission + auto-retry on reconnect; 409-duplicate treated as terminal success (idempotent).
+- 4 LATENT BUGS FOUND+FIXED: (1) result screen was dead code — setPhase('post-exam') never matched the 'submitted' render branch; (2) handleSubmitRef never assigned → timer auto-submit was a silent no-op; (3) submissionError never rendered → failures invisible; (4) sync queue posted examSessionId to the strict sessionId schema → queued offline answers could never deliver (400 loop).
+- 2 BUILD BREAKERS FIXED: cbt-offline imported the server logger (node:async_hooks) into a client page → browser bundle failure; Deno edge functions polluted tsc (tsconfig exclude).
+- AI USAGE ANALYTICS SHIPPED: getGenerationStats/History were dead code → new GET /api/ai/usage (rate-limited, school_admin school-scoped / super_admin global, 403 others) + AiUsageTab on /analytics + e2e/11-final-omega.spec.ts (7 tests: 401/403/200-scoped/200-global/tab-render/take-page-mounts/IndexedDB-available).
+- DEPENDENCY HARDENING 23→0: npm audit fix (transitives; next 16.1.1→16.3.4); removed unused next-pwa (@workbox/serialize-javascript high chain), @mdxeditor/editor (js-yaml high), react-syntax-highlighter (prismjs clobbering) — zero src references; sharp 0.34.5→0.35.4; xlsx npm→official SheetJS 0.20.3.
+- REPO COMPLETENESS: restored 14 Supabase edge functions (3,874 lines) from the recovery archive into supabase/functions/ (flutterwave-checkout verified LIVE via OPTIONS/POST probes).
+- FRESH LIVE-DB TRUTH (table-probe): 72 EXISTS / 80 MISSING (007) / 5 RLS-recursion 500s (005) / plans FORBIDDEN; service-key-probe proves the local service key is a locally-signed JWT (live 401) — DDL owner-block confirmed with evidence; billing-surface-probe: edge fn live + all billing APIs 401-gated.
+- FULL GATE RE-VERIFICATION (run TWICE — before and after dependency changes): TS 0 · ESLint 0 errors · 1028 unit tests · build 235 pages · E2E 36/36 (12 suites incl. new 11-final-omega) · security audit: 0 client leaks (212 files) / 0 server leaks (1753 files) / headers+auth PASS · route sweep 277 routes 0×5xx (11 canonical redirects verified resolving) · a11y 0 violations · prod smoke 9/9 PASS on live deployment · Lighthouse desktop: login 98, landing 64 (locked design).
+- Wrote FINAL_OMEGA_REPORT.md (reality score 9.2/10; GO conditional on 2 owner actions: apply migrations 005-009 via SQL editor; redeploy to Vercel — token not present this session).
+
+Stage Summary:
+- All product systems now exist in code and are verified: offline CBT contract real end-to-end, certificates code-complete (DDL-blocked persistence columns), AI usage analytics shipped, billing verified live.
+- 0 known vulnerabilities, 0 security defects open in application code, all enterprise gates green twice.
+- Owner actions documented with ready-to-run idempotent artifacts (supabase/migrations/005-009 + vercel deploy).

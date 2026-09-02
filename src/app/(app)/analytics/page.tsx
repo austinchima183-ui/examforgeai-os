@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { createClient, createClientOrNull } from '@/lib/supabase/client'
+import { createClientOrNull } from '@/lib/supabase/client'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge'
 import { AreaChart } from '@/components/charts/area-chart'
 import { BarChart } from '@/components/charts/bar-chart'
 import { BarChart3, Users, TrendingUp, Award, Download, Loader2, AlertCircle, Sparkles, AlertTriangle, Activity } from 'lucide-react'
+import { AiUsageTab } from '@/components/analytics/ai-usage-tab'
 import type { AnalyticsOverview } from '@/lib/services/analytics-service'
 
 // ============================================================================
@@ -264,6 +265,7 @@ export default function AnalyticsPage() {
             <TabsTrigger value="overview" className="data-[state=active]:bg-primary/15 data-[state=active]:text-primary">Overview</TabsTrigger>
             <TabsTrigger value="performance" className="data-[state=active]:bg-primary/15 data-[state=active]:text-primary">Performance</TabsTrigger>
             <TabsTrigger value="activity" className="data-[state=active]:bg-primary/15 data-[state=active]:text-primary">Activity</TabsTrigger>
+            <TabsTrigger value="ai-usage" className="data-[state=active]:bg-primary/15 data-[state=active]:text-primary">AI Usage</TabsTrigger>
           </TabsList>
         </div>
 
@@ -454,6 +456,11 @@ export default function AnalyticsPage() {
               </CardContent>
             </Card>
           </div>
+        </TabsContent>
+
+        {/* AI Usage Tab (Ω-FINAL: real usage analytics from ai_generation_requests) */}
+        <TabsContent value="ai-usage" className="space-y-6">
+          <AiUsageTab />
         </TabsContent>
       </Tabs>
 

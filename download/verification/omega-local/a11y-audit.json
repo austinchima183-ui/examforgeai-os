@@ -1,152 +1,30 @@
 {
-  "auditedAt": "2026-08-30T01:49:39.252Z",
-  "tool": "axe-core WCAG 2.1 AA",
-  "pages": [
+  "auditedAt": "2026-09-02T22:51:39.218Z",
+  "base": "http://localhost:3000",
+  "results": [
     {
-      "page": "/",
-      "role": "anonymous",
-      "violations": []
+      "label": "login",
+      "violations": [],
+      "passes": 39,
+      "incomplete": 2
     },
     {
-      "page": "/login",
-      "role": "anonymous",
-      "violations": []
+      "label": "student-dashboard",
+      "violations": [],
+      "passes": 45,
+      "incomplete": 3
     },
     {
-      "page": "/register",
-      "role": "anonymous",
-      "violations": []
+      "label": "widget-marketplace",
+      "violations": [],
+      "passes": 38,
+      "incomplete": 2
     },
     {
-      "page": "/pricing",
-      "role": "anonymous",
-      "violations": []
-    },
-    {
-      "page": "/features",
-      "role": "anonymous",
-      "violations": []
-    },
-    {
-      "page": "/security",
-      "role": "anonymous",
-      "violations": []
-    },
-    {
-      "page": "/docs",
-      "role": "anonymous",
-      "violations": []
-    },
-    {
-      "page": "/dashboard/student",
-      "role": "student",
-      "violations": []
-    },
-    {
-      "page": "/exams",
-      "role": "student",
-      "violations": []
-    },
-    {
-      "page": "/results",
-      "role": "student",
-      "violations": []
-    },
-    {
-      "page": "/notifications",
-      "role": "student",
-      "violations": []
-    },
-    {
-      "page": "/settings",
-      "role": "student",
-      "violations": []
-    },
-    {
-      "page": "/marketplace",
-      "role": "student",
-      "violations": []
-    },
-    {
-      "page": "/dashboard/teacher",
-      "role": "teacher",
-      "violations": []
-    },
-    {
-      "page": "/question-bank",
-      "role": "teacher",
-      "violations": []
-    },
-    {
-      "page": "/teacher/lesson-planner",
-      "role": "teacher",
-      "violations": []
-    },
-    {
-      "page": "/dashboard/school-admin",
-      "role": "school_admin",
-      "violations": []
-    },
-    {
-      "page": "/school/settings",
-      "role": "school_admin",
-      "violations": []
-    },
-    {
-      "page": "/school/attendance",
-      "role": "school_admin",
-      "violations": []
-    },
-    {
-      "page": "/school/fees",
-      "role": "school_admin",
-      "violations": []
-    },
-    {
-      "page": "/students",
-      "role": "super_admin",
-      "violations": []
-    },
-    {
-      "page": "/teachers",
-      "role": "super_admin",
-      "violations": []
-    },
-    {
-      "page": "/schools",
-      "role": "super_admin",
-      "violations": []
-    },
-    {
-      "page": "/dashboard/super-admin",
-      "role": "super_admin",
-      "violations": []
-    },
-    {
-      "page": "/admin/audit-logs",
-      "role": "super_admin",
-      "violations": []
-    },
-    {
-      "page": "/admin/organizations",
-      "role": "super_admin",
-      "violations": []
-    },
-    {
-      "page": "/workflows",
-      "role": "super_admin",
-      "violations": []
-    },
-    {
-      "page": "/billing",
-      "role": "super_admin",
-      "violations": []
+      "label": "student-dashboard-mobile-390",
+      "violations": [],
+      "passes": 43,
+      "incomplete": 2
     }
-  ],
-  "summary": {
-    "pagesAudited": 28,
-    "totalViolationTypes": 0,
-    "totalNodes": 0,
-    "byType": {}
-  }
+  ]
 }

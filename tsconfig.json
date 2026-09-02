@@ -49,6 +49,7 @@
     "examples",
     "skills",
     "scripts",
-    "audit"
+    "audit",
+    "supabase/functions"
   ]
 }

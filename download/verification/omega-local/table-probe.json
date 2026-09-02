@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-08-29T21:23:42.024Z",
+  "timestamp": "2026-09-02T21:32:55.356Z",
   "method": "authenticated-Role REST probe (OpenAPI root is service_role-only; real service key externally blocked)",
   "referencedTables": 158,
   "verdictCounts": {
     "EXISTS": 72,
     "MISSING": 80,
-    "MIXED": 5,
-    "FORBIDDEN-ALL": 1
+    "FORBIDDEN-ALL": 1,
+    "MIXED": 5
   },
   "aggregate": {
     "users": {
-      "refs": 66,
+      "refs": 69,
       "files": [
         "src/app/(app)/analytics/page.tsx",
         "src/app/(app)/dashboard/page.tsx",
@@ -73,6 +73,22 @@
       },
       "verdict": "EXISTS"
     },
+    "schools": {
+      "refs": 18,
+      "files": [
+        "src/app/(app)/school/settings/page.tsx",
+        "src/app/api/admin/branding/route.ts",
+        "src/app/api/ai/government/route.ts",
+        "src/app/api/seed/route.ts",
+        "src/components/dashboard/intelligent-insights.tsx"
+      ],
+      "statuses": {
+        "student": "OK",
+        "teacher": "OK",
+        "super_admin": "OK"
+      },
+      "verdict": "EXISTS"
+    },
     "avatars": {
       "refs": 1,
       "files": [
@@ -125,22 +141,6 @@
       },
       "verdict": "MISSING"
     },
-    "schools": {
-      "refs": 16,
-      "files": [
-        "src/app/api/admin/branding/route.ts",
-        "src/app/api/ai/government/route.ts",
-        "src/app/api/seed/route.ts",
-        "src/components/dashboard/intelligent-insights.tsx",
-        "src/features/schools/actions.ts"
-      ],
-      "statuses": {
-        "student": "OK",
-        "teacher": "OK",
-        "super_admin": "OK"
-      },
-      "verdict": "EXISTS"
-    },
     "school_settings": {
       "refs": 5,
       "files": [
@@ -181,6 +181,22 @@
         "super_admin": "OK"
       },
       "verdict": "EXISTS"
+    },
+    "plans": {
+      "refs": 7,
+      "files": [
+        "src/app/api/admin/seed-plans/route.ts",
+        "src/lib/billing/invoice-service-extended.ts",
+        "src/lib/billing/invoice-service.ts",
+        "src/lib/billing/plan-gate.ts",
+        "src/lib/billing/subscription-lifecycle.ts"
+      ],
+      "statuses": {
+        "student": "FORBIDDEN",
+        "teacher": "FORBIDDEN",
+        "super_admin": "FORBIDDEN"
+      },
+      "verdict": "FORBIDDEN-ALL"
     },
     "agent_configs": {
       "refs": 3,
@@ -765,9 +781,10 @@
       "verdict": "MISSING"
     },
     "certificates": {
-      "refs": 2,
+      "refs": 3,
       "files": [
         "src/app/api/student/certificates/route.ts",
+        "src/app/api/verify/certificate/[code]/route.ts",
         "src/lib/workflow/workflow-engine.ts"
       ],
       "statuses": {
@@ -1166,22 +1183,6 @@
         "super_admin": "MISSING"
       },
       "verdict": "MISSING"
-    },
-    "plans": {
-      "refs": 6,
-      "files": [
-        "src/lib/billing/invoice-service-extended.ts",
-        "src/lib/billing/invoice-service.ts",
-        "src/lib/billing/plan-gate.ts",
-        "src/lib/billing/subscription-lifecycle.ts",
-        "src/lib/billing/subscription-service.ts"
-      ],
-      "statuses": {
-        "student": "FORBIDDEN",
-        "teacher": "FORBIDDEN",
-        "super_admin": "FORBIDDEN"
-      },
-      "verdict": "FORBIDDEN-ALL"
     },
     "seat_allocations": {
       "refs": 3,

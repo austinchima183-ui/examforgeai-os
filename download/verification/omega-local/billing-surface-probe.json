@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-09-02T21:36:21.971Z",
+  "probes": {
+    "edge:flutterwave-checkout:OPTIONS": {
+      "status": 200,
+      "invocationCount": null
+    },
+    "edge:flutterwave-checkout:POST": {
+      "status": 401,
+      "body": "{\"error\":\"Invalid authentication token\"}"
+    },
+    "prod:/api/billing/checkout": {
+      "status": 401,
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    "prod:/api/billing/subscriptions": {
+      "status": 401,
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    "prod:/api/billing/invoices": {
+      "status": 401,
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    },
+    "prod:/api/plans": {
+      "status": 401,
+      "body": "{\"error\":\"Authentication required\",\"code\":\"UNAUTHORIZED\"}"
+    }
+  }
+}

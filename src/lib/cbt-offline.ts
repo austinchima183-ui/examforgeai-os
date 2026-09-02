@@ -12,7 +12,18 @@
 
 import { apiFetch } from '@/lib/api/client-fetch'
 import Dexie, { type EntityTable } from 'dexie'
-import { logger } from '@/lib/utils/logger'
+
+// Client-safe logger — this module is imported by the exam-take CLIENT page,
+// so it must NOT pull the server logger (which imports node:async_hooks and
+// breaks the browser bundle). Dev-only console diagnostics; silent in prod.
+const offlineLogger = {
+  info: (msg: string, meta?: Record<string, unknown>) => {
+    if (process.env.NODE_ENV === 'development') console.info('[cbt-offline]', msg, meta ?? '')
+  },
+  error: (msg: string, err?: unknown, meta?: Record<string, unknown>) => {
+    if (process.env.NODE_ENV === 'development') console.error('[cbt-offline]', msg, err ?? '', meta ?? '')
+  },
+}
 
 // ──────────────────────────────────────────────────────────────
 // IndexedDB Schema
@@ -114,7 +125,7 @@ export async function saveOfflineExamSession(
 ): Promise<void> {
   const db = getDB()
   await db.examSessions.put(session)
-  logger.info('Exam session saved offline', {
+  offlineLogger.info('Exam session saved offline', {
     examId: session.examId,
     sessionId: session.id,
   })
@@ -165,7 +176,7 @@ export async function recoverExamSession(
     .equals(sessionId)
     .toArray()
 
-  logger.info('Exam session recovered offline', {
+  offlineLogger.info('Exam session recovered offline', {
     examId: session.examId,
     sessionId,
     answerCount: answers.length,
@@ -222,7 +233,7 @@ export async function saveOfflineAnswer(
     status: 'pending',
   })
 
-  logger.info('Answer saved offline', {
+  offlineLogger.info('Answer saved offline', {
     examSessionId,
     questionId,
     version,
@@ -397,13 +408,13 @@ export async function processSyncQueue(): Promise<{
         retryCount: entry.retryCount + 1,
       })
       failed++
-      logger.error('Sync queue entry failed', error, { entryId: entry.id, type: entry.type })
+      offlineLogger.error('Sync queue entry failed', error, { entryId: entry.id, type: entry.type })
     }
   }
 
   const remaining = (await getPendingSyncEntries()).length
 
-  logger.info('Sync queue processed', { processed, failed, remaining })
+  offlineLogger.info('Sync queue processed', { processed, failed, remaining })
 
   return { processed, failed, remaining }
 }
@@ -413,6 +424,11 @@ export async function processSyncQueue(): Promise<{
  */
 async function syncEntryToServer(entry: SyncQueueEntry): Promise<boolean> {
   try {
+    // NOTE: the /api/cbt/* routes use a STRICT zod schema that expects
+    // `sessionId` (not `examSessionId`) and a string `answer`. The offline
+    // store keys records by `examSessionId`, so remap + serialize here —
+    // otherwise the server 400s every queued entry and the retry loop
+    // exhausts itself (Ω-22 contract fix).
     const { examSessionId, questionId, answer } = entry.payload as {
       examSessionId: string
       questionId?: string
@@ -420,10 +436,19 @@ async function syncEntryToServer(entry: SyncQueueEntry): Promise<boolean> {
     }
 
     if (entry.type === 'answer_save' && questionId) {
+      const serialized =
+        answer === null || answer === undefined
+          ? ''
+          : typeof answer === 'string'
+            ? answer
+            : JSON.stringify(answer)
       const response = await apiFetch('/api/cbt/answer', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ examSessionId, questionId, answer }),
+        body: {
+          sessionId: examSessionId,
+          questionId,
+          answer: serialized,
+        },
       })
 
       if (response.ok) {
@@ -434,19 +459,31 @@ async function syncEntryToServer(entry: SyncQueueEntry): Promise<boolean> {
     }
 
     if (entry.type === 'session_submit') {
+      const { userId, clientTimestamp, timedOut } = entry.payload as {
+        userId?: string
+        clientTimestamp?: string
+        timedOut?: boolean
+      }
       const response = await apiFetch('/api/cbt/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(entry.payload),
+        body: {
+          sessionId: examSessionId,
+          ...(userId ? { userId } : {}),
+          ...(clientTimestamp ? { clientTimestamp } : {}),
+          ...(timedOut !== undefined ? { timedOut } : {}),
+        },
       })
       return response.ok
     }
 
     if (entry.type === 'session_update') {
+      const { action } = entry.payload as { action?: 'start' | 'pause' | 'resume' | 'end' }
       const response = await apiFetch('/api/cbt/timing', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(entry.payload),
+        body: {
+          sessionId: examSessionId,
+          action: action ?? 'resume',
+        },
       })
       return response.ok
     }
@@ -470,7 +507,7 @@ if (typeof window !== 'undefined') {
     for (const listener of offlineListeners) listener(false)
     // Process sync queue when coming back online
     processSyncQueue().catch(err => {
-      logger.error('Auto-sync failed on reconnect', err)
+      offlineLogger.error('Auto-sync failed on reconnect', err)
     })
   })
 

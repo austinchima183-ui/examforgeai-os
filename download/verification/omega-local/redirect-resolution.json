@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-09-02T22:52:35.586Z",
+  "base": "http://localhost:3000",
+  "results": [
+    {
+      "route": "/api",
+      "finalStatus": 200,
+      "finalPath": "/login?redirect=%2Fapi",
+      "ok": true
+    },
+    {
+      "route": "/api/alerting/incidents/",
+      "finalStatus": 401,
+      "finalPath": "/api/alerting/incidents",
+      "ok": true
+    },
+    {
+      "route": "/api/auth/callback",
+      "finalStatus": 200,
+      "finalPath": "/login?error=Invalid%20authentication%20link.",
+      "ok": true
+    },
+    {
+      "route": "/api/demo-booking/",
+      "finalStatus": 405,
+      "finalPath": "/api/demo-booking",
+      "ok": true
+    },
+    {
+      "route": "/api/feedback/",
+      "finalStatus": 401,
+      "finalPath": "/api/feedback",
+      "ok": true
+    },
+    {
+      "route": "/api/marketing/leads/",
+      "finalStatus": 401,
+      "finalPath": "/api/marketing/leads",
+      "ok": true
+    },
+    {
+      "route": "/api/newsletter/unsubscribe",
+      "finalStatus": 200,
+      "finalPath": "/login?error=missing-token&redirect=%2Fnewsletter%2Funsubscribe",
+      "ok": true
+    },
+    {
+      "route": "/api/newsletter/verify",
+      "finalStatus": 200,
+      "finalPath": "/login?error=missing-token&redirect=%2Fnewsletter%2Fverify",
+      "ok": true
+    },
+    {
+      "route": "/api/organizations/",
+      "finalStatus": 401,
+      "finalPath": "/api/organizations",
+      "ok": true
+    },
+    {
+      "route": "/api/verify/certificate/",
+      "finalStatus": 401,
+      "finalPath": "/api/verify/certificate",
+      "ok": true
+    },
+    {
+      "route": "/api/workflows/",
+      "finalStatus": 401,
+      "finalPath": "/api/workflows",
+      "ok": true
+    }
+  ],
+  "allOk": true
+}
