@@ -45,6 +45,33 @@ ALTER TABLE public.ai_generation_requests
 ALTER TABLE public.ai_generation_requests
   ADD COLUMN IF NOT EXISTS updated_at timestamptz NOT NULL DEFAULT now();
 
+-- 5b. Question-generation telemetry (ai-teacher.ts writes these after every
+--     generation; live-DB probe 2026-09-02 confirmed they are missing too)
+ALTER TABLE public.ai_generation_requests
+  ADD COLUMN IF NOT EXISTS questions_generated integer;
+ALTER TABLE public.ai_generation_requests
+  ADD COLUMN IF NOT EXISTS questions_accepted integer;
+ALTER TABLE public.ai_generation_requests
+  ADD COLUMN IF NOT EXISTS questions_rejected integer;
+
+-- 5c. Review workflow + error taxonomy (typed in AiGenerationInsert/Update —
+--     the supabase/types.ts contract)
+ALTER TABLE public.ai_generation_requests
+  ADD COLUMN IF NOT EXISTS error_code text;
+ALTER TABLE public.ai_generation_requests
+  ADD COLUMN IF NOT EXISTS review_status text
+    CHECK (review_status IN ('pending', 'approved', 'rejected', 'needs_revision') OR review_status IS NULL);
+ALTER TABLE public.ai_generation_requests
+  ADD COLUMN IF NOT EXISTS reviewed_by uuid REFERENCES public.users(id) ON DELETE SET NULL;
+ALTER TABLE public.ai_generation_requests
+  ADD COLUMN IF NOT EXISTS reviewed_at timestamptz;
+
+-- 5d. Backfill sensible defaults for historical rows
+UPDATE public.ai_generation_requests
+  SET review_status = 'approved'
+  WHERE review_status IS NULL
+    AND status = 'completed';
+
 -- 6. Indexes for the tracking/analytics query patterns
 CREATE INDEX IF NOT EXISTS idx_ai_gen_requests_user
   ON public.ai_generation_requests(user_id);

@@ -1,0 +1,6 @@
+base=http://localhost:3000 timestamp=2026-09-02T20:47:31Z
+passed=14 failed=1
+PASS 07-cbt-flow
+PASS 08-ai-api
+PASS 09-widget-system
+FAIL 10-advanced-ux

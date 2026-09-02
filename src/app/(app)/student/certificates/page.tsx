@@ -1,17 +1,27 @@
 'use client'
 
 // ============================================================================
-// ExamForge AI — Student Certificates Page
+// ExamForge AI — Student Certificates Page (Ω-21 certificate contract)
 // ============================================================================
-// Lists earned certificates/badges for achievements. Auto-generates
-// certificates for high scores. Shows certificate card with subject,
-// score, date, verification code. Download as PDF and share.
+// Lists earned certificates/badges for achievements.
+//
+// Ω-21 upgrade — the landing-page contract promised certificates that are
+// school-branded, QR-verifiable, email-deliverable and downloadable. This
+// page now:
+//   1. prefers PERSISTED certificates (stable verification codes, issued
+//      via POST /api/student/certificates — idempotent per session)
+//   2. offers one-click issuance for eligible graded sessions
+//   3. prints a branded certificate (school name/logo/primary color) with an
+//      embedded QR code pointing at the public verification page
+//      /verify/certificate/<code>
+//   4. degrades honestly pre-migration-009 (provisional cards, no fake codes)
 // ============================================================================
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { format, parseISO } from 'date-fns'
+import { apiFetch } from '@/lib/api/client-fetch'
 
 // ── shadcn/ui ──
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
@@ -55,8 +65,31 @@ interface ExamSession {
   } | null
 }
 
+interface SchoolBranding {
+  id: string
+  name: string
+  logo_url: string | null
+  primary_color: string | null
+}
+
+interface PersistedCertificate {
+  id: string
+  session_id: string | null
+  title: string
+  type: 'excellence' | 'merit' | 'pass' | 'completion'
+  score: number | null
+  grade: string | null
+  student_name: string | null
+  exam_title: string | null
+  verification_code: string | null
+  issued_at: string
+  delivered_at: string | null
+  metadata?: Record<string, unknown> | null
+}
+
 interface CertificateData {
   id: string
+  sessionId: string
   title: string
   subjectName: string
   score: number
@@ -65,16 +98,32 @@ interface CertificateData {
   verificationCode: string
   type: 'excellence' | 'merit' | 'pass' | 'completion'
   examTitle: string
+  /** true when persisted server-side (stable code, email delivered) */
+  issued: boolean
+  /** delivery status from the issuance API */
+  delivery?: string
 }
 
 // ──────────────────────────────────────────────────────────────
 // Helpers
 // ──────────────────────────────────────────────────────────────
 
-function generateVerificationCode(): string {
-  // Use crypto.randomUUID for cryptographic uniqueness
-  const uuid = crypto.randomUUID().replace(/-/g, '').toUpperCase().slice(0, 8)
-  return `EF-${uuid}`
+/**
+ * Deterministic verification code — client replica of the server's
+ * buildVerificationCode (FNV-1a over session:student:salt). Matching the
+ * server means a provisional card shows exactly the code issuance will
+ * persist (no bait-and-switch on reload).
+ */
+function deterministicVerificationCode(sessionId: string, studentId: string): string {
+  const raw = `${sessionId}:${studentId}:examforge-verification-v1`
+  let hash = 0x811c9dc5
+  for (let i = 0; i < raw.length; i++) {
+    hash ^= raw.charCodeAt(i)
+    hash = Math.imul(hash, 0x01000193)
+  }
+  const h = (hash >>> 0).toString(36).toUpperCase().padStart(7, '0')
+  const c = (Math.imul(hash, 0x9e3779b1) >>> 0).toString(36).toUpperCase().padStart(7, '0')
+  return `EF-${h.slice(0, 4)}-${c.slice(0, 4)}-${h.slice(4, 7)}`
 }
 
 function getCertificateType(percentage: number): 'excellence' | 'merit' | 'pass' | 'completion' {
@@ -113,50 +162,118 @@ const certificateIcons = {
 
 export default function CertificatesPage() {
   const [sessions, setSessions] = useState<ExamSession[]>([])
+  const [persisted, setPersisted] = useState<PersistedCertificate[]>([])
+  const [school, setSchool] = useState<SchoolBranding | null>(null)
+  const [studentId, setStudentId] = useState<string>('')
+  const [issuing, setIssuing] = useState<Set<string>>(new Set())
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [selectedCert, setSelectedCert] = useState<CertificateData | null>(null)
   const [copiedCode, setCopiedCode] = useState<string | null>(null)
 
   // ── Fetch data ──
-  useEffect(() => {
-    async function loadData() {
-      try {
-        setLoading(true)
-        const res = await fetch('/api/student/certificates')
-        if (!res.ok) throw new Error('Failed to load data')
-        const data = await res.json()
-        setSessions(data.sessions ?? [])
-      } catch (err) {
-        setError('Could not load certificates. Please try again.')
-      } finally {
-        setLoading(false)
-      }
+  const loadData = useCallback(async () => {
+    try {
+      setLoading(true)
+      const res = await fetch('/api/student/certificates')
+      if (!res.ok) throw new Error('Failed to load data')
+      const data = await res.json()
+      setSessions(data.sessions ?? [])
+      setPersisted(data.certificates ?? [])
+      setSchool(data.school ?? null)
+      setStudentId(data.userId ?? '')
+    } catch (err) {
+      setError('Could not load certificates. Please try again.')
+    } finally {
+      setLoading(false)
     }
-    loadData()
   }, [])
 
-  // ── Auto-generate certificates from high-scoring exams ──
+  useEffect(() => {
+    loadData()
+  }, [loadData])
+
+  // ── Issue a certificate (persist + email delivery) ──
+  const issueCertificate = useCallback(
+    async (sessionId: string) => {
+      setIssuing(prev => new Set(prev).add(sessionId))
+      try {
+        const res = await apiFetch('/api/student/certificates', {
+          method: 'POST',
+          body: { sessionId },
+        })
+        const data = await res.json().catch(() => ({}))
+        if (!res.ok) {
+          setError(
+            res.status === 503
+              ? 'Certificate persistence is not available yet (schema migration pending). Your certificate can still be downloaded.'
+              : data?.error ?? 'Could not issue certificate.'
+          )
+        } else {
+          await loadData() // refresh → card flips to issued (stable code, delivery state)
+        }
+      } catch {
+        setError('Could not issue certificate. Check your connection and retry.')
+      } finally {
+        setIssuing(prev => {
+          const next = new Set(prev)
+          next.delete(sessionId)
+          return next
+        })
+      }
+    },
+    [loadData]
+  )
+
+  // ── Merge persisted + provisional certificates ──
   const certificates = useMemo<CertificateData[]>(() => {
+    const persistedBySession = new Map(
+      persisted.filter(c => c.session_id).map(c => [c.session_id as string, c])
+    )
     return sessions
       .filter((s) => s.percentage != null && s.percentage >= 60 && s.submitted_at)
-      .map((session, index) => {
-        const type = getCertificateType(session.percentage!)
+      .map((session) => {
+        const existing = persistedBySession.get(session.id)
+        const percentage = session.percentage as number
+        const type = getCertificateType(percentage)
         const subjectName = session.exams?.subjects?.name ?? 'General'
+        if (existing) {
+          const branding = (existing.metadata as Record<string, unknown> | null)?.branding as
+            | { schoolName?: string }
+            | undefined
+          return {
+            id: existing.id,
+            sessionId: session.id,
+            title: existing.title,
+            subjectName,
+            score: existing.score ?? percentage,
+            grade: existing.grade ?? getGradeLabel(percentage),
+            date: existing.issued_at,
+            verificationCode: existing.verification_code ?? deterministicVerificationCode(session.id, studentId),
+            type: existing.type,
+            examTitle: existing.exam_title ?? session.exams?.title ?? 'Exam',
+            issued: true,
+            delivery: (existing.metadata as Record<string, unknown> | null)
+              ? String(((existing.metadata as Record<string, unknown>).delivery as Record<string, unknown>)?.status ?? '')
+              : '',
+          } as CertificateData & { schoolName?: string }
+        }
         return {
           id: `cert-${session.id}`,
+          sessionId: session.id,
           title: `${type === 'excellence' ? 'Certificate of Excellence' : type === 'merit' ? 'Certificate of Merit' : type === 'pass' ? 'Certificate of Achievement' : 'Certificate of Completion'}`,
           subjectName,
-          score: session.percentage!,
-          grade: session.grade ?? getGradeLabel(session.percentage!),
-          date: session.submitted_at!,
-          verificationCode: generateVerificationCode(),
+          score: percentage,
+          grade: session.grade ?? getGradeLabel(percentage),
+          date: session.submitted_at as string,
+          verificationCode: deterministicVerificationCode(session.id, studentId),
           type,
           examTitle: session.exams?.title ?? 'Exam',
+          issued: false,
         }
       })
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-  }, [sessions])
+  }, [sessions, persisted, studentId])
 
   // ── Stats ──
   const excellenceCount = certificates.filter((c) => c.type === 'excellence').length
@@ -175,38 +292,60 @@ export default function CertificatesPage() {
     }
   }
 
-  // ── Download as PDF (client-side generation using print) ──
+  // ── Download as PDF (branded print with QR verification) ──
   const downloadCertificate = (cert: CertificateData) => {
+    // Ω-21 certificate contract: school branding (name/logo/primary color)
+    // + scannable QR code that resolves to the public verification page.
+    const schoolName = school?.name ?? 'ExamForge AI'
+    const logoUrl = school?.logo_url
+    const accent = school?.primary_color ?? '#8B6914'
+    const verifyUrl = `${window.location.origin}/verify/certificate/${encodeURIComponent(cert.verificationCode)}`
+    const qrSrc = `${window.location.origin}/api/qr?data=${encodeURIComponent(verifyUrl)}&size=140`
+
+    const escapeHtml = (s: string) =>
+      s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+
     const html = `
       <!DOCTYPE html>
       <html>
       <head>
-        <title>${cert.title}</title>
+        <title>${escapeHtml(cert.title)}</title>
         <style>
           body { font-family: Georgia, serif; text-align: center; padding: 60px; color: #1a1a1a; }
-          .border { border: 3px double #c9a84c; padding: 40px; max-width: 700px; margin: 0 auto; }
-          h1 { font-size: 28px; color: #8B6914; margin-bottom: 8px; }
+          .border { border: 3px double ${accent}; padding: 40px; max-width: 700px; margin: 0 auto; }
+          h1 { font-size: 28px; color: ${accent}; margin-bottom: 8px; }
           h2 { font-size: 22px; font-weight: normal; margin-bottom: 24px; }
-          .score { font-size: 48px; font-weight: bold; color: #8B6914; margin: 16px 0; }
+          .score { font-size: 48px; font-weight: bold; color: ${accent}; margin: 16px 0; }
           .subject { font-size: 18px; margin-bottom: 8px; }
           .exam { font-size: 14px; color: #666; margin-bottom: 24px; }
           .code { font-size: 12px; color: #999; margin-top: 32px; }
           .date { font-size: 14px; color: #666; }
           .footer { font-size: 11px; color: #999; margin-top: 40px; }
+          .qr-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 24px; }
+          .qr-row img { width: 140px; height: 140px; }
+          .qr-note { font-size: 11px; color: #777; max-width: 220px; text-align: left; }
+          .logo { max-height: 56px; max-width: 220px; margin: 0 auto 12px; display: block; }
         </style>
       </head>
       <body>
         <div class="border">
-          <h1>ExamForge AI</h1>
-          <h2>${cert.title}</h2>
+          ${logoUrl ? `<img class="logo" src="${escapeHtml(logoUrl)}" alt="${escapeHtml(schoolName)} logo" />` : ''}
+          <h1>${escapeHtml(schoolName)}</h1>
+          <h2>${escapeHtml(cert.title)}</h2>
           <p class="subject">This is to certify that outstanding performance was achieved in</p>
-          <p class="subject"><strong>${cert.subjectName}</strong></p>
-          <p class="exam">${cert.examTitle}</p>
-          <div class="score">${cert.score}%</div>
-          <p>Grade: <strong>${cert.grade}</strong></p>
+          <p class="subject"><strong>${escapeHtml(cert.subjectName)}</strong></p>
+          <p class="exam">${escapeHtml(cert.examTitle)}</p>
+          <div class="score">${Math.round(cert.score)}%</div>
+          <p>Grade: <strong>${escapeHtml(cert.grade)}</strong></p>
           <p class="date">${format(parseISO(cert.date), 'MMMM d, yyyy')}</p>
-          <p class="code">Verification: ${cert.verificationCode}</p>
-          <p class="footer">ExamForge AI — Empowering Education with AI</p>
+          <div class="qr-row">
+            <img src="${escapeHtml(qrSrc)}" alt="Verification QR code" onload="window.__qrReady = true" />
+            <div class="qr-note">
+              <strong>Scan to verify</strong><br />
+              Verification code: ${escapeHtml(cert.verificationCode)}
+            </div>
+          </div>
+          <p class="footer">Issued via ${escapeHtml(schoolName)} · ExamForge AI</p>
         </div>
       </body>
       </html>
@@ -215,13 +354,24 @@ export default function CertificatesPage() {
     if (printWindow) {
       printWindow.document.write(html)
       printWindow.document.close()
-      printWindow.print()
+      // wait for the QR image before opening the print dialog
+      printWindow.addEventListener('load', () => {
+        const img = printWindow.document.querySelector('img[src*="/api/qr"]')
+        if (img && !(img as HTMLImageElement).complete) {
+          img.addEventListener('load', () => printWindow.print())
+          img.addEventListener('error', () => printWindow.print())
+          setTimeout(() => printWindow.print(), 2500) // safety net
+        } else {
+          setTimeout(() => printWindow.print(), 300)
+        }
+      })
     }
   }
 
   // ── Share ──
   const shareCertificate = async (cert: CertificateData) => {
-    const shareText = `I earned a ${cert.title} in ${cert.subjectName} with a score of ${cert.score}% on ExamForge AI! Verification: ${cert.verificationCode}`
+    const verifyUrl = `${window.location.origin}/verify/certificate/${encodeURIComponent(cert.verificationCode)}`
+    const shareText = `I earned a ${cert.title} in ${cert.subjectName} with a score of ${Math.round(cert.score)}% on ExamForge AI! Verify: ${verifyUrl}`
     if (navigator.share) {
       try {
         await navigator.share({ title: cert.title, text: shareText })
@@ -337,8 +487,21 @@ export default function CertificatesPage() {
                 <CardContent className="p-4 space-y-3">
                   {/* Score */}
                   <div className="text-center">
-                    <p className="text-3xl font-bold">{cert.score}%</p>
-                    <Badge className={colors.badge}>Grade: {cert.grade}</Badge>
+                    <p className="text-3xl font-bold">{Math.round(cert.score)}%</p>
+                    <div className="flex items-center justify-center gap-2">
+                      <Badge className={colors.badge}>Grade: {cert.grade}</Badge>
+                      {cert.issued ? (
+                        <Badge variant="secondary" className="gap-1">
+                          <CheckCircle2 className="h-3 w-3 text-green-500" aria-hidden="true" />
+                          Issued{cert.delivery === 'sent' ? ' · emailed' : ''}
+                        </Badge>
+                      ) : (
+                        <Badge variant="outline" className="gap-1 text-muted-foreground">
+                          <Lock className="h-3 w-3" aria-hidden="true" />
+                          Provisional
+                        </Badge>
+                      )}
+                    </div>
                   </div>
 
                   <Separator />
@@ -369,6 +532,26 @@ export default function CertificatesPage() {
 
                   {/* Actions */}
                   <div className="flex gap-2">
+                    {!cert.issued && (
+                      <Button
+                        variant="default"
+                        size="sm"
+                        className="flex-1"
+                        onClick={() => issueCertificate(cert.sessionId)}
+                        disabled={issuing.has(cert.sessionId)}
+                        aria-label={`Issue and email ${cert.title}`}
+                      >
+                        {issuing.has(cert.sessionId) ? (
+                          <>
+                            <Loader2 className="h-3.5 w-3.5 mr-1 animate-spin" /> Issuing…
+                          </>
+                        ) : (
+                          <>
+                            <Shield className="h-3.5 w-3.5 mr-1" /> Issue & Email
+                          </>
+                        )}
+                      </Button>
+                    )}
                     <Button variant="outline" size="sm" className="flex-1" onClick={() => downloadCertificate(cert)}>
                       <Download className="h-3.5 w-3.5 mr-1" /> PDF
                     </Button>

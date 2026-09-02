@@ -28,8 +28,12 @@ test.describe('Advanced Dashboard UX (Ω-3)', () => {
     const fieldCount = await editFields.count()
     expect(fieldCount).toBeGreaterThanOrEqual(8)
 
-    // Open the motto editor → autosave indicator appears
-    await page.getByText('Add a motto', { exact: true }).click()
+    // Open the motto editor → autosave indicator appears.
+    // State-agnostic: the InlineEditField display trigger is a
+    // [role="button"] whose accessible name is "Edit Motto: <value>" (or
+    // "Edit Motto:" when empty) — matches both the fresh and previously
+    // autosaved states, so this test is order/idempotent-safe.
+    await page.getByRole('button', { name: /^Edit Motto/ }).first().click()
     await page.locator('textarea[aria-label="Edit Motto"]').waitFor({ timeout: 5000 })
     await expect(page.getByText(/Autosave on|Autosaving|Autosaved|failed/i)).toBeVisible()
 

@@ -1,0 +1,6 @@
+base=http://localhost:3000 timestamp=2026-09-02T20:34:22Z
+passed=5 failed=0
+PASS 00-landing
+PASS 01-student-journey
+PASS 02-teacher-journey
+PASS 03-parent-journey

@@ -64,6 +64,13 @@ import {
 // Stores & Hooks
 import { useAuthStore } from '@/lib/stores/auth-store';
 import { apiFetch } from '@/lib/api/client-fetch';
+import {
+  cacheExamOffline,
+  getCachedExam,
+  saveOfflineExamSession,
+  saveOfflineAnswer,
+  markAnswerSynced,
+} from '@/lib/cbt-offline';
 import { useExamSessionStore } from '@/lib/stores/exam-session-store';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useOffline } from '@/hooks/use-offline';
@@ -638,6 +645,23 @@ export default function ExamTakePage() {
 
         setExam(examData);
 
+        // Ω-21 offline contract: cache the exam payload (IndexedDB/Dexie) so a
+        // hard reload while offline still renders the exam from cache.
+        void cacheExamOffline(examId, {
+          title: examData.title,
+          durationMinutes: examData.duration,
+          totalQuestions: examData.totalQuestions,
+          questions: examData.questions.map(q => ({
+            id: q.id,
+            type: q.type,
+            content: q.content,
+            options: q.options?.map(o => o.content || o.label),
+            marks: q.marks ?? 1,
+          })),
+        }).catch(() => {
+          // cache failures never block the online path
+        });
+
         // Shuffle if needed
         const orderedQuestions = shuffleArray(
           examData.questions,
@@ -654,6 +678,56 @@ export default function ExamTakePage() {
         }
       } catch (err) {
         console.error('Failed to fetch exam:', err);
+
+        // Ω-21 offline contract: network failure → fall back to the cached
+        // exam (IndexedDB) so an in-progress exam survives an offline reload.
+        const cached = await getCachedExam(examId).catch(() => null);
+        if (cached) {
+          const examData: ExamData = {
+            id: examId,
+            title: cached.title,
+            subject: '',
+            className: '',
+            duration: cached.durationMinutes,
+            totalMarks: 0,
+            passingMarks: 0,
+            totalQuestions: cached.totalQuestions,
+            settings: {
+              shuffleQuestions: false,
+              showResults: true,
+              allowReview: true,
+              autoSubmit: true,
+            },
+            // Rehydrate from the cache's simplified question shape
+            questions: (cached.questions ?? []).map(q => ({
+              id: q.id,
+              type: q.type as ExamQuestion['type'],
+              content: q.content,
+              options: (q.options ?? []).map((o, i) => ({
+                id: `o-${i}`,
+                label: o,
+                content: o,
+                isCorrect: false,
+              })),
+              marks: q.marks,
+            })),
+            status: 'active',
+          };
+          setExam(examData);
+          setQuestions(examData.questions);
+          setOfflineCachedExam(true);
+          if (
+            sessionStore.activeExamId === examId &&
+            sessionStore.timerRemaining > 0
+          ) {
+            hasRestoredRef.current = true;
+            setPhase('active');
+          } else {
+            setPhase('pre-exam');
+          }
+          return;
+        }
+
         setFetchError('Network error. Please check your connection and try again.');
         setPhase('pre-exam');
       }

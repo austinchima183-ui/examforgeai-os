@@ -778,8 +778,10 @@ async function executeWithTimeout(
   const generationId = crypto.randomUUID()
 
   // Create DB record
+  // (Ω-15: tracking failures are logged, never silent — the missing-column
+  //  defect in pre-008 schemas used to swallow these errors completely.)
   const supabase = await createClient()
-  await supabase.from('ai_generation_requests').insert({
+  const trackingInsert = await supabase.from('ai_generation_requests').insert({
     id: generationId,
     user_id: request.userId,
     school_id: request.orgId,
@@ -789,6 +791,11 @@ async function executeWithTimeout(
     prompt_text: request.prompt,
     system_prompt: request.systemPrompt ?? null,
   })
+  if (trackingInsert.error) {
+    logger.warn('AI generation tracking insert failed (migration 008 pending?)', {
+      error: trackingInsert.error.message,
+    })
+  }
 
   const ZAI = (await import('z-ai-web-dev-sdk')).default
   const ai = await ZAI.create()
@@ -828,7 +835,9 @@ async function executeWithTimeout(
     }
 
     // Update DB record
-    await supabase
+    // (Ω-15: completion updates are logged too — a missing update would
+    //  silently drop token/cost/latency data from the analytics.)
+    const trackingUpdate = await supabase
       .from('ai_generation_requests')
       .update({
         status: 'completed',
@@ -839,6 +848,11 @@ async function executeWithTimeout(
         duration_ms: durationMs,
       })
       .eq('id', generationId)
+    if (trackingUpdate.error) {
+      logger.warn('AI generation completion update failed (migration 008 pending?)', {
+        error: trackingUpdate.error.message,
+      })
+    }
 
     return {
       content,

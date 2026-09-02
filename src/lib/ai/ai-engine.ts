@@ -146,7 +146,9 @@ export async function executeAI(request: AIRequest): Promise<AIResponse> {
     const costUsd = estimateCost(provider, tokensInput, tokensOutput)
 
     // ── Update generation record ──
-    await supabase
+    // (Ω-15: completion/failure updates are logged too — a missing update
+    //  would silently drop token/cost/latency data from the analytics.)
+    const completionUpdate = await supabase
       .from('ai_generation_requests')
       .update({
         status: 'completed',
@@ -158,6 +160,12 @@ export async function executeAI(request: AIRequest): Promise<AIResponse> {
         duration_ms: durationMs,
       })
       .eq('id', generationId)
+    if (completionUpdate.error) {
+      console.warn(
+        '[AI Engine] generation completion update failed (migration 008 pending?):',
+        completionUpdate.error.message
+      )
+    }
 
     return {
       content,
@@ -174,7 +182,7 @@ export async function executeAI(request: AIRequest): Promise<AIResponse> {
     const errorMessage = error instanceof Error ? error.message : 'Unknown AI error'
 
     // ── Update generation record with error ──
-    await supabase
+    const failureUpdate = await supabase
       .from('ai_generation_requests')
       .update({
         status: 'failed',
@@ -182,6 +190,12 @@ export async function executeAI(request: AIRequest): Promise<AIResponse> {
         duration_ms: durationMs,
       })
       .eq('id', generationId)
+    if (failureUpdate.error) {
+      console.warn(
+        '[AI Engine] generation failure update failed (migration 008 pending?):',
+        failureUpdate.error.message
+      )
+    }
 
     throw new Error(`AI generation failed: ${errorMessage}`)
   }
@@ -246,7 +260,7 @@ export async function* streamAI(
   const generationId = crypto.randomUUID()
   const startTime = Date.now()
 
-  await supabase.from('ai_generation_requests').insert({
+  const streamInsert = await supabase.from('ai_generation_requests').insert({
     id: generationId,
     user_id: request.userId,
     school_id: request.schoolId ?? null,
@@ -256,6 +270,12 @@ export async function* streamAI(
     prompt_text: request.prompt,
     system_prompt: request.systemPrompt ?? null,
   })
+  if (streamInsert.error) {
+    console.warn(
+      '[AI Engine] stream generation insert failed (migration 008 pending?):',
+      streamInsert.error.message
+    )
+  }
 
   try {
     const ZAI = (await import('z-ai-web-dev-sdk')).default
@@ -286,7 +306,7 @@ export async function* streamAI(
 
     // Update generation record
     const durationMs = Date.now() - startTime
-    await supabase
+    const streamCompletion = await supabase
       .from('ai_generation_requests')
       .update({
         status: 'completed',
@@ -295,11 +315,17 @@ export async function* streamAI(
         duration_ms: durationMs,
       })
       .eq('id', generationId)
+    if (streamCompletion.error) {
+      console.warn(
+        '[AI Engine] stream completion update failed (migration 008 pending?):',
+        streamCompletion.error.message
+      )
+    }
 
     yield { content: '', done: true }
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Stream error'
-    await supabase
+    const streamFailure = await supabase
       .from('ai_generation_requests')
       .update({
         status: 'failed',
@@ -307,6 +333,12 @@ export async function* streamAI(
         duration_ms: Date.now() - startTime,
       })
       .eq('id', generationId)
+    if (streamFailure.error) {
+      console.warn(
+        '[AI Engine] stream failure update failed (migration 008 pending?):',
+        streamFailure.error.message
+      )
+    }
 
     yield { content: '', done: true, error: errorMessage }
   }
@@ -344,7 +376,13 @@ export async function getGenerationHistory(
 
   const { data, count, error } = await query
 
-  if (error) return { generations: [], total: 0 }
+  if (error) {
+    console.warn(
+      '[AI Engine] generation history query failed (migration 008 pending?):',
+      error.message
+    )
+    return { generations: [], total: 0 }
+  }
 
   return { generations: (data as AiGenerationRow[]) ?? [], total: count ?? 0 }
 }
@@ -368,7 +406,15 @@ export async function getGenerationStats(
   if (schoolId) query = query.eq('school_id', schoolId)
 
   // P1-REVENUE: Add explicit limit to prevent unbounded loading
-  const { data } = await query.order('created_at', { ascending: false }).limit(10000)
+  const { data, error: statsError } = await query
+    .order('created_at', { ascending: false })
+    .limit(10000)
+  if (statsError) {
+    console.warn(
+      '[AI Engine] generation stats query failed (migration 008 pending?):',
+      statsError.message
+    )
+  }
   const rows = data ?? []
 
   const totalGenerations = rows.length

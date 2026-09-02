@@ -1,0 +1,5 @@
+base=http://localhost:3000 timestamp=2026-09-02T20:43:36Z
+passed=7 failed=0
+PASS 04-school-admin-journey
+PASS 05-super-admin-journey
+PASS 06-rbac-matrix

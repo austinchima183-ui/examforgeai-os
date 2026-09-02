@@ -271,8 +271,10 @@ Respond as a JSON array of question objects.`
   )
 
   // Track question generation counts
+  // (Ω-15: logged, never silent — pre-008 schemas lack these columns and the
+  //  failure used to be swallowed completely.)
   const supabase = await createClient()
-  await supabase
+  const questionTrackingUpdate = await supabase
     .from('ai_generation_requests')
     .update({
       questions_generated: request.count,
@@ -280,6 +282,12 @@ Respond as a JSON array of question objects.`
       questions_rejected: request.count - response.parsed.length,
     })
     .eq('id', response.generationId)
+  if (questionTrackingUpdate.error) {
+    console.warn(
+      '[AI Teacher] question-count tracking update failed (migration 008 pending?):',
+      questionTrackingUpdate.error.message
+    )
+  }
 
   return response.parsed
 }
