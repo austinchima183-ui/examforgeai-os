@@ -42,7 +42,7 @@ export const searchQuerySchema = z.object({ q: z.string().min(2).max(100), type:
 export const reportGenerateSchema = z.object({ type: z.enum(['student', 'class', 'school', 'exam', 'attendance', 'financial']), format: z.enum(['pdf', 'xlsx', 'csv']).default('pdf'), schoolId: z.string().uuid().optional(), examId: z.string().uuid().optional(), classId: z.string().uuid().optional() }).merge(dateRangeSchema).strict();
 
 // AI
-export const aiCompleteSchema = z.object({ prompt: z.string().min(1).max(10000), messages: z.array(z.object({ role: z.enum(['user', 'assistant', 'system']), content: z.string().max(50000) })).optional(), model: z.string().max(50).optional(), maxTokens: z.number().int().min(1).max(4096).optional(), temperature: z.number().min(0).max(2).optional() }).strict();
+export const aiCompleteSchema = z.object({ prompt: z.string().min(1).max(10000), messages: z.array(z.object({ role: z.enum(['user', 'assistant', 'system']), content: z.string().max(50000) })).optional(), provider: z.enum(['openai', 'gemini']).default('gemini'), model: z.string().max(50).optional(), maxTokens: z.number().int().min(1).max(4096).optional(), temperature: z.number().min(0).max(2).optional() }).strict();
 export const aiStreamSchema = z.object({ messages: z.array(z.object({ role: z.enum(['user', 'assistant', 'system']), content: z.string().max(50000) })).min(1).max(50), model: z.string().max(50).optional() }).strict();
 
 // Events

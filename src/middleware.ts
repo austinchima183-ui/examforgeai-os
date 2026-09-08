@@ -84,6 +84,10 @@ export async function middleware(request: NextRequest) {
     '/api/newsletter/',
     '/api/demo-booking',
     '/api/analytics/events',  // has its own rate limiting
+    // Public certificate verification + QR rendering (rate-limited, no auth
+    // by design — the verify page is reachable by anyone with a code)
+    '/api/verify/certificate',
+    '/api/qr',
   ]
 
   if (pathname.startsWith('/_next/') || pathname.includes('.')) {

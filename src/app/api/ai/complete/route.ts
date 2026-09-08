@@ -69,7 +69,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Add max_tokens to prevent runaway generation (P5-COST-2)
-    const bodyWithLimit = { ...body, max_tokens: 4096 }
+    // (RC1: the edge function reads maxTokens — the previous snake_case key
+    //  silently never reached it, so the cost cap was not enforced.)
+    const bodyWithLimit = { ...body, max_tokens: 4096, maxTokens: Math.min(body.maxTokens ?? 2048, 4096) }
 
     const response = await fetch(`${SUPABASE_URL}/functions/v1/ai-complete`, {
       method: 'POST',

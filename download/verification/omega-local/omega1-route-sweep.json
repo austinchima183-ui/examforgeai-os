@@ -1,6 +1,6 @@
 {
   "base": "http://localhost:3000",
-  "timestamp": "2026-09-02T22:51:51.885495+00:00",
+  "timestamp": "2026-09-08T04:00:06.124849+00:00",
   "pages_found": 127,
   "apis_found": 150,
   "swept": 277,
@@ -113,7 +113,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28admin%29%2Fmarketing",
-      "ttfb_ms": 11,
+      "ttfb_ms": 57,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -123,7 +123,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fanalytics",
-      "ttfb_ms": 14,
+      "ttfb_ms": 31,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -133,7 +133,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fcontacts",
-      "ttfb_ms": 34,
+      "ttfb_ms": 56,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -143,7 +143,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fdemos",
-      "ttfb_ms": 12,
+      "ttfb_ms": 60,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -153,7 +153,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fleads",
-      "ttfb_ms": 13,
+      "ttfb_ms": 57,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -163,7 +163,7 @@
       "isApi": false,
       "status": 308,
       "location": "/(admin)/marketing/leads",
-      "ttfb_ms": 12,
+      "ttfb_ms": 56,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -173,7 +173,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28admin%29%2Fmarketing%2Fnewsletter",
-      "ttfb_ms": 14,
+      "ttfb_ms": 57,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -183,7 +183,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fagents",
-      "ttfb_ms": 14,
+      "ttfb_ms": 74,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -193,7 +193,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fadmin%2Faudit-logs",
-      "ttfb_ms": 15,
+      "ttfb_ms": 78,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -203,7 +203,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fbackups",
-      "ttfb_ms": 13,
+      "ttfb_ms": 73,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -213,7 +213,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fbranding",
-      "ttfb_ms": 14,
+      "ttfb_ms": 51,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -223,7 +223,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fdevelopers",
-      "ttfb_ms": 15,
+      "ttfb_ms": 77,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -233,7 +233,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fintegrations",
-      "ttfb_ms": 15,
+      "ttfb_ms": 45,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -243,7 +243,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fadmin%2Forganization-settings",
-      "ttfb_ms": 15,
+      "ttfb_ms": 54,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -253,7 +253,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fadmin%2Forganizations",
-      "ttfb_ms": 16,
+      "ttfb_ms": 77,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -263,7 +263,7 @@
       "isApi": false,
       "status": 308,
       "location": "/(app)/admin/organizations",
-      "ttfb_ms": 15,
+      "ttfb_ms": 77,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -273,7 +273,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fplugins",
-      "ttfb_ms": 15,
+      "ttfb_ms": 79,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -283,7 +283,7 @@
       "isApi": false,
       "status": 308,
       "location": "/(app)/admin/plugins",
-      "ttfb_ms": 16,
+      "ttfb_ms": 78,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -293,7 +293,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fadmin%2Froles",
-      "ttfb_ms": 15,
+      "ttfb_ms": 74,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -303,7 +303,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fsecurity",
-      "ttfb_ms": 14,
+      "ttfb_ms": 74,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -313,7 +313,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fadmin%2Fusers",
-      "ttfb_ms": 15,
+      "ttfb_ms": 55,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -323,7 +323,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fanalytics",
-      "ttfb_ms": 22,
+      "ttfb_ms": 23,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -333,7 +333,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fanalytics%2Fenterprise",
-      "ttfb_ms": 19,
+      "ttfb_ms": 23,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -343,7 +343,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fbilling",
-      "ttfb_ms": 17,
+      "ttfb_ms": 80,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -353,7 +353,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fbilling%2Fenterprise",
-      "ttfb_ms": 16,
+      "ttfb_ms": 74,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -363,7 +363,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fbilling%2Fplans",
-      "ttfb_ms": 17,
+      "ttfb_ms": 72,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -373,7 +373,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fcbt",
-      "ttfb_ms": 13,
+      "ttfb_ms": 70,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -383,7 +383,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fdashboard",
-      "ttfb_ms": 32,
+      "ttfb_ms": 102,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -393,7 +393,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fdashboard%2Fschool-admin",
-      "ttfb_ms": 38,
+      "ttfb_ms": 42,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -403,7 +403,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fdashboard%2Fstudent",
-      "ttfb_ms": 28,
+      "ttfb_ms": 47,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -413,7 +413,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fdashboard%2Fsuper-admin",
-      "ttfb_ms": 30,
+      "ttfb_ms": 71,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -423,7 +423,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fdashboard%2Fteacher",
-      "ttfb_ms": 11,
+      "ttfb_ms": 50,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -433,7 +433,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fexams",
-      "ttfb_ms": 16,
+      "ttfb_ms": 45,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -443,7 +443,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fexams%2Fmonitor",
-      "ttfb_ms": 34,
+      "ttfb_ms": 56,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -453,7 +453,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fexams%2Ftake",
-      "ttfb_ms": 31,
+      "ttfb_ms": 48,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -463,7 +463,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fforbidden",
-      "ttfb_ms": 19,
+      "ttfb_ms": 51,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -473,7 +473,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fgovernment",
-      "ttfb_ms": 13,
+      "ttfb_ms": 67,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -483,7 +483,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fgovernment%2Fdistrict-intelligence",
-      "ttfb_ms": 16,
+      "ttfb_ms": 66,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -493,7 +493,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fmarketplace",
-      "ttfb_ms": 18,
+      "ttfb_ms": 35,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -503,7 +503,7 @@
       "isApi": false,
       "status": 308,
       "location": "/(app)/marketplace",
-      "ttfb_ms": 19,
+      "ttfb_ms": 24,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -513,7 +513,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fmarketplace%2Fcart",
-      "ttfb_ms": 19,
+      "ttfb_ms": 31,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -523,7 +523,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fmarketplace%2Freviews",
-      "ttfb_ms": 18,
+      "ttfb_ms": 34,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -533,7 +533,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fmarketplace%2Fseller",
-      "ttfb_ms": 19,
+      "ttfb_ms": 25,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -543,7 +543,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fmarketplace%2Fv2",
-      "ttfb_ms": 18,
+      "ttfb_ms": 26,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -553,7 +553,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fnotifications",
-      "ttfb_ms": 17,
+      "ttfb_ms": 72,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -563,7 +563,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fnotifications%2Fhistory",
-      "ttfb_ms": 17,
+      "ttfb_ms": 69,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -573,7 +573,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fnotifications%2Fpreferences",
-      "ttfb_ms": 17,
+      "ttfb_ms": 72,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -583,7 +583,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fnotifications%2Ftemplates",
-      "ttfb_ms": 17,
+      "ttfb_ms": 71,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -593,7 +593,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fparent%2Fai-advisor",
-      "ttfb_ms": 21,
+      "ttfb_ms": 73,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -603,7 +603,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fparent%2Fattendance",
-      "ttfb_ms": 21,
+      "ttfb_ms": 71,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -613,7 +613,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fparent%2Fchild-progress",
-      "ttfb_ms": 27,
+      "ttfb_ms": 73,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -623,7 +623,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fparent%2Fdashboard",
-      "ttfb_ms": 18,
+      "ttfb_ms": 73,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -633,7 +633,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fparent%2Ffees",
-      "ttfb_ms": 21,
+      "ttfb_ms": 67,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -643,7 +643,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fparent%2Fmessaging",
-      "ttfb_ms": 20,
+      "ttfb_ms": 75,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -653,7 +653,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fparents",
-      "ttfb_ms": 19,
+      "ttfb_ms": 72,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -663,7 +663,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fprofile",
-      "ttfb_ms": 20,
+      "ttfb_ms": 73,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -673,7 +673,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fquestion-bank",
-      "ttfb_ms": 18,
+      "ttfb_ms": 36,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -683,7 +683,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Freports",
-      "ttfb_ms": 18,
+      "ttfb_ms": 55,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -693,7 +693,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fresults",
-      "ttfb_ms": 21,
+      "ttfb_ms": 18,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -703,7 +703,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fschool-admin%2Fai-insights",
-      "ttfb_ms": 30,
+      "ttfb_ms": 39,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -713,7 +713,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fschool-admin%2Fpredictive",
-      "ttfb_ms": 33,
+      "ttfb_ms": 38,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -723,7 +723,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fschool%2Fattendance",
-      "ttfb_ms": 7,
+      "ttfb_ms": 22,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -733,7 +733,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fschool%2Fcalendar",
-      "ttfb_ms": 14,
+      "ttfb_ms": 26,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -743,7 +743,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fschool%2Fclasses",
-      "ttfb_ms": 18,
+      "ttfb_ms": 14,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -753,7 +753,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fschool%2Ffees",
-      "ttfb_ms": 14,
+      "ttfb_ms": 10,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -773,7 +773,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fschool%2Ftimetable",
-      "ttfb_ms": 19,
+      "ttfb_ms": 7,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -783,7 +783,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fschools",
-      "ttfb_ms": 17,
+      "ttfb_ms": 49,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -793,7 +793,7 @@
       "isApi": false,
       "status": 308,
       "location": "/(app)/schools",
-      "ttfb_ms": 17,
+      "ttfb_ms": 47,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -803,7 +803,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fsearch",
-      "ttfb_ms": 12,
+      "ttfb_ms": 50,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -813,7 +813,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fsettings",
-      "ttfb_ms": 29,
+      "ttfb_ms": 74,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -823,7 +823,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fsettings%2Fapi-keys",
-      "ttfb_ms": 30,
+      "ttfb_ms": 45,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -833,7 +833,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fsettings%2Fsecurity",
-      "ttfb_ms": 31,
+      "ttfb_ms": 48,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -843,7 +843,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fsettings%2Fwebhooks",
-      "ttfb_ms": 30,
+      "ttfb_ms": 67,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -853,7 +853,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fai-tutor",
-      "ttfb_ms": 16,
+      "ttfb_ms": 54,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -863,7 +863,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fcertificates",
-      "ttfb_ms": 17,
+      "ttfb_ms": 49,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -873,7 +873,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fexplain",
-      "ttfb_ms": 17,
+      "ttfb_ms": 43,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -883,7 +883,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fflashcards",
-      "ttfb_ms": 19,
+      "ttfb_ms": 68,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -893,7 +893,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fpractice",
-      "ttfb_ms": 17,
+      "ttfb_ms": 41,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -903,7 +903,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fprogress",
-      "ttfb_ms": 15,
+      "ttfb_ms": 34,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -913,7 +913,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fstudent%2Frevision-hub",
-      "ttfb_ms": 18,
+      "ttfb_ms": 51,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -923,7 +923,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fstudent%2Fstudy-planner",
-      "ttfb_ms": 15,
+      "ttfb_ms": 79,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -933,7 +933,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fstudents",
-      "ttfb_ms": 17,
+      "ttfb_ms": 24,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -943,7 +943,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fteacher%2Fai-question-generator",
-      "ttfb_ms": 18,
+      "ttfb_ms": 100,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -953,7 +953,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fteacher%2Fcontent-assistant",
-      "ttfb_ms": 18,
+      "ttfb_ms": 103,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -963,7 +963,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fteacher%2Fgrading",
-      "ttfb_ms": 16,
+      "ttfb_ms": 95,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -973,7 +973,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fteacher%2Flesson-planner",
-      "ttfb_ms": 15,
+      "ttfb_ms": 106,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -983,7 +983,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fteacher%2Frubric-builder",
-      "ttfb_ms": 17,
+      "ttfb_ms": 100,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -993,7 +993,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fteacher%2Fworksheet-builder",
-      "ttfb_ms": 16,
+      "ttfb_ms": 94,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1003,7 +1003,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fteachers",
-      "ttfb_ms": 14,
+      "ttfb_ms": 41,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1013,7 +1013,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28app%29%2Fworkflows",
-      "ttfb_ms": 17,
+      "ttfb_ms": 64,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1023,7 +1023,7 @@
       "isApi": false,
       "status": 308,
       "location": "/(app)/workflows",
-      "ttfb_ms": 20,
+      "ttfb_ms": 74,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1043,7 +1043,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fabout",
-      "ttfb_ms": 19,
+      "ttfb_ms": 59,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1053,7 +1053,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fapi-docs",
-      "ttfb_ms": 13,
+      "ttfb_ms": 118,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1063,7 +1063,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fblog",
-      "ttfb_ms": 18,
+      "ttfb_ms": 172,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1073,7 +1073,7 @@
       "isApi": false,
       "status": 308,
       "location": "/(marketing)/blog",
-      "ttfb_ms": 13,
+      "ttfb_ms": 130,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1083,7 +1083,7 @@
       "isApi": false,
       "status": 308,
       "location": "/(marketing)/blog/author",
-      "ttfb_ms": 19,
+      "ttfb_ms": 118,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1093,7 +1093,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fcareers",
-      "ttfb_ms": 15,
+      "ttfb_ms": 173,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1103,7 +1103,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fcase-studies",
-      "ttfb_ms": 34,
+      "ttfb_ms": 37,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1113,7 +1113,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fchangelog",
-      "ttfb_ms": 12,
+      "ttfb_ms": 56,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1123,7 +1123,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fcommunity",
-      "ttfb_ms": 33,
+      "ttfb_ms": 191,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1133,7 +1133,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fcontact",
-      "ttfb_ms": 18,
+      "ttfb_ms": 156,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1143,7 +1143,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fcookies",
-      "ttfb_ms": 22,
+      "ttfb_ms": 51,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1153,7 +1153,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fcustomers",
-      "ttfb_ms": 17,
+      "ttfb_ms": 91,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1163,7 +1163,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fdemo",
-      "ttfb_ms": 14,
+      "ttfb_ms": 199,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1173,7 +1173,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fdevelopers",
-      "ttfb_ms": 17,
+      "ttfb_ms": 32,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1183,7 +1183,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fdocs",
-      "ttfb_ms": 22,
+      "ttfb_ms": 108,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1193,7 +1193,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fdocumentation",
-      "ttfb_ms": 18,
+      "ttfb_ms": 28,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1203,7 +1203,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Ffeatures",
-      "ttfb_ms": 18,
+      "ttfb_ms": 170,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1213,7 +1213,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fgdpr",
-      "ttfb_ms": 21,
+      "ttfb_ms": 57,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1223,7 +1223,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fhelp-center",
-      "ttfb_ms": 13,
+      "ttfb_ms": 57,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1233,7 +1233,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fintegrations",
-      "ttfb_ms": 18,
+      "ttfb_ms": 61,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1243,7 +1243,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fpartners",
-      "ttfb_ms": 16,
+      "ttfb_ms": 148,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1253,7 +1253,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fpress-kit",
-      "ttfb_ms": 18,
+      "ttfb_ms": 111,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1263,7 +1263,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fpricing",
-      "ttfb_ms": 34,
+      "ttfb_ms": 28,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1273,7 +1273,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fprivacy",
-      "ttfb_ms": 17,
+      "ttfb_ms": 60,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1283,7 +1283,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fsecurity",
-      "ttfb_ms": 30,
+      "ttfb_ms": 56,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1293,7 +1293,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fsolutions",
-      "ttfb_ms": 20,
+      "ttfb_ms": 107,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1303,7 +1303,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fstatus",
-      "ttfb_ms": 18,
+      "ttfb_ms": 33,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1313,7 +1313,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28marketing%29%2Fterms",
-      "ttfb_ms": 13,
+      "ttfb_ms": 164,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1323,7 +1323,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28public%29%2Fforgot-password",
-      "ttfb_ms": 34,
+      "ttfb_ms": 29,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1333,7 +1333,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28public%29%2Flogin",
-      "ttfb_ms": 33,
+      "ttfb_ms": 26,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1343,7 +1343,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28public%29%2Fregister",
-      "ttfb_ms": 33,
+      "ttfb_ms": 26,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1353,7 +1353,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28public%29%2Freset-password",
-      "ttfb_ms": 33,
+      "ttfb_ms": 25,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1363,7 +1363,7 @@
       "isApi": false,
       "status": 307,
       "location": "/login?redirect=%2F%28public%29%2Fverify-email",
-      "ttfb_ms": 37,
+      "ttfb_ms": 27,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1373,7 +1373,7 @@
       "isApi": false,
       "status": 308,
       "location": "/(public)/verify/certificate",
-      "ttfb_ms": 33,
+      "ttfb_ms": 24,
       "verdict": "PASS",
       "expected": "307/redirect or 401",
       "bodySnippet": ""
@@ -1383,7 +1383,7 @@
       "isApi": true,
       "status": 307,
       "location": "/login?redirect=%2Fapi",
-      "ttfb_ms": 33,
+      "ttfb_ms": 52,
       "verdict": "FAIL",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1393,7 +1393,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 30,
+      "ttfb_ms": 79,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1403,7 +1403,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 57,
+      "ttfb_ms": 28,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1413,7 +1413,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 41,
+      "ttfb_ms": 28,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1423,7 +1423,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 28,
+      "ttfb_ms": 30,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1433,7 +1433,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 18,
+      "ttfb_ms": 75,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1443,7 +1443,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 40,
+      "ttfb_ms": 79,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1453,7 +1453,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 30,
+      "ttfb_ms": 79,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1463,7 +1463,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 45,
+      "ttfb_ms": 80,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1473,7 +1473,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 40,
+      "ttfb_ms": 72,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1483,7 +1483,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 16,
+      "ttfb_ms": 54,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1493,7 +1493,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 14,
+      "ttfb_ms": 55,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1503,7 +1503,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 16,
+      "ttfb_ms": 74,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1513,7 +1513,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 15,
+      "ttfb_ms": 73,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1523,7 +1523,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 17,
+      "ttfb_ms": 30,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1533,7 +1533,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 17,
+      "ttfb_ms": 31,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1543,7 +1543,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 17,
+      "ttfb_ms": 35,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1553,7 +1553,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 16,
+      "ttfb_ms": 76,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1563,7 +1563,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 15,
+      "ttfb_ms": 31,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1573,7 +1573,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 17,
+      "ttfb_ms": 73,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1583,7 +1583,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 15,
+      "ttfb_ms": 34,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1593,7 +1593,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 16,
+      "ttfb_ms": 36,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1603,7 +1603,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 27,
+      "ttfb_ms": 67,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1613,7 +1613,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 16,
+      "ttfb_ms": 77,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1623,7 +1623,7 @@
       "isApi": true,
       "status": 308,
       "location": "/api/alerting/incidents",
-      "ttfb_ms": 15,
+      "ttfb_ms": 69,
       "verdict": "FAIL",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1633,7 +1633,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 14,
+      "ttfb_ms": 65,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1643,7 +1643,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 12,
+      "ttfb_ms": 26,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1653,7 +1653,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 13,
+      "ttfb_ms": 43,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1663,7 +1663,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 19,
+      "ttfb_ms": 32,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1673,7 +1673,7 @@
       "isApi": true,
       "status": 405,
       "location": "",
-      "ttfb_ms": 19,
+      "ttfb_ms": 33,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1683,7 +1683,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 19,
+      "ttfb_ms": 34,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1693,7 +1693,7 @@
       "isApi": true,
       "status": 307,
       "location": "http://localhost:3000/login?error=Invalid%20authentication%20link.",
-      "ttfb_ms": 54,
+      "ttfb_ms": 75,
       "verdict": "FAIL",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1703,7 +1703,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 77,
+      "ttfb_ms": 71,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1713,7 +1713,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 10,
+      "ttfb_ms": 72,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1723,7 +1723,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 15,
+      "ttfb_ms": 27,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1733,7 +1733,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 12,
+      "ttfb_ms": 27,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1743,7 +1743,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 16,
+      "ttfb_ms": 29,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1753,7 +1753,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 12,
+      "ttfb_ms": 62,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1763,7 +1763,7 @@
       "isApi": true,
       "status": 405,
       "location": "",
-      "ttfb_ms": 14,
+      "ttfb_ms": 66,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1773,7 +1773,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 16,
+      "ttfb_ms": 29,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1783,7 +1783,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 11,
+      "ttfb_ms": 71,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1793,7 +1793,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 15,
+      "ttfb_ms": 28,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1803,7 +1803,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 10,
+      "ttfb_ms": 69,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1813,7 +1813,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 16,
+      "ttfb_ms": 28,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1823,7 +1823,7 @@
       "isApi": true,
       "status": 405,
       "location": "",
-      "ttfb_ms": 18,
+      "ttfb_ms": 40,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1833,7 +1833,7 @@
       "isApi": true,
       "status": 405,
       "location": "",
-      "ttfb_ms": 15,
+      "ttfb_ms": 74,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1843,7 +1843,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 15,
+      "ttfb_ms": 39,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1853,7 +1853,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 15,
+      "ttfb_ms": 34,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1863,7 +1863,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 16,
+      "ttfb_ms": 39,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1873,7 +1873,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 15,
+      "ttfb_ms": 37,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1883,7 +1883,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 14,
+      "ttfb_ms": 62,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1893,7 +1893,7 @@
       "isApi": true,
       "status": 405,
       "location": "",
-      "ttfb_ms": 37,
+      "ttfb_ms": 79,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1903,7 +1903,7 @@
       "isApi": true,
       "status": 405,
       "location": "",
-      "ttfb_ms": 13,
+      "ttfb_ms": 32,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1913,7 +1913,7 @@
       "isApi": true,
       "status": 308,
       "location": "/api/demo-booking",
-      "ttfb_ms": 17,
+      "ttfb_ms": 31,
       "verdict": "FAIL",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1923,7 +1923,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 16,
+      "ttfb_ms": 100,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1933,7 +1933,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 14,
+      "ttfb_ms": 92,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1943,7 +1943,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 62,
+      "ttfb_ms": 89,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1953,7 +1953,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 9,
+      "ttfb_ms": 74,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1963,7 +1963,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 16,
+      "ttfb_ms": 62,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1973,7 +1973,7 @@
       "isApi": true,
       "status": 308,
       "location": "/api/feedback",
-      "ttfb_ms": 15,
+      "ttfb_ms": 31,
       "verdict": "FAIL",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1983,7 +1983,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 16,
+      "ttfb_ms": 40,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -1993,7 +1993,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 17,
+      "ttfb_ms": 29,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2003,7 +2003,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 14,
+      "ttfb_ms": 29,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2013,7 +2013,7 @@
       "isApi": true,
       "status": 200,
       "location": "",
-      "ttfb_ms": 285,
+      "ttfb_ms": 408,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2023,7 +2023,7 @@
       "isApi": true,
       "status": 200,
       "location": "",
-      "ttfb_ms": 56,
+      "ttfb_ms": 90,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2033,7 +2033,7 @@
       "isApi": true,
       "status": 200,
       "location": "",
-      "ttfb_ms": 339,
+      "ttfb_ms": 385,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2043,7 +2043,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 71,
+      "ttfb_ms": 90,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2063,7 +2063,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 20,
+      "ttfb_ms": 66,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2073,7 +2073,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 20,
+      "ttfb_ms": 60,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2083,7 +2083,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 19,
+      "ttfb_ms": 64,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2093,7 +2093,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 23,
+      "ttfb_ms": 33,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2103,7 +2103,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 11,
+      "ttfb_ms": 71,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2113,7 +2113,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 10,
+      "ttfb_ms": 27,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2123,7 +2123,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 10,
+      "ttfb_ms": 26,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2133,7 +2133,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 11,
+      "ttfb_ms": 29,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2143,7 +2143,7 @@
       "isApi": true,
       "status": 308,
       "location": "/api/marketing/leads",
-      "ttfb_ms": 10,
+      "ttfb_ms": 27,
       "verdict": "FAIL",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2153,7 +2153,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 11,
+      "ttfb_ms": 27,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2163,7 +2163,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 11,
+      "ttfb_ms": 27,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2173,7 +2173,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 14,
+      "ttfb_ms": 30,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2183,7 +2183,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 14,
+      "ttfb_ms": 27,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2193,7 +2193,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 13,
+      "ttfb_ms": 31,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2203,7 +2203,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 13,
+      "ttfb_ms": 69,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2213,7 +2213,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 13,
+      "ttfb_ms": 70,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2223,7 +2223,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 13,
+      "ttfb_ms": 29,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2233,7 +2233,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 11,
+      "ttfb_ms": 70,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2243,7 +2243,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 14,
+      "ttfb_ms": 70,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2253,7 +2253,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 14,
+      "ttfb_ms": 29,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2263,7 +2263,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 13,
+      "ttfb_ms": 29,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2273,7 +2273,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 13,
+      "ttfb_ms": 34,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2283,7 +2283,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 13,
+      "ttfb_ms": 34,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2293,7 +2293,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 13,
+      "ttfb_ms": 74,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2303,7 +2303,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 13,
+      "ttfb_ms": 74,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2313,7 +2313,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 13,
+      "ttfb_ms": 34,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2323,7 +2323,7 @@
       "isApi": true,
       "status": 405,
       "location": "",
-      "ttfb_ms": 18,
+      "ttfb_ms": 67,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2333,7 +2333,7 @@
       "isApi": true,
       "status": 405,
       "location": "",
-      "ttfb_ms": 32,
+      "ttfb_ms": 33,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2343,7 +2343,7 @@
       "isApi": true,
       "status": 307,
       "location": "http://localhost:3000/newsletter/unsubscribe?error=missing-token",
-      "ttfb_ms": 21,
+      "ttfb_ms": 77,
       "verdict": "FAIL",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2353,7 +2353,7 @@
       "isApi": true,
       "status": 307,
       "location": "http://localhost:3000/newsletter/verify?error=missing-token",
-      "ttfb_ms": 19,
+      "ttfb_ms": 37,
       "verdict": "FAIL",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2363,7 +2363,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 17,
+      "ttfb_ms": 41,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2373,7 +2373,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 14,
+      "ttfb_ms": 40,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2383,7 +2383,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 23,
+      "ttfb_ms": 63,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2393,7 +2393,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 15,
+      "ttfb_ms": 41,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2403,7 +2403,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 14,
+      "ttfb_ms": 41,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2413,7 +2413,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 19,
+      "ttfb_ms": 69,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2423,7 +2423,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 15,
+      "ttfb_ms": 28,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2433,7 +2433,7 @@
       "isApi": true,
       "status": 308,
       "location": "/api/organizations",
-      "ttfb_ms": 18,
+      "ttfb_ms": 56,
       "verdict": "FAIL",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2443,7 +2443,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 16,
+      "ttfb_ms": 29,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2453,7 +2453,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 15,
+      "ttfb_ms": 66,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2463,7 +2463,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 9,
+      "ttfb_ms": 68,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2473,7 +2473,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 12,
+      "ttfb_ms": 68,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2483,7 +2483,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 10,
+      "ttfb_ms": 65,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2493,7 +2493,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 9,
+      "ttfb_ms": 66,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2503,7 +2503,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 21,
+      "ttfb_ms": 59,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2513,7 +2513,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 8,
+      "ttfb_ms": 58,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2523,7 +2523,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 46,
+      "ttfb_ms": 28,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2533,7 +2533,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 3,
+      "ttfb_ms": 61,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2543,7 +2543,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 12,
+      "ttfb_ms": 66,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2553,7 +2553,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 11,
+      "ttfb_ms": 62,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2563,7 +2563,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 8,
+      "ttfb_ms": 65,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2573,7 +2573,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 49,
+      "ttfb_ms": 31,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2583,7 +2583,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 26,
+      "ttfb_ms": 31,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2593,7 +2593,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 39,
+      "ttfb_ms": 32,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2603,7 +2603,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 34,
+      "ttfb_ms": 32,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2613,7 +2613,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 29,
+      "ttfb_ms": 32,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2623,7 +2623,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 20,
+      "ttfb_ms": 59,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2633,7 +2633,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 8,
+      "ttfb_ms": 34,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2643,7 +2643,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 12,
+      "ttfb_ms": 31,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2653,7 +2653,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 8,
+      "ttfb_ms": 30,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2663,7 +2663,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 17,
+      "ttfb_ms": 71,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2673,7 +2673,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 59,
+      "ttfb_ms": 30,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2683,7 +2683,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 43,
+      "ttfb_ms": 31,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2693,7 +2693,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 51,
+      "ttfb_ms": 31,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2703,7 +2703,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 51,
+      "ttfb_ms": 29,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2713,7 +2713,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 24,
+      "ttfb_ms": 60,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2723,7 +2723,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 23,
+      "ttfb_ms": 59,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2733,7 +2733,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 25,
+      "ttfb_ms": 59,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2743,7 +2743,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 19,
+      "ttfb_ms": 60,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2753,7 +2753,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 25,
+      "ttfb_ms": 32,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2763,7 +2763,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 21,
+      "ttfb_ms": 28,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2773,7 +2773,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 18,
+      "ttfb_ms": 60,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2783,7 +2783,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 18,
+      "ttfb_ms": 64,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2793,7 +2793,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 20,
+      "ttfb_ms": 62,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2803,7 +2803,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 18,
+      "ttfb_ms": 60,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2813,7 +2813,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 18,
+      "ttfb_ms": 73,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2823,7 +2823,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 9,
+      "ttfb_ms": 75,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2833,7 +2833,7 @@
       "isApi": true,
       "status": 308,
       "location": "/api/verify/certificate",
-      "ttfb_ms": 18,
+      "ttfb_ms": 29,
       "verdict": "FAIL",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2843,7 +2843,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 17,
+      "ttfb_ms": 71,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2853,7 +2853,7 @@
       "isApi": true,
       "status": 308,
       "location": "/api/workflows",
-      "ttfb_ms": 16,
+      "ttfb_ms": 70,
       "verdict": "FAIL",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2863,7 +2863,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 9,
+      "ttfb_ms": 71,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""
@@ -2873,7 +2873,7 @@
       "isApi": true,
       "status": 401,
       "location": "",
-      "ttfb_ms": 10,
+      "ttfb_ms": 71,
       "verdict": "PASS",
       "expected": "401/403/4xx (no 5xx)",
       "bodySnippet": ""

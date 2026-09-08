@@ -783,6 +783,19 @@ async function executeWithTimeout(
   const supabase = await createClient()
   const trackingInsert = await supabase.from('ai_generation_requests').insert({
     id: generationId,
+    // Legacy NOT NULL columns — the live table enforces these (migration 010 companion).
+    requested_by: request.userId,
+    model_name: request.model ?? 'default',
+    generation_type:
+      typeof request.metadata?.type === 'string' &&
+      [
+        'distractor_generation', 'document_extraction', 'explanation_generation',
+        'question_generation', 'question_improvement', 'question_validation',
+        'translation', 'lesson_plan', 'chat_completion',
+      ].includes(request.metadata.type)
+        ? request.metadata.type
+        : 'chat_completion',
+    input_params: (request.metadata as Record<string, unknown>) ?? {},
     user_id: request.userId,
     school_id: request.orgId,
     provider,
@@ -846,6 +859,12 @@ async function executeWithTimeout(
         tokens_output: tokensOutput,
         cost_usd: costUsd,
         duration_ms: durationMs,
+        // RC1: legacy columns the usage-stats trigger reads.
+        input_tokens: tokensInput,
+        output_tokens: tokensOutput,
+        total_cost: costUsd,
+        generation_time_ms: durationMs,
+        completed_at: new Date().toISOString(),
       })
       .eq('id', generationId)
     if (trackingUpdate.error) {

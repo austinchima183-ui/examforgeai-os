@@ -47,6 +47,8 @@ export const PUBLIC_ROUTES = [
   '/forgot-password',
   '/reset-password',
   '/verify-email',
+  // Public certificate verification (anyone with a code — no account)
+  '/verify/certificate',
   // API routes
   '/api/auth/callback',
   '/api/billing/webhook',

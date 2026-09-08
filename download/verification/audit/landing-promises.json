@@ -174,7 +174,7 @@
         "src/app/(app)/marketplace/page.tsx"
       ],
       "api": [
-        "src/app/api/marketplace/reviews"
+        "src/app/api/marketplace/product"
       ],
       "database": "marketplace_products/purchases",
       "sdk": "z-ai (AI), Flutterwave (pay), Resend (email), Supabase (db)",
@@ -204,7 +204,7 @@
         "src/app/(app)/notifications/page.tsx"
       ],
       "api": [
-        "src/app/api/notifications/templates"
+        "src/app/api/notifications/delivery-status"
       ],
       "database": "notifications/notification_history",
       "sdk": "z-ai (AI), Flutterwave (pay), Resend (email), Supabase (db)",

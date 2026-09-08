@@ -3,8 +3,7 @@
     "argv": [
       "/usr/bin/node",
       "/home/z/my-project/node_modules/.bin/playwright",
-      "test",
-      "e2e/09-widget-system.spec.ts"
+      "test"
     ],
     "configFile": "/home/z/my-project/playwright.config.ts",
     "rootDir": "/home/z/my-project/e2e",
@@ -73,6 +72,769 @@
   },
   "suites": [
     {
+      "title": "00-landing.spec.ts",
+      "file": "00-landing.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Landing Page (LOCKED — design authority)",
+          "file": "00-landing.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "homepage renders with hero, nav, CTA, and zero console errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18612,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:23:18.074Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/00-landing-Landing-Page-LO-1ebea-CTA-and-zero-console-errors-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d1f7af33feacfc6c21e3-e67fa13cd246ab572983",
+              "file": "00-landing.spec.ts",
+              "line": 10,
+              "column": 7
+            },
+            {
+              "title": "key marketing pages render (pricing, features, security)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3913,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:23:36.985Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/00-landing-Landing-Page-LO-f2e01--pricing-features-security--desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d1f7af33feacfc6c21e3-0343e492364bbeb0543a",
+              "file": "00-landing.spec.ts",
+              "line": 46,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "01-student-journey.spec.ts",
+      "file": "01-student-journey.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Student Journey (full E2E, video recorded)",
+          "file": "01-student-journey.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "login → dashboard → sidebar → tools → notifications → logout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 62714,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:23:40.914Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/01-student-journey-Student-1a16b-ls-→-notifications-→-logout-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "994bc29c0aa022926efe-b46af339b13af8756645",
+              "file": "01-student-journey.spec.ts",
+              "line": 11,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "02-teacher-journey.spec.ts",
+      "file": "02-teacher-journey.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Teacher Journey (full E2E, video recorded)",
+          "file": "02-teacher-journey.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "login → dashboard → question bank → tools → grading → isolation → logout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 59028,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:24:43.651Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/02-teacher-journey-Teacher-1dc6a-rading-→-isolation-→-logout-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2490b6c3115b98b54a15-182b1ca83a09d50de1d2",
+              "file": "02-teacher-journey.spec.ts",
+              "line": 11,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "03-parent-journey.spec.ts",
+      "file": "03-parent-journey.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Parent Journey (full E2E, video recorded)",
+          "file": "03-parent-journey.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "login → parent dashboard → child progress → attendance → fees → messaging → isolation → logout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 51740,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:25:42.725Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/03-parent-journey-Parent-J-b035b-saging-→-isolation-→-logout-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c144a44e37ca5527d49a-4d9c6a331381048a4521",
+              "file": "03-parent-journey.spec.ts",
+              "line": 11,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "04-school-admin-journey.spec.ts",
+      "file": "04-school-admin-journey.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "School Admin Journey (full E2E, video recorded)",
+          "file": "04-school-admin-journey.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "login → dashboard → users → school management → billing → isolation → logout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 68728,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:26:34.493Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/04-school-admin-journey-Sc-65802-illing-→-isolation-→-logout-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8b526ed7589d5b05dc35-141260aca5f56ec6faef",
+              "file": "04-school-admin-journey.spec.ts",
+              "line": 11,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "05-super-admin-journey.spec.ts",
+      "file": "05-super-admin-journey.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Super Admin Journey (full E2E, video recorded)",
+          "file": "05-super-admin-journey.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "login → dashboard → schools → admin console → government → isolation → logout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 50397,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:27:43.273Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/05-super-admin-journey-Sup-af2a3-rnment-→-isolation-→-logout-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0d5ff4f485120aec130c-a7c3c2a57d416005996e",
+              "file": "05-super-admin-journey.spec.ts",
+              "line": 11,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "06-rbac-matrix.spec.ts",
+      "file": "06-rbac-matrix.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "RBAC Feature Isolation Matrix",
+          "file": "06-rbac-matrix.spec.ts",
+          "line": 26,
+          "column": 6,
+          "specs": [
+            {
+              "title": "matrix sweep as student",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 420000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 134909,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:32:38.775Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fe322748c5764633617c-7e09e2e93bcbe2fccea3",
+              "file": "06-rbac-matrix.spec.ts",
+              "line": 29,
+              "column": 9
+            },
+            {
+              "title": "matrix sweep as teacher",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 420000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 117963,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:34:53.785Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fe322748c5764633617c-3e151d1107a11b2c2d81",
+              "file": "06-rbac-matrix.spec.ts",
+              "line": 29,
+              "column": 9
+            },
+            {
+              "title": "matrix sweep as parent",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 420000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 67485,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:36:51.820Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fe322748c5764633617c-3db9f49e1ac9a4984da7",
+              "file": "06-rbac-matrix.spec.ts",
+              "line": 29,
+              "column": 9
+            },
+            {
+              "title": "matrix sweep as school_admin",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 420000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 57436,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:37:59.334Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fe322748c5764633617c-80245c78c0edc7d38277",
+              "file": "06-rbac-matrix.spec.ts",
+              "line": 29,
+              "column": 9
+            },
+            {
+              "title": "matrix sweep as super_admin",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 420000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 36897,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:38:56.786Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fe322748c5764633617c-31fe385b58148ff3deac",
+              "file": "06-rbac-matrix.spec.ts",
+              "line": 29,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "07-cbt-flow.spec.ts",
+      "file": "07-cbt-flow.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "CBT Exam Flow (student, video recorded)",
+          "file": "07-cbt-flow.spec.ts",
+          "line": 12,
+          "column": 6,
+          "specs": [
+            {
+              "title": "student opens exams list → enters exam → interacts → exits",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 46609,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:28:33.692Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/07-cbt-flow-CBT-Exam-Flow--5b5de-rs-exam-→-interacts-→-exits-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5de88cafca53f0fe57d9-b0e83a9fab7f4d513f0c",
+              "file": "07-cbt-flow.spec.ts",
+              "line": 13,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "08-ai-api.spec.ts",
+      "file": "08-ai-api.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "AI Features + Authenticated API Verification",
+          "file": "08-ai-api.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "AI student tools render and AI endpoints respond",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13384,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:29:20.356Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/08-ai-api-AI-Features-Auth-1bf23-er-and-AI-endpoints-respond-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "223eb2a49efa22906eeb-af572780ab63b05e3a00",
+              "file": "08-ai-api.spec.ts",
+              "line": 10,
+              "column": 7
+            },
+            {
+              "title": "CSRF protection: state-changing request without CSRF token is rejected",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5600,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:29:33.752Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/08-ai-api-AI-Features-Auth-e426a-hout-CSRF-token-is-rejected-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "223eb2a49efa22906eeb-c254d8d85157d640c34f",
+              "file": "08-ai-api.spec.ts",
+              "line": 53,
+              "column": 7
+            },
+            {
+              "title": "invalid payload is rejected with 400 (input validation active)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4498,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:29:39.358Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/08-ai-api-AI-Features-Auth-09ef1-00-input-validation-active--desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "223eb2a49efa22906eeb-7171fbb6302a3a4f39fa",
+              "file": "08-ai-api.spec.ts",
+              "line": 76,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "09-widget-system.spec.ts",
       "file": "09-widget-system.spec.ts",
       "column": 0,
@@ -101,12 +863,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8390,
+                      "duration": 7702,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-02T22:49:14.688Z",
+                      "startTime": "2026-09-08T04:29:43.886Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -141,12 +903,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9100,
+                      "duration": 9093,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-02T22:49:23.192Z",
+                      "startTime": "2026-09-08T04:29:51.632Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -181,12 +943,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9495,
+                      "duration": 8679,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-02T22:49:32.306Z",
+                      "startTime": "2026-09-08T04:30:00.739Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -221,12 +983,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8609,
+                      "duration": 8073,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-02T22:49:41.826Z",
+                      "startTime": "2026-09-08T04:30:09.446Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -261,12 +1023,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9587,
+                      "duration": 9700,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-02T22:49:50.484Z",
+                      "startTime": "2026-09-08T04:30:17.536Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -301,12 +1063,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9703,
+                      "duration": 9633,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-02T22:50:00.092Z",
+                      "startTime": "2026-09-08T04:30:27.249Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -341,12 +1103,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8496,
+                      "duration": 8189,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-02T22:50:09.805Z",
+                      "startTime": "2026-09-08T04:30:36.922Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -381,12 +1143,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12810,
+                      "duration": 11794,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-02T22:50:18.314Z",
+                      "startTime": "2026-09-08T04:30:45.128Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -421,12 +1183,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8659,
+                      "duration": 7924,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-02T22:50:31.136Z",
+                      "startTime": "2026-09-08T04:30:56.934Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -461,12 +1223,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10833,
+                      "duration": 10309,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-02T22:50:39.812Z",
+                      "startTime": "2026-09-08T04:31:04.870Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -488,13 +1250,413 @@
           ]
         }
       ]
+    },
+    {
+      "title": "10-advanced-ux.spec.ts",
+      "file": "10-advanced-ux.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Advanced Dashboard UX (Ω-3)",
+          "file": "10-advanced-ux.spec.ts",
+          "line": 15,
+          "column": 6,
+          "specs": [
+            {
+              "title": "school settings: inline fields + autosave lifecycle",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10606,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:31:15.221Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/10-advanced-ux-Advanced-Da-733ba-e-fields-autosave-lifecycle-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee6a2c4f715c9110772a-98251431744911dcfad0",
+              "file": "10-advanced-ux.spec.ts",
+              "line": 16,
+              "column": 7
+            },
+            {
+              "title": "students: batch edit dialog opens with shared-field editor",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11879,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:31:25.837Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/10-advanced-ux-Advanced-Da-3bd20-ns-with-shared-field-editor-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee6a2c4f715c9110772a-fece8bee9785b36e6530",
+              "file": "10-advanced-ux.spec.ts",
+              "line": 47,
+              "column": 7
+            },
+            {
+              "title": "students: details dock panel opens, collapses to rail, re-expands",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12221,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:31:37.726Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/z/my-project/download/verification/test-artifacts/10-advanced-ux-Advanced-Da-7710a-ollapses-to-rail-re-expands-desktop-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee6a2c4f715c9110772a-387a4861154b74f2cd70",
+              "file": "10-advanced-ux.spec.ts",
+              "line": 77,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "11-final-omega.spec.ts",
+      "file": "11-final-omega.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "AI Usage Analytics (Ω-FINAL)",
+          "file": "11-final-omega.spec.ts",
+          "line": 14,
+          "column": 6,
+          "specs": [
+            {
+              "title": "unauthenticated request is rejected with 401",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 69,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:31:49.967Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9a6cd2ff867b5978eea0-bbfddd1bc0e3503aaed4",
+              "file": "11-final-omega.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "student role is rejected with 403 (admin-only surface)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8585,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:31:50.042Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9a6cd2ff867b5978eea0-e9b8997529326458ee00",
+              "file": "11-final-omega.spec.ts",
+              "line": 20,
+              "column": 7
+            },
+            {
+              "title": "school_admin gets scoped usage payload with stats shape",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8326,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:31:58.635Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9a6cd2ff867b5978eea0-fb8ee8ffaf4c206655f4",
+              "file": "11-final-omega.spec.ts",
+              "line": 29,
+              "column": 7
+            },
+            {
+              "title": "super_admin gets global scope payload",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7378,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:32:06.970Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9a6cd2ff867b5978eea0-972eea29aa77836c51c1",
+              "file": "11-final-omega.spec.ts",
+              "line": 45,
+              "column": 7
+            },
+            {
+              "title": "analytics page exposes the AI Usage tab for admins",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12293,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:32:14.358Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9a6cd2ff867b5978eea0-836e632e2e9fe5b4ba3c",
+              "file": "11-final-omega.spec.ts",
+              "line": 56,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Offline CBT contract (Ω-21 wiring)",
+          "file": "11-final-omega.spec.ts",
+          "line": 70,
+          "column": 6,
+          "specs": [
+            {
+              "title": "exam take page mounts with offline-resilient answer persistence markers",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7415,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:32:26.665Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9a6cd2ff867b5978eea0-0d7148e4c78eb9790f68",
+              "file": "11-final-omega.spec.ts",
+              "line": 71,
+              "column": 7
+            },
+            {
+              "title": "IndexedDB offline database schema is installable (Dexie)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chromium",
+                  "projectName": "desktop-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3874,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T04:32:34.089Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9a6cd2ff867b5978eea0-edd647e5e88b46cd0d7f",
+              "file": "11-final-omega.spec.ts",
+              "line": 94,
+              "column": 7
+            }
+          ]
+        }
+      ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-09-02T22:49:14.173Z",
-    "duration": 96619.514,
-    "expected": 10,
+    "startTime": "2026-09-08T04:23:17.494Z",
+    "duration": 976349.594,
+    "expected": 36,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

@@ -66,6 +66,29 @@ const DEFAULT_MODEL = 'gemini-2.0-flash'
 const DEFAULT_TEMPERATURE = 0.7
 const DEFAULT_MAX_TOKENS = 4096
 
+/**
+ * Map a flow's metadata.type to a valid prompt_type enum value.
+ * The live enum: distractor_generation, document_extraction,
+ * explanation_generation, question_generation, question_improvement,
+ * question_validation, translation (+ lesson_plan, chat_completion from
+ * migration 010). Anything unmapped lands on chat_completion.
+ */
+const PROMPT_TYPE_VALUES = new Set([
+  'distractor_generation',
+  'document_extraction',
+  'explanation_generation',
+  'question_generation',
+  'question_improvement',
+  'question_validation',
+  'translation',
+  'lesson_plan',
+  'chat_completion',
+])
+function resolveGenerationType(flowType: unknown): string {
+  const t = typeof flowType === 'string' ? flowType : ''
+  return PROMPT_TYPE_VALUES.has(t) ? t : 'chat_completion'
+}
+
 // ──────────────────────────────────────────────────────────────
 // AI Engine Core
 // ──────────────────────────────────────────────────────────────
@@ -86,6 +109,12 @@ export async function executeAI(request: AIRequest): Promise<AIResponse> {
 
   const generationRecord: AiGenerationInsert = {
     id: generationId,
+    // Legacy NOT NULL columns — the live table enforces these; omitting them
+    // silently dropped every tracking row before RC1 (migration 010 companion).
+    requested_by: request.userId,
+    model_name: model,
+    generation_type: resolveGenerationType(request.metadata?.type),
+    input_params: request.questionTracking?.inputParams ?? {},
     user_id: request.userId,
     school_id: request.schoolId ?? null,
     provider,
@@ -94,7 +123,6 @@ export async function executeAI(request: AIRequest): Promise<AIResponse> {
     prompt_text: request.prompt,
     system_prompt: request.systemPrompt ?? null,
     prompt_template_id: request.questionTracking?.templateId ?? null,
-    input_params: request.questionTracking?.inputParams ?? null,
     metadata: request.metadata ?? null,
   }
 
@@ -113,9 +141,6 @@ export async function executeAI(request: AIRequest): Promise<AIResponse> {
 
   try {
     // ── Execute via z-ai-web-dev-sdk with timeout ──
-    const ZAI = (await import('z-ai-web-dev-sdk')).default
-    const ai = await ZAI.create()
-
     const messages = []
     if (request.systemPrompt) {
       messages.push({ role: 'system' as const, content: request.systemPrompt })
@@ -128,11 +153,61 @@ export async function executeAI(request: AIRequest): Promise<AIResponse> {
 
     let response
     try {
+      // ── Execute via z-ai-web-dev-sdk with timeout ──
+      // (RC1: the SDK import + create() live INSIDE the guarded block so a
+      //  sandbox-config failure falls through to the edge-function fallback.)
+      const ZAI = (await import('z-ai-web-dev-sdk')).default
+      const ai = await ZAI.create()
       response = await ai.chat.completions.create({
         messages,
         temperature,
         max_tokens: request.maxTokens ?? DEFAULT_MAX_TOKENS,
       })
+    } catch (zaiError) {
+      // RC1 portable fallback: the z-ai-web-dev-sdk is sandbox-only (its
+      // file-based config never exists on Vercel). Route the completion
+      // through the Supabase ai-complete edge function, which holds the real
+      // provider keys — this is what makes AI work in production.
+      clearTimeout(timeoutId)
+      let sessionToken: string | null = null
+      try {
+        sessionToken = (await supabase.auth?.getSession?.())?.data?.session?.access_token ?? null
+      } catch {
+        sessionToken = null
+      }
+      if (!sessionToken) throw zaiError
+      const fallbackPrompt = request.systemPrompt
+        ? `${request.systemPrompt}\n\n${request.prompt}`
+        : request.prompt
+      const r = await fetch(
+        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/ai-complete`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${sessionToken}`,
+          },
+          body: JSON.stringify({
+            provider: 'gemini',
+            prompt: fallbackPrompt,
+            maxTokens: Math.min(request.maxTokens ?? DEFAULT_MAX_TOKENS, 4096),
+            temperature,
+          }),
+        }
+      )
+      if (!r.ok) {
+        throw new Error(
+          `AI fallback failed (edge function HTTP ${r.status}): ${(await r.text()).slice(0, 200)}`
+        )
+      }
+      const d = await r.json()
+      response = {
+        choices: [{ message: { content: d.content ?? '' } }],
+        usage: {
+          prompt_tokens: d.usage?.promptTokens ?? null,
+          completion_tokens: d.usage?.completionTokens ?? null,
+        },
+      }
     } finally {
       clearTimeout(timeoutId)
     }
@@ -148,6 +223,9 @@ export async function executeAI(request: AIRequest): Promise<AIResponse> {
     // ── Update generation record ──
     // (Ω-15: completion/failure updates are logged too — a missing update
     //  would silently drop token/cost/latency data from the analytics.)
+    // (RC1: also set the LEGACY columns — the usage-stats trigger reads
+    //  input_tokens/output_tokens/total_cost/generation_time_ms/completed_at,
+    //  so writing only the migration-008 aliases starves the rollup.)
     const completionUpdate = await supabase
       .from('ai_generation_requests')
       .update({
@@ -158,6 +236,11 @@ export async function executeAI(request: AIRequest): Promise<AIResponse> {
         tokens_output: tokensOutput,
         cost_usd: costUsd,
         duration_ms: durationMs,
+        input_tokens: tokensInput,
+        output_tokens: tokensOutput,
+        total_cost: costUsd,
+        generation_time_ms: durationMs,
+        completed_at: new Date().toISOString(),
       })
       .eq('id', generationId)
     if (completionUpdate.error) {
@@ -182,12 +265,15 @@ export async function executeAI(request: AIRequest): Promise<AIResponse> {
     const errorMessage = error instanceof Error ? error.message : 'Unknown AI error'
 
     // ── Update generation record with error ──
+    // (RC1: mirror the duration into the legacy column the trigger reads.)
     const failureUpdate = await supabase
       .from('ai_generation_requests')
       .update({
         status: 'failed',
         error_message: errorMessage,
         duration_ms: durationMs,
+        generation_time_ms: durationMs,
+        completed_at: new Date().toISOString(),
       })
       .eq('id', generationId)
     if (failureUpdate.error) {
@@ -262,6 +348,11 @@ export async function* streamAI(
 
   const streamInsert = await supabase.from('ai_generation_requests').insert({
     id: generationId,
+    // Legacy NOT NULL columns — see executeAI for the contract note.
+    requested_by: request.userId,
+    model_name: model,
+    generation_type: resolveGenerationType(request.metadata?.type),
+    input_params: {},
     user_id: request.userId,
     school_id: request.schoolId ?? null,
     provider,
@@ -305,6 +396,7 @@ export async function* streamAI(
     }
 
     // Update generation record
+    // (RC1: legacy columns included — the usage-stats trigger reads them.)
     const durationMs = Date.now() - startTime
     const streamCompletion = await supabase
       .from('ai_generation_requests')
@@ -313,6 +405,8 @@ export async function* streamAI(
         raw_response: fullContent,
         output: { content: fullContent },
         duration_ms: durationMs,
+        generation_time_ms: durationMs,
+        completed_at: new Date().toISOString(),
       })
       .eq('id', generationId)
     if (streamCompletion.error) {
@@ -331,6 +425,8 @@ export async function* streamAI(
         status: 'failed',
         error_message: errorMessage,
         duration_ms: Date.now() - startTime,
+        generation_time_ms: Date.now() - startTime,
+        completed_at: new Date().toISOString(),
       })
       .eq('id', generationId)
     if (streamFailure.error) {

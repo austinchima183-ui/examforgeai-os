@@ -35,9 +35,13 @@ const ALLOWED_MODELS: Record<string, string[]> = {
     'gpt-3.5-turbo',
   ],
   gemini: [
+    'gemini-3.6-flash',
+    'gemini-2.0-flash',
+    'gemini-3.6-pro',
+    'gemini-2.5-flash',
+    'gemini-2.5-pro',
     'gemini-1.5-pro',
     'gemini-1.5-flash',
-    'gemini-1.0-pro',
   ],
 };
 
@@ -247,7 +251,7 @@ Deno.serve(async (req: Request) => {
   }
 
   // Validate model
-  const resolvedModel = model || (normalizedProvider === 'openai' ? 'gpt-4o-mini' : 'gemini-1.5-flash');
+  const resolvedModel = model || (normalizedProvider === 'openai' ? 'gpt-4o-mini' : 'gemini-3.6-flash');
   const allowedModels = ALLOWED_MODELS[normalizedProvider];
   if (!allowedModels.includes(resolvedModel)) {
     return new Response(

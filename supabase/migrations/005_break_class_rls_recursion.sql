@@ -37,12 +37,14 @@
 -- ---------------------------------------------------------------------------
 
 -- Resolve the current user's app role without touching RLS-protected tables.
+-- NOTE: return type must match the live schema (user_role enum). Changing to TEXT
+-- would break live policies comparing get_user_role() = 'x'::user_role (42883).
 CREATE OR REPLACE FUNCTION public.get_user_role()
-RETURNS TEXT AS $$
+RETURNS user_role AS $$
 DECLARE
-  v_role TEXT;
+  v_role user_role;
 BEGIN
-  SELECT role::TEXT INTO v_role FROM public.users WHERE id = auth.uid();
+  SELECT role INTO v_role FROM public.users WHERE id = auth.uid();
   RETURN v_role;
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER STABLE;
@@ -89,7 +91,7 @@ BEGIN
     RETURN FALSE;
   END IF;
 
-  SELECT public.get_user_role() INTO v_role;
+  SELECT public.get_user_role()::TEXT INTO v_role;
 
   IF v_role = 'super_admin' THEN RETURN TRUE; END IF;
 

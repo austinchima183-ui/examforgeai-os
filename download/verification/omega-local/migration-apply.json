@@ -1,0 +1,47 @@
+{
+ "started": "2026-09-08T02:34:50.960Z",
+ "migrations": [
+  {
+   "name": "005_break_class_rls_recursion.sql",
+   "bytes": 10648,
+   "ms": 1844,
+   "ok": true,
+   "status": 201,
+   "result": []
+  },
+  {
+   "name": "006_omega_billing_fix.sql",
+   "bytes": 2048,
+   "ms": 1587,
+   "ok": true,
+   "status": 201,
+   "result": []
+  },
+  {
+   "name": "007_omega_missing_tables.sql",
+   "bytes": 77465,
+   "ms": 3015,
+   "ok": true,
+   "status": 201,
+   "result": []
+  },
+  {
+   "name": "008_omega_ai_tracking.sql",
+   "bytes": 5858,
+   "ms": 1898,
+   "ok": true,
+   "status": 201,
+   "result": []
+  },
+  {
+   "name": "009_omega_certificates.sql",
+   "bytes": 4416,
+   "ms": 1758,
+   "ok": true,
+   "status": 201,
+   "result": []
+  }
+ ],
+ "finished": "2026-09-08T02:35:01.067Z",
+ "verdict": "ALL APPLIED"
+}

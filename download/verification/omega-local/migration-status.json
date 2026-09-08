@@ -1,0 +1,64 @@
+{
+ "timestamp": "2026-09-08T02:35:06.846Z",
+ "checks": {
+  "schema_migrations": [
+   "20260729000001"
+  ],
+  "public_table_count": 260,
+  "mig005": {
+   "fn_user_can_access_class": true,
+   "rls_policies_on_5_tables": 17
+  },
+  "mig006": {
+   "plans_policies": 2
+  },
+  "mig007": {
+   "targets": 0,
+   "present": 0,
+   "missing": []
+  },
+  "mig008": {
+   "ai_tables": [
+    "ai_api_keys",
+    "ai_circuit_breaker_state",
+    "ai_coach_recommendations",
+    "ai_coach_sessions",
+    "ai_credit_balances",
+    "ai_credit_packs",
+    "ai_credit_transactions",
+    "ai_document_uploads",
+    "ai_generated_questions",
+    "ai_generation_queue",
+    "ai_generation_requests",
+    "ai_providers_config",
+    "ai_question_improvements",
+    "ai_quotas",
+    "ai_usage_stats",
+    "ai_validation_results"
+   ]
+  },
+  "mig009": {
+   "certificate_columns": [
+    "id",
+    "student_id",
+    "exam_session_id",
+    "certificate_url",
+    "issued_at",
+    "created_at",
+    "exam_id",
+    "session_id",
+    "title",
+    "type",
+    "score",
+    "grade",
+    "student_name",
+    "exam_title",
+    "verification_code",
+    "school_id",
+    "metadata",
+    "delivered_at",
+    "updated_at"
+   ]
+  }
+ }
+}

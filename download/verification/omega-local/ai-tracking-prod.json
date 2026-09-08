@@ -1,0 +1,34 @@
+{
+ "timestamp": "2026-09-08T03:08:14.861Z",
+ "prod": "https://web-alpha-bay-87.vercel.app",
+ "steps": [
+  {
+   "step": "super_admin login",
+   "ok": true
+  },
+  {
+   "step": "seed plans",
+   "ok": true,
+   "detail": {
+    "status": 200,
+    "body": "{\"success\":true,\"message\":\"Seeded 5 plan rows\",\"inserted\":[{\"id\":\"20fd1bde-a1c5-4b16-8c1e-6cc0cb0d0b3c\",\"name\":\"Starter (Monthly)\",\"tier\":\"starter\",\"billing_cycle\":\"monthly\",\"price\":73500,\"currency\":\"NGN\"},{\"id\":\"b0f67291-5e2b-4074-ab78-9f013db208b4\",\"name\":\"Starter (Yearly)\",\"tier\":\"starter\",\"billing_cycle\":\"yearly\",\"price\":702000,\"currency\":\"NGN\"},{\"id\":\"e55cb929-040a-42a8-a44f-1830d8b71422\",\"na"
+   }
+  },
+  {
+   "step": "ai usage analytics",
+   "ok": true,
+   "detail": {
+    "status": 200,
+    "body": "{\"scope\":\"school\",\"schoolId\":\"995576f7-1c97-4f69-857a-28d8faec6b46\",\"stats\":{\"totalGenerations\":0,\"totalTokens\":0,\"totalCost\":0,\"byProvider\":{},\"byStatus\":{},\"avgDurationMs\":0},\"recent\":{\"generations\":[],\"total\":0}}"
+   }
+  },
+  {
+   "step": "teacher AI generation",
+   "ok": true,
+   "detail": {
+    "status": 403,
+    "body": "{\"error\":\"Plan upgrade required\",\"requiredPlan\":\"professional\",\"currentPlan\":\"free\"}"
+   }
+  }
+ ]
+}

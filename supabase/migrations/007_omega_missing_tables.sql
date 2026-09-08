@@ -1402,11 +1402,12 @@ BEGIN
 END $$;
 
 -- 12.5 User-scoped tables: owner full access + super_admin
+-- (api_keys excluded: it is org/school-scoped with created_by — covered by 12.6)
 DO $$
 DECLARE
   t text;
 BEGIN
-  FOREACH t IN ARRAY ARRAY['api_keys','push_tokens','session_activity_log','avatars']
+  FOREACH t IN ARRAY ARRAY['push_tokens','session_activity_log','avatars']
   LOOP
     EXECUTE format('CREATE POLICY owner_access_%I ON public.%I
       FOR ALL TO authenticated

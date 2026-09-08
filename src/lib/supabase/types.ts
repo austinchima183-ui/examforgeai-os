@@ -991,13 +991,20 @@ export interface AiGenerationRow {
 
 export interface AiGenerationInsert {
   id?: string
+  /** Legacy NOT NULL column — owner of the request (same as user_id). */
+  requested_by: string
   user_id: string
   school_id?: string | null
   provider: AiProvider
+  /** Legacy NOT NULL column — model identifier (same as model). */
+  model_name: string
   model: string
+  /** Legacy NOT NULL column — prompt_type enum (question_generation, lesson_plan, chat_completion, ...). */
+  generation_type: string
   status?: GenerationStatus
   prompt_template_id?: string | null
-  input_params?: Record<string, unknown> | null
+  /** Legacy NOT NULL column — request parameters as JSON. */
+  input_params: Record<string, unknown>
   prompt_text?: string | null
   system_prompt?: string | null
   output?: Record<string, unknown> | null

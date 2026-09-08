@@ -1,0 +1,18 @@
+{
+ "timestamp": "2026-09-08T02:49:26.161Z",
+ "provisioned": [
+  "NEXT_PUBLIC_SUPABASE_URL",
+  "NEXT_PUBLIC_SUPABASE_ANON_KEY",
+  "SUPABASE_SERVICE_ROLE_KEY",
+  "NEXT_PUBLIC_APP_URL",
+  "SESSION_TOKEN_SECRET",
+  "CSRF_SECRET",
+  "ENCRYPTION_KEY",
+  "WEBHOOK_SECRET",
+  "FLUTTERWAVE_SECRET_KEY",
+  "FLUTTERWAVE_PUBLIC_KEY",
+  "FLUTTERWAVE_WEBHOOK_HASH"
+ ],
+ "failed": [],
+ "note": "values never recorded; keys list only"
+}
