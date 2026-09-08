@@ -362,3 +362,83 @@ Work Log:
 
 Stage Summary:
 - VERDICT: ✅ RC1 PRODUCTION CERTIFIED — all owner actions executed and verified; all gates green on fresh live evidence; 5 production defects found by live verification, fixed, and re-verified.
+---
+Task ID: INV-4
+Agent: Explore (schema inventory)
+Task: Read-only inventory of all 9 Supabase migration files (002-010) + table-probe cross-reference.
+
+Work Log:
+- Read worklog tail (RC1 context: 005/007 defect fixes, live DB now at 260 tables).
+- Read all 9 files in supabase/migrations/ end-to-end (002: 805 lines; 007: 1,522 lines; rest small). Extracted CREATE TABLE / ALTER / policy / function / trigger / enum / seed inventory via rg + full reads.
+- Counted effective policies in 007 (17 literal CREATE POLICY, but DO-loop format() generates ~66 total: 12.3=42, 12.4=8, 12.5=3, 12.6=6, 12.7=7).
+- Replicated scripts/omega/table-probe.js .from() regex over src/**\/*.{ts,tsx} (excl. __tests__): 158 distinct table names — matches worklog's 72 EXISTS + 80 MISSING + 5 recursion-500 + 1 FORBIDDEN = 158 pre-migration baseline.
+- Verified edit evidence: 005 line ~40 note (get_user_role must return user_role enum, TEXT would 42883-break 12 live policies); 007 §12.5 note (api_keys moved to creator-scope 12.6).
+
+Stage Summary:
+- 82 distinct tables created across migrations: 002=20 (19 new + exam_sessions recreated), 003=2 (sessions, passkey_registrations), 007=59, 010=1 (ai_request_log). Core (002-004)=22 tables; later-only (007+010)=60.
+- Biggest domains: billing/finance 16, CBT/exams 9, institutions/SIS 9, enterprise identity+dev security 14 (8 SSO/SCIM + 6 api-keys/oauth/sessions/passkeys), AI 7, comms 6, workflow 6.
+- RLS model: helper-function delegation (get_user_role/is_school_member/user_can_access_class, all SECURITY DEFINER from 005); auth.uid() owner-scope; ONE JWT-claim policy (006 plans via auth.jwt() app_metadata.role); 007 leaves 17 tables RLS-enabled with NO policies (service-role deny-by-default). Enum: only prompt_type extended in 010. Seeds: 31 role_permissions rows (002); plans seeded via API not SQL (006 note).
+---
+Task ID: INV-2
+Agent: Explore (routes inventory)
+Task: Read-only inventory of all pages, API routes, and the role/access model (src/ only, recovery archive ignored).
+Work Log:
+- Read worklog tail (RC1 context: 277-route sweep claim, 5 roles, DEFAULT-DENY RBAC).
+- Enumerated src/app/**/page.tsx (127) and src/app/api/**/route.{ts,tsx} (151 incl. /api/og edge OG-image route) via node fs walk; extracted exported HTTP methods per API route with regex.
+- Read src/middleware.ts fully: session refresh, PUBLIC_ROUTES check, PUBLIC_API_ROUTES (10 prefix entries), auth-only 401 for other /api/*, RBAC longest-prefix match + DEFAULT DENY, /dashboard role redirect, security headers, matcher config.
+- Read src/lib/constants/route-rbac.ts (PUBLIC_ROUTES 36 entries; ROUTE_ROLE_MAP 70+ entries; ROLE_DASHBOARD_MAP) and routes.ts (ROUTES constants + nav, 30KB).
+- Confirmed roles from canonical-types.ts: student/parent/teacher/school_admin/super_admin + ROLE_HIERARCHY 0-4 (require-auth.ts); server-side guards requireAuth/requireRole + api auth-guard (requireApiAuth/deriveTenantContext) + csrf-guard (X-CSRF-Token, HMAC bound to user id, safe-method exempt).
+- Verified webhooks: /api/billing/webhook (unified provider-detect Flutterwave/Paystack), /api/billing/webhooks, /api/billing/paystack/webhook, /api/marketplace/webhook (Flutterwave) + 13 Supabase edge functions; SSE at /api/ai/stream (text/event-stream); /api/route.ts root = health check; server actions in src/features/** (12 files).
+- Categorized all 278 routes into 20 functional modules; cross-checked totals (127+151=278; prior sweep said 277 — the +1 is /api/og counted as route.tsx).
+Stage Summary:
+- 127 pages (marketing 29, public 6, admin 7, app 85), 151 API route files (~320 method handlers). 5 roles, DEFAULT-DENY RBAC via shared ROUTE_ROLE_MAP; 4 app webhook endpoints + 13 edge functions; 1 SSE route; public API surface = 10 prefix families (health prefix exposes /api/health/*; demo-booking prefix exposes [id] mutations).
+---
+Task ID: INV-1
+Agent: Explore (claims extraction)
+Task: Extract every product promise/claim from marketing surfaces (src/app/(marketing), (public), components/marketing, metadata, root docs) for claims-vs-reality audit.
+Work Log:
+- Read worklog tail for context (RC1 certified; claims gate 25/25 exists via scripts/omega/landing-promises.py).
+- Mapped landing page composition (18 sections via dynamic imports) and read every marketing component for rendered copy: hero, trusted-by, platform-overview, core-products (10 modules), ecosystem, ai-features (8 features), cbt-experience (7 steps), comparison (19 rows), security (8 features + 6 certs), analytics, interactive-demos, roi-calculator, device-previews, enhanced-social-proof, customer-stories, pricing (3 tiers + tooltips), testimonials (6), timeline, faq-data (17 Q&A), cta, footer, nav, announcement-bar, trust-notifications.
+- Read brand-constants.ts (single source of METRICS/PRODUCT/GUARANTEE/COMPANY numbers: 500 schools, 120K students, 2M exams, 99.9% SLA, 99% AI accuracy, 85% time saved, ₦49/₦149, 14-day trial & money-back, Series A $2.5M).
+- Read all (marketing) sub-pages with claim-bearing copy: pricing, security (SOC2/GDPR/NDPR/ISO/DDoS/RTO-RPO claims), status (8 services Operational + 3 future-dated incidents), integrations (12 named integrations), api-docs (rate tiers, OAuth, SDKs, api.examforge.ai), solutions (6 audiences, WAEC/NECO/JAMB, blockchain certs, facial recognition), customers (verified testimonials + NPS/retention), case-studies (5 studies with hard numbers), about (founding/Series A/team), features, changelog, demo; harvested every export const metadata title/description.
+- Read (public) pages + auth form brand panels (login/register promise copy, "All systems operational", certificate verification).
+- Read scripts/omega/landing-promises.py fully — extracted its 25 promise IDs.
+- Root docs check: NO README.md exists at root; root .md files are internal engineering reports (FINAL_OMEGA_REPORT.md, EXAMFORGE_RC1_CERTIFICATION.md, docs/OWNER_ACTIONS.md) — internal verification claims only, no user-facing marketing.
+- IGNORED audit/examforge-recovery and download/ per mandate.
+
+Stage Summary:
+- Extracted ~110 distinct product claims across landing (hero/features/CBT/security/pricing/FAQ/social proof), marketing sub-pages (security/integrations/status/case-studies/solutions/customers/api-docs/about), public auth pages, and metadata/JSON-LD (4.9/5 aggregate rating, $39–149 offers, 4 countries).
+- Pricing truth: Starter $49/$39, Professional $149/$119 (yearly, "Most Popular"), Enterprise custom; NGN via USD×1500; 14-day trial no credit card.
+- GAP: landing-promises.py verifies only 25 feature-level claims; NOT verified: all certifications (SOC 2 Type II, GDPR, NDPR, ISO 27001), uptime numbers, social proof metrics, integration partners (Moodle/WhatsApp/Slack/Zapier/PowerBI/BigQuery), blockchain certificates, facial recognition/keystroke anti-cheat, migration tools, free tier, support SLAs, SDKs, status page (future-dated incidents), aggregate rating.
+---
+Task ID: INV-3
+Agent: Explore (module map)
+Task: Map every feature module: implementation depth, Supabase tables, integrations/env vars, test coverage, dead code — feeding production-readiness judgment.
+Work Log:
+- Read worklog tail (RC1 context: migrations 005-010 applied live, 260 tables, 19-21 still-missing "graceful" tables).
+- Enumerated src tree (127 pages, 150 API route files, 277 routes), supabase/functions (14 edge fns), supabase/migrations (9 SQL files).
+- Grepped all .from('table') refs (130+ distinct tables in src, 14 in edge fns); diffed vs repo migrations + audit artifact missing-tables-exact.json (78 missing at audit; 59 fixed by 007; 19 still have no repo migration).
+- Grepped all process.env usages (70+ vars); mapped to modules.
+- Verified decisive wiring per module: middleware default-deny RBAC; enforceCsrf in 95 API routes; TOTP 2FA in /api/settings/security (users.settings.two_factor); CBT submitExam persistence (total_score) + offline_sync_queue + Dexie; executeAI tracking insert + edge-function fallback + ai_quotas; certificates insert + 009 ALTERs + public verify/QR; Flutterwave 6 edge fns; notifications queue tables; widget system e2e-verified; import engine→users/enrollments; redis.ts confirmed stub.
+- Test inventory: 14 unit test files (~529 it/test blocks; runtime 1028 w/ parameterization) + 12 e2e specs (32-36 tests).
+- Dead-code sweep: privacy (2086 lines), motion, disaster-recovery, middleware-security.ts, certification.ts (matrix), sentry.*.config.ts trio, requireCsrf, next-intl dep, enterprise-security device/risk/conditional-access — all zero-import verified.
+Stage Summary:
+- 13 modules mapped; 6 FULL (Auth/RBAC, CBT incl. offline, AI, Billing, Widgets, Learning-core), 5 PARTIAL (Certificates-no-tests, Notifications, Analytics scheduled-reports, Import-no-tests, Observability-Sentry-unwired), 1 STUB (i18n).
+- 19 code-referenced tables with no repo migration (live-graceful); 9 dead/unwired code clusters; env var master list captured.
+
+---
+Task ID: RC1-REALITY-INVENTORY
+Agent: Super Z (main)
+Task: COMPLETE PRODUCT REALITY INVENTORY — 7-step claims-vs-reality assessment under Rule Zero (no prior summary trusted).
+
+Work Log:
+- Fresh baseline: git ls-remote origin main = HEAD = 0bf005b, 0 ahead — PHASE 18/19 already executed by prior session (RC1 certification commit verified).
+- Launched 4 parallel Explore agents (INV-1..4): 110 marketing claims extracted with file:line sources; 127 pages + 151 API route files inventoried with RBAC model; 12-module feature depth map; 82-table migration schema inventory.
+- Fresh gate re-runs (all green): build exit 0 (235 static pages); tsc 0 errors; eslint 0 errors; vitest 1028 passed / 0 failed / 34 skipped; E2E 36/36 across 12 suites (5 e2e-batch runs; one batch hit the 10-min tool timeout mid-run, remaining suites re-run — 04/05/06 completed before the kill, 07 re-run clean); route sweep 277 routes 0x5xx with 11 redirects verified resolving to safe terminals; a11y 0 violations across 4 surfaces; security audit 0 client/0 server leaks, headers+auth PASS; landing-promises 25/25.
+- Fresh live probes: table-probe 137/158 EXISTS / 21 MISSING (documented graceful) / 0x500 / 0 FORBIDDEN; prod-smoke 9/9 PASS; production AI 200 with real gemini-3.6-flash content + live quota decrement (remaining=19); edge functions live with JWT verification (401 on bad token); deployed build confirmed to contain PHASE 19 fixes (public cert verify 200 direct).
+- Environment learning: background processes die at tool-call end — builds/E2E run foreground; server+consumer share one call (with-server.sh / e2e-batch.sh pattern).
+- Compiled the 7-step reality inventory: claims-vs-reality matrix (110 claims, 9 categories, 5-level statuses), feature map, per-role UX reality, production readiness table, missing-vision analysis (fabricated marketing layer, 21-table gap, dead code inventory, Sentry unwired, dirty audit gitlink), final product statement.
+
+Stage Summary:
+- Deliverable: EXAMFORGE_RC1_REALITY_INVENTORY.md (repo root + download/ copy), committed and pushed.
+- Core verdict: production-quality engine (all engineering gates re-verified green, real AI, live DB fully migrated) wrapped in a fabricated marketing layer (metrics, certifications, testimonials, integrations, SLA are hardcoded fiction) — 7-item pre-public-launch list issued.
