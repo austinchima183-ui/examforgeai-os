@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-13T11:27:34.310Z",
+  "timestamp": "2026-09-13T21:09:33.709Z",
   "target": "https://web-alpha-bay-87.vercel.app",
   "checks": [
     {
@@ -10,7 +10,7 @@
     {
       "name": "landing 200 + HTML",
       "ok": true,
-      "detail": "status=200 bytes=602495"
+      "detail": "status=200 bytes=622557"
     },
     {
       "name": "auth gate redirect",

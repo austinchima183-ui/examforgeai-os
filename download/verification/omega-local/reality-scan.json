@@ -1,12 +1,12 @@
 {
- "scannedAt": "2026-09-13T11:25:11.515397",
+ "scannedAt": "2026-09-13T21:11:48.725770",
  "total": 177,
  "items": [
   {
-   "file": "components/docs/code-block.tsx",
-   "line": 180,
-   "label": "graphql",
-   "evidence": "graphql: 'GraphQL',"
+   "file": "components/ai/ai-copilot.tsx",
+   "line": 142,
+   "label": "ratings",
+   "evidence": "'How can we improve student retention?',"
   },
   {
    "file": "components/ai/examforge-intelligence.tsx",
@@ -15,10 +15,10 @@
    "evidence": "{ label: 'Add break times', icon: <Lightbulb className=\"size-4\" />, prompt: 'Help me add strategic break times to my study plan using the Pomodoro tec"
   },
   {
-   "file": "components/ai/ai-copilot.tsx",
-   "line": 142,
-   "label": "ratings",
-   "evidence": "'How can we improve student retention?',"
+   "file": "components/marketing/contact-page-content.tsx",
+   "line": 78,
+   "label": "compliance",
+   "evidence": "answer: 'Data security is a top priority. We enforce TLS encryption in transit, five-role access control, row-level security on every database table, "
   },
   {
    "file": "components/marketing/security-section.tsx",
@@ -33,10 +33,10 @@
    "evidence": "detail: 'Backup cadence and retention follow the provider defaults for the project tier. Verify current coverage for your SLA needs.',"
   },
   {
-   "file": "components/marketing/contact-page-content.tsx",
-   "line": 78,
-   "label": "compliance",
-   "evidence": "answer: 'Data security is a top priority. We enforce TLS encryption in transit, five-role access control, row-level security on every database table, "
+   "file": "components/docs/code-block.tsx",
+   "line": 180,
+   "label": "graphql",
+   "evidence": "graphql: 'GraphQL',"
   },
   {
    "file": "lib/disaster-recovery.ts",
@@ -57,34 +57,28 @@
    "evidence": "retention: '7 days (Supabase Pro) / 30 days (Supabase Enterprise)',"
   },
   {
-   "file": "lib/alerting/types.ts",
-   "line": 168,
+   "file": "lib/alerting/delivery-engine.ts",
+   "line": 10,
    "label": "integrations_fake",
-   "evidence": "config: SlackChannelConfig | DiscordChannelConfig | TeamsChannelConfig"
+   "evidence": "import { sendSlackAlert } from './channels/slack'"
   },
   {
-   "file": "lib/alerting/types.ts",
-   "line": 174,
+   "file": "lib/alerting/delivery-engine.ts",
+   "line": 21,
    "label": "integrations_fake",
-   "evidence": "/** Slack channel configuration. */"
+   "evidence": "SlackChannelConfig,"
   },
   {
-   "file": "lib/alerting/types.ts",
-   "line": 175,
+   "file": "lib/alerting/delivery-engine.ts",
+   "line": 147,
    "label": "integrations_fake",
-   "evidence": "export interface SlackChannelConfig {"
+   "evidence": "const slackConfig = config.config as SlackChannelConfig"
   },
   {
-   "file": "lib/alerting/types.ts",
-   "line": 177,
+   "file": "lib/alerting/delivery-engine.ts",
+   "line": 148,
    "label": "integrations_fake",
-   "evidence": "/** Slack channel name (e.g., '#alerts-critical'). */"
-  },
-  {
-   "file": "lib/alerting/types.ts",
-   "line": 323,
-   "label": "integrations_fake",
-   "evidence": "/** Category icon mapping (emoji for Slack/Discord). */"
+   "evidence": "return sendSlackAlert(slackConfig.webhookUrl, alert)"
   },
   {
    "file": "lib/alerting/escalation.ts",
@@ -123,28 +117,34 @@
    "evidence": "* - Level 3: 15 min \u2014 Slack + Email + SMS"
   },
   {
-   "file": "lib/alerting/delivery-engine.ts",
-   "line": 10,
+   "file": "lib/alerting/types.ts",
+   "line": 168,
    "label": "integrations_fake",
-   "evidence": "import { sendSlackAlert } from './channels/slack'"
+   "evidence": "config: SlackChannelConfig | DiscordChannelConfig | TeamsChannelConfig"
   },
   {
-   "file": "lib/alerting/delivery-engine.ts",
-   "line": 21,
+   "file": "lib/alerting/types.ts",
+   "line": 174,
    "label": "integrations_fake",
-   "evidence": "SlackChannelConfig,"
+   "evidence": "/** Slack channel configuration. */"
   },
   {
-   "file": "lib/alerting/delivery-engine.ts",
-   "line": 147,
+   "file": "lib/alerting/types.ts",
+   "line": 175,
    "label": "integrations_fake",
-   "evidence": "const slackConfig = config.config as SlackChannelConfig"
+   "evidence": "export interface SlackChannelConfig {"
   },
   {
-   "file": "lib/alerting/delivery-engine.ts",
-   "line": 148,
+   "file": "lib/alerting/types.ts",
+   "line": 177,
    "label": "integrations_fake",
-   "evidence": "return sendSlackAlert(slackConfig.webhookUrl, alert)"
+   "evidence": "/** Slack channel name (e.g., '#alerts-critical'). */"
+  },
+  {
+   "file": "lib/alerting/types.ts",
+   "line": 323,
+   "label": "integrations_fake",
+   "evidence": "/** Category icon mapping (emoji for Slack/Discord). */"
   },
   {
    "file": "lib/alerting/channels/slack.ts",
@@ -267,28 +267,46 @@
    "evidence": "const blocks: SlackBlock[] = ["
   },
   {
-   "file": "lib/enterprise-analytics/types.ts",
-   "line": 235,
+   "file": "lib/ai/ai-school-admin.ts",
+   "line": 251,
    "label": "ratings",
-   "evidence": "retention: number"
+   "evidence": "5. Recommendations (expansion, marketing, retention)"
   },
   {
-   "file": "lib/enterprise-analytics/types.ts",
-   "line": 366,
+   "file": "lib/ai/orchestration/agents/compliance-agent.ts",
+   "line": 43,
    "label": "ratings",
-   "evidence": "retentionRate: number"
+   "evidence": "dataInventory: Array<{ dataType: string; classification: string; retention: string; accessControl: string }>"
   },
   {
-   "file": "lib/enterprise-analytics/nlq-service.ts",
-   "line": 29,
+   "file": "lib/ai/orchestration/agents/compliance-agent.ts",
+   "line": 126,
    "label": "ratings",
-   "evidence": "Available metrics: revenue, expenses, profit, mrr, arr, enrollment, retention_rate, attendance_rate, avg_score, pass_rate, fail_rate, avg_gpa, exam_co"
+   "evidence": "8. Record retention policies"
   },
   {
-   "file": "lib/enterprise-analytics/nlq-service.ts",
-   "line": 476,
+   "file": "lib/ai/orchestration/agents/compliance-agent.ts",
+   "line": 176,
    "label": "ratings",
-   "evidence": "const enrollmentMetrics = ['enrollment', 'retention_rate', 'attendance_rate']"
+   "evidence": "7. Data retention \u2014 Are retention policies defined and followed?"
+  },
+  {
+   "file": "lib/ai/orchestration/agents/compliance-agent.ts",
+   "line": 176,
+   "label": "ratings",
+   "evidence": "7. Data retention \u2014 Are retention policies defined and followed?"
+  },
+  {
+   "file": "lib/ai/orchestration/agents/compliance-agent.ts",
+   "line": 180,
+   "label": "ratings",
+   "evidence": "Also provide data inventory with: dataType, classification (public/internal/confidential/restricted), retention policy, access control."
+  },
+  {
+   "file": "lib/ai/orchestration/agents/compliance-agent.ts",
+   "line": 309,
+   "label": "ratings",
+   "evidence": "Cover: data privacy, curriculum alignment, teacher certification, safety standards, financial compliance, accessibility, record retention."
   },
   {
    "file": "lib/enterprise-analytics/drilldown-service.ts",
@@ -303,6 +321,18 @@
    "evidence": "case 'retention_rate':"
   },
   {
+   "file": "lib/enterprise-analytics/nlq-service.ts",
+   "line": 29,
+   "label": "ratings",
+   "evidence": "Available metrics: revenue, expenses, profit, mrr, arr, enrollment, retention_rate, attendance_rate, avg_score, pass_rate, fail_rate, avg_gpa, exam_co"
+  },
+  {
+   "file": "lib/enterprise-analytics/nlq-service.ts",
+   "line": 476,
+   "label": "ratings",
+   "evidence": "const enrollmentMetrics = ['enrollment', 'retention_rate', 'attendance_rate']"
+  },
+  {
    "file": "lib/enterprise-analytics/risk-analytics-service.ts",
    "line": 280,
    "label": "ratings",
@@ -313,6 +343,18 @@
    "line": 320,
    "label": "ratings",
    "evidence": "// Check data retention compliance"
+  },
+  {
+   "file": "lib/enterprise-analytics/types.ts",
+   "line": 235,
+   "label": "ratings",
+   "evidence": "retention: number"
+  },
+  {
+   "file": "lib/enterprise-analytics/types.ts",
+   "line": 366,
+   "label": "ratings",
+   "evidence": "retentionRate: number"
   },
   {
    "file": "lib/enterprise-analytics/enrollment-analytics-service.ts",
@@ -339,22 +381,40 @@
    "evidence": "retentionRate: retentionData.overallRate,"
   },
   {
-   "file": "lib/billing/subscription-service.ts",
-   "line": 117,
-   "label": "ratings",
-   "evidence": "auditLogRetentionDays: plan.audit_log_retention_days ?? 30,"
+   "file": "lib/developer/index.ts",
+   "line": 33,
+   "label": "graphql",
+   "evidence": "GraphQLSchema,"
   },
   {
-   "file": "lib/billing/revenue-dashboard-service.ts",
-   "line": 105,
-   "label": "ratings",
-   "evidence": "// Net retention rate"
+   "file": "lib/developer/index.ts",
+   "line": 34,
+   "label": "graphql",
+   "evidence": "GraphQLType,"
   },
   {
-   "file": "lib/billing/revenue-dashboard-service.ts",
-   "line": 298,
-   "label": "ratings",
-   "evidence": "'Assumes consistent subscriber retention',"
+   "file": "lib/developer/index.ts",
+   "line": 35,
+   "label": "graphql",
+   "evidence": "GraphQLOperation,"
+  },
+  {
+   "file": "lib/developer/index.ts",
+   "line": 36,
+   "label": "graphql",
+   "evidence": "GraphQLField,"
+  },
+  {
+   "file": "lib/developer/index.ts",
+   "line": 37,
+   "label": "graphql",
+   "evidence": "GraphQLArgument,"
+  },
+  {
+   "file": "lib/developer/index.ts",
+   "line": 99,
+   "label": "graphql",
+   "evidence": "getGraphQLSchema,"
   },
   {
    "file": "lib/developer/types.ts",
@@ -465,42 +525,6 @@
    "evidence": "args: GraphQLArgument[];"
   },
   {
-   "file": "lib/developer/index.ts",
-   "line": 33,
-   "label": "graphql",
-   "evidence": "GraphQLSchema,"
-  },
-  {
-   "file": "lib/developer/index.ts",
-   "line": 34,
-   "label": "graphql",
-   "evidence": "GraphQLType,"
-  },
-  {
-   "file": "lib/developer/index.ts",
-   "line": 35,
-   "label": "graphql",
-   "evidence": "GraphQLOperation,"
-  },
-  {
-   "file": "lib/developer/index.ts",
-   "line": 36,
-   "label": "graphql",
-   "evidence": "GraphQLField,"
-  },
-  {
-   "file": "lib/developer/index.ts",
-   "line": 37,
-   "label": "graphql",
-   "evidence": "GraphQLArgument,"
-  },
-  {
-   "file": "lib/developer/index.ts",
-   "line": 99,
-   "label": "graphql",
-   "evidence": "getGraphQLSchema,"
-  },
-  {
    "file": "lib/developer/api-registry.ts",
    "line": 16,
    "label": "graphql",
@@ -585,280 +609,64 @@
    "evidence": "changelog: 'Added GraphQL support, improved rate limiting, and enhanced AI endpoints.',"
   },
   {
-   "file": "lib/ai/ai-school-admin.ts",
-   "line": 251,
+   "file": "lib/billing/revenue-dashboard-service.ts",
+   "line": 105,
    "label": "ratings",
-   "evidence": "5. Recommendations (expansion, marketing, retention)"
+   "evidence": "// Net retention rate"
   },
   {
-   "file": "lib/ai/orchestration/agents/compliance-agent.ts",
-   "line": 43,
+   "file": "lib/billing/revenue-dashboard-service.ts",
+   "line": 298,
    "label": "ratings",
-   "evidence": "dataInventory: Array<{ dataType: string; classification: string; retention: string; accessControl: string }>"
+   "evidence": "'Assumes consistent subscriber retention',"
   },
   {
-   "file": "lib/ai/orchestration/agents/compliance-agent.ts",
-   "line": 126,
+   "file": "lib/billing/subscription-service.ts",
+   "line": 117,
    "label": "ratings",
-   "evidence": "8. Record retention policies"
+   "evidence": "auditLogRetentionDays: plan.audit_log_retention_days ?? 30,"
   },
   {
-   "file": "lib/ai/orchestration/agents/compliance-agent.ts",
-   "line": 176,
-   "label": "ratings",
-   "evidence": "7. Data retention \u2014 Are retention policies defined and followed?"
+   "file": "app/(marketing)/status/page.tsx",
+   "line": 29,
+   "label": "graphql",
+   "evidence": "// services (including a GraphQL API that does not exist), a fabricated"
   },
   {
-   "file": "lib/ai/orchestration/agents/compliance-agent.ts",
-   "line": 176,
-   "label": "ratings",
-   "evidence": "7. Data retention \u2014 Are retention policies defined and followed?"
+   "file": "app/(marketing)/status/page.tsx",
+   "line": 29,
+   "label": "fictional_services",
+   "evidence": "// services (including a GraphQL API that does not exist), a fabricated"
   },
   {
-   "file": "lib/ai/orchestration/agents/compliance-agent.ts",
-   "line": 180,
-   "label": "ratings",
-   "evidence": "Also provide data inventory with: dataType, classification (public/internal/confidential/restricted), retention policy, access control."
+   "file": "app/(marketing)/case-studies/page.tsx",
+   "line": 29,
+   "label": "institutions",
+   "evidence": "// elaborate fictional case studies (LASU, Grace International School, the"
   },
   {
-   "file": "lib/ai/orchestration/agents/compliance-agent.ts",
-   "line": 309,
-   "label": "ratings",
-   "evidence": "Cover: data privacy, curriculum alignment, teacher certification, safety standards, financial compliance, accessibility, record retention."
+   "file": "app/(marketing)/case-studies/page.tsx",
+   "line": 30,
+   "label": "institutions",
+   "evidence": "// Federal Ministry of Education, Covenant University) with invented metrics,"
   },
   {
-   "file": "content/knowledge-base.ts",
-   "line": 502,
-   "label": "compliance",
-   "evidence": "How we protect it: All data is encrypted in transit (TLS), and at rest by our managed database provider. Data is stored in our managed database provid"
+   "file": "app/(marketing)/case-studies/page.tsx",
+   "line": 30,
+   "label": "institutions",
+   "evidence": "// Federal Ministry of Education, Covenant University) with invented metrics,"
   },
   {
-   "file": "content/knowledge-base.ts",
-   "line": 504,
-   "label": "ratings",
-   "evidence": "Your rights under NDPR: You have the right to access your data (request a copy), rectify inaccuracies, request deletion (subject to legitimate retenti"
-  },
-  {
-   "file": "content/blog.ts",
-   "line": 209,
-   "label": "compliance",
-   "evidence": "Our security architecture operates on the principle of defense in depth\u2014multiple overlapping security layers that ensure no single point of failure ca"
-  },
-  {
-   "file": "content/blog.ts",
-   "line": 209,
-   "label": "compliance",
-   "evidence": "Our security architecture operates on the principle of defense in depth\u2014multiple overlapping security layers that ensure no single point of failure ca"
-  },
-  {
-   "file": "content/blog.ts",
-   "line": 213,
-   "label": "compliance",
-   "evidence": "Let us be direct about compliance: we are NOT yet NDPR or GDPR certified, we have not appointed a Data Protection Officer, and we have no SOC 2 report"
-  },
-  {
-   "file": "content/blog.ts",
-   "line": 213,
-   "label": "compliance",
-   "evidence": "Let us be direct about compliance: we are NOT yet NDPR or GDPR certified, we have not appointed a Data Protection Officer, and we have no SOC 2 report"
-  },
-  {
-   "file": "content/blog.ts",
-   "line": 192,
-   "label": "ratings",
-   "evidence": "tags: ['predictive analytics', 'at-risk students', 'machine learning', 'dropout prevention', 'student retention'],"
-  },
-  {
-   "file": "content/seo.ts",
-   "line": 59,
-   "label": "ratings",
-   "evidence": "keywords: ['student analytics', 'predictive analytics education', 'at-risk students', 'student retention', 'performance analytics', 'early warning sys"
-  },
-  {
-   "file": "content/docs.ts",
-   "line": 186,
-   "label": "ratings",
-   "evidence": "Step 1 \u2014 Define the Exam Structure: Navigate to Exams \u2192 Create Exam. Enter the exam title, select the subject and class level, and choose the examinat"
-  },
-  {
-   "file": "content/docs.ts",
-   "line": 848,
-   "label": "integrations_fake",
-   "evidence": "Honest status: we do not currently ship pre-built connectors for Google Workspace, Microsoft 365, or PowerSchool \u2014 and we will not document integratio"
-  },
-  {
-   "file": "content/docs.ts",
-   "line": 848,
-   "label": "integrations_fake",
-   "evidence": "Honest status: we do not currently ship pre-built connectors for Google Workspace, Microsoft 365, or PowerSchool \u2014 and we will not document integratio"
-  },
-  {
-   "file": "app/(app)/admin/integrations/page.tsx",
-   "line": 24,
-   "label": "integrations_fake",
-   "evidence": "'Google Workspace': { icon: <Globe className=\"h-5 w-5\" />, color: 'text-destructive', bg: 'bg-destructive/10', description: 'Sync users, calendar, and"
-  },
-  {
-   "file": "app/(app)/admin/integrations/page.tsx",
-   "line": 25,
-   "label": "integrations_fake",
-   "evidence": "'Microsoft 365': { icon: <Globe className=\"h-5 w-5\" />, color: 'text-primary', bg: 'bg-primary/10', description: 'Integrate with Microsoft Teams, OneD"
-  },
-  {
-   "file": "app/(app)/admin/integrations/page.tsx",
-   "line": 26,
-   "label": "integrations_fake",
-   "evidence": "'WhatsApp Business': { icon: <Zap className=\"h-5 w-5\" />, color: 'text-green-600', bg: 'bg-green-100 dark:bg-green-900/30', description: 'Send notific"
-  },
-  {
-   "file": "app/(app)/admin/integrations/page.tsx",
-   "line": 26,
-   "label": "integrations_fake",
-   "evidence": "'WhatsApp Business': { icon: <Zap className=\"h-5 w-5\" />, color: 'text-green-600', bg: 'bg-green-100 dark:bg-green-900/30', description: 'Send notific"
-  },
-  {
-   "file": "app/(app)/admin/backups/page.tsx",
+   "file": "app/(marketing)/gdpr/page.tsx",
    "line": 53,
    "label": "ratings",
-   "evidence": "retentionDays: number"
+   "evidence": "'We process data as required by applicable laws and regulations, including tax requirements, data retention obligations, and responses to lawful reque"
   },
   {
-   "file": "app/(app)/admin/backups/page.tsx",
-   "line": 180,
+   "file": "app/(marketing)/gdpr/page.tsx",
+   "line": 162,
    "label": "ratings",
-   "evidence": "retentionDays: schedule?.retentionDays,"
-  },
-  {
-   "file": "app/(app)/admin/backups/page.tsx",
-   "line": 180,
-   "label": "ratings",
-   "evidence": "retentionDays: schedule?.retentionDays,"
-  },
-  {
-   "file": "app/(app)/admin/backups/page.tsx",
-   "line": 240,
-   "label": "ratings",
-   "evidence": "Configure automatic backup frequency and retention policy."
-  },
-  {
-   "file": "app/(app)/admin/backups/page.tsx",
-   "line": 278,
-   "label": "ratings",
-   "evidence": "value={schedule.retentionDays}"
-  },
-  {
-   "file": "app/(app)/admin/backups/page.tsx",
-   "line": 279,
-   "label": "ratings",
-   "evidence": "onChange={(e) => handleUpdateSchedule({ retentionDays: parseInt(e.target.value) || 30 })}"
-  },
-  {
-   "file": "app/(app)/admin/organization-settings/page.tsx",
-   "line": 35,
-   "label": "ratings",
-   "evidence": "// Organization branding, academic year, grading, feature flags, data retention."
-  },
-  {
-   "file": "app/(app)/admin/organization-settings/page.tsx",
-   "line": 92,
-   "label": "ratings",
-   "evidence": "retentionDays: number"
-  },
-  {
-   "file": "app/(app)/admin/organization-settings/page.tsx",
-   "line": 119,
-   "label": "ratings",
-   "evidence": "const [retentionDays, setRetentionDays] = useState(365)"
-  },
-  {
-   "file": "app/(app)/admin/organization-settings/page.tsx",
-   "line": 134,
-   "label": "ratings",
-   "evidence": "setRetentionDays(settingsData.retentionDays)"
-  },
-  {
-   "file": "app/(app)/admin/organization-settings/page.tsx",
-   "line": 143,
-   "label": "ratings",
-   "evidence": "gradingType, gradeScale, features, emailDomain, retentionDays,"
-  },
-  {
-   "file": "app/(app)/admin/organization-settings/page.tsx",
-   "line": 212,
-   "label": "ratings",
-   "evidence": "<TabsTrigger value=\"retention\" className=\"gap-1 text-xs sm:text-sm\">"
-  },
-  {
-   "file": "app/(app)/admin/organization-settings/page.tsx",
-   "line": 505,
-   "label": "ratings",
-   "evidence": "<TabsContent value=\"retention\">"
-  },
-  {
-   "file": "app/(app)/admin/organization-settings/page.tsx",
-   "line": 521,
-   "label": "ratings",
-   "evidence": "value={retentionDays}"
-  },
-  {
-   "file": "app/(app)/admin/organization-settings/page.tsx",
-   "line": 527,
-   "label": "ratings",
-   "evidence": "Data older than {retentionDays} days will be automatically archived and eventually deleted."
-  },
-  {
-   "file": "app/(app)/analytics/enterprise/page.tsx",
-   "line": 132,
-   "label": "ratings",
-   "evidence": "{ label: 'Retention Rate', value: fmtPct(Number(d.retentionRate) || 0), change: 'live', trend: 'flat', icon: TrendingUp },"
-  },
-  {
-   "file": "app/(app)/settings/page.tsx",
-   "line": 775,
-   "label": "integrations_fake",
-   "evidence": "<p className=\"text-sm font-medium\">Google Workspace</p>"
-  },
-  {
-   "file": "app/(app)/notifications/preferences/page.tsx",
-   "line": 73,
-   "label": "integrations_fake",
-   "evidence": "{ key: 'whatsapp' as const, label: 'WhatsApp (coming soon)', icon: Smartphone, description: 'Receive WhatsApp messages' },"
-  },
-  {
-   "file": "app/(app)/notifications/preferences/page.tsx",
-   "line": 73,
-   "label": "integrations_fake",
-   "evidence": "{ key: 'whatsapp' as const, label: 'WhatsApp (coming soon)', icon: Smartphone, description: 'Receive WhatsApp messages' },"
-  },
-  {
-   "file": "app/(app)/notifications/history/page.tsx",
-   "line": 295,
-   "label": "integrations_fake",
-   "evidence": "<SelectItem value=\"whatsapp\">WhatsApp (coming soon)</SelectItem>"
-  },
-  {
-   "file": "app/(marketing)/security/page.tsx",
-   "line": 31,
-   "label": "compliance",
-   "evidence": "'We are NOT currently SOC 2, ISO 27001, GDPR, or NDPR certified \u2014 and we will not pretend otherwise. We design with those frameworks in mind (least-pr"
-  },
-  {
-   "file": "app/(marketing)/security/page.tsx",
-   "line": 31,
-   "label": "compliance",
-   "evidence": "'We are NOT currently SOC 2, ISO 27001, GDPR, or NDPR certified \u2014 and we will not pretend otherwise. We design with those frameworks in mind (least-pr"
-  },
-  {
-   "file": "app/(marketing)/security/page.tsx",
-   "line": 31,
-   "label": "compliance",
-   "evidence": "'We are NOT currently SOC 2, ISO 27001, GDPR, or NDPR certified \u2014 and we will not pretend otherwise. We design with those frameworks in mind (least-pr"
-  },
-  {
-   "file": "app/(marketing)/security/page.tsx",
-   "line": 61,
-   "label": "compliance",
-   "evidence": "name: 'SOC 2 Type II',"
+   "evidence": "'Automated data retention and deletion policies',"
   },
   {
    "file": "app/(marketing)/customers/page.tsx",
@@ -903,6 +711,24 @@
    "evidence": "// schools, 120K students, NPS 72, 97.2% retention, 98.6% satisfaction),"
   },
   {
+   "file": "app/(marketing)/help-center/page.tsx",
+   "line": 128,
+   "label": "compliance",
+   "evidence": "'ExamForge AI enforces TLS encryption in transit, five-role access control, row-level security on every database table, CSRF protection, and strict se"
+  },
+  {
+   "file": "app/(marketing)/help-center/page.tsx",
+   "line": 128,
+   "label": "compliance",
+   "evidence": "'ExamForge AI enforces TLS encryption in transit, five-role access control, row-level security on every database table, CSRF protection, and strict se"
+  },
+  {
+   "file": "app/(marketing)/docs/page.tsx",
+   "line": 171,
+   "label": "integrations_fake",
+   "evidence": "{ icon: 'database', title: 'Power BI / Tableau', description: 'Connect ExamForge data to your business intelligence tools for advanced analytics.', st"
+  },
+  {
    "file": "app/(marketing)/privacy/page.tsx",
    "line": 187,
    "label": "ratings",
@@ -927,64 +753,46 @@
    "evidence": "'Examination data, including questions, responses, and results, is retained for the duration of the institution\\'s subscription and for 5 years after "
   },
   {
-   "file": "app/(marketing)/docs/page.tsx",
-   "line": 171,
+   "file": "app/(marketing)/security/page.tsx",
+   "line": 31,
+   "label": "compliance",
+   "evidence": "'We are NOT currently SOC 2, ISO 27001, GDPR, or NDPR certified \u2014 and we will not pretend otherwise. We design with those frameworks in mind (least-pr"
+  },
+  {
+   "file": "app/(marketing)/security/page.tsx",
+   "line": 31,
+   "label": "compliance",
+   "evidence": "'We are NOT currently SOC 2, ISO 27001, GDPR, or NDPR certified \u2014 and we will not pretend otherwise. We design with those frameworks in mind (least-pr"
+  },
+  {
+   "file": "app/(marketing)/security/page.tsx",
+   "line": 31,
+   "label": "compliance",
+   "evidence": "'We are NOT currently SOC 2, ISO 27001, GDPR, or NDPR certified \u2014 and we will not pretend otherwise. We design with those frameworks in mind (least-pr"
+  },
+  {
+   "file": "app/(marketing)/security/page.tsx",
+   "line": 61,
+   "label": "compliance",
+   "evidence": "name: 'SOC 2 Type II',"
+  },
+  {
+   "file": "app/api/alerting/channels/route.ts",
+   "line": 19,
    "label": "integrations_fake",
-   "evidence": "{ icon: 'database', title: 'Power BI / Tableau', description: 'Connect ExamForge data to your business intelligence tools for advanced analytics.', st"
+   "evidence": "SlackChannelConfig,"
   },
   {
-   "file": "app/(marketing)/gdpr/page.tsx",
-   "line": 53,
-   "label": "ratings",
-   "evidence": "'We process data as required by applicable laws and regulations, including tax requirements, data retention obligations, and responses to lawful reque"
+   "file": "app/api/alerting/channels/route.ts",
+   "line": 46,
+   "label": "integrations_fake",
+   "evidence": "config: { webhookUrl: slackWebhook } as SlackChannelConfig,"
   },
   {
-   "file": "app/(marketing)/gdpr/page.tsx",
-   "line": 162,
-   "label": "ratings",
-   "evidence": "'Automated data retention and deletion policies',"
-  },
-  {
-   "file": "app/(marketing)/help-center/page.tsx",
-   "line": 128,
-   "label": "compliance",
-   "evidence": "'ExamForge AI enforces TLS encryption in transit, five-role access control, row-level security on every database table, CSRF protection, and strict se"
-  },
-  {
-   "file": "app/(marketing)/help-center/page.tsx",
-   "line": 128,
-   "label": "compliance",
-   "evidence": "'ExamForge AI enforces TLS encryption in transit, five-role access control, row-level security on every database table, CSRF protection, and strict se"
-  },
-  {
-   "file": "app/(marketing)/status/page.tsx",
-   "line": 29,
-   "label": "graphql",
-   "evidence": "// services (including a GraphQL API that does not exist), a fabricated"
-  },
-  {
-   "file": "app/(marketing)/status/page.tsx",
-   "line": 29,
-   "label": "fictional_services",
-   "evidence": "// services (including a GraphQL API that does not exist), a fabricated"
-  },
-  {
-   "file": "app/(marketing)/case-studies/page.tsx",
-   "line": 29,
-   "label": "institutions",
-   "evidence": "// elaborate fictional case studies (LASU, Grace International School, the"
-  },
-  {
-   "file": "app/(marketing)/case-studies/page.tsx",
-   "line": 30,
-   "label": "institutions",
-   "evidence": "// Federal Ministry of Education, Covenant University) with invented metrics,"
-  },
-  {
-   "file": "app/(marketing)/case-studies/page.tsx",
-   "line": 30,
-   "label": "institutions",
-   "evidence": "// Federal Ministry of Education, Covenant University) with invented metrics,"
+   "file": "app/api/alerting/channels/route.ts",
+   "line": 354,
+   "label": "integrations_fake",
+   "evidence": "const c = config.config as SlackChannelConfig"
   },
   {
    "file": "app/api/admin/backups/route.ts",
@@ -1047,22 +855,214 @@
    "evidence": "retention_days: backupSchedule.retentionDays,"
   },
   {
-   "file": "app/api/alerting/channels/route.ts",
-   "line": 19,
-   "label": "integrations_fake",
-   "evidence": "SlackChannelConfig,"
+   "file": "app/(app)/analytics/enterprise/page.tsx",
+   "line": 132,
+   "label": "ratings",
+   "evidence": "{ label: 'Retention Rate', value: fmtPct(Number(d.retentionRate) || 0), change: 'live', trend: 'flat', icon: TrendingUp },"
   },
   {
-   "file": "app/api/alerting/channels/route.ts",
-   "line": 46,
-   "label": "integrations_fake",
-   "evidence": "config: { webhookUrl: slackWebhook } as SlackChannelConfig,"
+   "file": "app/(app)/admin/organization-settings/page.tsx",
+   "line": 35,
+   "label": "ratings",
+   "evidence": "// Organization branding, academic year, grading, feature flags, data retention."
   },
   {
-   "file": "app/api/alerting/channels/route.ts",
-   "line": 354,
+   "file": "app/(app)/admin/organization-settings/page.tsx",
+   "line": 92,
+   "label": "ratings",
+   "evidence": "retentionDays: number"
+  },
+  {
+   "file": "app/(app)/admin/organization-settings/page.tsx",
+   "line": 119,
+   "label": "ratings",
+   "evidence": "const [retentionDays, setRetentionDays] = useState(365)"
+  },
+  {
+   "file": "app/(app)/admin/organization-settings/page.tsx",
+   "line": 134,
+   "label": "ratings",
+   "evidence": "setRetentionDays(settingsData.retentionDays)"
+  },
+  {
+   "file": "app/(app)/admin/organization-settings/page.tsx",
+   "line": 143,
+   "label": "ratings",
+   "evidence": "gradingType, gradeScale, features, emailDomain, retentionDays,"
+  },
+  {
+   "file": "app/(app)/admin/organization-settings/page.tsx",
+   "line": 212,
+   "label": "ratings",
+   "evidence": "<TabsTrigger value=\"retention\" className=\"gap-1 text-xs sm:text-sm\">"
+  },
+  {
+   "file": "app/(app)/admin/organization-settings/page.tsx",
+   "line": 505,
+   "label": "ratings",
+   "evidence": "<TabsContent value=\"retention\">"
+  },
+  {
+   "file": "app/(app)/admin/organization-settings/page.tsx",
+   "line": 521,
+   "label": "ratings",
+   "evidence": "value={retentionDays}"
+  },
+  {
+   "file": "app/(app)/admin/organization-settings/page.tsx",
+   "line": 527,
+   "label": "ratings",
+   "evidence": "Data older than {retentionDays} days will be automatically archived and eventually deleted."
+  },
+  {
+   "file": "app/(app)/admin/backups/page.tsx",
+   "line": 53,
+   "label": "ratings",
+   "evidence": "retentionDays: number"
+  },
+  {
+   "file": "app/(app)/admin/backups/page.tsx",
+   "line": 180,
+   "label": "ratings",
+   "evidence": "retentionDays: schedule?.retentionDays,"
+  },
+  {
+   "file": "app/(app)/admin/backups/page.tsx",
+   "line": 180,
+   "label": "ratings",
+   "evidence": "retentionDays: schedule?.retentionDays,"
+  },
+  {
+   "file": "app/(app)/admin/backups/page.tsx",
+   "line": 240,
+   "label": "ratings",
+   "evidence": "Configure automatic backup frequency and retention policy."
+  },
+  {
+   "file": "app/(app)/admin/backups/page.tsx",
+   "line": 278,
+   "label": "ratings",
+   "evidence": "value={schedule.retentionDays}"
+  },
+  {
+   "file": "app/(app)/admin/backups/page.tsx",
+   "line": 279,
+   "label": "ratings",
+   "evidence": "onChange={(e) => handleUpdateSchedule({ retentionDays: parseInt(e.target.value) || 30 })}"
+  },
+  {
+   "file": "app/(app)/admin/integrations/page.tsx",
+   "line": 24,
    "label": "integrations_fake",
-   "evidence": "const c = config.config as SlackChannelConfig"
+   "evidence": "'Google Workspace': { icon: <Globe className=\"h-5 w-5\" />, color: 'text-destructive', bg: 'bg-destructive/10', description: 'Sync users, calendar, and"
+  },
+  {
+   "file": "app/(app)/admin/integrations/page.tsx",
+   "line": 25,
+   "label": "integrations_fake",
+   "evidence": "'Microsoft 365': { icon: <Globe className=\"h-5 w-5\" />, color: 'text-primary', bg: 'bg-primary/10', description: 'Integrate with Microsoft Teams, OneD"
+  },
+  {
+   "file": "app/(app)/admin/integrations/page.tsx",
+   "line": 26,
+   "label": "integrations_fake",
+   "evidence": "'WhatsApp Business': { icon: <Zap className=\"h-5 w-5\" />, color: 'text-green-600', bg: 'bg-green-100 dark:bg-green-900/30', description: 'Send notific"
+  },
+  {
+   "file": "app/(app)/admin/integrations/page.tsx",
+   "line": 26,
+   "label": "integrations_fake",
+   "evidence": "'WhatsApp Business': { icon: <Zap className=\"h-5 w-5\" />, color: 'text-green-600', bg: 'bg-green-100 dark:bg-green-900/30', description: 'Send notific"
+  },
+  {
+   "file": "app/(app)/notifications/preferences/page.tsx",
+   "line": 73,
+   "label": "integrations_fake",
+   "evidence": "{ key: 'whatsapp' as const, label: 'WhatsApp (coming soon)', icon: Smartphone, description: 'Receive WhatsApp messages' },"
+  },
+  {
+   "file": "app/(app)/notifications/preferences/page.tsx",
+   "line": 73,
+   "label": "integrations_fake",
+   "evidence": "{ key: 'whatsapp' as const, label: 'WhatsApp (coming soon)', icon: Smartphone, description: 'Receive WhatsApp messages' },"
+  },
+  {
+   "file": "app/(app)/notifications/history/page.tsx",
+   "line": 295,
+   "label": "integrations_fake",
+   "evidence": "<SelectItem value=\"whatsapp\">WhatsApp (coming soon)</SelectItem>"
+  },
+  {
+   "file": "app/(app)/settings/page.tsx",
+   "line": 775,
+   "label": "integrations_fake",
+   "evidence": "<p className=\"text-sm font-medium\">Google Workspace</p>"
+  },
+  {
+   "file": "content/knowledge-base.ts",
+   "line": 502,
+   "label": "compliance",
+   "evidence": "How we protect it: All data is encrypted in transit (TLS), and at rest by our managed database provider. Data is stored in our managed database provid"
+  },
+  {
+   "file": "content/knowledge-base.ts",
+   "line": 504,
+   "label": "ratings",
+   "evidence": "Your rights under NDPR: You have the right to access your data (request a copy), rectify inaccuracies, request deletion (subject to legitimate retenti"
+  },
+  {
+   "file": "content/seo.ts",
+   "line": 59,
+   "label": "ratings",
+   "evidence": "keywords: ['student analytics', 'predictive analytics education', 'at-risk students', 'student retention', 'performance analytics', 'early warning sys"
+  },
+  {
+   "file": "content/docs.ts",
+   "line": 186,
+   "label": "ratings",
+   "evidence": "Step 1 \u2014 Define the Exam Structure: Navigate to Exams \u2192 Create Exam. Enter the exam title, select the subject and class level, and choose the examinat"
+  },
+  {
+   "file": "content/docs.ts",
+   "line": 848,
+   "label": "integrations_fake",
+   "evidence": "Honest status: we do not currently ship pre-built connectors for Google Workspace, Microsoft 365, or PowerSchool \u2014 and we will not document integratio"
+  },
+  {
+   "file": "content/docs.ts",
+   "line": 848,
+   "label": "integrations_fake",
+   "evidence": "Honest status: we do not currently ship pre-built connectors for Google Workspace, Microsoft 365, or PowerSchool \u2014 and we will not document integratio"
+  },
+  {
+   "file": "content/blog.ts",
+   "line": 209,
+   "label": "compliance",
+   "evidence": "Our security architecture operates on the principle of defense in depth\u2014multiple overlapping security layers that ensure no single point of failure ca"
+  },
+  {
+   "file": "content/blog.ts",
+   "line": 209,
+   "label": "compliance",
+   "evidence": "Our security architecture operates on the principle of defense in depth\u2014multiple overlapping security layers that ensure no single point of failure ca"
+  },
+  {
+   "file": "content/blog.ts",
+   "line": 213,
+   "label": "compliance",
+   "evidence": "Let us be direct about compliance: we are NOT yet NDPR or GDPR certified, we have not appointed a Data Protection Officer, and we have no SOC 2 report"
+  },
+  {
+   "file": "content/blog.ts",
+   "line": 213,
+   "label": "compliance",
+   "evidence": "Let us be direct about compliance: we are NOT yet NDPR or GDPR certified, we have not appointed a Data Protection Officer, and we have no SOC 2 report"
+  },
+  {
+   "file": "content/blog.ts",
+   "line": 192,
+   "label": "ratings",
+   "evidence": "tags: ['predictive analytics', 'at-risk students', 'machine learning', 'dropout prevention', 'student retention'],"
   }
  ]
 }

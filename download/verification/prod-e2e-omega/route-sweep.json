@@ -1,216 +1,216 @@
 {
-  "auditedAt": "2026-08-30T03:11:49.728371+00:00",
+  "auditedAt": "2026-09-13T21:11:09.499978+00:00",
   "base": "https://web-alpha-bay-87.vercel.app",
   "totalRoutes": 34,
   "pagesOk": 26,
   "pagesRedirected": 0,
   "pageClientErrors": 0,
   "serverErrors": [],
-  "avgTtfbMs": 348,
-  "maxTtfbMs": 827,
+  "avgTtfbMs": 383,
+  "maxTtfbMs": 890,
   "results": {
     "/": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 215,
-      "location": ""
-    },
-    "/api-docs": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 509,
-      "location": ""
-    },
-    "/careers": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 525,
+      "ttfb_ms": 107,
       "location": ""
     },
     "/blog": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 554,
+      "ttfb_ms": 416,
       "location": ""
     },
     "/case-studies": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 583,
-      "location": ""
-    },
-    "/about": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 625,
+      "ttfb_ms": 431,
       "location": ""
     },
     "/changelog": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 448,
+      "ttfb_ms": 409,
       "location": ""
     },
-    "/features": {
+    "/careers": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 89,
+      "ttfb_ms": 756,
       "location": ""
     },
-    "/contact": {
+    "/about": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 404,
-      "location": ""
-    },
-    "/cookies": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 401,
+      "ttfb_ms": 763,
       "location": ""
     },
     "/customers": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 455,
+      "ttfb_ms": 103,
       "location": ""
     },
-    "/login": {
+    "/cookies": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 85,
+      "ttfb_ms": 361,
       "location": ""
     },
     "/community": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 643,
-      "location": ""
-    },
-    "/gdpr": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 507,
-      "location": ""
-    },
-    "/pricing": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 86,
-      "location": ""
-    },
-    "/integrations": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 419,
-      "location": ""
-    },
-    "/help-center": {
-      "kind": "page",
-      "status": 200,
       "ttfb_ms": 460,
+      "location": ""
+    },
+    "/api-docs": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 890,
+      "location": ""
+    },
+    "/contact": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 601,
       "location": ""
     },
     "/docs": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 827,
+      "ttfb_ms": 471,
       "location": ""
     },
-    "/security": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 82,
-      "location": ""
-    },
-    "/press-kit": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 411,
-      "location": ""
-    },
-    "/partners": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 439,
-      "location": ""
-    },
-    "/register": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 357,
-      "location": ""
-    },
-    "/privacy": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 425,
-      "location": ""
-    },
-    "/api/auth/csrf": {
-      "kind": "api",
-      "status": 401,
-      "ttfb_ms": 82,
-      "location": ""
-    },
-    "/api/auth/session": {
-      "kind": "api",
-      "status": 401,
-      "ttfb_ms": 85,
-      "location": ""
-    },
-    "/api/notifications": {
-      "kind": "api",
-      "status": 401,
-      "ttfb_ms": 88,
-      "location": ""
-    },
-    "/status": {
-      "kind": "page",
-      "status": 200,
-      "ttfb_ms": 431,
-      "location": ""
-    },
-    "/api/health": {
-      "kind": "api",
-      "status": 200,
-      "ttfb_ms": 369,
-      "location": ""
-    },
-    "/api/search": {
-      "kind": "api",
-      "status": 401,
-      "ttfb_ms": 85,
-      "location": ""
-    },
-    "/terms": {
+    "/integrations": {
       "kind": "page",
       "status": 200,
       "ttfb_ms": 387,
       "location": ""
     },
-    "/solutions": {
+    "/gdpr": {
       "kind": "page",
       "status": 200,
-      "ttfb_ms": 501,
+      "ttfb_ms": 453,
       "location": ""
     },
-    "/api/parent/dashboard": {
+    "/help-center": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 466,
+      "location": ""
+    },
+    "/login": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 334,
+      "location": ""
+    },
+    "/features": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 611,
+      "location": ""
+    },
+    "/partners": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 409,
+      "location": ""
+    },
+    "/pricing": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 357,
+      "location": ""
+    },
+    "/register": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 325,
+      "location": ""
+    },
+    "/press-kit": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 472,
+      "location": ""
+    },
+    "/privacy": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 457,
+      "location": ""
+    },
+    "/security": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 375,
+      "location": ""
+    },
+    "/api/auth/csrf": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 85,
+      "location": ""
+    },
+    "/api/auth/session": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 97,
+      "location": ""
+    },
+    "/api/notifications": {
       "kind": "api",
       "status": 401,
       "ttfb_ms": 82,
       "location": ""
     },
+    "/api/search": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 81,
+      "location": ""
+    },
+    "/solutions": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 403,
+      "location": ""
+    },
+    "/api/parent/dashboard": {
+      "kind": "api",
+      "status": 401,
+      "ttfb_ms": 80,
+      "location": ""
+    },
+    "/status": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 372,
+      "location": ""
+    },
+    "/terms": {
+      "kind": "page",
+      "status": 200,
+      "ttfb_ms": 383,
+      "location": ""
+    },
     "/api/ai/status": {
       "kind": "api",
       "status": 401,
-      "ttfb_ms": 86,
+      "ttfb_ms": 77,
       "location": ""
     },
     "/api/marketplace/items": {
       "kind": "api",
       "status": 401,
-      "ttfb_ms": 88,
+      "ttfb_ms": 83,
+      "location": ""
+    },
+    "/api/health": {
+      "kind": "api",
+      "status": 200,
+      "ttfb_ms": 881,
       "location": ""
     }
   }
