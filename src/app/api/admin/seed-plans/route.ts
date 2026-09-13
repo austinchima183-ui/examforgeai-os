@@ -65,7 +65,7 @@ const ENTERPRISE_FEATURES = [
   'SSO / SAML authentication',
   'Dedicated success manager',
   'Custom integrations',
-  '99.9% uptime SLA',
+  'Priority support response',
   '24/7 priority support',
 ]
 

@@ -74,34 +74,31 @@ const channels = [
 
 // ─── Open Source Projects ───
 
+// RC1 reality audit: this list previously advertised four open-source SDKs
+// (JavaScript, Python, examples, utils) with GitHub URLs and star counts.
+// None of those repositories exist. We do not ship SDKs today — we ship a
+// REST API with an OpenAPI endpoint. Listed below is what is actually real.
 const openSourceProjects = [
   {
-    name: '@examforge/sdk',
-    description: 'Official JavaScript/TypeScript SDK with full type definitions and auto-pagination',
-    language: 'TypeScript',
-    stars: '1.2k',
-    url: 'https://github.com/examforgeai/sdk-js',
+    name: 'REST API + OpenAPI',
+    description: '150 role-scoped API endpoints with a machine-readable OpenAPI endpoint at /api/developer/openapi — build with any HTTP client in any language.',
+    language: 'REST',
+    stars: '—',
+    url: '/api-docs',
   },
   {
-    name: 'examforge-python',
-    description: 'Official Python SDK with async support and Pandas integration for analytics',
-    language: 'Python',
-    stars: '890',
-    url: 'https://github.com/examforgeai/sdk-python',
+    name: 'Webhooks (HMAC-verified)',
+    description: 'Billing and marketplace webhook routes with signature verification, retry handling, and delivery logging.',
+    language: 'Webhooks',
+    stars: '—',
+    url: '/api-docs',
   },
   {
-    name: 'examforge-examples',
-    description: 'Complete working example apps — Next.js dashboard, Flask webhook handler, and more',
-    language: 'TypeScript',
-    stars: '340',
-    url: 'https://github.com/examforgeai/examples',
-  },
-  {
-    name: 'examforge-ai-utils',
-    description: 'Community-maintained utility library with question validators, curriculum parsers, and report generators',
-    language: 'TypeScript',
-    stars: '156',
-    url: 'https://github.com/examforgeai/utils',
+    name: 'This platform itself',
+    description: 'Our engineering process — 1,000+ automated tests, RLS on every table, and public health endpoints — is documented in our verification evidence.',
+    language: 'Next.js + Postgres',
+    stars: '—',
+    url: '/status',
   },
 ]
 
@@ -161,26 +158,11 @@ const events = [
 
 // ─── Developer Spotlight ───
 
-const spotlights = [
-  {
-    name: 'Adebayo Adeyemi',
-    role: 'CTO, Lagos Prep Academy',
-    quote: 'I built a custom parent notification system using the ExamForge AI webhook API and WhatsApp Business API. Parents now get real-time exam results — it took me two weekends.',
-    avatar: 'AA',
-  },
-  {
-    name: 'Fatima Abdullahi',
-    role: 'Full-Stack Developer, Kano',
-    quote: 'The TypeScript SDK is incredibly well-typed. I integrated exam scheduling into our school portal in a single afternoon. The auto-pagination and error handling saved me hours.',
-    avatar: 'FA',
-  },
-  {
-    name: 'Emmanuel Okonkwo',
-    role: 'Data Scientist, University of Ibadan',
-    quote: 'Using the Python SDK with Pandas, I built predictive models for student retention that reduced our dropout rate by 18%. The analytics API makes data access seamless.',
-    avatar: 'EO',
-  },
-]
+// RC1 reality audit: the previous version quoted three named developers
+// (with invented employers and SDK experiences). Those people and quotes were
+// fictional. Community spotlights return when real community members choose
+// to be featured.
+const spotlights: { name: string; role: string; quote: string; avatar: string }[] = []
 
 export default function CommunityPage() {
   return (

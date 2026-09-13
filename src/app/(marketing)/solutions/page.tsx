@@ -92,16 +92,12 @@ const solutions = [
     title: 'Government Agencies',
     description: [
       'Conduct large-scale examinations for education ministries, examination bodies, and government agencies. Our platform handles tens of thousands of concurrent exam sessions with robust security and real-time monitoring.',
-      'Government examinations demand the highest levels of security, reliability, and compliance. ExamForge AI is built on enterprise-grade infrastructure with 99.99% uptime, end-to-end encryption, and comprehensive audit trails.',
+      'Government examinations demand the highest levels of security, reliability, and compliance. ExamForge AI enforces encryption in transit, row-level security on every table, server-authoritative exam sessions, and comprehensive audit trails.',
       'Our platform supports the full examination lifecycle: from question creation and review workflows to exam delivery, marking, result processing, and certification. Every step is tracked and auditable.',
-      'Advanced anti-cheating measures include browser lockdown, facial recognition, keystroke analysis, and AI-powered anomaly detection. Real-time monitoring dashboards give invigilators complete visibility across all examination centers.',
+      'Anti-cheating measures include tamper detection (tab-switch monitoring with logged events), server-authoritative timing, fullscreen exam mode, and real-time monitoring dashboards for invigilators. Facial recognition and keystroke analysis are not implemented — we will not claim capabilities we do not have.',
     ],
-    features: ['Massive concurrent exam delivery', 'Advanced anti-cheating measures', 'Result processing and certification', 'Compliance and audit reporting', 'Browser lockdown & facial recognition', 'Multi-center coordination'],
-    testimonial: {
-      quote: 'We successfully delivered examinations to 85,000 candidates across 120 centers simultaneously. The system performed flawlessly and the audit trail gave us complete confidence in the results.',
-      author: 'Alhaji Ibrahim Yusuf',
-      role: 'Director of Examinations, State Ministry of Education',
-    },
+    features: ['Concurrent exam delivery', 'Tamper detection & monitoring', 'Result processing and certification', 'Audit reporting', 'Fullscreen exam mode', 'Multi-center coordination'],
+    testimonial: null,
   },
   {
     id: 'examination-bodies',
@@ -213,7 +209,8 @@ function SolutionSection({ solution, index }: { solution: typeof solutions[0]; i
                 </GlassCard>
               </motion.div>
 
-              {/* Customer Story / Testimonial */}
+              {/* Customer Story / Testimonial (only when a real, attributed quote exists) */}
+              {solution.testimonial && (
               <motion.div variants={itemVariants}>
                 <GlassCard className="!bg-gradient-to-br !from-primary/5 !to-purple-500/5">
                   <div className="flex items-start gap-3 mb-3">
@@ -235,6 +232,7 @@ function SolutionSection({ solution, index }: { solution: typeof solutions[0]; i
                   </div>
                 </GlassCard>
               </motion.div>
+              )}
             </motion.div>
           </div>
         </div>

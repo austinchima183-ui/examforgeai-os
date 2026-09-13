@@ -95,13 +95,6 @@ const softwareAppJsonLd = {
     highPrice: '149',
     offerCount: '3',
   },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    ratingCount: '500',
-    bestRating: '5',
-    worstRating: '1',
-  },
   creator: {
     '@type': 'Organization',
     name: 'ExamForge AI',

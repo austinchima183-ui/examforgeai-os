@@ -56,7 +56,7 @@ const articles: DocsArticle[] = [
     section: "setup",
     content: `Welcome to ExamForge AI — the platform that powers computer-based testing for over 400 Nigerian and African institutions. This guide will walk you through creating an account, setting up your first school, and scheduling a practice exam in under 10 minutes. You do not need any technical expertise; if you can use a web browser, you can use ExamForge.
 
-First, visit app.examforge.ai and click "Create Account". Choose your role — School Administrator, Teacher, or Student — and enter your details. You will receive a verification email within 60 seconds. Click the link to activate your account and set your password.
+First, visit web-alpha-bay-87.vercel.app and click "Create Account". Choose your role — School Administrator, Teacher, or Student — and enter your details. You will receive a verification email within 60 seconds. Click the link to activate your account and set your password.
 
 Next, if you are an administrator, you will be prompted to create your school profile. Enter your institution name, address, and the examination bodies you are affiliated with (WAEC, NECO, JAMB, or custom). This information tailors the platform's syllabus alignment and reporting to your specific context.
 
@@ -279,18 +279,25 @@ Post-Exam: Once all students have submitted (or the timer has expired), verify t
   {
     slug: "exam-integrity-proctoring",
     title: "Exam Integrity & Proctoring",
-    description: "Configure AI proctoring, browser lockdown, and anti-cheating measures for high-stakes exams.",
+    description: "The integrity measures actually implemented: tamper detection, fullscreen mode, server-authoritative sessions, and live monitoring.",
     category: "cbt-platform",
     section: "proctoring",
-    content: `ExamForge provides a layered integrity system that combines browser-level restrictions, AI-powered proctoring, and human invigilation to ensure that every exam result reflects genuine student ability.
+    content: `This documentation describes the integrity measures that are actually implemented in ExamForge today — and is explicit about what is NOT implemented. We do not document capabilities we do not ship.
 
-Browser Lockdown: When the lockdown mode is enabled, the exam client runs in a restricted browser environment. Students cannot open new tabs, switch applications, copy or paste text, take screenshots, or access external websites. The lockdown is implemented via the ExamForge Secure Browser (a Chromium-based kiosk application) or via browser extensions for Chrome and Firefox. Secure Browser is recommended for high-stakes exams; the extension is suitable for school-level assessments.
+What is implemented today:
+- Tamper Detection: The exam client detects tab switches and window focus changes during an exam. Every tamper event is recorded (tamper_events table) with a timestamp, and events are surfaced to invigilators in real time on the exam monitoring dashboard.
+- Fullscreen Exam Mode: The exam interface supports a fullscreen mode that minimises on-screen distractions and is encouraged when exams begin.
+- Server-Authoritative Sessions: Exam timing, answer submission, and auto-marking are enforced server-side — the client cannot manipulate exam state, timing, or scores.
+- Auto-Marking: Objective questions are marked instantly on the server with deterministic scoring.
+- Monitoring Dashboard: Invigilators see live session progress per student, including tamper flags, enabling targeted attention.
 
-AI Proctoring: The proctoring engine monitors three channels during the exam. First, webcam video is analysed at 30 fps for face detection (single face required), gaze estimation (on-screen vs. off-screen), and identity verification (matching the enrollment photo). Second, browser telemetry tracks tab switches, window focus changes, and copy/paste attempts. Third, keystroke dynamics are compared against the student's typing profile captured at login. Anomalies are flagged to the invigilator dashboard in real time with a confidence score and a thumbnail snapshot.
+What is NOT implemented (and will not be claimed):
+- We do not analyse webcam video, do not perform face detection, gaze estimation, or identity verification.
+- We do not capture keystroke dynamics.
+- We do not ship a kiosk-style secure browser, and we do not block screenshots or copy/paste at the OS level.
+- Browser lockdown in the strict sense (hardware-enforced) is not available — our tamper detection records violations rather than physically preventing them.
 
-Randomisation: Even with perfect proctoring, students sitting side-by-side can copy from each other if they see the same questions. ExamForge addresses this with three randomisation strategies: question-order randomisation (each student sees questions in a different order), option-order randomisation (the position of correct and distractor options is shuffled), and parallel-forms (different students receive different but psychometrically equivalent questions drawn from the same item bank). For JAMB-level security, we recommend all three.
-
-Human Invigilation: AI proctoring augments but does not replace human invigilators. The Invigilator Dashboard gives invigilators real-time visibility into every student's session — progress, alerts, and proctoring flags — enabling them to focus their attention where it is most needed rather than walking the aisles blindly.`,
+For schools requiring hard lockdown or camera-based proctoring, we recommend combining ExamForge with dedicated external proctoring solutions or supervised exam halls.`,
     codeExamples: [],
     lastUpdated: "2025-02-10",
     readTime: 7,
@@ -838,21 +845,18 @@ app.post('/webhooks/examforge', (req, res) => {
     section: "connectors",
     content: `Keeping student data synchronised between ExamForge and your Student Information System eliminates manual data entry and ensures that exam assignments always reflect the latest enrolment. ExamForge provides pre-built connectors for popular SIS platforms and a generic API-based sync framework for custom systems.
 
-Google Workspace for Education: If your school uses Google Classroom, ExamForge can sync classes, student rosters, and teacher assignments automatically. Students log in with their Google account, and class membership in Google Classroom is mirrored in ExamForge. Changes in Google Classroom (new student, class reassignment) propagate to ExamForge within 5 minutes.
+Honest status: we do not currently ship pre-built connectors for Google Workspace, Microsoft 365, or PowerSchool — and we will not document integrations that do not exist. What we DO ship is a role-scoped REST API with an OpenAPI endpoint, plus CSV/XLSX import for students, teachers, and question banks.
 
-Microsoft 365 Education: Similar to Google Workspace, ExamForge integrates with Microsoft Teams and Intune for Education. Students authenticate via Azure AD, and class rosters sync from Microsoft School Data Sync.
-
-PowerSchool: A direct integration with PowerSchool's API syncs student demographics, class schedules, and grades bidirectionally. ExamForge pushes exam results back to PowerSchool's Gradebook, eliminating manual grade entry.
-
-Generic API Sync: For schools with custom SIS solutions, our REST API provides all the endpoints needed for a custom sync script. We provide reference implementations in Python and Node.js that you can adapt to your SIS's API format. The sync script typically runs as a cron job every 5–15 minutes.`,
+Generic API Sync: For schools with custom SIS solutions, our REST API provides the endpoints needed for a custom sync script. The sync script typically runs as a cron job every 5–15 minutes. Reference implementations can be written against the published OpenAPI specification at /api/developer/openapi.`,
     codeExamples: [
       {
         language: "python",
         code: `# Example: Sync students from a custom SIS to ExamForge
 import requests
-from examforge import ExamForgeClient
+import requests
 
-client = ExamForgeClient(api_key="ef_live_sk_abc123...")
+API = "https://your-examforge-deployment.example/api"
+HEADERS = {"Authorization": "Bearer <your-api-key>"}
 sis_url = "https://sis.myschool.edu.ng/api"
 
 # Fetch enrolled students from SIS
@@ -860,36 +864,18 @@ sis_students = requests.get(f"{sis_url}/students?term=current").json()
 
 # Sync to ExamForge
 for student in sis_students:
-    client.students.upsert(
-        student_id=student["matric_no"],
-        first_name=student["first_name"],
-        last_name=student["last_name"],
-        email=student["email"],
-        class_=student["class"],
-    )`,
+    requests.post(f"{API}/students", headers=HEADERS, json={
+        "student_id": student["matric_no"],
+        "first_name": student["first_name"],
+        "last_name": student["last_name"],
+        "email": student["email"],
+        "class": student["class"],
+    })`,
       },
     ],
     lastUpdated: "2025-01-20",
     readTime: 6,
     difficulty: "intermediate",
-  },
-  {
-    slug: "microsoft-teams-integration",
-    title: "Microsoft Teams Integration",
-    description: "Deliver exams and share results directly within Microsoft Teams channels.",
-    category: "integrations",
-    section: "connectors",
-    content: `For schools using Microsoft Teams as their primary collaboration platform, ExamForge's Teams integration brings exam management directly into the Teams interface — without requiring students or teachers to navigate to a separate web application.
-
-The integration includes three components: an ExamForge Teams Tab that can be added to any class channel, providing one-click access to upcoming exams, practice sessions, and results; a Bot that sends notifications to class channels when exams are scheduled, results are published, or at-risk alerts are triggered; and an Assignment Integration that creates a Teams Assignment for every scheduled exam, making exams appear alongside regular coursework in the student's assignment list.
-
-Installation is straightforward: a school administrator installs the ExamForge app from the Microsoft Teams App Store and grants the required permissions (read class roster, send notifications, create tabs). Once installed, the integration is available in every team. Teachers can add the ExamForge tab to their class channels; students see it automatically.
-
-The Teams integration is available on all ExamForge plans at no additional cost. It requires Microsoft 365 Education A3 or A5 licensing on the school's Microsoft tenant.`,
-    codeExamples: [],
-    lastUpdated: "2025-02-05",
-    readTime: 5,
-    difficulty: "beginner",
   },
 
   // ── Deployment ───────────────────────────────────────────────────────
@@ -990,7 +976,7 @@ High Latency (>500ms): Usually caused by network congestion or a misconfigured p
 
 Intermittent Disconnections: Common in schools using Wi-Fi for exams. Switch to wired Ethernet for exam devices. If Wi-Fi is unavoidable, use a dedicated SSID on the 5 GHz band with no other traffic. Increase the client roaming aggressiveness to reduce reconnection time when devices switch access points.
 
-DNS Failures: If devices cannot resolve app.examforge.ai, configure the school's DNS server with a static entry pointing to our documented IP addresses. This eliminates dependency on the ISP's DNS, which is often unreliable.
+DNS Failures: If devices cannot resolve web-alpha-bay-87.vercel.app, configure the school's DNS server with a static entry pointing to our documented IP addresses. This eliminates dependency on the ISP's DNS, which is often unreliable.
 
 Bandwidth Saturation: If 100+ students are loading exam content simultaneously and the internet link is saturated, pre-download the exam package to the Edge Server before the exam. During the exam, all content is served from the edge, consuming zero external bandwidth.
 

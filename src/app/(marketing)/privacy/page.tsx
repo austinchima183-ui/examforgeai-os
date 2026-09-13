@@ -154,7 +154,7 @@ const policySections = [
       {
         title: 'Infrastructure Security',
         description:
-          'Our infrastructure runs on SOC 2 Type II certified cloud providers with automatic failover, DDoS protection, web application firewalls, and intrusion detection systems. We conduct quarterly penetration testing by certified ethical hackers.',
+          'Our platform runs on managed cloud infrastructure (Vercel for the application, Supabase for the database). We enforce rate limiting, strict input validation, and security headers at the application layer. We have not yet conducted formal third-party penetration testing — when we do, we will publish the scope and outcome.',
       },
       {
         title: 'Incident Response',

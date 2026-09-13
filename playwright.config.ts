@@ -26,7 +26,7 @@ export default defineConfig({
   use: {
     baseURL: BASE,
     trace: 'retain-on-failure',
-    video: 'on', // full journey videos
+    video: process.env.E2E_VIDEO === 'off' ? 'off' : 'on', // full journey videos (off for stability cycles)
     screenshot: 'only-on-failure',
     actionTimeout: 20_000,
     navigationTimeout: 45_000,

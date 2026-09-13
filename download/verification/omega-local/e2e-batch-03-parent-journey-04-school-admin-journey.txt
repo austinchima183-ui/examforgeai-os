@@ -1,0 +1,4 @@
+base=http://localhost:3000 timestamp=2026-09-13T06:42:33Z
+passed=2 failed=0
+PASS 03-parent-journey
+PASS 04-school-admin-journey

@@ -1,0 +1,5 @@
+base=http://localhost:3000 timestamp=2026-09-13T06:51:29Z
+passed=7 failed=0
+PASS 05-super-admin-journey
+PASS 06-rbac-matrix
+PASS 07-cbt-flow

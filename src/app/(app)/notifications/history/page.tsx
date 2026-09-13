@@ -292,7 +292,7 @@ export default function NotificationHistoryPage() {
                     <SelectItem value="all">All Channels</SelectItem>
                     <SelectItem value="email">Email</SelectItem>
                     <SelectItem value="sms">SMS</SelectItem>
-                    <SelectItem value="whatsapp">WhatsApp</SelectItem>
+                    <SelectItem value="whatsapp">WhatsApp (coming soon)</SelectItem>
                     <SelectItem value="push">Push</SelectItem>
                     <SelectItem value="in_app">In-App</SelectItem>
                   </SelectContent>

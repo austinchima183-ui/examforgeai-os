@@ -1,9 +1,11 @@
 // ============================================================================
 // ExamForge AI — Centralized Brand Constants
 // ============================================================================
-// Single source of truth for all metrics, stats, and claims used across
-// the marketing website. This prevents the data inconsistency issues
-// flagged in the design audit (e.g., 120K vs 200K students).
+// Single source of truth for brand identity used across the marketing
+// website. HONESTY POLICY (RC1 reality audit): this file must contain only
+// verifiable facts about the platform. We do not publish adoption metrics,
+// customer counts, uptime SLAs, ratings, funding, or certifications we
+// cannot substantiate. Capability claims live with the feature code itself.
 // ============================================================================
 
 export const BRAND = {
@@ -14,36 +16,30 @@ export const BRAND = {
   description: 'One platform to manage schools, run CBT exams, automate administration, analyze performance, and empower learning with AI.',
 } as const
 
-// ─── Verified Metrics (Single Source of Truth) ───
-// These numbers are used across: hero, trusted-by, about, customers, cta, footer
-// Update HERE and all pages will reflect the change.
+// ─── Platform Facts (verifiable from the shipped product) ───
+// These describe WHAT THE PRODUCT DOES — not adoption numbers.
+// Used across: hero, about, cta, footer.
 export const METRICS = {
-  schools: 500,
-  schoolsLabel: '500+',
-  students: 120_000,
-  studentsLabel: '120K+',
-  examsDelivered: 2_000_000,
-  examsDeliveredLabel: '2M+',
-  countries: 4,
-  countriesLabel: '4',
-  uptimeSla: 99.9,
-  uptimeSlaLabel: '99.9%',
-  aiAccuracy: 99,
-  aiAccuracyLabel: '99%',
-  timeSaved: 85,
-  timeSavedLabel: '85%',
+  roles: 5,
+  rolesLabel: '5',
+  modules: 8,
+  modulesLabel: '8',
+  offlineTolerance: true,
+  offlineToleranceLabel: 'Offline-capable CBT',
+  aiProviders: 1,
+  aiProvidersLabel: 'Real AI question generation',
+  curriculumAligned: true,
+  curriculumLabel: 'Built for African curricula',
 } as const
 
-// ─── Company Info ───
+// ─── Company Info (honest — no unverified funding claims) ───
 export const COMPANY = {
   founded: '2023',
-  funding: 'Series A',
-  fundingAmount: '$2.5M',
-  teamSize: '15+',
+  stage: 'Early stage (pilot)',
+  teamSize: 'small dedicated team',
   location: 'Lagos, Nigeria',
   hq: 'Lagos, Nigeria',
   email: 'hello@examforge.ai',
-  phone: '+234 (0) 1 234 5678', // Use official contact format
   address: 'Lagos, Nigeria',
 } as const
 
@@ -51,7 +47,7 @@ export const COMPANY = {
 export const PRODUCT = {
   trialDays: 14,
   trialLabel: '14-day free trial',
-  paymentProvider: 'Flutterwave', // Single source — not "Stripe" in some places
+  paymentProvider: 'Flutterwave',
   pricingCurrency: '₦',
   starterPrice: 49,
   proPrice: 149,
@@ -63,6 +59,6 @@ export const PRODUCT = {
 export const GUARANTEE = {
   trialDays: PRODUCT.trialDays,
   trialLabel: PRODUCT.trialLabel,
-  moneyBackDays: 14, // Matches trial — no confusion
+  moneyBackDays: 14,
   moneyBackLabel: '14-day money-back guarantee',
 } as const

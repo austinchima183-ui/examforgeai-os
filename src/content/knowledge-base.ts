@@ -499,7 +499,7 @@ What data we collect: For students, we collect name, class, email/phone, and exa
 
 How we use it: Student data is used to deliver exams, generate results and analytics, and provide practice features. Teacher data is used to manage exam authoring and class assignments. Parent data is used to send result notifications. We never sell personal data to third parties. We never use student data for advertising.
 
-How we protect it: All data is encrypted at rest (AES-256) and in transit (TLS 1.3). Data is stored in data centres in Lagos, Nigeria. Access is restricted to authorised personnel on a need-to-know basis, audited continuously. We undergo annual SOC 2 Type II audits and quarterly penetration tests.
+How we protect it: All data is encrypted in transit (TLS), and at rest by our managed database provider. Data is stored in our managed database provider's eu-north-1 region (Sweden). We are transparent about this: if your school requires in-Nigeria data residency, contact us and we will give you a plain answer about current options. Access is restricted to authorised personnel on a need-to-know basis, audited continuously. We have not yet undergone formal SOC 2 or penetration-testing audits — we publish automated security scan results instead, and will announce formal audits when they happen.
 
 Your rights under NDPR: You have the right to access your data (request a copy), rectify inaccuracies, request deletion (subject to legitimate retention requirements — e.g., exam records must be retained for 5 years per WAEC policy), and data portability (receive your data in a machine-readable format). To exercise any of these rights, contact your school administrator or email privacy@examforge.ai.`,
     category: "general",

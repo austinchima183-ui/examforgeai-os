@@ -38,70 +38,11 @@ function UniversityCrest({
   )
 }
 
-// ─── Institution Logo Pill — Grayscale Professional Style ───
-// Displays institution names in a clean typographic lockup that resembles
-// how real university logos appear in SaaS trust bars (Stripe, Vercel style).
-// Monochrome by default, gains subtle color on hover.
-export function InstitutionLogoPill({ 
-  name, 
-  abbr,
-  color = '#6366f1',
-  className = ''
-}: { 
-  name: string
-  abbr: string
-  color?: string
-  className?: string 
-}) {
-  return (
-    <div className={`group flex items-center gap-3 rounded-xl border border-border/20 bg-card/50 px-5 py-3 hover:border-border/50 hover:shadow-md hover:shadow-black/5 transition-all duration-300 select-none ${className}`}>
-      {/* Shield crest logo mark */}
-      <div className="flex h-10 w-10 items-center justify-center rounded-lg transition-all duration-300" style={{ backgroundColor: `${color}10` }}>
-        <svg viewBox="0 0 40 40" className="h-7 w-7" fill="none" aria-hidden="true">
-          <path d="M20 4L34 10V21C34 28 28 34 20 36C12 34 6 28 6 21V10L20 4Z" fill={color} fillOpacity="0.15" stroke={color} strokeOpacity="0.5" strokeWidth="1.2"/>
-          <path d="M14 16L20 13L26 16V25L20 22L14 25V16Z" fill={color} fillOpacity="0.25" stroke={color} strokeOpacity="0.6" strokeWidth="0.6"/>
-          <text x="20" y="32" textAnchor="middle" fill={color} fillOpacity="0.85" fontSize="7" fontWeight="800" fontFamily="system-ui">{abbr}</text>
-        </svg>
-      </div>
-      <div className="flex flex-col">
-        <span className="text-[11px] font-semibold text-foreground/70 group-hover:text-foreground/90 transition-colors leading-tight">
-          {name}
-        </span>
-        <span className="text-[9px] text-foreground/30 group-hover:text-foreground/50 transition-colors leading-tight mt-0.5">
-          Verified Institution
-        </span>
-      </div>
-    </div>
-  )
-}
-
-// ─── Full Logo Data ───
-export const institutionLogos = [
-  { name: 'Lagos State University', abbr: 'LASU', color: '#3b82f6' },
-  { name: 'University of Ibadan', abbr: 'UI', color: '#10b981' },
-  { name: 'Ahmadu Bello University', abbr: 'ABU', color: '#f59e0b' },
-  { name: 'Kings College Lagos', abbr: 'KCL', color: '#ef4444' },
-  { name: 'Covenant University', abbr: 'CU', color: '#06b6d4' },
-  { name: 'Obafemi Awolowo Univ.', abbr: 'OAU', color: '#6366f1' },
-  { name: 'University of Lagos', abbr: 'UNILAG', color: '#14b8a6' },
-  { name: 'University of Benin', abbr: 'UNIBEN', color: '#f97316' },
-  { name: 'Nnamdi Azikiwe Univ.', abbr: 'UNIZIK', color: '#a855f7' },
-  { name: 'Babcock University', abbr: 'BU', color: '#ec4899' },
-  { name: 'Federal College of Edu.', abbr: 'FCE', color: '#8b5cf6' },
-  { name: 'University of Ghana', abbr: 'UG', color: '#22c55e' },
-  { name: 'Kwame Nkrumah Univ.', abbr: 'KNUST', color: '#eab308' },
-  { name: 'University of Pretoria', abbr: 'UP', color: '#2563eb' },
-  { name: 'Ashesi University', abbr: 'AU', color: '#0ea5e9' },
-  { name: 'Strathmore University', abbr: 'SU', color: '#dc2626' },
-] as const
-
-
 // ============================================================================
 // ExamForge AI — Professional Avatar System
 // ============================================================================
-// Replaces initials-in-circles with styled professional profile avatars
-// that include role badges and subtle branding. Uses generated SVG portraits
-// with gradient backgrounds and professional styling.
+// Styled professional profile avatars that include role badges and subtle
+// branding. Uses gradient backgrounds and professional styling.
 // ============================================================================
 
 interface ProfessionalAvatarProps {

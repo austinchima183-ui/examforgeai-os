@@ -21,14 +21,6 @@ const ExitIntentPopup = dynamic(
   { ssr: false },
 )
 
-const TrustNotifications = dynamic(
-  () =>
-    import('@/components/marketing/trust-notifications').then(
-      (mod) => mod.TrustNotifications,
-    ),
-  { ssr: false },
-)
-
 const FloatingDemoButton = dynamic(
   () =>
     import('@/components/marketing/floating-demo-button').then(
@@ -47,7 +39,6 @@ export function MarketingProviders({
       <AnalyticsProvider>
         {children}
         <ExitIntentPopup />
-        <TrustNotifications />
         <FloatingDemoButton />
       </AnalyticsProvider>
       <ReducedMotionStyles />

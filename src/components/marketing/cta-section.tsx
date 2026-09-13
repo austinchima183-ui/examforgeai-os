@@ -89,7 +89,7 @@ export function CTASection() {
 
               {/* Description */}
               <p className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed text-center max-w-2xl mx-auto">
-                Join 500+ schools already using ExamForge AI to deliver better exams,
+                Be among the founding schools shaping honest, AI-powered assessment —
                 automate administration, and empower learning with AI. Get started with
                 a free 14-day trial — no credit card required.
               </p>

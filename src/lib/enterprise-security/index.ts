@@ -113,50 +113,13 @@ export {
 // Conditional Access
 // ──────────────────────────────────────────────────────────────
 
-export {
-  createPolicy,
-  updatePolicy,
-  deletePolicy,
-  listPolicies,
-  evaluateAccess,
-  evaluateConditions,
-  applyGrantControls,
-  sortPoliciesByPriority,
-} from './conditional-access'
-
 // ──────────────────────────────────────────────────────────────
 // Risk Engine
 // ──────────────────────────────────────────────────────────────
 
-export {
-  calculateRiskScore,
-  assessFailedLogins,
-  assessUnusualLocation,
-  assessNewDevice,
-  assessImpossibleTravel,
-  assessSuspiciousActivity,
-  getRiskHistory,
-  triggerRiskAction,
-  recordFailedLogin,
-  clearFailedLogins,
-} from './risk-engine'
-
 // ──────────────────────────────────────────────────────────────
 // Device Trust
 // ──────────────────────────────────────────────────────────────
-
-export {
-  registerDevice,
-  getDeviceInfo,
-  updateDeviceTrust,
-  assessDeviceCompliance,
-  listUserDevices,
-  revokeDevice,
-  isDeviceRecognized,
-  updateDeviceLastSeen,
-  computeDeviceFingerprint,
-  getDefaultCompliancePolicy,
-} from './device-trust'
 
 // ──────────────────────────────────────────────────────────────
 // Session Management

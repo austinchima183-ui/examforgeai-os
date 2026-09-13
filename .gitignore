@@ -60,3 +60,4 @@ tool-results/
 
 # Runtime auth artifacts (session cookies) — never commit
 scripts/omega/.cookies/
+audit/

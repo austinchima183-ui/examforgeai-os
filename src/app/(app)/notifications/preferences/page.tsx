@@ -69,9 +69,9 @@ interface Preferences {
 
 const CHANNEL_CONFIG = [
   { key: 'email' as const, label: 'Email', icon: Mail, description: 'Receive notifications via email' },
-  { key: 'sms' as const, label: 'SMS', icon: MessageSquare, description: 'Receive text message alerts' },
-  { key: 'whatsapp' as const, label: 'WhatsApp', icon: Smartphone, description: 'Receive WhatsApp messages' },
-  { key: 'push' as const, label: 'Push', icon: Globe, description: 'Browser and mobile push notifications' },
+  { key: 'sms' as const, label: 'SMS (coming soon)', icon: MessageSquare, description: 'Receive text message alerts' },
+  { key: 'whatsapp' as const, label: 'WhatsApp (coming soon)', icon: Smartphone, description: 'Receive WhatsApp messages' },
+  { key: 'push' as const, label: 'Push (coming soon)', icon: Globe, description: 'Browser and mobile push notifications' },
   { key: 'in_app' as const, label: 'In-App', icon: Monitor, description: 'Show notifications inside the app' },
 ]
 

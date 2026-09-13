@@ -1,0 +1,20 @@
+
+Running 9 tests using 1 worker
+
+(node:17943) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [desktop-chromium] › e2e/06-rbac-matrix.spec.ts:29:9 › RBAC Feature Isolation Matrix › matrix sweep as student (2.2m)
+  ✓  2 [desktop-chromium] › e2e/06-rbac-matrix.spec.ts:29:9 › RBAC Feature Isolation Matrix › matrix sweep as teacher (2.0m)
+  ✓  3 [desktop-chromium] › e2e/06-rbac-matrix.spec.ts:29:9 › RBAC Feature Isolation Matrix › matrix sweep as parent (1.1m)
+  ✓  4 [desktop-chromium] › e2e/06-rbac-matrix.spec.ts:29:9 › RBAC Feature Isolation Matrix › matrix sweep as school_admin (59.6s)
+  ✓  5 [desktop-chromium] › e2e/06-rbac-matrix.spec.ts:29:9 › RBAC Feature Isolation Matrix › matrix sweep as super_admin (37.1s)
+(node:18072) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  6 [desktop-chromium] › e2e/07-cbt-flow.spec.ts:13:7 › CBT Exam Flow (student, video recorded) › student opens exams list → enters exam → interacts → exits (46.6s)
+  ✓  7 [desktop-chromium] › e2e/08-ai-api.spec.ts:10:7 › AI Features + Authenticated API Verification › AI student tools render and AI endpoints respond (13.1s)
+  ✓  8 [desktop-chromium] › e2e/08-ai-api.spec.ts:53:7 › AI Features + Authenticated API Verification › CSRF protection: state-changing request without CSRF token is rejected (5.8s)
+  ✓  9 [desktop-chromium] › e2e/08-ai-api.spec.ts:76:7 › AI Features + Authenticated API Verification › invalid payload is rejected with 400 (input validation active) (4.5s)
+
+  Slow test file: [desktop-chromium] › e2e/06-rbac-matrix.spec.ts (7.0m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  9 passed (8.2m)

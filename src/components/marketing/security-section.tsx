@@ -48,7 +48,7 @@ const securityFeatures = [
     title: 'Supabase Infrastructure',
     description:
       'Built on Supabase with enterprise-grade Postgres, real-time subscriptions, and edge functions.',
-    detail: 'SOC 2 Type II certified infrastructure with automatic failover and point-in-time recovery.',
+    detail: 'Hosted on Supabase managed infrastructure. Our provider publishes their own compliance posture; we recommend reviewing it directly.',
     gradient: 'from-amber-500 to-orange-600',
   },
   {
@@ -61,10 +61,10 @@ const securityFeatures = [
   },
   {
     icon: FileCheck,
-    title: 'Automated Backups',
+    title: 'Database Backups',
     description:
-      'Daily automated backups with point-in-time recovery. Your data is never more than a moment away.',
-    detail: 'Geographic redundancy with backups stored in multiple regions for disaster recovery.',
+      'Managed database backups are handled at the Supabase infrastructure layer.',
+    detail: 'Backup cadence and retention follow the provider defaults for the project tier. Verify current coverage for your SLA needs.',
     gradient: 'from-cyan-500 to-indigo-600',
   },
   {
@@ -77,21 +77,21 @@ const securityFeatures = [
   },
   {
     icon: CloudCog,
-    title: 'Enterprise Security',
+    title: 'Tenant Data Isolation',
     description:
-      'Multi-tenant data isolation, SSO readiness, and data residency options for regulated institutions.',
+      'Multi-tenant data isolation enforced at the database layer for every school and organization.',
     detail: 'Row-level security policies ensure complete data isolation between schools and tenants.',
     gradient: 'from-indigo-500 to-indigo-700',
   },
 ]
 
 const certifications = [
-  { name: 'SOC 2 Compliant', verified: true },
-  { name: 'GDPR Ready', verified: true },
-  { name: 'TLS 1.3', verified: true },
-  { name: 'AES-256', verified: true },
-  { name: '99.9% SLA', verified: true },
-  { name: 'ISO 27001 Aligned', verified: true },
+  { name: 'TLS 1.3 Encryption', verified: true },
+  { name: 'Row-Level Security', verified: true },
+  { name: '5-Role RBAC', verified: true },
+  { name: 'CSRF Protection', verified: true },
+  { name: 'Security Headers (CSP/HSTS)', verified: true },
+  { name: 'Audit Logging', verified: true },
 ]
 
 export function SecuritySection() {

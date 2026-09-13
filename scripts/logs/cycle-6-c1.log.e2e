@@ -1,0 +1,14 @@
+
+Running 7 tests using 1 worker
+
+(node:23831) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [desktop-chromium] › e2e/00-landing.spec.ts:10:7 › Landing Page (LOCKED — design authority) › homepage renders with hero, nav, CTA, and zero console errors (15.5s)
+  ✓  2 [desktop-chromium] › e2e/00-landing.spec.ts:46:7 › Landing Page (LOCKED — design authority) › key marketing pages render (pricing, features, security) (3.6s)
+  ✓  3 [desktop-chromium] › e2e/01-student-journey.spec.ts:11:7 › Student Journey (full E2E, video recorded) › login → dashboard → sidebar → tools → notifications → logout (1.0m)
+  ✓  4 [desktop-chromium] › e2e/02-teacher-journey.spec.ts:11:7 › Teacher Journey (full E2E, video recorded) › login → dashboard → question bank → tools → grading → isolation → logout (1.0m)
+  ✓  5 [desktop-chromium] › e2e/03-parent-journey.spec.ts:11:7 › Parent Journey (full E2E, video recorded) › login → parent dashboard → child progress → attendance → fees → messaging → isolation → logout (52.2s)
+  ✓  6 [desktop-chromium] › e2e/04-school-admin-journey.spec.ts:11:7 › School Admin Journey (full E2E, video recorded) › login → dashboard → users → school management → billing → isolation → logout (1.1m)
+  ✓  7 [desktop-chromium] › e2e/05-super-admin-journey.spec.ts:11:7 › Super Admin Journey (full E2E, video recorded) › login → dashboard → schools → admin console → government → isolation → logout (50.9s)
+
+  7 passed (5.2m)

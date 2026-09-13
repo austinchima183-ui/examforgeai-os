@@ -63,11 +63,11 @@ const factSheet = [
   { label: 'Founded', value: '2023' },
   { label: 'Headquarters', value: 'Lagos, Nigeria' },
   { label: 'Founder & CEO', value: 'Austin Chima' },
-  { label: 'Team Size', value: '45+ employees' },
-  { label: 'Schools Served', value: '500+' },
-  { label: 'Students Reached', value: '120K+' },
-  { label: 'Markets', value: 'Nigeria, Ghana, Kenya, South Africa' },
-  { label: 'Funding', value: 'Series A ($2.5M)' },
+  { label: 'Team Size', value: 'Small dedicated team' },
+  { label: 'Stage', value: 'Pilot programs with early-adopter schools' },
+  { label: 'Platform', value: '127 pages · 150 API endpoints · 1,028 automated tests' },
+  { label: 'HQ', value: 'Lagos, Nigeria' },
+  { label: 'Funding', value: 'Bootstrapped' },
   { label: 'Product', value: 'AI-powered school management & CBT platform' },
 ]
 
@@ -90,7 +90,7 @@ const pressReleases = [
     date: 'June 30, 2026',
     title: 'ExamForge AI 3.0 Introduces Complete Platform Redesign and AI Assistant',
     excerpt:
-      'ExamForge AI 3.0 marks the most significant update in the company\'s history, featuring a complete UI redesign, dark mode support, an AI-powered natural language assistant, and real-time collaboration tools. The update also achieves SOC 2 Type II certification, underscoring the company\'s commitment to data security.',
+      'ExamForge AI 3.0 marked a complete UI redesign, dark mode support, and an AI-powered natural language assistant for data analysis and report generation.',
     category: 'Major Release',
   },
 ]

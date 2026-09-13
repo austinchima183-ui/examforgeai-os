@@ -20,83 +20,71 @@ export const metadata: Metadata = {
 const securityFeatures = [
   {
     icon: 'lock',
-    title: 'AES-256 Encryption',
+    title: 'Encryption in Transit',
     description:
-      'All sensitive data at rest is encrypted using AES-256, the gold standard in symmetric encryption adopted by governments and financial institutions worldwide. Database fields containing personally identifiable information, exam content, and payment details are encrypted at the column level with transparent key management. Encryption keys are stored separately from the data they protect, with automatic key rotation every 90 days.',
+      'All data moving between browsers, our application servers, and the database is encrypted in transit with TLS. Data at rest is encrypted by our managed database provider (Supabase/Postgres). We do not make claims about column-level encryption or key rotation we have not implemented — see our published security documentation for the current posture.',
   },
   {
     icon: 'check-circle-2',
-    title: 'SOC 2 Type II',
+    title: 'Honest Compliance Position',
     description:
-      'ExamForge AI maintains SOC 2 Type II certification, demonstrating our commitment to the highest standards of security, availability, processing integrity, confidentiality, and privacy. Our SOC 2 audit is conducted annually by an independent third-party auditor, and the report is available to enterprise customers under NDA. This certification verifies that our internal controls are not only designed well but operate effectively over time.',
-  },
-  {
-    icon: 'shield',
-    title: 'GDPR Compliant',
-    description:
-      'We are fully compliant with the General Data Protection Regulation (GDPR), ensuring that the personal data of EU data subjects is processed lawfully, fairly, and transparently. We have appointed a Data Protection Officer, maintain Records of Processing Activities, and have implemented Data Protection Impact Assessments for all high-risk processing activities. Data subjects can exercise their rights to access, rectification, erasure, and portability through our self-service portal.',
-  },
-  {
-    icon: 'globe',
-    title: 'NDPR Compliant',
-    description:
-      'As a platform built in Nigeria, we are fully compliant with the Nigeria Data Protection Regulation (NDPR) issued by the National Information Technology Development Agency (NITDA). We have filed our annual data protection audit report, appointed a Data Protection Officer registered with NITDA, and ensure that all data processing activities comply with the principles of lawful processing, data minimisation, and purpose limitation as prescribed by the regulation.',
+      'We are NOT currently SOC 2, ISO 27001, GDPR, or NDPR certified — and we will not pretend otherwise. We design with those frameworks in mind (least-privilege access, audit logging, encryption), and certification is on our roadmap as we grow with pilot customers. If your institution requires formal certification today, we will tell you plainly that we are not there yet.',
   },
   {
     icon: 'key',
     title: 'Two-Factor Authentication',
     description:
-      'All accounts are protected by optional two-factor authentication (2FA) using time-based one-time passwords (TOTP) compatible with authenticator apps such as Google Authenticator, Authy, and 1Password. Enterprise accounts can enforce 2FA as mandatory for all users. We also support hardware security keys via WebAuthn/FIDO2 for institutions requiring the highest level of authentication assurance. Failed 2FA attempts are rate-limited and logged for security review.',
+      'Accounts are protected by optional two-factor authentication (2FA) using time-based one-time passwords (TOTP) compatible with authenticator apps such as Google Authenticator, Authy, and 1Password. Failed 2FA attempts are rate-limited and logged for security review.',
   },
   {
     icon: 'eye',
     title: 'Role-Based Access Control',
     description:
-      'Our granular role-based access control system defines five distinct roles — superAdmin, schoolAdmin, teacher, student, and parent — each with carefully scoped permissions. Users can only access data and perform actions that their role explicitly permits. Every route and API endpoint enforces RBAC at the server level through middleware validation, ensuring that no client-side manipulation can bypass access controls. Role assignments are audited and require approval from an administrator.',
+      'Our granular role-based access control system defines five distinct roles — student, parent, teacher, school_admin, and super_admin — each with carefully scoped permissions. Every route and API endpoint enforces RBAC at the server level through middleware validation, ensuring that no client-side manipulation can bypass access controls.',
   },
   {
     icon: 'file-text',
     title: 'Audit Logging',
     description:
-      'Every action taken on the platform is recorded in an immutable audit log, capturing who performed the action, when it occurred, the IP address and device used, and the specific data affected. Audit logs cover authentication events, data modifications, exam activities, administrative actions, and API calls. Logs are retained for a minimum of 12 months and are available for export in CSV and JSON formats for compliance reporting and forensic investigation.',
+      'Significant platform actions are recorded in an audit log, capturing who performed the action, when it occurred, and the data affected. Audit logs cover authentication events, security events (including CBT tamper detection), administrative actions, and API calls, and are available for export for compliance review.',
   },
   {
-    icon: 'server',
-    title: 'Data Residency',
+    icon: 'shield',
+    title: 'Row-Level Security',
     description:
-      'We offer configurable data residency options to ensure that your data is stored and processed within your preferred geographic region. By default, customer data is stored in the region closest to the primary user base. Enterprise customers can specify exact data residency requirements, including country-level restrictions, to comply with local data sovereignty laws. We provide written confirmation of data residency and do not transfer data across regions without explicit customer consent.',
+      'Every table in our database is protected by Postgres row-level security policies — measured, not aspirational: 270 tables, all RLS-enabled, with 700+ scoped policies. Data isolation between schools and tenants is enforced at the database layer, not just in application code.',
   },
 ]
 
 const certifications = [
   {
     name: 'SOC 2 Type II',
-    description: 'Annual audit by independent third-party assessor confirming our security controls operate effectively.',
-    status: 'Certified',
+    description: 'Not yet certified. On our roadmap as we scale with pilot customers. We will announce it when a real audit exists.',
+    status: 'Roadmap',
   },
   {
     name: 'GDPR',
-    description: 'Full compliance with the European Union General Data Protection Regulation including cross-border data transfer mechanisms.',
-    status: 'Compliant',
+    description: 'Not yet certified. We design with data-minimisation and access-control principles, but no formal GDPR assessment has been completed.',
+    status: 'Roadmap',
   },
   {
-    name: 'NDPR',
-    description: 'Compliance with the Nigeria Data Protection Regulation, including annual audit filing with NITDA.',
-    status: 'Compliant',
+    name: 'NDPR (Nigeria)',
+    description: 'Not yet filed. As a Nigerian platform we intend to complete NDPR filing as part of formal launch.',
+    status: 'Roadmap',
   },
   {
-    name: 'ISO 27001',
-    description: 'Information security management system aligned with ISO 27001 standards and best practices.',
-    status: 'Aligned',
-  },
-  {
-    name: 'TLS 1.3',
-    description: 'All data in transit encrypted with TLS 1.3, the latest and most secure transport layer protocol.',
+    name: 'TLS Encryption',
+    description: 'All data in transit encrypted via TLS on every connection.',
     status: 'Enforced',
   },
   {
-    name: 'AES-256',
-    description: 'Sensitive data at rest encrypted with AES-256, the encryption standard used by the U.S. government for classified information.',
+    name: 'Row-Level Security',
+    description: 'Every database table protected by RLS policies (270/270 measured).',
+    status: 'Enforced',
+  },
+  {
+    name: 'RBAC + CSRF',
+    description: 'Five-role access control enforced server-side, plus CSRF protection on state-changing endpoints.',
     status: 'Enforced',
   },
 ]
@@ -104,27 +92,27 @@ const certifications = [
 const infrastructureFeatures = [
   {
     icon: 'server',
-    title: 'Redundant Infrastructure',
+    title: 'Managed Cloud Infrastructure',
     description:
-      'Our platform runs on a multi-region cloud infrastructure with automatic failover. If a primary server becomes unavailable, traffic is automatically routed to a standby instance in a different availability zone, ensuring 99.9% uptime. Our infrastructure is monitored 24/7 by automated systems that detect and respond to anomalies within seconds.',
+      'Our application is served by Vercel with our managed Postgres database hosted by Supabase in a single European region. Our /api/health endpoint publishes live database and service status that anyone can check.',
   },
   {
     icon: 'shield',
-    title: 'DDoS Protection',
+    title: 'Rate Limiting & Input Validation',
     description:
-      'Enterprise-grade distributed denial-of-service (DDoS) protection is applied at the network edge, absorbing volumetric attacks before they reach our application servers. Our DDoS mitigation can handle attacks exceeding 1 Tbps, ensuring that your exams and school operations remain accessible even during active attack campaigns.',
+      'All external-facing endpoints are protected by rate limiting and strict input validation (Zod schemas). CBT exams include tamper detection that records suspicious behavior such as tab-switching during exams.',
   },
   {
     icon: 'lock',
-    title: 'Network Security',
+    title: 'Security Headers',
     description:
-      'Our network architecture employs multiple layers of defense, including web application firewalls (WAF), intrusion detection systems (IDS), and network segmentation. Internal services communicate through encrypted private channels, and all external-facing endpoints are protected by rate limiting, IP allowlisting, and bot detection. We conduct quarterly penetration testing by certified ethical hackers.',
+      'Every response ships with Content-Security-Policy, HSTS, X-Frame-Options DENY, and related security headers enforced before responses reach the client — verified by automated security scans.',
   },
   {
     icon: 'eye',
-    title: '24/7 Monitoring',
+    title: 'Health Monitoring',
     description:
-      'Our security operations team monitors the platform around the clock using automated alerting systems and real-time dashboards. Suspicious activity triggers immediate investigation and response. We maintain an incident response plan that is tested quarterly through tabletop exercises, and critical incidents are escalated to our security leadership within 15 minutes of detection.',
+      'A public health endpoint reports database connectivity, service status, and latency in real time. Automated verification suites (1,000+ tests) run against every release, and our public status page reflects the same live data.',
   },
 ]
 
@@ -133,25 +121,25 @@ const dataProtectionPractices = [
     icon: 'lock',
     title: 'Encryption at Rest and in Transit',
     description:
-      'All data is encrypted both at rest (AES-256) and in transit (TLS 1.3). Database backups are encrypted before storage, and encryption keys are managed through a dedicated key management service with automatic rotation. We never store credentials in plaintext; all passwords are hashed using bcrypt with adaptive work factors.',
+      'Data in transit is protected by TLS on every connection. Data at rest is encrypted by our managed database provider. Authentication is delegated to Supabase Auth, which handles password hashing and session management — we never store plaintext credentials.',
   },
   {
     icon: 'check-circle-2',
-    title: 'Automated Backups and Recovery',
+    title: 'Database Backups',
     description:
-      'We perform continuous automated backups with point-in-time recovery capability, allowing us to restore data to any moment within the last 30 days. Backups are stored in geographically separate locations with AES-256 encryption. Our recovery time objective (RTO) is under 4 hours, and our recovery point objective (RPO) is under 5 minutes for critical data.',
+      'Managed database backups operate at the Supabase infrastructure layer for our project tier. For institutions with specific RTO/RPO requirements, contact us and we will give you a plain answer about current coverage and what a dedicated setup would involve.',
   },
   {
     icon: 'key',
     title: 'Access Management',
     description:
-      'All internal access to production systems requires multi-factor authentication and is logged in an immutable audit trail. We follow the principle of least privilege: engineers and staff are granted the minimum access necessary to perform their duties, and access is reviewed quarterly. Emergency access is time-limited and requires management approval.',
+      'Access follows the principle of least privilege: server-side role checks on every route, service keys that never reach the browser, and per-tenant row-level security. Administrative actions are recorded in audit logs.',
   },
   {
     icon: 'file-text',
     title: 'Vulnerability Management',
     description:
-      'We maintain a continuous vulnerability management program that includes automated dependency scanning, static code analysis, and dynamic application security testing. Critical vulnerabilities are remediated within 24 hours, high-severity vulnerabilities within 72 hours, and medium-severity vulnerabilities within 14 days. We also operate a responsible disclosure program for external security researchers.',
+      'Every release runs automated dependency audits (0 known vulnerabilities at last audit), static secret scanning of client and server bundles, and a 1,000+ test verification suite including dedicated security tests. We fix what we find before shipping.',
   },
 ]
 
@@ -168,10 +156,8 @@ export default function SecurityPage() {
             <GradientText preset="cool">security</GradientText> you can trust
           </h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            Student data is sacred. ExamForge AI is built with security at every layer — from the
-            database to the edge — so you can focus on education, not compliance. We invest heavily
-            in infrastructure, processes, and people to ensure that your data remains protected at all
-            times.
+            Student data is sacred. ExamForge AI is built with security at every layer we control — from the
+            database to the edge — and we are honest about the layers we are still building.
           </p>
         </div>
       </SectionWrapper>
@@ -181,9 +167,9 @@ export default function SecurityPage() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Security Overview</h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Our security posture is comprehensive, covering encryption, compliance, authentication,
-            access control, auditing, and data residency. Every layer of our platform is designed to
-            protect student data and maintain the trust of the institutions we serve.
+            Our security posture covers encryption, authentication, access control, auditing, and
+            tenant isolation — the layers we control and can prove in code. Every claim on this page
+            maps to something measurable in our repository.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -208,11 +194,10 @@ export default function SecurityPage() {
       {/* Compliance Certifications */}
       <SectionWrapper>
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Compliance Certifications</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Compliance Status (Honest)</h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            We maintain compliance with the most rigorous international and regional data protection
-            standards, ensuring that your institution meets its regulatory obligations when using our
-            platform.
+            This is what is actually enforced today versus what is on our roadmap. We do not display
+            certifications we have not earned.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

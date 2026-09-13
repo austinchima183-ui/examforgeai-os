@@ -75,7 +75,7 @@ const faqs = [
   },
   {
     question: 'Is my data safe with ExamForge AI?',
-    answer: 'Data security is our top priority. We are SOC 2 Type II compliant, use AES-256 encryption for all data at rest and in transit, and maintain GDPR-compliant data processing agreements. Student data is never sold or shared with third parties. You can read more on our Security page.',
+    answer: 'Data security is a top priority. We enforce TLS encryption in transit, five-role access control, row-level security on every database table, and strict HTTP security headers — all verified by automated scans. We are honest that formal SOC 2/GDPR certification is on our roadmap, not yet achieved. Student data is never sold or shared with third parties. You can read more on our Security page.',
   },
   {
     question: 'What happens after my free trial ends?',

@@ -124,7 +124,7 @@ export function DevicePreviewsSection() {
                   <div className="h-2 w-2 rounded-full bg-yellow-400/70" />
                   <div className="h-2 w-2 rounded-full bg-green-400/70" />
                 </div>
-                <span className="text-[9px] text-muted-foreground ml-2">app.examforge.ai</span>
+                <span className="text-[9px] text-muted-foreground ml-2">web-alpha-bay-87.vercel.app</span>
               </div>
               <div className="h-[240px] overflow-hidden">
                 <div className="transform scale-[0.45] origin-top-left" style={{ width: '755px', height: '534px' }}>

@@ -572,11 +572,11 @@ export default function DemoBookingPage() {
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary" className="gap-1.5 px-3 py-1">
                       <ShieldCheck className="h-3 w-3" />
-                      SOC 2 Type II
+                      Row-Level Security
                     </Badge>
                     <Badge variant="secondary" className="gap-1.5 px-3 py-1">
                       <ShieldCheck className="h-3 w-3" />
-                      GDPR Compliant
+                      Audit Logging
                     </Badge>
                     <Badge variant="secondary" className="gap-1.5 px-3 py-1">
                       <ShieldCheck className="h-3 w-3" />
@@ -584,7 +584,7 @@ export default function DemoBookingPage() {
                     </Badge>
                     <Badge variant="secondary" className="gap-1.5 px-3 py-1">
                       <Users className="h-3 w-3" />
-                      500+ Schools
+                      5 Role Portals
                     </Badge>
                   </div>
                 </div>

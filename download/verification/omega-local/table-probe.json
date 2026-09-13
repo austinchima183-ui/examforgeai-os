@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-08T02:37:57.515Z",
+  "timestamp": "2026-09-13T11:27:11.853Z",
   "method": "authenticated-Role REST probe (OpenAPI root is service_role-only; real service key externally blocked)",
-  "referencedTables": 158,
+  "referencedTables": 154,
   "verdictCounts": {
     "EXISTS": 137,
-    "MISSING": 21
+    "MISSING": 17
   },
   "aggregate": {
     "users": {
@@ -100,7 +100,7 @@
       "verdict": "EXISTS"
     },
     "audit_logs": {
-      "refs": 11,
+      "refs": 10,
       "files": [
         "src/app/api/admin/audit-logs/route.ts",
         "src/app/api/admin/branding/route.ts",
@@ -728,10 +728,9 @@
       "verdict": "EXISTS"
     },
     "sessions": {
-      "refs": 3,
+      "refs": 2,
       "files": [
         "src/app/api/settings/security/route.ts",
-        "src/lib/enterprise-security/device-trust.ts",
         "src/lib/enterprise-security/session-management.ts"
       ],
       "statuses": {
@@ -1488,31 +1487,6 @@
       },
       "verdict": "MISSING"
     },
-    "conditional_access_policies": {
-      "refs": 1,
-      "files": [
-        "src/lib/enterprise-security/conditional-access.ts"
-      ],
-      "statuses": {
-        "student": "MISSING",
-        "teacher": "MISSING",
-        "super_admin": "MISSING"
-      },
-      "verdict": "MISSING"
-    },
-    "devices": {
-      "refs": 2,
-      "files": [
-        "src/lib/enterprise-security/device-trust.ts",
-        "src/lib/enterprise-security/risk-engine.ts"
-      ],
-      "statuses": {
-        "student": "MISSING",
-        "teacher": "MISSING",
-        "super_admin": "MISSING"
-      },
-      "verdict": "MISSING"
-    },
     "passkey_registrations": {
       "refs": 1,
       "files": [
@@ -1524,30 +1498,6 @@
         "super_admin": "OK"
       },
       "verdict": "EXISTS"
-    },
-    "user_login_history": {
-      "refs": 1,
-      "files": [
-        "src/lib/enterprise-security/risk-engine.ts"
-      ],
-      "statuses": {
-        "student": "MISSING",
-        "teacher": "MISSING",
-        "super_admin": "MISSING"
-      },
-      "verdict": "MISSING"
-    },
-    "risk_score_history": {
-      "refs": 1,
-      "files": [
-        "src/lib/enterprise-security/risk-engine.ts"
-      ],
-      "statuses": {
-        "student": "MISSING",
-        "teacher": "MISSING",
-        "super_admin": "MISSING"
-      },
-      "verdict": "MISSING"
     },
     "session_activity_log": {
       "refs": 1,

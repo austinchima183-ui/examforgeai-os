@@ -17,99 +17,109 @@ import { BreadcrumbJsonLd } from '@/components/marketing/breadcrumb-jsonld'
 export const metadata: Metadata = {
   title: 'Status',
   description:
-    'Real-time status and uptime monitoring for ExamForge AI services. Check current system health and historical incident reports.',
+    'Live service health for ExamForge AI, measured from our own /api/health endpoint at page render time. No fabricated uptime or incidents.',
 }
+
+export const revalidate = 30 // re-fetch live health every 30s
 
 // ============================================================================
-// ExamForge AI — Status Page
+// ExamForge AI — Status Page (REAL)
+// ============================================================================
+// RC1 reality audit: the previous version of this page listed fictional
+// services (including a GraphQL API that does not exist), a fabricated
+// 99.99% uptime figure, and three invented incident post-mortems.
+// This version renders LIVE data fetched from our own /api/health
+// endpoint at request time. We publish no uptime or incident history we
+// have not actually measured.
 // ============================================================================
 
-const services = [
-  {
-    name: 'API',
-    description: 'Core REST and GraphQL API endpoints',
-    status: 'Operational' as const,
-  },
-  {
-    name: 'CBT Platform',
-    description: 'Computer-based testing delivery and exam sessions',
-    status: 'Operational' as const,
-  },
-  {
-    name: 'AI Engine',
-    description: 'AI question generation, auto-marking, and adaptive learning',
-    status: 'Operational' as const,
-  },
-  {
-    name: 'Analytics',
-    description: 'Performance dashboards, reports, and data pipelines',
-    status: 'Operational' as const,
-  },
-  {
-    name: 'Marketplace',
-    description: 'Question bank marketplace and resource downloads',
-    status: 'Operational' as const,
-  },
-  {
-    name: 'Billing',
-    description: 'Payment processing, subscriptions, and invoicing',
-    status: 'Operational' as const,
-  },
-  {
-    name: 'Notifications',
-    description: 'Email, SMS, and in-app notification delivery',
-    status: 'Operational' as const,
-  },
-  {
-    name: 'Authentication',
-    description: 'Login, session management, and identity providers',
-    status: 'Operational' as const,
-  },
-]
-
-const incidents = [
-  {
-    title: 'Delayed Notification Delivery',
-    date: 'February 18, 2026',
-    severity: 'Minor',
-    description:
-      'Email and SMS notifications experienced delays of up to 15 minutes between 09:00 and 11:30 WAT. The issue was caused by a queue backlog in our notification service after a scheduled database maintenance window. All queued notifications were delivered, and no messages were lost.',
-    resolution: 'Resolved within 2 hours 30 minutes',
-    resolvedAt: 'February 18, 2026 — 11:30 WAT',
-  },
-  {
-    title: 'CBT Platform Intermittent Timeouts',
-    date: 'January 29, 2026',
-    severity: 'Major',
-    description:
-      'A subset of CBT exam sessions experienced intermittent timeouts and slow page loads between 08:00 and 09:45 WAT. The root cause was a misconfigured load balancer rule that routed traffic to an under-provisioned cluster during peak exam hours. All affected sessions were automatically resumed with no data loss.',
-    resolution: 'Resolved within 1 hour 45 minutes',
-    resolvedAt: 'January 29, 2026 — 09:45 WAT',
-  },
-  {
-    title: 'AI Engine Elevated Latency',
-    date: 'January 12, 2026',
-    severity: 'Minor',
-    description:
-      'AI question generation and auto-marking requests experienced elevated latency of 3-5 seconds (normal: under 1 second) for approximately 4 hours. The issue was traced to a downstream model provider deploying an update that temporarily degraded inference performance. We implemented automatic failover to a secondary provider.',
-    resolution: 'Resolved within 4 hours',
-    resolvedAt: 'January 12, 2026 — 15:20 WAT',
-  },
-]
-
-const statusColor: Record<string, string> = {
-  Operational: 'text-green-600 dark:text-green-400',
-  Degraded: 'text-yellow-600 dark:text-yellow-400',
-  Outage: 'text-destructive',
+interface HealthCheck {
+  status: string
+  latencyMs?: number
+  message?: string
 }
 
-const statusBg: Record<string, string> = {
-  Operational: 'bg-green-50 dark:bg-green-9500',
-  Degraded: 'bg-yellow-50 dark:bg-yellow-9500',
-  Outage: 'bg-destructive/100',
+interface HealthPayload {
+  status: string
+  timestamp: string
+  version: string
+  uptime: number
+  checks?: {
+    database?: HealthCheck
+    redis?: HealthCheck
+    ai?: HealthCheck
+  }
 }
 
-export default function StatusPage() {
+function colorFor(status: string | undefined): string {
+  switch (status) {
+    case 'healthy':
+      return 'text-green-600 dark:text-green-400'
+    case 'degraded':
+      return 'text-yellow-600 dark:text-yellow-400'
+    default:
+      return 'text-destructive'
+  }
+}
+
+function dotFor(status: string | undefined): string {
+  switch (status) {
+    case 'healthy':
+      return 'bg-green-500'
+    case 'degraded':
+      return 'bg-yellow-500'
+    default:
+      return 'bg-red-500'
+  }
+}
+
+export default async function StatusPage() {
+  // Fetch our own live health endpoint — the same one monitoring uses.
+  const base = process.env.NEXT_PUBLIC_APP_URL || 'https://web-alpha-bay-87.vercel.app'
+  let health: HealthPayload | null = null
+  let fetchOk = true
+  try {
+    const res = await fetch(`${base}/api/health`, { cache: 'no-store' })
+    if (res.ok) health = (await res.json()) as HealthPayload
+    else fetchOk = false
+  } catch {
+    fetchOk = false
+  }
+
+  const overall = fetchOk && health ? health.status : 'unreachable'
+  const db = health?.checks?.database
+  const ai = health?.checks?.ai
+  const cache = health?.checks?.redis
+
+  const services = [
+    {
+      name: 'Application Server',
+      description: 'This web application (Next.js on Vercel)',
+      status: fetchOk ? 'healthy' : 'unhealthy',
+      detail: fetchOk ? `Responding — version ${health?.version ?? 'unknown'}` : 'Health endpoint unreachable',
+    },
+    {
+      name: 'Database (Postgres)',
+      description: 'Supabase Postgres — the system of record',
+      status: db?.status ?? 'unhealthy',
+      detail: db?.status === 'healthy' ? `Connected — ${db?.latencyMs ?? '?'}ms latency` : (db?.message ?? 'No data'),
+    },
+    {
+      name: 'AI Engine',
+      description: 'AI question generation and usage tracking',
+      status: ai?.status ?? 'unhealthy',
+      detail: ai?.message ?? 'No data',
+    },
+    {
+      name: 'Cache Layer',
+      description: 'In-memory caching (Supabase-only architecture)',
+      status: cache?.status ?? 'unhealthy',
+      detail: cache?.message ?? 'No data',
+    },
+  ]
+
+  const checkedAt = health?.timestamp ? new Date(health.timestamp).toUTCString() : 'unknown'
+
   return (
     <div className="pt-16 bg-[#090909]">
       <BreadcrumbJsonLd items={[{ name: 'Home', href: '/' }, { name: 'Status', href: '/status' }]} />
@@ -119,17 +129,20 @@ export default function StatusPage() {
           <div className="flex items-center justify-center gap-2 mb-4">
             <Activity className="h-5 w-5 text-primary" />
             <p className="text-sm font-medium text-primary uppercase tracking-wider">
-              System Status
+              System Status — Live
             </p>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             <GradientText preset="cool">Service Health</GradientText> Dashboard
           </h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            Monitor the real-time health of all ExamForge AI services. We
-            publish every incident transparently because your trust matters.
-            Bookmark this page to stay informed about system performance and
-            planned maintenance.
+            This page is generated from our own{' '}
+            <Link href="/api/health" className="text-primary underline underline-offset-4">
+              /api/health
+            </Link>{' '}
+            endpoint at render time — not from hardcoded strings. We do not
+            publish uptime percentages or incident history we have not
+            measured with an independent monitor.
           </p>
         </div>
       </SectionWrapper>
@@ -137,15 +150,32 @@ export default function StatusPage() {
       {/* Current Status Banner */}
       <SectionWrapper backgroundClassName="bg-[#0C0C0C] border-y border-white/[0.04]">
         <div className="max-w-3xl mx-auto">
-          <div className="rounded-xl border border-emerald-500/30 bg-green-50 dark:bg-green-9500/5 p-6 text-center">
+          <div
+            className={`rounded-xl border p-6 text-center ${
+              overall === 'healthy'
+                ? 'border-emerald-500/30 bg-green-50 dark:bg-green-9500/5'
+                : 'border-red-500/30 bg-red-50 dark:bg-red-9500/5'
+            }`}
+          >
             <div className="flex items-center justify-center gap-3 mb-2">
-              <CheckCircle2 className="h-6 w-6 text-green-600 dark:text-green-400" />
-              <h2 className="text-xl font-bold text-green-600 dark:text-green-400">
-                All Systems Operational
+              {overall === 'healthy' ? (
+                <CheckCircle2 className="h-6 w-6 text-green-600 dark:text-green-400" />
+              ) : (
+                <AlertTriangle className="h-6 w-6 text-red-600" />
+              )}
+              <h2
+                className={`text-xl font-bold ${
+                  overall === 'healthy'
+                    ? 'text-green-600 dark:text-green-400'
+                    : 'text-red-600'
+                }`}
+              >
+                {overall === 'healthy' ? 'All Systems Operational' : 'Degraded — See Services Below'}
               </h2>
             </div>
             <p className="text-sm text-muted-foreground">
-              Last checked: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} — All 8 services are running normally with no active incidents.
+              Last checked: {checkedAt} (health payload generated). Process uptime:{' '}
+              {health ? `${Math.floor(health.uptime / 60)} min` : 'unknown'}.
             </p>
           </div>
         </div>
@@ -158,16 +188,15 @@ export default function StatusPage() {
             Service Status
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Detailed status of each ExamForge AI service. All services are
-            monitored 24/7 with automated alerts and on-call engineering
-            response.
+            Status of each ExamForge AI service, as reported by the live health
+            endpoint right now.
           </p>
         </div>
         <div className="max-w-4xl mx-auto">
           <div className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow overflow-hidden">
             <div className="grid grid-cols-[1fr_auto] sm:grid-cols-[1fr_auto_auto] gap-4 px-6 py-3 border-b border-white/[0.04] bg-white/[0.01] text-sm font-medium text-muted-foreground">
               <span>Service</span>
-              <span className="hidden sm:block">Description</span>
+              <span className="hidden sm:block">Detail</span>
               <span>Status</span>
             </div>
             {services.map((service, i) => (
@@ -179,18 +208,17 @@ export default function StatusPage() {
               >
                 <div className="flex items-center gap-3">
                   <Server className="h-4 w-4 text-muted-foreground" />
-                  <span className="font-medium text-sm">{service.name}</span>
+                  <div>
+                    <span className="font-medium text-sm block">{service.name}</span>
+                    <span className="text-xs text-muted-foreground">{service.description}</span>
+                  </div>
                 </div>
-                <span className="hidden sm:block text-sm text-muted-foreground">
-                  {service.description}
+                <span className="hidden sm:block text-sm text-muted-foreground max-w-[260px]">
+                  {service.detail}
                 </span>
                 <div className="flex items-center gap-2">
-                  <div
-                    className={`h-2 w-2 rounded-full ${statusBg[service.status]}`}
-                  />
-                  <span
-                    className={`text-sm font-medium ${statusColor[service.status]}`}
-                  >
+                  <div className={`h-2 w-2 rounded-full ${dotFor(service.status === 'healthy' ? 'healthy' : 'unhealthy')}`} />
+                  <span className={`text-sm font-medium capitalize ${colorFor(service.status === 'healthy' ? 'healthy' : 'unhealthy')}`}>
                     {service.status}
                   </span>
                 </div>
@@ -200,105 +228,47 @@ export default function StatusPage() {
         </div>
       </SectionWrapper>
 
-      {/* Uptime */}
+      {/* Incident History — honest policy */}
       <SectionWrapper backgroundClassName="bg-[#0C0C0C] border-y border-white/[0.04]">
         <div className="max-w-3xl mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Shield className="h-6 w-6 text-primary" />
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-              Uptime
+              Incident History
             </h2>
           </div>
-          <div className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow p-8 inline-block">
-            <p className="text-5xl sm:text-6xl font-bold text-primary">
-              99.99%
+          <div className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow p-8">
+            <Clock className="h-8 w-8 text-muted-foreground mx-auto mb-4" />
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-xl mx-auto">
+              We have not yet operated an independent uptime monitor or a
+              public incident log, so we publish no historical incident or
+              uptime statistics. When real incidents occur and are tracked,
+              they will be reported here — with dates, causes, and resolutions
+              we can stand behind. Anything less would be fiction.
             </p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Uptime over the last 90 days
-            </p>
-          </div>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
-            <div className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow p-4">
-              <p className="text-3xl font-bold tracking-tight">0</p>
-              <p className="text-sm text-muted-foreground">Active Incidents</p>
-            </div>
-            <div className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow p-4">
-              <p className="text-3xl font-bold tracking-tight">3</p>
-              <p className="text-sm text-muted-foreground">
-                Incidents (90 days)
-              </p>
-            </div>
-            <div className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow p-4">
-              <p className="text-3xl font-bold tracking-tight">~2h 40m</p>
-              <p className="text-sm text-muted-foreground">
-                Avg. Resolution Time
-              </p>
-            </div>
           </div>
         </div>
       </SectionWrapper>
 
-      {/* Recent Incidents */}
+      {/* Verify it yourself */}
       <SectionWrapper>
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-            Recent Incidents
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-6">
+            Verify It Yourself
           </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            A full history of service disruptions and their resolutions. We
-            publish post-mortems for every incident to ensure continuous
-            improvement and accountability.
+          <p className="text-muted-foreground leading-relaxed mb-8">
+            Don&apos;t take our word for it — query the same health endpoint
+            this page uses and check the database, AI, and cache status
+            yourself, any time.
           </p>
-        </div>
-        <div className="max-w-3xl mx-auto space-y-6">
-          {incidents.map((incident) => (
-            <div
-              key={incident.title}
-              className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow p-6"
-            >
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
-                <div className="flex items-center gap-2">
-                  <AlertTriangle className="h-4 w-4 text-yellow-600 dark:text-yellow-400" />
-                  <h3 className="text-base font-semibold">{incident.title}</h3>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Clock className="h-3.5 w-3.5" />
-                  {incident.date}
-                </div>
-              </div>
-              <div className="flex items-center gap-2 mb-3">
-                <span
-                  className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                    incident.severity === 'Major'
-                      ? 'bg-yellow-50 dark:bg-yellow-9500/10 text-yellow-600 dark:text-yellow-400'
-                      : 'bg-green-50 dark:bg-green-9500/10 text-green-600 dark:text-green-400'
-                  }`}
-                >
-                  {incident.severity}
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-green-50 dark:bg-green-9500/10 px-2.5 py-0.5 text-xs font-medium text-green-600 dark:text-green-400">
-                  <CheckCircle2 className="h-3 w-3" />
-                  Resolved
-                </span>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                {incident.description}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">
-                  Resolution:
-                </span>
-                <span>{incident.resolution}</span>
-                <span className="hidden sm:inline">·</span>
-                <span>{incident.resolvedAt}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="mt-10 text-center">
-          <Button variant="outline" asChild>
-            <Link href="/contact">Subscribe to Status Updates</Link>
-          </Button>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Button asChild>
+              <Link href="/api/health">GET /api/health</Link>
+            </Button>
+            <Button variant="outline" asChild>
+              <Link href="/contact">Contact Engineering</Link>
+            </Button>
+          </div>
         </div>
       </SectionWrapper>
 

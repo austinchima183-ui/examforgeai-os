@@ -1,0 +1,100 @@
+{
+ "table_count": [
+  {
+   "n": 270
+  }
+ ],
+ "rls_enabled": [
+  {
+   "n": 261
+  }
+ ],
+ "rls_disabled": [
+  {
+   "n": 0
+  }
+ ],
+ "policies": [
+  {
+   "n": 731
+  }
+ ],
+ "users": [
+  {
+   "n": 147
+  }
+ ],
+ "schools": [
+  {
+   "n": 11
+  }
+ ],
+ "students": [
+  {
+   "error": "HTTP Error 400: Bad Request"
+  }
+ ],
+ "exams": [
+  {
+   "n": 25
+  }
+ ],
+ "certificates": [
+  {
+   "n": 90
+  }
+ ],
+ "ai_request_log": [
+  {
+   "n": 5
+  }
+ ],
+ "tamper_events": [
+  {
+   "n": 33
+  }
+ ],
+ "plans": [
+  {
+   "n": 0
+  }
+ ],
+ "missing_tables_probe": [
+  {
+   "name": "marketplace_listings"
+  },
+  {
+   "name": "marketplace_purchases_v2"
+  },
+  {
+   "name": "devices"
+  },
+  {
+   "name": "admissions_applications"
+  },
+  {
+   "name": "marketing_campaigns"
+  },
+  {
+   "name": "support_tickets"
+  },
+  {
+   "name": "coupon_usages"
+  },
+  {
+   "name": "failed_payments"
+  },
+  {
+   "name": "scheduled_reports"
+  },
+  {
+   "name": "security_devices"
+  },
+  {
+   "name": "risk_events"
+  },
+  {
+   "name": "access_policies"
+  }
+ ]
+}

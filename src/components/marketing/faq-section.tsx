@@ -58,7 +58,7 @@ const faqs: {
     category: 'Security',
     question: 'How secure is the platform?',
     answer:
-      'Security is built into every layer. We use end-to-end encryption (TLS 1.3 in transit, AES-256 at rest), role-based access control with five distinct roles, comprehensive audit logging, and Supabase\'s enterprise-grade infrastructure. We also enforce HTTP security headers, support multi-tenant data isolation, and offer 99.9% uptime SLA for enterprise customers.',
+      'Security is built into the layers we control: TLS encryption in transit, five-role access control enforced server-side, audit logging, row-level security on every database table, CSRF protection, and strict HTTP security headers — all verified by automated security scans. We run on Supabase\'s managed infrastructure. We do not claim an uptime SLA we have not measured; check live system health on our status page.',
   },
   {
     category: 'Technical',
@@ -130,7 +130,7 @@ const faqs: {
     category: 'Security',
     question: 'Is my data backed up?',
     answer:
-      'Yes. We perform daily automated backups with point-in-time recovery capability. Your data is stored with geographic redundancy across multiple regions. Enterprise customers can also configure custom backup schedules and retention policies to meet their compliance requirements.',
+      'Managed database backups operate at the Supabase infrastructure layer for our project tier. We do not currently operate a dedicated cross-region backup program of our own, and we will not claim one. If backup and recovery requirements are critical to your institution, contact us and we will give you a plain answer about current coverage and what a dedicated setup would involve.',
   },
 ]
 

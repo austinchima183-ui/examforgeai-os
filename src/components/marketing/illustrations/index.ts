@@ -34,8 +34,6 @@ export {
 
 // Brand Assets (institution logos, professional avatars, team cards)
 export {
-  InstitutionLogoPill,
-  institutionLogos,
   ProfessionalAvatar,
   TeamMemberCard,
 } from './brand-assets'

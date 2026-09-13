@@ -75,7 +75,7 @@ const helpCategories = [
   {
     icon: 'settings',
     title: 'Integrations',
-    description: 'Connect ExamForge AI with your existing tools — Google Workspace, Microsoft 365, and custom APIs.',
+    description: 'Connect ExamForge AI with your existing tools — webhooks, REST API, and payment integrations.',
     articles: 8,
     color: 'text-cyan-600 dark:text-cyan-400',
   },
@@ -125,7 +125,7 @@ const faqs = [
   {
     question: 'Is my school data secure and compliant?',
     answer:
-      'Absolutely. ExamForge AI is SOC 2 Type II certified and complies with GDPR and the Nigeria Data Protection Regulation (NDPR). All data is encrypted at rest with AES-256 and in transit with TLS 1.3. We perform regular penetration testing, and our infrastructure is hosted on ISO 27001-certified cloud providers.',
+      'ExamForge AI enforces TLS encryption in transit, five-role access control, row-level security on every database table, CSRF protection, and strict security headers — all verified by automated scans. We are honest: we are not yet SOC 2 or ISO 27001 certified, and GDPR/NDPR formal compliance is on our roadmap. If your institution requires those certifications today, we will tell you plainly.',
   },
   {
     question: 'How do I add or remove teacher accounts?',
@@ -446,7 +446,7 @@ export default function HelpCenterPage() {
               <div className="flex items-center gap-4 text-xs text-muted-foreground">
                 <span className="inline-flex items-center gap-1.5">
                   <Wifi className="h-3 w-3 text-green-600 dark:text-green-400" />
-                  99.9% Uptime
+                  Live Health Status
                 </span>
                 <Link
                   href="/status"

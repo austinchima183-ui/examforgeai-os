@@ -58,28 +58,14 @@ const AnalyticsSection = dynamic(
   { loading: () => <SectionSkeleton /> }
 )
 
-const CustomerStoriesSection = dynamic(
-  () => import('@/components/marketing/customer-stories-section').then(mod => ({ default: mod.CustomerStoriesSection })),
-  { loading: () => <SectionSkeleton /> }
-)
 
 const PricingSection = dynamic(
   () => import('@/components/marketing/pricing-section').then(mod => ({ default: mod.PricingSection })),
   { loading: () => <SectionSkeleton /> }
 )
 
-const TestimonialsSection = dynamic(
-  () => import('@/components/marketing/testimonials-section').then(mod => ({ default: mod.TestimonialsSection })),
-  { loading: () => <SectionSkeleton /> }
-)
-
 const FAQSection = dynamic(
   () => import('@/components/marketing/faq-section').then(mod => ({ default: mod.FAQSection })),
-  { loading: () => <SectionSkeleton /> }
-)
-
-const TimelineSection = dynamic(
-  () => import('@/components/marketing/timeline-section').then(mod => ({ default: mod.TimelineSection })),
   { loading: () => <SectionSkeleton /> }
 )
 
@@ -103,10 +89,6 @@ const ROICalculatorSection = dynamic(
   { loading: () => <SectionSkeleton /> }
 )
 
-const EnhancedSocialProofSection = dynamic(
-  () => import('@/components/marketing/enhanced-social-proof-section').then(mod => ({ default: mod.EnhancedSocialProofSection })),
-  { loading: () => <SectionSkeleton /> }
-)
 
 // ============================================================================
 // ExamForge AI — Landing Page
@@ -156,17 +138,9 @@ export default function LandingPage() {
       <ROICalculatorSection />
       {/* 12. Device Previews — Mobile, Tablet, Desktop */}
       <DevicePreviewsSection />
-      {/* 12b. Enhanced Social Proof */}
-      <EnhancedSocialProofSection />
-      {/* 13. Customer Stories */}
-      <CustomerStoriesSection />
       {/* 13. Pricing — 3 tiers */}
       <PricingSection />
-      {/* 14. Testimonials */}
-      <TestimonialsSection />
-      {/* 15. Timeline — Our journey */}
-      <TimelineSection />
-      {/* 16. FAQ */}
+      {/* 14. FAQ */}
       <FAQSection />
       {/* 17. Final CTA */}
       <CTASection />

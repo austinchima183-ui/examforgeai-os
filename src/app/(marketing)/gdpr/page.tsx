@@ -156,7 +156,7 @@ export default function GDPRPage() {
                 'Privacy-by-design in all product development',
                 'Data minimization — we only collect what we need',
                 'End-to-end encryption for data in transit and at rest',
-                'Regular third-party security audits (SOC 2 Type II)',
+                'Row-level security on every database table',
                 'Annual GDPR compliance training for all staff',
                 'Documented data processing agreements with all partners',
                 'Automated data retention and deletion policies',

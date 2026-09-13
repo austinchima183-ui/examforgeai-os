@@ -165,11 +165,9 @@ const videoTutorials = [
 ]
 
 const integrationGuides = [
-  { icon: 'globe', title: 'Google Workspace', description: 'Sync calendars, share to Google Classroom, and authenticate with Google SSO.', status: 'Available' },
-  { icon: 'database', title: 'Microsoft 365', description: 'Integrate with Teams, OneDrive, and Active Directory for seamless school IT.', status: 'Available' },
-  { icon: 'webhook', title: 'Custom Webhooks', description: 'Receive real-time event notifications for exam completions, payments, and more.', status: 'Available' },
-  { icon: 'terminal', title: 'REST API', description: 'Build custom integrations with our comprehensive RESTful API and official SDKs.', status: 'Available' },
-  { icon: 'puzzle', title: 'Flutterwave Payments', description: 'Process school fee payments with Flutterwave — cards, bank transfer, mobile money.', status: 'Available' },
+  { icon: 'webhook', title: 'Custom Webhooks', description: 'Receive HMAC-verified event notifications for billing and marketplace events.', status: 'Available' },
+  { icon: 'terminal', title: 'REST API', description: 'Build custom integrations with our 150-endpoint role-scoped REST API and OpenAPI endpoint.', status: 'Available' },
+  { icon: 'puzzle', title: 'Flutterwave Payments', description: 'Process school fee payments with Flutterwave — cards, bank transfer, mobile money.', status: 'Beta' },
   { icon: 'database', title: 'Power BI / Tableau', description: 'Connect ExamForge data to your business intelligence tools for advanced analytics.', status: 'Beta' },
 ]
 

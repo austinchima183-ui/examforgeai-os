@@ -59,29 +59,21 @@ const values = [
 
 const team = [
   { name: 'Austin Chima', role: 'Founder & CEO', gradient: 'from-primary to-purple-600', bio: 'Former teacher turned tech entrepreneur. Passionate about making world-class education accessible across Africa.' },
-  { name: 'Dr. Ada Okafor', role: 'Head of Education', gradient: 'from-emerald-500 to-teal-600', bio: 'PhD in Educational Technology. 15 years shaping curriculum and assessment standards in West Africa.' },
-  { name: 'Emeka Nwosu', role: 'CTO', gradient: 'from-cyan-500 to-blue-600', bio: 'Full-stack architect with experience scaling platforms to millions of users. Led engineering at two YC startups.' },
-  { name: 'Zainab Musa', role: 'Head of Product', gradient: 'from-amber-500 to-orange-600', bio: 'Product leader with a decade of experience building tools for educators and institutions.' },
-  { name: 'Chidi Eze', role: 'Lead Engineer', gradient: 'from-rose-500 to-pink-600', bio: 'Distributed systems expert. Passionate about building reliable, high-performance software for education.' },
-  { name: 'Amina Bello', role: 'Head of Design', gradient: 'from-violet-500 to-indigo-600', bio: 'UX designer focused on creating intuitive, accessible interfaces for complex educational workflows.' },
 ]
 
 const milestones = [
-  { year: '2023 Q1', title: 'ExamForge AI Founded', description: 'Austin Chima founded ExamForge AI after witnessing the painful manual exam process at a school in Lagos.' },
-  { year: '2023 Q2', title: 'First Prototype', description: 'Built the first CBT prototype with AI question generation. Tested with 3 pilot schools in Lagos.' },
-  { year: '2023 Q4', title: 'Beta Launch', description: 'Launched beta to 50 schools across Nigeria. Processed over 10,000 exams in the first month.' },
-  { year: '2024 Q1', title: 'School ERP Module', description: 'Expanded beyond CBT with full School ERP, student information system, and billing modules.' },
-  { year: '2024 Q2', title: 'Series A Funding', description: 'Raised $2.5M in Series A funding to expand across West Africa and build the AI engine.' },
-  { year: '2024 Q3', title: 'Multi-Country Expansion', description: 'Expanded to Ghana and Kenya. Reached 300+ schools across 3 countries.' },
-  { year: '2024 Q4', title: 'AI Assistant & Marketplace', description: 'Launched AI Assistant and Marketplace. 500+ schools actively using the platform.' },
-  { year: '2025 Q1', title: 'Predictive Analytics', description: 'Introduced predictive analytics and AI essay marking. Surpassed 500 schools and 120,000 students.' },
+  { year: '2023', title: 'ExamForge AI Founded', description: 'Austin Chima founded ExamForge AI after witnessing the painful manual exam process at a school in Lagos.' },
+  { year: '2023', title: 'First Prototype', description: 'Built the first CBT prototype with AI question generation, designed for connectivity-constrained school environments.' },
+  { year: '2024', title: 'Platform Build-Out', description: 'Expanded beyond CBT to a full school platform: student information system, billing, analytics, and messaging.' },
+  { year: '2025', title: 'Engineering Hardening', description: 'Row-level security on every table, 1,000+ automated tests, accessibility audits, and production hardening.' },
+  { year: '2026', title: 'Pilot Programs', description: 'Working with early-adopter schools in structured pilots. Focus: reliability, offline exam delivery, and honest iteration.' },
 ]
 
 const impactStats = [
-  { icon: Building2, value: 500, suffix: '+', label: 'Schools' },
-  { icon: GraduationCap, value: 120000, suffix: '+', label: 'Students' },
-  { icon: Target, value: 85, suffix: '%', label: 'Time Saved' },
-  { icon: TrendingUp, value: 4, suffix: '', label: 'Countries' },
+  { icon: Building2, value: 127, suffix: '', label: 'Application Pages' },
+  { icon: GraduationCap, value: 150, suffix: '', label: 'API Endpoints' },
+  { icon: Target, value: 1028, suffix: '', label: 'Automated Tests' },
+  { icon: TrendingUp, value: 270, suffix: '', label: 'Database Tables' },
 ]
 
 // Animated counter hook
@@ -282,9 +274,10 @@ export default function AboutPage() {
               seamlessly, powered by AI, and accessible on any device.
             </p>
             <p>
-              Today, over 500 schools across Nigeria, Ghana, Kenya, and South Africa trust
-              ExamForge AI to manage their operations, deliver exams, and improve student outcomes.
-              We are just getting started.
+              ExamForge AI is now in structured pilot programs with early-adopter schools.
+              We are an early-stage platform — we would rather earn your trust with
+              working software, transparent security, and responsive support than with
+              big numbers. We are just getting started.
             </p>
           </div>
         </motion.div>
@@ -294,10 +287,10 @@ export default function AboutPage() {
       <SectionWrapper>
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            Our <GradientText preset="primary">Impact</GradientText>
+            What We&apos;ve <GradientText preset="primary">Built</GradientText>
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Real numbers from real schools. Every metric represents improved outcomes for students and teachers.
+            Every number below is measured from our shipped codebase — auditable, reproducible, and honest.
           </p>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -326,7 +319,7 @@ export default function AboutPage() {
               Our <GradientText preset="cool">Journey</GradientText>
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              From a Lagos classroom to 500+ schools across Africa — here are the milestones that shaped us.
+              From a Lagos classroom to a production-grade platform — the milestones that shaped us.
             </p>
           </div>
 

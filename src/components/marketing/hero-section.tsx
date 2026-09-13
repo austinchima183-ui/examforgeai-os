@@ -42,10 +42,10 @@ import {
 // ============================================================================
 
 const stats = [
-  { label: 'Schools', value: METRICS.schools, suffix: '+', icon: GraduationCap },
-  { label: 'Students', value: METRICS.students / 1000, suffix: 'K+', icon: Users },
-  { label: 'Exams Taken', value: METRICS.examsDelivered / 1000000, suffix: 'M+', icon: BarChart3 },
-  { label: 'AI Accuracy', value: METRICS.aiAccuracy, suffix: '%', icon: Sparkles },
+  { label: 'Role Portals', value: METRICS.roles, suffix: '', icon: Users },
+  { label: 'Core Modules', value: METRICS.modules, suffix: '', icon: BarChart3 },
+  { label: 'AI Generation', value: 100, suffix: '%', icon: Sparkles },
+  { label: 'Offline CBT', value: 100, suffix: '%', icon: MonitorPlay },
 ]
 
 const dashboardTabs = [
@@ -64,7 +64,7 @@ const floatingCards = [
   {
     label: 'AI Question Generation',
     value: '40/40 complete',
-    description: 'SS2 Biology · 28s · 99.1% accuracy',
+    description: 'SS2 Biology · 28s per batch',
     color: 'bg-cyan-500',          // Neural — AI feature
     glowColor: 'shadow-cyan-500/20',
     x: 'left-[5%] top-[18%]',
@@ -72,7 +72,7 @@ const floatingCards = [
   },
   {
     label: 'Live CBT Monitoring',
-    value: '712 students online',
+    value: 'Live session view',
     description: 'SS2 Bio · 3 halls · 2 flagged',
     color: 'bg-yellow-50 dark:bg-yellow-9500',          // Ember — exam feature
     glowColor: 'shadow-amber-500/20',
@@ -270,7 +270,7 @@ function DashboardPreview() {
             <div className="h-3.5 w-3.5 rounded bg-primary/80 flex items-center justify-center">
               <BookOpen className="h-2 w-2 text-primary-foreground" />
             </div>
-            <span className="text-[11px] text-muted-foreground font-medium">app.examforge.ai/dashboard</span>
+            <span className="text-[11px] text-muted-foreground font-medium">examforge web app</span>
             <span className="flex items-center gap-1 rounded-full bg-green-50 dark:bg-green-9500/10 px-1.5 py-0.5 text-[8px] font-medium text-green-600 dark:text-green-400">
               <span className="h-1 w-1 rounded-full bg-green-50 dark:bg-green-9500 animate-pulse" />
               LIVE
