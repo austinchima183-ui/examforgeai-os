@@ -252,9 +252,6 @@ export const dynamicImports = {
   /** AI Action Panel */
   aiActionPanel: () => import('@/components/ai/ai-action-panel'),
 
-  /** ExamForge Intelligence */
-  examforgeIntelligence: () => import('@/components/ai/examforge-intelligence'),
-
   /** Chart components */
   barChart: () => import('@/components/charts/bar-chart'),
 

@@ -6,15 +6,18 @@ import { CreateExamDialog } from '@/components/dialogs/create-exam-dialog'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ExamsTable } from '@/components/tables/exams-table'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { getCBTData } from '@/lib/services/cbt-service'
+import { getCBTData, getStudentExamProgress } from '@/lib/services/cbt-service'
+import { StudentExamsView } from '@/components/exams/student-exams-view'
 
 export const dynamic = 'force-dynamic'
 
 // ============================================================================
 // ExamForge AI — Exams List Page
 // ============================================================================
-// Server Component. Premium AI OS exam listing with stat cards, tabbed
-// data table, search, and premium empty states.
+// Server Component. Role-aware (Ω-UI):
+//   • students/parents → the student exam storefront (cards, availability,
+//     own scores — zero teacher telemetry, per UI Constitution Article IX)
+//   • staff → stat cards + tabbed data table + Create Exam (opens when ?new=1)
 // ============================================================================
 
 const statusVariantMap: Record<string, 'default' | 'secondary' | 'destructive' | 'outline'> = {
@@ -60,13 +63,77 @@ function formatDate(dateStr: string | null): string {
   })
 }
 
-export default async function ExamsPage() {
+export default async function ExamsPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>
+}) {
   const { user } = await requireAuth()
   const role = user.role
   const schoolId = user.schoolId
 
   // Fetch live data from Supabase
   const data = await getCBTData(role, user.id, schoolId)
+
+  // ── Ω-UI: student storefront — students/parents never see teacher
+  //    telemetry (Create button, Participants, Monitor links) ──
+  if (role === 'student' || role === 'parent') {
+    const myResults = await getStudentExamProgress(
+      user.id,
+      data.exams.map((e) => e.id)
+    )
+    const available = data.exams.filter((e) => e.status === 'published' || e.status === 'active')
+    const finished = data.exams.filter(
+      (e) => (myResults[e.id]?.percentage ?? null) !== null || e.status === 'completed'
+    )
+    return (
+      <div className="space-y-6 animate-fade-in forge-ambient-bg min-h-screen">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">My Exams</h1>
+            <p className="text-sm text-muted-foreground mt-1.5">
+              Your scheduled exams, with everything you need to prepare and take them.
+            </p>
+          </div>
+        </div>
+
+        {available.length > 0 && (
+          <div className="flex items-center gap-3">
+            <h2 className="text-lg font-semibold tracking-tight">Available</h2>
+            <div className="h-px flex-1 bg-gradient-to-r from-border/80 via-border/40 to-transparent" />
+            <Badge variant="outline" className="text-xs border-white/[0.04] bg-secondary/50 tabular-nums">
+              {available.length}
+            </Badge>
+          </div>
+        )}
+        <StudentExamsView
+          exams={available}
+          myResults={myResults}
+        />
+
+        {finished.length > 0 && (
+          <>
+            <div className="flex items-center gap-3 pt-2">
+              <h2 className="text-lg font-semibold tracking-tight">Completed</h2>
+              <div className="h-px flex-1 bg-gradient-to-r from-border/80 via-border/40 to-transparent" />
+              <Badge variant="outline" className="text-xs border-white/[0.04] bg-secondary/50 tabular-nums">
+                {finished.length}
+              </Badge>
+            </div>
+            <StudentExamsView
+              exams={finished}
+              myResults={myResults}
+            />
+          </>
+        )}
+      </div>
+    )
+  }
+
+  // ── Staff view — ?new=1 opens the Create Exam dialog directly (Ω-UI fix
+  //    for the /exams/create 404 CTA) ──
+  const params = await searchParams
+  const openCreate = params.new === '1'
 
   // Filter exams by status for tabs
   const upcomingExams = data.exams.filter(e => e.status === 'published' || e.status === 'draft')
@@ -82,7 +149,7 @@ export default async function ExamsPage() {
           <p className="text-sm text-muted-foreground mt-1.5">Create, manage, and monitor all examinations from one place.</p>
         </div>
         <div className="flex items-center gap-3">
-          <CreateExamDialog schoolId={schoolId} />
+          <CreateExamDialog schoolId={schoolId} autoOpen={openCreate} />
         </div>
       </div>
 

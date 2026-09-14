@@ -24,6 +24,33 @@ const UpdateSubmissionSchema = z.object({
   rubricId: z.string().uuid().optional(),
 }).strict()
 
+// ──────────────────────────────────────────────────────────────
+// Ω-UI SECURITY FIX: tenant-scoped exam ids for the caller.
+// Previously GET returned ALL platform submissions to any teacher
+// (cross-tenant data leak). Scoping: teacher → exams they created,
+// school_admin → their school's exams, super_admin → unscoped.
+// ──────────────────────────────────────────────────────────────
+async function tenantScopedExamIds(
+  supabase: NonNullable<ReturnType<typeof createServiceClient>>,
+  role: string,
+  userId: string,
+  schoolId: string | null
+): Promise<string[] | 'ALL'> {
+  if (role === 'super_admin') return 'ALL'
+
+  let query = supabase.from('exams').select('id').limit(500)
+  if (role === 'teacher') {
+    query = query.eq('created_by', userId)
+  } else {
+    // school_admin (and any school-scoped role)
+    if (!schoolId) return []
+    query = query.eq('school_id', schoolId)
+  }
+
+  const { data: exams } = await query
+  return (exams ?? []).map((e: { id: string }) => e.id)
+}
+
 export async function GET(request: NextRequest) {
   try {
     // Rate limit
@@ -57,9 +84,24 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Database not configured' }, { status: 503 })
     }
 
+    const tenant = deriveTenantContext(auth)
+    const scopedExamIds = await tenantScopedExamIds(
+      supabase,
+      auth.user.role,
+      tenant.userId,
+      tenant.schoolId
+    )
+    // No in-scope exams → empty result (never fall through to unscoped)
+    if (scopedExamIds !== 'ALL' && scopedExamIds.length === 0) {
+      return NextResponse.json([])
+    }
+
     let query = supabase.from('exam_submissions').select('*')
     if (where.examId !== undefined) query = query.eq('exam_id', String(where.examId))
     if (ungradedOnly) query = query.is('score', null)
+    // Ω-UI: hard tenant scoping + bounded result set
+    if (scopedExamIds !== 'ALL') query = query.in('exam_id', scopedExamIds)
+    query = query.limit(500)
 
     const { data: submissions, error } = await query.order('created_at', { ascending: false })
 
@@ -68,7 +110,56 @@ export async function GET(request: NextRequest) {
       return NextResponse.json(createSafeErrorResponse(error, { route: 'teacher/submissions GET' }), { status: 500 })
     }
 
-    return NextResponse.json(toCamelRows(submissions))
+    // ─── Ω-UI: enrich rows server-side (student name, question text, exam
+    // title) so the grading queue renders in ONE round trip — the client
+    // previously ran up to 50 sequential fetches (and called an admin-only
+    // users endpoint that 403'd for teachers). ───
+    const rows = (submissions ?? []) as Array<{
+      id: string
+      student_id: string
+      question_id: string
+      exam_id: string
+      [key: string]: unknown
+    }>
+    const studentIds = [...new Set(rows.map((r) => r.student_id))]
+    const questionIds = [...new Set(rows.map((r) => r.question_id))]
+    const examIds = [...new Set(rows.map((r) => r.exam_id))]
+
+    const [usersRes, questionsRes, examsRes] = await Promise.all([
+      studentIds.length
+        ? supabase.from('users').select('id, full_name, email').in('id', studentIds)
+        : Promise.resolve({ data: [] }),
+      questionIds.length
+        ? supabase.from('questions').select('id, question_text').in('id', questionIds)
+        : Promise.resolve({ data: [] }),
+      examIds.length
+        ? supabase.from('exams').select('id, title').in('id', examIds)
+        : Promise.resolve({ data: [] }),
+    ])
+
+    const nameById = new Map(
+      ((usersRes.data ?? []) as Array<{ id: string; full_name: string | null; email: string | null }>).map(
+        (u) => [u.id, u.full_name || u.email || null]
+      )
+    )
+    const textById = new Map(
+      ((questionsRes.data ?? []) as Array<{ id: string; question_text: string }>).map((q) => [
+        q.id,
+        q.question_text,
+      ])
+    )
+    const titleById = new Map(
+      ((examsRes.data ?? []) as Array<{ id: string; title: string }>).map((e) => [e.id, e.title])
+    )
+
+    const enriched = rows.map((r) => ({
+      ...r,
+      studentName: nameById.get(r.student_id) ?? `Student ${r.student_id.slice(0, 8)}`,
+      questionText: textById.get(r.question_id) ?? 'Question unavailable',
+      examTitle: titleById.get(r.exam_id) ?? `Exam ${r.exam_id.slice(0, 8)}`,
+    }))
+
+    return NextResponse.json(toCamelRows(enriched))
   } catch (error) {
     console.error('Submissions GET error:', error)
     return NextResponse.json(createSafeErrorResponse(error, { route: 'teacher/submissions GET' }), { status: 500 })
@@ -116,6 +207,31 @@ export async function PUT(request: NextRequest) {
     if (aiScore !== undefined) updateData.ai_score = aiScore
     if (aiFeedback !== undefined) updateData.ai_feedback = aiFeedback
     if (rubricId !== undefined) updateData.rubric_id = rubricId
+
+    // ─── Ω-UI SECURITY FIX: tenant ownership check before update (IDOR) ───
+    // A crafted PUT must not be able to grade another school's submission.
+    if (auth.user.role !== 'super_admin') {
+      const { data: existing } = await supabase
+        .from('exam_submissions')
+        .select('id, exam_id')
+        .eq('id', id)
+        .maybeSingle()
+      if (!existing) {
+        return NextResponse.json({ error: 'Submission not found' }, { status: 404 })
+      }
+      const scopedIds = await tenantScopedExamIds(
+        supabase,
+        auth.user.role,
+        gradedBy,
+        deriveTenantContext(auth).schoolId
+      )
+      if (scopedIds !== 'ALL' && !scopedIds.includes(existing.exam_id)) {
+        return NextResponse.json(
+          { error: 'You do not have access to this submission' },
+          { status: 403 }
+        )
+      }
+    }
 
     const { data: submission, error } = await supabase
       .from('exam_submissions')

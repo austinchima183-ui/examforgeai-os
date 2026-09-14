@@ -239,12 +239,6 @@ function InsightCard({ insight }: { insight: Insight }) {
               <CardTitle className="text-sm font-semibold leading-tight truncate">
                 {insight.title}
               </CardTitle>
-              {insight.isAiPowered && (
-                <Badge variant="secondary" className="mt-1 h-5 px-1.5 text-[10px] gap-0.5 bg-cyan-100 text-cyan-700 dark:bg-cyan-950/40 dark:text-cyan-400 border-cyan-200 dark:border-cyan-900/50 neural-glow">
-                  <Sparkles className="h-2.5 w-2.5 animate-ai-think" />
-                  AI
-                </Badge>
-              )}
             </div>
           </div>
           {insight.metric && (
@@ -421,10 +415,9 @@ function useStudentInsights(userId: string): { insights: Insight[]; loading: boo
           newInsights.push({
             id: 'ai-recommendation',
             icon: Sparkles,
-            title: 'AI Study Recommendation',
+            title: 'Study Recommendation',
             description: `Based on your recent performance (avg ${avgScore}%), we recommend focusing on ${focusArea} this week. AI Tutor can create a personalized plan.`,
             urgency: 'suggestion',
-            isAiPowered: true,
             action: { label: 'Get AI Plan', href: ROUTES.STUDENT_AI_TUTOR },
           })
         }
@@ -554,7 +547,6 @@ function useTeacherInsights(userId: string): { insights: Insight[]; loading: boo
             title: 'Time-Saving Opportunity',
             description: `Auto-grade ${autoGradableCount} objective question${autoGradableCount > 1 ? 's' : ''} across ${pendingCount} pending submission${pendingCount > 1 ? 's' : ''}. Save hours of manual grading!`,
             urgency: 'suggestion',
-            isAiPowered: true,
             action: { label: 'Auto-Grade', href: ROUTES.RESULTS },
           })
         }
@@ -582,7 +574,6 @@ function useTeacherInsights(userId: string): { insights: Insight[]; loading: boo
             title: 'AI Teaching Assistant',
             description: 'Generate a makeup exam for students who failed, or create differentiated practice sets based on performance tiers.',
             urgency: 'suggestion',
-            isAiPowered: true,
             action: { label: 'Generate with AI', href: ROUTES.EXAM_CREATE },
           })
         }
@@ -798,8 +789,7 @@ function useSchoolAdminInsights(schoolId: string | null): { insights: Insight[];
                 title: 'School Performance Insight',
                 description: `School average is ${Math.abs(diff)}% ${diff >= 0 ? 'above' : 'below'} district average in recent exams. ${diff < 0 ? 'Consider targeted interventions.' : 'Great work — keep it up!'}`,
                 urgency: diff < -10 ? 'critical' : diff < 0 ? 'warning' : 'success',
-                isAiPowered: true,
-                metric: `${schoolAvg}%`,
+                    metric: `${schoolAvg}%`,
                 action: { label: 'View Analysis', href: ROUTES.ANALYTICS },
               })
             }
@@ -971,7 +961,6 @@ function useSuperAdminInsights(enabled: boolean): { insights: Insight[]; loading
             title: 'Payment Anomaly Detected',
             description: `Unusual spike in failed payments from "${(schoolName as { name: string } | undefined)?.name ?? 'a school'}" (${anomalySchool[1]} failures). Investigate potential issues.`,
             urgency: 'critical',
-            isAiPowered: true,
             action: { label: 'Investigate', href: ROUTES.ADMIN_BILLING },
           })
         }
@@ -988,7 +977,6 @@ function useSuperAdminInsights(enabled: boolean): { insights: Insight[]; loading
           title: 'Platform AI Summary',
           description: `${totalSchools} schools, ${totalExamsToday} exams taken today, ${passRate}% pass rate across all graded sessions. ${passRate < 50 ? 'Pass rate is concerning — consider platform-wide interventions.' : 'Performance is healthy.'}`,
           urgency: 'suggestion',
-          isAiPowered: true,
           metric: `${passRate}%`,
           action: { label: 'Full Analytics', href: ROUTES.ANALYTICS },
         })
@@ -1099,10 +1087,10 @@ export function IntelligentInsights({ role, userId, schoolId, className }: Intel
             <Sparkles className="h-4 w-4 text-cyan-500 animate-ai-think" />
           </div>
         </div>
-        <h2 className="text-lg font-semibold tracking-tight">AI Insights</h2>
+        <h2 className="text-lg font-semibold tracking-tight">Smart Insights</h2>
         <Badge variant="secondary" className="text-[10px] h-5 px-1.5 gap-0.5 bg-cyan-500/10 text-cyan-600 dark:bg-cyan-500/15 dark:text-cyan-400 border-cyan-500/20">
           <Brain className="h-2.5 w-2.5" />
-          Neural
+          Live data
         </Badge>
         <div className="h-px flex-1 bg-gradient-to-r from-cyan-500/20 via-cyan-500/10 to-transparent" />
       </div>
@@ -1126,7 +1114,7 @@ export function IntelligentInsights({ role, userId, schoolId, className }: Intel
 
       {insights.length > 0 && (
         <p className="text-[11px] text-muted-foreground text-center pt-1">
-          Insights generated from your data & AI analysis. Refreshes on page load.
+          Insights generated from your live academic data. Refreshes on page load.
         </p>
       )}
     </div>

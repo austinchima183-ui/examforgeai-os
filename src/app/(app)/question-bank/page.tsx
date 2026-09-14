@@ -1,4 +1,5 @@
 import { requireAuth } from '@/lib/auth/require-auth'
+import Link from 'next/link'
 import { HelpCircle, Sparkles, BookOpen, FileText, Wand2, Filter, Tag } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -41,10 +42,13 @@ export default async function QuestionBankPage() {
           <p className="text-sm text-muted-foreground mt-1.5">Browse, create, and manage questions for your exams.</p>
         </div>
         <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-          {/* Generate with AI button — neural glow */}
-          <Button variant="outline" className="gap-2 neural-glow border-neural/30 text-neural hover:bg-neural/10 hover:text-neural hover:border-neural/50 transition-all duration-200 shadow-[0_0_12px_-3px_rgba(34,211,238,0.15)]">
-            <Wand2 className="h-4 w-4" />
-            Generate with AI
+          {/* Generate with AI — Ω-UI: wired to the real AI question generator
+              (was a dead button with no handler) */}
+          <Button asChild variant="outline" className="gap-2 neural-glow border-neural/30 text-neural hover:bg-neural/10 hover:text-neural hover:border-neural/50 transition-all duration-200 shadow-[0_0_12px_-3px_rgba(34,211,238,0.15)]">
+            <Link href="/teacher/ai-question-generator">
+              <Wand2 className="h-4 w-4" />
+              Generate with AI
+            </Link>
           </Button>
           <QuestionBankActions schoolId={schoolId} />
           <CreateQuestionDialog schoolId={schoolId} />

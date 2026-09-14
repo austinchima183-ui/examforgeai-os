@@ -339,15 +339,15 @@ export default function AnalyticsPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-ember/4 via-transparent to-transparent pointer-events-none" />
               <CardHeader className="relative">
                 <CardTitle className="text-lg font-semibold tracking-tight">Score Distribution</CardTitle>
-                <CardDescription>Average scores by subject</CardDescription>
+                <CardDescription>Graded sessions per score band</CardDescription>
               </CardHeader>
               <CardContent className="relative">
-                {data.subjectPerformance.length > 0 ? (
+                {data.scoreDistribution.some((b) => b.count > 0) ? (
                   <BarChart
-                    data={data.subjectPerformance}
-                    xKey="subject"
-                    yKeys={['score', 'passRate']}
-                    colors={['hsl(var(--chart-1))', 'hsl(var(--chart-3))']}
+                    data={data.scoreDistribution}
+                    xKey="bucket"
+                    yKeys={['count']}
+                    colors={['hsl(var(--chart-3))']}
                     height={300}
                   />
                 ) : (

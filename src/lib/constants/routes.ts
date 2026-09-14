@@ -65,7 +65,7 @@ export const ROUTES = {
 
   // Exam routes (redirected to /cbt which has an actual page)
   EXAMS: '/cbt',
-  EXAM_CREATE: '/exams/create',
+  EXAM_CREATE: '/exams?new=1',
   EXAM_DETAIL: '/exams/[id]',
   EXAM_TAKE: '/exams/[id]/take',
   EXAM_RESULTS: '/exams/[id]/results',
@@ -73,7 +73,7 @@ export const ROUTES = {
 
   // Question bank (redirected to /question-bank which has an actual page)
   QUESTIONS: '/question-bank',
-  QUESTIONS_CREATE: '/question-bank/create',
+  QUESTIONS_CREATE: '/question-bank',
 
   // Student portal (redirected to /dashboard/student which has an actual page)
   STUDENT_DASHBOARD: '/dashboard/student',

@@ -1,0 +1,3 @@
+base=http://localhost:3000 timestamp=2026-09-14T06:20:46Z
+passed=1 failed=0
+PASS 07-cbt-flow

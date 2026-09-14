@@ -9,7 +9,6 @@
 import { type ColumnDef } from '@tanstack/react-table'
 import { Badge } from '@/components/ui/badge'
 import { DataTable } from '@/components/tables/data-table'
-import { ViewButton } from '@/components/buttons/view-button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Progress } from '@/components/ui/progress'
 import { resolveIcon } from '@/lib/design/icon-registry'
@@ -118,11 +117,6 @@ const columns: ColumnDef<ResultListItem, unknown>[] = [
         </Badge>
       )
     },
-  },
-  {
-    id: 'actions',
-    header: '',
-    cell: ({ row }) => (<ViewButton href={`/results/${row.original.id}`} label="View Details" />),
   },
 ]
 

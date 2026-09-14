@@ -10,6 +10,7 @@ import { apiFetch } from '@/lib/api/client-fetch'
 
 import { useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useAuthStore } from '@/lib/stores/auth-store'
 import {
   Brain,
   Users,
@@ -1005,7 +1006,11 @@ function AttendanceResults({ data }: { data: AttendanceResult }) {
 // ──────────────────────────────────────────────────────────────
 
 export default function AIInsightsPage() {
-  const [schoolId, setSchoolId] = useState('')
+  // Ω-UI: schoolId is auto-filled from the authenticated session — school
+  // admins no longer need to hunt for their school UUID (the field stays
+  // editable so a super_admin can analyze another school).
+  const sessionUser = useAuthStore((s) => s.user)
+  const [schoolId, setSchoolId] = useState(sessionUser?.schoolId ?? '')
   const [activeTab, setActiveTab] = useState<AnalysisAction>('staffing')
   const [states, setStates] = useState<AnalysisStates>({
     staffing: { loading: false, error: null, result: null },
@@ -1098,14 +1103,15 @@ export default function AIInsightsPage() {
                 <Input
                   id="school-id"
                   type="text"
-                  placeholder="Enter your school ID to unlock AI analysis"
+                  placeholder="School ID (auto-filled from your account)"
                   value={schoolId}
                   onChange={(e) => setSchoolId(e.target.value)}
                   className="flex-1 max-w-md forge-input-glow"
                 />
                 {!schoolId.trim() && (
                   <p className="text-xs text-muted-foreground">
-                    Enter your school ID above to start running AI analyses
+                    No school is linked to your account yet — ask your administrator to assign one,
+                    or paste a school ID to analyze it.
                   </p>
                 )}
               </div>

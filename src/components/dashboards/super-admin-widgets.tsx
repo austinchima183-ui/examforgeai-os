@@ -157,7 +157,7 @@ export function SuperAdminWidgets(props: SuperAdminWidgetsProps) {
     },
     {
       id: 'ai-insights',
-      title: 'AI Insights',
+      title: 'Smart Insights',
       description: 'Personalized recommendations from platform data',
       category: 'ai',
       frameless: true,

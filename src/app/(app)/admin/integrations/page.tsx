@@ -43,7 +43,11 @@ interface IntegrationRow {
 
 export default function IntegrationsPage() {
   const { user } = useAuthStore()
-  const { data: integrations, loading, error, refetch } = useApi<IntegrationRow[]>('/api/admin/integrations?schoolId=')
+  // Ω-UI: pass the session's school id (was a hardcoded empty ?schoolId=
+  // query that always returned the unfiltered/unscoped response).
+  const { data: integrations, loading, error, refetch } = useApi<IntegrationRow[]>(
+    user?.schoolId ? `/api/admin/integrations?schoolId=${user.schoolId}` : '/api/admin/integrations'
+  )
   const [configOpen, setConfigOpen] = React.useState(false)
   const [selected, setSelected] = React.useState<IntegrationRow | null>(null)
   const [testing, setTesting] = React.useState<string | null>(null)

@@ -247,8 +247,12 @@ export async function getTeacherStats(userId: string): Promise<TeacherStats> {
       ? supabase.from('questions').select('id', { count: 'exact', head: true }).in('exam_id', teacherExamIds)
       : Promise.resolve({ count: 0, data: null, error: null }),
     supabase.from('exams').select('id', { count: 'exact', head: true }).eq('created_by', userId).eq('status', 'active'),
+    // Ω-UI: pending grading counts the SAME table the grading queue reads
+    // (exam_submissions with no score yet) so the badge always matches the
+    // queue — it previously counted exam_sessions.status='submitted', which
+    // drifted from the real queue.
     teacherExamIds.length > 0
-      ? supabase.from('exam_sessions').select('id', { count: 'exact', head: true }).eq('status', 'submitted').in('exam_id', teacherExamIds)
+      ? supabase.from('exam_submissions').select('id', { count: 'exact', head: true }).is('score', null).in('exam_id', teacherExamIds)
       : Promise.resolve({ count: 0, data: null, error: null }),
     teacherExamIds.length > 0
       ? supabase.from('exam_sessions').select('student_id').in('exam_id', teacherExamIds)
@@ -359,12 +363,20 @@ export async function getStudentStats(userId: string, schoolId: string | null): 
 
   const upcomingExamsCount = (upcomingExams ?? []).filter(e => !takenIds.has(e.id)).length
 
+  // Ω-UI: REAL AI-session count (previously hardcoded 0 — a fabricated KPI).
+  // Counts the student's logged AI interactions (tutor/practice/explain runs
+  // tracked in ai_generation_requests by the AI reliability layer).
+  const { count: aiSessions } = await supabase
+    .from('ai_generation_requests')
+    .select('id', { count: 'exact', head: true })
+    .eq('user_id', userId)
+
   return {
     upcomingExams: upcomingExamsCount,
     completed,
     averageScore,
     totalExams: completed,
-    practiceSessions: 0,
+    practiceSessions: aiSessions ?? 0,
   }
 }
 

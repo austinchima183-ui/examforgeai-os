@@ -1,5 +1,6 @@
 'use client';
 import { apiFetch } from '@/lib/api/client-fetch'
+import ReactMarkdown from 'react-markdown'
 
 // ============================================================================
 // ExamForge AI — AI Copilot Component
@@ -246,6 +247,17 @@ function TypingIndicator() {
 }
 
 // ──────────────────────────────────────────────────────────────
+// Ω-UI: Markdown renderer (same pattern as the AI Tutor surface)
+// ──────────────────────────────────────────────────────────────
+function MarkdownContent({ content }: { content: string }) {
+  return (
+    <div className="prose prose-sm dark:prose-invert max-w-none prose-p:leading-relaxed prose-headings:font-semibold prose-pre:bg-muted prose-pre:p-3 prose-code:text-neural prose-code:font-mono">
+      <ReactMarkdown>{content}</ReactMarkdown>
+    </div>
+  )
+}
+
+// ──────────────────────────────────────────────────────────────
 // Chat Message Bubble
 // ──────────────────────────────────────────────────────────────
 
@@ -287,7 +299,12 @@ function ChatBubble({ message }: { message: ChatMessage }) {
             : 'rounded-tl-none border-l-2 border-l-cyan-400/50 bg-white/[0.04] text-card-foreground shadow-sm backdrop-blur-sm forge-glass-surface'
         )}
       >
-        {message.content}
+        {/* Ω-UI: markdown rendering (same pattern as AI Tutor) */}
+        {isUser ? (
+          message.content
+        ) : (
+          <MarkdownContent content={message.content} />
+        )}
       </div>
     </motion.div>
   );
@@ -451,40 +468,49 @@ export function AiCopilot({ isOpen: externalIsOpen, onOpenChange }: AiCopilotPro
         }
 
         // Read the stream
+        // Ω-UI FIX: proper SSE consumption — lines are buffered (a JSON payload
+        // can be split across chunks), content is APPENDED (it previously
+        // replaced on every chunk, so only the last fragment was visible),
+        // and the final message is assembled from parsed content (it
+        // previously stored the raw SSE wire text, showing `data:` frames and
+        // JSON escapes to the user).
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
-        let accumulated = '';
+        let buffer = '';
+        let finalText = '';
 
         while (true) {
           const { done, value } = await reader.read();
           if (done) break;
 
-          const chunk = decoder.decode(value, { stream: true });
-          accumulated += chunk;
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split('\n');
+          buffer = lines.pop() ?? '';
 
-          // Parse SSE data lines
-          const lines = chunk.split('\n');
           for (const line of lines) {
-            if (line.startsWith('data: ')) {
-              const data = line.slice(6);
-              if (data === '[DONE]') continue;
-              try {
-                const parsed = JSON.parse(data);
-                if (parsed.content) {
-                  setStreamingContent(parsed.content);
-                }
-              } catch {
-                // If not JSON, treat as plain text content
-                if (data && data !== '[DONE]') {
-                  setStreamingContent((prev) => prev + data);
-                }
+            if (!line.startsWith('data: ')) continue;
+            const data = line.slice(6).trim();
+            if (data === '[DONE]') continue;
+            try {
+              const parsed = JSON.parse(data);
+              const content = parsed.choices?.[0]?.delta?.content ?? parsed.content ?? '';
+              if (content) {
+                finalText += content;
+                setStreamingContent((prev) => prev + content);
+              }
+            } catch {
+              // Non-JSON chunk — treat as plain text content
+              if (data) {
+                finalText += data;
+                setStreamingContent((prev) => prev + data);
               }
             }
           }
         }
 
-        // Finalize the assistant message
-        const finalContent = accumulated.trim() || 'I apologize, but I wasn\'t able to generate a response. Please try again.';
+        // Finalize the assistant message from the assembled content
+        const finalContent = finalText.trim() ||
+          "I apologize, but I wasn't able to generate a response. Please try again.";
         const assistantMessage: ChatMessage = {
           id: `msg-${Date.now()}-assistant`,
           role: 'assistant',
@@ -748,7 +774,7 @@ export function AiCopilot({ isOpen: externalIsOpen, onOpenChange }: AiCopilotPro
                         <Bot className="size-4 text-primary" />
                       </div>
                       <div className="max-w-[80%] rounded-xl rounded-tl-none border-l-2 border-l-cyan-400/50 bg-white/[0.04] px-3 py-2.5 text-sm leading-relaxed text-card-foreground shadow-sm backdrop-blur-sm forge-glass-surface">
-                        {streamingContent}
+                        <MarkdownContent content={streamingContent} />
                         <motion.span
                           className="ml-0.5 inline-block h-4 w-[2px] translate-y-0.5 bg-cyan-400"
                           animate={{ opacity: [1, 0] }}

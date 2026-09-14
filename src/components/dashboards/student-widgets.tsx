@@ -9,8 +9,8 @@
 // Layout persists per `${role}:${userId}` in localStorage.
 // ============================================================================
 
-import Link from 'next/link'
-import { FileText, Trophy, ArrowRight } from 'lucide-react'
+import { useState } from 'react'
+import { FileText, Trophy, Send } from 'lucide-react'
 import { ROUTES } from '@/lib/constants/routes'
 import {
   ActivityFeed,
@@ -88,6 +88,21 @@ export function StudentWidgets(props: StudentWidgetsProps) {
     averageScore,
   } = props
 
+  // Ω-UI: badge definitions aligned 1:1 with /student/progress (same titles,
+  // descriptions, and thresholds) — computed from the same real metrics.
+  const achievementBadges = [
+    { label: 'First Exam', desc: 'Complete your first exam', unlocked: completed >= 1 },
+    { label: 'Five Exams', desc: 'Complete 5 exams', unlocked: completed >= 5 },
+    { label: 'Ten Exams', desc: 'Complete 10 exams', unlocked: completed >= 10 },
+    { label: 'High Achiever', desc: 'Average score above 80%', unlocked: averageScore >= 80 },
+    { label: 'Consistent', desc: 'Average score above 60%', unlocked: averageScore >= 60 },
+    {
+      label: 'Multi-Subject',
+      desc: 'Exams in 3+ subjects',
+      unlocked: subjectChartData.length >= 3,
+    },
+  ]
+
   const widgets: WidgetDef[] = [
     {
       id: 'score-trend',
@@ -117,7 +132,7 @@ export function StudentWidgets(props: StudentWidgetsProps) {
           tasks={tasks}
           title="Upcoming Exams"
           bare
-          emptyAction={{ label: 'Browse exams', href: ROUTES.STUDENT_PRACTICE }}
+          emptyAction={{ label: 'Browse exams', href: ROUTES.EXAMS }}
         />
       ),
     },
@@ -169,7 +184,7 @@ export function StudentWidgets(props: StudentWidgetsProps) {
     },
     {
       id: 'ai-insights',
-      title: 'AI Insights',
+      title: 'Smart Insights',
       description: 'Personalized recommendations from your data',
       category: 'ai',
       frameless: true,
@@ -223,19 +238,18 @@ export function StudentWidgets(props: StudentWidgetsProps) {
       title: 'Achievements',
       description: 'Milestones unlocked',
       category: 'social',
-      exportData: () => [
-        { achievement: 'First Exam', description: 'Completed your first exam', unlocked: completed > 0 },
-        { achievement: 'Practiced', description: 'Completed a practice session', unlocked: practiceSessions > 0 },
-        { achievement: 'High Scorer', description: 'Scored above 70%', unlocked: averageScore >= 70 },
-      ],
+      // Ω-UI: aligned with the /student/progress badge system (same titles,
+      // same thresholds) so the two surfaces never disagree.
+      exportData: () =>
+        achievementBadges.map((b) => ({
+          achievement: b.label,
+          description: b.desc,
+          unlocked: b.unlocked,
+        })),
       defaultPosition: { x: 1, y: 8, w: 4, h: 1, pinned: false, collapsed: false },
       render: () => (
         <div className="space-y-2">
-          {[
-            { label: 'First Exam', desc: 'Completed your first exam', unlocked: completed > 0 },
-            { label: 'Practiced', desc: 'Completed a practice session', unlocked: practiceSessions > 0 },
-            { label: 'High Scorer', desc: 'Scored above 70%', unlocked: averageScore >= 70 },
-          ].map((ach) => (
+          {achievementBadges.map((ach) => (
             <div
               key={ach.label}
               className={`flex items-center gap-2.5 rounded-lg p-2 ${
@@ -266,20 +280,7 @@ export function StudentWidgets(props: StudentWidgetsProps) {
       description: 'Get instant help with any topic',
       category: 'ai',
       defaultPosition: { x: 1, y: 9, w: 4, h: 1, pinned: false, collapsed: false },
-      render: () => (
-        <div>
-          <p className="text-xs text-muted-foreground leading-relaxed">
-            Your AI tutor is ready 24/7. Ask anything about your subjects, get
-            explanations, and prepare smarter for exams.
-          </p>
-          <Button asChild size="sm" variant="ghost" className="mt-3">
-            <Link href={ROUTES.STUDENT_AI_TUTOR}>
-              Open
-              <ArrowRight className="h-3 w-3" />
-            </Link>
-          </Button>
-        </div>
-      ),
+      render: () => <AiTutorInlineWidget />,
     },
     {
       id: 'recent-activity',
@@ -310,5 +311,44 @@ export function StudentWidgets(props: StudentWidgetsProps) {
       userId={userId}
       aria-label="Student dashboard widgets — drag, resize, collapse or pin cards"
     />
+  )
+}
+
+// ──────────────────────────────────────────────────────────────
+// Ω-UI: Inline AI Tutor ask box — turns the old promo card into a
+// functional entry point. The question deep-links to the AI Tutor
+// with ?q= prefill (never auto-sends — no surprise AI calls).
+// ──────────────────────────────────────────────────────────────
+function AiTutorInlineWidget() {
+  const [question, setQuestion] = useState('')
+
+  const submit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const q = question.trim()
+    if (!q) return
+    window.location.href = `${ROUTES.STUDENT_AI_TUTOR}?q=${encodeURIComponent(q)}`
+  }
+
+  return (
+    <form onSubmit={submit} className="space-y-2">
+      <label htmlFor="ai-tutor-quick-ask" className="text-xs text-muted-foreground leading-relaxed">
+        Ask your AI tutor anything — it streams a real answer, explains concepts, and
+        generates practice questions.
+      </label>
+      <div className="flex gap-2">
+        <input
+          id="ai-tutor-quick-ask"
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+          placeholder="e.g. Explain photosynthesis simply…"
+          className="flex-1 h-9 rounded-lg border border-white/[0.06] bg-white/[0.03] px-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-primary/40 focus:border-primary/40 transition-colors"
+          maxLength={280}
+        />
+        <Button type="submit" size="sm" className="gap-1.5 shrink-0" disabled={!question.trim()}>
+          <Send className="h-3.5 w-3.5" />
+          <span className="sr-only sm:not-sr-only">Ask</span>
+        </Button>
+      </div>
+    </form>
   )
 }

@@ -170,7 +170,7 @@ function statusBadgeColor(status: SessionStatus, flagged: boolean): string {
   if (flagged) return 'bg-destructive/10 text-destructive dark:bg-destructive/10 dark:text-destructive border-0';
   switch (status) {
     case 'in_progress':
-      return 'bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-400 dark:bg-emerald-900/40 dark:text-green-400 border-0';
+      return 'bg-emerald-500/15 text-emerald-400 border-0';
     case 'submitted':
     case 'graded':
     case 'timed_out':
@@ -906,10 +906,10 @@ export default function ExamMonitorPage() {
         <header className="flex items-center justify-between border-b border-border/30 forge-glass-elevated backdrop-blur-md px-4 py-3 sm:px-6">
           <div className="flex items-center gap-3 min-w-0">
             <h1 className="text-lg font-bold truncate sm:text-xl">{exam.title}</h1>
-            <Badge className="gap-1.5 bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-400 dark:bg-emerald-900/40 dark:text-green-400 border-0">
+            <Badge className="gap-1.5 bg-emerald-500 text-green-700 dark:text-green-400 dark:bg-emerald-900/40 dark:text-green-400 border-0">
               <span className="relative flex size-2">
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex size-2 rounded-full bg-green-50 dark:bg-green-950" />
+                <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
               </span>
               Live
             </Badge>
@@ -961,7 +961,7 @@ export default function ExamMonitorPage() {
             <div className="flex items-center gap-2 text-sm">
               <span className="relative flex size-2.5">
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex size-2.5 rounded-full bg-green-50 dark:bg-green-950" />
+                <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500" />
               </span>
               <span className="text-muted-foreground">Online</span>
               <span className="font-semibold tabular-nums">{stats.online}</span>
@@ -1085,7 +1085,7 @@ export default function ExamMonitorPage() {
                                 <span
                                   className={cn(
                                     'absolute -bottom-0.5 -right-0.5 flex size-3 rounded-full border-2 border-white dark:border-slate-900',
-                                    session.isOnline ? 'bg-green-50 dark:bg-green-950' : 'bg-slate-300 dark:bg-slate-600'
+                                    session.isOnline ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'
                                   )}
                                 />
                               </div>
@@ -1216,7 +1216,7 @@ export default function ExamMonitorPage() {
                             <span
                               className={cn(
                                 'size-1.5 rounded-full',
-                                selectedStudent.isOnline ? 'bg-green-50 dark:bg-green-950' : 'bg-slate-400'
+                                selectedStudent.isOnline ? 'bg-emerald-500' : 'bg-slate-400'
                               )}
                             />
                             {selectedStudent.isOnline ? 'Online' : 'Offline'}

@@ -334,6 +334,16 @@ function ChatMode() {
   const inputRef = useRef<HTMLInputElement>(null)
   const abortControllerRef = useRef<AbortController | null>(null)
 
+  // Ω-UI: deep-link prefill — dashboard AI widget and other surfaces can
+  // send a starter question via ?q=… (prefills the composer, never auto-sends).
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get('q')
+    if (q && q.trim()) {
+      setInput(q.trim())
+      inputRef.current?.focus()
+    }
+  }, [])
+
   // Save chat history to localStorage
   useEffect(() => {
     if (messages.length > 0) {

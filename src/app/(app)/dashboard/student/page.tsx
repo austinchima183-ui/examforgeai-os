@@ -25,6 +25,35 @@ import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
 
+/**
+ * Ω-UI: honest streak — counts consecutive calendar days ending today (or
+ * yesterday, so late-night activity isn't punished) on which the student
+ * had a recorded activity (exam started/submitted/graded). Derived from
+ * real timestamps only.
+ */
+function computeActivityStreak(activities: Array<{ timestamp: string }>): number {
+  if (activities.length === 0) return 0
+  const dayKey = (iso: string) => new Date(iso).toISOString().slice(0, 10)
+  const today = new Date()
+  const yesterday = new Date(today)
+  yesterday.setDate(today.getDate() - 1)
+  const todayKey = dayKey(today.toISOString())
+  const yesterdayKey = dayKey(yesterday.toISOString())
+
+  const activeDays = new Set(activities.map((a) => dayKey(a.timestamp)))
+  if (!activeDays.has(todayKey) && !activeDays.has(yesterdayKey)) return 0
+
+  let streak = 0
+  const cursor = activeDays.has(todayKey) ? new Date(today) : yesterday
+  for (;;) {
+    const key = dayKey(cursor.toISOString())
+    if (!activeDays.has(key)) break
+    streak += 1
+    cursor.setDate(cursor.getDate() - 1)
+  }
+  return streak
+}
+
 // ============================================================================
 // Student Dashboard — UX 2.0
 // ============================================================================
@@ -124,7 +153,7 @@ export default async function StudentDashboard() {
   // ── Quick Actions (top row) ──
   const quickActionItems = [
     {
-      href: ROUTES.STUDENT_PRACTICE,
+      href: ROUTES.EXAMS,
       icon: 'target',
       label: 'Take Exam',
       description: 'View and take your scheduled exams',
@@ -132,7 +161,7 @@ export default async function StudentDashboard() {
       iconColor: 'text-blue-600 dark:text-blue-400',
     },
     {
-      href: ROUTES.STUDENT_PROGRESS,
+      href: ROUTES.RESULTS,
       icon: 'bar-chart3',
       label: 'View Results',
       description: 'Check your scores and performance',
@@ -186,7 +215,10 @@ export default async function StudentDashboard() {
   ]
 
   const subjectChartData = subjectPerf.map((s) => ({ name: s.subject, value: s.score }))
-  const streakDays = Math.min(stats.completed + stats.practiceSessions, 7)
+  // Ω-UI: honest streak — consecutive calendar days with recorded activity
+  // (exam sessions / results), computed from real activity timestamps instead
+  // of an invented completed+practice formula.
+  const streakDays = computeActivityStreak(activities)
 
   return (
     <DashboardPage
@@ -274,9 +306,9 @@ export default async function StudentDashboard() {
         />
         <KpiCard
           index={3}
-          label="Practice Sessions"
+          label="AI Sessions"
+          description="Tutor & practice runs"
           value={stats.practiceSessions}
-          description="Total attempts"
           icon="target"
           iconBg="bg-amber-500/15 dark:bg-amber-500/20"
           iconColor="text-amber-600 dark:text-amber-400"

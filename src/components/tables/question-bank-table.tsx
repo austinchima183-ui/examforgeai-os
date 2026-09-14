@@ -11,7 +11,6 @@ import { DataTable } from '@/components/tables/data-table'
 import type { QuestionListItem } from '@/lib/services/question-bank-service'
 import { HelpCircle, Sparkles, BookOpen, FileText, Wand2, Filter, Tag } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
-import { ViewButton } from '@/components/buttons/view-button'
 
 const typeLabelMap: Record<string, string> = {
   single_choice: 'Single Choice',
@@ -125,9 +124,9 @@ const columns: ColumnDef<QuestionListItem, unknown>[] = [
   {
     id: 'actions',
     header: '',
-    cell: ({ row }) => (
-      <ViewButton href={`/question-bank/${row.original.id}`} />
-    ),
+    // Ω-UI: removed the dead “View” link — /question-bank/[id] has no page
+    // (every click 404'd). Question data is fully rendered in the row.
+    cell: () => null,
   },
 ]
 

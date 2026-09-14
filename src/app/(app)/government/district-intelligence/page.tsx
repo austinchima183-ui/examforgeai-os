@@ -204,7 +204,7 @@ function StatCard({
   value,
   subtitle,
   trend,
-  color = 'indigo',
+  color = 'blue',
 }: {
   icon: React.ComponentType<{ className?: string }>
   label: string
@@ -214,7 +214,7 @@ function StatCard({
   color?: string
 }) {
   const colorMap: Record<string, string> = {
-    indigo: 'from-indigo-500 to-indigo-600',
+    blue: 'from-blue-500 to-blue-600',
     emerald: 'from-emerald-500 to-emerald-600',
     amber: 'from-amber-500 to-amber-600',
     rose: 'from-rose-500 to-rose-600',
@@ -224,7 +224,7 @@ function StatCard({
     <motion.div variants={cardVariant} className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow">
       <div className="p-5">
         <div className="flex items-center justify-between">
-          <div className={cn('flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br text-white', colorMap[color] ?? colorMap.indigo)}>
+          <div className={cn('flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br text-white', colorMap[color] ?? colorMap.blue)}>
             <Icon className="h-5 w-5" />
           </div>
           {trend && (
@@ -251,7 +251,7 @@ function DistributionBarChart({ distribution }: { distribution: PerformanceDistr
 
   const segments = [
     { label: 'Excellent', value: distribution.excellent, color: 'bg-green-50 dark:bg-green-950', pct: (distribution.excellent / total) * 100 },
-    { label: 'Good', value: distribution.good, color: 'bg-indigo-500', pct: (distribution.good / total) * 100 },
+    { label: 'Good', value: distribution.good, color: 'bg-blue-500', pct: (distribution.good / total) * 100 },
     { label: 'Satisfactory', value: distribution.satisfactory, color: 'bg-yellow-50 dark:bg-yellow-950', pct: (distribution.satisfactory / total) * 100 },
     { label: 'Below Standard', value: distribution.belowStandard, color: 'bg-rose-500', pct: (distribution.belowStandard / total) * 100 },
   ]
@@ -284,7 +284,7 @@ function DistributionBarChart({ distribution }: { distribution: PerformanceDistr
 
 function InsightList({ items, icon: Icon = Sparkles, variant = 'default' }: { items: string[]; icon?: React.ComponentType<{ className?: string }>; variant?: 'default' | 'warning' | 'success' }) {
   const variantStyles = {
-    default: 'border-indigo-200 bg-indigo-50/50 dark:border-indigo-900 dark:bg-indigo-950/30',
+    default: 'border-primary/30 bg-primary/10',
     warning: 'border-amber-200 bg-yellow-50 dark:bg-yellow-950/50 dark:border-amber-900 dark:bg-amber-950/30',
     success: 'border-emerald-200 bg-green-50 dark:bg-green-950/50 dark:border-emerald-900 dark:bg-emerald-950/30',
   }
@@ -299,7 +299,7 @@ function InsightList({ items, icon: Icon = Sparkles, variant = 'default' }: { it
           transition={{ delay: idx * 0.05 }}
           className={cn('flex items-start gap-2.5 rounded-lg border p-3 text-sm', variantStyles[variant])}
         >
-          <Icon className="mt-0.5 h-4 w-4 shrink-0 text-indigo-600 dark:text-indigo-400" />
+          <Icon className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
           <span>{item}</span>
         </motion.li>
       ))}
@@ -376,7 +376,7 @@ function DistrictSection() {
               id="district-region"
               value={region}
               onChange={(e) => { setRegion(e.target.value); setState('') }}
-              className="h-10 w-full rounded-lg border bg-background px-3 text-sm ring-offset-background focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+              className="h-10 w-full rounded-lg border bg-background px-3 text-sm ring-offset-background focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
             >
               <option value="">Select region...</option>
               {NIGERIAN_REGIONS.map((r) => <option key={r} value={r}>{r}</option>)}
@@ -389,7 +389,7 @@ function DistrictSection() {
               value={state}
               onChange={(e) => setState(e.target.value)}
               disabled={!region}
-              className="h-10 w-full rounded-lg border bg-background px-3 text-sm ring-offset-background focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 disabled:cursor-not-allowed disabled:opacity-50"
+              className="h-10 w-full rounded-lg border bg-background px-3 text-sm ring-offset-background focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 disabled:cursor-not-allowed disabled:opacity-50"
             >
               <option value="">All states</option>
               {availableStates.map((s) => <option key={s} value={s}>{s}</option>)}
@@ -398,7 +398,7 @@ function DistrictSection() {
           <button
             onClick={handleAnalyze}
             disabled={!region || loading}
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-indigo-600 px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
             {loading ? 'Analyzing...' : 'Analyze'}
@@ -425,7 +425,7 @@ function DistrictSection() {
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="space-y-6">
             {/* Stat Cards */}
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <StatCard icon={School} label="Total Schools" value={result.totalSchools.toLocaleString()} color="indigo" />
+              <StatCard icon={School} label="Total Schools" value={result.totalSchools.toLocaleString()} color="blue" />
               <StatCard icon={Users} label="Total Students" value={result.totalStudents.toLocaleString()} color="emerald" />
               <StatCard icon={Landmark} label="Total Teachers" value={result.totalTeachers.toLocaleString()} color="amber" />
               <StatCard icon={BarChart3} label="Avg Performance" value={`${result.averagePerformance.toFixed(1)}%`} trend={result.averagePerformance >= 60 ? 'up' : 'down'} color="rose" />
@@ -485,12 +485,12 @@ function DistrictSection() {
                         'flex items-start gap-2.5 rounded-lg border p-3 text-sm',
                         alert.type === 'critical' && 'border-rose-200 bg-rose-50 dark:border-rose-900 dark:bg-rose-950',
                         alert.type === 'warning' && 'border-amber-200 bg-yellow-50 dark:bg-yellow-950 dark:border-amber-900 dark:bg-amber-950',
-                        alert.type === 'info' && 'border-indigo-200 bg-indigo-50 dark:border-indigo-900 dark:bg-indigo-950',
+                        alert.type === 'info' && 'border-primary-200 bg-primary-50 dark:border-primary-900 dark:bg-primary-950',
                       )}
                     >
                       {alert.type === 'critical' && <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-rose-600" />}
                       {alert.type === 'warning' && <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-yellow-600 dark:text-yellow-400" />}
-                      {alert.type === 'info' && <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-indigo-600" />}
+                      {alert.type === 'info' && <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" />}
                       <span>{alert.message}</span>
                     </div>
                   ))}
@@ -573,13 +573,13 @@ function ComparisonSection() {
               value={schoolIdsInput}
               onChange={(e) => setSchoolIdsInput(e.target.value)}
               placeholder="e.g. sch-001, sch-002, sch-003"
-              className="h-10 w-full rounded-lg border bg-background px-3 text-sm ring-offset-background placeholder:text-muted-foreground focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+              className="h-10 w-full rounded-lg border bg-background px-3 text-sm ring-offset-background placeholder:text-muted-foreground focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
             />
           </div>
           <button
             onClick={handleAnalyze}
             disabled={!schoolIdsInput.trim() || loading}
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-indigo-600 px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <BarChart3 className="h-4 w-4" />}
             {loading ? 'Comparing...' : 'Compare'}
@@ -768,7 +768,7 @@ function ComplianceSection() {
               id="compliance-standard"
               value={standard}
               onChange={(e) => setStandard(e.target.value)}
-              className="h-10 w-full rounded-lg border bg-background px-3 text-sm ring-offset-background focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+              className="h-10 w-full rounded-lg border bg-background px-3 text-sm ring-offset-background focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
             >
               <option value="">Select standard...</option>
               {CURRICULUM_STANDARDS.map((s) => <option key={s} value={s}>{s}</option>)}
@@ -777,7 +777,7 @@ function ComplianceSection() {
           <button
             onClick={handleAnalyze}
             disabled={!standard || loading}
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-indigo-600 px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Shield className="h-4 w-4" />}
             {loading ? 'Checking...' : 'Check Compliance'}
@@ -867,7 +867,7 @@ function ComplianceSection() {
                       <ul className="space-y-1 text-xs text-muted-foreground">
                         {school.recommendations.map((rec, i) => (
                           <li key={i} className="flex items-start gap-1.5">
-                            <CheckCircle2 className="mt-0.5 h-3 w-3 shrink-0 text-indigo-500" />
+                            <CheckCircle2 className="mt-0.5 h-3 w-3 shrink-0 text-primary-500" />
                             {rec}
                           </li>
                         ))}
@@ -969,7 +969,7 @@ function TrendsSection() {
               id="trend-metric"
               value={metric}
               onChange={(e) => setMetric(e.target.value)}
-              className="h-10 w-full rounded-lg border bg-background px-3 text-sm ring-offset-background focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+              className="h-10 w-full rounded-lg border bg-background px-3 text-sm ring-offset-background focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
             >
               <option value="">Select metric...</option>
               {METRIC_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
@@ -981,7 +981,7 @@ function TrendsSection() {
               id="trend-timeframe"
               value={timeframe}
               onChange={(e) => setTimeframe(e.target.value)}
-              className="h-10 w-full rounded-lg border bg-background px-3 text-sm ring-offset-background focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+              className="h-10 w-full rounded-lg border bg-background px-3 text-sm ring-offset-background focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
             >
               <option value="">Select timeframe...</option>
               {TIMEFRAME_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
@@ -993,7 +993,7 @@ function TrendsSection() {
               id="trend-group"
               value={groupBy}
               onChange={(e) => setGroupBy(e.target.value)}
-              className="h-10 w-full rounded-lg border bg-background px-3 text-sm ring-offset-background focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+              className="h-10 w-full rounded-lg border bg-background px-3 text-sm ring-offset-background focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
             >
               <option value="">Default</option>
               {GROUP_BY_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
@@ -1003,7 +1003,7 @@ function TrendsSection() {
             <button
               onClick={handleAnalyze}
               disabled={!metric || !timeframe || loading}
-              className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-indigo-600 px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Globe className="h-4 w-4" />}
               {loading ? 'Analyzing...' : 'Analyze Trends'}
@@ -1028,7 +1028,7 @@ function TrendsSection() {
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="space-y-6">
             {/* Overview */}
             <div className="grid gap-4 sm:grid-cols-2">
-              <StatCard icon={BarChart3} label="Metric" value={result.metric} color="indigo" />
+              <StatCard icon={BarChart3} label="Metric" value={result.metric} color="blue" />
               <StatCard icon={Globe} label="Timeframe" value={result.timeframe} color="emerald" />
             </div>
 
@@ -1067,7 +1067,7 @@ function TrendsSection() {
                                 className={cn(
                                   'w-full rounded-t-sm min-h-[4px]',
                                   group.trend === 'improving' ? 'bg-emerald-400' :
-                                  group.trend === 'declining' ? 'bg-rose-400' : 'bg-indigo-400',
+                                  group.trend === 'declining' ? 'bg-rose-400' : 'bg-primary-400',
                                 )}
                                 style={{ maxHeight: '80px' }}
                               />
@@ -1086,12 +1086,12 @@ function TrendsSection() {
             {result.predictions.length > 0 && (
               <motion.div variants={cardVariant} className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow p-5">
                 <h3 className="flex items-center gap-2 text-base font-semibold">
-                  <Sparkles className="h-5 w-5 text-indigo-500" />
+                  <Sparkles className="h-5 w-5 text-primary-500" />
                   Predictions
                 </h3>
                 <div className="mt-4 space-y-3">
                   {result.predictions.map((pred, idx) => (
-                    <div key={idx} className="flex items-center justify-between rounded-lg border border-indigo-500/10 bg-indigo-500/5 p-3">
+                    <div key={idx} className="flex items-center justify-between rounded-lg border border-primary-500/10 bg-primary/5 p-3">
                       <div>
                         <p className="text-sm font-medium">{pred.period}</p>
                         <p className="text-xs text-muted-foreground">Predicted value: <span className="font-semibold">{pred.predictedValue.toFixed(1)}</span></p>
@@ -1115,7 +1115,7 @@ function TrendsSection() {
             {result.policyImplications.length > 0 && (
               <motion.div variants={cardVariant} className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow p-5">
                 <h3 className="flex items-center gap-2 text-base font-semibold">
-                  <Landmark className="h-5 w-5 text-indigo-500" />
+                  <Landmark className="h-5 w-5 text-primary-500" />
                   Policy Implications
                 </h3>
                 <div className="mt-3">
@@ -1162,7 +1162,7 @@ export default function DistrictIntelligencePage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary-action text-white shadow-md">
                   <Landmark className="h-5 w-5" />
                 </div>
                 <div>
@@ -1176,7 +1176,7 @@ export default function DistrictIntelligencePage() {
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <div className="flex items-center gap-1.5 rounded-lg border bg-indigo-50 px-3 py-1.5 text-xs font-medium text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
+              <div className="flex items-center gap-1.5 rounded-lg border bg-primary-50 px-3 py-1.5 text-xs font-medium text-primary-700 dark:bg-primary-950 dark:text-primary/80">
                 <Shield className="h-3.5 w-3.5" />
                 Restricted Access
               </div>
@@ -1198,7 +1198,7 @@ export default function DistrictIntelligencePage() {
                     className={cn(
                       'flex items-center gap-3 rounded-xl px-4 py-3 text-left text-sm font-medium transition-all duration-200',
                       isActive
-                        ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/25'
+                        ? 'bg-primary-600 text-white shadow-md shadow-primary-600/25'
                         : 'text-muted-foreground hover:bg-muted hover:text-foreground',
                     )}
                   >

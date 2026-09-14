@@ -502,3 +502,18 @@ Stage Summary:
 - Production = repository: web-alpha-bay-87.vercel.app serves EXACTLY 879827e (dpl_Fj9qAR1thTcP3JUXba3z6Nbqre4j, READY).
 - All 6 mission steps complete; freeze conditions all true; release tagged EXAMFORGE-RC1-FROZEN.
 - Key operational fact for future sessions: production deploys go through project examforge-ai (owns bare domain, full env set); project web-alpha-bay-87 has ZERO env vars and a dead git-link (its auto-deploys fail — do not use it for production).
+
+---
+Task ID: PHΩ-ASCENSION-1-4
+Agent: Super Z (main)
+Task: PHASE Ω UI ASCENSION — PHASE 1–4 (reality verification, structural audit, UI quality audit, design constitution) before any code changes.
+
+Work Log:
+- Reality check: HEAD=31bdb47 (release past 879827e), tag EXAMFORGE-RC1-FROZEN present; cleaned bun.lock residue + mode-change on release notes → tree clean.
+- .env.local was MISSING (dev server 500) → rebuilt via scripts/omega/rebuild-env-clean.py with owner's Vercel token (23 vars, real Supabase URL/anon/webhook-hash, documented placeholders). Dev server recovered: / 200, /login 200, /api/health 200.
+- Launched 3 parallel Explore agents (structure/design-system, student+CBT, teacher/admin+AI) — full 127-page inventory, layout chains, component map, palette facts, widget-system architecture.
+- Personally re-verified every CRITICAL claim by direct reads: submit API returns no score (route.ts:146-152, server-authority discards grading result) → completion screen 0%/FAILED; review section dead (allowReview key absent + correctAnswer stripped + UUID printing); exam take inside app shell with AI assistant mounted; /exams/create + /results/[id] + /question-bank/create 404 CTAs; AI generator save no-op (generationId never set); /admin/security calls nonexistent /api/security; AI Copilot REPLACE-not-append + raw-JSON final (ai-copilot.tsx:473-487); student contextual suggestions action mismatch (5/5 → 400); /api/teacher/submissions cross-tenant leak; practiceSessions hardcoded 0.
+- Wrote EXAMFORGE_UI_ASCENSION_INVENTORY.md (route map, verified defect matrix C1-C9/H1-H8/M1-M14, working-protected list, upgrade priorities) and EXAMFORGE_UI_CONSTITUTION_v1.0.md (10 articles: dark-by-design, honest pixels, exam-is-sacred, every state designed, token discipline, KpiCard unification, one-celebration rule, responsive/a11y law, student command-center philosophy).
+
+Stage Summary:
+- Inventory + constitution ratified at repo root. Implementation waves follow in mission priority order: CBT trust fixes → Student Command Center → AI experience → Teacher/Admin → mobile polish. Landing/marketing untouched (FROZEN).

@@ -408,7 +408,7 @@ export default function ParentDashboardPage() {
     {
       id: 'ai-insights',
       frameless: true,
-      title: 'AI Insights',
+      title: 'Smart Insights',
       description: 'Personalized recommendations',
       category: 'ai',
       exportData: () =>

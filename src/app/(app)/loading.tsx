@@ -10,10 +10,11 @@ import { Skeleton } from '@/components/ui/skeleton'
 export default function AppShellLoading() {
   return (
     <div className="min-h-screen flex bg-background">
-      {/* Sidebar Skeleton (desktop only) */}
+      {/* Sidebar Skeleton (desktop only) — w-64 matches the EnterpriseSidebar
+          default width so hydration causes no layout shift (Ω-UI). */}
       <aside className="hidden md:flex w-64 flex-col border-r bg-sidebar p-4 gap-4">
         {/* Logo */}
-        <div className="flex items-center gap-2 h-16 px-2">
+        <div className="flex items-center gap-2 h-12 px-2">
           <Skeleton className="h-8 w-8 rounded-lg" />
           <Skeleton className="h-5 w-28 rounded" />
         </div>
@@ -40,13 +41,14 @@ export default function AppShellLoading() {
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0">
-        {/* Header Skeleton */}
-        <header className="flex h-16 items-center gap-4 border-b px-6">
+        {/* Header Skeleton — h-12 matches the real shell header (Ω-UI: was
+            h-16, causing a visible shift on hydration) */}
+        <header className="flex h-12 items-center gap-4 border-b px-6">
           <Skeleton className="h-4 w-32 rounded" />
           <div className="flex-1" />
-          <Skeleton className="h-9 w-9 rounded-full" />
-          <Skeleton className="h-9 w-9 rounded-full" />
-          <Skeleton className="h-9 w-9 rounded-full" />
+          <Skeleton className="h-8 w-8 rounded-full" />
+          <Skeleton className="h-8 w-8 rounded-full" />
+          <Skeleton className="h-8 w-8 rounded-full" />
         </header>
 
         {/* Content Skeleton */}

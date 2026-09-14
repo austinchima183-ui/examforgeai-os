@@ -3,15 +3,15 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 // ---------------------------------------------------------------------------
-// ExamForge brand colors
+// ExamForge brand colors (UI Constitution: no indigo)
 // ---------------------------------------------------------------------------
 const CONFETTI_COLORS = [
-  '#6366f1', // indigo-500
-  '#8b5cf6', // violet-500
-  '#f59e0b', // amber-500
-  '#10b981', // emerald-500
-  '#ec4899', // pink-500
-  '#3b82f6', // blue-500
+  '#3b82f6', // blue-500 (primary)
+  '#22d3ee', // cyan-400 (neural)
+  '#10b981', // emerald-500 (success)
+  '#f59e0b', // amber-500 (ember)
+  '#fbbf24', // amber-400 (forge-gold)
+  '#14b8a6', // teal-500
 ]
 
 // ---------------------------------------------------------------------------

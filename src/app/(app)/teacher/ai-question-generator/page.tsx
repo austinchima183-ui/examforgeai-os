@@ -133,6 +133,10 @@ export default function AIQuestionGeneratorPage() {
     setError(null)
     setQuestions([])
     setSelectedQuestions(new Set())
+    // Ω-UI FIX: mint a fresh generation reference for THIS batch so the
+    // "Save N Questions" action works — it previously never fired because
+    // generationId stayed null and handleSave silently early-returned.
+    setGenerationId(crypto.randomUUID())
 
     try {
       const response = await apiFetch('/api/ai/teacher', {

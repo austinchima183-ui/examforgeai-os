@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, JetBrains_Mono } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import { Toaster } from '@/components/ui/sonner'
 import { SupabaseProvider } from '@/lib/hooks/use-supabase'
@@ -48,6 +48,15 @@ if (typeof window === 'undefined') {
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
+})
+
+// Ω-UI: actually load the mono face — --font-geist-mono was referenced by
+// globals.css (timers, codes, IDs) but never loaded, silently falling back
+// to the system stack.
+const mono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-geist-mono',
   display: 'swap',
 })
 
@@ -116,7 +125,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={inter.variable}
+      className={`${inter.variable} ${mono.variable}`}
     >
       <body className="font-sans antialiased bg-background text-foreground forge-ambient-bg">
         <StyledJsxRegistry>

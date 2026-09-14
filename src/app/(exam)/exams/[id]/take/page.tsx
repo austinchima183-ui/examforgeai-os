@@ -30,6 +30,9 @@ import {
   X,
   AlertCircle,
   RotateCcw,
+  Trophy,
+  Award,
+  Sparkles,
 } from 'lucide-react';
 
 // shadcn/ui components
@@ -60,6 +63,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import { Confetti } from '@/components/ui/confetti';
 
 // Stores & Hooks
 import { useAuthStore } from '@/lib/stores/auth-store';
@@ -114,13 +118,18 @@ type ExamPhase = 'loading' | 'pre-exam' | 'active' | 'submitted' | 'post-exam';
 type QuestionStatus = 'not-visited' | 'current' | 'answered' | 'marked';
 
 interface SubmitResult {
-  score: number;
-  totalMarks: number;
-  percentage: number;
-  passed: boolean;
+  score?: number;
+  totalMarks?: number;
+  percentage?: number;
+  passed?: boolean;
+  grade?: string;
   submittedAt: string;
   answeredQuestions?: number;
   totalQuestions?: number;
+  /** Ω-UI: honest duplicate-submission state — we never fabricate a score
+   *  when the server already has this exam. */
+  alreadySubmitted?: boolean;
+  timeUsedSeconds?: number;
 }
 
 // ============================================================================
@@ -168,6 +177,23 @@ function shuffleArray<T>(array: T[], shouldShuffle: boolean): T[] {
 
 function getOptionLabel(index: number): string {
   return String.fromCharCode(65 + index); // A, B, C, D...
+}
+
+/**
+ * Ω-UI: resolves a stored answer (option ids or free text) into human-
+ * readable text for the post-exam "Your Answers" review. Choice answers
+ * store option ids (never raw text), so we map them back through the
+ * question's options before display.
+ */
+function resolveAnswerText(q: ExamQuestion, raw: string): string {
+  if (!raw) return '(not answered)';
+  const ids = raw.split(',').map((s) => s.trim()).filter(Boolean);
+  const resolved = ids
+    .map((id) => q.options?.find((o) => o.id === id))
+    .filter((o): o is QuestionOption => !!o)
+    .map((o) => o.content || o.label);
+  // If nothing resolved, the answer was free text (short_answer / essay)
+  return resolved.length > 0 ? resolved.join(', ') : raw;
 }
 
 // ============================================================================
@@ -571,12 +597,22 @@ export default function ExamTakePage() {
   const [questions, setQuestions] = useState<ExamQuestion[]>([]);
   const [fetchError, setFetchError] = useState<string | null>(null);
   const [submissionError, setSubmissionError] = useState<string | null>(null);
-  const [markedForReview, setMarkedForReview] = useState<Set<string>>(new Set());
+  const [markedForReview, setMarkedForReview] = useState<Set<string>>(
+    () => new Set(useExamSessionStore.getState().markedForReview)
+  );
+  // Ω-UI: keep the persisted store in sync so flags survive reloads.
+  useEffect(() => {
+    useExamSessionStore.setState({ markedForReview: [...markedForReview] });
+  }, [markedForReview]);
   const [showSubmitDialog, setShowSubmitDialog] = useState(false);
   const [showTabWarning, setShowTabWarning] = useState(false);
   const [showTimeUpDialog, setShowTimeUpDialog] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitResult, setSubmitResult] = useState<SubmitResult | null>(null);
+  // Ω-UI: snapshot of the student's answers at submission time — the
+  // "Your Answers" review renders AFTER clearExam() wipes the session store,
+  // so the review must read this frozen copy, not the live store.
+  const [finalAnswers, setFinalAnswers] = useState<Record<string, string>>({});
   const [sheetOpen, setSheetOpen] = useState(false);
   // Ω-21: true when this exam was restored from the IndexedDB offline cache
   // (network fetch failed) — drives the "loaded from offline cache" chip.
@@ -633,6 +669,17 @@ export default function ExamTakePage() {
           setFetchError('You have already submitted this exam.');
           setPhase('pre-exam');
           return;
+        }
+
+        // Ω-UI FIX: adopt the caller's existing in-progress session (the exam
+        // API returns it). Previously a leftover in_progress session made every
+        // POST /api/cbt/session fail with 403 "already exists" — the page then
+        // ran without a server session (answers stayed local-only and submit
+        // could not complete). Adopting + re-syncing the timer restores the
+        // server-authoritative path.
+        if (data.sessionStatus === 'in_progress' && data.sessionId) {
+          setServerSessionId(data.sessionId as string);
+          serverSessionIdRef.current = data.sessionId as string;
         }
 
         const examData: ExamData = {
@@ -809,6 +856,17 @@ export default function ExamTakePage() {
           : null;
 
         if (res && res.ok) {
+          // Ω-UI: re-sync the countdown with the authoritative server clock
+          // every heartbeat — client drift can no longer extend or shorten
+          // the real window.
+          try {
+            const hb = await res.clone().json();
+            if (typeof hb.remainingSeconds === 'number' && hb.remainingSeconds > 0) {
+              sessionStore.setTimerRemaining(hb.remainingSeconds);
+            }
+          } catch {
+            // Non-JSON heartbeat — keep local countdown
+          }
           sessionStore.setLastSaved(new Date().toISOString());
           sessionStore.setOffline(false);
         } else {
@@ -1007,6 +1065,29 @@ export default function ExamTakePage() {
     setPhase('active');
     sessionStore.startExam(examId, exam.duration * 60, exam.questions.length);
 
+    // Ω-UI: a server session was already adopted from the exam API (resume
+    // case) — re-sync the authoritative remaining time instead of trying to
+    // create a second session (which the server correctly rejects with 403).
+    if (serverSessionIdRef.current) {
+      try {
+        const res = await apiFetch('/api/cbt/timing', {
+          method: 'POST',
+          body: { sessionId: serverSessionIdRef.current, action: 'resume' },
+        });
+        if (res.ok) {
+          const data = await res.json().catch(() => ({}));
+          if (typeof data.remainingSeconds === 'number' && data.remainingSeconds > 0) {
+            sessionStore.setTimerRemaining(data.remainingSeconds);
+          }
+          sessionStore.setLastSaved(new Date().toISOString());
+          sessionStore.setOffline(false);
+        }
+      } catch {
+        // Offline resume — local countdown continues; heartbeat will re-sync
+      }
+      return;
+    }
+
     // Create the server-authoritative session (timing, attempt locking).
     // Local state is optimistic; the server clock is the source of truth.
     try {
@@ -1150,9 +1231,81 @@ export default function ExamTakePage() {
     });
   }, [currentQuestion]);
 
+  // ── Ω-UI: keyboard shortcuts for the active exam ──────────────────────
+  // ArrowLeft/ArrowRight navigate · A–F select an option · F toggles the
+  // mark-for-review flag. Never fires while typing in an input/textarea.
+  useEffect(() => {
+    if (phase !== 'active') return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const target = e.target as HTMLElement | null;
+      const isTyping =
+        !!target &&
+        (target.tagName === 'INPUT' ||
+          target.tagName === 'TEXTAREA' ||
+          target.isContentEditable);
+
+      if (e.key === 'ArrowRight' && !isTyping) {
+        e.preventDefault();
+        sessionStore.setCurrentQuestion(Math.min(currentIndex + 1, questions.length - 1));
+        return;
+      }
+      if (e.key === 'ArrowLeft' && !isTyping) {
+        e.preventDefault();
+        sessionStore.setCurrentQuestion(Math.max(currentIndex - 1, 0));
+        return;
+      }
+      if (isTyping || !currentQuestion) return;
+
+      const letter = e.key.toUpperCase();
+      const isChoice =
+        currentQuestion.type === 'single_choice' ||
+        currentQuestion.type === 'multi_choice' ||
+        currentQuestion.type === 'multi_select' ||
+        currentQuestion.type === 'true_false';
+
+      // A–F selects the corresponding option on choice questions
+      if (/^[A-F]$/.test(letter) && isChoice && currentQuestion.options?.length) {
+        const idx = letter.charCodeAt(0) - 65;
+        const opt = currentQuestion.options[idx];
+        if (!opt) return;
+        const currentAnswer = sessionStore.answers[currentQuestion.id] ?? '';
+        if (currentQuestion.type === 'multi_choice' || currentQuestion.type === 'multi_select') {
+          const selected = currentAnswer.split(',').filter(Boolean);
+          const next = selected.includes(opt.id)
+            ? selected.filter((id) => id !== opt.id)
+            : [...selected, opt.id];
+          handleAnswerChange(currentQuestion.id, next.join(','));
+        } else {
+          handleAnswerChange(currentQuestion.id, opt.id);
+        }
+        e.preventDefault();
+        return;
+      }
+      if (letter === 'F') {
+        setMarkedForReview((prev) => {
+          const next = new Set(prev);
+          if (next.has(currentQuestion.id)) next.delete(currentQuestion.id);
+          else next.add(currentQuestion.id);
+          return next;
+        });
+        e.preventDefault();
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [phase, currentIndex, currentQuestion, questions.length, sessionStore, handleAnswerChange]);
+
   const handleSubmit = useCallback(
     async (fromTimer = false) => {
       setIsSubmitting(true);
+
+      // Ω-UI: capture time used BEFORE clearExam() wipes the session store.
+      const timeUsedSeconds = exam
+        ? Math.max(0, exam.duration * 60 - sessionStore.timerRemaining)
+        : 0;
 
       try {
         if (serverSessionId && user) {
@@ -1184,15 +1337,14 @@ export default function ExamTakePage() {
           // Ω-21: a 409 means the exam is ALREADY submitted server-side —
           // (e.g. the offline sync queue delivered it during reconnect, or a
           // duplicate click). That is a successful terminal state, not an error.
+          // Ω-UI: honest state — never fabricate 0% / FAILED here.
           if (res.status === 409) {
             setSubmitResult({
-              score: 0,
-              totalMarks: exam?.totalMarks ?? 0,
-              percentage: 0,
-              passed: false,
+              alreadySubmitted: true,
               submittedAt: new Date().toISOString(),
               answeredQuestions: Object.keys(sessionStore.getAnswers()).length,
               totalQuestions: exam?.totalQuestions ?? 0,
+              timeUsedSeconds,
             });
             setPhase('submitted');
             sessionStore.clearExam();
@@ -1211,9 +1363,11 @@ export default function ExamTakePage() {
             totalMarks: data.totalMarks ?? exam?.totalMarks ?? 0,
             percentage: data.percentage ?? 0,
             passed: data.passed ?? (data.percentage ?? 0) >= 50,
+            grade: data.grade,
             submittedAt: data.submittedAt ?? new Date().toISOString(),
             answeredQuestions: data.answeredQuestions ?? 0,
             totalQuestions: data.totalQuestions ?? exam?.totalQuestions ?? 0,
+            timeUsedSeconds,
           });
         } else {
           // ── No server session yet (offline start or failed creation) ──
@@ -1268,9 +1422,11 @@ export default function ExamTakePage() {
               totalMarks: data.totalMarks ?? exam?.totalMarks ?? 0,
               percentage: data.percentage ?? 0,
               passed: data.passed ?? (data.percentage ?? 0) >= 50,
+              grade: data.grade,
               submittedAt: data.submittedAt ?? new Date().toISOString(),
               answeredQuestions: Object.keys(localAnswers).length,
               totalQuestions: exam?.totalQuestions ?? 0,
+              timeUsedSeconds,
             });
           } else {
             // Truly offline with no session: answers remain durable in the
@@ -1282,6 +1438,9 @@ export default function ExamTakePage() {
           }
         }
 
+        // Ω-UI: freeze the answers for the post-exam review BEFORE the
+        // session store is cleared.
+        setFinalAnswers({ ...sessionStore.getAnswers() });
         setPhase('submitted');
         sessionStore.clearExam();
         setQueuedOfflineSubmission(false);
@@ -1472,10 +1631,10 @@ export default function ExamTakePage() {
                       Results will be shown <strong>immediately</strong> after submission.
                     </li>
                   )}
-                  {exam.settings.allowReview && (
+                  {exam.settings.showResults && (
                     <li className="flex items-start gap-2">
                       <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
-                      You can <strong>review answers</strong> after submission.
+                      You can <strong>review your answers</strong> after submission.
                     </li>
                   )}
                   {exam.settings.autoSubmit && (
@@ -1526,123 +1685,224 @@ export default function ExamTakePage() {
   // ============================================================================
 
   if (phase === 'submitted') {
+    // Ω-UI honest gates: scores render only when the teacher allows them AND
+    // the server actually returned a graded result. A duplicate submission
+    // (409) renders an honest "already received" state — never a fake 0%.
+    const resultsShown =
+      !!exam?.settings.showResults &&
+      !!submitResult &&
+      submitResult.percentage !== undefined &&
+      !submitResult.alreadySubmitted;
+    const passed = submitResult?.passed ?? false;
+    const certificateEligible = resultsShown && passed && (submitResult?.percentage ?? 0) >= 60;
+    const timeUsed = submitResult?.timeUsedSeconds ?? 0;
+
     return (
       <div className="flex min-h-screen items-center justify-center p-4 forge-ambient-bg">
+        {/* One celebration per journey — confetti only on a graded pass */}
+        <Confetti active={resultsShown && passed} />
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           className="max-w-2xl w-full space-y-6"
         >
-          <Card className="overflow-hidden forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow hover:-translate-y-0.5 hover:border-white/[0.06] transition-all">
-            <div className="relative bg-gradient-to-r from-emerald-500 to-teal-500 p-8 text-white text-center overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/90 via-emerald-500/70 to-teal-500/90" />
+          <Card className="overflow-hidden forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow">
+            <div
+              className={cn(
+                'relative p-8 text-white text-center overflow-hidden bg-gradient-to-r',
+                submitResult?.alreadySubmitted
+                  ? 'from-amber-500 to-orange-500'
+                  : 'from-emerald-500 to-teal-500'
+              )}
+            >
+              <div
+                className={cn(
+                  'absolute inset-0',
+                  submitResult?.alreadySubmitted
+                    ? 'bg-gradient-to-r from-amber-500/90 via-amber-500/70 to-orange-500/90'
+                    : 'bg-gradient-to-r from-emerald-500/90 via-emerald-500/70 to-teal-500/90'
+                )}
+              />
               <div className="relative">
-                <CheckCircle2 className="mx-auto h-16 w-16 mb-4" />
-                <h1 className="text-3xl font-bold tracking-tight">Exam Submitted</h1>
-                <p className="mt-2 text-emerald-100">
-                  {submitResult?.submittedAt
-                    ? new Date(submitResult.submittedAt).toLocaleString()
-                    : 'Just now'}
+                {submitResult?.alreadySubmitted ? (
+                  <CheckCircle2 className="mx-auto h-16 w-16 mb-4" />
+                ) : passed && resultsShown ? (
+                  <Trophy className="mx-auto h-16 w-16 mb-4" />
+                ) : (
+                  <CheckCircle2 className="mx-auto h-16 w-16 mb-4" />
+                )}
+                <h1 className="text-3xl font-bold tracking-tight">
+                  {submitResult?.alreadySubmitted ? 'Already Submitted' : 'Exam Submitted'}
+                </h1>
+                <p
+                  className={cn(
+                    'mt-2',
+                    submitResult?.alreadySubmitted ? 'text-amber-100' : 'text-emerald-100'
+                  )}
+                >
+                  {submitResult?.alreadySubmitted
+                    ? 'This exam was already received — your answers are safe.'
+                    : submitResult?.submittedAt
+                      ? new Date(submitResult.submittedAt).toLocaleString()
+                      : 'Just now'}
                 </p>
               </div>
             </div>
             <CardContent className="p-6 space-y-6">
-              {exam?.settings.showResults && submitResult ? (
+              {resultsShown && submitResult ? (
                 <>
-                  {/* Score Card */}
+                  {/* Score reveal — the real, server-graded result */}
                   <div className="text-center space-y-2">
-                    <p className="text-5xl font-bold forge-gradient-text">
-                      {submitResult.percentage.toFixed(1)}%
+                    <p
+                      className={cn(
+                        'text-5xl font-bold tabular-nums',
+                        passed ? 'forge-gradient-text' : 'text-foreground'
+                      )}
+                    >
+                      {(submitResult.percentage ?? 0).toFixed(1)}%
                     </p>
                     <p className="text-lg text-muted-foreground">
-                      {submitResult.score} / {submitResult.totalMarks} marks
+                      {submitResult.score ?? 0} / {submitResult.totalMarks ?? 0} marks
                     </p>
-                    <Badge
-                      variant={submitResult.passed ? 'default' : 'destructive'}
-                      className="text-base px-4 py-1"
-                    >
-                      {submitResult.passed ? 'PASSED' : 'FAILED'}
-                    </Badge>
+                    <div className="flex items-center justify-center gap-2">
+                      {submitResult.grade && (
+                        <Badge variant="outline" className="text-base px-4 py-1">
+                          Grade {submitResult.grade}
+                        </Badge>
+                      )}
+                      <Badge
+                        variant={passed ? 'default' : 'destructive'}
+                        className="text-base px-4 py-1"
+                      >
+                        {passed ? 'PASSED' : 'FAILED'}
+                      </Badge>
+                    </div>
                   </div>
 
-                  <Progress
-                    value={submitResult.percentage}
-                    className="h-3"
-                  />
+                  <Progress value={submitResult.percentage ?? 0} className="h-3" />
 
-                  {/* Question-by-question review */}
-                  {exam.settings.allowReview && questions.length > 0 && (
+                  {/* Honest exam facts */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="text-center p-3 rounded-lg bg-secondary/30 border border-border/20">
+                      <p className="text-2xl font-bold tabular-nums text-primary">
+                        {submitResult.answeredQuestions ?? 0}/{submitResult.totalQuestions ?? 0}
+                      </p>
+                      <p className="text-xs text-muted-foreground">Questions answered</p>
+                    </div>
+                    <div className="text-center p-3 rounded-lg bg-secondary/30 border border-border/20">
+                      <p className="text-2xl font-bold tabular-nums text-primary">
+                        {formatTimer(timeUsed)}
+                      </p>
+                      <p className="text-xs text-muted-foreground">Time used</p>
+                    </div>
+                  </div>
+
+                  {/* Your-answers review — honest: shows recorded answers,
+                      makes no correctness claims (correct answers are never
+                      sent to the client, by design). Gated on showResults —
+                      the same teacher permission that reveals the score —
+                      because the live schema has no separate allow_review
+                      column. */}
+                  {exam.settings.showResults && questions.length > 0 && (
                     <div className="space-y-4 animate-fade-in">
-                      <h3 className="font-semibold text-lg">Answer Review</h3>
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-semibold text-lg">Your Answers</h3>
+                        <span className="text-xs text-muted-foreground">
+                          As recorded at submission
+                        </span>
+                      </div>
                       <ScrollArea className="max-h-[400px]">
-                        <div className="space-y-4 pr-4">
+                        <div className="space-y-3 pr-4">
                           {questions.map((q, idx) => {
                             const userAnswer = answers[q.id] ?? '';
-                            const isCorrect = userAnswer === q.correctAnswer;
+                            const answered = userAnswer.length > 0;
                             return (
                               <div
                                 key={q.id}
                                 className={cn(
-                                  'rounded-lg border p-4 space-y-2',
-                                  isCorrect
-                                    ? 'border-emerald-200 bg-green-50 dark:bg-green-950 dark:border-emerald-800 dark:bg-emerald-950'
-                                    : 'border-red-200 bg-destructive/10 dark:border-red-800 dark:bg-red-950'
+                                  'rounded-lg border p-4 space-y-1.5',
+                                  answered
+                                    ? 'border-border/40 bg-secondary/20'
+                                    : 'border-destructive/20 bg-destructive/5'
                                 )}
                               >
-                                <div className="flex items-start gap-2">
-                                  {isCorrect ? (
-                                    <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400 shrink-0 mt-0.5" />
-                                  ) : (
-                                    <X className="h-5 w-5 text-destructive shrink-0 mt-0.5" />
-                                  )}
-                                  <div className="flex-1">
-                                    <p className="font-medium text-sm">
-                                      Q{idx + 1}: {q.content.substring(0, 100)}
-                                      {q.content.length > 100 ? '...' : ''}
-                                    </p>
-                                    <p className="text-sm mt-1">
-                                      <span className="text-muted-foreground">Your answer: </span>
-                                      <span className={isCorrect ? 'text-green-700 dark:text-green-400 font-medium' : 'text-destructive font-medium'}>
-                                        {userAnswer || '(not answered)'}
-                                      </span>
-                                    </p>
-                                    {!isCorrect && q.correctAnswer && (
-                                      <p className="text-sm">
-                                        <span className="text-muted-foreground">Correct answer: </span>
-                                        <span className="text-green-700 dark:text-green-400 font-medium">{q.correctAnswer}</span>
-                                      </p>
-                                    )}
-                                    {q.explanation && (
-                                      <p className="text-sm text-muted-foreground mt-1 italic">
-                                        {q.explanation}
-                                      </p>
-                                    )}
-                                  </div>
-                                </div>
+                                <p className="font-medium text-sm">
+                                  Q{idx + 1}: {q.content.substring(0, 100)}
+                                  {q.content.length > 100 ? '...' : ''}
+                                </p>
+                                <p className="text-sm">
+                                  <span className="text-muted-foreground">Your answer: </span>
+                                  <span
+                                    className={
+                                      answered ? 'text-foreground font-medium' : 'text-muted-foreground italic'
+                                    }
+                                  >
+                                    {answered ? resolveAnswerText(q, userAnswer) : '(not answered)'}
+                                  </span>
+                                </p>
                               </div>
                             );
                           })}
                         </div>
                       </ScrollArea>
+                      <p className="text-xs text-muted-foreground">
+                        Correct answers are not shown for this exam. A detailed breakdown is
+                        available on your Results page.
+                      </p>
                     </div>
                   )}
                 </>
               ) : (
                 <div className="text-center py-8">
                   <p className="text-lg text-muted-foreground">
-                    Your results will be published by your teacher.
+                    {submitResult?.alreadySubmitted
+                      ? 'Your submission was already received and recorded.'
+                      : 'Your results will be published by your teacher.'}
                   </p>
                 </div>
               )}
 
-              <Button
-                onClick={() => router.push('/dashboard')}
-                className="w-full forge-glow"
-                size="lg"
-              >
-                Return to Dashboard
-              </Button>
+              {/* Next steps */}
+              <div className="grid gap-3 sm:grid-cols-2">
+                <Button
+                  onClick={() => router.push('/dashboard')}
+                  className="w-full forge-glow"
+                  size="lg"
+                >
+                  Return to Dashboard
+                </Button>
+                <Button
+                  onClick={() => router.push('/results')}
+                  variant="outline"
+                  className="w-full"
+                  size="lg"
+                >
+                  View Results
+                </Button>
+              </div>
+              {certificateEligible && (
+                <Button
+                  onClick={() => router.push('/student/certificates')}
+                  variant="outline"
+                  className="w-full gap-2 border-forge-gold/30 text-forge-gold hover:bg-forge-gold/10"
+                  size="lg"
+                >
+                  <Award className="h-4 w-4" />
+                  View Your Certificate
+                </Button>
+              )}
+              {resultsShown && !passed && (
+                <Button
+                  onClick={() => router.push('/student/ai-tutor')}
+                  variant="outline"
+                  className="w-full gap-2"
+                  size="lg"
+                >
+                  <Sparkles className="h-4 w-4 text-neural" />
+                  Practice Weak Areas with AI Tutor
+                </Button>
+              )}
             </CardContent>
           </Card>
         </motion.div>

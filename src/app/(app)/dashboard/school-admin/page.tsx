@@ -112,7 +112,8 @@ export default async function SchoolAdminDashboard() {
   // ── Quick Actions ──
   const quickActionItems = [
     {
-      href: ROUTES.SETTINGS,
+      // Ω-UI: goes to the actual school settings surface (was generic /settings)
+      href: '/school/settings',
       icon: 'settings',
       label: 'Manage School',
       description: 'Configure school settings and preferences',

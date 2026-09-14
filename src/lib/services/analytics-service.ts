@@ -54,6 +54,8 @@ export interface AnalyticsOverview {
   stats: AnalyticsStats
   examTrend: TimeSeriesPoint[]
   subjectPerformance: SubjectPerformance[]
+  /** Ω-UI: real distribution of graded session scores in 20-point buckets */
+  scoreDistribution: Array<{ bucket: string; count: number }>
   weeklyActivity: WeeklyActivity[]
   schoolRankings: SchoolRanking[]
   quickInsights: {
@@ -92,6 +94,13 @@ export async function getAnalyticsData(
         { subject: 'English', score: 68, passRate: 78 },
         { subject: 'Physics', score: 72, passRate: 82 },
         { subject: 'Chemistry', score: 66, passRate: 75 },
+      ],
+      scoreDistribution: [
+        { bucket: '0-20%', count: 2 },
+        { bucket: '21-40%', count: 5 },
+        { bucket: '41-60%', count: 12 },
+        { bucket: '61-80%', count: 18 },
+        { bucket: '81-100%', count: 9 },
       ],
       weeklyActivity: [
         { week: 'Week 1', exams: 5, participants: 45 },
@@ -266,6 +275,7 @@ export async function getAnalyticsData(
   const { data: subjectExams } = await subjectQuery
 
   const subjectMap = new Map<string, { scores: number[]; total: number }>()
+  const allPercentages: number[] = []
   for (const exam of subjectExams ?? []) {
     if (!exam.subject) continue
     const sessions = exam.exam_sessions as unknown as Array<{ percentage: number | null }> | null
@@ -274,10 +284,32 @@ export async function getAnalyticsData(
       if (s.percentage !== null) {
         existing.scores.push(s.percentage)
         existing.total += s.percentage
+        allPercentages.push(s.percentage)
       }
     }
     subjectMap.set(exam.subject, existing)
   }
+
+  // Ω-UI: real score distribution — counts of graded sessions per 20-point
+  // bucket (previously the Performance tab plotted subject averages under a
+  // "Score Distribution" title — a mislabeled duplicate of the Overview).
+  const bucketOf = (p: number) =>
+    p <= 20 ? '0-20%' : p <= 40 ? '21-40%' : p <= 60 ? '41-60%' : p <= 80 ? '61-80%' : '81-100%'
+  const bucketCounts = new Map<string, number>([
+    ['0-20%', 0],
+    ['21-40%', 0],
+    ['41-60%', 0],
+    ['61-80%', 0],
+    ['81-100%', 0],
+  ])
+  for (const p of allPercentages) {
+    const key = bucketOf(p)
+    bucketCounts.set(key, (bucketCounts.get(key) ?? 0) + 1)
+  }
+  const scoreDistribution = Array.from(bucketCounts.entries()).map(([bucket, count]) => ({
+    bucket,
+    count,
+  }))
 
   const subjectPerformance: SubjectPerformance[] = Array.from(subjectMap.entries())
     .map(([subject, data]) => ({
@@ -433,6 +465,7 @@ export async function getAnalyticsData(
     stats,
     examTrend,
     subjectPerformance,
+    scoreDistribution,
     weeklyActivity,
     schoolRankings,
     quickInsights: {

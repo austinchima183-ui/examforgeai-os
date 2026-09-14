@@ -142,11 +142,17 @@ export async function GET(request: NextRequest) {
       settings: {
         shuffleQuestions: exam.randomize_questions ?? false,
         shuffleOptions: exam.randomize_options ?? false,
-        showResults: exam.show_results ?? 'after_submission',
+        // DB stores text ('after_submission' | 'never') — coerce to the
+        // boolean the client gate expects (Ω-UI: 'never' was truthy and
+        // leaked scores the teacher had explicitly withheld).
+        showResults: exam.show_results !== 'never',
         showCorrectAnswers: exam.show_correct_answers ?? false,
         showExplanations: exam.show_explanations ?? false,
         autoSubmit: exam.auto_submit ?? true,
         allowResume: exam.allow_resume ?? true,
+        // NOTE: no allow_review column exists in the live schema — the
+        // client's "Your Answers" review is gated on showResults instead
+        // (it only ever shows the student's own recorded answers).
         browserLockdown: exam.browser_lockdown ?? false,
       },
       questions: safeQuestions,

@@ -74,7 +74,7 @@ export function teacherDashboardSuggestions(): AISuggestion[] {
       icon: BookOpen,
       title: 'Generate lesson plan',
       description: 'AI creates a structured lesson plan based on your syllabus and upcoming topics',
-      action: 'teacher:generate-lesson-plan',
+      action: 'teacher:lesson-plan',
       category: 'generate',
     },
     {
@@ -82,7 +82,7 @@ export function teacherDashboardSuggestions(): AISuggestion[] {
       icon: Users,
       title: 'Find struggling students',
       description: 'Identify students who are falling behind based on recent scores and engagement',
-      action: 'teacher:find-struggling-students',
+      action: 'teacher:interventions',
       category: 'analyze',
     },
     {
@@ -90,7 +90,7 @@ export function teacherDashboardSuggestions(): AISuggestion[] {
       icon: ClipboardList,
       title: 'Suggest homework',
       description: 'Get personalized homework recommendations for each student or the whole class',
-      action: 'teacher:suggest-homework',
+      action: 'teacher:worksheet',
       category: 'recommend',
     },
     {
@@ -98,7 +98,7 @@ export function teacherDashboardSuggestions(): AISuggestion[] {
       icon: FileQuestion,
       title: 'Create quiz from weak areas',
       description: 'Auto-generate a quiz targeting the class\'s weakest topics from recent results',
-      action: 'teacher:create-quiz-weak-areas',
+      action: 'teacher:generate-questions',
       category: 'generate',
     },
     {
@@ -106,7 +106,7 @@ export function teacherDashboardSuggestions(): AISuggestion[] {
       icon: TrendingUp,
       title: 'Predict class performance',
       description: 'Forecast how the class is likely to perform on the upcoming exam',
-      action: 'teacher:predict-class-performance',
+      action: 'teacher:predict-risk',
       category: 'predict',
     },
   ];
@@ -123,7 +123,7 @@ export function studentDashboardSuggestions(): AISuggestion[] {
       icon: GraduationCap,
       title: 'Explain difficult topic',
       description: 'Get a simple, step-by-step explanation of a topic you\'re struggling with',
-      action: 'student:explain-difficult-topic',
+      action: 'student:explain',
       category: 'generate',
     },
     {
@@ -131,7 +131,7 @@ export function studentDashboardSuggestions(): AISuggestion[] {
       icon: Target,
       title: 'Practice weak areas',
       description: 'Generate practice questions targeting your weakest subjects and topics',
-      action: 'student:practice-weak-areas',
+      action: 'student:practice',
       category: 'generate',
     },
     {
@@ -139,7 +139,7 @@ export function studentDashboardSuggestions(): AISuggestion[] {
       icon: Calendar,
       title: 'Create study plan',
       description: 'AI builds a personalized study schedule based on your exam dates and progress',
-      action: 'student:create-study-plan',
+      action: 'student:study-plan',
       category: 'recommend',
     },
     {
@@ -147,7 +147,7 @@ export function studentDashboardSuggestions(): AISuggestion[] {
       icon: Layers,
       title: 'Generate flashcards',
       description: 'Turn your notes and textbook content into review-ready flashcards',
-      action: 'student:generate-flashcards',
+      action: 'student:revision',
       category: 'generate',
     },
     {
@@ -155,7 +155,7 @@ export function studentDashboardSuggestions(): AISuggestion[] {
       icon: RotateCcw,
       title: 'Review past mistakes',
       description: 'Analyze your previous errors and get targeted explanations to avoid repeating them',
-      action: 'student:review-past-mistakes',
+      action: 'student:weaknesses',
       category: 'analyze',
     },
   ];
@@ -180,7 +180,7 @@ export function parentDashboardSuggestions(): AISuggestion[] {
       icon: Home,
       title: 'Home learning activities',
       description: 'AI suggests activities you can do at home to support your child\'s learning',
-      action: 'parent:home-learning-activities',
+      action: 'parent:home-learning',
       category: 'recommend',
     },
     {
@@ -188,7 +188,7 @@ export function parentDashboardSuggestions(): AISuggestion[] {
       icon: Eye,
       title: 'Attendance prediction',
       description: 'Predict future attendance patterns and flag potential chronic absenteeism',
-      action: 'parent:attendance-prediction',
+      action: 'parent:progress',
       category: 'predict',
     },
     {
@@ -196,7 +196,7 @@ export function parentDashboardSuggestions(): AISuggestion[] {
       icon: GitCompare,
       title: 'Performance comparison',
       description: 'See how your child\'s performance trends compared to previous terms',
-      action: 'parent:performance-comparison',
+      action: 'parent:progress',
       category: 'analyze',
     },
     {
@@ -204,7 +204,7 @@ export function parentDashboardSuggestions(): AISuggestion[] {
       icon: Lightbulb,
       title: 'Recommend resources',
       description: 'Get curated learning resources tailored to your child\'s current needs',
-      action: 'parent:recommend-resources',
+      action: 'parent:home-learning',
       category: 'recommend',
     },
   ];
@@ -221,7 +221,7 @@ export function schoolAdminSuggestions(): AISuggestion[] {
       icon: Sparkles,
       title: 'School recommendations',
       description: 'AI analyzes school performance and provides actionable improvement suggestions',
-      action: 'admin:school-recommendations',
+      action: 'admin:risks',
       category: 'recommend',
     },
     {
@@ -229,7 +229,7 @@ export function schoolAdminSuggestions(): AISuggestion[] {
       icon: DollarSign,
       title: 'Budget forecast',
       description: 'Predict budget needs for next quarter based on enrollment and spending trends',
-      action: 'admin:budget-forecast',
+      action: 'admin:revenue',
       category: 'predict',
     },
     {
@@ -237,7 +237,7 @@ export function schoolAdminSuggestions(): AISuggestion[] {
       icon: AlertTriangle,
       title: 'Risk alerts',
       description: 'Identify at-risk students, teachers, or departments before problems escalate',
-      action: 'admin:risk-alerts',
+      action: 'admin:risks',
       category: 'analyze',
     },
     {
@@ -245,7 +245,7 @@ export function schoolAdminSuggestions(): AISuggestion[] {
       icon: Briefcase,
       title: 'Staff optimization',
       description: 'Optimize teacher assignments and workload distribution across departments',
-      action: 'admin:staff-optimization',
+      action: 'admin:staffing',
       category: 'optimize',
     },
     {
@@ -253,7 +253,7 @@ export function schoolAdminSuggestions(): AISuggestion[] {
       icon: Search,
       title: 'Curriculum gaps',
       description: 'Detect coverage gaps in the curriculum based on exam results and standards',
-      action: 'admin:curriculum-gaps',
+      action: 'admin:attendance',
       category: 'analyze',
     },
   ];
@@ -270,7 +270,7 @@ export function governmentSuggestions(): AISuggestion[] {
       icon: Scale,
       title: 'Policy recommendations',
       description: 'Data-driven policy suggestions based on regional education performance patterns',
-      action: 'gov:policy-recommendations',
+      action: 'gov:compliance',
       category: 'recommend',
       premium: true,
     },
@@ -279,7 +279,7 @@ export function governmentSuggestions(): AISuggestion[] {
       icon: GitCompare,
       title: 'Regional comparison',
       description: 'Compare performance metrics across districts and identify top performers',
-      action: 'gov:regional-comparison',
+      action: 'gov:compare',
       category: 'analyze',
     },
     {
@@ -287,7 +287,7 @@ export function governmentSuggestions(): AISuggestion[] {
       icon: DollarSign,
       title: 'Funding suggestions',
       description: 'Optimize funding allocation based on need, performance gaps, and enrollment',
-      action: 'gov:funding-suggestions',
+      action: 'gov:district',
       category: 'optimize',
       premium: true,
     },
@@ -296,7 +296,7 @@ export function governmentSuggestions(): AISuggestion[] {
       icon: TrendingUp,
       title: 'Performance trends',
       description: 'Analyze multi-year performance trends across schools and districts',
-      action: 'gov:performance-trends',
+      action: 'gov:trends',
       category: 'analyze',
     },
     {
@@ -304,7 +304,7 @@ export function governmentSuggestions(): AISuggestion[] {
       icon: PieChart,
       title: 'Equity analysis',
       description: 'Measure educational equity across demographics, regions, and school types',
-      action: 'gov:equity-analysis',
+      action: 'gov:compare',
       category: 'analyze',
       premium: true,
     },

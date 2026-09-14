@@ -1,7 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
-import { useApi } from '@/lib/hooks/use-api'
+import { useState, useMemo, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -129,7 +128,149 @@ export default function EnterpriseSecurityPage() {
   const [auditResultFilter, setAuditResultFilter] = useState('all')
   const [configureProvider, setConfigureProvider] = useState<string | null>(null)
 
-  const { data: securityData, loading: isLoading, error } = useApi<SecurityData>('/api/security')
+  const [securityData, setSecurityData] = useState<SecurityData | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  // Ω-UI FIX: this page previously called `/api/security` — a route that
+  // does NOT exist (only /api/security/{passkeys,sessions,sso} do), so the
+  // super-admin security console rendered a permanent error state. Load the
+  // three REAL endpoints (plus platform audit logs) and assemble the data
+  // honestly: own passkeys/sessions, org SSO providers, real audit entries.
+  useEffect(() => {
+    let cancelled = false
+    const load = async () => {
+      setIsLoading(true)
+      setError(null)
+      try {
+        const [passkeysRes, sessionsRes, ssoRes, auditRes] = await Promise.allSettled([
+          fetch('/api/security/passkeys'),
+          fetch('/api/security/sessions'),
+          fetch('/api/security/sso'),
+          fetch('/api/admin/audit-logs?limit=50'),
+        ])
+        if (cancelled) return
+
+        const safeJson = async (r: PromiseSettledResult<Response>) => {
+          if (r.status !== 'fulfilled' || !r.value.ok) return null
+          try {
+            return await r.value.json()
+          } catch {
+            return null
+          }
+        }
+
+        const passkeysJson = await safeJson(passkeysRes)
+        const sessionsJson = await safeJson(sessionsRes)
+        const ssoJson = await safeJson(ssoRes)
+        const auditJson = await safeJson(auditRes)
+
+        // ── Passkey registrations → honest stats ──
+        const registrations: Array<{
+          id: string
+          deviceType: string
+          createdAt: string
+          lastUsedAt: string | null
+        }> = passkeysJson?.passkeys ?? []
+        const today = new Date().toISOString().slice(0, 10)
+        const platforms: Record<string, number> = {}
+        for (const reg of registrations) {
+          const key = reg.deviceType || 'unknown'
+          platforms[key] = (platforms[key] ?? 0) + 1
+        }
+        const passkeys: PasskeyStats = {
+          total: registrations.length,
+          registered: registrations.length,
+          usedToday: registrations.filter((r) => r.lastUsedAt?.slice(0, 10) === today).length,
+          avgAuthTime: '—', // not tracked — shown honestly
+          platforms,
+        }
+
+        // ── Active sessions (caller's own) → page shape ──
+        const rawSessions: Array<{
+          id: string
+          ip: string | null
+          userAgent: string | null
+          mfaVerified: boolean
+          lastActiveAt: string
+          createdAt: string
+        }> = sessionsJson?.sessions ?? []
+        const sessions: SessionInfo[] = rawSessions.map((s) => ({
+          id: s.id,
+          user: 'You',
+          email: '—',
+          device: /Mobile|Android|iPhone/i.test(s.userAgent ?? '') ? 'Mobile' : 'Desktop',
+          ip: s.ip ?? '—',
+          location: '—',
+          mfaVerified: s.mfaVerified,
+          lastActive: s.lastActiveAt,
+          duration: s.createdAt
+            ? `${Math.max(1, Math.round((Date.now() - new Date(s.createdAt).getTime()) / 60000))}m`
+            : '—',
+          browser: (s.userAgent ?? '—').split(')')[0].split('(').pop()?.trim() || 'Browser',
+        }))
+
+        // ── SSO providers (org) → page shape ──
+        const rawProviders: Array<{
+          id: string
+          status: string
+          updatedAt?: string
+          config?: { domain?: string; providerType?: string; name?: string }
+        }> = ssoJson?.providers ?? []
+        const ssoProviders: SsoProvider[] = rawProviders.map((p) => ({
+          id: p.id,
+          type: p.config?.providerType ?? 'saml',
+          name: p.config?.name ?? 'SSO Provider',
+          icon: 'key',
+          enabled: p.status === 'active',
+          status: p.status === 'active' ? 'active' : 'inactive',
+          users: 0, // not tracked per provider — shown honestly
+          lastSync: p.updatedAt ?? '—',
+          domain: p.config?.domain ?? '—',
+        }))
+
+        // ── Platform audit log (super_admin) → page shape ──
+        const rawLogs: Array<{
+          id: string
+          action: string
+          entity: string | null
+          ipAddress?: string | null
+          details?: string | null
+          createdAt?: string
+          user?: { fullName: string | null } | null
+        }> = auditJson?.logs ?? []
+        const auditLog: AuditEntry[] = rawLogs.map((l) => ({
+          id: l.id,
+          action: l.action,
+          resource: l.entity ?? '—',
+          user: l.user?.fullName ?? 'Unknown user',
+          result: 'success',
+          risk: 0, // risk scoring not tracked — shown honestly as 0
+          time: l.createdAt ?? '',
+          ip: l.ipAddress ?? '—',
+          details: l.details ?? '',
+        }))
+
+        if (cancelled) return
+        setSecurityData({
+          ssoProviders,
+          passkeys,
+          policies: [], // no policy store exists — honest empty
+          devices: [], // device registry not live — honest empty
+          sessions,
+          auditLog,
+        })
+      } catch {
+        if (!cancelled) setError('Failed to load security data')
+      } finally {
+        if (!cancelled) setIsLoading(false)
+      }
+    }
+    load()
+    return () => {
+      cancelled = true
+    }
+  }, [])
   const SSO_PROVIDERS = securityData?.ssoProviders ?? []
   const PASSKEYS = securityData?.passkeys ?? { total: 0, registered: 0, usedToday: 0, avgAuthTime: '-', platforms: {} }
   const POLICIES = securityData?.policies ?? []
@@ -328,7 +469,7 @@ export default function EnterpriseSecurityPage() {
                     <p className="text-xs text-muted-foreground">Avg Auth Time</p>
                   </div>
                   <div className="p-3 rounded-md border text-center">
-                    <p className="text-2xl font-bold">{Math.round(PASSKEYS.usedToday / PASSKEYS.total * 100)}%</p>
+                    <p className="text-2xl font-bold">{PASSKEYS.total > 0 ? Math.round((PASSKEYS.usedToday / PASSKEYS.total) * 100) : 0}%</p>
                     <p className="text-xs text-muted-foreground">Daily Adoption</p>
                   </div>
                 </div>
@@ -502,7 +643,7 @@ export default function EnterpriseSecurityPage() {
         {/* ── Sessions Tab ────────────────────────────────── */}
         <TabsContent value="sessions" className="space-y-4">
           <div className="flex items-center justify-between">
-            <CardDescription>{SESSIONS.length} active sessions across all users</CardDescription>
+            <CardDescription>{SESSIONS.length} active session{SESSIONS.length === 1 ? '' : 's'} for your account</CardDescription>
             <Button variant="outline" size="sm" className="text-destructive"><Trash2 className="h-4 w-4 mr-1" />Terminate All Suspicious</Button>
           </div>
           <Card className="forge-glass-surface border-white/[0.04] rounded-xl forge-card-shadow">

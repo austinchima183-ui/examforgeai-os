@@ -44,8 +44,15 @@ interface CreateExamFormValues {
   auto_submit: boolean
 }
 
-export function CreateExamDialog({ schoolId }: { schoolId: string | null }) {
-  const [open, setOpen] = useState(false)
+export function CreateExamDialog({
+  schoolId,
+  autoOpen = false,
+}: {
+  schoolId: string | null
+  /** Ω-UI: ?new=1 deep-link from dashboard CTAs opens the dialog directly */
+  autoOpen?: boolean
+}) {
+  const [open, setOpen] = useState(autoOpen)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -196,16 +203,25 @@ export function CreateExamDialog({ schoolId }: { schoolId: string | null }) {
             />
           </div>
 
-          {/* AI Question Generation */}
+          {/* AI Question Generation — Ω-UI: wired to the real generator
+              (was a dead button with no handler) */}
           <Separator className="bg-border/30" />
           <div className="flex items-center justify-between gap-4">
             <div>
               <p className="text-sm font-medium">AI Question Generation</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Auto-generate questions after creating the exam.</p>
+              <p className="text-xs text-muted-foreground mt-0.5">After creating the exam, generate questions with the AI question generator.</p>
             </div>
-            <Button type="button" variant="outline" size="sm" className="gap-2 neural-glow border-neural/30 text-neural hover:bg-neural/10 hover:text-neural shrink-0">
-              <Sparkles className="h-3.5 w-3.5" />
-              Generate
+            <Button
+              type="button"
+              asChild
+              variant="outline"
+              size="sm"
+              className="gap-2 neural-glow border-neural/30 text-neural hover:bg-neural/10 hover:text-neural shrink-0"
+            >
+              <a href="/teacher/ai-question-generator">
+                <Sparkles className="h-3.5 w-3.5" />
+                Open Generator
+              </a>
             </Button>
           </div>
 
@@ -229,14 +245,10 @@ export function CreateExamDialog({ schoolId }: { schoolId: string | null }) {
                 onCheckedChange={(v) => setValue('show_results', v)}
               />
             </div>
-            <div className="flex items-center justify-between">
-              <Label htmlFor="allow_review" className="text-sm">Allow Answer Review</Label>
-              <Switch
-                id="allow_review"
-                checked={watch('allow_review')}
-                onCheckedChange={(v) => setValue('allow_review', v)}
-              />
-            </div>
+            {/* Ω-UI: "Allow Answer Review" switch removed — the live schema has
+                no allow_review column (the value was silently dropped on
+                insert). Post-submission answer review now follows Show
+                Results, which is the permission that actually governs it. */}
             <div className="flex items-center justify-between">
               <Label htmlFor="auto_submit" className="text-sm">Auto-Submit on Time Up</Label>
               <Switch

@@ -83,57 +83,16 @@ export default function GradingDashboardPage() {
         return
       }
 
-      // Collect unique student IDs and question IDs
-      const studentIds = [...new Set(data.map((s: Record<string, unknown>) => s.studentId as string))]
-      const questionIds = [...new Set(data.map((s: Record<string, unknown>) => s.questionId as string))]
-      const examIds = [...new Set(data.map((s: Record<string, unknown>) => s.examId as string))]
-
-      // Fetch student profiles for names
-      const studentNames: Record<string, string> = {}
-      try {
-        const profileRes = await fetch(`/api/admin/users?ids=${studentIds.join(',')}`)
-        if (profileRes.ok) {
-          const profileData = await profileRes.json()
-          const users = Array.isArray(profileData) ? profileData : (profileData.users ?? [])
-          for (const u of users) {
-            studentNames[u.id] = `${u.first_name ?? ''} ${u.last_name ?? ''}`.trim() || u.email || `Student ${u.id.slice(0, 8)}`
-          }
-        }
-      } catch {
-        // Fall back to ID-based names
-      }
-
-      // Fetch question text
-      const questionTexts: Record<string, string> = {}
-      try {
-        for (const qId of questionIds.slice(0, 50)) {
-          const qRes = await fetch(`/api/teacher/submissions?questionId=${qId}`)
-          if (qRes.ok) {
-            const qData = await qRes.json()
-            if (qData.questionText) {
-              questionTexts[qId] = qData.questionText
-            }
-          }
-        }
-      } catch {
-        // Fall back to ID-based text
-      }
-
-      // Fetch exam titles
-      const examTitles: Record<string, string> = {}
-      try {
-        for (const eId of examIds.slice(0, 20)) {
-          examTitles[eId] = `Exam ${eId.slice(0, 8)}`
-        }
-      } catch {
-        // Fall back to ID-based titles
-      }
-
+      // Ω-UI: the API now enriches every row server-side (studentName,
+      // questionText, examTitle) — one round trip, no N+1, no admin-endpoint
+      // dependency. Fallbacks below only guard legacy response shapes.
       const mapped = data.map((s: Record<string, unknown>) => ({
         ...s,
-        studentName: studentNames[s.studentId as string] || `Student ${(s.studentId as string).slice(0, 8)}`,
-        examTitle: examTitles[s.examId as string] || `Exam ${(s.examId as string).slice(0, 8)}`,
-        questionText: questionTexts[s.questionId as string] || `Question ${(s.questionId as string).slice(0, 8)}`,
+        studentName:
+          (s.studentName as string) || `Student ${String(s.studentId ?? '').slice(0, 8)}`,
+        examTitle: (s.examTitle as string) || `Exam ${String(s.examId ?? '').slice(0, 8)}`,
+        questionText:
+          (s.questionText as string) || `Question ${String(s.questionId ?? '').slice(0, 8)}`,
       })) as Submission[]
       setSubmissions(mapped)
     } catch {
@@ -188,9 +147,19 @@ export default function GradingDashboardPage() {
     if (selectedIds.size === 0) return
     setSaving(true)
     try {
+      // Ω-UI FIX: precedence — the old expression parsed as
+      // (aiScore ?? maxScore) ? maxScore * 0.5 : 0, which IGNORED the AI
+      // score whenever one existed. Correct rule: use the AI score when
+      // present, else half marks as the neutral provisional default.
       const grades = Array.from(selectedIds).map(id => {
         const sub = submissions.find(s => s.id === id)
-        return { id, score: sub?.aiScore ?? sub?.maxScore ? sub.maxScore * 0.5 : 0 }
+        const score =
+          typeof sub?.aiScore === 'number' && sub.aiScore > 0
+            ? sub.aiScore
+            : sub?.maxScore
+              ? sub.maxScore * 0.5
+              : 0
+        return { id, score }
       }).filter(g => g.score !== undefined)
       await apiFetch('/api/teacher/grade', {
         method: 'POST',

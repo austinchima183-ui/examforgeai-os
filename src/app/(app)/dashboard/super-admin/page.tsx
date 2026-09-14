@@ -107,10 +107,12 @@ export default async function SuperAdminDashboard() {
       iconColor: 'text-emerald-600 dark:text-emerald-400',
     },
     {
+      // Ω-UI: label now matches the destination — this opens the audit log,
+      // not an infrastructure monitor.
       href: ROUTES.ADMIN_AUDIT_LOGS,
       icon: 'activity',
-      label: 'System Health',
-      description: 'Monitor infrastructure and service status',
+      label: 'Audit Logs',
+      description: 'Review platform activity and security events',
       color: 'bg-violet-500/15 dark:bg-violet-500/20',
       iconColor: 'text-violet-600 dark:text-violet-400',
     },

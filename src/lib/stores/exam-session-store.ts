@@ -20,6 +20,9 @@ interface ExamSessionState {
   answers: Record<string, string>;
   currentQuestionIndex: number;
   timerRemaining: number;
+  /** Ω-UI: flags survive reloads alongside answers/timer so the palette
+   *  never loses marked-for-review state mid-exam. */
+  markedForReview: string[];
   isOffline: boolean;
   syncStatus: SyncStatus;
   lastSavedAt: string | null;
@@ -34,6 +37,7 @@ interface ExamSessionActions {
   setAnswer: (questionId: string, answer: string) => void;
   setCurrentQuestion: (index: number) => void;
   setTimerRemaining: (seconds: number) => void;
+  toggleMarkedForReview: (questionId: string) => void;
   setOffline: (offline: boolean) => void;
   setSyncStatus: (status: SyncStatus) => void;
   setLastSaved: (timestamp: string) => void;
@@ -50,6 +54,7 @@ const initialState: ExamSessionState = {
   answers: {},
   currentQuestionIndex: 0,
   timerRemaining: 0,
+  markedForReview: [],
   isOffline: false,
   syncStatus: 'idle',
   lastSavedAt: null,
@@ -72,6 +77,7 @@ export const useExamSessionStore = create<ExamSessionState & ExamSessionActions>
               answers: {},
               currentQuestionIndex: 0,
               timerRemaining: durationSeconds,
+              markedForReview: [],
               isOffline: false,
               syncStatus: 'idle',
               lastSavedAt: null,
@@ -97,6 +103,17 @@ export const useExamSessionStore = create<ExamSessionState & ExamSessionActions>
 
         setTimerRemaining: (seconds) =>
           set({ timerRemaining: seconds }, false, 'setTimerRemaining'),
+
+        toggleMarkedForReview: (questionId) =>
+          set(
+            (state) => ({
+              markedForReview: state.markedForReview.includes(questionId)
+                ? state.markedForReview.filter((id) => id !== questionId)
+                : [...state.markedForReview, questionId],
+            }),
+            false,
+            'toggleMarkedForReview'
+          ),
 
         setOffline: (offline) =>
           set(
@@ -136,6 +153,7 @@ export const useExamSessionStore = create<ExamSessionState & ExamSessionActions>
           answers: state.answers,
           currentQuestionIndex: state.currentQuestionIndex,
           timerRemaining: state.timerRemaining,
+          markedForReview: state.markedForReview,
           isOffline: state.isOffline,
           syncStatus: state.syncStatus,
           lastSavedAt: state.lastSavedAt,

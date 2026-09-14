@@ -149,6 +149,17 @@ export async function POST(request: NextRequest) {
       submittedAt: result.submittedAt,
       totalQuestions: result.totalQuestions,
       answeredQuestions: result.answeredQuestions,
+      // Ω-UI: grading outcome — previously computed server-side then dropped,
+      // which rendered a fabricated 0% / FAILED on the completion screen.
+      ...(result.score !== undefined
+        ? {
+            score: result.score,
+            totalMarks: result.totalMarks,
+            percentage: result.percentage,
+            grade: result.grade,
+            passed: result.passed,
+          }
+        : {}),
     })
   } catch (error) {
     logger.error('Failed to submit exam', error)

@@ -61,7 +61,9 @@ export default async function TeacherDashboard() {
     id: exam.id,
     title: exam.title,
     dueAt: exam.start_time,
-    href: `/exams/${exam.id}`,
+    // Ω-UI: link to the live monitor (the real exam surface) — the old
+    // /exams/[id] target was a 404.
+    href: `/exams/${exam.id}/monitor`,
     meta: 'Exam window',
     tone: 'cyan',
   }))

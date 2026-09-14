@@ -1,6 +1,5 @@
 'use client'
 
-import { useTheme } from 'next-themes'
 import { usePathname, useRouter } from 'next/navigation'
 import { useAuthStore } from '@/lib/stores/auth-store'
 import { useNotificationStore } from '@/lib/stores/notification-store'
@@ -21,7 +20,6 @@ import { Badge } from '@/components/ui/badge'
 import {
   Menu,
   Search,
-  Sun,
   Moon,
   Bell,
   Settings,
@@ -78,7 +76,6 @@ const ROLE_LABELS: Record<string, string> = {
 // ──────────────────────────────────────────────────────────────
 
 export function Header({ sidebarCollapsed, onToggleSidebar }: HeaderProps) {
-  const { theme, setTheme } = useTheme()
   const pathname = usePathname()
   const router = useRouter()
   const { user, role, clearAuth } = useAuthStore()
@@ -152,18 +149,9 @@ export function Header({ sidebarCollapsed, onToggleSidebar }: HeaderProps) {
           <Search className="h-3.5 w-3.5" aria-hidden="true" />
         </Button>
 
-        {/* Theme toggle — very subtle, almost hidden */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="h-7 w-7 text-foreground/20 hover:text-foreground/60 hover:bg-[#1A1A1A]"
-          aria-label="Toggle theme"
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-        >
-          <Sun className="h-3 w-3 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" aria-hidden="true" />
-          <Moon className="absolute h-3 w-3 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" aria-hidden="true" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
+        {/* Ω-UI: theme toggle removed — ExamForge is dark by design (UI
+            Constitution Article I: one theme, executed perfectly; we never
+            ship a control that does nothing). */}
 
         {/* AI Copilot trigger — sparkles, neural-glow on hover */}
         <Button

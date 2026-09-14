@@ -87,7 +87,24 @@ export interface SubmitExamResult {
   submittedAt?: string
   totalQuestions: number
   answeredQuestions: number
+  /** Grading outcome (present when grading succeeded — Ω-UI fix: the student
+   *  completion screen previously always rendered 0% / FAILED because these
+   *  fields were computed server-side and then discarded) */
+  score?: number
+  totalMarks?: number
+  percentage?: number
+  grade?: string
+  passed?: boolean
   error?: string
+}
+
+/** Grading outcome returned by triggerGrading */
+export interface GradingOutcome {
+  totalScore: number
+  maxScore: number
+  percentage: number
+  grade: string
+  passed: boolean
 }
 
 /** Validation result for exam access */
@@ -871,8 +888,11 @@ export async function submitExam(
   // NOTE: fire-and-forget promises are killed when a serverless function
   // returns its response (Vercel freezes the isolate). Grading is a handful
   // of fast queries, so we await it to guarantee results persist.
+  // Ω-UI: capture the grading outcome so the completion screen can render
+  // the student's real score instead of a fabricated 0% / FAILED.
+  let grading: GradingOutcome | null = null
   try {
-    await triggerGrading(sessionId, session.exam_id, session.student_id)
+    grading = await triggerGrading(sessionId, session.exam_id, session.student_id)
   } catch (err) {
     logger.error('Grading failed after submission', err, { sessionId })
   }
@@ -882,6 +902,15 @@ export async function submitExam(
     submittedAt: now.toISOString(),
     totalQuestions: totalQuestions ?? 0,
     answeredQuestions,
+    ...(grading
+      ? {
+          score: grading.totalScore,
+          totalMarks: grading.maxScore,
+          percentage: grading.percentage,
+          grade: grading.grade,
+          passed: grading.passed,
+        }
+      : {}),
   }
 }
 
@@ -1301,7 +1330,7 @@ async function triggerGrading(
   sessionId: string,
   examId: string,
   studentId: string
-): Promise<void> {
+): Promise<GradingOutcome> {
   const svc = createServiceClient()
   if (!svc) throw new Error('[CBT] Service client unavailable')
 
@@ -1437,6 +1466,8 @@ async function triggerGrading(
     percentage: Math.round(percentage),
     grade,
   })
+
+  return { totalScore, maxScore, percentage, grade, passed: percentage >= 50 }
 }
 
 /**

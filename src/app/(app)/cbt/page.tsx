@@ -6,7 +6,8 @@ import { CreateExamDialog } from '@/components/dialogs/create-exam-dialog'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { ExamsTable } from '@/components/tables/exams-table'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { getCBTData } from '@/lib/services/cbt-service'
+import { getCBTData, getStudentExamProgress } from '@/lib/services/cbt-service'
+import { StudentExamsView } from '@/components/exams/student-exams-view'
 
 export const dynamic = 'force-dynamic'
 
@@ -70,6 +71,28 @@ export default async function CBTPage() {
 
   // Fetch live data from Supabase
   const data = await getCBTData(role, user.id, schoolId)
+
+  // Ω-UI: students get the student storefront here too (sidebar "All Exams"
+  // points at /cbt — no teacher telemetry for student roles)
+  if (role === 'student' || role === 'parent') {
+    const myResults = await getStudentExamProgress(
+      user.id,
+      data.exams.map((e) => e.id)
+    )
+    return (
+      <div className="space-y-6 animate-fade-in forge-ambient-bg min-h-screen">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">My Exams</h1>
+            <p className="text-sm text-muted-foreground mt-1.5">
+              Your scheduled exams, with everything you need to prepare and take them.
+            </p>
+          </div>
+        </div>
+        <StudentExamsView exams={data.exams} myResults={myResults} />
+      </div>
+    )
+  }
 
   // Filter exams by status for tabs
   const upcomingExams = data.exams.filter(e => e.status === 'published' || e.status === 'draft')

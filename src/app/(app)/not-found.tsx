@@ -51,7 +51,7 @@ export default function AppNotFound() {
           >
             <FileQuestion className="h-10 w-10 text-muted-foreground" />
           </div>
-          <div className="absolute -top-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-xs font-bold text-white">
+          <div className="absolute -top-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
             404
           </div>
         </div>

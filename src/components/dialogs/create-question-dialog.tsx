@@ -200,16 +200,25 @@ export function CreateQuestionDialog({ schoolId }: { schoolId: string | null }) 
             rows={2}
           />
 
-          {/* AI Generation */}
+          {/* AI Generation — Ω-UI: wired to the real generator
+              (was a dead button with no handler) */}
           <Separator className="bg-border/30" />
           <div className="flex items-center justify-between gap-4">
             <div>
               <p className="text-sm font-medium">AI-Powered Creation</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Let AI generate similar questions based on your subject and topic.</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Generate a batch of questions on this subject and topic with the AI generator.</p>
             </div>
-            <Button type="button" variant="outline" size="sm" className="gap-2 neural-glow border-neural/30 text-neural hover:bg-neural/10 hover:text-neural shrink-0">
-              <Wand2 className="h-3.5 w-3.5" />
-              Auto-fill
+            <Button
+              type="button"
+              asChild
+              variant="outline"
+              size="sm"
+              className="gap-2 neural-glow border-neural/30 text-neural hover:bg-neural/10 hover:text-neural shrink-0"
+            >
+              <a href="/teacher/ai-question-generator">
+                <Wand2 className="h-3.5 w-3.5" />
+                Open Generator
+              </a>
             </Button>
           </div>
 

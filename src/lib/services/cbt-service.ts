@@ -26,6 +26,9 @@ export interface ExamListItem {
   status: string
   scheduledAt: string | null
   createdAt: string
+  /** Ω-UI: availability window for the student exam view */
+  startTime: string | null
+  endTime: string | null
 }
 
 export interface CBTStats {
@@ -66,6 +69,8 @@ export async function getCBTData(
       status: e.status,
       scheduledAt: null,
       createdAt: new Date().toISOString(),
+      startTime: null,
+      endTime: null,
     }))
     return {
       stats: {
@@ -89,6 +94,8 @@ export async function getCBTData(
       total_marks,
       status,
       scheduled_at,
+      start_time,
+      end_time,
       created_at,
       class_id,
       created_by,
@@ -176,6 +183,8 @@ export async function getCBTData(
     status: exam.status,
     scheduledAt: exam.scheduled_at,
     createdAt: exam.created_at,
+    startTime: exam.start_time ?? null,
+    endTime: exam.end_time ?? null,
   }))
 
   // Calculate stats
@@ -188,4 +197,52 @@ export async function getCBTData(
     stats: { activeExams, upcomingExams, completedExams, totalParticipants },
     exams: examList,
   }
+}
+
+// ──────────────────────────────────────────────────────────────
+// Ω-UI: Student exam progress — the caller's own sessions/scores
+// for the student-oriented exam view (score badge per exam).
+// ──────────────────────────────────────────────────────────────
+
+export interface StudentExamProgress {
+  percentage: number | null
+  status: string
+  attempts: number
+}
+
+export async function getStudentExamProgress(
+  userId: string,
+  examIds: string[]
+): Promise<Record<string, StudentExamProgress>> {
+  if (examIds.length === 0) return {}
+
+  const supabase = await createClientOrNull()
+  if (!supabase) return {}
+
+  const { data: sessions } = await supabase
+    .from('exam_sessions')
+    .select('exam_id, status, percentage')
+    .eq('student_id', userId)
+    .in('exam_id', examIds)
+    .order('created_at', { ascending: false })
+
+  const map: Record<string, StudentExamProgress> = {}
+  for (const s of sessions ?? []) {
+    const existing = map[s.exam_id]
+    if (!existing) {
+      map[s.exam_id] = {
+        percentage: s.percentage,
+        status: s.status,
+        attempts: 1,
+      }
+    } else {
+      existing.attempts += 1
+      // Prefer the session that actually carries a score
+      if (existing.percentage === null && s.percentage !== null) {
+        existing.percentage = s.percentage
+        existing.status = s.status
+      }
+    }
+  }
+  return map
 }

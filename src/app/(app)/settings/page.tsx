@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useSupabase } from '@/lib/hooks/use-supabase'
 import { useAuthStore } from '@/lib/stores/auth-store'
-import { useTheme } from '@/lib/stores/theme-store'
 import { updateProfileSchema, type UpdateProfileInput } from '@/lib/validators/auth'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -64,7 +63,6 @@ interface NotificationPreferences {
 export default function SettingsPage() {
   const supabase = useSupabase()
   const { user, setUser } = useAuthStore()
-  const { theme, setTheme } = useTheme()
   const [savingProfile, setSavingProfile] = useState(false)
   const [savingPassword, setSavingPassword] = useState(false)
   const [savingNotifications, setSavingNotifications] = useState(false)
@@ -826,36 +824,17 @@ export default function SettingsPage() {
             <CardContent className="space-y-6">
               <div className="space-y-3">
                 <Label>Theme</Label>
-                <div className="grid grid-cols-3 gap-4">
-                  <button
-                    onClick={() => setTheme('light')}
-                    className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all duration-200 forge-glass-surface ${
-                      theme === 'light' ? 'border-primary bg-primary/5 forge-glow' : 'border-white/[0.04] hover:border-primary/50'
-                    }`}
-                  >
-                    <Sun className="h-6 w-6" />
-                    <span className="text-sm font-medium">Light</span>
-                  </button>
-
-                  <button
-                    onClick={() => setTheme('dark')}
-                    className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all duration-200 forge-glass-surface ${
-                      theme === 'dark' ? 'border-primary bg-primary/5 forge-glow' : 'border-white/[0.04] hover:border-primary/50'
-                    }`}
-                  >
-                    <Moon className="h-6 w-6" />
-                    <span className="text-sm font-medium">Dark</span>
-                  </button>
-
-                  <button
-                    onClick={() => setTheme('system')}
-                    className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all duration-200 forge-glass-surface ${
-                      theme === 'system' ? 'border-primary bg-primary/5 forge-glow' : 'border-white/[0.04] hover:border-primary/50'
-                    }`}
-                  >
-                    <Monitor className="h-6 w-6" />
-                    <span className="text-sm font-medium">System</span>
-                  </button>
+                {/* Ω-UI: honest single-mode statement — the previous Light /
+                    Dark / System picker offered two options that changed
+                    nothing (the design system is dark-only by constitution). */}
+                <div className="flex items-center gap-3 p-4 rounded-xl border border-white/[0.04] forge-glass-surface">
+                  <Moon className="h-5 w-5 text-primary shrink-0" />
+                  <div>
+                    <p className="text-sm font-medium">Dark — ExamForge standard</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">
+                      ExamForge is designed dark for focused work. A light theme is on the roadmap.
+                    </p>
+                  </div>
                 </div>
               </div>
 
