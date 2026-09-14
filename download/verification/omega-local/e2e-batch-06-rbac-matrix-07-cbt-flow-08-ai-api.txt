@@ -1,0 +1,5 @@
+base=http://localhost:3000 timestamp=2026-09-14T12:53:46Z
+passed=9 failed=0
+PASS 06-rbac-matrix
+PASS 07-cbt-flow
+PASS 08-ai-api

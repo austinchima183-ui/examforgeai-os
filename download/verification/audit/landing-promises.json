@@ -73,7 +73,7 @@
         "src/app/(app)/cbt/loading.tsx"
       ],
       "api": [
-        "src/app/api/cbt/answer"
+        "src/app/api/cbt/timing"
       ],
       "database": "exams/exam_sessions/exam_session_answers",
       "sdk": "z-ai (AI), Flutterwave (pay), Resend (email), Supabase (db)",
@@ -103,7 +103,7 @@
         "src/app/(app)/teacher/grading/page.tsx"
       ],
       "api": [
-        "src/app/api/cbt/answer"
+        "src/app/api/cbt/timing"
       ],
       "database": "exam_submissions/exam_results",
       "sdk": "z-ai (AI), Flutterwave (pay), Resend (email), Supabase (db)",
@@ -174,7 +174,7 @@
         "src/app/(app)/marketplace/page.tsx"
       ],
       "api": [
-        "src/app/api/marketplace/seller"
+        "src/app/api/marketplace/my-purchases"
       ],
       "database": "marketplace_products/purchases",
       "sdk": "z-ai (AI), Flutterwave (pay), Resend (email), Supabase (db)",
@@ -204,7 +204,7 @@
         "src/app/(app)/notifications/page.tsx"
       ],
       "api": [
-        "src/app/api/notifications/digest"
+        "src/app/api/notifications/templates"
       ],
       "database": "notifications/notification_history",
       "sdk": "z-ai (AI), Flutterwave (pay), Resend (email), Supabase (db)",

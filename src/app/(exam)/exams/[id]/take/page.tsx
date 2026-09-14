@@ -213,7 +213,14 @@ function QuestionInput({
 }) {
   switch (question.type) {
     case 'single_choice':
-  case 'multi_choice': {
+  case 'multi_choice':
+  // Ω-UI FIX: 'multiple_choice' is the questions table's DEFAULT type (see
+  // migration 002) and the grader already treats it identically to
+  // single_choice — but the input switch fell through to a plain text
+  // input, so students typed option CONTENT while grading compared option
+  // IDs → a guaranteed 0% on every such exam (measured live on the
+  // published "E2E Mathematics Verification Test").
+  case 'multiple_choice': {
       return (
         <RadioGroup
           value={answer}
@@ -631,6 +638,11 @@ export default function ExamTakePage() {
   // Ω-21: server session id mirrored in a ref so the offline IndexedDB
   // writer always sees the latest value (state lags inside callbacks).
   const serverSessionIdRef = useRef<string | null>(null);
+  // Ω-UI: the in-flight POST /api/cbt/session from Start Exam. A student can
+  // outpace a slow session-create roundtrip (high-latency DB) and reach the
+  // submit dialog before the response lands — the submit path awaits this
+  // promise instead of blind-creating a duplicate the server must reject.
+  const sessionCreateRef = useRef<Promise<Response> | null>(null);
 
   // ── Derived State ──
   const currentIndex = sessionStore.currentQuestionIndex;
@@ -903,8 +915,11 @@ export default function ExamTakePage() {
 
           // Late session creation: an exam started fully offline has no
           // server session yet — create it now so answers can land.
+          // Ω-UI: skip while a create is already in flight (Start Exam's
+          // POST) — a parallel second create raced the insert and the server
+          // rejected one with a duplicate-attempt 500.
           let sessionId = serverSessionId;
-          if (!sessionId && user?.id) {
+          if (!sessionId && !sessionCreateRef.current && user?.id) {
             try {
               const res = await apiFetch('/api/cbt/session', {
                 method: 'POST',
@@ -1101,7 +1116,7 @@ export default function ExamTakePage() {
         userId = authUser?.id ?? null
       }
       if (userId) {
-        const res = await apiFetch('/api/cbt/session', {
+        const createPromise = apiFetch('/api/cbt/session', {
           method: 'POST',
           body: {
             userId,
@@ -1109,6 +1124,10 @@ export default function ExamTakePage() {
             clientTimestamp: new Date().toISOString(),
           },
         });
+        // Ω-UI: expose the in-flight create so the submit path can await it.
+        sessionCreateRef.current = createPromise;
+        try {
+        const res = await createPromise;
         if (res.ok) {
           const data = await res.json();
           if (data.sessionId) {
@@ -1133,6 +1152,9 @@ export default function ExamTakePage() {
               // offline-store failures never block the online path
             });
           }
+        }
+        } finally {
+          sessionCreateRef.current = null;
         }
       }
       // Non-ok: server-side validation rejected the start (attempts, window,
@@ -1346,6 +1368,9 @@ export default function ExamTakePage() {
               totalQuestions: exam?.totalQuestions ?? 0,
               timeUsedSeconds,
             });
+            // Ω-UI: snapshot answers BEFORE clearExam() — the completion
+            // review must never render an emptied store.
+            setFinalAnswers({ ...sessionStore.getAnswers() });
             setPhase('submitted');
             sessionStore.clearExam();
             setQueuedOfflineSubmission(false);
@@ -1370,27 +1395,65 @@ export default function ExamTakePage() {
             timeUsedSeconds,
           });
         } else {
-          // ── No server session yet (offline start or failed creation) ──
+          // ── No server session in state (offline start, reload, or the
+          //    Start-Exam create is still in flight on a slow network) ──
           // The submit route REQUIRES { sessionId, userId } — the legacy
-          // body ({ examId, answers, ... }) is schema-rejected. So: create
-          // the server session first, then submit through it. If we cannot
-          // reach the server, surface the honest offline state.
-          let createdSessionId: string | null = null;
-          try {
-            const res = await apiFetch('/api/cbt/session', {
-              method: 'POST',
-              body: {
-                userId: user?.id,
-                examId,
-                clientTimestamp: new Date().toISOString(),
-              },
-            });
-            if (res.ok) {
-              const data = await res.json();
-              createdSessionId = (data.sessionId as string) ?? null;
+          // body is schema-rejected. Resolve a session in priority order:
+          //   1. the mirrored ref (already resolved elsewhere)
+          //   2. await the in-flight create (a fast student can outpace
+          //      the create roundtrip and reach submit first)
+          //   3. adopt the caller's existing in_progress session via the
+          //      exam API (blind-creating here was rejected as a duplicate
+          //      and dead-ended the submission)
+          //   4. create a fresh session (true offline start)
+          // If we cannot reach the server at all, surface the honest
+          // offline state — answers remain durable in store + IndexedDB.
+          let createdSessionId: string | null = serverSessionIdRef.current;
+          if (!createdSessionId && sessionCreateRef.current) {
+            await sessionCreateRef.current.catch(() => undefined);
+            // The create's own handler populates serverSessionIdRef a few
+            // microtasks after the promise resolves (it awaits res.json()
+            // first) — poll briefly for it before falling back.
+            for (let i = 0; i < 30 && !serverSessionIdRef.current; i++) {
+              await new Promise((resolve) => setTimeout(resolve, 100));
             }
-          } catch {
-            // Offline — cannot create a session right now
+            createdSessionId = serverSessionIdRef.current;
+          }
+          if (!createdSessionId) {
+            try {
+              const examRes = await apiFetch(
+                `/api/cbt/exam?id=${encodeURIComponent(examId)}`
+              );
+              if (examRes.ok) {
+                const examData = await examRes.json().catch(() => ({}));
+                if (
+                  examData.sessionId &&
+                  examData.sessionStatus === 'in_progress'
+                ) {
+                  createdSessionId = examData.sessionId as string;
+                }
+              }
+            } catch {
+              // Offline — cannot resolve a session right now
+            }
+          }
+          if (!createdSessionId) {
+            try {
+              const res = await apiFetch('/api/cbt/session', {
+                method: 'POST',
+                body: {
+                  userId: user?.id,
+                  examId,
+                  clientTimestamp: new Date().toISOString(),
+                },
+              });
+              if (res.ok) {
+                const data = await res.json();
+                createdSessionId = (data.sessionId as string) ?? null;
+              }
+            } catch {
+              // Offline — cannot create a session right now
+            }
           }
 
           if (createdSessionId) {
@@ -1815,7 +1878,11 @@ export default function ExamTakePage() {
                       <ScrollArea className="max-h-[400px]">
                         <div className="space-y-3 pr-4">
                           {questions.map((q, idx) => {
-                            const userAnswer = answers[q.id] ?? '';
+                            // Ω-UI: read the frozen snapshot — the live store
+                            // was cleared by clearExam() after submission;
+                            // reading it here rendered every question as
+                            // "(not answered)" on the completion screen.
+                            const userAnswer = finalAnswers[q.id] ?? '';
                             const answered = userAnswer.length > 0;
                             return (
                               <div

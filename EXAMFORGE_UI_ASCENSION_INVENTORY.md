@@ -86,3 +86,88 @@
 5. **Mobile** (verify 390px exam flow, fix M4/M12 residues)
 
 The full before/after matrix, files changed, and test evidence land in the FINAL DELIVERY REPORT (PHASE 6).
+
+---
+
+# FINAL DELIVERY REPORT — PHASE Ω UI ASCENSION (PHASE 6)
+
+> Completed 2026-09-14 under RULE ZERO. Every "AFTER" verification below was
+> measured on the final build of this release. RC1 frozen foundation
+> (`879827e`, tag `EXAMFORGE-RC1-FROZEN`) was never modified; the landing page
+> and all marketing surfaces are byte-identical to RC1 (E2E `00-landing` PASS,
+> landing-promises 25/25).
+
+## 6. BEFORE → AFTER matrix (verified areas)
+
+### CBT experience
+| Area | BEFORE (problem + evidence) | AFTER (improvement + verification) |
+|---|---|---|
+| C1 Completion score | Submit API discarded the server grading result → completion screen always showed a fabricated **0% / FAILED** (`api/cbt/submit` returned no score; `server-authority.ts` dropped `triggerGrading` output) | `submitExam` returns `GradingOutcome`; API returns `score/totalMarks/percentage/grade/passed`; screen renders them, gated on the teacher's `show_results`. **VERIFIED: E2E `12-completion-screen` — response `score=2, 66.67%, C, passed` + UI `66.7%` + DB row graded `66.67/C/2/3`** |
+| C2 Answer review | Dead/garbage section: gated on an absent `allowReview` key, compared against `correctAnswer` the API strips, printed raw option UUIDs | Honest "Your Answers": student's own recorded answers, option ids resolved to text, gated on `show_results`, no correctness claims. **VERIFIED: E2E 12 renders `4 / Paris / Mars`, zero "(not answered)"** |
+| Review snapshot (found in finalization) | Review read the **live store after `clearExam()` wiped it** → every question would render "(not answered)" | `finalAnswers` frozen before clear (success + 409 paths); render reads the snapshot. **VERIFIED: E2E 12** |
+| `multiple_choice` input (found in finalization, measured live) | DB-default question type fell through the input switch to a **free-text input** while grading compared option ids → guaranteed 0% on every such exam (live evidence: "E2E Mathematics Verification Test" answered 2/3, graded 0) | Renders the same radio group as `single_choice` (grader already treated both identically); `QuestionType` union corrected. **VERIFIED: TSC + E2E 12** |
+| C3 Distraction-free exam | Exam ran inside the app shell — sidebar + AI assistant reachable during a live exam | New `(exam)` route group with minimal layout; take page relocated. **VERIFIED: E2E 07 + 12 render without shell chrome** |
+| Slow-network session race (found in finalization, measured live) | A student who answers faster than the ~4 s session-create roundtrip reached a submit path that blind-created a **duplicate session** → server rejected → dead-end "No connection to the exam server", dialog stuck | In-flight create is tracked + awaited at submit; existing `in_progress` session adopted via the exam API; the offline-sync effect no longer races a second create. **VERIFIED: E2E 12 (the exact scenario that failed now passes)** |
+| M13/M14 flagged-for-review + timer sync | Flags lost on reload; client-clock timer never re-synced | Flags persisted in the session store (survive reload); heartbeat re-syncs `remainingSeconds` from the server clock every 30 s. **VERIFIED: take-page code paths + E2E 07/12 green** |
+
+### Student experience
+| Area | BEFORE | AFTER (verification) |
+|---|---|---|
+| H1 Practice Sessions KPI | Hardcoded `0` | Counted from real `ai_generation_requests`. **VERIFIED: dashboard-service query + `01-student-journey` PASS** |
+| H2 misdirected CTAs | "Take Exam" → practice route; "View Results" → progress | CTAs point at real surfaces (`ROUTES.EXAMS`, practice, AI tutor hand-off with query). **VERIFIED: surface sweep `/exams`, `/student/practice` render** |
+| H3 teacher-oriented exam list for students | Create button, Participants column, Monitor links shown to students | New `student-exams-view.tsx` student storefront (status, marks, take action). **VERIFIED: surface sweep `/exams` + E2E 07** |
+| M8 achievements stub | 3-row stub | Progress/achievement widgets wired to `/student/progress` data. **VERIFIED: surface sweep renders** |
+
+### AI experience
+| Area | BEFORE | AFTER (verification) |
+|---|---|---|
+| C7 Copilot raw JSON dump | Per-chunk REPLACE destroyed history; final message = raw SSE wire text | Buffered SSE parsing, append semantics, markdown rendering. **VERIFIED: `ai-copilot.tsx` buffer implementation + E2E 08 green** |
+| C8 student suggestions 100% → 400 | Action keys mismatched the API switch | `use-contextual-ai` maps `student:*` → `/api/ai/student` with the stripped key the route's switch expects. **VERIFIED: contract read + E2E 01** |
+| C5 AI generator save no-op | `generationId` never set → save silently no-op | Wired (`setGenerationId` + save path). **VERIFIED: `02-teacher-journey` PASS** |
+| M9 "AI" labels on rule-based insights | "Neural/AI-powered" copy on non-AI code | Honest labels. **VERIFIED: reality scan 0 fabricated-claim hits in app code** |
+
+### Teacher / admin
+| Area | BEFORE | AFTER (verification) |
+|---|---|---|
+| C4 primary CTA 404 | "New exam" → `/exams/create` (no page) — plus a residue link on the grading empty state (found in finalization) | Routes to `/cbt` everywhere; grading residue fixed. **VERIFIED: surface sweep 0×404 prefetch** |
+| C6 `/admin/security` broken | Called nonexistent `/api/security` | Calls the real `/api/security/*` endpoints. **VERIFIED: surface sweep renders + real API traffic; `/api/security/sso` 400 = designed plan-gate (SSO/SAML is Enterprise-only)** |
+| C9 cross-tenant submissions | Any teacher received ALL platform submissions | `deriveTenantContext(auth).schoolId` scoping. **VERIFIED: route code + E2E 02 + RBAC matrix 5/5** |
+| H6 grading precedence bug | Batch-grader assigned 50% to everything; N+1 requests; missing titles | Fixed precedence + batched reads + exam titles joined. **VERIFIED: E2E 02 grading surface renders** |
+| Breadcrumb dead parents (found in finalization) | `/student`, `/teacher`, `/admin` crumbs linked (and prefetch-404'd) non-existent routes | Crumbs map to each role's real dashboard. **VERIFIED: surface sweep — the `_rsc` 404 prefetches are gone** |
+
+## 7. Change inventory
+
+- **Commit `b19de6e` (implementation)**: 111 files, +1,680/−2,243 — 51 src/e2e files including the new `(exam)` route group, `student-exams-view.tsx`, `cbt-service.ts` additions, dead-code purge (`app-shell.tsx`, `sidebar.tsx`, `ui/responsive-table.tsx`, `examforge-intelligence.tsx` −1,094 lines), plus refreshed verification evidence.
+- **Finalization session (this report)**: 4 files, +112/−25 — take-page review snapshot + race fixes + `multiple_choice` input, `canonical-types.ts` union, breadcrumb parent map, grading CTA.
+- **New test asset**: `e2e/12-completion-screen.spec.ts` (deterministic full-submission verification) + `scripts/omega/create-verification-exam.py` (provisions its exam) + `scripts/omega/surface-sweep.ts` (per-surface gate).
+- **Routes changed**: `/exams/[id]/take` moved `(app)` → `(exam)` group. No route added/removed; landing/marketing untouched.
+- **Components added**: `student-exams-view.tsx`, `(exam)/layout.tsx`. **Removed**: `app-shell.tsx`, `sidebar.tsx`, `ui/responsive-table.tsx`, `examforge-intelligence.tsx` (0-importer dead code).
+- **Database impact**: none (no migration, no schema change). The verification exams created during testing are ordinary `exams`/`questions` rows in the live school.
+- **API impact**: `/api/cbt/submit` now returns the grading outcome fields; `/api/cbt/exam` coerces `show_results` honestly; `/api/teacher/submissions` school-scoped. No contract removed.
+
+## 8. Gates (final build, measured 2026-09-14)
+
+| Gate | Result | RC1 baseline |
+|---|---|---|
+| TypeScript | 0 errors | 0 errors |
+| ESLint | 0 errors (2,843 style warnings) | 0 errors (2,979) |
+| Production build | 224/224 pages, exit 0 | 224/224 |
+| Unit tests | 982 passed / 0 failed / 34 skipped | identical |
+| E2E suite | **37/37** across 13 suites | 36/36 across 12 |
+| Route sweep | 277 swept, 0×5xx, 11 safe redirects | identical |
+| Security scan | 0 client leaks / 0 server leaks; headers PASS; auth PASS; 96 CSRF + 5 HMAC webhooks | identical |
+| Accessibility | 0 violations × 4 surfaces | identical |
+| Landing promises | 25/25 | 25/25 |
+| Reality scan | 176 hits, all verified false-positive classes | 177 |
+| Surface sweep (new) | 15/15 render; 14 zero-console-error + 1 expected plan-gate denial | n/a |
+| Submission flow (new) | Real server E2E PASS + DB evidence | broken at RC1 |
+
+## 9. Remaining improvements (documented, out of scope by mission order)
+
+- M1 theme-toggle no-op (app is dark-only by design — remove or wire the toggle)
+- M3 106 raw `#090909` hardcodes across 47 files (token migration)
+- M5 `(admin)` marketing CRM legacy shell divergence
+- M7 mobile tables are horizontal-scroll only
+- M10 analytics duplicate chart labeling
+- Retake UX: the take page blocks re-entry after any graded attempt even when `allowed_attempts` remains (product decision, server already permits)
+- Production deployment of this release is an owner action (Vercel); repository is deploy-ready

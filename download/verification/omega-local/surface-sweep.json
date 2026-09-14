@@ -1,0 +1,174 @@
+{
+  "base": "http://localhost:3000",
+  "pass": 14,
+  "fail": 1,
+  "results": [
+    {
+      "role": "student",
+      "route": "/dashboard/student",
+      "label": "student-command-center",
+      "finalPath": "/dashboard/student",
+      "contentChars": 2899,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [],
+      "verdict": "PASS"
+    },
+    {
+      "role": "student",
+      "route": "/exams",
+      "label": "student-exam-storefront",
+      "finalPath": "/exams",
+      "contentChars": 248,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [],
+      "verdict": "PASS"
+    },
+    {
+      "role": "student",
+      "route": "/cbt",
+      "label": "student-cbt-hub",
+      "finalPath": "/cbt",
+      "contentChars": 248,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [],
+      "verdict": "PASS"
+    },
+    {
+      "role": "student",
+      "route": "/student/ai-tutor",
+      "label": "student-ai-tutor",
+      "finalPath": "/student/ai-tutor",
+      "contentChars": 345,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [],
+      "verdict": "PASS"
+    },
+    {
+      "role": "student",
+      "route": "/student/certificates",
+      "label": "student-certificates",
+      "finalPath": "/student/certificates",
+      "contentChars": 274,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [],
+      "verdict": "PASS"
+    },
+    {
+      "role": "student",
+      "route": "/student/progress",
+      "label": "student-progress-achievements",
+      "finalPath": "/student/progress",
+      "contentChars": 294,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [],
+      "verdict": "PASS"
+    },
+    {
+      "role": "student",
+      "route": "/results",
+      "label": "student-results",
+      "finalPath": "/results",
+      "contentChars": 387,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [],
+      "verdict": "PASS"
+    },
+    {
+      "role": "teacher",
+      "route": "/dashboard/teacher",
+      "label": "teacher-dashboard",
+      "finalPath": "/dashboard/teacher",
+      "contentChars": 2464,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [],
+      "verdict": "PASS"
+    },
+    {
+      "role": "teacher",
+      "route": "/teacher/grading",
+      "label": "teacher-grading-queue",
+      "finalPath": "/teacher/grading",
+      "contentChars": 365,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [],
+      "verdict": "PASS"
+    },
+    {
+      "role": "teacher",
+      "route": "/teacher/ai-question-generator",
+      "label": "teacher-ai-generator",
+      "finalPath": "/teacher/ai-question-generator",
+      "contentChars": 452,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [],
+      "verdict": "PASS"
+    },
+    {
+      "role": "teacher",
+      "route": "/analytics",
+      "label": "teacher-analytics",
+      "finalPath": "/analytics",
+      "contentChars": 648,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [],
+      "verdict": "PASS"
+    },
+    {
+      "role": "teacher",
+      "route": "/cbt",
+      "label": "teacher-exam-management",
+      "finalPath": "/cbt",
+      "contentChars": 1221,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [],
+      "verdict": "PASS"
+    },
+    {
+      "role": "super_admin",
+      "route": "/dashboard/super-admin",
+      "label": "admin-dashboard",
+      "finalPath": "/dashboard/super-admin",
+      "contentChars": 2436,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [],
+      "verdict": "PASS"
+    },
+    {
+      "role": "super_admin",
+      "route": "/admin/security",
+      "label": "admin-security-dashboard",
+      "finalPath": "/admin/security",
+      "contentChars": 305,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+      ],
+      "verdict": "FAIL"
+    },
+    {
+      "role": "super_admin",
+      "route": "/admin/users",
+      "label": "admin-user-management",
+      "finalPath": "/admin/users",
+      "contentChars": 115,
+      "notFound": false,
+      "redirectedAway": false,
+      "consoleErrors": [],
+      "verdict": "PASS"
+    }
+  ]
+}

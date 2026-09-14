@@ -269,7 +269,9 @@ export default function GradingDashboardPage() {
           primaryAction={{
             label: 'Create an Exam',
             icon: <GraduationCap className="h-4 w-4" />,
-            href: '/exams/create',
+            // Ω-UI: /exams/create has no page (C4 residue) — the real exam
+            // creation surface is the CBT hub.
+            href: '/cbt',
           }}
           aiSuggestion={{
             text: 'AI can auto-grade essays when submissions arrive',

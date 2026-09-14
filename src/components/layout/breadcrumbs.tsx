@@ -20,6 +20,18 @@ interface BreadcrumbEntry {
   isLast: boolean
 }
 
+// Ω-UI: intermediate breadcrumb segments whose literal path has NO page
+// (/student, /teacher, /admin …) previously linked (and prefetch-404'd) dead
+// routes. Map them to each role's real dashboard so every crumb navigates
+// somewhere that exists.
+const PARENT_HREFS: Record<string, string> = {
+  student: '/dashboard/student',
+  teacher: '/dashboard/teacher',
+  'school-admin': '/school',
+  admin: '/dashboard/super-admin',
+  parent: '/parent/dashboard',
+}
+
 function buildBreadcrumbs(pathname: string): BreadcrumbEntry[] {
   const segments = pathname.replace(/^\/|\/$/g, '').split('/').filter(Boolean)
 
@@ -50,7 +62,7 @@ function buildBreadcrumbs(pathname: string): BreadcrumbEntry[] {
 
     breadcrumbs.push({
       label,
-      href: currentPath,
+      href: PARENT_HREFS[segment] ?? currentPath,
       isLast: i === segments.length - 1,
     })
   }

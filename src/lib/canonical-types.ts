@@ -61,10 +61,16 @@ export type ExamStatus = 'draft' | 'review' | 'published' | 'active' | 'complete
 export type QuestionType =
   | 'single_choice'
   | 'multi_choice'
+  // Ω-UI: 'multiple_choice' is the questions table's DEFAULT (migration 002)
+  // and exists in live data — the union previously omitted it, so the take
+  // page's input switch fell through to a plain text input while the grader
+  // compared option ids (guaranteed 0%).
+  | 'multiple_choice'
   | 'true_false'
   | 'short_answer'
   | 'essay'
   | 'fill_blank'
+  | 'fill_in_blank'
   | 'multi_select'
   | 'matching'
   | 'ordering'

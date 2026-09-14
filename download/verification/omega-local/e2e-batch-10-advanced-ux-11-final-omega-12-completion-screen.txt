@@ -1,0 +1,5 @@
+base=http://localhost:3000 timestamp=2026-09-14T13:32:14Z
+passed=10 failed=1
+PASS 10-advanced-ux
+PASS 11-final-omega
+FAIL 12-completion-screen
