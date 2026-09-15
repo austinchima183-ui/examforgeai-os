@@ -85,8 +85,12 @@ jobs:
       - name: Production build
         run: npx next build
         env:
-          NEXT_PUBLIC_SUPABASE_URL: https://test-project.supabase.co
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ci-anon-key-0000000000000000000
+          # NEXT_PUBLIC_* values are INLINED into server+client chunks at
+          # build time (Turbopack) — the E2E gate replays this exact build
+          # via next start, so build-time and runtime values must match.
+          # Both are public values (mirrors the Vercel production build).
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL || 'https://test-project.supabase.co' }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY || 'ci-anon-key-0000000000000000000' }}
           NEXT_PUBLIC_APP_URL: https://web-alpha-bay-87.vercel.app
           SESSION_TOKEN_SECRET: ci-session-secret-0123456789abcdef
           CSRF_SECRET: ci-csrf-secret-0123456789abcdef
