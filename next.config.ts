@@ -10,10 +10,12 @@ const supabaseHostname = supabaseUrl ? new URL(supabaseUrl).hostname : ''
 const supabaseWsUrl = supabaseUrl ? supabaseUrl.replace(/^https?/, 'wss') : ''
 
 const securityHeaders = [
-  // CORS — restrict to production origin only (replaces Vercel's default access-control-allow-origin: *)
+  // CORS — restrict to the production origin that actually serves the app
+  // (web-alpha-bay-87.vercel.app). The previous value pointed at the
+  // third-party examforge-ai.vercel.app domain — a fail-closed misconfig.
   {
     key: 'Access-Control-Allow-Origin',
-    value: 'https://examforge-ai.vercel.app',
+    value: 'https://web-alpha-bay-87.vercel.app',
   },
   {
     key: 'Access-Control-Allow-Methods',

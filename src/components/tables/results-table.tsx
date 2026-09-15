@@ -75,7 +75,7 @@ const columns: ColumnDef<ResultListItem, unknown>[] = [
       const pct = row.getValue('percentage') as number
       return (
         <div className="space-y-1">
-          <span className={`font-semibold tabular-nums ${getScoreColor(pct)}`}>{pct}%</span>
+          <span className={`font-semibold tabular-nums ${getScoreColor(pct)}`}>{pct.toFixed(1)}%</span>
           <p className="text-xs text-muted-foreground tabular-nums">{row.original.score}/{row.original.totalMarks}</p>
         </div>
       )

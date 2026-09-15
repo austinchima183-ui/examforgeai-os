@@ -16,6 +16,9 @@ import fs from 'fs'
 import { login, collectConsoleErrors } from './helpers'
 
 function resolveExamId(): string {
+  // OMEGA_EXAM_ID_13 lets a single suite run give specs 12 and 13 their own
+  // fresh exams (the take page blocks re-entry after a graded session).
+  if (process.env.OMEGA_EXAM_ID_13) return process.env.OMEGA_EXAM_ID_13
   if (process.env.OMEGA_EXAM_ID) return process.env.OMEGA_EXAM_ID
   try {
     const f = JSON.parse(

@@ -44,7 +44,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # Node 22+ required — vitest 4.x fork workers crash on Node 20
+          # (webidl.util.markAsUncloneable is not a function).
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
@@ -65,9 +67,11 @@ jobs:
       - name: Unit tests
         run: npx vitest run
         env:
-          # Placeholder secrets — unit tests mock all network calls
+          # Placeholder secrets — unit tests mock all network calls.
+          # Values are format-valid (>= minLength, no banned placeholder
+          # patterns) so env validation can never mask a code failure.
           NEXT_PUBLIC_SUPABASE_URL: https://test-project.supabase.co
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: test-anon-key
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ci-anon-key-0000000000000000000
           SESSION_TOKEN_SECRET: ci-session-secret-0123456789abcdef
           CSRF_SECRET: ci-csrf-secret-0123456789abcdef
           ENCRYPTION_KEY: ci-encryption-key-0123456789abcdef
@@ -82,8 +86,8 @@ jobs:
         run: npx next build
         env:
           NEXT_PUBLIC_SUPABASE_URL: https://test-project.supabase.co
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: test-anon-key
-          NEXT_PUBLIC_APP_URL: http://localhost:3000
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ci-anon-key-0000000000000000000
+          NEXT_PUBLIC_APP_URL: https://web-alpha-bay-87.vercel.app
           SESSION_TOKEN_SECRET: ci-session-secret-0123456789abcdef
           CSRF_SECRET: ci-csrf-secret-0123456789abcdef
           ENCRYPTION_KEY: ci-encryption-key-0123456789abcdef
@@ -93,24 +97,45 @@ jobs:
 
       # ── Gate 5: E2E with video evidence ────────────────────────────
       # Starts the production server and runs the full E2E suite against it.
+      # Real Supabase values (public URL + anon key, server service key) come
+      # from repository secrets — the E2E role journeys authenticate real
+      # fixture users and the CBT integrity engine requires server DB authority.
+      - name: Provision fresh verification exams (specs 12 & 13)
+        run: |
+          mkdir -p scripts/tmp
+          python3 scripts/omega/create-verification-exam.py
+          OMEGA_EXAM_ID_12=$(python3 -c "import json; print(json.load(open('scripts/tmp/verification-exam.json'))['examId'])")
+          python3 scripts/omega/create-verification-exam.py
+          OMEGA_EXAM_ID_13=$(python3 -c "import json; print(json.load(open('scripts/tmp/verification-exam.json'))['examId'])")
+          echo "OMEGA_EXAM_ID_12=$OMEGA_EXAM_ID_12" >> "$GITHUB_ENV"
+          echo "OMEGA_EXAM_ID_13=$OMEGA_EXAM_ID_13" >> "$GITHUB_ENV"
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL || 'https://test-project.supabase.co' }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY || 'ci-anon-key-0000000000000000000' }}
+
       - name: Run E2E verification suite (videos + screenshots + traces)
         run: |
           npx next start -p 3000 &
           npx wait-on http://localhost:3000/login --timeout 60000
           npx playwright test
         env:
-          # Configure SUPABASE_URL / SUPABASE_ANON_KEY as repository secrets
-          # (public values) pointing at the Supabase project that hosts the
-          # E2E test users, so the role journeys can authenticate for real.
+          # Configure SUPABASE_URL / SUPABASE_ANON_KEY / SUPABASE_SERVICE_ROLE_KEY
+          # as repository secrets pointing at the Supabase project that hosts
+          # the E2E test users, so the role journeys authenticate for real and
+          # the CBT server-authority paths have DB access.
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL || 'https://test-project.supabase.co' }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY || 'test-anon-key' }}
-          NEXT_PUBLIC_APP_URL: http://localhost:3000
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY || 'ci-anon-key-0000000000000000000' }}
+          # APP_URL must be the real app origin — the env validator treats
+          # localhost as a placeholder and refuses to start in production mode.
+          NEXT_PUBLIC_APP_URL: https://web-alpha-bay-87.vercel.app
           SESSION_TOKEN_SECRET: ci-session-secret-0123456789abcdef
           CSRF_SECRET: ci-csrf-secret-0123456789abcdef
           ENCRYPTION_KEY: ci-encryption-key-0123456789abcdef
           FLUTTERWAVE_PUBLIC_KEY: FLWPUBK_CI-placeholder
           FLUTTERWAVE_SECRET_KEY: FLWSECK_CI-placeholder
-          SUPABASE_SERVICE_ROLE_KEY: eyJhbGciOiJIUzI1NiJ9.ci-placeholder.service.key
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || 'ci-service-role-0000000000000000' }}
+          OMEGA_EXAM_ID: ${{ env.OMEGA_EXAM_ID_12 }}
+          OMEGA_EXAM_ID_13: ${{ env.OMEGA_EXAM_ID_13 }}
           # E2E test users (CI-only fixtures in the Supabase test project)
           # Override these if the CI Supabase project differs.
           E2E_STUDENT_EMAIL: ${{ vars.E2E_STUDENT_EMAIL || 'prod-final-1787626351@examforge-test.com' }}

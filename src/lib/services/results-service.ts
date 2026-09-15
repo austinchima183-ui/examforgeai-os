@@ -172,7 +172,7 @@ export async function getResultsData(
     ? Math.round(results.reduce((sum, r) => sum + r.percentage, 0) / totalSubmissions)
     : 0
   const highestScore = results.length > 0
-    ? Math.max(...results.map(r => r.percentage))
+    ? Math.round(Math.max(...results.map(r => r.percentage)))
     : 0
 
   return {

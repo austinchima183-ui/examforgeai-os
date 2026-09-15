@@ -8,18 +8,22 @@ Question design (deterministic grading):
   Q1 correct, Q2 correct, Q3 wrong-by-student -> 2/3 = 66.7% -> grade C, PASSED
 """
 import json
+import os
 import re
 import urllib.request
 import uuid
 
-BASE = "https://pzfnptrrnxkgodclyhft.supabase.co"
+BASE = os.environ.get("NEXT_PUBLIC_SUPABASE_URL", "https://pzfnptrrnxkgodclyhft.supabase.co").rstrip("/")
 TEACHER = {"email": "e2e-teacher-1787626988@examforge-test.com", "password": "Teacher123!"}
 SCHOOL = "995576f7-1c97-4f69-857a-28d8faec6b46"
 SUBJECT = "6432d955-c196-4f0e-9ccd-3df9ab649582"
 TEACHER_ID = "c799a608-14c3-4a23-b15d-99930dbc76cb"
 
-env = open("/home/z/my-project/.env.local").read()
-ANON = re.search(r"NEXT_PUBLIC_SUPABASE_ANON_KEY=(\S+)", env).group(1)
+# Env-first (CI), .env.local fallback (local runs)
+ANON = os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+if not ANON:
+    env = open("/home/z/my-project/.env.local").read()
+    ANON = re.search(r"NEXT_PUBLIC_SUPABASE_ANON_KEY=(\S+)", env).group(1)
 
 
 def req(url, method="GET", body=None, token=None):
@@ -94,6 +98,11 @@ qcheck = req(f"{BASE}/rest/v1/questions?exam_id=eq.{exam_id}&select=id&order=ord
 assert len(qcheck) == 3, f"expected 3 questions, got {len(qcheck)}"
 
 out = {"examId": exam_id, "expected": {"score": 2, "totalMarks": 3, "percentage": 66.7, "grade": "C", "passed": True}}
-with open("/home/z/my-project/scripts/tmp/verification-exam.json", "w") as f:
+# Repo-root-relative output (works locally and in CI); mkdir guards against a
+# missing scripts/tmp/ dir (a live-measured provisioning failure from a prior session)
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+OUT_PATH = os.path.join(ROOT, "scripts", "tmp", "verification-exam.json")
+os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
+with open(OUT_PATH, "w") as f:
     json.dump(out, f, indent=2)
 print(json.dumps(out))
