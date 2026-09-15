@@ -1179,10 +1179,52 @@ export default function ExamTakePage() {
   // a session during a save, so parallel saves for the same session race)
   const inFlightSavesRef = useRef<Set<string>>(new Set())
 
+  // Ω-RC: question ids whose LATEST local answer value is confirmed saved
+  // server-side. Lets the submit-time flush skip re-sending confirmed answers
+  // (fast path) while guaranteeing unconfirmed ones are retried reliably — the
+  // parallel Promise.allSettled flush raced the server-side session lock and
+  // silently dropped answers (live-measured: answer graded as unanswered).
+  const savedAnswersRef = useRef<Set<string>>(new Set())
+
+  // Ω-RC: flush locally-held answers to the server before submission.
+  // SEQUENTIAL with retries — the server serializes per-session saves via
+  // is_locked, so a parallel volley races the lock and 400s the losers.
+  // Confirmed-saved questions are skipped (they only need a version bump,
+  // which is not worth risking contention for).
+  const flushAnswersBeforeSubmit = useCallback(
+    async (sessionId: string, skipConfirmed = true) => {
+      const localAnswers = sessionStore.getAnswers();
+      const pending = Object.entries(localAnswers).filter(
+        ([questionId]) => !(skipConfirmed && savedAnswersRef.current.has(questionId))
+      );
+      for (const [questionId, answer] of pending) {
+        for (let attempt = 0; attempt < 3; attempt++) {
+          try {
+            const res = await apiFetch('/api/cbt/answer', {
+              method: 'POST',
+              body: { sessionId, questionId, answer },
+            });
+            if (res.ok) {
+              savedAnswersRef.current.add(questionId);
+              break;
+            }
+          } catch {
+            // Network error — retry after backoff
+          }
+          await new Promise((r) => setTimeout(r, 350));
+        }
+      }
+    },
+    [sessionStore]
+  );
+
   const handleAnswerChange = useCallback(
     (questionId: string, value: string) => {
       // Optimistic local save (instant UI feedback, offline resilience)
       sessionStore.setAnswer(questionId, value);
+      // Ω-RC: the latest value is not yet server-confirmed — mark dirty so
+      // the submit-time flush always sends it unless persist succeeds.
+      savedAnswersRef.current.delete(questionId);
 
       // Ω-21 critical path: durable IndexedDB write + sync-queue entry.
       // This MUST succeed even with no network — it is the recovery source
@@ -1196,7 +1238,11 @@ export default function ExamTakePage() {
 
       // Server-authoritative persist (versioning, audit trail).
       // NOTE: the route schema is strict — only these three fields are accepted.
-      if (!serverSessionId) return
+      // Ω-RC: resolve via the mirrored ref as well — the state variable can
+      // still be null for ~1 render after the session-create roundtrip
+      // resolves, silently skipping the save for fast answers.
+      const sessionIdForSave = serverSessionId ?? serverSessionIdRef.current
+      if (!sessionIdForSave) return
       if (inFlightSavesRef.current.has(questionId)) return // serialize per question
 
       const persist = async (attempt = 0) => {
@@ -1205,7 +1251,7 @@ export default function ExamTakePage() {
           const res = await apiFetch('/api/cbt/answer', {
             method: 'POST',
             body: {
-              sessionId: serverSessionId,
+              sessionId: sessionIdForSave,
               questionId,
               answer: value,
             },
@@ -1215,10 +1261,14 @@ export default function ExamTakePage() {
             await new Promise(r => setTimeout(r, 300 * (attempt + 1)))
             return persist(attempt + 1)
           }
-          // Ω-21: server acknowledged the save — flip the IndexedDB record
-          // to synced so the reconnect processor can skip it.
-          if (res.ok && offlineSessionId) {
-            void markAnswerSynced(offlineSessionId, questionId).catch(() => {})
+          if (res.ok) {
+            // Ω-RC: latest value is server-confirmed — safe to skip at flush.
+            savedAnswersRef.current.add(questionId)
+            // Ω-21: server acknowledged the save — flip the IndexedDB record
+            // to synced so the reconnect processor can skip it.
+            if (offlineSessionId) {
+              void markAnswerSynced(offlineSessionId, questionId).catch(() => {})
+            }
           }
         } catch {
           // Offline — local answer retained (store + IndexedDB); sync happens
@@ -1332,20 +1382,10 @@ export default function ExamTakePage() {
       try {
         if (serverSessionId && user) {
           // ── Server-authoritative submission ──
-          // Flush any locally-held answers first (offline resilience)
-          const localAnswers = sessionStore.getAnswers();
-          await Promise.allSettled(
-            Object.entries(localAnswers).map(([questionId, answer]) =>
-              apiFetch('/api/cbt/answer', {
-                method: 'POST',
-                body: {
-                  sessionId: serverSessionId,
-                  questionId,
-                  answer,
-                },
-              }).catch(() => undefined)
-            )
-          );
+          // Flush any locally-held answers first (offline resilience).
+          // Ω-RC: sequential + retry — a parallel volley races the server's
+          // per-session save lock and silently drops the losers.
+          await flushAnswersBeforeSubmit(serverSessionId);
 
           const res = await apiFetch('/api/cbt/submit', {
             method: 'POST',
@@ -1460,15 +1500,8 @@ export default function ExamTakePage() {
             setServerSessionId(createdSessionId);
             serverSessionIdRef.current = createdSessionId;
             // Flush local answers into the fresh session, then submit.
-            const localAnswers = sessionStore.getAnswers();
-            await Promise.allSettled(
-              Object.entries(localAnswers).map(([questionId, answer]) =>
-                apiFetch('/api/cbt/answer', {
-                  method: 'POST',
-                  body: { sessionId: createdSessionId, questionId, answer },
-                }).catch(() => undefined)
-              )
-            );
+            // Ω-RC: sequential + retry (fresh session — nothing confirmed yet).
+            await flushAnswersBeforeSubmit(createdSessionId, false);
             const res = await apiFetch('/api/cbt/submit', {
               method: 'POST',
               body: {
@@ -1487,7 +1520,7 @@ export default function ExamTakePage() {
               passed: data.passed ?? (data.percentage ?? 0) >= 50,
               grade: data.grade,
               submittedAt: data.submittedAt ?? new Date().toISOString(),
-              answeredQuestions: Object.keys(localAnswers).length,
+              answeredQuestions: Object.keys(sessionStore.getAnswers()).length,
               totalQuestions: exam?.totalQuestions ?? 0,
               timeUsedSeconds,
             });
@@ -1537,7 +1570,7 @@ export default function ExamTakePage() {
         setIsSubmitting(false);
       }
     },
-    [serverSessionId, user, examId, exam, sessionStore]
+    [serverSessionId, user, examId, exam, sessionStore, flushAnswersBeforeSubmit]
   );
 
   // Keep the latest submit handler reachable from the timer auto-submit and

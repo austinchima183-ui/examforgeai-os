@@ -73,7 +73,7 @@ export async function getResultsData(
       total_score,
       max_score,
       percentage,
-      time_taken_seconds,
+      time_spent_seconds,
       status,
       submitted_at,
       created_at
@@ -157,7 +157,7 @@ export async function getResultsData(
       score: session.total_score ?? 0,
       totalMarks: session.max_score ?? 0,
       percentage,
-      timeTaken: session.time_taken_seconds,
+      timeTaken: session.time_spent_seconds,
       status,
       submittedAt: session.submitted_at,
     }
