@@ -70,10 +70,10 @@
       "feature": "Live CBT exam delivery",
       "status": "VERIFIED",
       "frontend": [
-        "src/app/(app)/cbt/loading.tsx"
+        "src/app/(app)/cbt/page.tsx"
       ],
       "api": [
-        "src/app/api/cbt/timing"
+        "src/app/api/cbt/exam"
       ],
       "database": "exams/exam_sessions/exam_session_answers",
       "sdk": "z-ai (AI), Flutterwave (pay), Resend (email), Supabase (db)",
@@ -103,7 +103,7 @@
         "src/app/(app)/teacher/grading/page.tsx"
       ],
       "api": [
-        "src/app/api/cbt/timing"
+        "src/app/api/cbt/exam"
       ],
       "database": "exam_submissions/exam_results",
       "sdk": "z-ai (AI), Flutterwave (pay), Resend (email), Supabase (db)",
@@ -174,7 +174,7 @@
         "src/app/(app)/marketplace/page.tsx"
       ],
       "api": [
-        "src/app/api/marketplace/my-purchases"
+        "src/app/api/marketplace/purchase-status"
       ],
       "database": "marketplace_products/purchases",
       "sdk": "z-ai (AI), Flutterwave (pay), Resend (email), Supabase (db)",
@@ -204,7 +204,7 @@
         "src/app/(app)/notifications/page.tsx"
       ],
       "api": [
-        "src/app/api/notifications/templates"
+        "src/app/api/notifications/send"
       ],
       "database": "notifications/notification_history",
       "sdk": "z-ai (AI), Flutterwave (pay), Resend (email), Supabase (db)",
