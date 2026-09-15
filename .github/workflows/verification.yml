@@ -73,7 +73,7 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: https://test-project.supabase.co
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ci-anon-key-0000000000000000000
           SESSION_TOKEN_SECRET: ci-session-secret-0123456789abcdef
-          CSRF_SECRET: ci-csrf-secret-0123456789abcdef
+          CSRF_SECRET: ci-csrf-secret-0123456789abcdef0
           ENCRYPTION_KEY: ci-encryption-key-0123456789abcdef
           FLUTTERWAVE_PUBLIC_KEY: FLWPUBK_CI-placeholder
           FLUTTERWAVE_SECRET_KEY: FLWSECK_CI-placeholder
@@ -93,7 +93,7 @@ jobs:
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY || 'ci-anon-key-0000000000000000000' }}
           NEXT_PUBLIC_APP_URL: https://web-alpha-bay-87.vercel.app
           SESSION_TOKEN_SECRET: ci-session-secret-0123456789abcdef
-          CSRF_SECRET: ci-csrf-secret-0123456789abcdef
+          CSRF_SECRET: ci-csrf-secret-0123456789abcdef0
           ENCRYPTION_KEY: ci-encryption-key-0123456789abcdef
           FLUTTERWAVE_PUBLIC_KEY: FLWPUBK_CI-placeholder
           FLUTTERWAVE_SECRET_KEY: FLWSECK_CI-placeholder
@@ -133,7 +133,7 @@ jobs:
           # localhost as a placeholder and refuses to start in production mode.
           NEXT_PUBLIC_APP_URL: https://web-alpha-bay-87.vercel.app
           SESSION_TOKEN_SECRET: ci-session-secret-0123456789abcdef
-          CSRF_SECRET: ci-csrf-secret-0123456789abcdef
+          CSRF_SECRET: ci-csrf-secret-0123456789abcdef0
           ENCRYPTION_KEY: ci-encryption-key-0123456789abcdef
           FLUTTERWAVE_PUBLIC_KEY: FLWPUBK_CI-placeholder
           FLUTTERWAVE_SECRET_KEY: FLWSECK_CI-placeholder
